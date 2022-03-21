@@ -1,40 +1,17 @@
 <script>
-  let scroll
+  import { fade } from 'svelte/transition'
+  let showRoga = false
+  function toggleShowRoga() {
+    showRoga = !showRoga
+  }
 </script>
 
-<svelte:window bind:scrollY={scroll} />
+<h1 class=" text-4xl font-bold">Hi, I'm Ryan</h1>
+<p>
+  Award winning business owner turned web developer based on Vancouver Island,
+  BC. I enjoy building clean & concise web apps using awesome frameworks like
+  Vue 3, Express, Svelte, and React. I'm looking for a full-time co-op position
+  this summer.
+</p>
 
-<section>
-  <div
-    class="box"
-    style:transform={`translate3d(${scroll}px,${scroll / 3}px, 0`}
-  />
-  <div
-    class="box"
-    style:transform={`translate3d(-${scroll}px,${scroll / 3}px, 0`}
-  />
-  <div class="box" style:transform={`translate3d(0,-${scroll * 1.2}px, 0`} />
-  <div class="box" />
-  <div class="box" />
-  <div class="box" />
-  <div class="box" />
-  <div class="box" />
-  <div class="box" />
-  <div class="box" />
-</section>
-
-<style>
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .box {
-    --size: 300px;
-    height: var(--size);
-    width: var(--size);
-    background: lightgray;
-    margin: 1rem;
-  }
-</style>
+<a href="/contact">Contact ></a>

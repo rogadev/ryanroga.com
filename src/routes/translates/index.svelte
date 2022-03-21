@@ -1,5 +1,7 @@
 <script>
   let scroll
+  let upSpeed = 1.1
+  let downSpeed = 1.0 / 3
 </script>
 
 <svelte:window bind:scrollY={scroll} />
@@ -9,13 +11,16 @@
 
   <div
     class="box"
-    style:transform={`translate3d(${scroll}px,${scroll / 3}px, 0`}
+    style:transform={`translate3d(${scroll}px,${scroll * downSpeed}px, 0`}
   />
   <div
     class="box"
-    style:transform={`translate3d(-${scroll}px,${scroll / 3}px, 0`}
+    style:transform={`translate3d(-${scroll}px,${scroll * downSpeed}px, 0`}
   />
-  <div class="box" style:transform={`translate3d(0,-${scroll * 1.1}px, 0`} />
+  <div
+    class="box"
+    style:transform={`translate3d(0,-${scroll * upSpeed}px, 0`}
+  />
   <div class="box" />
   <div class="box" />
   <div class="box" />
