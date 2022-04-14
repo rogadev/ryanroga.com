@@ -7,7 +7,7 @@
 <svelte:window bind:scrollY={scroll} />
 
 <section>
-  <h1 class=" text-3xl font-bold my-4">Fun with translate</h1>
+  <h1 class=" text-3xl font-bold my-4">Translate demo</h1>
 
   <div
     class="box"
