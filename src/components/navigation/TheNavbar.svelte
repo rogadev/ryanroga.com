@@ -1,25 +1,24 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
+  const dispatch = createEventDispatcher()
+  import BrandLogo from './BrandLogo.svelte'
   import MobileMenu from './MobileMenu.svelte'
   import MobileMenuButton from './MobileMenuButton.svelte'
   import NavLink from './NavLink.svelte'
   // import NotificationBell from './NotificationBell.svelte'
 
   const toggleMobileMenu = () => {
-    showMobileMenu = !showMobileMenu
+    dispatch('toggleMobileMenu')
   }
 
-  let showMobileMenu = false
+  export let showMobileMenu = false
 </script>
 
 <nav class="bg-gray-800">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
-        <div class="flex-shrink-0">
-          <a href="/">
-            <div class="brand text-white text-3xl">Roga</div>
-          </a>
-        </div>
+        <BrandLogo />
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">
             <NavLink to="/">Welcome</NavLink>
@@ -40,10 +39,3 @@
     <MobileMenu on:toggleMobileMenu={toggleMobileMenu} />
   {/if}
 </nav>
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@800&display=swap');
-  .brand {
-    font-family: 'Cinzel', serif;
-  }
-</style>
