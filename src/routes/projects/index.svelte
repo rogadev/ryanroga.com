@@ -1,55 +1,34 @@
 <script>
-  import ProjectImageModal from '../../components/modal/ProjectImageModal.svelte'
-
-  let showProjectImageModal = false
-  let projectImageModal = {
-    src: '',
-    alt: '',
-  }
-
-  const closeProjectImageModal = () => {
-    showProjectImageModal = false
-  }
-
-  const openProjectImageModal = (src, alt) => {
-    showProjectImageModal = true
-    projectImageModal.src = src
-    projectImageModal.alt = alt
-  }
+  import ProjectCard from '$lib/components/projects/ProjectCard.svelte'
 </script>
 
-{#if showProjectImageModal}
-  <ProjectImageModal
-    src={projectImageModal.src}
-    alt={projectImageModal.alt}
-    on:close={closeProjectImageModal}
-  />
-{/if}
+<h1
+  class="py-6 px-4 sm:px-6 lg:px-8 text-3xl font-bold text-gray-900 dark:text-white text-center"
+>
+  Projects
+</h1>
 
-<div class="bg-gray-50 w-1/2 p-4 rounded-md shadow-md">
+<main>
   <div
-    class="my-4 mb-4 mt-0 grid grid-row-2 md:grid-cols-4 justify-between items-center"
+    class="grid grid-cols auto-rows-max lg:grid-cols-2 2xl:lg:grid-cols-3 gap-8 items-center justify-center"
   >
-    <div class="md:col-span-3">
-      <h2 class="text-2xl mb-2">Roga Weather</h2>
-      <p>Uses the GeoIP and WeatherDBI API's to fetch and memoizes requests.</p>
-    </div>
-    <div class="text-center my-4 md:text-right">
-      <a
-        class="bg-gray-700 hover:bg-gray-800 text-white px-3 py-2 rounded-md text-sm font-medium shadow"
-        target="blank"
-        href="https://weather.roga.dev">Live Site</a
-      >
-    </div>
+    <ProjectCard
+      title="Career Outlooks"
+      description="A real-world career outlook search tool for students and recent graduates."
+      link="https://career-outlooks.viu.ca/"
+      imageUrl="static/images/projects/career-outlooks.png"
+    />
+    <ProjectCard
+      title="Password Generator"
+      description="A simple note taking app that uses IndexedDB to store notes."
+      link="https://passwords.roga.dev"
+      imageUrl="static/images/projects/password-generator.png"
+    />
+    <ProjectCard
+      title="Weather App"
+      description="Uses the GeoIP and WeatherDBI API's to fetch and memoizes requests."
+      link="https://weather.roga.dev"
+      imageUrl="static/images/projects/Roga Weather.png"
+    />
   </div>
-  <img
-    src="static/images/projects/Roga Weather.png"
-    alt="Roga Weather App Demo"
-    class="rounded-md shadow-sm cursor-pointer"
-    on:click={() =>
-      openProjectImageModal(
-        'static/images/projects/Roga Weather.png',
-        'Roga Weather App Demo'
-      )}
-  />
-</div>
+</main>

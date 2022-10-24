@@ -1,5 +1,5 @@
 <script>
-  import BodyWrapper from '../components/layout/BodyWrapper.svelte'
+  import BodyWrapper from '$lib/components/layout/BodyWrapper.svelte'
 
   let scroll
   let upSpeed = 2.1
@@ -82,7 +82,7 @@
           </p>
           <p>
             I'll be graduating in April, 2023, but I've already begun to build
-            my portfolio. In semester 1 I developed a
+            my portfolio. In my first semester I developed a
             <a
               class="text-blue-500 hover:text-blue-700"
               href="https://nicdgl113.github.io/course-project-vonroga/"

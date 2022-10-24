@@ -1,5 +1,5 @@
 <script>
-  import TheNavbar from '../components/navigation/TheNavbar.svelte'
+  import TheNavbar from '$lib/components/navigation/TheNavbar.svelte'
   import '../app.css'
 
   let showMobileMenu = false
