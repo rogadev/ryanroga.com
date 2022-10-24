@@ -63,13 +63,13 @@
               href="https://www.mossaway.ca"
               target="_blank"
               class="text-blue-500 hover:text-blue-700">MossAway</a
-            >. I've always believed that the primary focus of any small business
-            website should be creating frictionless customer experience. With
-            that in mind, I planned and built a website and digital workflow
-            that offered exactly that. I would teach myself SEO, web design,
-            automation, and more. The hard work paid off because in just 2 years
-            our customers nominated us for our first Better Business Bureau
-            Torch Award. <span class="font-bold italic">We won!</span>
+            >. I've always believed the customer journey is the most important
+            focus of any small business. When I designed and built my website, I
+            was keenly interested in creating a frictionless customer
+            experience. I would teach myself SEO, web design, automation, and
+            more. The hard work paid off because in just 2 years our customers
+            nominated us for our first Better Business Bureau Torch Award.
+            <span class="font-bold italic">We won!</span>
           </p>
           <p>
             At the start of the global pandemic the future of my business was
