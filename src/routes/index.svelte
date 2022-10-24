@@ -15,7 +15,7 @@
     >
       <div class="flex flex-col ">
         <img
-          src="static/images/Ryan Paranich.jpg"
+          src="/images/Ryan Paranich.jpg"
           alt="Ryan Paranich"
           class="rounded-full w-28 mx-auto mt-6"
         />
@@ -31,7 +31,7 @@
         </h2>
         <div class="flex flex-row items-center justify-center mt-4">
           <img
-            src="static/images/icons/vuejs-brands.svg"
+            src="/images/icons/vuejs-brands.svg"
             alt="Vue.js logo"
             class="box w-[100px] h-[100px] md:w-[200px] md:h-[200px] m-1"
             style:transform={`translate3d(-${scroll * 2}px,${
@@ -39,13 +39,13 @@
             }px, 0`}
           />
           <img
-            src="static/images/icons/Svelte_Logo.svg"
+            src="/images/icons/Svelte_Logo.svg"
             class="box w-[100px] h-[100px] md:w-[200px] md:h-[200px] m-1"
             alt="Svelte logo"
             style:transform={`translate3d(0,-${scroll * upSpeed}px, 0`}
           />
           <img
-            src="static/images/icons/nuxt-logo.svg"
+            src="/images/icons/nuxt-logo.svg"
             class="box w-[100px] h-[100px] md:w-[200px] md:h-[200px] m-1"
             alt="Nuxt logo"
             style:transform={`translate3d(${scroll * 2}px,${
