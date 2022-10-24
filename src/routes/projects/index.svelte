@@ -16,19 +16,19 @@
       title="Career Outlooks"
       description="A real-world career outlook search tool for students and recent graduates."
       link="https://career-outlooks.viu.ca/"
-      imageUrl="static/images/projects/career-outlooks.png"
+      imageUrl="/images/projects/career-outlooks.png"
     />
     <ProjectCard
       title="Password Generator"
       description="A simple note taking app that uses IndexedDB to store notes."
       link="https://passwords.roga.dev"
-      imageUrl="static/images/projects/password-generator.png"
+      imageUrl="/images/projects/password-generator.png"
     />
     <ProjectCard
       title="Weather App"
       description="Uses the GeoIP and WeatherDBI API's to fetch and memoizes requests."
       link="https://weather.roga.dev"
-      imageUrl="static/images/projects/Roga Weather.png"
+      imageUrl="/images/projects/Roga Weather.png"
     />
   </div>
 </main>
