@@ -32,7 +32,7 @@
 {/if}
 
 <div class="flex justify-center overflow-auto min-h-full">
-  <div class="bg-gray-50 w-1/2 p-4 m-4 rounded-md shadow-md min-w-[80%]">
+  <div class="bg-gray-200 w-1/2 p-4 m-4 rounded-md shadow-lg min-w-[80%]">
     <div
       class="py-4 pb-4 pt-0 grid grid-row-2 md:grid-cols-4 justify-between items-center"
     >
