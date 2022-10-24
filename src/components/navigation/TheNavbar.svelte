@@ -22,16 +22,12 @@
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">
             <NavLink to="/">Welcome</NavLink>
-            <NavLink to="/about">About</NavLink>
             <NavLink to="/projects">Projects</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </div>
         </div>
       </div>
-      <!-- <div class="hidden md:block">
-        <div class="ml-4 flex items-center md:ml-6">
-          <NotificationBell />
-        </div>
-      </div> -->
+
       <MobileMenuButton on:toggleMenu={toggleMobileMenu} />
     </div>
   </div>

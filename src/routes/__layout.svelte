@@ -13,7 +13,12 @@
   }
 </script>
 
-<div class="min-h-full">
+<svelte:head>
+  <title>Ryan Roga | JavaScript Web Developer</title>
+  <link rel="icon" href="/favicon.ico" />
+</svelte:head>
+
+<div class="h-full bg-white dark:bg-gray-900">
   <TheNavbar {showMobileMenu} on:toggleMobileMenu={toggleMobileMenu} />
   <div on:click={closeMobileMenuIfOpen}>
     <slot />
