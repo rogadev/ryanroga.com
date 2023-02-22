@@ -15,7 +15,7 @@
     >
       <div class="flex flex-col ">
         <img
-          src="/images/Ryan_Paranich_Thumbnail.png"
+          src="/images/ryan_paranich_roga_dev_headshot.jpg"
           alt="Ryan Paranich"
           class="rounded-full w-28 mx-auto mt-6"
         />
