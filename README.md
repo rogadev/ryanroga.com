@@ -4,7 +4,7 @@ I am an award-winning business owner turned web developer with a passion for bus
 
 ## Work Experience
 
-I have gained valuable work experience by working for VIU's web department, where I championed and solo-developed a web app that helps connect future students to the 3-year outlook of jobs that each credential that VIU offers can afford you upon graduation. I have also worked on several side projects while going to school, including developing a driving app for medical companions who take dialysis patients to/from appointments all over Vancouver Island, and a window cleaning project evaluation tool that is used by my old business and its new ownership.
+Not only did I attend VIU, but I worked there, too. As a web developer with the Vancouver Island University web department, I championed a [web app that helps future students](https://career-outlooks.viu.ca) connect to real-time, 3-year outlook data for every job a given VIU credential might afford you upon graduation. I have also worked on several side projects over the past few years, including developing a [driving app](https://eztripr.com) for medical companions who take dialysis patients to/from appointments all over Vancouver Island, and a [window cleaning project evaluation tool](https://www.ezeval.app/) that is used by my old business and its new ownership. There are plenty of other cool little projects that I'm working on, including a new portfolio website, and you can check out [roga.dev](https://roga.dev) to see those updates as they're announced.
 
 ## Technical Skills
 
