@@ -8,7 +8,13 @@ Not only did I attend VIU, but I worked there, too. As a web developer with the 
 
 ## Technical Skills
 
-I love working with JavaScript and TypeScript, and I have experience working on full-stack web development projects, as well as front-end or back-end specific development. I have also been integrating AI into several of my projects, including creating a simplified ChatGPT app that allows me to talk to my phone to ask simple questions. I am currently working on a new ChatGPT UI project, using the OpenAI API to create the ChatGPT interface that I want.
+Let's get all those cliche buzzphrases out of the way really quick (sorry!)... I'm a passionate full-stack web developer who loves working with JavaScript and TypeScript. On the front-end, I'm a big fan of Vue, Svelte, and React. Each of these frameworks has their unique strengths, but lately, Svelte has been my go-to for its simplicity and elegance. Phew, now that's out of the way.
+
+I have experience working on a variety of web development projects, from full-stack to front-end or back-end specific. I'm also passionate about integrating AI into my projects, like creating a simplified ChatGPT app that lets me talk to my phone to ask simple questions. Currently, I'm working on a new ChatGPT UI project that uses the OpenAI API to create the perfect ChatGPT interface.
+
+When it comes to rendering frameworks, I've really enjoyed working with Astro, Nuxt, and SvelteKit. Astro is my favorite for building websites, but for web apps, I think that Nuxt 3 is really well done. SvelteKit is also fantastic, and I think it has the potential to become my go-to for future side projects once its ecosystem develops a bit more. I'll be eager to test drive 2.0 when it drops.
+
+Overall, I'm a versatile developer who loves to learn and experiment with new technologies. I'm exceptional at analyzing business needs, designing business logic, and crafting solutions that solve problems my clients didn't even realize they had. Whether it's building sleek front-ends or robust back-ends, I'm passionate about crafting high-quality solutions that bring value to users.
 
 ## Moving to Halifax, NS, Canada
 
@@ -20,4 +26,4 @@ I am passionate about AI and the ways in which it's about to change our world. I
 
 ## Contact Information
 
-You can reach me at [ryan@roga.dev](mailto:ryan@roga.dev) or connect with me on [LinkedIn](https://www.linkedin.com/in/ryanroga). Let's chat!
+So, what do you think? Do I sound like someone you could use on your team? You can reach me at [ryan@roga.dev](mailto:ryan@roga.dev) or connect with me on [LinkedIn](https://www.linkedin.com/in/ryanroga). Let's chat!
