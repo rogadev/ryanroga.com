@@ -8,7 +8,7 @@ Not only did I attend VIU, but I worked there, too. As a web developer with the 
 
 ## Technical Skills
 
-Let's get all those cliche buzzphrases out of the way really quick (sorry!)... I'm a passionate full-stack web developer who loves working with JavaScript and TypeScript. On the front-end, I'm a big fan of Vue, Svelte, and React. Each of these frameworks has their unique strengths, but lately, Svelte has been my go-to for its simplicity and elegance. Phew, now that's out of the way.
+I'll do my best not to sound too cliché, here, but I really am a passionate full-stack web developer who loves working with JavaScript/TypeScript. On the front-end, I'm a big fan of Vue and Svelte, but I also know React 😉. Each of these has its unique strengths, but lately, Svelte has been my go-to UI framework for its simplicity and elegance - it's truly an unparalleled developer experience.
 
 I have experience working on a variety of web development projects, from full-stack to front-end or back-end specific. I'm also passionate about integrating AI into my projects, like creating a simplified ChatGPT app that lets me talk to my phone to ask simple questions. Currently, I'm working on a new ChatGPT UI project that uses the OpenAI API to create the perfect ChatGPT interface.
 
