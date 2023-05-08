@@ -18,9 +18,9 @@ Overall, I'm a versatile developer who loves to learn and experiment with new te
 
 ## Moving to Halifax, NS, Canada
 
-I currently live in Nanaimo, BC, Canada, but I will be moving to Halifax, NS, Canada in a few weeks (June 1st). I am looking for office work if it's in Halifax or remote work in Canada, US, and beyond. I am also very interested in finding work opportunities abroad, so if the employer is offering to pay to move me to another country, I would consider it.
+Soon I'll be trading in the Pacific Ocean for the Atlantic and heading to Halifax, NS, making the move from beautiful Nanaimo, BC to the East Coast in late May to early June. Once settled, I'll be looking for office or remote work in Halifax or remote work in Canada, the States, and beyond. It's also worth noting that, if the opportunity arises, I'm open to exploring job opportunities abroad.
 
-## Advocacy for AI Education
+## An Avid AI Advocate, Especially in Education
 
 I am passionate about AI and the ways in which it's about to change our world. I have a TikTok channel called TechnicallyCreative where I talk about AI and how it's about to change our world. I also advocate for teaching tools like ChatGPT in education, especially post-secondary education, instead of trying to outlaw the technology. I strongly believe that if educational institutions decide to treat this technology like the enemy and gatekeep, they are putting their students at a great disadvantage.
 
