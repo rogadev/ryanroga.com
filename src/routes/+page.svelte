@@ -12,11 +12,11 @@
 				<h2 class="text-3xl">Full-Stack Developer</h2>
 			</div>
 			<div class="md:text-right">
-				<ul>
+				<ul class="font-semibold">
 					<li>Halifax, Nova Scotia, Canada</li>
 					<li>Open to On-Site, Hybrid, and Remote</li>
 					<li>Seeking Full-Time Employment</li>
-					<li>Immediately Available</li>
+					<li>Immediate Availability</li>
 				</ul>
 			</div>
 		</div>
