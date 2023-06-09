@@ -26,7 +26,7 @@
 					<Icon class="text-xl" icon="mdi:menu" />
 				</button>
 			</svelte:fragment>
-			<a href="/" class="text-xl font-bold">Ryan Roga</a>
+			<!-- <a href="/" class="text-xl font-bold">Roga.dev</a> -->
 			<svelte:fragment slot="trail">
 				<a href="/login">
 					<Icon class="text-xl" icon="mdi:login" />
@@ -54,6 +54,6 @@
 	</svelte:fragment>
 	<slot />
 	<svelte:fragment slot="pageFooter">
-		<p class="text-center text-gray-500 text-xs">&copy; 2023 Ryan Roga. All rights reserved.</p>
+		<p class="text-center text-gray-500 text-xs">&copy; 2023 Ryan Paranich. All rights reserved.</p>
 	</svelte:fragment>
 </AppShell>
