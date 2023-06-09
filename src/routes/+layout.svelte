@@ -11,11 +11,30 @@
 	// Skeleton Components
 	import { AppBar } from '@skeletonlabs/skeleton';
 	import { AppShell } from '@skeletonlabs/skeleton';
-	import { AppRail, AppRailTile } from '@skeletonlabs/skeleton';
+	import {
+		AppRail,
+		AppRailTile,
+		Toast,
+		toastStore,
+		type ToastSettings
+	} from '@skeletonlabs/skeleton';
+	import { onMount } from 'svelte';
 
 	let showSidebar = false;
 
 	const storeValue: Writable<number> = writable(0);
+
+	onMount(() => {
+		const t: ToastSettings = {
+			message:
+				"Welcome! I'm still working on my site. A few items may not work as intended, just yet. Please feel free to get in touch if you have any questions.",
+			action: {
+				label: 'Contact Ryan',
+				response: () => window.open('mailto:ryan@roga.dev')
+			}
+		};
+		toastStore.trigger(t);
+	});
 </script>
 
 <AppShell>
@@ -36,19 +55,23 @@
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
 		{#if showSidebar}
-			<AppRail selected={storeValue}>
+			<AppRail selected={storeValue} on:click={() => (showSidebar = !showSidebar)}>
 				<AppRailTile label="Home" value={0}>
 					<Icon class="text-xl" icon="mdi:home-circle" />
 				</AppRailTile>
 				<AppRailTile label="Projects" value={1}>
 					<Icon class="text-xl" icon="mdi:code-braces" />
 				</AppRailTile>
-				<AppRailTile label="GitHub" value={2}>
-					<Icon class="text-xl" icon="mdi:github" />
-				</AppRailTile>
-				<AppRailTile label="Contact" value={3}>
-					<Icon class="text-xl" icon="mdi:email" />
-				</AppRailTile>
+				<a href="https://github.com/rogadev" target="_blank">
+					<AppRailTile label="GitHub" value={2}>
+						<Icon class="text-xl" icon="mdi:github" />
+					</AppRailTile>
+				</a>
+				<a href="mailto:ryan@roga.dev">
+					<AppRailTile label="Contact" value={3}>
+						<Icon class="text-xl" icon="mdi:email" />
+					</AppRailTile>
+				</a>
 			</AppRail>
 		{/if}
 	</svelte:fragment>
@@ -56,4 +79,5 @@
 	<svelte:fragment slot="pageFooter">
 		<p class="text-center text-gray-500 text-xs">&copy; 2023 Ryan Paranich. All rights reserved.</p>
 	</svelte:fragment>
+	<Toast />
 </AppShell>
