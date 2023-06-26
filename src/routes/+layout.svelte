@@ -19,33 +19,45 @@
 		type ToastSettings
 	} from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
+	import NavbarLink from './NavbarLink.svelte';
 
 	let showSidebar = false;
 
 	const storeValue: Writable<number> = writable(0);
 
-	onMount(() => {
-		const t: ToastSettings = {
-			message:
-				"Welcome! I'm still working on my site. A few items may not work as intended, just yet. Please feel free to get in touch if you have any questions.",
-			action: {
-				label: 'Contact Ryan',
-				response: () => window.open('mailto:ryan@roga.dev')
-			}
-		};
-		toastStore.trigger(t);
-	});
+	// Was using the toast to notify users that the site is still under construction.
+	// onMount(() => {
+	// 	const t: ToastSettings = {
+	// 		message:
+	// 			"Welcome! I'm still working on my site. A few items may not work as intended, just yet. Please feel free to get in touch if you have any questions.",
+	// 		action: {
+	// 			label: 'Contact Ryan',
+	// 			response: () => window.open('mailto:ryan@roga.dev')
+	// 		}
+	// 	};
+	// 	toastStore.trigger(t);
+	// });
 </script>
 
 <AppShell>
 	<svelte:fragment slot="header">
-		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+		<AppBar
+			gridColumns="grid-cols-3 items-center"
+			slotDefault="place-self-center"
+			slotTrail="place-content-end"
+		>
 			<svelte:fragment slot="lead">
-				<button on:click={() => (showSidebar = !showSidebar)}>
-					<Icon class="text-xl" icon="mdi:menu" />
-				</button>
+				<NavbarLink
+					href="/"
+					icon="mdi:home-circle"
+					label=""
+					variant="variant-gradient-secondary-primary"
+				/>
 			</svelte:fragment>
-			<!-- <a href="/" class="text-xl font-bold">Roga.dev</a> -->
+			<div class="flex gap-3">
+				<NavbarLink href="/projects" icon="mdi:code-braces" label="Projects" />
+				<NavbarLink href="/resume" icon="mdi:file-document" label="Resume" />
+			</div>
 			<svelte:fragment slot="trail">
 				<a href="/login">
 					<Icon class="text-xl" icon="mdi:login" />
@@ -54,13 +66,12 @@
 		</AppBar>
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
-		{#if showSidebar}
+		<!-- {#if showSidebar}
 			<AppRail selected={storeValue} on:click={() => (showSidebar = !showSidebar)}>
 				<AppRailTile label="Home" value={0}>
 					<Icon class="text-xl" icon="mdi:home-circle" />
 				</AppRailTile>
 				<AppRailTile label="Projects" value={1}>
-					<Icon class="text-xl" icon="mdi:code-braces" />
 				</AppRailTile>
 				<a href="https://github.com/rogadev" target="_blank">
 					<AppRailTile label="GitHub" value={2}>
@@ -73,7 +84,7 @@
 					</AppRailTile>
 				</a>
 			</AppRail>
-		{/if}
+		{/if} -->
 	</svelte:fragment>
 	<slot />
 	<svelte:fragment slot="pageFooter">
