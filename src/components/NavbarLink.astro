@@ -1,0 +1,9 @@
+---
+const { link } = Astro.props
+const currentPath = new URL(Astro.request.url).pathname.slice(1)
+console.log(currentPath, link)
+---
+
+<a href={link} class:list={[{ 'bg-primary': currentPath === link }]}>
+  <slot />
+</a>

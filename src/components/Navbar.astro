@@ -1,7 +1,24 @@
+---
+import { Icon } from 'astro-icon'
+import NavbarLink from './NavbarLink.astro'
+---
+
 <div class='w-full m-0 h-[80px]'>
   <nav class='flex flex-row justify-between'>
-    <span>test</span>
-    <span>test</span>
-    <span>test</span>
+    <div id='front'>
+      <Icon name='mdi:home' />
+    </div>
+    <div id='middle' class='flex flex-row gap-2'>
+      <NavbarLink link='/projects'>Projects</NavbarLink>
+
+      <a href='/projects'>Projects</a>
+      <a href='/devlog'>Devlog</a>
+      <a href='/resume'>Resume</a>
+    </div>
+    <div id='end' class='flex flex-row gap-2'>
+      <Icon name='mdi:github' />
+      <Icon name='mdi:linkedin' />
+      <Icon name='mdi:twitter' />
+    </div>
   </nav>
 </div>
