@@ -1,0 +1,17 @@
+---
+import { Icon } from 'astro-icon'
+interface Props {
+  link: string
+  name: string
+  isLocal?: boolean
+}
+const { link, name, isLocal = false } = Astro.props as Props
+---
+
+<a
+  href={link}
+  target={isLocal ? null : '_blank'}
+  class='h-[30px] w-[30px] hover:text-red-500'
+>
+  <Icon {name} />
+</a>

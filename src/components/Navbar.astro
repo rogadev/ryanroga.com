@@ -1,24 +1,26 @@
 ---
 import { Icon } from 'astro-icon'
 import NavbarLink from './NavbarLink.astro'
+import NavIcon from './NavIcon.astro'
 ---
 
 <div class='w-full m-0 h-[80px]'>
-  <nav class='flex flex-row justify-between'>
-    <div id='front'>
-      <Icon name='mdi:home' />
+  <nav class='flex flex-row justify-between items-center'>
+    <div id='front' class='flex'>
+      <NavIcon name='mdi:home' link='/' isLocal={true} />
     </div>
     <div id='middle' class='flex flex-row gap-2'>
       <NavbarLink link='/projects'>Projects</NavbarLink>
-
-      <a href='/projects'>Projects</a>
-      <a href='/devlog'>Devlog</a>
-      <a href='/resume'>Resume</a>
+      <NavbarLink link='/devlog'>Devlog</NavbarLink>
+      <NavbarLink link='/resume'>Resume</NavbarLink>
     </div>
     <div id='end' class='flex flex-row gap-2'>
-      <Icon name='mdi:github' />
-      <Icon name='mdi:linkedin' />
-      <Icon name='mdi:twitter' />
+      <NavIcon name='mdi:github' link='https://github.com/rogadev' />
+      <NavIcon
+        name='mdi:linkedin'
+        link='https://www.linkedin.com/in/ryanroga/'
+      />
+      <NavIcon name='mdi:twitter' link='https://twitter.com/roga_dev' />
     </div>
   </nav>
 </div>
