@@ -22,10 +22,6 @@ There are several side projects that I've been working on but haven't released y
 
 Lastly, I have 2 long-term projects I'm currently working on. I'm working on transforming my driving assistant into an "Uber of Medical Transport" app, and I'm also rebuilding my VIU Career Outlooks web app as an open API and public web app - this time, enhanced by AI to provide better job results and additional relevant information. If you'd like to support me and my side projects, please consider becoming a GitHub sponsor.
 
-## Moving to Halifax, NS, Canada
-
-Soon I'll be trading in the Pacific Ocean for the Atlantic and heading to Halifax, NS, making the move from beautiful Nanaimo, BC to the East Coast in late May to early June. Once settled, I'll be looking for office or remote work in Halifax or remote work in Canada, the States, and beyond. It's also worth noting that, if the opportunity arises, I'm open to exploring job opportunities abroad.
-
 ## An Avid AI Advocate, Especially in Education
 
 I am passionate about AI and the ways in which it's about to change our world. I have a TikTok channel called TechnicallyCreative where I talk about AI and how it's about to change our world. I also advocate for teaching tools like ChatGPT in education, especially post-secondary education, instead of trying to outlaw the technology. I strongly believe that if educational institutions decide to treat this technology like the enemy and gatekeep, they are putting their students at a great disadvantage.
