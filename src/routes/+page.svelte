@@ -1,20 +1,21 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	//...
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Roga.dev | TypeScript Web Developer</title>
+	<meta
+		name="description"
+		content="Ryan Paranich is a TypeScript/JavaScript web developer with a nack for small business SaaS, web apps, and AI integration."
+	/>
 </svelte:head>
 
 <section>
 	<h1>
 		<span class="welcome">
 			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
+				<!-- <source srcset={welcome} type="image/webp" />
+				<img src={welcome_fallback} alt="Welcome" /> -->
 			</picture>
 		</span>
 
@@ -25,7 +26,7 @@
 		try editing <strong>src/routes/+page.svelte</strong>
 	</h2>
 
-	<Counter />
+	<!-- <Counter /> -->
 </section>
 
 <style>
