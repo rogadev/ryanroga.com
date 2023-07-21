@@ -1,4 +1,6 @@
 <script>
+	import FooterItem from './FooterItem.svelte';
+
 	import FooterSocial from './FooterSocial.svelte';
 
 	const socials = [
@@ -23,7 +25,6 @@
 			icon: 'ic:baseline-tiktok'
 		}
 	];
-
 	const solutions = [
 		{
 			name: 'Business Analysis',
@@ -43,6 +44,22 @@
 		},
 		{
 			name: 'Online Marketing',
+			href: '#'
+		}
+	];
+	const projects = [
+		{
+			name: 'Career Outlooks',
+			href: 'https://viu-career-outlooks.vercel.app'
+		}
+	];
+	const company = [
+		{
+			name: 'Press',
+			href: '#'
+		},
+		{
+			name: 'Partners',
 			href: '#'
 		}
 	];
@@ -67,33 +84,16 @@
 						<h3 class="text-sm font-semibold leading-6 text-gray-900">Solutions</h3>
 						<ul role="list" class="mt-6 space-y-4">
 							{#each solutions as { name, href }}
-								<li>
-									<a {href} class="text-sm leading-6 text-gray-600 hover:text-gray-900">
-										{name}
-									</a>
-								</li>
+								<FooterItem {name} {href} />
 							{/each}
 						</ul>
 					</div>
 					<div class="mt-10 md:mt-0">
-						<h3 class="text-sm font-semibold leading-6 text-gray-900">Support</h3>
+						<h3 class="text-sm font-semibold leading-6 text-gray-900">Projects</h3>
 						<ul role="list" class="mt-6 space-y-4">
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Pricing</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900"
-									>Documentation</a
-								>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Guides</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900"
-									>API Status</a
-								>
-							</li>
+							{#each projects as { name, href }}
+								<FooterItem {name} {href} />
+							{/each}
 						</ul>
 					</div>
 				</div>
@@ -101,35 +101,16 @@
 					<div>
 						<h3 class="text-sm font-semibold leading-6 text-gray-900">Company</h3>
 						<ul role="list" class="mt-6 space-y-4">
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">About</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Blog</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Jobs</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Press</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Partners</a>
-							</li>
+							{#each company as { name, href }}
+								<FooterItem {name} {href} />
+							{/each}
 						</ul>
 					</div>
 					<div class="mt-10 md:mt-0">
 						<h3 class="text-sm font-semibold leading-6 text-gray-900">Legal</h3>
 						<ul role="list" class="mt-6 space-y-4">
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Claim</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Privacy</a>
-							</li>
-							<li>
-								<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Terms</a>
-							</li>
+							<FooterItem name="Privacy" href="/privacy" />
+							<FooterItem name="Terms" href="/terms" />
 						</ul>
 					</div>
 				</div>

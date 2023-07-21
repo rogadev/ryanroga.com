@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Roga.dev | TypeScript Web Developer</title>
+	<title>Roga.dev</title>
 	<meta
 		name="description"
 		content="Ryan Paranich is a TypeScript/JavaScript web developer with a nack for small business SaaS, web apps, and AI integration."
@@ -11,50 +11,5 @@
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<!-- <source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" /> -->
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<!-- <Counter /> -->
+	<!-- TODO Build a web page. -->
 </section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
