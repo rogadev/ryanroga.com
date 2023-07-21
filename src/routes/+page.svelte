@@ -1,5 +1,6 @@
 <script>
-	//...
+	import HeroSection from './HeroSection.svelte';
+	import SkillsSection from './SkillsSection.svelte';
 </script>
 
 <svelte:head>
@@ -10,6 +11,5 @@
 	/>
 </svelte:head>
 
-<section>
-	<!-- TODO Build a web page. -->
-</section>
+<HeroSection />
+<SkillsSection />

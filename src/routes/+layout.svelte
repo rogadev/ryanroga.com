@@ -7,7 +7,9 @@
 </script>
 
 <div class="app">
-	<Navbar />
+	<header>
+		<Navbar />
+	</header>
 
 	<main class="h-full w-full">
 		<slot />
