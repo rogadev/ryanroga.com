@@ -1,1 +1,3 @@
-<section id="skills">asdf</section>
+<section id="skills">
+	<!-- TODO Fill out skills section -->
+</section>

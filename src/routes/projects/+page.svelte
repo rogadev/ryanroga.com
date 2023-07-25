@@ -1,3 +1,7 @@
+<script lang="ts">
+	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
+</script>
+
 <svelte:head>
 	<title>Projects | Roga.dev</title>
 	<meta
@@ -8,4 +12,5 @@
 
 <div>
 	<!-- TODO Finish the page -->
+	<UnderConstruction />
 </div>
