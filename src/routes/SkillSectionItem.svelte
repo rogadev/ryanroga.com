@@ -23,11 +23,11 @@
 <li
 	on:mouseover={() => (show = true)}
 	on:mouseout={() => (show = false)}
-	on:focus={() => console.log('')}
-	on:blur={() => console.log('')}
+	on:focus={() => (show = true)}
+	on:blur={() => (show = false)}
 >
-	<div class="relative">
-		<Icon {icon} class="mx-auto h-24 w-24 rounded-md" />
+	<div class="relative w-12 md:w-16 lg:w-24 mx-auto">
+		<Icon {icon} class="mx-auto h-12 w-12 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-md" />
 		{#if favorite && show}
 			<div transition:fade={{ duration: 300 }} title="I love this!">
 				<Icon icon="mdi:heart" class="absolute top-0 right-0 h-6 w-6 text-red-600" />
