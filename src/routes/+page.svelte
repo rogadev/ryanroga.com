@@ -11,5 +11,7 @@
 	/>
 </svelte:head>
 
-<HeroSection />
-<SkillsSection />
+<div class="flex flex-col bg-white">
+	<HeroSection />
+	<SkillsSection />
+</div>
