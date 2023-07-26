@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
+
 	export let skillName: string;
 	export let skillType: string;
 	export let proficiency: 1 | 2 | 3;
 	export let icon: string;
+	export let favorite: boolean;
 
 	$: proficiencyText =
 		proficiency === 1 ? 'Proficient' : proficiency === 2 ? 'Familiar' : 'Learning';
@@ -13,10 +16,24 @@
 			: proficiency === 2
 			? 'bg-blue-50 text-blue-700 ring-blue-600/20'
 			: 'bg-purple-50 text-purple-700 ring-purple-600/20';
+
+	let show = false;
 </script>
 
-<li>
-	<Icon {icon} class="mx-auto h-24 w-24 rounded-md" />
+<li
+	on:mouseover={() => (show = true)}
+	on:mouseout={() => (show = false)}
+	on:focus={() => console.log('')}
+	on:blur={() => console.log('')}
+>
+	<div class="relative">
+		<Icon {icon} class="mx-auto h-24 w-24 rounded-md" />
+		{#if favorite && show}
+			<div transition:fade={{ duration: 300 }}>
+				<Icon icon="mdi:heart" class="absolute top-0 right-0 h-6 w-6 text-red-600" />
+			</div>
+		{/if}
+	</div>
 	<h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{skillName}</h3>
 	<p class="text-sm leading-6 text-gray-600 pb-1">{skillType}</p>
 	<p

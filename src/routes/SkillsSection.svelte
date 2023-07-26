@@ -18,125 +18,210 @@
 			skillName="JavaScript"
 			skillType="Language"
 			proficiency={1}
+			favorite={true}
 			icon="logos:javascript"
 		/>
 		<SkillSectionItem
 			skillName="TypeScript"
 			skillType="Language"
 			proficiency={1}
+			favorite={true}
 			icon="logos:typescript-icon"
 		/>
-		<SkillSectionItem skillName="HTML" skillType="Language" proficiency={1} icon="logos:html-5" />
-		<SkillSectionItem skillName="CSS" skillType="Language" proficiency={1} icon="logos:css-3" />
-		<SkillSectionItem skillName="Python" skillType="Language" proficiency={3} icon="logos:python" />
+		<SkillSectionItem
+			skillName="HTML"
+			skillType="Language"
+			proficiency={1}
+			favorite={true}
+			icon="logos:html-5"
+		/>
+		<SkillSectionItem
+			skillName="CSS"
+			skillType="Language"
+			proficiency={1}
+			favorite={true}
+			icon="logos:css-3"
+		/>
+		<SkillSectionItem
+			skillName="Python"
+			skillType="Language"
+			proficiency={3}
+			favorite={true}
+			icon="logos:python"
+		/>
 		<SkillSectionItem
 			skillName="Svelte"
 			skillType="UI Framework"
 			proficiency={1}
+			favorite={true}
 			icon="logos:svelte-icon"
 		/>
-		<SkillSectionItem skillName="Vue" skillType="UI Framework" proficiency={1} icon="logos:vue" />
+		<SkillSectionItem
+			skillName="Vue"
+			skillType="UI Framework"
+			proficiency={1}
+			favorite={true}
+			icon="logos:vue"
+		/>
 		<SkillSectionItem
 			skillName="React"
 			skillType="UI Framework"
-			proficiency={2}
+			proficiency={1}
+			favorite={false}
 			icon="logos:react"
 		/>
 		<SkillSectionItem
-			skillName="Node.js"
+			skillName="Node"
 			skillType="Runtime"
 			proficiency={1}
+			favorite={true}
 			icon="logos:nodejs-icon"
 		/>
-		<SkillSectionItem skillName="TS Node" skillType="Runtime" proficiency={2} icon="logos:tsnode" />
+		<SkillSectionItem
+			skillName="TS Node"
+			skillType="Runtime"
+			proficiency={2}
+			favorite={true}
+			icon="logos:tsnode"
+		/>
 		<SkillSectionItem
 			skillName="Express"
 			skillType="Web Framework"
 			proficiency={1}
+			favorite={true}
 			icon="logos:express"
 		/>
 		<SkillSectionItem
 			skillName="SvelteKit"
 			skillType="Web Framework"
 			proficiency={1}
+			favorite={true}
 			icon="logos:svelte-kit"
 		/>
 		<SkillSectionItem
 			skillName="Nuxt"
 			skillType="Web Framework"
 			proficiency={1}
+			favorite={true}
 			icon="logos:nuxt-icon"
 		/>
 		<SkillSectionItem
 			skillName="Astro"
 			skillType="Web Framework"
 			proficiency={1}
+			favorite={true}
 			icon="logos:astro-icon"
 		/>
 		<SkillSectionItem
 			skillName="Supabase"
 			skillType="Database"
 			proficiency={1}
+			favorite={true}
 			icon="logos:supabase-icon"
 		/>
 		<SkillSectionItem
 			skillName="GitHub"
 			skillType="Version Control"
 			proficiency={1}
+			favorite={true}
 			icon="logos:github-icon"
 		/>
-		<SkillSectionItem skillName="OpenAI" skillType="API" proficiency={1} icon="logos:openai-icon" />
-		<SkillSectionItem skillName="Prisma" skillType="ORM" proficiency={1} icon="logos:prisma" />
+		<SkillSectionItem
+			skillName="OpenAI"
+			skillType="API"
+			proficiency={1}
+			favorite={true}
+			icon="logos:openai-icon"
+		/>
+		<SkillSectionItem
+			skillName="Prisma"
+			skillType="ORM"
+			proficiency={1}
+			favorite={true}
+			icon="logos:prisma"
+		/>
 		<SkillSectionItem
 			skillName="Tailwind"
 			skillType="CSS Framework"
 			proficiency={1}
+			favorite={true}
 			icon="logos:tailwindcss-icon"
 		/>
 		<SkillSectionItem
 			skillName="Vercel"
 			skillType="Hosting"
 			proficiency={1}
+			favorite={true}
 			icon="logos:vercel-icon"
 		/>
 		<SkillSectionItem
 			skillName="Vercel Postgres"
 			skillType="Database"
 			proficiency={1}
+			favorite={true}
 			icon="logos:vercel-icon"
 		/>
 		<SkillSectionItem
 			skillName="Vercel KV"
 			skillType="Database"
 			proficiency={1}
+			favorite={true}
 			icon="logos:vercel-icon"
 		/>
 		<SkillSectionItem
 			skillName="Vercel AI"
 			skillType="Package"
 			proficiency={1}
+			favorite={true}
 			icon="logos:vercel-icon"
 		/>
 		<SkillSectionItem
 			skillName="Puppeteer"
 			skillType="Package"
 			proficiency={1}
+			favorite={true}
 			icon="logos:puppeteer"
 		/>
 		<SkillSectionItem
 			skillName="Mapbox"
 			skillType="Package"
 			proficiency={1}
+			favorite={true}
 			icon="logos:mapbox-icon"
 		/>
-		<SkillSectionItem skillName="Zod" skillType="Package" proficiency={1} icon="logos:zod" />
-		<SkillSectionItem skillName="Vitest" skillType="Testing" proficiency={1} icon="logos:vitest" />
-		<SkillSectionItem skillName="Jest" skillType="Testing" proficiency={1} icon="logos:jest" />
-		<SkillSectionItem skillName="Mocha" skillType="Testing" proficiency={1} icon="logos:mocha" />
+		<SkillSectionItem
+			skillName="Zod"
+			skillType="Package"
+			proficiency={1}
+			favorite={true}
+			icon="logos:zod"
+		/>
+		<SkillSectionItem
+			skillName="Vitest"
+			skillType="Testing"
+			proficiency={1}
+			favorite={true}
+			icon="logos:vitest"
+		/>
+		<SkillSectionItem
+			skillName="Jest"
+			skillType="Testing"
+			proficiency={1}
+			favorite={true}
+			icon="logos:jest"
+		/>
+		<SkillSectionItem
+			skillName="Mocha"
+			skillType="Testing"
+			proficiency={1}
+			favorite={true}
+			icon="logos:mocha"
+		/>
 		<SkillSectionItem
 			skillName="Flask"
 			skillType="Web Framework"
 			proficiency={3}
+			favorite={true}
 			icon="logos:flask"
 		/>
 	</ul>
