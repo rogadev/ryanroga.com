@@ -38,7 +38,7 @@
 				>
 					<span class="font-semibold text-indigo-600">Hire me today</span>
 					<span class="h-4 w-px bg-gray-900/10" aria-hidden="true" />
-					<a href="/contact" class="flex items-center gap-x-1">
+					<a href="/resume" class="flex items-center gap-x-1">
 						<span class="absolute inset-0" aria-hidden="true" />
 						Read my resume
 						<svg
@@ -57,12 +57,12 @@
 				</div>
 			</div>
 			<h1 class="mt-10 max-w-lg text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-				Junior Web Developer in Halifax, NS
+				Web Developer in Halifax, NS
 			</h1>
 			<p class="mt-6 text-lg leading-8 text-gray-600">
 				Award winning business owner turned web developer, I finished my formal education in April
-				2023 graduating at the top of my class. I am currently seeking employment as a junior web
-				developer in Canada and the United States.
+				2023 graduating at the top of my class. I am currently seeking employment as a web developer
+				in Canada and the United States.
 			</p>
 			<div class="mt-10 flex items-center gap-x-6">
 				<a
