@@ -1,4 +1,8 @@
-<div class="bg-white">
+<script lang="ts">
+	import PageContentContainer from './PageContentContainer.svelte';
+</script>
+
+<PageContentContainer>
 	<div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
 		<div class="relative overflow-hidden rounded-lg">
 			<div class="absolute inset-0">
@@ -29,4 +33,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</PageContentContainer>

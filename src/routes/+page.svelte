@@ -1,6 +1,8 @@
 <script>
+	import PageDivider from '$lib/components/PageDivider.svelte';
 	import HeroSection from './HeroSection.svelte';
 	import SkillsSection from './SkillsSection.svelte';
+	import ProjectsSection from './ProjectsSection.svelte';
 </script>
 
 <svelte:head>
@@ -13,5 +15,9 @@
 
 <div class="flex flex-col bg-white">
 	<HeroSection />
+	<PageDivider />
 	<SkillsSection />
+	<PageDivider />
+	<ProjectsSection />
+	<PageDivider />
 </div>
