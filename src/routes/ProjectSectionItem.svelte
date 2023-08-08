@@ -14,7 +14,7 @@
 
 <article class="relative isolate flex flex-col gap-8 lg:flex-row">
 	<div class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0">
-		<a href={liveSite}>
+		<a href="/projects">
 			<img
 				{src}
 				{alt}
