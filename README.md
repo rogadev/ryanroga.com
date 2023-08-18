@@ -1,6 +1,6 @@
 # Hi, I'm Ryan
 
-I am an award-winning business owner turned web developer with a passion for business analysis and designing solutions for small businesses. I graduated with distinction from VIU's Web and Mobile Application Development program in April 2023.
+I am an award-winning business owner turned web developer with a passion for business analysis and designing solutions for small businesses. I graduated at the top of my class in April 2023 from the Web and Mobile Application Development program at Vancouver Island University.
 
 ## Work Experience
 
