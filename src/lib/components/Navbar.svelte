@@ -1,6 +1,5 @@
 <script lang="ts">
 	import NavbarMobileMenu from './NavbarMobileMenu.svelte';
-
 	import NavbarSocial from './NavbarSocial.svelte';
 	import NavbarLink from './NavbarLink.svelte';
 	import NavbarMobileMenuButton from './NavbarMobileMenuButton.svelte';
@@ -13,17 +12,12 @@
 			href: '/'
 		},
 		{
-			name: 'Projects',
-			href: '/projects'
-		},
-
-		{
-			name: 'Devlog',
-			href: '/devlog'
-		},
-		{
 			name: 'Contact',
 			href: '/contact'
+		},
+		{
+			name: 'Resume',
+			href: '/resume'
 		}
 	];
 	const socials = [
