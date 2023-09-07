@@ -230,41 +230,25 @@
 	</ul>
 
 	<h3 class="text-center bg-emerald-300">References</h3>
+	<p class="italic">Contact information available at request</p>
 	<p class="m-0 p-0">
 		<strong>David Croft, M.Eng., P.Eng.</strong>
 		<span class="italic">Instructor, Department Chair</span>
 	</p>
-	<p class="m-0 p-0">Information Technology & Applied Systems, Vancouver Island University</p>
-	<div class="mb-5">
-		<p class="m-0 p-0">Phone: <a href="tel:+12506196763">250-619-6763</a></p>
-		<p class="m-0 p-0">
-			Email: <a href="mailto:david.croft@itas.ca" target="_blank">david.croft@itas.ca</a>
-		</p>
-	</div>
+	<p class="m-0 p-0 mb-5">Information Technology & Applied Systems, Vancouver Island University</p>
 
 	<p class="m-0 p-0">
 		<strong>Michael Carpenter</strong>
 		<span class="italic">Web Manager</span>
 	</p>
-	<p class="m-0 p-0">Information Technology, Vancouver Island University</p>
-	<div class="mb-5">
-		<p class="m-0 p-0">Phone: <a href="tel:+12506180256">250-618-0256</a></p>
-		<p class="m-0 p-0">
-			Email: <a href="mailto:michael.carpenter@viu.ca" target="_blank">michael.carpenter@viu.ca</a>
-		</p>
-	</div>
+	<p class="m-0 p-0 mb-5">Information Technology, Vancouver Island University</p>
 
 	<p class="m-0 p-0">
 		<strong>Lené (Nile) Olenick</strong>
 		<span class="italic">Student,Tutoring Mentee</span>
 	</p>
-	<p class="m-0 p-0 font-semibold italic">See reference letter below</p>
-	<div class="mb-5">
-		<p class="m-0 p-0">Phone: <a href="tel:+12508025763">250-802-5763</a></p>
-		<p class="m-0 p-0">
-			Email: <a href="mailto:carrleen0195@outlook.com" target="_blank">carrleen0195@outlook.com</a>
-		</p>
-	</div>
+	<p class="m-0 p-0">Vancouver Island University</p>
+	<p class="m-0 p-0 font-semibold italic mb-5">See reference letter below</p>
 
 	<h3 class="text-center bg-emerald-300">Letter of Reference</h3>
 	<div>
