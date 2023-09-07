@@ -69,9 +69,12 @@
 	<h2 id="footer-heading" class="sr-only">Footer</h2>
 	<div class="mx-auto max-w-7xl px-6 pb-4 pt-8 sm:pt-12 lg:px-8 lg:pt-18">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
-			<div class="space-y-8">
-				<img class="h-7" src="/logo/android-chrome-192x192.png" alt="Roga.dev" />
-				<p class="text-sm leading-6 text-gray-600">Making better web tools for small business.</p>
+			<div class="space-y-6">
+				<div class="flex gap-4 items-center font-semibold leading-6 text-gray-600">
+					<img class="h-7" src="/logo/android-chrome-192x192.png" alt="Roga.dev" />
+					<p>Ryan Paranich</p>
+				</div>
+				<p class="text-sm leading-6 text-gray-600">Web Developer - Halifax, NS</p>
 				<div class="flex space-x-6">
 					{#each socials as { label, href, icon }}
 						<FooterSocial {label} {href} {icon} />
