@@ -1,6 +1,6 @@
 <script lang="ts">
 	import PageContentContainer from '$lib/components/PageContentContainer.svelte';
-	import SkillSectionItem from '../../lib/components/SkillSectionItem.svelte';
+	import SkillSectionItem from '$lib/components/SkillSectionItem.svelte';
 	import BackToTopDivider from './BackToTopDivider.svelte';
 	import skills from './skills';
 </script>
