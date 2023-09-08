@@ -4,7 +4,7 @@
 
 <svelte:head>
 	<title>Resume | Roga.dev</title>
-	<meta name="description" content="Contact Roga.dev" />
+	<meta name="description" content="Resume | Ryan Paranich" />
 </svelte:head>
 
 <section class="mx-auto max-w-5xl p-6 sticky top-0 border-b border-slate-800 pb-3 mb-3 bg-white">
