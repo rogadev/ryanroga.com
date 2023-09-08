@@ -1,5 +1,4 @@
 <script lang="ts">
-	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
 	import Icon from '@iconify/svelte';
 </script>
 
