@@ -27,25 +27,29 @@
 	];
 	const solutions = [
 		{
-			name: 'Web Applications',
-			href: '/solutions/web-applications'
-		},
-		{
-			name: 'Business Analysis',
-			href: '/solutions/business-analysis'
-		},
-		{
-			name: 'Business Consulting',
-			href: '/solutions/business-consulting'
-		},
-		{
-			name: 'Website Development',
-			href: '/solutions/website-development'
-		},
-		{
-			name: 'Online Marketing',
-			href: '/solutions/online-marketing'
+			name: 'Web Development',
+			href: '/resume'
 		}
+		// {
+		// 	name: 'Web Applications',
+		// 	href: '/solutions/web-applications'
+		// },
+		// {
+		// 	name: 'Business Analysis',
+		// 	href: '/solutions/business-analysis'
+		// },
+		// {
+		// 	name: 'Business Consulting',
+		// 	href: '/solutions/business-consulting'
+		// },
+		// {
+		// 	name: 'Website Development',
+		// 	href: '/solutions/website-development'
+		// },
+		// {
+		// 	name: 'Online Marketing',
+		// 	href: '/solutions/online-marketing'
+		// }
 	];
 	const projects = [
 		{
