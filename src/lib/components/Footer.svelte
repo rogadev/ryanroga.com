@@ -19,37 +19,12 @@
 			href: 'https://www.youtube.com/channel/UCGGXaakYjoujLmC53eYw4sQ',
 			icon: 'mdi:youtube'
 		}
-		// {
-		// 	label: 'TikTok',
-		// 	href: 'https://www.tiktok.com/@technicallycreative',
-		// 	icon: 'ic:baseline-tiktok'
-		// }
 	];
 	const solutions = [
 		{
 			name: 'Web Development',
 			href: '/resume'
 		}
-		// {
-		// 	name: 'Web Applications',
-		// 	href: '/solutions/web-applications'
-		// },
-		// {
-		// 	name: 'Business Analysis',
-		// 	href: '/solutions/business-analysis'
-		// },
-		// {
-		// 	name: 'Business Consulting',
-		// 	href: '/solutions/business-consulting'
-		// },
-		// {
-		// 	name: 'Website Development',
-		// 	href: '/solutions/website-development'
-		// },
-		// {
-		// 	name: 'Online Marketing',
-		// 	href: '/solutions/online-marketing'
-		// }
 	];
 	const projects = [
 		{
