@@ -1,11 +1,10 @@
 <script lang="ts">
-	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
 	import Icon from '@iconify/svelte';
 </script>
 
 <svelte:head>
 	<title>Resume | Roga.dev</title>
-	<meta name="description" content="Contact Roga.dev" />
+	<meta name="description" content="Resume | Ryan Paranich" />
 </svelte:head>
 
 <section class="mx-auto max-w-5xl p-6 sticky top-0 border-b border-slate-800 pb-3 mb-3 bg-white">
@@ -15,10 +14,10 @@
 			<h2 class="text-3xl mb-2">Full-Stack Web Developer</h2>
 		</div>
 		<div class="flex flex-col sm:flex-row justify-end items-end">
-			<a href="https://github.com/rogadev" target="_blank">
+			<a class="h-10 w-10" href="https://github.com/rogadev" target="_blank">
 				<Icon class="h-10 w-10 hover:text-black transition-colors" icon="mdi:github-box" />
 			</a>
-			<a href="https://www.linkedin.com/in/ryanroga/" target="_blank">
+			<a class="h-10 w-10" href="https://www.linkedin.com/in/ryanroga/" target="_blank">
 				<Icon class="h-10 w-10 hover:text-black transition-colors" icon="mdi:linkedin" />
 			</a>
 		</div>
