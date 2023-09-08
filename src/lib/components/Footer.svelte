@@ -18,51 +18,34 @@
 			label: 'YouTube',
 			href: 'https://www.youtube.com/channel/UCGGXaakYjoujLmC53eYw4sQ',
 			icon: 'mdi:youtube'
-		},
-		{
-			label: 'TikTok',
-			href: 'https://www.tiktok.com/@technicallycreative',
-			icon: 'ic:baseline-tiktok'
 		}
 	];
 	const solutions = [
 		{
-			name: 'Business Analysis',
-			href: '#'
-		},
-		{
-			name: 'Business Consulting',
-			href: '#'
-		},
-		{
-			name: 'Web Applications',
-			href: '#'
-		},
-		{
-			name: 'Website Development',
-			href: '#'
-		},
-		{
-			name: 'Online Marketing',
-			href: '#'
+			name: 'Web Development',
+			href: '/resume'
 		}
 	];
 	const projects = [
 		{
 			name: 'Career Outlooks',
 			href: 'https://viu-career-outlooks.vercel.app'
-		}
-	];
-	const company = [
-		{
-			name: 'Press',
-			href: '#'
 		},
 		{
-			name: 'Partners',
-			href: '#'
+			name: 'EzTripr',
+			href: 'https://eztripr.com'
 		}
 	];
+	// const company = [
+	// 	{
+	// 		name: 'Press',
+	// 		href: '/press'
+	// 	},
+	// 	{
+	// 		name: 'Partners',
+	// 		href: '/partners'
+	// 	}
+	// ];
 </script>
 
 <footer class="bg-white" aria-labelledby="footer-heading">
@@ -101,14 +84,14 @@
 					</div>
 				</div>
 				<div class="md:grid md:grid-cols-2 md:gap-8">
-					<div>
+					<!-- <div>
 						<h3 class="text-sm font-semibold leading-6 text-gray-900">Company</h3>
 						<ul role="list" class="mt-6 space-y-4">
 							{#each company as { name, href }}
 								<FooterItem {name} {href} />
 							{/each}
 						</ul>
-					</div>
+					</div> -->
 					<div class="mt-10 md:mt-0">
 						<h3 class="text-sm font-semibold leading-6 text-gray-900">Legal</h3>
 						<ul role="list" class="mt-6 space-y-4">
