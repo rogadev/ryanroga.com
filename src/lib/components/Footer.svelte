@@ -18,49 +18,53 @@
 			label: 'YouTube',
 			href: 'https://www.youtube.com/channel/UCGGXaakYjoujLmC53eYw4sQ',
 			icon: 'mdi:youtube'
-		},
-		{
-			label: 'TikTok',
-			href: 'https://www.tiktok.com/@technicallycreative',
-			icon: 'ic:baseline-tiktok'
 		}
+		// {
+		// 	label: 'TikTok',
+		// 	href: 'https://www.tiktok.com/@technicallycreative',
+		// 	icon: 'ic:baseline-tiktok'
+		// }
 	];
 	const solutions = [
 		{
+			name: 'Web Applications',
+			href: '/solutions/web-applications'
+		},
+		{
 			name: 'Business Analysis',
-			href: '#'
+			href: '/solutions/business-analysis'
 		},
 		{
 			name: 'Business Consulting',
-			href: '#'
-		},
-		{
-			name: 'Web Applications',
-			href: '#'
+			href: '/solutions/business-consulting'
 		},
 		{
 			name: 'Website Development',
-			href: '#'
+			href: '/solutions/website-development'
 		},
 		{
 			name: 'Online Marketing',
-			href: '#'
+			href: '/solutions/online-marketing'
 		}
 	];
 	const projects = [
 		{
 			name: 'Career Outlooks',
 			href: 'https://viu-career-outlooks.vercel.app'
+		},
+		{
+			name: 'EzTripr',
+			href: 'https://eztripr.com'
 		}
 	];
 	const company = [
 		{
 			name: 'Press',
-			href: '#'
+			href: '/press'
 		},
 		{
 			name: 'Partners',
-			href: '#'
+			href: '/partners'
 		}
 	];
 </script>
