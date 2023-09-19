@@ -30,7 +30,7 @@
 </section>
 <main class="mx-auto max-w-5xl p-6 prose">
 	<p>
-		Highly proficient, web developer with full-stack web development experience, specializing in
+		Highly proficient web developer with full-stack web development experience, specializing in
 		creating dynamic web applications using SvelteKit, Nuxt 3, and Astro. Demonstrated expertise in
 		full-stack development, e-commerce, and building business-focused web applications along with a
 		proven ability to lead projects from inception to completion. A committed self-starter with
