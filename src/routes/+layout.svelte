@@ -3,16 +3,8 @@
 	import '../styles.css';
 </script>
 
-<div class="app bg-white">
+<div class="flex flex-col min-h-screen bg-white">
 	<div class="h-full w-full">
 		<slot />
 	</div>
 </div>
-
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-</style>
