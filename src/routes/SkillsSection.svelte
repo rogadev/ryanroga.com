@@ -1,7 +1,5 @@
 <script lang="ts">
-	import SkillListItem from './SkillListItem.svelte';
-
-	import Icon from '@iconify/svelte';
+	import SkillListItem from '$lib/components/SkillSectionItem.svelte';
 </script>
 
 <div class="bg-white h-full w-full">
@@ -325,34 +323,238 @@
 		<!-- Skills section -->
 		<div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8">
 			<div class="mx-auto max-w-2xl lg:mx-0">
-				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-					Skills & Technology
-				</h2>
+				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Skills</h2>
 				<p class="mt-6 text-lg leading-8 text-gray-600">
-					<!-- TODO Fill out a brief skills description paragraph -->
+					The following is a list of languages and technology I've used, enjoyed using, and would
+					use again.
 				</p>
 			</div>
 			<ul
 				role="list"
 				class="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
 			>
-				<SkillListItem icon="logos:typescript-icon">TypeScript</SkillListItem>
-				<SkillListItem icon="logos:javascript">JavaScript</SkillListItem>
-				<SkillListItem icon="logos:html-5">HTML</SkillListItem>
-				<SkillListItem icon="logos:css-3">CSS</SkillListItem>
-				<SkillListItem icon="logos:svelte-icon">Svelte</SkillListItem>
-				<SkillListItem icon="logos:vue">Vue</SkillListItem>
-				<SkillListItem icon="logos:react">React</SkillListItem>
-				<SkillListItem icon="logos:nuxt-icon">Nuxt</SkillListItem>
-				<SkillListItem icon="logos:svelte-kit">SvelteKit</SkillListItem>
-				<SkillListItem icon="logos:astro-icon">Astro</SkillListItem>
-				<SkillListItem icon="logos:nodejs-icon">Node</SkillListItem>
-				<SkillListItem icon="logos:express">Express</SkillListItem>
-				<SkillListItem icon="logos:puppeteer">Puppeteer</SkillListItem>
-				<SkillListItem icon="logos:openai-icon">OpenAI API</SkillListItem>
-				<SkillListItem icon="logos:mapbox-icon">Mapbox</SkillListItem>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Language"
+					skillName="TypeScript"
+					icon="logos:typescript-icon">TypeScript</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Language"
+					skillName="JavaScript"
+					icon="logos:javascript">JavaScript</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Language"
+					skillName="HTML"
+					icon="logos:html-5">HTML</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Language"
+					skillName="CSS"
+					icon="logos:css-3">CSS</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Framework"
+					skillName="Svelte"
+					icon="logos:svelte-icon">Svelte</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Framework"
+					skillName="Vue"
+					icon="logos:vue">Vue</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Framework"
+					skillName="React"
+					icon="logos:react">React</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Framework"
+					skillName="Nuxt"
+					icon="logos:nuxt-icon">Nuxt</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Framework"
+					skillName="SvelteKit"
+					icon="logos:svelte-kit">SvelteKit</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Framework"
+					skillName="Astro"
+					icon="logos:astro-icon">Astro</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Framework"
+					skillName="Node"
+					icon="logos:nodejs-icon">Node</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Framework"
+					skillName="Express"
+					icon="logos:express">Express</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="Web Scraping"
+					skillName="Puppeteer"
+					icon="logos:puppeteer">Puppeteer</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="API"
+					skillName="OpenAI API"
+					icon="logos:openai-icon">OpenAI API</SkillListItem
+				>
+				<SkillListItem
+					favorite={true}
+					proficiency={3}
+					skillType="API"
+					skillName="Mapbox"
+					icon="logos:mapbox-icon">Mapbox</SkillListItem
+				>
+			</ul>
+		</div>
 
-				<!-- More people... -->
+		<div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8">
+			<div class="mx-auto max-w-2xl lg:mx-0">
+				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Roadmap</h2>
+				<p class="mt-6 text-lg leading-8 text-gray-600" />
+			</div>
+			<ul
+				role="list"
+				class="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
+			>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="TypeScript"
+					icon="logos:typescript-icon">TypeScript</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="JavaScript"
+					icon="logos:javascript">JavaScript</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="HTML"
+					icon="logos:html-5">HTML</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="CSS"
+					icon="logos:css-3">CSS</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="Svelte"
+					icon="logos:svelte-icon">Svelte</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="Vue"
+					icon="logos:vue">Vue</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="React"
+					icon="logos:react">React</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="Nuxt"
+					icon="logos:nuxt-icon">Nuxt</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="SvelteKit"
+					icon="logos:svelte-kit">SvelteKit</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="Astro"
+					icon="logos:astro-icon">Astro</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="Node"
+					icon="logos:nodejs-icon">Node</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Framework"
+					skillName="Express"
+					icon="logos:express">Express</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="Web Scraping"
+					skillName="Puppeteer"
+					icon="logos:puppeteer">Puppeteer</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="API"
+					skillName="API"
+					icon="logos:openai-icon">OpenAI API</SkillListItem
+				>
+				<SkillListItem
+					proficiency={3}
+					favorite={true}
+					skillType="API"
+					skillName="Mapbox"
+					icon="logos:mapbox-icon">Mapbox</SkillListItem
+				>
 			</ul>
 		</div>
 

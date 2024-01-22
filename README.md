@@ -1,10 +1,16 @@
 # Hi, I'm Ryan
 
-I am an award-winning business owner turned web developer with a passion for business analysis and designing solutions for small businesses. I graduated with distinction from VIU's Web and Mobile Application Development program in April 2023.
+I am an award-winning business owner turned web developer with a passion for business analysis and designing solutions for small businesses. I graduated at the top of my class in April 2023 from the Web and Mobile Application Development program at Vancouver Island University.
 
 ## Work Experience
 
-Not only did I attend VIU, but I worked there, too. As a web developer with the Vancouver Island University web department, I championed a [web app that helps future students](https://career-outlooks.viu.ca) connect to real-time, 3-year outlook data for every job a given VIU credential might afford you upon graduation. I have also worked on several side projects over the past few years, including developing a [driving app](https://eztripr.com) for medical companions who take dialysis patients to/from appointments all over Vancouver Island, and a [window cleaning project evaluation tool](https://www.ezeval.app/) that is used by my old business and its new ownership. There are plenty of other cool little projects that I'm working on, including a new portfolio website, and you can check out [roga.dev](https://roga.dev) to see those updates as they're announced.
+During my time at Vancouver Island University (VIU), I not only studied there but also worked as a web developer within the university's web department. I led the development of a [web app](https://career-outlooks.viu.ca) to connect students with real-time, 3-year outlook data for careers related to every credential that VIU has to offer. 
+
+Outside of my work at VIU, I have developed several side-projects that are still in use today, including:
+- A [driving app](https://eztripr.com) designed to assist medical companions in transporting dialysis patients across Vancouver Island.
+- A [project evaluation tool](https://www.ezeval.app/) for window cleaners, still in use by my previous business and its new owners.
+
+For additional projects, including my new portfolio website, please visit [roga.dev](https://roga.dev) to see updates as they are announced.
 
 ## Projects
 
