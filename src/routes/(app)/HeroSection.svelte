@@ -61,8 +61,8 @@
 			</h1>
 			<p class="mt-6 text-lg leading-8 text-gray-600">
 				Award winning business owner turned web developer, I finished my formal education in April
-				2023 graduating at the top of my class. I am currently seeking employment as a web developer
-				in Canada and the United States.
+				2023, graduating at the top of my class. I am currently seeking employment as a web
+				developer in Canada, Germany, or the United States.
 			</p>
 			<div class="mt-10 flex items-center gap-x-6">
 				<a
