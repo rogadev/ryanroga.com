@@ -1,11 +1,15 @@
 <script>
+	import Navbar from '$lib/components/Navbar.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import '../app.postcss';
 	import '../styles.css';
 </script>
 
 <div class="app bg-white">
 	<div class="h-full w-full">
+		<Navbar />
 		<slot />
+		<Footer />
 	</div>
 </div>
 
