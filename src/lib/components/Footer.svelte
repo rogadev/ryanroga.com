@@ -13,26 +13,33 @@
 			label: 'LinkedIn',
 			href: 'https://www.linkedin.com/in/rogadev/',
 			icon: 'mdi:linkedin'
-		},
-		{
-			label: 'YouTube',
-			href: 'https://www.youtube.com/channel/UCGGXaakYjoujLmC53eYw4sQ',
-			icon: 'mdi:youtube'
 		}
 	];
 	const solutions = [
 		{
-			name: 'Web Development',
-			href: '/resume'
+			name: 'AI Training for Teams',
+			href: '/ai'
+		},
+		{
+			name: 'One-on-one AI Coaching',
+			href: '/ai'
+		},
+		{
+			name: 'Web Application Development',
+			href: '/portfolio'
 		}
 	];
 	const projects = [
 		{
-			name: 'Career Outlooks',
+			name: 'CarEvo Lot Logistics',
+			href: 'https://logistics.carevo.ca'
+		},
+		{
+			name: 'VIU Career Outlooks',
 			href: 'https://viu-career-outlooks.vercel.app'
 		},
 		{
-			name: 'EzTripr',
+			name: 'GGG Driver Trip Tracking',
 			href: 'https://eztripr.com'
 		}
 	];
@@ -55,9 +62,8 @@
 			<div class="space-y-6">
 				<div class="flex gap-4 items-center font-semibold leading-6 text-gray-600">
 					<img class="h-7" src="/logo/android-chrome-192x192.png" alt="Roga.dev" />
-					<p>Ryan Paranich</p>
+					<p>Roga Web Development</p>
 				</div>
-				<p class="text-sm leading-6 text-gray-600">Web Developer - Halifax, NS</p>
 				<div class="flex space-x-6">
 					{#each socials as { label, href, icon }}
 						<FooterSocial {label} {href} {icon} />
