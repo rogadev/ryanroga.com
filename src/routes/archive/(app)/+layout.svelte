@@ -4,11 +4,11 @@
 </script>
 
 <header>
-	<Navbar />
+	<!-- <Navbar /> -->
 </header>
 
 <div class="h-full w-full">
 	<slot />
 </div>
 
-<Footer />
+<!-- <Footer /> -->
