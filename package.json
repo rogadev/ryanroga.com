@@ -43,6 +43,6 @@
 	},
 	"type": "module",
 	"engines": {
-		"node": ">=20.0"
+		"node": "18.x"
 	}
 }
