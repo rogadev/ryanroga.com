@@ -2,7 +2,7 @@
 	"name": "rogadev",
 	"version": "0.0.1",
 	"engines": {
-		"node": "21.x"
+		"node": "18.x"
 	},
 	"scripts": {
 		"dev": "vite dev",
