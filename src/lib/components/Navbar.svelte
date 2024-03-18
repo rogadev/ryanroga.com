@@ -6,14 +6,14 @@
 			name: 'Development',
 			href: '/development'
 		},
-		{
-			name: 'AI Training',
-			href: '/ai'
-		},
-		{
-			name: 'Portfolio',
-			href: '/portfolio'
-		},
+		// {
+		// 	name: 'AI Training',
+		// 	href: '/ai'
+		// },
+		// {
+		// 	name: 'Portfolio',
+		// 	href: '/portfolio'
+		// },
 		{
 			name: 'Resume',
 			href: '/resume'
