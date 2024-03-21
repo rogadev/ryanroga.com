@@ -1,70 +1,130 @@
-<script lang="ts">
-	import NavbarMobileMenu from './NavbarMobileMenu.svelte';
-	import NavbarSocial from './NavbarSocial.svelte';
-	import NavbarLink from './NavbarLink.svelte';
-	import NavbarMobileMenuButton from './NavbarMobileMenuButton.svelte';
+<script>
+	import { fade } from 'svelte/transition';
 
-	let showMobileMenu = false;
-
-	const pages = [
+	const tabs = [
 		{
-			name: 'Home',
-			href: '/'
+			name: 'Development',
+			href: '/development'
 		},
-		{
-			name: 'Contact',
-			href: '/contact'
-		},
+		// {
+		// 	name: 'AI Training',
+		// 	href: '/ai'
+		// },
+		// {
+		// 	name: 'Portfolio',
+		// 	href: '/portfolio'
+		// },
 		{
 			name: 'Resume',
 			href: '/resume'
 		}
 	];
-	const socials = [
-		{
-			label: 'GitHub',
-			href: 'https://github.com/rogadev',
-			icon: 'mdi:github',
-			color: '#333'
-		},
-		{
-			label: 'LinkedIn',
-			href: 'https://www.linkedin.com/in/ryanroga/',
-			icon: 'mdi:linkedin',
-			color: '#333'
-		}
-	];
-
-	const toggleMobileMenu = () => {
-		showMobileMenu = !showMobileMenu;
-	};
+	let isMobileMenuOpen = false;
 </script>
 
-<nav class="bg-white shadow mb-[2px] {showMobileMenu ? 'sticky top-0' : ''}">
-	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-		<div class="relative flex h-16 justify-between">
-			<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-				<NavbarMobileMenuButton open={showMobileMenu} {toggleMobileMenu} />
-			</div>
-			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-				<a href="/" class="flex flex-shrink-0 items-center">
-					<img class="h-8 w-auto" src="/logo/android-chrome-192x192.png" alt="Roga.dev" />
-				</a>
-				<div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-					{#each pages as { href, name }}
-						<NavbarLink {href}>{name}</NavbarLink>
-					{/each}
+<header class="absolute inset-x-0 top-0 z-50">
+	<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+		<div class="flex lg:flex-1">
+			<a href="/" class="-m-1.5 p-1.5">
+				<span class="sr-only">Roga Web Development</span>
+				<img class="h-8 w-auto" src="/logo/favicon-32x32.png" alt="Roga Web Development Logo" />
+			</a>
+		</div>
+		<div class="flex lg:hidden">
+			<button
+				on:click={() => {
+					isMobileMenuOpen = !isMobileMenuOpen;
+				}}
+				type="button"
+				class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+			>
+				<span class="sr-only">Open main menu</span>
+				<svg
+					class="h-6 w-6"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					aria-hidden="true"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+					/>
+				</svg>
+			</button>
+		</div>
+		<div class="hidden lg:flex lg:gap-x-12">
+			{#each tabs as { name, href }}
+				<a {href} class="text-sm font-semibold leading-6 text-gray-900">{name}</a>
+			{/each}
+		</div>
+		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
+			<a
+				href="mailto:ryan@roga.dev"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-sm font-semibold leading-6 text-gray-900"
+			>
+				Contact me <span aria-hidden="true">&rarr;</span>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile menu, show/hide based on menu open state. -->
+	{#if isMobileMenuOpen}
+		<div transition:fade class="lg:hidden" role="dialog" aria-modal="true">
+			<!-- Background backdrop, show/hide based on slide-over state. -->
+			<div class="fixed inset-0 z-50" />
+			<div
+				class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+			>
+				<div class="flex items-center justify-between">
+					<a href="/" class="-m-1.5 p-1.5">
+						<span class="sr-only">Roga Web Development</span>
+						<img class="h-8 w-auto" src="/logo/favicon-32x32.png" alt="Roga Web Development Logo" />
+					</a>
+					<button
+						on:click={() => {
+							isMobileMenuOpen = !isMobileMenuOpen;
+						}}
+						type="button"
+						class="-m-2.5 rounded-md p-2.5 text-gray-700"
+					>
+						<span class="sr-only">Close menu</span>
+						<svg
+							class="h-6 w-6"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							aria-hidden="true"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</button>
+				</div>
+				<div class="mt-6 flow-root">
+					<div class="-my-6 divide-y divide-gray-500/10">
+						<div class="space-y-2 py-6">
+							{#each tabs as { name, href }}
+								<a
+									{href}
+									class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+									>{name}</a
+								>
+							{/each}
+						</div>
+						<!-- <div class="py-6">
+						<a
+							href="#"
+							class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+							>Log in</a
+						>
+					</div> -->
+					</div>
 				</div>
 			</div>
-			<div
-				class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
-			>
-				{#each socials as { label, href, icon, color }}
-					<NavbarSocial {label} {href} {icon} {color} />
-				{/each}
-			</div>
 		</div>
-	</div>
-
-	<NavbarMobileMenu {pages} open={showMobileMenu} on:close={() => (showMobileMenu = false)} />
-</nav>
+	{/if}
+</header>
