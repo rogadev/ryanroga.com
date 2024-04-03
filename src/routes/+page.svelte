@@ -38,9 +38,9 @@
 			<a
 				href="mailto:ryan@roga.dev"
 				target="_blank"
-				rel="noopener noreferrer"
 				class="text-sm font-semibold leading-6 text-gray-900"
-				>Get in touch <span aria-hidden="true">→</span></a
+			>
+				Get in touch <span aria-hidden="true">→</span></a
 			>
 		</div>
 	</div>
