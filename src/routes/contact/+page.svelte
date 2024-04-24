@@ -1,10 +1,9 @@
 <script lang="ts">
-	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
 	import Icon from '@iconify/svelte';
 </script>
 
 <svelte:head>
-	<title>Contact | Roga.dev</title>
+	<title>Contact Me</title>
 	<meta name="description" content="Contact Roga.dev" />
 </svelte:head>
 
