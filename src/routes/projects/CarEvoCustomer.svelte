@@ -2,7 +2,7 @@
 	<div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
 		<p class="text-base font-semibold leading-7 text-indigo-600">CarEvo Auto Solutions</p>
 		<h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-			CustomerVehicle Maintenance Tracker
+			Customer Maintenance Tracker
 		</h1>
 		<p class="mt-6 text-xl leading-8">
 			A loyalty platform promoting regular vehicle maintenance, rewarding customers with improved
