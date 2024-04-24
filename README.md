@@ -2,7 +2,17 @@
 
 I am an award-winning business owner turned web developer with a passion for business analysis and designing solutions for small businesses. I graduated at the top of my class in April 2023 from the Web and Mobile Application Development program at Vancouver Island University.
 
-## Work Experience
+## Current Projects
+
+### CarEvo Logistics Web Application
+
+[CarEvo](https://carevo.ca/), a premier online car dealership based in Dartmouth, NS, Canada, manages an impressive inventory turnover, delivering over 200 vehicles monthly across five eastern provinces. This high volume and geographic spread present distinct logistical challenges. To address these, I am developing a specialized logistics web application tailored to CarEvo's unique requirements. The application provides real-time tracking of vehicles in transit to and from various vendors, lots, and appointments, while also capturing critical information such as cleanliness, tire, battery, and fuel status. Featuring a dedicated vendor portal, it enables seamless updates on vehicle condition, service approvals, parts waiting times, and completion statuses. This solution is designed to streamline CarEvo's operations, ensuring efficiency and satisfaction at every step of the delivery process. I am currently the solo developer on this project.
+
+### CarEvo Customer Web Application
+
+Building upon my collaboration with [CarEvo](https://carevo.ca/), we are introducing a cutting-edge customer web application designed to enhance the ownership experience. This innovative platform assists customers in managing their vehicle expenses and adhering to essential maintenance schedules, such as oil changes, tire rotations, and more. Beyond just a tool for upkeep, the application fosters a unique bond between CarEvo and its clientele. By following tailored maintenance recommendations, customers can secure a higher trade-in value for their vehicles, paving the way for an advantageous upgrade down the road. This strategy not only elevates the customer's experience but also fortifies loyalty to CarEvo, significantly boosting the likelihood of repeat business. The application represents a reciprocal benefit: it deepens customer relationships while simultaneously driving CarEvo's customer retention rates upward.
+
+## Previous Work Experience
 
 During my time at Vancouver Island University (VIU), I not only studied there but also worked as a web developer within the university's web department. I led the development of a [web app](https://career-outlooks.viu.ca) to connect students with real-time, 3-year outlook data for careers related to every credential that VIU has to offer. 
 

@@ -7,10 +7,13 @@
 
 <div class="flex flex-col min-h-screen bg-white">
 	<div class="h-full w-full">
-		<header>
+		<div class="bg-white">
 			<Navbar />
-		</header>
-		<slot />
+
+			<div class="relative isolate px-6 pt-14 lg:px-8">
+				<slot />
+			</div>
+		</div>
 		<Footer />
 	</div>
 </div>

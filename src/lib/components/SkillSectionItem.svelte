@@ -6,7 +6,6 @@
 	export let skillType: string;
 	export let proficiency: 1 | 2 | 3;
 	export let icon: string;
-	export let favorite: boolean;
 
 	$: proficiencyText =
 		proficiency === 1 ? 'Proficient' : proficiency === 2 ? 'Familiar' : 'Learning';
