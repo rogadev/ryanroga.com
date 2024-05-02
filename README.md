@@ -1,58 +1,77 @@
-# Hi, I'm Ryan
+# Hi, I'm Ryan! 👋
 
-I am an award-winning business owner turned web developer with a passion for business analysis and designing solutions for small businesses. I graduated at the top of my class in April 2023 from the Web and Mobile Application Development program at Vancouver Island University.
+## About Me
+🌐 I'm a full-stack web developer with an education in web and mobile application development. Having honed my skills through a combination of education and real-world experience, I graduated from Vancouver Island University in 2023, where I excelled academically and professionally. Since graduating, I've worked primarily as a freelancer, developing software solutions that address complex and dynamic business needs. Committed to growth and innovation within a team environment, I am eagerly looking for a full-time position where I can contribute to meaningful projects and collaborate with like-minded professionals.
 
-## Current Projects
+🚀 I specialize in creating dynamic solutions for business operations and logistics management, task automation, customer relationship enhancements, AI integration and educational tools. My projects emphasize functional interfaces, streamlined user experiences, and robust backend architectures.
 
-### CarEvo Logistics Web Application
+🔍 Currently, I am seeking a full-time position where I can bring my innovative approach to a collaborative team, working on impactful projects.
 
-[CarEvo](https://carevo.ca/), a premier online car dealership based in Dartmouth, NS, Canada, manages an impressive inventory turnover, delivering over 200 vehicles monthly across five eastern provinces. This high volume and geographic spread present distinct logistical challenges. To address these, I am developing a specialized logistics web application tailored to CarEvo's unique requirements. The application provides real-time tracking of vehicles in transit to and from various vendors, lots, and appointments, while also capturing critical information such as cleanliness, tire, battery, and fuel status. Featuring a dedicated vendor portal, it enables seamless updates on vehicle condition, service approvals, parts waiting times, and completion statuses. This solution is designed to streamline CarEvo's operations, ensuring efficiency and satisfaction at every step of the delivery process. I am currently the solo developer on this project.
+📬 Reach out to me at: [ryan@roga.dev](mailto:ryan@roga.dev) | [LinkedIn Profile]([Your-LinkedIn-URL](https://www.linkedin.com/in/ryanroga/))
 
-### CarEvo Customer Web Application
+## Languages & Tools:
+A list of some of the technologies I reach for and use regularly
 
-Building upon my collaboration with [CarEvo](https://carevo.ca/), we are introducing a cutting-edge customer web application designed to enhance the ownership experience. This innovative platform assists customers in managing their vehicle expenses and adhering to essential maintenance schedules, such as oil changes, tire rotations, and more. Beyond just a tool for upkeep, the application fosters a unique bond between CarEvo and its clientele. By following tailored maintenance recommendations, customers can secure a higher trade-in value for their vehicles, paving the way for an advantageous upgrade down the road. This strategy not only elevates the customer's experience but also fortifies loyalty to CarEvo, significantly boosting the likelihood of repeat business. The application represents a reciprocal benefit: it deepens customer relationships while simultaneously driving CarEvo's customer retention rates upward.
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
+![Nuxt.js](https://img.shields.io/badge/-Nuxt.js-00DC82?style=flat&logo=nuxt.js&logoColor=white)
+![Svelte](https://img.shields.io/badge/-Svelte-FF3E00?style=flat&logo=svelte&logoColor=white)
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/-Express-000000?style=flat&logo=express&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white)
+![Prisma](https://img.shields.io/badge/-Prisma-2D3748?style=flat&logo=prisma&logoColor=white)
+![Supabase](https://img.shields.io/badge/-Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white)
+![OpenAI API](https://img.shields.io/badge/-OpenAI_API-412991?style=flat&logo=openai&logoColor=white)
+![Vitest](https://img.shields.io/badge/-Vitest-4B8BBE?style=flat&logo=vitest&logoColor=white)
+![Jest](https://img.shields.io/badge/-Jest-C21325?style=flat&logo=jest&logoColor=white)
+![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)
+![npm](https://img.shields.io/badge/-npm-CB3837?style=flat&logo=npm&logoColor=white)
+![pnpm](https://img.shields.io/badge/-pnpm-F69220?style=flat&logo=pnpm&logoColor=white)
+![yarn](https://img.shields.io/badge/-Yarn-2C8EBB?style=flat&logo=yarn&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 
-## Previous Work Experience
+## Additional Technologies:
+I have practical experience with a variety of other technologies, which I am capable of using effectively in projects and am actively enhancing my skills in:
 
-During my time at Vancouver Island University (VIU), I not only studied there but also worked as a web developer within the university's web department. I led the development of a [web app](https://career-outlooks.viu.ca) to connect students with real-time, 3-year outlook data for careers related to every credential that VIU has to offer. 
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=white)
+![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat&logo=next.js&logoColor=white)
+![AWS](https://img.shields.io/badge/-AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white)
+![GCP](https://img.shields.io/badge/-Google_Cloud_Platform-4285F4?style=flat&logo=google-cloud&logoColor=white)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
+![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![JWT](https://img.shields.io/badge/-JWT-000000?style=flat&logo=json-web-tokens&logoColor=white)
+![OAuth](https://img.shields.io/badge/-OAuth-EB5424?style=flat&logo=oauth&logoColor=white)
+![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)
+![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
+![Cypress](https://img.shields.io/badge/-Cypress-17202C?style=flat&logo=cypress&logoColor=white)
+![Mocha](https://img.shields.io/badge/-Mocha-8D6748?style=flat&logo=mocha&logoColor=white)
+![IoT](https://img.shields.io/badge/-IoT-3C873A?style=flat&logo=internet-of-things&logoColor=white)
+![Microcontrollers](https://img.shields.io/badge/-Microcontrollers-007ACC?style=flat&logo=arduino&logoColor=white)
 
-Outside of my work at VIU, I have developed several side-projects that are still in use today, including:
-- A [driving app](https://eztripr.com) designed to assist medical companions in transporting dialysis patients across Vancouver Island.
-- A [project evaluation tool](https://www.ezeval.app/) for window cleaners, still in use by my previous business and its new owners.
+## Featured Projects
 
-For additional projects, including my new portfolio website, please visit [roga.dev](https://roga.dev) to see updates as they are announced.
+### [CarEvo Logistics Web Application](https://github.com/rogadev/carEvo-logistics)
+* A comprehensive logistics system for a high-volume car dealership in Dartmouth, NS, improving vehicle tracking and service efficiency.
 
-## Projects
+### [Window Cleaning Project Evaluation Tool](https://github.com/rogadev/roga-window-quoter)
+* An application developed for my own business, now widely used in the industry to improve quotation accuracy and customer satisfaction.
 
-| Project | Repo | Demo | Tech Stack |
-| --- | --- | --- | --- |
-| Capstone Project, EzTripr | [GitHub](https://github.com/rogadev/capstone) | [Presentation](https://www.canva.com/design/DAFfid4eMDA/XdWkNkor_7pZTy1r3YTySw/edit?utm_content=DAFfid4eMDA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | TypeScript, Nuxt 3, Vue 3, Pinia, DaisyUI, Mapbox GL, TailwindCSS, Zod, Vitest, Prisma, Supabase, Nuxt Test Utils, OpenAI API, Google Maps Distance Matrix API |
-| Simple Password Generator | [GitHub](https://github.com/rogadev/roga-password-generator) | [Live Site](https://passwords.roga.dev) | JavaScript, Vue 3, TailwindCSS |
-| VIU Career Outlooks | [GitHub](https://github.com/rogadev/viu-career-outlooks) | [Live Site](https://viu-career-outlooks.vercel.app/) | SvelteKit, JavaScript, Node/Express, Puppeteer, Prisma, Vercel KV, Fuse.js, Node-Cache, Vitest | 
-| Small Business Website, CMS | [GitHub](https://github.com/rogadev/ITAS268_FinalProject) | [Live Site](https://victoria.mossaway.ca/) | TypeScript, JavaScript, Astro, Svelte, MDX, HTML, CSS |
-| Simplified AI Assistant | [GitHub](https://github.com/rogadev/genny) | [Live Site](https://genny.roga.dev) | TypeScript, Nuxt 3, Vue 3, DaisyUI, TailwindCSS, Zod, OpenAI API |
-| SvelteKit Web App Starter Template | [GitHub](https://github.com/rogadev/sveltekit-web-app-starter) | [Live Site](https://vercel.com/roga-dev/sveltekit-web-app-starter) | TypeScript, SvelteKit, SkeletonUI, TailwindCSS, Prisma, Vercel Postgres, Lucia Auth, Vitest |
+### [VIU Career Outlooks Web Application](https://github.com/rogadev/viu-career-outlooks)
+* A tool connecting students with career data, highlighting job outlooks and helping match credentials with employment opportunities.
 
-## Technical Skills
+## Experience
+- **Freelance Web Developer**
+  - Freelancing post-graduation, developing custom web solutions for various clients including CarEvo and educational tools for VIU.
+- **Web Developer, VIU Web Department**
+  - Developed key projects like the VIU Career Outlooks web app, enhancing the student interface for career planning.
 
-I'll do my best not to sound too cliché, here, but I really am a passionate full-stack web developer who loves working with JavaScript/TypeScript. On the front-end, I'm a big fan of Vue and Svelte, but I also know React 😉. Each of these has its unique strengths, but lately, Svelte has been my go-to UI framework for its simplicity and elegance - it's truly an unparalleled developer experience.
+## Education
+- **Diploma in Web and Mobile Application Development**
+  - Vancouver Island University, 2023, Top of my class
 
-I have experience working on a variety of web development projects, from full-stack to front-end or back-end specific. I'm also passionate about integrating AI into my projects, like creating a simplified ChatGPT app that lets me talk to my phone to ask simple questions. Currently, I'm working on a new ChatGPT UI project that uses the OpenAI API to create the perfect ChatGPT interface.
+## Let's Connect!
+Feel free to [follow me on GitHub](https://github.com/rogadev) to stay updated on my projects.
 
-When it comes to rendering frameworks, I've really enjoyed working with Astro, Nuxt, and SvelteKit. Astro is my favorite for building websites, but for web apps, I think that Nuxt 3 is really well done. SvelteKit is also fantastic, and I think it has the potential to become my go-to for future side projects once its ecosystem develops a bit more. I'll be eager to test drive 2.0 when it drops.
-
-Overall, I'm a versatile developer who loves to learn and experiment with new technologies. I'm exceptional at analyzing business needs, designing business logic, and crafting solutions that solve problems my clients didn't even realize they had. Whether it's building sleek front-ends or robust back-ends, I'm passionate about crafting high-quality solutions that bring value to users.
-
-## Current Projects
-
-There are several side projects that I've been working on but haven't released yet, including various starter templates for different web frameworks such as SvelteKit and Nuxt 3. I'm also in the process of redesigning the UI/UX of a ChatGPT clone to make it more enjoyable to use than the current ChatGPT user interface. Some additional features I'm implementing include the ability to save, favorite, and pin chat threads for quicker and easier access. Moreover, I'm creating a "seeded template" panel that allows me to prepare my chat threads with a reusable series of prompts. For example, I can upload the latest React documentation to ask a React-related question or seed a thread with dietary restrictions and taste preferences to request recipe ideas based on the ingredients I have in my fridge today.
-
-Lastly, I have 2 long-term projects I'm currently working on. I'm working on transforming my driving assistant into an "Uber of Medical Transport" app, and I'm also rebuilding my VIU Career Outlooks web app as an open API and public web app - this time, enhanced by AI to provide better job results and additional relevant information. If you'd like to support me and my side projects, please consider becoming a GitHub sponsor.
-
-## An Avid AI Advocate, Especially in Education
-
-I am passionate about AI and the ways in which it's about to change our world. I have a TikTok channel called TechnicallyCreative where I talk about AI and how it's about to change our world. I also advocate for teaching tools like ChatGPT in education, especially post-secondary education, instead of trying to outlaw the technology. I strongly believe that if educational institutions decide to treat this technology like the enemy and gatekeep, they are putting their students at a great disadvantage.
-
-## Contact Information
-
-So, what do you think? Do I sound like someone you could use on your team? You can reach me at [ryan@roga.dev](mailto:ryan@roga.dev) or connect with me on [LinkedIn](https://www.linkedin.com/in/ryanroga). Let's chat!
+Thank you for checking out my profile!
