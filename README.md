@@ -7,7 +7,7 @@
 
 🔍 Currently, I am seeking a full-time position where I can bring my innovative approach to a collaborative team, working on impactful projects.
 
-📬 Reach out to me at: [ryan@roga.dev](mailto:ryan@roga.dev) | [LinkedIn Profile]([Your-LinkedIn-URL](https://www.linkedin.com/in/ryanroga/))
+📬 Reach out to me at: [ryan@roga.dev](mailto:ryan@roga.dev) | [LinkedIn Profile](https://www.linkedin.com/in/ryanroga/)
 
 ## Languages & Tools:
 A list of some of the technologies I reach for and use regularly
