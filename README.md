@@ -45,6 +45,7 @@ I have practical experience with a variety of other technologies, which I am cap
 ![OAuth](https://img.shields.io/badge/-OAuth-EB5424?style=flat&logo=oauth&logoColor=white)
 ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)
 ![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
+![Puppeteer](https://img.shields.io/badge/-Puppeteer-40B5A4?style=flat&logo=puppeteer&logoColor=white)
 ![Cypress](https://img.shields.io/badge/-Cypress-17202C?style=flat&logo=cypress&logoColor=white)
 ![Mocha](https://img.shields.io/badge/-Mocha-8D6748?style=flat&logo=mocha&logoColor=white)
 ![IoT](https://img.shields.io/badge/-IoT-3C873A?style=flat&logo=internet-of-things&logoColor=white)
