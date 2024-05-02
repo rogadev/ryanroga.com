@@ -54,7 +54,9 @@ I have practical experience with a variety of other technologies, which I am cap
 
 ## Featured Projects
 
-### [CarEvo Logistics Web Application](https://carevo.ca)
+### CarEvo Logistics Web Application 
+[![Client](https://img.shields.io/badge/-Client-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://carevo.ca)
+
 ![Nuxt.js](https://img.shields.io/badge/-Nuxt.js-00C58E?style=flat&logo=nuxt.js&logoColor=white)
 ![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
@@ -64,7 +66,8 @@ I have practical experience with a variety of other technologies, which I am cap
 
 The Carevo Auto Solutions Web Application optimizes the logistics and management of used vehicles for Carevo, a premier online used car dealership in Eastern Canada. This comprehensive tool enhances operational efficiency by facilitating vehicle handling across multiple lots, tracking services, and providing timely updates for both logistics and sales teams. Seamlessly integrating vendor portal features, real-time vehicle tracking, request management, and QR code functionality, this application ensures smooth operations and enhanced customer experiences. Built with Nuxt 3, Vue 3, TypeScript, and TailwindCSS, this project exemplifies my expertise in creating scalable and user-friendly web solutions tailored to specific industry needs.
 
-### [VIU Career Outlooks Web Application](https://github.com/rogadev/viu-career-outlooks)
+### VIU Career Outlooks Web Application 
+[![Live](https://img.shields.io/badge/-Live-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://career-outlooks.viu.ca) [![Repo](https://img.shields.io/badge/-Repo-181717?style=flat&logo=github&logoColor=white)](https://github.com/rogadev/viu-career-outlooks)
 
 #### Data Collection
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
@@ -89,7 +92,9 @@ The Carevo Auto Solutions Web Application optimizes the logistics and management
 
 The VIU Career Outlooks Web Application represents a pivotal collaboration between myself and Vancouver Island University, conceived during my 2022 summer internship as part of the ITAS Web and Mobile Development Diploma program. Aimed at aiding prospective students in making informed decisions regarding their educational and professional paths, this innovative tool seamlessly connects VIU programs and credentials with real-world employment opportunities. By integrating data scraping techniques and database management with Prisma, I ensured the accuracy and relevance of employment outlooks presented to users. Currently live on VIU's website, the application provides detailed insights into career pathways, job prospects, and industry trends across British Columbia. As I continue to evolve this project, I'm enhancing its functionality with features such as user authentication and personalized price sheets, while transitioning to modern technologies like Nuxt, TypeScript, and Tailwind CSS for improved performance and usability.
 
-### [Granny Go Go Trip Tracker (Capstone Project)](https://github.com/rogadev/capstone)
+### Granny Go Go Trip Tracker (Capstone Project)
+[![Client](https://img.shields.io/badge/-Client-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://www.grannygogo.ca/) [![Repo](https://img.shields.io/badge/-Repo-181717?style=flat&logo=github&logoColor=white)](https://github.com/rogadev/capstone)
+
 ![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
 ![Nuxt.js](https://img.shields.io/badge/-Nuxt.js-00DC82?style=flat&logo=nuxt.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
@@ -114,14 +119,18 @@ The Granny Go Go Trip Tracker project offers a comprehensive solution for modern
 
 ## Additional Projects
 
-### [Victoria MossAway Portfolio](https://victoria-mossaway-ca.vercel.app/)
+### MossAway Victoria, CMS Website
+[![Client](https://img.shields.io/badge/-Client-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://mossaway.ca/) [![Live](https://img.shields.io/badge/-Live-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://victoria-mossaway-ca.vercel.app/) [![Repo](https://img.shields.io/badge/-Repo-181717?style=flat&logo=github&logoColor=white)](https://github.com/rogadev/victoria.mossaway.ca)
+
 ![Astro](https://img.shields.io/badge/-Astro-000?style=flat&logo=astro&logoColor=white)
 ![Svelte](https://img.shields.io/badge/-Svelte-FF3E00?style=flat&logo=svelte&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
 
 As a part of my ITAS268 Final Project, I created the Victoria MossAway Portfolio using Astro, a modern frontend framework. Departing from traditional CMS platforms like Drupal or WordPress, I crafted a custom CMS solution tailored to my needs. Leveraging AI technology, I generated unique moss monster images and optimized text to enhance SEO and engage visitors effectively. Despite its short-lived duration due to the sale of MossAway, this portfolio site proved highly effective, ranking organically on Google and competently representing my work without conflicting with the SEO of the original MossAway site.
 
-### [Password Generator](https://passwords.roga.dev)
+### Password Generator
+[![Live](https://img.shields.io/badge/-Live-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://passwords.roga.dev) [![Repo](https://img.shields.io/badge/-Repo-181717?style=flat&logo=github&logoColor=white)](https://github.com/rogadev/roga-password-generator)
+
 ![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
@@ -129,6 +138,8 @@ As a part of my ITAS268 Final Project, I created the Victoria MossAway Portfolio
 This basic Password Generator is a simple yet effective tool for generating secure passwords quickly and easily. Built in just a couple of hours, this lightweight application allows users to customize their passwords by choosing whether to include special characters, uppercase and/or lowercase letters, and numbers. With a click, users can save their generated password to the clipboard for convenience. Leveraging Vue.js for frontend functionality and TypeScript for robust type-checking, the RogaDev Password Generator demonstrates my proficiency in crafting responsive and visually appealing interfaces. Despite its simplicity, this project underscores my commitment to delivering effective solutions that meet user needs in a straightforward manner.
 
 ### [Window Cleaning Project Evaluation Tool](https://www.ezeval.app/)
+[![Live](https://img.shields.io/badge/-Live-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://www.ezeval.app/) [![Repo](https://img.shields.io/badge/-Repo-181717?style=flat&logo=github&logoColor=white)](https://github.com/rogadev/roga-window-quoter)
+
 ![HTML](https://img.shields.io/badge/-HTML-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/-CSS-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
