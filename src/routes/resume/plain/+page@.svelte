@@ -30,20 +30,20 @@
 </section>
 <main class="mx-auto max-w-5xl p-6 prose">
 	<p>
-		Highly proficient web developer with full-stack web development experience, specializing in
-		creating dynamic web applications using SvelteKit, Nuxt 3, and Astro. Demonstrated expertise in
-		full-stack development, e-commerce, and building business-focused web applications along with a
-		proven ability to lead projects from inception to completion. A committed self-starter with
-		excellent problem-solving skills, seeking to leverage expertise in a collaborative front-end,
-		back-end, or full-stack developer role.
+		Accomplished and proficient full-stack web developer with a robust background in creating
+		dynamic and scalable web applications. Proficient in modern JavaScript and TypeScript frameworks
+		including React, Vue, Nuxt, SvelteKit, and Node/Express. Experienced in leading complex projects
+		from concept to deployment, with a focus on e-commerce and business solutions. Known for
+		excellent problem-solving abilities and a proactive approach, I am eager to contribute my skills
+		in a collaborative front-end, back-end, or full-stack developer role.
 	</p>
 	<p>
-		Personally incorporated and available for contract work. Also available for regular full-time
-		temporary, or full-time permanent positions. Remote work experienced with excellent
-		recommendations of work ethic and quality while working remotely. Interested in creating
-		long-term value in a high-performance team environment, with a focus on quality and efficiency.
-		Strong supporter of diversity and inclusion. Great communication skills, values collaboration,
-		and is a strong team player.
+		Seeking full-time permanent remote positions, with openness to hybrid roles in
+		Halifax/Dartmouth, or relocation to Vancouver Island, USA, or UK. Extensive experience in remote
+		work, backed by excellent recommendations for work ethic and quality. Passionate about creating
+		long-term value within high-performance teams, with a focus on quality and efficiency. A strong
+		advocate for diversity and inclusion, with exceptional communication skills and a commitment to
+		collaboration and teamwork.
 	</p>
 	<h3 class="text-center bg-emerald-300">Technical Competencies</h3>
 	<p class="text-center pt-6 px-2">
