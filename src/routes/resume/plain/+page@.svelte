@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Project from './Project.svelte';
+
 	import Icon from '@iconify/svelte';
 </script>
 
@@ -30,29 +32,21 @@
 </section>
 <main class="mx-auto max-w-5xl p-6 prose">
 	<p>
-		Accomplished and proficient full-stack web developer with a robust background in creating
-		dynamic and scalable web applications. Proficient in modern JavaScript and TypeScript frameworks
-		including React, Vue, Nuxt, SvelteKit, and Node/Express. Experienced in leading complex projects
-		from concept to deployment, with a focus on e-commerce and business solutions. Known for
-		excellent problem-solving abilities and a proactive approach, I am eager to contribute my skills
-		in a collaborative front-end, back-end, or full-stack developer role.
-	</p>
-	<p>
-		Seeking full-time permanent remote positions, with openness to hybrid roles in
-		Halifax/Dartmouth, or relocation to Vancouver Island, USA, or UK. Extensive experience in remote
-		work, backed by excellent recommendations for work ethic and quality. Passionate about creating
-		long-term value within high-performance teams, with a focus on quality and efficiency. A strong
-		advocate for diversity and inclusion, with exceptional communication skills and a commitment to
-		collaboration and teamwork.
+		Full-stack Web Developer with extensive experience in JavaScript and TypeScript, proficient in
+		leveraging a diverse range of full-stack web frameworks including Vue.js, Nuxt.js, and
+		Express.js. Adept at developing scalable, maintainable, and high-performance web applications
+		with a strong focus on accessibility, mobile-first design, and rigorous coding best practices.
+		Proven track record of successfully delivering complex projects from concept to deployment,
+		utilizing modern development tools and practices. Skilled in collaborating with cross-functional
+		teams to achieve project goals and enhance user experiences.
 	</p>
 	<h3 class="text-center bg-emerald-300">Technical Competencies</h3>
 	<p class="text-center pt-6 px-2">
-		JavaScript &ThinSpace; TypeScript &ThinSpace; HTML &ThinSpace; CSS &ThinSpace; SvelteKit
-		&ThinSpace; Nuxt &ThinSpace; Astro &ThinSpace; Vue &ThinSpace; React &ThinSpace; Svelte
-		&ThinSpace; Node.js &ThinSpace; TS Node &ThinSpace; Express &ThinSpace; Git &ThinSpace; GitHub
-		&ThinSpace; Vercel &ThinSpace; Vercel AI &ThinSpace; Vercel KV &ThinSpace; TailwindCSS
-		&ThinSpace; Tailwind UI &ThinSpace; Vitest &ThinSpace; Jest &ThinSpace; Mocha &ThinSpace; CI/CD
-		&ThinSpace; Zod &ThinSpace; Puppeteer &ThinSpace; Google Maps API &ThinSpace; OpenAI API
+		JavaScript &ThinSpace; TypeScript &ThinSpace; HTML &ThinSpace; CSS &ThinSpace; Nuxt &ThinSpace;
+		SvelteKit &ThinSpace; Astro &ThinSpace; Vue &ThinSpace; React &ThinSpace; Svelte &ThinSpace;
+		Node.js &ThinSpace; Express &ThinSpace; Git &ThinSpace; GitHub &ThinSpace; Vercel &ThinSpace;
+		TailwindCSS &ThinSpace; Vitest &ThinSpace; Jest &ThinSpace; CI/CD &ThinSpace; Zod &ThinSpace;
+		Puppeteer &ThinSpace; Google Maps API &ThinSpace; OpenAI API &ThinSpace; &amp;&nbsp;More...
 	</p>
 	<h3 class="text-center bg-emerald-300">Academic Accomplishments</h3>
 	<div class="flex flex-wrap gap-2 justify-evenly mt-4">
@@ -77,41 +71,7 @@
 	</ul>
 	<h5 class="text-xl text-center font-semibold mb-3">Projects</h5>
 
-	<h6 class="text-lg text-center">
-		Co-op Project -
-		<a class=" hover:text-blue-700" href="https://career-outlooks.viu.ca" target="_blank">
-			VIU Career Outlooks
-		</a>
-	</h6>
-
-	<div class="flex justify-center">
-		<a
-			class=" hover:text-blue-700"
-			href="https://github.com/rogadev/viu-career-outlooks"
-			target="_blank"
-		>
-			Project Repo
-		</a>
-	</div>
-
-	<p class="px-4 mb-0 text-justify">
-		The VIU Career Outlooks web app is a project that I designed and developed during my co-op. The
-		application is a web app that allows prospective students to see the career outlooks for
-		different programs on offer at VIU. The application is built using SvelteKit and is hosted on
-		Vercel. The tech stack for this project, including proof of concept and web scraping
-		technologies, is as follows:
-	</p>
-
-	<div class="flex flex-wrap gap-3 justify-between mt-2 mb-4 mx-4 italic">
-		<span>Node/Express</span>
-		<span>Puppeteer</span>
-		<span>Nuxt 3</span>
-		<span>Tailwind CSS</span>
-		<span>Fuse.js</span>
-		<span>SvelteKit 1 (RC)</span>
-		<span>GC LMI-EO API (Deprecated)</span>
-		<span>Vercel KV</span>
-	</div>
+	<Project></Project>
 
 	<h6 class="text-lg text-center mt-5">
 		Capstone Project -
