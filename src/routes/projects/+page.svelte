@@ -14,6 +14,6 @@
 
 <div class="flex flex-col gap-24 sm:gap-32 py-24 sm:py-32">
 	<CarEvoLogistics />
-	<TripTracker />
+	<!-- <TripTracker /> -->
 	<CareerOutlooks />
 </div>
