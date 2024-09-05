@@ -150,7 +150,7 @@
 		</div>
 
 		<div class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
-			<img class="mx-auto mt-12 rounded-xl" src="/images/ryanroga.jpg" alt="Ryan Paranich" />
+			<img class="mx-auto mt-12 rounded-xl" src="/images/ryanroga.jpg" alt="Ryan Roga" />
 		</div>
 	</div>
 </div>

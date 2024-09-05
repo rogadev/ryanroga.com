@@ -4,13 +4,13 @@
 
 <svelte:head>
 	<title>Resume | Roga.dev</title>
-	<meta name="description" content="Resume | Ryan Paranich" />
+	<meta name="description" content="Resume | Ryan Roga" />
 </svelte:head>
 
 <section class="mx-auto max-w-5xl p-6 sticky top-0 border-b border-slate-800 pb-3 mb-3 bg-white">
 	<div class="flex flex-row justify-between items-start">
 		<div>
-			<h1 class="text-5xl font-bold text-slate-800">Ryan Paranich</h1>
+			<h1 class="text-5xl font-bold text-slate-800">Ryan Roga</h1>
 			<h2 class="text-3xl mb-2">Full-Stack Web Developer</h2>
 		</div>
 		<div class="flex flex-col sm:flex-row justify-end items-end">
@@ -266,9 +266,9 @@
 		</p>
 		<p>To whom this may concern.</p>
 		<p>
-			I am writing with enthusiasm to recommend Ryan Paranich for a position in your establishment.
-			As a classmate of Ryan's, I had the pleasure and opportunity to work alongside him in the web
-			and mobile development program at the Vancouver Island University.
+			I am writing with enthusiasm to recommend Ryan Roga for a position in your establishment. As a
+			classmate of Ryan's, I had the pleasure and opportunity to work alongside him in the web and
+			mobile development program at the Vancouver Island University.
 		</p>
 		<p>
 			Ryan is a motivated and fiery individual who cares deeply about his work and education.
