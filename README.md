@@ -1,13 +1,13 @@
 # Hi, I'm Ryan! 👋
 
 ## About Me
-🌐 I'm a full-stack web developer with an education in web and mobile application development. Having honed my skills through a combination of education and real-world experience, I graduated from Vancouver Island University in 2023, where I excelled academically and professionally. Since graduating, I've worked primarily as a freelancer, developing software solutions that address complex and dynamic business needs. Committed to growth and innovation within a team environment, I am eagerly looking for a full-time position where I can contribute to meaningful projects and collaborate with like-minded professionals.
+🌐 I am an experienced web developer specializing in full-stack web application development. Over the years, I have successfully developed software solutions that address complex business needs. As a freelance developer, I have collaborated with diverse clients, translating their requirements into functional and scalable applications.
 
-🚀 I specialize in creating dynamic solutions for business operations and logistics management, task automation, customer relationship enhancements, AI integration and educational tools. My projects emphasize functional interfaces, streamlined user experiences, and robust backend architectures.
+🚀 My expertise includes creating innovative solutions for business operations and logistics management, task automation, customer relationship enhancements, AI integration, and educational tools. I prioritize user-centered design, ensuring streamlined interfaces and robust backend architectures that enhance overall performance. Proficient in frameworks like Nuxt 3, Vue 3, TypeScript, and TailwindCSS, I consistently adhere to coding best practices.
 
-🔍 Currently, I am seeking a full-time position where I can bring my innovative approach to a collaborative team, working on impactful projects.
+🔍 I am currently seeking a full-time position within a collaborative team where I can leverage my skills and contribute to impactful projects. I am committed to continuous growth and eager to tackle new challenges that drive innovation and success.
 
-📬 Reach out to me at: [ryan@roga.dev](mailto:ryan@roga.dev) | [LinkedIn Profile](https://www.linkedin.com/in/ryanroga/)
+📬 Feel free to reach out: [Email](mailto:ryanroga@gmail.com) | [LinkedIn Profile](https://www.linkedin.com/in/ryanroga/)
 
 ## Languages:
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
