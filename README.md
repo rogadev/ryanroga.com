@@ -157,7 +157,7 @@ Initially developed during my first year of school, the Window Cleaning Project 
 
 ## Education
 - **Diploma in Web and Mobile Application Development**
-  - Vancouver Island University, 2023, Top of my class
+  - Vancouver Island University, Top of my class
 
 ## Let's Connect!
 Feel free to [follow me on GitHub](https://github.com/rogadev) to stay updated on my projects.
