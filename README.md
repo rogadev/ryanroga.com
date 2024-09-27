@@ -9,11 +9,12 @@
 
 📬 Reach out to me at: [ryan@roga.dev](mailto:ryan@roga.dev) | [LinkedIn Profile](https://www.linkedin.com/in/ryanroga/)
 
-## Languages & Tools:
-A list of some of the technologies I reach for and use regularly
-
+## Languages:
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+
+## Familiar Tools:
+
 ![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
 ![Nuxt.js](https://img.shields.io/badge/-Nuxt.js-00DC82?style=flat&logo=nuxt.js&logoColor=white)
 ![Svelte](https://img.shields.io/badge/-Svelte-FF3E00?style=flat&logo=svelte&logoColor=white)
