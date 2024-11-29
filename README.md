@@ -1,7 +1,7 @@
 # Hi, I'm Ryan! 👋
 
 ## About Me
-🌐 I am an experienced web developer specializing in full-stack web application development. Over the years, I have successfully developed software solutions that address complex business needs. As a freelance developer, I have collaborated with diverse clients, translating their requirements into functional and scalable applications.
+🌐 I am web developer specializing in full-stack web application development. Over the years, I have successfully developed software solutions that address complex business needs. As a full-stack web developer, I have collaborated with diverse clients, translating their requirements into functional and scalable applications.
 
 🚀 My expertise includes creating innovative solutions for business operations and logistics management, task automation, customer relationship enhancements, AI integration, and educational tools. I prioritize user-centered design, ensuring streamlined interfaces and robust backend architectures that enhance overall performance. Proficient in frameworks like Nuxt 3, Vue 3, TypeScript, and TailwindCSS, I consistently adhere to coding best practices.
 
