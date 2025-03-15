@@ -306,7 +306,7 @@
 						Personalized one-on-one sessions tailored to your specific needs and industry.
 					</p>
 					<p class="mt-6 flex items-baseline gap-x-1">
-						<span class="text-4xl font-bold tracking-tight text-white">$149</span>
+						<span class="text-4xl font-bold tracking-tight text-white">$89</span>
 						<span class="text-sm font-semibold leading-6 text-gray-300">/hour</span>
 					</p>
 					<a
@@ -398,7 +398,7 @@
 						Ongoing skill development with regular sessions to build mastery over time.
 					</p>
 					<p class="mt-6 flex items-baseline gap-x-1">
-						<span class="text-4xl font-bold tracking-tight text-white">$119</span>
+						<span class="text-4xl font-bold tracking-tight text-white">$69</span>
 						<span class="text-sm font-semibold leading-6 text-gray-300">/hour</span>
 					</p>
 					<a
@@ -498,7 +498,7 @@
 						Collaborative learning experiences designed for teams of 3-10 people.
 					</p>
 					<p class="mt-6 flex items-baseline gap-x-1">
-						<span class="text-4xl font-bold tracking-tight text-white">$299</span>
+						<span class="text-4xl font-bold tracking-tight text-white">$199</span>
 						<span class="text-sm font-semibold leading-6 text-gray-300">/session</span>
 					</p>
 					<a
