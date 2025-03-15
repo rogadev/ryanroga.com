@@ -18,7 +18,7 @@
 		{
 			id: 'eztripr',
 			title: 'EZTripr Trip Tracker',
-			slug: 'eztripr',
+			slug: 'eztripr-trip-tracker',
 			client: 'Granny Go Go',
 			description:
 				'Medical patient trip tracking application for Granny Go Go drivers across Vancouver Island',
