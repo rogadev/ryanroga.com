@@ -15,24 +15,22 @@
 	export let handleImageError: (event: Event, fallbackText: string) => void;
 </script>
 
-<a
-	href={`/projects/${project.slug}`}
-	class="group flex flex-col bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full"
-	in:fly={{ y: 30, duration: 800, delay }}
->
-	<div class="relative aspect-video overflow-hidden">
+<div class="group relative bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+	<!-- Image container with fixed aspect ratio -->
+	<div class="relative w-full pt-[56.25%]">
+		<!-- 16:9 aspect ratio -->
 		<img
 			src={project.image}
-			alt={`${project.title} - ${project.client}`}
-			class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+			alt={project.title}
+			class="absolute top-0 left-0 w-full h-full object-cover object-left-top"
 			on:error={(e) => handleImageError(e, project.title)}
 		/>
-		<div
-			class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-		></div>
+		<!-- Gradient overlay with 100% opaque white at bottom -->
+		<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white"></div>
 	</div>
 
-	<div class="flex-1 p-6">
+	<!-- Content container -->
+	<div class="p-6 flex flex-col flex-grow bg-white">
 		<div class="text-sm text-blue-600 font-medium mb-2">{project.client}</div>
 		<h3 class="text-2xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors">
 			{project.title}
@@ -65,4 +63,4 @@
 			/>
 		</svg>
 	</div>
-</a>
+</div>
