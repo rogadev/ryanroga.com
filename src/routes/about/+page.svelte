@@ -223,7 +223,7 @@
 					<h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Our Approach</h2>
 					<p class="text-xl text-white opacity-90 leading-relaxed mb-6">
 						What sets us apart is our deep commitment to understanding the unique challenges your
-						business faces. We don't just build websites or applications – we craft solutions that
+						business faces. We don't just build websites or applications - we craft solutions that
 						solve real problems.
 					</p>
 					<div class="space-y-6 mt-8">
