@@ -91,13 +91,12 @@
 			{/each}
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
-			<a
-				href="mailto:ryan@roga.dev"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="text-sm font-semibold leading-6 text-gray-900"
-			>
-				Contact me <span aria-hidden="true">&rarr;</span>
+			<a href="/contact" class="text-sm font-semibold leading-6 text-gray-900 relative group">
+				Contact <span aria-hidden="true">&rarr;</span>
+				<span
+					class="absolute -bottom-[5px] left-0 h-0.5 bg-gray-600 transition-all duration-300
+					{currentPath === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'}"
+				/>
 			</a>
 		</div>
 	</nav>
