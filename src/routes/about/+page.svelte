@@ -1,9 +1,15 @@
-<script>
+<script lang="ts">
 	import { fade, fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
 	let isVisible = false;
 	let serviceElements = [];
+
+	// Function to handle image loading errors
+	function handleImageError(event: Event, fallbackText: string) {
+		const target = event.target as HTMLImageElement;
+		target.src = `https://placehold.co/400x320/e2e8f0/475569?text=${encodeURIComponent(fallbackText)}`;
+	}
 
 	onMount(() => {
 		isVisible = true;
@@ -99,22 +105,31 @@
 							<div class="w-3 h-3 bg-red-500 rounded-full"></div>
 							<div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
 							<div class="w-3 h-3 bg-green-500 rounded-full"></div>
-							<div class="ml-4 text-purple-300 text-sm font-mono">index.js</div>
+							<div class="ml-4 text-purple-300 text-sm font-mono">+page.svelte</div>
 						</div>
-						<pre class="text-xs md:text-sm font-mono synthwave-code">{`const rogaSolutions = {
-  customWebApps: function(business) {
-    return transformBusiness(business, 'efficiency');
-  },
-  aiSolutions: function(challenges) {
-    return challenges.map(c => innovativeSolution(c));
-  },
-  businessGrowth: async function() {
-    await buildCustomExperience();
-    return 'Measurable Success';
-  }
-};
+						<pre
+							class="text-xs md:text-sm font-mono synthwave-code overflow-hidden">{`<span class="sw-keyword">import</span> { OpenAI } <span class="sw-keyword">from</span> <span class="sw-string">'openai'</span>;
 
-rogaSolutions.businessGrowth();`}</pre>
+<script>
+  import { onMount } from 'svelte';
+
+  let response = '';
+  let loading = false;
+  let error = null;
+  let prompt = 'Respond to this customer query about our products';
+
+  async function fetchFromOpenAI() {
+    loading = true;
+    error = null;
+    
+    try {
+      const res = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': \`Bearer ${import.meta.env.VITE_OPENAI_API_KEY}\`
+        },
+        body: JSON.stringify({`}</pre>
 					</div>
 				</div>
 			</div>
@@ -312,71 +327,97 @@ rogaSolutions.businessGrowth();`}</pre>
 
 			<!-- Portfolio Preview Cards -->
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-				<!-- Project 1 -->
-				<div class="group relative overflow-hidden rounded-xl shadow-lg animate-on-scroll">
+				<!-- Project 1: CarEvo Lot Logistics -->
+				<a
+					href="https://logistics.carevo.ca/login"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group relative overflow-hidden rounded-xl shadow-lg animate-on-scroll"
+				>
 					<div class="aspect-video bg-white flex items-center justify-center overflow-hidden">
 						<!-- Project thumbnail with better visibility -->
 						<img
-							src="https://placehold.co/400x320"
-							alt="Project thumbnail"
+							src="/images/projects/carevo-logistics.jpg"
+							alt="CarEvo Lot Logistics application"
 							class="object-cover w-full h-full group-hover:opacity-75 transition-opacity"
+							on:error={(e) => handleImageError(e, 'CarEvo Lot Logistics')}
 						/>
 
 						<div
-							class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+							class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-indigo-900/80 p-4"
 						>
-							<span class="px-4 py-2 bg-indigo-800 text-white font-medium rounded-lg">
-								E-commerce Platform
+							<span class="px-4 py-2 bg-indigo-800 text-white font-medium rounded-lg mb-2">
+								CarEvo Lot Logistics
 							</span>
+							<p class="text-white text-sm text-center max-w-xs">
+								Vehicle tracking system for CarEvo's lot team to monitor service appointments and
+								vendor trips
+							</p>
 						</div>
 					</div>
-				</div>
+				</a>
 
-				<!-- Project 2 -->
-				<div
+				<!-- Project 2: VIU Career Outlooks -->
+				<a
+					href="https://viu-career-outlooks.vercel.app/"
+					target="_blank"
+					rel="noopener noreferrer"
 					class="group relative overflow-hidden rounded-xl shadow-lg animate-on-scroll"
 					style="transition-delay: 200ms;"
 				>
 					<div class="aspect-video bg-white flex items-center justify-center overflow-hidden">
 						<!-- Project thumbnail with better visibility -->
 						<img
-							src="https://placehold.co/400x320"
-							alt="Project thumbnail"
+							src="/images/projects/viu-career-outlooks.jpg"
+							alt="VIU Career Outlooks application"
 							class="object-cover w-full h-full group-hover:opacity-75 transition-opacity"
+							on:error={(e) => handleImageError(e, 'VIU Career Outlooks')}
 						/>
 
 						<div
-							class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+							class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-indigo-900/80 p-4"
 						>
-							<span class="px-4 py-2 bg-indigo-800 text-white font-medium rounded-lg">
-								AI-Powered Analytics
+							<span class="px-4 py-2 bg-indigo-800 text-white font-medium rounded-lg mb-2">
+								VIU Career Outlooks
 							</span>
+							<p class="text-white text-sm text-center max-w-xs">
+								Career investigation tool using StatsCanada 3-year outlook data for VIU credential
+								paths
+							</p>
 						</div>
 					</div>
-				</div>
+				</a>
 
-				<!-- Project 3 -->
-				<div
+				<!-- Project 3: EZ Tripr -->
+				<a
+					href="https://eztripr.com/"
+					target="_blank"
+					rel="noopener noreferrer"
 					class="group relative overflow-hidden rounded-xl shadow-lg animate-on-scroll"
 					style="transition-delay: 400ms;"
 				>
 					<div class="aspect-video bg-white flex items-center justify-center overflow-hidden">
 						<!-- Project thumbnail with better visibility -->
 						<img
-							src="https://placehold.co/400x320"
-							alt="Project thumbnail"
+							src="/images/projects/eztripr.jpg"
+							alt="EZ Tripr application"
 							class="object-cover w-full h-full group-hover:opacity-75 transition-opacity"
+							on:error={(e) => handleImageError(e, 'EZTripr Trip Tracker')}
 						/>
 
 						<div
-							class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+							class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-indigo-900/80 p-4"
 						>
-							<span class="px-4 py-2 bg-indigo-800 text-white font-medium rounded-lg">
-								Inventory System
+							<span class="px-4 py-2 bg-indigo-800 text-white font-medium rounded-lg mb-2">
+								EZ Tripr
 							</span>
+							<p class="text-white text-sm text-center max-w-xs">
+								Medical patient trip tracking application for Granny Go Go drivers across Vancouver
+								Island
+							</p>
 						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 
 			<div class="mt-12">
@@ -486,9 +527,10 @@ rogaSolutions.businessGrowth();`}</pre>
 			0 0 20px rgba(54, 249, 246, 0.2);
 		padding: 1rem;
 		border-radius: 0.5rem;
-		overflow-x: auto;
 		font-weight: 500;
 		letter-spacing: 0.5px;
+		overflow: hidden; /* Hide overflow instead of scroll */
+		max-height: 100%;
 	}
 
 	:global(.sw-keyword) {
