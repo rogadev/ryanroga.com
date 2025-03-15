@@ -5,11 +5,35 @@
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/fonts/poppins-v15-latin-regular.eot'); /* IE9 Compat Modes */
-	src: local(''), url('/fonts/Poppins-Regular.ttf') format('truetype') /* Safari, Android, iOS */,
-		url('/fonts/poppins-v15-latin-regular.eot?#iefix') format('embedded-opentype') /* IE6-IE8 */,
-		url('/fonts/poppins-v15-latin-regular.woff') format('woff') /* Modern Browsers */,
-		url('/fonts/poppins-v15-latin-regular.svg#Poppins') format('svg') /* Legacy iOS */;
+	src: local('Poppins Regular'), local('Poppins-Regular'),
+		url('/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+/* poppins-italic */
+@font-face {
+	font-family: 'Poppins';
+	font-style: italic;
+	font-weight: 400;
+	src: local('Poppins Italic'), local('Poppins-Italic'),
+		url('/fonts/Poppins-Italic.ttf') format('truetype');
+}
+
+/* poppins-bold */
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Poppins Bold'), local('Poppins-Bold'),
+		url('/fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+/* poppins-bold-italic */
+@font-face {
+	font-family: 'Poppins';
+	font-style: italic;
+	font-weight: 700;
+	src: local('Poppins Bold Italic'), local('Poppins-BoldItalic'),
+		url('/fonts/Poppins-BoldItalic.ttf') format('truetype');
 }
 
 :root {

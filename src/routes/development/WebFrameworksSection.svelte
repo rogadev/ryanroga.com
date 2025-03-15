@@ -183,10 +183,6 @@
 		animation-delay: 2s;
 	}
 
-	.animation-delay-4000 {
-		animation-delay: 4s;
-	}
-
 	.animate-on-scroll {
 		opacity: 0;
 		transform: translateY(30px);

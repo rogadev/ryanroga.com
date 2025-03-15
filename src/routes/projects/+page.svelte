@@ -12,18 +12,8 @@
 			client: 'CarEvo',
 			description:
 				"Vehicle tracking system for CarEvo's lot team to monitor service appointments and vendor trips",
-			image: '/images/projects/carevo-logistics.jpg',
+			image: '/images/Product_example.png',
 			tags: ['Web Application', 'Logistics', 'Tracking System']
-		},
-		{
-			id: 'viu-career-outlooks',
-			title: 'VIU Career Outlooks',
-			slug: 'viu-career-outlooks',
-			client: 'Vancouver Island University',
-			description:
-				'Career investigation tool using StatsCanada 3-year outlook data for VIU credential paths',
-			image: '/images/projects/viu-career-outlooks.jpg',
-			tags: ['Education', 'Data Visualization', 'Career Planning']
 		},
 		{
 			id: 'eztripr',
@@ -32,7 +22,7 @@
 			client: 'Granny Go Go',
 			description:
 				'Medical patient trip tracking application for Granny Go Go drivers across Vancouver Island',
-			image: '/images/projects/eztripr.jpg',
+			image: '/images/eztripr.png',
 			tags: ['Healthcare', 'Transportation', 'Tracking System']
 		}
 	];
@@ -531,16 +521,6 @@
 
 	.animation-delay-4000 {
 		animation-delay: 4s;
-	}
-
-	@keyframes spin {
-		to {
-			transform: rotate(360deg);
-		}
-	}
-
-	.animate-spin-slow {
-		animation: spin 20s linear infinite;
 	}
 
 	.animate-on-scroll {

@@ -337,7 +337,7 @@
 					<div class="aspect-video bg-white flex items-center justify-center overflow-hidden">
 						<!-- Project thumbnail with better visibility -->
 						<img
-							src="/images/projects/carevo-logistics.jpg"
+							src="/images/Product_example.png"
 							alt="CarEvo Lot Logistics application"
 							class="object-cover w-full h-full group-hover:opacity-75 transition-opacity"
 							on:error={(e) => handleImageError(e, 'CarEvo Lot Logistics')}
@@ -368,7 +368,7 @@
 					<div class="aspect-video bg-white flex items-center justify-center overflow-hidden">
 						<!-- Project thumbnail with better visibility -->
 						<img
-							src="/images/projects/viu-career-outlooks.jpg"
+							src="/images/projects/viu-career-outlooks.png"
 							alt="VIU Career Outlooks application"
 							class="object-cover w-full h-full group-hover:opacity-75 transition-opacity"
 							on:error={(e) => handleImageError(e, 'VIU Career Outlooks')}
@@ -399,7 +399,7 @@
 					<div class="aspect-video bg-white flex items-center justify-center overflow-hidden">
 						<!-- Project thumbnail with better visibility -->
 						<img
-							src="/images/projects/eztripr.jpg"
+							src="/images/EzTripr Updated Drive.png"
 							alt="EZ Tripr application"
 							class="object-cover w-full h-full group-hover:opacity-75 transition-opacity"
 							on:error={(e) => handleImageError(e, 'EZTripr Trip Tracker')}
