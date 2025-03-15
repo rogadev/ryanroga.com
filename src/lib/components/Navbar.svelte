@@ -22,10 +22,6 @@
 		{
 			name: 'AI Training',
 			href: '/ai'
-		},
-		{
-			name: 'Resume',
-			href: '/resume'
 		}
 	];
 	let isMobileMenuOpen = false;
