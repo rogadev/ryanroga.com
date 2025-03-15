@@ -8,7 +8,7 @@
 		{
 			id: 'carevo-logistics',
 			title: 'CarEvo Lot Logistics',
-			slug: 'carevo-logistics',
+			slug: 'lot-logistics-web-application',
 			client: 'CarEvo',
 			description:
 				"Vehicle tracking system for CarEvo's lot team to monitor service appointments and vendor trips",
