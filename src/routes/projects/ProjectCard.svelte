@@ -15,7 +15,11 @@
 	export let handleImageError: (event: Event, fallbackText: string) => void;
 </script>
 
-<div class="group relative bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+<!-- Wrap entire card in an anchor tag -->
+<a
+	href="/projects/{project.slug}"
+	class="group relative bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col no-underline transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl"
+>
 	<!-- Image container with fixed aspect ratio -->
 	<div class="relative w-full pt-[56.25%]">
 		<!-- 16:9 aspect ratio -->
@@ -63,4 +67,4 @@
 			/>
 		</svg>
 	</div>
-</div>
+</a>
