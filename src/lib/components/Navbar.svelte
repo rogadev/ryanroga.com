@@ -1,7 +1,16 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import { page } from '$app/stores';
 
 	const tabs = [
+		{
+			name: 'Home',
+			href: '/'
+		},
+		{
+			name: 'About',
+			href: '/about'
+		},
 		{
 			name: 'Development',
 			href: '/development'
@@ -13,21 +22,28 @@
 		{
 			name: 'AI Training',
 			href: '/ai'
-		},
-		{
-			name: 'Resume',
-			href: '/resume'
 		}
 	];
 	let isMobileMenuOpen = false;
+
+	// Get current path to determine active link
+	$: currentPath = $page.url.pathname;
 </script>
 
 <header class="absolute inset-x-0 top-0 z-50">
 	<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 		<div class="flex lg:flex-1">
-			<a href="/" class="-m-1.5 p-1.5">
+			<a href="/" class="-m-1.5 p-1.5 flex items-center gap-3 group">
 				<span class="sr-only">Roga Web Development</span>
 				<img class="h-8 w-auto" src="/logo/favicon-32x32.png" alt="Roga Web Development Logo" />
+				<span
+					class="text-lg font-bold tracking-tight text-gray-600 transition-colors duration-200 group-hover:text-gray-800 relative"
+				>
+					Roga Web Development
+					<span
+						class="absolute -bottom-[5px] left-1/2 w-0 h-0.5 bg-gray-600 group-hover:w-full group-hover:left-0 transition-all duration-300 origin-center"
+					/>
+				</span>
 			</a>
 		</div>
 		<div class="flex lg:hidden">
@@ -57,17 +73,26 @@
 		</div>
 		<div class="hidden lg:flex lg:gap-x-12">
 			{#each tabs as { name, href }}
-				<a {href} class="text-sm font-semibold leading-6 text-gray-900">{name}</a>
+				<a
+					{href}
+					class="text-sm font-semibold leading-6 text-gray-900 relative group"
+					class:active={currentPath === href}
+				>
+					{name}
+					<span
+						class="absolute -bottom-[5px] left-0 h-0.5 bg-gray-600 transition-all duration-300
+						{currentPath === href ? 'w-full' : 'w-0 group-hover:w-full'}"
+					/>
+				</a>
 			{/each}
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
-			<a
-				href="mailto:ryan@roga.dev"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="text-sm font-semibold leading-6 text-gray-900"
-			>
-				Contact me <span aria-hidden="true">&rarr;</span>
+			<a href="/contact" class="text-sm font-semibold leading-6 text-gray-900 relative group">
+				Contact <span aria-hidden="true">&rarr;</span>
+				<span
+					class="absolute -bottom-[5px] left-0 h-0.5 bg-gray-600 transition-all duration-300
+					{currentPath === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'}"
+				/>
 			</a>
 		</div>
 	</nav>
@@ -110,9 +135,16 @@
 							{#each tabs as { name, href }}
 								<a
 									{href}
-									class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-									>{name}</a
+									on:click={() => (isMobileMenuOpen = false)}
+									class="relative group -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+									class:active={currentPath === href}
 								>
+									{name}
+									<span
+										class="absolute bottom-1 left-3 h-0.5 bg-gray-600 transition-all duration-300
+										{currentPath === href ? 'w-[calc(100%-24px)]' : 'w-0 group-hover:w-[calc(100%-24px)]'}"
+									/>
+								</a>
 							{/each}
 						</div>
 						<!-- <div class="py-6">
