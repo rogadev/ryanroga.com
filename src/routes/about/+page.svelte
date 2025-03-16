@@ -334,12 +334,12 @@
 					rel="noopener noreferrer"
 					class="group relative overflow-hidden rounded-xl shadow-lg animate-on-scroll"
 				>
-					<div class="aspect-video bg-white flex items-center justify-center overflow-hidden">
+					<div class="h-48 bg-white overflow-hidden relative">
 						<!-- Project thumbnail with better visibility -->
 						<img
 							src="/images/Product_example.png"
 							alt="CarEvo Lot Logistics application"
-							class="object-cover w-full h-full group-hover:opacity-75 transition-opacity"
+							class="absolute top-0 right-0 w-full object-cover object-top h-full group-hover:opacity-75 transition-opacity"
 							on:error={(e) => handleImageError(e, 'CarEvo Lot Logistics')}
 						/>
 
@@ -365,12 +365,12 @@
 					class="group relative overflow-hidden rounded-xl shadow-lg animate-on-scroll"
 					style="transition-delay: 200ms;"
 				>
-					<div class="aspect-video bg-white flex items-center justify-center overflow-hidden">
+					<div class="h-48 bg-white overflow-hidden relative">
 						<!-- Project thumbnail with better visibility -->
 						<img
-							src="/images/projects/viu-career-outlooks.png"
+							src="/images/viu-career-outlooks-example.png"
 							alt="VIU Career Outlooks application"
-							class="object-cover w-full h-full group-hover:opacity-75 transition-opacity"
+							class="absolute top-0 right-0 w-full object-cover object-top h-full group-hover:opacity-75 transition-opacity"
 							on:error={(e) => handleImageError(e, 'VIU Career Outlooks')}
 						/>
 
@@ -396,12 +396,12 @@
 					class="group relative overflow-hidden rounded-xl shadow-lg animate-on-scroll"
 					style="transition-delay: 400ms;"
 				>
-					<div class="aspect-video bg-white flex items-center justify-center overflow-hidden">
+					<div class="h-48 bg-white overflow-hidden relative">
 						<!-- Project thumbnail with better visibility -->
 						<img
-							src="/images/EzTripr Updated Drive.png"
+							src="/images/eztripr.png"
 							alt="EZ Tripr application"
-							class="object-cover w-full h-full group-hover:opacity-75 transition-opacity"
+							class="absolute top-0 right-0 w-full object-cover object-top h-full group-hover:opacity-75 transition-opacity"
 							on:error={(e) => handleImageError(e, 'EZTripr Trip Tracker')}
 						/>
 
