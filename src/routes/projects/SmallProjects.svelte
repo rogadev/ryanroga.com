@@ -25,7 +25,7 @@
 						<div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
 							<img
 								src="https://tailwindui.com/img/ecommerce-images/product-feature-04-detail-03.jpg"
-								alt="Printed photo of bag being tossed into the sky on top of grass."
+								alt="Bag being tossed into the sky on top of grass"
 								class="object-cover object-center"
 							/>
 						</div>

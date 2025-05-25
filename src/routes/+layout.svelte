@@ -3,6 +3,8 @@
 	import '../styles.css';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+
+	let { children } = $props();
 </script>
 
 <div class="app bg-white">
@@ -11,7 +13,7 @@
 			<Navbar />
 
 			<div class="relative isolate pt-14">
-				<slot />
+				{@render children()}
 			</div>
 		</div>
 		<Footer />

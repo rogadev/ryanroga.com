@@ -1,3 +1,5 @@
+<svelte:options runes={true} />
+
 <script>
 	import HomeHero from './HomeHero.svelte';
 	import SocialProof from './SocialProof.svelte';

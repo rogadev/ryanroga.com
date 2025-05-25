@@ -1,8 +1,10 @@
+<svelte:options runes={true} />
+
 <figure class="mt-10 border-l border-indigo-600 pl-9">
 	<blockquote class="font-semibold text-gray-900">
 		<p>
-			“If our customers were happy with us the first time, why are they going to a stranger to buy
-			their next car when we'll offer them better service and a better deal?”
+			"If our customers were happy with us the first time, why are they going to a stranger to buy
+			their next car when we'll offer them better service and a better deal?"
 		</p>
 	</blockquote>
 	<figcaption class="mt-6 flex gap-x-4">

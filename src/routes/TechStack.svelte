@@ -1,3 +1,5 @@
+<svelte:options runes={true} />
+
 <script>
 	import Icon from '@iconify/svelte';
 </script>

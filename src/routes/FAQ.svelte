@@ -1,5 +1,7 @@
+<svelte:options runes={true} />
+
 <script lang="ts">
-	let openItems: Record<number, boolean> = {};
+	let openItems = $state<Record<number, boolean>>({});
 
 	function toggle(index: number) {
 		openItems[index] = !openItems[index];
@@ -22,7 +24,7 @@
 			<div class="space-y-4">
 				<!-- FAQ 1 -->
 				<div class="rounded-2xl bg-white shadow-sm border border-gray-200 overflow-hidden">
-					<button class="w-full px-6 py-6 text-left focus:outline-none" on:click={() => toggle(1)}>
+					<button class="w-full px-6 py-6 text-left focus:outline-none" onclick={() => toggle(1)}>
 						<div class="flex items-center justify-between">
 							<h3 class="text-lg font-semibold text-gray-900">
 								How much does a professional website cost?
@@ -84,7 +86,7 @@
 
 				<!-- FAQ 2 -->
 				<div class="rounded-2xl bg-white shadow-sm border border-gray-200 overflow-hidden">
-					<button class="w-full px-6 py-6 text-left focus:outline-none" on:click={() => toggle(2)}>
+					<button class="w-full px-6 py-6 text-left focus:outline-none" onclick={() => toggle(2)}>
 						<div class="flex items-center justify-between">
 							<h3 class="text-lg font-semibold text-gray-900">
 								How long does it take to build a website?
@@ -144,7 +146,7 @@
 
 				<!-- FAQ 3 -->
 				<div class="rounded-2xl bg-white shadow-sm border border-gray-200 overflow-hidden">
-					<button class="w-full px-6 py-6 text-left focus:outline-none" on:click={() => toggle(3)}>
+					<button class="w-full px-6 py-6 text-left focus:outline-none" onclick={() => toggle(3)}>
 						<div class="flex items-center justify-between">
 							<h3 class="text-lg font-semibold text-gray-900">
 								Will I be able to update the website myself?
@@ -235,7 +237,7 @@
 
 				<!-- FAQ 4 -->
 				<div class="rounded-2xl bg-white shadow-sm border border-gray-200 overflow-hidden">
-					<button class="w-full px-6 py-6 text-left focus:outline-none" on:click={() => toggle(4)}>
+					<button class="w-full px-6 py-6 text-left focus:outline-none" onclick={() => toggle(4)}>
 						<div class="flex items-center justify-between">
 							<h3 class="text-lg font-semibold text-gray-900">
 								What if I'm not happy with the final result?
@@ -303,7 +305,7 @@
 
 				<!-- FAQ 5 -->
 				<div class="rounded-2xl bg-white shadow-sm border border-gray-200 overflow-hidden">
-					<button class="w-full px-6 py-6 text-left focus:outline-none" on:click={() => toggle(5)}>
+					<button class="w-full px-6 py-6 text-left focus:outline-none" onclick={() => toggle(5)}>
 						<div class="flex items-center justify-between">
 							<h3 class="text-lg font-semibold text-gray-900">
 								Do you provide ongoing support and maintenance?
@@ -367,7 +369,7 @@
 
 				<!-- FAQ 6 -->
 				<div class="rounded-2xl bg-white shadow-sm border border-gray-200 overflow-hidden">
-					<button class="w-full px-6 py-6 text-left focus:outline-none" on:click={() => toggle(6)}>
+					<button class="w-full px-6 py-6 text-left focus:outline-none" onclick={() => toggle(6)}>
 						<div class="flex items-center justify-between">
 							<h3 class="text-lg font-semibold text-gray-900">
 								Will my website work on mobile devices?
@@ -422,7 +424,7 @@
 
 				<!-- FAQ 7 -->
 				<div class="rounded-2xl bg-white shadow-sm border border-gray-200 overflow-hidden">
-					<button class="w-full px-6 py-6 text-left focus:outline-none" on:click={() => toggle(7)}>
+					<button class="w-full px-6 py-6 text-left focus:outline-none" onclick={() => toggle(7)}>
 						<div class="flex items-center justify-between">
 							<h3 class="text-lg font-semibold text-gray-900">
 								Can you help with SEO and getting found on Google?
@@ -485,7 +487,7 @@
 
 				<!-- FAQ 8 -->
 				<div class="rounded-2xl bg-white shadow-sm border border-gray-200 overflow-hidden">
-					<button class="w-full px-6 py-6 text-left focus:outline-none" on:click={() => toggle(8)}>
+					<button class="w-full px-6 py-6 text-left focus:outline-none" onclick={() => toggle(8)}>
 						<div class="flex items-center justify-between">
 							<h3 class="text-lg font-semibold text-gray-900">
 								What happens if you're unavailable or something happens to you?

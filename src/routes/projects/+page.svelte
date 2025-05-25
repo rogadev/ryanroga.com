@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import ProjectCard from './ProjectCard.svelte';
 
@@ -28,7 +27,7 @@
 	];
 
 	// Animation setup
-	onMount(() => {
+	$effect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {

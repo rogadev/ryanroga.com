@@ -1,11 +1,10 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
+<svelte:options runes={true} />
 
-	export let href: string;
-	export let name: string;
+<script lang="ts">
+	let { href, name } = $props<{ href: string; name: string }>();
 	let link: HTMLAnchorElement;
 
-	onMount(() => {
+	$effect(() => {
 		if (href?.startsWith('http')) {
 			link.setAttribute('target', '_blank');
 			link.setAttribute('rel', 'noopener noreferrer');

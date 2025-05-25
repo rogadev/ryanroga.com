@@ -1,3 +1,5 @@
+<svelte:options runes={true} />
+
 <div class="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
 	<div
 		class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"

@@ -1,9 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
+	let isVisible = $state(false);
 
-	let isVisible = false;
-
-	onMount(() => {
+	$effect(() => {
 		isVisible = true;
 
 		// Intersection observer for scroll animations

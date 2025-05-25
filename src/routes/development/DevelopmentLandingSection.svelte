@@ -1,9 +1,8 @@
 <script>
 	import Icon from '@iconify/svelte';
-	import { onMount } from 'svelte';
 
 	// Add animation functionality for this component
-	onMount(() => {
+	$effect(() => {
 		const animateElements = () => {
 			document.querySelectorAll('.animate-on-scroll').forEach((el) => {
 				if (el.classList.contains('animate-in')) return;

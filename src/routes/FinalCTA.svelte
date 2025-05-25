@@ -1,3 +1,5 @@
+<svelte:options runes={true} />
+
 <section class="bg-gradient-to-r from-indigo-600 to-purple-700 py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
