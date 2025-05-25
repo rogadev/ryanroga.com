@@ -6,6 +6,7 @@
 	import Services from './Services.svelte';
 	import Process from './Process.svelte';
 	import TechStack from './TechStack.svelte';
+	import ClientLogos from './ClientLogos.svelte';
 	import CaseStudiesPreview from './CaseStudiesPreview.svelte';
 	import WhyChooseUs from './WhyChooseUs.svelte';
 	import FAQ from './FAQ.svelte';
@@ -40,6 +41,7 @@
 <Services />
 <Process />
 <TechStack />
+<ClientLogos />
 <CaseStudiesPreview />
 <WhyChooseUs />
 <FAQ />
