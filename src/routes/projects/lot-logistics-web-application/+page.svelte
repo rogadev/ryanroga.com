@@ -137,7 +137,7 @@
 								src="/images/Product_example.png"
 								alt="CarEvo Lot Logistics Dashboard"
 								class="w-full h-auto"
-								on:error={handleImageError}
+								onerror={handleImageError}
 							/>
 						</div>
 					</div>

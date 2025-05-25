@@ -1,7 +1,17 @@
 <svelte:options runes={true} />
 
 <script lang="ts">
-	let { delay = 0, threshold = 0.1 } = $props<{ delay?: number; threshold?: number }>();
+	import type { Snippet } from 'svelte';
+
+	let {
+		delay = 0,
+		threshold = 0.1,
+		children
+	} = $props<{
+		delay?: number;
+		threshold?: number;
+		children?: Snippet;
+	}>();
 
 	let element: HTMLElement;
 	let isVisible = $state(false);
@@ -34,7 +44,7 @@
 	class="animate-on-scroll {isVisible ? 'animate-in' : ''}"
 	style={delay ? `transition-delay: ${delay}ms` : ''}
 >
-	<slot />
+	{@render children?.()}
 </div>
 
 <style>
