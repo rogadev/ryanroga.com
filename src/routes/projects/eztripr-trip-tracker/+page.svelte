@@ -573,6 +573,11 @@
 	<div
 		class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
 		onclick={closeModal}
+		onkeydown={(e) => e.key === 'Escape' && closeModal()}
+		role="dialog"
+		aria-modal="true"
+		aria-label="Image modal"
+		tabindex="-1"
 		transition:fly={{ duration: 300, opacity: 0 }}
 	>
 		<div class="relative max-w-4xl max-h-[90vh] w-full">
@@ -589,7 +594,6 @@
 						src="/images/EzTripr-Updated-Drive-UI.png"
 						alt="EZTripr Dashboard Interface - Full View"
 						class="w-full h-auto modal-dashboard-image"
-						onclick={(e) => e.stopPropagation()}
 					/>
 				</div>
 			</div>
