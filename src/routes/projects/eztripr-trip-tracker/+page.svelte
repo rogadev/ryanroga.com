@@ -111,7 +111,7 @@
 								src="/images/eztripr.png"
 								alt="EZTripr Dashboard"
 								class="w-full"
-								on:error={handleImageError}
+								onerror={handleImageError}
 							/>
 						</div>
 					</div>
@@ -392,7 +392,7 @@
 								src="/images/eztripr-dashboard.png"
 								alt="EZTripr Dashboard Interface"
 								class="rounded-lg w-full"
-								on:error={handleImageError}
+								onerror={handleImageError}
 							/>
 						</div>
 					</div>
