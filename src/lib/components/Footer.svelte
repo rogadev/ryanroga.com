@@ -231,18 +231,6 @@
 		<div class="mt-16 border-t border-gray-200 pt-8 sm:mt-20 lg:mt-24">
 			<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
 				<p class="text-xs leading-5 text-gray-500">&copy; 2025 Ryan Roga. All rights reserved.</p>
-				<div class="mt-4 sm:mt-0 flex items-center space-x-4 text-xs text-gray-500">
-					<span class="flex items-center gap-1">
-						<svg class="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-							<path
-								fill-rule="evenodd"
-								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-								clip-rule="evenodd"
-							/>
-						</svg>
-						Trusted by businesses across Western Canada
-					</span>
-				</div>
 			</div>
 		</div>
 	</div>
