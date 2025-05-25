@@ -80,7 +80,7 @@
 	];
 </script>
 
-<footer class="bg-gray-50 border-t border-gray-200" aria-labelledby="footer-heading">
+<footer class="bg-gray-50 border-t border-gray-200 relative z-10" aria-labelledby="footer-heading">
 	<h2 id="footer-heading" class="sr-only">Footer</h2>
 	<div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
@@ -118,7 +118,7 @@
 								d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
 							/>
 						</svg>
-						<a href="mailto:hello@roga.dev" class="hover:text-indigo-600 transition-colors"
+						<a href="mailto:ryan@roga.dev" class="hover:text-indigo-600 transition-colors"
 							>ryan@roga.dev</a
 						>
 					</p>
@@ -174,7 +174,7 @@
 								<li>
 									<a
 										{href}
-										class="text-sm leading-6 text-gray-600 hover:text-indigo-600 transition-colors"
+										class="block text-sm leading-6 text-gray-600 hover:text-indigo-600 transition-colors"
 									>
 										<div class="font-medium">{name}</div>
 										<div class="text-xs text-gray-500">{description}</div>
@@ -184,7 +184,7 @@
 							<li>
 								<a
 									href="/projects"
-									class="text-sm leading-6 text-indigo-600 hover:text-indigo-500 font-medium transition-colors"
+									class="inline-block text-sm leading-6 text-indigo-600 hover:text-indigo-500 font-medium transition-colors"
 								>
 									View All Projects →
 								</a>
