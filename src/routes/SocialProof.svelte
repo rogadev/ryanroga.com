@@ -1,7 +1,18 @@
 <svelte:options runes={true} />
 
-<script>
+<script lang="ts">
 	import Icon from '@iconify/svelte';
+	import { browser } from '$app/environment';
+
+	// State for expandable testimonials
+	let expandedTestimonials = $state({
+		carevo: false,
+		viu: false
+	});
+
+	function toggleTestimonial(key: keyof typeof expandedTestimonials) {
+		expandedTestimonials[key] = !expandedTestimonials[key];
+	}
 </script>
 
 <section class="bg-gray-50 py-16 sm:py-24">
@@ -37,22 +48,46 @@
 
 		<!-- Testimonials -->
 		<div class="mx-auto mt-16 max-w-5xl">
-			<div class="grid gap-8 lg:grid-cols-2">
-				<div class="rounded-2xl bg-white p-8 shadow-sm">
+			<div class="grid gap-8 lg:grid-cols-2 lg:items-start">
+				<!-- CarEvo Testimonial -->
+				<div class="rounded-2xl bg-white p-8 shadow-sm flex flex-col">
 					<div class="flex items-center gap-4">
-						<div class="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center">
-							<span class="text-sm font-bold text-indigo-600">CE</span>
+						<div class="h-12 w-12 rounded-full flex items-center justify-center overflow-hidden">
+							<img
+								src="/logos/carevo-square.png"
+								alt="CarEvo Auto Solutions"
+								class="h-11 w-11 object-cover"
+							/>
 						</div>
 						<div>
 							<div class="font-semibold text-gray-900">CarEvo Auto Solutions</div>
-							<div class="text-sm text-gray-600">Online Used Car Dealership</div>
+							<div class="text-sm text-gray-600">Online Car Dealership</div>
 						</div>
 					</div>
-					<blockquote class="mt-4 text-gray-700">
-						"Ryan transformed our logistics operations with a custom web application. Our efficiency
-						increased by 40% and customer satisfaction improved dramatically. The system handles
-						multiple lot management seamlessly."
+					<blockquote class="mt-4 text-gray-700 flex-grow">
+						{#if expandedTestimonials.carevo || (browser && window.innerWidth < 1024)}
+							"Before Ryan's system, we were losing cars and deals because we had no centralized
+							tracking. Our logistics manager was the only one who knew where anything was, and we
+							were trying to use a shared Google Sheet that nobody actually used. It was a disaster
+							waiting to happen. Now we know where 99.9% of our vehicles are at all times. The QR
+							key scanning from any phone is so simple that there's no excuse not to use it. User
+							adoption has been incredible compared to our old Google Sheet method. Even our sales
+							team can move cars when needed without disrupting our logistics workflow or losing
+							track of inventory. It's completely transformed how we operate."
+						{:else}
+							"Before Ryan's system, we were losing cars and deals because we had no centralized
+							tracking. Our logistics manager was the only one who knew where anything was, and we
+							were trying to use a shared Google Sheet that nobody actually used..."
+						{/if}
 					</blockquote>
+					{#if browser && window.innerWidth >= 1024}
+						<button
+							onclick={() => toggleTestimonial('carevo')}
+							class="mt-2 text-indigo-600 hover:text-indigo-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 rounded"
+						>
+							{expandedTestimonials.carevo ? 'Read less' : 'Read more'}
+						</button>
+					{/if}
 					<div class="mt-4 flex text-yellow-400">
 						{#each Array(5) as _}
 							<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
@@ -64,21 +99,41 @@
 					</div>
 				</div>
 
-				<div class="rounded-2xl bg-white p-8 shadow-sm">
+				<!-- VIU Testimonial -->
+				<div class="rounded-2xl bg-white p-8 shadow-sm flex flex-col">
 					<div class="flex items-center gap-4">
-						<div class="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center">
-							<span class="text-sm font-bold text-indigo-600">VIU</span>
+						<div class="h-12 w-12 rounded-full flex items-center justify-center overflow-hidden">
+							<img
+								src="/logos/viu logo square.png"
+								alt="Vancouver Island University"
+								class="h-12 w-12 object-cover"
+							/>
 						</div>
 						<div>
 							<div class="font-semibold text-gray-900">Vancouver Island University</div>
 							<div class="text-sm text-gray-600">Educational Institution</div>
 						</div>
 					</div>
-					<blockquote class="mt-4 text-gray-700">
-						"The Career Outlooks application has become an essential tool for our students. Ryan's
-						attention to detail and understanding of our needs resulted in a solution that perfectly
-						bridges education and employment data."
+					<blockquote class="mt-4 text-gray-700 flex-grow">
+						{#if expandedTestimonials.viu || (browser && window.innerWidth < 1024)}
+							"The Career Outlooks application has become an essential tool for our students. Ryan's
+							attention to detail and understanding of our needs resulted in a solution that
+							perfectly bridges education and employment data. Students can now make informed
+							decisions about their career paths with real-time labor market information."
+						{:else}
+							"The Career Outlooks application has become an essential tool for our students. Ryan's
+							attention to detail and understanding of our needs resulted in a solution that
+							perfectly bridges education and employment data..."
+						{/if}
 					</blockquote>
+					{#if browser && window.innerWidth >= 1024}
+						<button
+							onclick={() => toggleTestimonial('viu')}
+							class="mt-2 text-indigo-600 hover:text-indigo-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 rounded"
+						>
+							{expandedTestimonials.viu ? 'Read less' : 'Read more'}
+						</button>
+					{/if}
 					<div class="mt-4 flex text-yellow-400">
 						{#each Array(5) as _}
 							<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
