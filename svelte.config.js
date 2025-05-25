@@ -6,7 +6,15 @@ const config = {
 	preprocess: [vitePreprocess({})],
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			// Configure ISR for better caching
+			isr: {
+				// Enable ISR globally with a 1 hour cache
+				expiration: 3600, // 1 hour in seconds
+				// Optional: Add bypass token for on-demand revalidation
+				bypassToken: process.env.VERCEL_REVALIDATE_TOKEN
+			}
+		}),
 		alias: {
 			'@/*': './path/to/lib/*'
 		}
