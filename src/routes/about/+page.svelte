@@ -26,19 +26,19 @@
 </script>
 
 <svelte:head>
-	<title>About Ryan Roga | Web Development Expert & Business Solution Architect</title>
+	<title>About Ryan Roga | Small Business Web Development Expert</title>
 	<meta
 		name="description"
-		content="Meet Ryan Roga, a passionate web developer specializing in custom business applications, modern websites, and AI integration. Based in Western Canada, serving businesses nationwide with proven results."
+		content="Meet Ryan Roga, the web developer who helps small businesses compete online. Personal service, modern technology, and proven results. No agency overhead, just results."
 	/>
 	<meta
 		name="keywords"
-		content="Ryan Roga, web developer, custom applications, SvelteKit expert, business websites, AI integration, Western Canada web development"
+		content="Ryan Roga, small business web developer, custom web applications, SvelteKit expert, business websites, independent developer, Western Canada"
 	/>
-	<meta property="og:title" content="About Ryan Roga | Web Development Expert" />
+	<meta property="og:title" content="About Ryan Roga | Small Business Web Development Expert" />
 	<meta
 		property="og:description"
-		content="Passionate web developer specializing in custom business solutions. Transforming businesses through innovative web applications and AI integration."
+		content="The web developer who helps small businesses compete online. Personal service, modern technology, and proven results."
 	/>
 	<meta property="og:type" content="profile" />
 	<meta property="og:url" content="https://roga.dev/about" />
@@ -50,7 +50,7 @@
 			"@context": "https://schema.org",
 			"@type": "Person",
 			"name": "Ryan Roga",
-			"jobTitle": "Web Developer & Business Solution Architect",
+			"jobTitle": "Small Business Web Development Expert",
 			"url": "https://roga.dev",
 			"sameAs": ["https://linkedin.com/in/ryan-rogan", "https://github.com/rogadev"],
 			"worksFor": {
@@ -59,16 +59,17 @@
 				"url": "https://roga.dev"
 			},
 			"knowsAbout": [
-				"Web Development",
+				"Small Business Web Development",
 				"SvelteKit",
 				"TypeScript",
 				"Custom Web Applications",
-				"AI Integration",
+				"E-commerce Solutions",
 				"Business Automation"
 			],
 			"address": {
 				"@type": "PostalAddress",
-				"addressRegion": "BC"
+				"addressRegion": "BC",
+				"addressCountry": "CA"
 			}
 		}
 	</script>
@@ -93,59 +94,192 @@
 				<div
 					class="mb-8 inline-flex items-center rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700"
 				>
-					👋 Meet the Developer Behind the Solutions
+					👨‍💻 Your Personal Web Development Partner
 				</div>
 				<h1
 					id="about-hero-heading"
 					class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl"
 				>
-					Hi, I'm
+					I Help Small Businesses
 					<span
 						class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
 					>
-						Ryan Roga
+						Win Online
 					</span>
 				</h1>
 				<p class="mt-6 text-lg leading-8 text-gray-600 sm:text-xl">
-					A passionate web developer who transforms complex business challenges into elegant digital
-					solutions. Based in Western Canada, I help businesses nationwide achieve their digital
-					potential.
+					While big agencies treat you like a number, I treat you like a partner. I'm Ryan Roga, and
+					I build web solutions that actually move the needle for small businesses across Canada.
 				</p>
+				<div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
+					<div class="flex items-center justify-center gap-2 text-sm text-gray-600">
+						<svg class="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+						<span>Direct Communication</span>
+					</div>
+					<div class="flex items-center justify-center gap-2 text-sm text-gray-600">
+						<svg class="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+						<span>Small Business Pricing</span>
+					</div>
+					<div class="flex items-center justify-center gap-2 text-sm text-gray-600">
+						<svg class="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+						<span>Proven Results</span>
+					</div>
+				</div>
 				<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
 					<a
 						href="/contact"
 						class="rounded-lg bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-200 hover:shadow-xl hover:scale-105"
 					>
-						Let's Work Together
+						Let's Talk About Your Project
 					</a>
 					<a
 						href="/projects"
 						class="rounded-lg border border-gray-300 bg-white px-6 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 transition-all duration-200 hover:shadow-md"
 					>
-						See My Work
+						See Real Results
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- About Story Section -->
+	<!-- The Problem Section -->
+	<section class="py-16 sm:py-24 bg-gray-50">
+		<div class="mx-auto max-w-7xl px-6 lg:px-8">
+			<div class="mx-auto max-w-2xl text-center animate-on-scroll">
+				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+					Tired of Being Just Another Client?
+				</h2>
+				<p class="mt-4 text-lg leading-8 text-gray-600">
+					Most small businesses get burned by web agencies. Here's what I hear all the time:
+				</p>
+			</div>
+
+			<div class="mx-auto mt-16 max-w-6xl animate-on-scroll" style="transition-delay: 200ms;">
+				<div class="grid gap-6 lg:grid-cols-3">
+					<div class="rounded-2xl bg-white p-6 shadow-sm border border-red-100">
+						<div class="flex items-center gap-3 mb-4">
+							<div class="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center">
+								<span class="text-red-600 text-xl">😤</span>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900">"They Don't Get My Business"</h3>
+						</div>
+						<p class="text-gray-600">
+							Big agencies usually assign developers who've never run a business. They build what
+							looks pretty, not what drives sales.
+						</p>
+					</div>
+
+					<div class="rounded-2xl bg-white p-6 shadow-sm border border-red-100">
+						<div class="flex items-center gap-3 mb-4">
+							<div class="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center">
+								<span class="text-red-600 text-xl">🐌</span>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900">"Everything Takes Forever"</h3>
+						</div>
+						<p class="text-gray-600">
+							Simple changes require meetings, approvals, and weeks of waiting. Need to pivot? That
+							won't be cheap or easy!
+						</p>
+					</div>
+
+					<div class="rounded-2xl bg-white p-6 shadow-sm border border-red-100">
+						<div class="flex items-center gap-3 mb-4">
+							<div class="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center">
+								<span class="text-red-600 text-xl">👻</span>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900">"Can't Reach Anyone"</h3>
+						</div>
+						<p class="text-gray-600">
+							Account managers who don't know code. Developers who don't return calls. Your website
+							breaks and nobody cares.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- My Story Section -->
 	<section class="py-16 sm:py-24 bg-white">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
-			<div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-				<div class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2 lg:items-start">
-					<div class="lg:pr-4 animate-on-scroll">
-						<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">My Story</h2>
+			<div class="mx-auto max-w-6xl">
+				<div class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2 lg:items-center">
+					<div class="animate-on-scroll">
+						<div class="rounded-2xl bg-gradient-to-br from-indigo-50 to-purple-50 p-8">
+							<div class="flex items-center gap-4 mb-6">
+								<div class="h-16 w-16 rounded-full bg-indigo-600 flex items-center justify-center">
+									<span class="text-xl font-bold text-white">R</span>
+								</div>
+								<div>
+									<h3 class="text-xl font-semibold text-gray-900">Ryan Roga</h3>
+									<p class="text-sm text-gray-600">Your Web Development Partner</p>
+								</div>
+							</div>
+							<div class="space-y-4">
+								<div class="flex items-center gap-3">
+									<svg class="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+										<path
+											fill-rule="evenodd"
+											d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+											clip-rule="evenodd"
+										/>
+									</svg>
+									<span class="text-sm text-gray-700">Vancouver Island University Graduate</span>
+								</div>
+								<div class="flex items-center gap-3">
+									<svg class="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+										<path
+											fill-rule="evenodd"
+											d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+											clip-rule="evenodd"
+										/>
+									</svg>
+									<span class="text-sm text-gray-700">5+ Years Building Business Solutions</span>
+								</div>
+								<div class="flex items-center gap-3">
+									<svg class="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+										<path
+											fill-rule="evenodd"
+											d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+											clip-rule="evenodd"
+										/>
+									</svg>
+									<span class="text-sm text-gray-700">Based in Beautiful British Columbia</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="animate-on-scroll" style="transition-delay: 200ms;">
+						<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+							Why I Do This Differently
+						</h2>
 						<p class="mt-6 text-lg leading-8 text-gray-600">
-							My journey into web development started with a simple belief: technology should solve
-							real problems and make life easier, not more complicated. What began as curiosity
-							about how websites work evolved into a passion for creating digital solutions that
-							drive tangible business results.
+							I started this business because I was tired of seeing small businesses get ripped off
+							by agencies that don't understand what it's like to run a business.
 						</p>
 						<p class="mt-6 text-lg leading-8 text-gray-600">
-							Over the years, I've had the privilege of working with businesses across various
-							industries, from small local shops to growing enterprises. Each project has taught me
-							something new about the intersection of technology and business needs.
+							As a graduate of VIU's top-rated Web Development program, I have the technical skills.
+							But more importantly, I understand that your website isn't just a pretty brochure—it's
+							a business tool that needs to work as hard as you do.
 						</p>
 						<div class="mt-8 space-y-6">
 							<div class="flex items-start gap-4">
@@ -160,14 +294,15 @@
 										<path
 											stroke-linecap="round"
 											stroke-linejoin="round"
-											d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 3.75a6.01 6.01 0 01-6 6 6.01 6.01 0 01-6-6 6.01 6.01 0 016-6 6.01 6.01 0 016 6z"
+											d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
 										/>
 									</svg>
 								</div>
 								<div>
-									<h3 class="text-lg font-semibold text-gray-900">Results-Driven Approach</h3>
+									<h3 class="text-lg font-semibold text-gray-900">You Talk Directly to Me</h3>
 									<p class="text-gray-600">
-										Every solution I build is designed with measurable business outcomes in mind.
+										No account managers. No junior developers. When you call, you get the person who
+										actually built your website.
 									</p>
 								</div>
 							</div>
@@ -183,14 +318,15 @@
 										<path
 											stroke-linecap="round"
 											stroke-linejoin="round"
-											d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.58-5.84a14.927 14.927 0 012.58 5.84M9.75 7.124a6 6 0 00-6 6 6 6 0 006 6m0-12a6 6 0 016 6 6 6 0 01-6 6m0-12v12"
+											d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
 										/>
 									</svg>
 								</div>
 								<div>
-									<h3 class="text-lg font-semibold text-gray-900">Continuous Learning</h3>
+									<h3 class="text-lg font-semibold text-gray-900">Honest, Transparent Pricing</h3>
 									<p class="text-gray-600">
-										I stay current with the latest technologies to provide cutting-edge solutions.
+										No hidden fees. No surprise charges. I tell you exactly what things cost
+										upfront, and I stick to it.
 									</p>
 								</div>
 							</div>
@@ -206,67 +342,18 @@
 										<path
 											stroke-linecap="round"
 											stroke-linejoin="round"
-											d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
+											d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
 										/>
 									</svg>
 								</div>
 								<div>
-									<h3 class="text-lg font-semibold text-gray-900">Collaborative Partnership</h3>
+									<h3 class="text-lg font-semibold text-gray-900">
+										Business Results, Not Just Pretty Websites
+									</h3>
 									<p class="text-gray-600">
-										I work closely with clients to understand their vision and bring it to life.
+										Every feature I build has a purpose: drive sales, save time, or improve customer
+										experience. No fluff.
 									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="lg:pl-8 animate-on-scroll" style="transition-delay: 200ms;">
-						<!-- Skills & Expertise -->
-						<div class="rounded-2xl bg-gray-50 p-8">
-							<h3 class="text-xl font-semibold text-gray-900 mb-6">Technical Expertise</h3>
-							<div class="space-y-4">
-								<div>
-									<div class="flex items-center justify-between mb-2">
-										<span class="text-sm font-medium text-gray-700">Frontend Development</span>
-										<span class="text-sm text-gray-500">Expert</span>
-									</div>
-									<div class="w-full bg-gray-200 rounded-full h-2">
-										<div class="bg-indigo-600 h-2 rounded-full w-[95%]"></div>
-									</div>
-									<p class="text-xs text-gray-600 mt-1">
-										SvelteKit, Vue.js, TypeScript, Tailwind CSS
-									</p>
-								</div>
-								<div>
-									<div class="flex items-center justify-between mb-2">
-										<span class="text-sm font-medium text-gray-700">Backend Development</span>
-										<span class="text-sm text-gray-500">Advanced</span>
-									</div>
-									<div class="w-full bg-gray-200 rounded-full h-2">
-										<div class="bg-indigo-600 h-2 rounded-full w-[90%]"></div>
-									</div>
-									<p class="text-xs text-gray-600 mt-1">Node.js, Express, PostgreSQL, MongoDB</p>
-								</div>
-								<div>
-									<div class="flex items-center justify-between mb-2">
-										<span class="text-sm font-medium text-gray-700">AI Integration</span>
-										<span class="text-sm text-gray-500">Proficient</span>
-									</div>
-									<div class="w-full bg-gray-200 rounded-full h-2">
-										<div class="bg-indigo-600 h-2 rounded-full w-[85%]"></div>
-									</div>
-									<p class="text-xs text-gray-600 mt-1">
-										OpenAI API, Custom AI Solutions, Training
-									</p>
-								</div>
-								<div>
-									<div class="flex items-center justify-between mb-2">
-										<span class="text-sm font-medium text-gray-700">DevOps & Deployment</span>
-										<span class="text-sm text-gray-500">Proficient</span>
-									</div>
-									<div class="w-full bg-gray-200 rounded-full h-2">
-										<div class="bg-indigo-600 h-2 rounded-full w-[80%]"></div>
-									</div>
-									<p class="text-xs text-gray-600 mt-1">Vercel, AWS, Docker, CI/CD</p>
 								</div>
 							</div>
 						</div>
@@ -276,123 +363,91 @@
 		</div>
 	</section>
 
-	<!-- What I Do Section -->
+	<!-- How I Work Section -->
 	<section class="py-16 sm:py-24 bg-gray-50">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center animate-on-scroll">
-				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What I Do Best</h2>
+				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+					How I Actually Work With You
+				</h2>
 				<p class="mt-4 text-lg leading-8 text-gray-600">
-					I specialize in creating digital solutions that solve real business problems and drive
-					growth.
+					No corporate BS. No confusing processes. Just a straightforward partnership that gets
+					results.
 				</p>
 			</div>
 
-			<div class="mx-auto mt-16 max-w-6xl">
-				<div class="grid gap-8 lg:grid-cols-3">
-					<!-- Custom Applications -->
-					<div
-						class="group relative rounded-2xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-all duration-300 animate-on-scroll"
-					>
-						<div
-							class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-600 group-hover:bg-indigo-700 transition-colors duration-300"
-						>
-							<svg
-								class="h-6 w-6 text-white"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
-								/>
-							</svg>
+			<div class="mx-auto mt-16 max-w-6xl animate-on-scroll" style="transition-delay: 200ms;">
+				<div class="grid gap-8 lg:grid-cols-2">
+					<!-- Left Column -->
+					<div class="space-y-8">
+						<div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-200">
+							<div class="flex items-center gap-4 mb-6">
+								<div class="h-12 w-12 rounded-lg bg-blue-100 flex items-center justify-center">
+									<span class="text-xl font-bold text-blue-600">1</span>
+								</div>
+								<h3 class="text-xl font-semibold text-gray-900">We Talk About Your Business</h3>
+							</div>
+							<p class="text-gray-600 mb-4">
+								Not your "requirements." Your actual business. What problems are you trying to
+								solve? What would success look like? I need to understand your world before I can
+								help improve it.
+							</p>
+							<div class="text-sm text-blue-700 bg-blue-50 rounded-lg p-3">
+								💡 Free 30-minute consultation - no sales pitch, just honest advice
+							</div>
 						</div>
-						<h3 class="mt-6 text-xl font-semibold text-gray-900">Custom Business Applications</h3>
-						<p class="mt-4 text-gray-600">
-							From inventory management systems to customer portals, I build web applications that
-							streamline your operations and boost efficiency.
-						</p>
-						<div class="mt-6">
-							<a
-								href="/projects"
-								class="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
-							>
-								View examples <span aria-hidden="true">→</span>
-							</a>
+
+						<div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-200">
+							<div class="flex items-center gap-4 mb-6">
+								<div class="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center">
+									<span class="text-xl font-bold text-green-600">2</span>
+								</div>
+								<h3 class="text-xl font-semibold text-gray-900">I Build, You Review</h3>
+							</div>
+							<p class="text-gray-600 mb-4">
+								I don't disappear for months. You see progress every week. We make adjustments as we
+								go. Your feedback shapes the final product, not some project manager's
+								interpretation of it.
+							</p>
+							<div class="text-sm text-green-700 bg-green-50 rounded-lg p-3">
+								📱 Weekly progress updates with real, working previews
+							</div>
 						</div>
 					</div>
 
-					<!-- Modern Websites -->
-					<div
-						class="group relative rounded-2xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-all duration-300 animate-on-scroll"
-						style="transition-delay: 200ms;"
-					>
-						<div
-							class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-600 group-hover:bg-indigo-700 transition-colors duration-300"
-						>
-							<svg
-								class="h-6 w-6 text-white"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-								/>
-							</svg>
+					<!-- Right Column -->
+					<div class="space-y-8">
+						<div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-200">
+							<div class="flex items-center gap-4 mb-6">
+								<div class="h-12 w-12 rounded-lg bg-purple-100 flex items-center justify-center">
+									<span class="text-xl font-bold text-purple-600">3</span>
+								</div>
+								<h3 class="text-xl font-semibold text-gray-900">Launch & Optimize</h3>
+							</div>
+							<p class="text-gray-600 mb-4">
+								Launch day isn't goodbye day. I monitor performance, fix any issues, and help you
+								understand how to get the most from your new website. Real partnership doesn't end
+								at launch.
+							</p>
+							<div class="text-sm text-purple-700 bg-purple-50 rounded-lg p-3">
+								🚀 30 days of free support after launch
+							</div>
 						</div>
-						<h3 class="mt-6 text-xl font-semibold text-gray-900">Professional Websites</h3>
-						<p class="mt-4 text-gray-600">
-							Beautiful, fast, and SEO-optimized websites that convert visitors into customers and
-							represent your brand professionally.
-						</p>
-						<div class="mt-6">
-							<a
-								href="/contact"
-								class="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
-							>
-								Get started <span aria-hidden="true">→</span>
-							</a>
-						</div>
-					</div>
 
-					<!-- AI Solutions -->
-					<div
-						class="group relative rounded-2xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-all duration-300 animate-on-scroll"
-						style="transition-delay: 400ms;"
-					>
-						<div
-							class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-600 group-hover:bg-indigo-700 transition-colors duration-300"
-						>
-							<svg
-								class="h-6 w-6 text-white"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
-								/>
-							</svg>
-						</div>
-						<h3 class="mt-6 text-xl font-semibold text-gray-900">AI Integration & Training</h3>
-						<p class="mt-4 text-gray-600">
-							Help your business leverage AI technology with custom integrations and comprehensive
-							training programs for your team.
-						</p>
-						<div class="mt-6">
-							<a href="/ai" class="text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-								Learn more <span aria-hidden="true">→</span>
-							</a>
+						<div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-200">
+							<div class="flex items-center gap-4 mb-6">
+								<div class="h-12 w-12 rounded-lg bg-indigo-100 flex items-center justify-center">
+									<span class="text-xl font-bold text-indigo-600">4</span>
+								</div>
+								<h3 class="text-xl font-semibold text-gray-900">Grow Together</h3>
+							</div>
+							<p class="text-gray-600 mb-4">
+								As your business grows, your website should too. I'm here for the long haul—new
+								features, performance improvements, or just someone to bounce ideas off of.
+							</p>
+							<div class="text-sm text-indigo-700 bg-indigo-50 rounded-lg p-3">
+								🤝 Ongoing partnership rates for existing clients
+							</div>
 						</div>
 					</div>
 				</div>
@@ -400,168 +455,188 @@
 		</div>
 	</section>
 
-	<!-- Values Section -->
+	<!-- What Makes Me Different -->
 	<section class="py-16 sm:py-24 bg-white">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center animate-on-scroll">
 				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-					My Approach to Success
+					The Independent Developer Advantage
 				</h2>
 				<p class="mt-4 text-lg leading-8 text-gray-600">
-					These core principles guide every project I undertake and every relationship I build.
+					Why small businesses get better results working with me instead of big agencies.
 				</p>
 			</div>
 
-			<div class="mx-auto mt-16 max-w-5xl animate-on-scroll" style="transition-delay: 200ms;">
-				<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-					<div class="text-center">
-						<div
-							class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-indigo-100"
-						>
-							<svg
-								class="h-8 w-8 text-indigo-600"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-								/>
-							</svg>
-						</div>
-						<h3 class="mt-6 text-lg font-semibold text-gray-900">Quality First</h3>
-						<p class="mt-4 text-gray-600">
-							Every line of code is written with performance, security, and maintainability in mind.
-							No shortcuts, no compromises.
-						</p>
+			<div class="mx-auto mt-16 max-w-6xl animate-on-scroll" style="transition-delay: 200ms;">
+				<div class="overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-200">
+					<div class="bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-4">
+						<h3 class="text-lg font-semibold text-white text-center">
+							Agency vs. Independent Developer
+						</h3>
 					</div>
+					<div class="p-8">
+						<div class="grid gap-8 lg:grid-cols-2">
+							<!-- Agency Problems -->
+							<div>
+								<h4 class="text-lg font-semibold text-gray-900 mb-6 text-center">
+									❌ Typical Agency Experience
+								</h4>
+								<div class="space-y-4">
+									<div class="flex items-start gap-3">
+										<div
+											class="h-6 w-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5"
+										>
+											<svg class="h-4 w-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+												<path
+													fill-rule="evenodd"
+													d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span class="text-gray-600"
+											>Account managers who don't understand your business</span
+										>
+									</div>
+									<div class="flex items-start gap-3">
+										<div
+											class="h-6 w-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5"
+										>
+											<svg class="h-4 w-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+												<path
+													fill-rule="evenodd"
+													d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span class="text-gray-600">Junior developers working on your project</span>
+									</div>
+									<div class="flex items-start gap-3">
+										<div
+											class="h-6 w-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5"
+										>
+											<svg class="h-4 w-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+												<path
+													fill-rule="evenodd"
+													d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span class="text-gray-600">Hidden costs and scope creep</span>
+									</div>
+									<div class="flex items-start gap-3">
+										<div
+											class="h-6 w-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5"
+										>
+											<svg class="h-4 w-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+												<path
+													fill-rule="evenodd"
+													d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span class="text-gray-600">Months of delays and missed deadlines</span>
+									</div>
+									<div class="flex items-start gap-3">
+										<div
+											class="h-6 w-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5"
+										>
+											<svg class="h-4 w-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+												<path
+													fill-rule="evenodd"
+													d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span class="text-gray-600">No support after launch</span>
+									</div>
+								</div>
+							</div>
 
-					<div class="text-center">
-						<div
-							class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-indigo-100"
-						>
-							<svg
-								class="h-8 w-8 text-indigo-600"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
-								/>
-							</svg>
+							<!-- My Approach -->
+							<div>
+								<h4 class="text-lg font-semibold text-gray-900 mb-6 text-center">
+									✅ Working With Me
+								</h4>
+								<div class="space-y-4">
+									<div class="flex items-start gap-3">
+										<div
+											class="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5"
+										>
+											<svg class="h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+												<path
+													fill-rule="evenodd"
+													d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span class="text-gray-600">Direct communication with the actual developer</span
+										>
+									</div>
+									<div class="flex items-start gap-3">
+										<div
+											class="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5"
+										>
+											<svg class="h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+												<path
+													fill-rule="evenodd"
+													d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span class="text-gray-600">Senior-level expertise on every project</span>
+									</div>
+									<div class="flex items-start gap-3">
+										<div
+											class="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5"
+										>
+											<svg class="h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+												<path
+													fill-rule="evenodd"
+													d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span class="text-gray-600">Fixed pricing with no surprises</span>
+									</div>
+									<div class="flex items-start gap-3">
+										<div
+											class="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5"
+										>
+											<svg class="h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+												<path
+													fill-rule="evenodd"
+													d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span class="text-gray-600">Realistic timelines that I actually meet</span>
+									</div>
+									<div class="flex items-start gap-3">
+										<div
+											class="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5"
+										>
+											<svg class="h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+												<path
+													fill-rule="evenodd"
+													d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+										</div>
+										<span class="text-gray-600">Ongoing partnership and support</span>
+									</div>
+								</div>
+							</div>
 						</div>
-						<h3 class="mt-6 text-lg font-semibold text-gray-900">On-Time Delivery</h3>
-						<p class="mt-4 text-gray-600">
-							I respect your timeline and budget. Clear communication and realistic expectations
-							ensure projects are delivered when promised.
-						</p>
-					</div>
-
-					<div class="text-center">
-						<div
-							class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-indigo-100"
-						>
-							<svg
-								class="h-8 w-8 text-indigo-600"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
-								/>
-							</svg>
-						</div>
-						<h3 class="mt-6 text-lg font-semibold text-gray-900">Long-term Partnership</h3>
-						<p class="mt-4 text-gray-600">
-							I'm not just building a website; I'm helping you grow your business. Ongoing support
-							and optimization are part of every relationship.
-						</p>
-					</div>
-
-					<div class="text-center">
-						<div
-							class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-indigo-100"
-						>
-							<svg
-								class="h-8 w-8 text-indigo-600"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
-								/>
-							</svg>
-						</div>
-						<h3 class="mt-6 text-lg font-semibold text-gray-900">Measurable Results</h3>
-						<p class="mt-4 text-gray-600">
-							Every solution is designed with specific business goals in mind. We track performance
-							and optimize for continuous improvement.
-						</p>
-					</div>
-
-					<div class="text-center">
-						<div
-							class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-indigo-100"
-						>
-							<svg
-								class="h-8 w-8 text-indigo-600"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.58-5.84a14.927 14.927 0 012.58 5.84M9.75 7.124a6 6 0 00-6 6 6 6 0 006 6m0-12a6 6 0 016 6 6 6 0 01-6 6m0-12v12"
-								/>
-							</svg>
-						</div>
-						<h3 class="mt-6 text-lg font-semibold text-gray-900">Innovation Focused</h3>
-						<p class="mt-4 text-gray-600">
-							I stay ahead of the curve with the latest technologies and best practices to give your
-							business a competitive edge.
-						</p>
-					</div>
-
-					<div class="text-center">
-						<div
-							class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-indigo-100"
-						>
-							<svg
-								class="h-8 w-8 text-indigo-600"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
-								/>
-							</svg>
-						</div>
-						<h3 class="mt-6 text-lg font-semibold text-gray-900">Clear Communication</h3>
-						<p class="mt-4 text-gray-600">
-							No technical jargon, no surprises. You'll always know exactly what's happening with
-							your project and why.
-						</p>
 					</div>
 				</div>
 			</div>
@@ -573,25 +648,28 @@
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center animate-on-scroll">
 				<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-					Ready to Transform Your Business?
+					Ready to Work With Someone Who Actually Cares?
 				</h2>
 				<p class="mt-6 text-lg leading-8 text-indigo-100">
-					Let's discuss your project and explore how I can help you achieve your digital goals. No
-					obligation, just honest advice about what's possible.
+					Let's have an honest conversation about your business and what you're trying to achieve.
+					No sales pitch, no pressure—just straight talk about what's possible.
 				</p>
 				<div class="mt-10 flex items-center justify-center gap-x-6">
 					<a
 						href="/contact"
 						class="rounded-lg bg-white px-6 py-3 text-base font-semibold text-indigo-600 shadow-lg hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200 hover:shadow-xl hover:scale-105"
 					>
-						Get Started Today
+						Let's Talk About Your Project
 					</a>
 					<a
 						href="/projects"
 						class="rounded-lg border border-white/20 bg-indigo-600 px-6 py-3 text-base font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
 					>
-						View Portfolio
+						See What I've Built
 					</a>
+				</div>
+				<div class="mt-8 text-sm text-indigo-200">
+					<p>Free consultation • No obligation • Honest advice about what you actually need</p>
 				</div>
 			</div>
 		</div>
