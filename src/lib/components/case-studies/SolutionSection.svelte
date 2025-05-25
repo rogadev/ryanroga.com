@@ -1,6 +1,19 @@
+<svelte:options runes={true} />
+
 <script lang="ts">
-	export let title: string = 'Our Solution';
-	export let subtitle: string = 'A comprehensive platform tailored to unique workflow needs';
+	let {
+		title = 'Our Solution',
+		subtitle = 'A comprehensive platform tailored to unique workflow needs',
+		features = [],
+		featuresSnippet,
+		visual
+	} = $props<{
+		title?: string;
+		subtitle?: string;
+		features?: Feature[];
+		featuresSnippet?: import('svelte').Snippet;
+		visual?: import('svelte').Snippet;
+	}>();
 
 	// Define the Feature type
 	type Feature = {
@@ -9,8 +22,6 @@
 		icon: string;
 		color?: string;
 	};
-
-	export let features: Feature[] = [];
 
 	// Default color if not provided
 	const defaultColor = 'blue';
@@ -63,7 +74,7 @@
 
 						<!-- Fallback if no features are provided -->
 						{#if features.length === 0}
-							<slot name="features" />
+							{@render featuresSnippet?.()}
 						{/if}
 					</div>
 				</div>
@@ -78,7 +89,9 @@
 					<div
 						class="relative bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 shadow-xl"
 					>
-						<slot name="visual">
+						{#if visual}
+							{@render visual()}
+						{:else}
 							<!-- Default dashboard mockup if no custom visual is provided -->
 							<div class="bg-gray-900 rounded-xl overflow-hidden">
 								<div class="bg-gray-800 px-4 py-2 flex items-center gap-2">
@@ -93,7 +106,7 @@
 									<p class="text-gray-400">Custom dashboard visualization goes here</p>
 								</div>
 							</div>
-						</slot>
+						{/if}
 					</div>
 				</div>
 			</div>

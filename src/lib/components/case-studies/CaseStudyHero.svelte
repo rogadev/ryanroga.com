@@ -1,12 +1,23 @@
+<svelte:options runes={true} />
+
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 
-	export let title: string;
-	export let clientUrl: string;
-	export let clientName: string;
-	export let description: string;
-	export let imageUrl: string = '';
-	export let category: string = 'Web Application';
+	let {
+		title,
+		clientUrl,
+		clientName,
+		description,
+		imageUrl = '',
+		category = 'Web Application'
+	} = $props<{
+		title: string;
+		clientUrl: string;
+		clientName: string;
+		description: string;
+		imageUrl?: string;
+		category?: string;
+	}>();
 
 	function handleImageError(event: Event): void {
 		const img = event.currentTarget as HTMLImageElement;
@@ -94,7 +105,7 @@
 							src={imageUrl}
 							alt="{title} Dashboard"
 							class="w-full h-auto"
-							on:error={handleImageError}
+							onerror={handleImageError}
 						/>
 					</div>
 				</div>

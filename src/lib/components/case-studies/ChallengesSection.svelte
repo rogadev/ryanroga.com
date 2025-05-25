@@ -1,18 +1,25 @@
-<script lang="ts">
-	export let title: string = 'The Challenges';
-	export let subtitle: string =
-		'Significant operational hurdles that threatened the ability to scale';
+<svelte:options runes={true} />
 
-	// Define the Challenge type
-	type Challenge = {
+<script lang="ts">
+	interface Challenge {
 		title: string;
 		description: string;
 		icon: string;
 		color: string;
 		delay?: number;
-	};
+	}
 
-	export let challenges: Challenge[] = [];
+	let {
+		title = 'The Challenges',
+		subtitle = 'Significant operational hurdles that threatened the ability to scale',
+		challenges = [],
+		children
+	} = $props<{
+		title?: string;
+		subtitle?: string;
+		challenges?: Challenge[];
+		children?: import('svelte').Snippet;
+	}>();
 </script>
 
 <section class="py-20 px-4">
@@ -62,7 +69,7 @@
 
 			<!-- Fallback if no challenges are provided -->
 			{#if challenges.length === 0}
-				<slot />
+				{@render children?.()}
 			{/if}
 		</div>
 	</div>

@@ -1,20 +1,25 @@
+<svelte:options runes={true} />
+
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
 
-	export let skillName: string;
-	export let skillType: string;
-	export let proficiency: 1 | 2 | 3;
-	export let icon: string;
+	let { skillName, skillType, proficiency, icon } = $props<{
+		skillName: string;
+		skillType: string;
+		proficiency: 1 | 2 | 3;
+		icon: string;
+	}>();
 
-	$: proficiencyText =
-		proficiency === 1 ? 'Proficient' : proficiency === 2 ? 'Familiar' : 'Learning';
-	$: proficiencyColor =
+	let proficiencyText = $derived(
+		proficiency === 1 ? 'Proficient' : proficiency === 2 ? 'Familiar' : 'Learning'
+	);
+	let proficiencyColor = $derived(
 		proficiency === 1
 			? 'bg-green-50 text-green-700 ring-green-600/20'
 			: proficiency === 2
-			? 'bg-blue-50 text-blue-700 ring-blue-600/20'
-			: 'bg-purple-50 text-purple-700 ring-purple-600/20';
+				? 'bg-blue-50 text-blue-700 ring-blue-600/20'
+				: 'bg-purple-50 text-purple-700 ring-purple-600/20'
+	);
 </script>
 
 <li>

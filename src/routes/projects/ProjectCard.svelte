@@ -1,24 +1,30 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 
-	export let project: {
-		id: string;
-		title: string;
-		slug: string;
-		client: string;
-		description: string;
-		image: string;
-		tags: string[];
-	};
-
-	export let delay = 0;
-	export let handleImageError: (event: Event, fallbackText: string) => void;
+	let {
+		project,
+		delay = 0,
+		handleImageError
+	}: {
+		project: {
+			id: string;
+			title: string;
+			slug: string;
+			client: string;
+			description: string;
+			image: string;
+			tags: string[];
+		};
+		delay?: number;
+		handleImageError: (event: Event, fallbackText: string) => void;
+	} = $props();
 </script>
 
 <!-- Wrap entire card in an anchor tag -->
 <a
 	href="/projects/{project.slug}"
 	class="group relative bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col no-underline transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl"
+	in:fly={{ y: 50, duration: 600, delay }}
 >
 	<!-- Image container with fixed aspect ratio -->
 	<div class="relative w-full pt-[56.25%]">
@@ -27,7 +33,7 @@
 			src={project.image}
 			alt={project.title}
 			class="absolute top-0 left-0 w-full h-full object-cover object-left-top"
-			on:error={(e) => handleImageError(e, project.title)}
+			onerror={(e) => handleImageError(e, project.title)}
 		/>
 		<!-- Gradient overlay with 100% opaque white at bottom -->
 		<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white"></div>

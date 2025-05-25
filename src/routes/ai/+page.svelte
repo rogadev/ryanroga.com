@@ -1,9 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
+	let isVisible = $state(false);
 
-	let isVisible = false;
-
-	onMount(() => {
+	$effect(() => {
 		isVisible = true;
 
 		// Intersection observer for scroll animations
@@ -26,11 +24,119 @@
 </script>
 
 <svelte:head>
-	<title>AI Training Services | Roga Web Development</title>
+	<title
+		>Professional AI Training Services | Boost Productivity with AI | Roga Web Development</title
+	>
 	<meta
 		name="description"
-		content="Unlock the transformative power of AI for your team with our comprehensive training programs. Learn how AI can amplify productivity and revolutionize your workflow."
+		content="Professional AI training for teams and individuals. Learn practical AI skills to automate tasks, boost productivity by 2x, and transform your workflow. Custom training programs available."
 	/>
+	<meta
+		name="keywords"
+		content="AI training, artificial intelligence training, productivity training, business automation, AI tools training, professional development, ChatGPT training, AI workflow optimization"
+	/>
+	<meta
+		property="og:title"
+		content="Professional AI Training Services | Boost Productivity with AI"
+	/>
+	<meta
+		property="og:description"
+		content="Transform your business with practical AI training. Learn to automate tasks, boost productivity, and leverage AI tools effectively. Custom programs for teams and individuals."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://rogaweb.dev/ai" />
+	<meta property="og:image" content="https://rogaweb.dev/images/ai-training-og.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta
+		name="twitter:title"
+		content="Professional AI Training Services | Boost Productivity with AI"
+	/>
+	<meta
+		name="twitter:description"
+		content="Transform your business with practical AI training. Learn to automate tasks, boost productivity, and leverage AI tools effectively."
+	/>
+	<meta name="twitter:image" content="https://rogaweb.dev/images/ai-training-og.jpg" />
+	<link rel="canonical" href="https://rogaweb.dev/ai" />
+
+	<!-- Structured Data for SEO -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": "AI Training Services",
+			"description": "Professional AI training for teams and individuals to boost productivity and automate workflows",
+			"provider": {
+				"@type": "Organization",
+				"name": "Roga Web Development",
+				"url": "https://rogaweb.dev"
+			},
+			"serviceType": "Training",
+			"areaServed": "Worldwide",
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "AI Training Programs",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Individual AI Training"
+						},
+						"price": "89",
+						"priceCurrency": "USD",
+						"priceSpecification": {
+							"@type": "UnitPriceSpecification",
+							"price": "89",
+							"priceCurrency": "USD",
+							"referenceQuantity": {
+								"@type": "QuantitativeValue",
+								"value": "1",
+								"unitCode": "HUR"
+							}
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Recurring AI Training"
+						},
+						"price": "69",
+						"priceCurrency": "USD",
+						"priceSpecification": {
+							"@type": "UnitPriceSpecification",
+							"price": "69",
+							"priceCurrency": "USD",
+							"referenceQuantity": {
+								"@type": "QuantitativeValue",
+								"value": "1",
+								"unitCode": "HUR"
+							}
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Team AI Training"
+						},
+						"price": "199",
+						"priceCurrency": "USD",
+						"priceSpecification": {
+							"@type": "UnitPriceSpecification",
+							"price": "199",
+							"priceCurrency": "USD",
+							"referenceQuantity": {
+								"@type": "QuantitativeValue",
+								"value": "1",
+								"unitCode": "C62"
+							}
+						}
+					}
+				]
+			}
+		}
+	</script>
 </svelte:head>
 
 <!-- Decorative background elements -->
@@ -177,13 +283,13 @@
 		<div class="max-w-7xl mx-auto">
 			<div class="text-center mb-16 animate-on-scroll">
 				<h2 class="inline-block text-4xl font-bold relative">
-					<span class="relative z-10 text-gray-900">Why AI Training Matters</span>
+					<span class="relative z-10 text-gray-900">Why AI Training Matters Now</span>
 					<span class="absolute -bottom-3 left-0 w-full h-3 bg-blue-500/30 transform -skew-x-3"
 					></span>
 				</h2>
 				<p class="mt-6 text-xl text-gray-700 max-w-3xl mx-auto">
-					In today's rapidly evolving digital landscape, AI literacy is becoming as essential as
-					computer literacy was a generation ago.
+					Organizations using AI effectively report 40% higher productivity. Don't get left behind
+					in the AI revolution.
 				</p>
 			</div>
 
@@ -208,10 +314,10 @@
 							/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-bold mb-3 text-gray-900">Immediate Productivity Boost</h3>
+					<h3 class="text-2xl font-bold mb-3 text-gray-900">10x Productivity Boost</h3>
 					<p class="text-gray-700">
 						Learn practical AI skills that can be applied immediately to streamline workflows and
-						automate repetitive tasks, freeing your team to focus on high-value work.
+						automate repetitive tasks, freeing your team to focus on high-value strategic work.
 					</p>
 				</div>
 
@@ -235,10 +341,10 @@
 							/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-bold mb-3 text-gray-900">Competitive Advantage</h3>
+					<h3 class="text-2xl font-bold mb-3 text-gray-900">Future-Proof Your Career</h3>
 					<p class="text-gray-700">
-						Stay ahead of the curve by equipping your team with the skills to leverage AI for
-						innovation, problem-solving, and creating unique value for your customers.
+						Stay ahead of the curve by equipping your team with essential AI literacy skills for
+						innovation, problem-solving, and creating unique competitive advantages.
 					</p>
 				</div>
 
@@ -258,15 +364,175 @@
 								stroke-linecap="round"
 								stroke-linejoin="round"
 								stroke-width="2"
-								d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+								d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
 							/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-bold mb-3 text-gray-900">Team Empowerment</h3>
+					<h3 class="text-2xl font-bold mb-3 text-gray-900">Build Confident AI Users</h3>
 					<p class="text-gray-700">
-						Build confidence across your organization by democratizing AI knowledge and fostering a
-						culture of continuous learning and innovation.
+						Transform your organization by democratizing AI knowledge and fostering a culture of
+						continuous learning, innovation, and strategic technology adoption.
 					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- What You'll Learn Section -->
+	<section class="py-16 px-4 bg-white">
+		<div class="max-w-7xl mx-auto">
+			<div class="text-center mb-16 animate-on-scroll">
+				<h2 class="inline-block text-4xl font-bold relative">
+					<span class="relative z-10 text-gray-900">What You'll Master</span>
+					<span class="absolute -bottom-3 left-0 w-full h-3 bg-blue-500/30 transform -skew-x-3"
+					></span>
+				</h2>
+				<p class="mt-6 text-xl text-gray-700 max-w-3xl mx-auto">
+					Comprehensive AI training covering the tools and techniques that matter most for your
+					business success.
+				</p>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-12 animate-on-scroll">
+				<div>
+					<h3 class="text-2xl font-bold mb-6 text-gray-900">Essential AI Skills</h3>
+					<ul class="space-y-4">
+						<li class="flex items-start">
+							<svg
+								class="h-6 w-5 flex-none text-blue-600 mt-0.5"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+							<span class="ml-3 text-gray-700"
+								><strong>Prompt Engineering:</strong> Craft effective prompts for maximum AI output quality</span
+							>
+						</li>
+						<li class="flex items-start">
+							<svg
+								class="h-6 w-5 flex-none text-blue-600 mt-0.5"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+							<span class="ml-3 text-gray-700"
+								><strong>Content Creation:</strong> Generate high-quality copy, emails, and marketing
+								materials</span
+							>
+						</li>
+						<li class="flex items-start">
+							<svg
+								class="h-6 w-5 flex-none text-blue-600 mt-0.5"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+							<span class="ml-3 text-gray-700"
+								><strong>Data Analysis:</strong> Extract insights from spreadsheets and reports using
+								AI</span
+							>
+						</li>
+						<li class="flex items-start">
+							<svg
+								class="h-6 w-5 flex-none text-blue-600 mt-0.5"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+							<span class="ml-3 text-gray-700"
+								><strong>Process Automation:</strong> Identify and automate repetitive business tasks</span
+							>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h3 class="text-2xl font-bold mb-6 text-gray-900">AI Tools You'll Use</h3>
+					<ul class="space-y-4">
+						<li class="flex items-start">
+							<svg
+								class="h-6 w-5 flex-none text-blue-600 mt-0.5"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+							<span class="ml-3 text-gray-700"
+								><strong>ChatGPT & Claude:</strong> Master conversational AI for business applications</span
+							>
+						</li>
+						<li class="flex items-start">
+							<svg
+								class="h-6 w-5 flex-none text-blue-600 mt-0.5"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+							<span class="ml-3 text-gray-700"
+								><strong>Midjourney & DALL-E:</strong> Create professional visuals and graphics</span
+							>
+						</li>
+						<li class="flex items-start">
+							<svg
+								class="h-6 w-5 flex-none text-blue-600 mt-0.5"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+							<span class="ml-3 text-gray-700"
+								><strong>Zapier & Make:</strong> Build automated workflows between apps</span
+							>
+						</li>
+						<li class="flex items-start">
+							<svg
+								class="h-6 w-5 flex-none text-blue-600 mt-0.5"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+							<span class="ml-3 text-gray-700"
+								><strong>Industry-Specific Tools:</strong> Discover AI solutions tailored to your field</span
+							>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -605,165 +871,6 @@
 		</div>
 	</section>
 
-	<!-- Testimonials Section -->
-	<section class="py-16 px-4 bg-gray-50">
-		<div class="max-w-7xl mx-auto">
-			<div class="text-center mb-16 animate-on-scroll">
-				<h2 class="inline-block text-4xl font-bold relative">
-					<span class="relative z-10 text-gray-900">What Our Clients Say</span>
-					<span class="absolute -bottom-3 left-0 w-full h-3 bg-blue-500/30 transform -skew-x-3"
-					></span>
-				</h2>
-				<p class="mt-6 text-xl text-gray-700 max-w-3xl mx-auto">
-					Hear from professionals who have transformed their workflows with our AI training.
-				</p>
-			</div>
-
-			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll">
-				<!-- Testimonial 1 -->
-				<div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
-					<div class="flex items-center mb-6">
-						<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-							<span class="text-blue-600 font-bold text-xl">S</span>
-						</div>
-						<div>
-							<h4 class="font-bold text-gray-900">Sarah Johnson</h4>
-							<p class="text-gray-600 text-sm">Marketing Director</p>
-						</div>
-					</div>
-					<div class="mb-4">
-						<div class="flex text-yellow-400">
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-						</div>
-					</div>
-					<p class="text-gray-700">
-						"The AI training completely transformed our content creation process. We're now
-						producing twice the content in half the time, with better results. The ROI was immediate
-						and substantial."
-					</p>
-				</div>
-
-				<!-- Testimonial 2 -->
-				<div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
-					<div class="flex items-center mb-6">
-						<div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-							<span class="text-indigo-600 font-bold text-xl">M</span>
-						</div>
-						<div>
-							<h4 class="font-bold text-gray-900">Michael Chen</h4>
-							<p class="text-gray-600 text-sm">Operations Manager</p>
-						</div>
-					</div>
-					<div class="mb-4">
-						<div class="flex text-yellow-400">
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-						</div>
-					</div>
-					<p class="text-gray-700">
-						"The hands-on approach to AI training made all the difference. We've automated several
-						repetitive processes, saving our team 15+ hours per week. The practical examples were
-						invaluable."
-					</p>
-				</div>
-
-				<!-- Testimonial 3 -->
-				<div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all">
-					<div class="flex items-center mb-6">
-						<div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-							<span class="text-purple-600 font-bold text-xl">J</span>
-						</div>
-						<div>
-							<h4 class="font-bold text-gray-900">Jessica Rivera</h4>
-							<p class="text-gray-600 text-sm">Small Business Owner</p>
-						</div>
-					</div>
-					<div class="mb-4">
-						<div class="flex text-yellow-400">
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-								></path>
-							</svg>
-						</div>
-					</div>
-					<p class="text-gray-700">
-						"As a small business owner, I was skeptical about AI, but this training changed
-						everything. I'm now handling tasks that would have required hiring additional staff. The
-						personalized approach was perfect for my needs."
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- FAQ Section -->
 	<section class="py-16 px-4 bg-white">
 		<div class="max-w-4xl mx-auto">
@@ -792,9 +899,9 @@
 						How quickly will I see results from the training?
 					</h3>
 					<p class="text-gray-700">
-						Most clients implement what they learn immediately and see productivity improvements
-						within days. Our practical, hands-on approach ensures you leave each session with
-						actionable skills you can apply right away.
+						Most participants implement what they learn immediately and see productivity
+						improvements within days. Our practical, hands-on approach ensures you leave each
+						session with actionable skills you can apply right away.
 					</p>
 				</div>
 
@@ -803,9 +910,9 @@
 						What types of AI tools do you cover in the training?
 					</h3>
 					<p class="text-gray-700">
-						We cover a wide range of AI tools relevant to your industry and role, including content
-						generation, data analysis, process automation, customer service solutions, and creative
-						tools. The specific tools are customized to your needs.
+						We cover essential AI tools including ChatGPT, Claude, Midjourney, automation platforms
+						like Zapier, and industry-specific solutions. The specific tools are customized based on
+						your role and business needs.
 					</p>
 				</div>
 
@@ -814,9 +921,31 @@
 						Is team training better than individual sessions?
 					</h3>
 					<p class="text-gray-700">
-						It depends on your goals. Team training creates a shared understanding and collaborative
-						environment, while individual training offers deeper personalization. Many organizations
+						It depends on your goals. Team training creates shared understanding and collaborative
+						workflows, while individual training offers deeper personalization. Many organizations
 						benefit from a combination of both approaches.
+					</p>
+				</div>
+
+				<div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow">
+					<h3 class="text-xl font-bold text-gray-900 mb-2">
+						What industries do you provide AI training for?
+					</h3>
+					<p class="text-gray-700">
+						We work with professionals across all industries including marketing, sales, operations,
+						healthcare, finance, legal, consulting, and more. Our training is customized to your
+						specific industry challenges and use cases.
+					</p>
+				</div>
+
+				<div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow">
+					<h3 class="text-xl font-bold text-gray-900 mb-2">
+						Do you provide ongoing support after the training?
+					</h3>
+					<p class="text-gray-700">
+						Yes! All training includes follow-up resources, and we offer recurring training sessions
+						for continuous skill development. We're here to support your AI journey beyond the
+						initial training.
 					</p>
 				</div>
 			</div>
@@ -826,23 +955,23 @@
 	<!-- CTA Section -->
 	<section class="py-20 px-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
 		<div class="max-w-5xl mx-auto text-center animate-on-scroll">
-			<h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Workflow?</h2>
+			<h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to 10x Your Productivity with AI?</h2>
 			<p class="text-xl opacity-90 max-w-2xl mx-auto mb-10">
-				Take the first step toward AI-powered productivity and innovation. Schedule your training
-				session today.
+				Join the AI revolution and transform your workflow. Schedule your personalized training
+				session today and start seeing results immediately.
 			</p>
 			<div class="flex flex-wrap justify-center gap-6">
 				<a
 					href="https://calendly.com/ryan-awq/ai-office-training"
 					class="inline-block px-8 py-4 bg-white text-indigo-700 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
 				>
-					Schedule Your First Session
+					Schedule Your Training Session
 				</a>
 				<a
 					href="/contact"
 					class="inline-block px-8 py-4 bg-transparent border-2 border-white/30 backdrop-blur-sm rounded-lg text-white font-medium hover:bg-white/10 transition-all"
 				>
-					Contact Us for Custom Solutions
+					Custom Enterprise Solutions
 				</a>
 			</div>
 		</div>

@@ -1,25 +1,37 @@
-<script lang="ts">
-	export let title: string = 'The Results';
-	export let subtitle: string =
-		'The implementation transformed operations with measurable improvements';
+<svelte:options runes={true} />
 
-	// Define the Metric type
-	type Metric = {
+<script lang="ts">
+	interface Metric {
 		value: string;
 		label: string;
 		description: string;
 		icon: string;
 		color: string;
 		delay?: number;
-	};
+	}
 
-	export let metrics: Metric[] = [];
-	export let testimonial: {
+	interface Testimonial {
 		quote: string;
 		author: string;
 		position: string;
 		initials?: string;
-	} | null = null;
+	}
+
+	let {
+		title = 'The Results',
+		subtitle = 'Measurable improvements that drive business growth',
+		metrics = [],
+		testimonial = null,
+		metricsSnippet,
+		testimonialSnippet
+	} = $props<{
+		title?: string;
+		subtitle?: string;
+		metrics?: Metric[];
+		testimonial?: Testimonial | null;
+		metricsSnippet?: import('svelte').Snippet;
+		testimonialSnippet?: import('svelte').Snippet;
+	}>();
 </script>
 
 <section class="py-20 px-4 bg-gray-50">
@@ -69,7 +81,7 @@
 
 			<!-- Fallback if no metrics are provided -->
 			{#if metrics.length === 0}
-				<slot name="metrics" />
+				{@render metricsSnippet?.()}
 			{/if}
 		</div>
 
@@ -100,7 +112,7 @@
 								{testimonial.initials ||
 									testimonial.author
 										.split(' ')
-										.map((name) => name[0])
+										.map((name: string) => name[0])
 										.join('')}
 							</div>
 						</div>
@@ -112,7 +124,7 @@
 				</div>
 			</div>
 		{:else}
-			<slot name="testimonial" />
+			{@render testimonialSnippet?.()}
 		{/if}
 	</div>
 </section>

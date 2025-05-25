@@ -1,18 +1,26 @@
-<script lang="ts">
-	export let title: string = 'Technology Stack';
-	export let subtitle: string =
-		'Modern technologies chosen for performance, reliability, and maintainability';
+<svelte:options runes={true} />
 
+<script lang="ts">
 	// Define the Technology type
-	type Technology = {
+	interface Technology {
 		name: string;
 		role: string;
 		icon: string;
 		color: string;
 		delay?: number;
-	};
+	}
 
-	export let technologies: Technology[] = [];
+	let {
+		title = 'Technology Stack',
+		subtitle = 'Built with modern, reliable technologies for optimal performance and scalability',
+		technologies = [],
+		children
+	} = $props<{
+		title?: string;
+		subtitle?: string;
+		technologies?: Technology[];
+		children?: import('svelte').Snippet;
+	}>();
 </script>
 
 <section class="py-20 px-4">
@@ -52,7 +60,7 @@
 
 			<!-- Fallback if no technologies are provided -->
 			{#if technologies.length === 0}
-				<slot />
+				{@render children?.()}
 			{/if}
 		</div>
 	</div>

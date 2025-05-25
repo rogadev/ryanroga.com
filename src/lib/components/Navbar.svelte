@@ -1,6 +1,8 @@
+<svelte:options runes={true} />
+
 <script>
 	import { fade } from 'svelte/transition';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
 	const tabs = [
 		{
@@ -24,10 +26,10 @@
 			href: '/ai'
 		}
 	];
-	let isMobileMenuOpen = false;
+	let isMobileMenuOpen = $state(false);
 
 	// Get current path to determine active link
-	$: currentPath = $page.url.pathname;
+	let currentPath = $derived(page.url.pathname);
 </script>
 
 <header class="absolute inset-x-0 top-0 z-50">
@@ -42,13 +44,13 @@
 					Roga Web Development
 					<span
 						class="absolute -bottom-[5px] left-1/2 w-0 h-0.5 bg-gray-600 group-hover:w-full group-hover:left-0 transition-all duration-300 origin-center"
-					/>
+					></span>
 				</span>
 			</a>
 		</div>
 		<div class="flex lg:hidden">
 			<button
-				on:click={() => {
+				onclick={() => {
 					isMobileMenuOpen = !isMobileMenuOpen;
 				}}
 				type="button"
@@ -82,7 +84,7 @@
 					<span
 						class="absolute -bottom-[5px] left-0 h-0.5 bg-gray-600 transition-all duration-300
 						{currentPath === href ? 'w-full' : 'w-0 group-hover:w-full'}"
-					/>
+					></span>
 				</a>
 			{/each}
 		</div>
@@ -92,7 +94,7 @@
 				<span
 					class="absolute -bottom-[5px] left-0 h-0.5 bg-gray-600 transition-all duration-300
 					{currentPath === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'}"
-				/>
+				></span>
 			</a>
 		</div>
 	</nav>
@@ -100,7 +102,7 @@
 	{#if isMobileMenuOpen}
 		<div transition:fade class="lg:hidden" role="dialog" aria-modal="true">
 			<!-- Background backdrop, show/hide based on slide-over state. -->
-			<div class="fixed inset-0 z-50" />
+			<div class="fixed inset-0 z-50"></div>
 			<div
 				class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
 			>
@@ -110,7 +112,7 @@
 						<img class="h-8 w-auto" src="/logo/favicon-32x32.png" alt="Roga Web Development Logo" />
 					</a>
 					<button
-						on:click={() => {
+						onclick={() => {
 							isMobileMenuOpen = !isMobileMenuOpen;
 						}}
 						type="button"
@@ -135,7 +137,7 @@
 							{#each tabs as { name, href }}
 								<a
 									{href}
-									on:click={() => (isMobileMenuOpen = false)}
+									onclick={() => (isMobileMenuOpen = false)}
 									class="relative group -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
 									class:active={currentPath === href}
 								>
@@ -143,7 +145,7 @@
 									<span
 										class="absolute bottom-1 left-3 h-0.5 bg-gray-600 transition-all duration-300
 										{currentPath === href ? 'w-[calc(100%-24px)]' : 'w-0 group-hover:w-[calc(100%-24px)]'}"
-									/>
+									></span>
 								</a>
 							{/each}
 						</div>

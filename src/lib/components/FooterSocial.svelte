@@ -1,9 +1,9 @@
+<svelte:options runes={true} />
+
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 
-	export let href: string;
-	export let label: string;
-	export let icon: string;
+	let { href, label, icon } = $props<{ href: string; label: string; icon: string }>();
 </script>
 
 <a {href} target="_blank" class="text-gray-400 hover:text-gray-500">

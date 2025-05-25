@@ -1,13 +1,14 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
+<svelte:options runes={true} />
 
-	export let delay: number = 0;
-	export let threshold: number = 0.1;
+<script lang="ts">
+	let { delay = 0, threshold = 0.1 } = $props<{ delay?: number; threshold?: number }>();
 
 	let element: HTMLElement;
-	let isVisible = false;
+	let isVisible = $state(false);
 
-	onMount(() => {
+	$effect(() => {
+		if (!element) return;
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {

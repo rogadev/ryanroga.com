@@ -1,9 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
-
-	let isVisible = false;
 
 	// Function to handle image loading errors
 	function handleImageError(event: Event): void {
@@ -12,9 +9,7 @@
 	}
 
 	// Add animation functionality
-	onMount(() => {
-		isVisible = true;
-
+	$effect(() => {
 		// Intersection observer for scroll animations
 		const observer = new IntersectionObserver(
 			(entries) => {

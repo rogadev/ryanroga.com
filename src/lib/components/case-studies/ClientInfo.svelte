@@ -1,9 +1,23 @@
+<svelte:options runes={true} />
+
 <script lang="ts">
-	export let clientName: string;
-	export let clientDescription: string;
-	export let timeline: string = '3 months from concept to deployment';
-	export let platform: string = 'Web application';
-	export let techStack: string = 'SvelteKit, Node.js, PostgreSQL';
+	import type { Snippet } from 'svelte';
+
+	let {
+		clientName,
+		clientDescription,
+		timeline = '3 months from concept to deployment',
+		platform = 'Web application',
+		techStack = 'SvelteKit, Node.js, PostgreSQL',
+		descriptionSnippet
+	} = $props<{
+		clientName: string;
+		clientDescription: string;
+		timeline?: string;
+		platform?: string;
+		techStack?: string;
+		descriptionSnippet?: Snippet;
+	}>();
 </script>
 
 <section class="py-16 px-4 bg-gray-50">
@@ -13,9 +27,11 @@
 				<div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
 					<h2 class="text-3xl font-bold mb-6 text-gray-900">About {clientName}</h2>
 					<div class="text-gray-700">
-						<slot name="description">
+						{#if descriptionSnippet}
+							{@render descriptionSnippet()}
+						{:else}
 							<p>{clientDescription}</p>
-						</slot>
+						{/if}
 					</div>
 				</div>
 			</div>

@@ -1,3 +1,5 @@
+<svelte:options runes={true} />
+
 <figure class="mt-16">
 	<img
 		class="aspect-video rounded-xl bg-gray-50 object-cover"

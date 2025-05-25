@@ -1,11 +1,21 @@
+<svelte:options runes={true} />
+
 <script lang="ts">
-	export let title: string = 'Ready to Transform Your Business Operations?';
-	export let subtitle: string =
-		"Let's discuss how a custom web application can streamline your workflows and drive measurable results.";
-	export let primaryButtonText: string = 'Start Your Project';
-	export let primaryButtonUrl: string = '/contact';
-	export let secondaryButtonText: string = 'View More Case Studies';
-	export let secondaryButtonUrl: string = '/projects';
+	let {
+		title = 'Ready to Transform Your Business Operations?',
+		subtitle = "Let's discuss how we can create a custom solution that drives real results for your business.",
+		primaryButtonText = 'Start Your Project',
+		primaryButtonUrl = '/contact',
+		secondaryButtonText = 'View More Case Studies',
+		secondaryButtonUrl = '/projects'
+	} = $props<{
+		title?: string;
+		subtitle?: string;
+		primaryButtonText?: string;
+		primaryButtonUrl?: string;
+		secondaryButtonText?: string;
+		secondaryButtonUrl?: string;
+	}>();
 </script>
 
 <section class="py-20 px-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">

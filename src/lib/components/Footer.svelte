@@ -1,6 +1,7 @@
+<svelte:options runes={true} />
+
 <script>
 	import FooterItem from './FooterItem.svelte';
-
 	import FooterSocial from './FooterSocial.svelte';
 
 	const socials = [
@@ -15,101 +16,234 @@
 			icon: 'mdi:linkedin'
 		}
 	];
-	const solutions = [
+
+	const services = [
 		{
-			name: 'AI Training for Teams',
-			href: '/ai'
-		},
-		{
-			name: 'One-on-one AI Coaching',
-			href: '/ai'
-		},
-		{
-			name: 'Web Application Development',
+			name: 'Custom Web Applications',
 			href: '/development'
+		},
+		{
+			name: 'Business Websites',
+			href: '/development'
+		},
+		{
+			name: 'E-commerce Solutions',
+			href: '/development'
+		},
+		{
+			name: 'AI Integration Services',
+			href: '/ai'
 		}
 	];
-	const projects = [
+
+	const company = [
+		{
+			name: 'About',
+			href: '/about'
+		},
+		{
+			name: 'Projects',
+			href: '/projects'
+		},
+		{
+			name: 'Resume',
+			href: '/resume'
+		},
+		{
+			name: 'Contact',
+			href: '/contact'
+		}
+	];
+
+	const legal = [
+		{
+			name: 'Privacy Policy',
+			href: '/privacy'
+		},
+		{
+			name: 'Terms of Service',
+			href: '/terms'
+		}
+	];
+
+	const featuredProjects = [
 		{
 			name: 'CarEvo Lot Logistics',
-			href: 'https://logistics.carevo.ca'
+			href: '/projects/lot-logistics-web-application',
+			description: 'Inventory management system'
 		},
 		{
-			name: 'VIU Career Outlooks',
-			href: 'https://viu-career-outlooks.vercel.app'
-		},
-		{
-			name: 'GGG Driver Trip Tracking',
-			href: 'https://eztripr.com'
+			name: 'EzTripR Trip Tracker',
+			href: '/projects/eztripr-trip-tracker',
+			description: 'Driver logistics platform'
 		}
 	];
-	// const company = [
-	// 	{
-	// 		name: 'Press',
-	// 		href: '/press'
-	// 	},
-	// 	{
-	// 		name: 'Partners',
-	// 		href: '/partners'
-	// 	}
-	// ];
 </script>
 
-<footer class="bg-white" aria-labelledby="footer-heading">
+<footer class="bg-gray-50 border-t border-gray-200" aria-labelledby="footer-heading">
 	<h2 id="footer-heading" class="sr-only">Footer</h2>
-	<div class="mx-auto max-w-7xl px-6 pb-4 pt-8 sm:pt-12 lg:px-8 lg:pt-18">
+	<div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
 		<div class="xl:grid xl:grid-cols-3 xl:gap-8">
+			<!-- Company Info -->
 			<div class="space-y-6">
-				<div class="flex gap-4 items-center font-semibold leading-6 text-gray-600">
-					<img class="h-7" src="/logo/android-chrome-192x192.png" alt="Roga.dev" />
-					<p>Roga Web Development</p>
+				<div class="flex gap-4 items-center">
+					<img class="h-8 w-8" src="/logo/android-chrome-192x192.png" alt="Roga.dev" />
+					<div>
+						<p class="text-lg font-semibold text-gray-900">Roga Web Development</p>
+						<p class="text-sm text-gray-600">Professional web solutions for small business</p>
+					</div>
 				</div>
+				<p class="text-sm text-gray-600 max-w-md">
+					Transforming small businesses across Canada with custom web applications, modern websites,
+					and e-commerce solutions. No upfront costs, proven results.
+				</p>
 				<div class="flex space-x-6">
 					{#each socials as { label, href, icon }}
 						<FooterSocial {label} {href} {icon} />
 					{/each}
 				</div>
+				<!-- Contact Info -->
+				<div class="space-y-2 text-sm text-gray-600">
+					<p class="flex items-center gap-2">
+						<svg
+							class="h-4 w-4 text-indigo-600"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+							/>
+						</svg>
+						<a href="mailto:hello@roga.dev" class="hover:text-indigo-600 transition-colors"
+							>ryan@roga.dev</a
+						>
+					</p>
+					<p class="flex items-center gap-2">
+						<svg
+							class="h-4 w-4 text-indigo-600"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+							/>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+							/>
+						</svg>
+						<span>Western Canada</span>
+					</p>
+				</div>
 			</div>
+
+			<!-- Navigation Links -->
 			<div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
 				<div class="md:grid md:grid-cols-2 md:gap-8">
 					<div>
-						<h3 class="text-sm font-semibold leading-6 text-gray-900">Solutions</h3>
+						<h3 class="text-sm font-semibold leading-6 text-gray-900">Services</h3>
 						<ul role="list" class="mt-6 space-y-4">
-							{#each solutions as { name, href }}
+							{#each services as { name, href }}
 								<FooterItem {name} {href} />
 							{/each}
 						</ul>
 					</div>
 					<div class="mt-10 md:mt-0">
-						<h3 class="text-sm font-semibold leading-6 text-gray-900">Projects</h3>
-						<ul role="list" class="mt-6 space-y-4">
-							{#each projects as { name, href }}
-								<FooterItem {name} {href} />
-							{/each}
-						</ul>
-					</div>
-				</div>
-				<div class="md:grid md:grid-cols-2 md:gap-8">
-					<!-- <div>
 						<h3 class="text-sm font-semibold leading-6 text-gray-900">Company</h3>
 						<ul role="list" class="mt-6 space-y-4">
 							{#each company as { name, href }}
 								<FooterItem {name} {href} />
 							{/each}
 						</ul>
-					</div> -->
-					<!-- <div class="mt-10 md:mt-0">
+					</div>
+				</div>
+				<div class="md:grid md:grid-cols-2 md:gap-8">
+					<div>
+						<h3 class="text-sm font-semibold leading-6 text-gray-900">Featured Work</h3>
+						<ul role="list" class="mt-6 space-y-4">
+							{#each featuredProjects as { name, href, description }}
+								<li>
+									<a
+										{href}
+										class="text-sm leading-6 text-gray-600 hover:text-indigo-600 transition-colors"
+									>
+										<div class="font-medium">{name}</div>
+										<div class="text-xs text-gray-500">{description}</div>
+									</a>
+								</li>
+							{/each}
+							<li>
+								<a
+									href="/projects"
+									class="text-sm leading-6 text-indigo-600 hover:text-indigo-500 font-medium transition-colors"
+								>
+									View All Projects →
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="mt-10 md:mt-0">
 						<h3 class="text-sm font-semibold leading-6 text-gray-900">Legal</h3>
 						<ul role="list" class="mt-6 space-y-4">
-							<FooterItem name="Privacy" href="/privacy" />
-							<FooterItem name="Terms" href="/terms" />
+							{#each legal as { name, href }}
+								<FooterItem {name} {href} />
+							{/each}
 						</ul>
-					</div> -->
+						<!-- CTA Section -->
+						<div class="mt-8 p-4 bg-indigo-50 rounded-lg border border-indigo-100">
+							<h4 class="text-sm font-semibold text-indigo-900 mb-2">Ready to get started?</h4>
+							<p class="text-xs text-indigo-700 mb-3">Free consultation • No upfront costs</p>
+							<a
+								href="/contact"
+								class="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
+							>
+								Start Your Project
+								<svg
+									class="ml-1 h-3 w-3"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="2"
+									stroke="currentColor"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+									/>
+								</svg>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-			<p class="text-xs leading-5 text-gray-500">&copy; 2025 Ryan Roga. All rights reserved.</p>
+
+		<!-- Bottom Section -->
+		<div class="mt-16 border-t border-gray-200 pt-8 sm:mt-20 lg:mt-24">
+			<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+				<p class="text-xs leading-5 text-gray-500">&copy; 2025 Ryan Roga. All rights reserved.</p>
+				<div class="mt-4 sm:mt-0 flex items-center space-x-4 text-xs text-gray-500">
+					<span class="flex items-center gap-1">
+						<svg class="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+						Trusted by businesses across Western Canada
+					</span>
+				</div>
+			</div>
 		</div>
 	</div>
 </footer>
