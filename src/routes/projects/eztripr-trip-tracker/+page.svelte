@@ -2,10 +2,31 @@
 	import { fly } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
 
+	// Modal state
+	let showModal = $state(false);
+
 	// Function to handle image loading errors
 	function handleImageError(event: Event): void {
 		const img = event.currentTarget as HTMLImageElement;
 		img.src = 'https://placehold.co/800x500/e2e8f0/475569?text=EZTripr';
+	}
+
+	// Modal functions
+	function openModal() {
+		showModal = true;
+		document.body.style.overflow = 'hidden';
+	}
+
+	function closeModal() {
+		showModal = false;
+		document.body.style.overflow = 'auto';
+	}
+
+	// Handle escape key
+	function handleKeydown(event: KeyboardEvent) {
+		if (event.key === 'Escape' && showModal) {
+			closeModal();
+		}
 	}
 
 	// Add animation functionality
@@ -26,6 +47,14 @@
 		document.querySelectorAll('.animate-on-scroll').forEach((el) => {
 			observer.observe(el);
 		});
+
+		// Add keydown listener
+		document.addEventListener('keydown', handleKeydown);
+
+		// Cleanup
+		return () => {
+			document.removeEventListener('keydown', handleKeydown);
+		};
 	});
 </script>
 
@@ -386,14 +415,33 @@
 							class="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl blur-lg opacity-20"
 						></div>
 						<div
-							class="relative bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 shadow-xl"
+							class="relative bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 shadow-xl overflow-hidden"
 						>
-							<img
-								src="/images/eztripr-dashboard.png"
-								alt="EZTripr Dashboard Interface"
-								class="rounded-lg w-full"
-								onerror={handleImageError}
-							/>
+							<div class="dashboard-image-container">
+								<button
+									onclick={openModal}
+									class="block w-full cursor-pointer transition-transform hover:scale-105"
+									aria-label="View full dashboard image"
+								>
+									<img
+										src="/images/EzTripr-Updated-Drive-UI.png"
+										alt="EZTripr Dashboard Interface"
+										class="rounded-lg w-full max-h-[600px] object-cover object-top shadow-lg dashboard-image"
+										loading="lazy"
+										onerror={handleImageError}
+									/>
+								</button>
+								<div
+									class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center"
+								>
+									<div
+										class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg text-gray-900 font-medium"
+									>
+										<Icon icon="mdi:magnify-plus" class="inline w-5 h-5 mr-2" />
+										Click to view full image
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -520,6 +568,35 @@
 	</section>
 </main>
 
+<!-- Modal for full image view -->
+{#if showModal}
+	<div
+		class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+		onclick={closeModal}
+		transition:fly={{ duration: 300, opacity: 0 }}
+	>
+		<div class="relative max-w-4xl max-h-[90vh] w-full">
+			<button
+				onclick={closeModal}
+				class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+				aria-label="Close modal"
+			>
+				<Icon icon="mdi:close" class="w-8 h-8" />
+			</button>
+			<div class="bg-white rounded-lg overflow-hidden shadow-2xl max-h-[90vh]">
+				<div class="modal-image-container">
+					<img
+						src="/images/EzTripr-Updated-Drive-UI.png"
+						alt="EZTripr Dashboard Interface - Full View"
+						class="w-full h-auto modal-dashboard-image"
+						onclick={(e) => e.stopPropagation()}
+					/>
+				</div>
+			</div>
+		</div>
+	</div>
+{/if}
+
 <style>
 	@keyframes blob {
 		0% {
@@ -533,6 +610,18 @@
 		}
 		100% {
 			transform: translate(0px, 0px) scale(1);
+		}
+	}
+
+	@keyframes panImage {
+		0% {
+			object-position: center top;
+		}
+		50% {
+			object-position: center bottom;
+		}
+		100% {
+			object-position: center top;
 		}
 	}
 
@@ -559,5 +648,53 @@
 	:global(.animate-on-scroll.animate-in) {
 		opacity: 1;
 		transform: translateY(0);
+	}
+
+	/* Dashboard image panning animation */
+	.dashboard-image-container {
+		position: relative;
+		overflow: hidden;
+		border-radius: 0.5rem;
+	}
+
+	.dashboard-image {
+		animation: panImage 60s ease-in-out infinite;
+		transition: transform 0.9s ease;
+	}
+
+	.dashboard-image-container:hover .dashboard-image {
+		animation-play-state: paused;
+	}
+
+	/* Modal styling */
+	.modal-image-container {
+		max-height: 80vh;
+		overflow-y: auto;
+		scrollbar-width: thin;
+		scrollbar-color: #cbd5e1 #f1f5f9;
+	}
+
+	.modal-image-container::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	.modal-image-container::-webkit-scrollbar-track {
+		background: #f1f5f9;
+	}
+
+	.modal-image-container::-webkit-scrollbar-thumb {
+		background: #cbd5e1;
+		border-radius: 4px;
+	}
+
+	.modal-image-container::-webkit-scrollbar-thumb:hover {
+		background: #94a3b8;
+	}
+
+	.modal-dashboard-image {
+		display: block;
+		max-width: none;
+		width: 100%;
+		height: auto;
 	}
 </style>
