@@ -18,10 +18,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "src/routes/api/**/*.ts": {
-      "maxDuration": 10
-    }
-  }
+  ]
 }
