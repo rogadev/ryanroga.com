@@ -27,8 +27,10 @@
 				</span>
 			</h1>
 			<p class="mt-6 text-lg leading-8 text-gray-600 sm:text-xl">
-				Stop losing customers to outdated websites. I build high-performance, scalable web
-				applications that drive real business results for small businesses across Canada.
+				Stop losing customers to outdated websites &amp; workflows.<br /><span class="text-balanced"
+					>I build high-performance, scalable web applications that drive real business results for
+					small businesses across Canada.</span
+				>
 			</p>
 			<div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
 				<div class="flex items-center justify-center gap-2 text-sm text-gray-600">
