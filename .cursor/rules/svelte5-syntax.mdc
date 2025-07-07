@@ -1,0 +1,80 @@
+---
+globs: '*.svelte'
+description: 'Svelte 5 Syntax Requirements'
+---
+
+# Svelte 5 Syntax Requirements
+
+This project uses **Svelte 5** with runes mode. Always use modern Svelte 5 syntax:
+
+## Core Runes
+
+- Use `$state()` for reactive state instead of `let` declarations with `$:`
+- Use `$derived()` for computed values instead of `$:` reactive statements
+- Use `$effect()` for side effects instead of `$:` reactive statements
+- Use `$props()` for component props instead of `export let`
+- Use `$bindable()` for two-way binding props
+
+## Event Handling
+
+- Use `onclick={handler}` instead of `on:click={handler}`
+- Use callback props instead of event dispatching
+- Name callback props with `on` prefix (e.g., `onPageChange`)
+
+## Content Projection
+
+- **NEVER use `<slot />`** - always use `{@render children?.()}` instead
+- Replace named slots with snippet props
+- Always import `Snippet` type from 'svelte'
+- Use optional chaining `?.()` when rendering snippets
+
+## Runes Mode Declaration
+
+Add explicit runes declaration when syntax could be ambiguous:
+
+```svelte
+<svelte:options runes={true} />
+```
+
+## Component Structure Template
+
+```svelte
+<svelte:options runes={true} />
+
+<script>
+	import type { Snippet } from 'svelte';
+
+	let {
+		propName = defaultValue,
+		children,
+		onCallback,
+		...restProps
+	} = $props<{
+		propName?: string;
+		children?: Snippet;
+		onCallback?: (data: any) => void;
+	}>();
+
+	let state = $state(initialValue);
+	let computed = $derived(state * 2);
+
+	$effect(() => {
+		// side effects
+		return () => {
+			// cleanup
+		};
+	});
+</script>
+
+<div>
+	{@render children?.()}
+</div>
+```
+
+## Deprecation Fixes
+
+- Slots → `{@render children?.()}`
+- `$:` statements → `$derived()` or `$effect()`
+- `export let` → `$props()`
+- Event dispatching → callback props
+- Lifecycle hooks → `$effect()`

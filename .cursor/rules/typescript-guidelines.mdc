@@ -1,0 +1,90 @@
+---
+globs: '*.ts,*.tsx'
+description: 'TypeScript Guidelines for SvelteKit Project'
+---
+
+# TypeScript Guidelines
+
+## Core TypeScript Rules
+
+- Always use TypeScript in `.ts` and `.svelte` files
+- Properly type all function parameters and return values
+- Use `import type` for type-only imports
+- Leverage SvelteKit's generated types
+
+## SvelteKit-Specific Types
+
+Reference these important SvelteKit type files:
+
+- [app.d.ts](mdc:src/app.d.ts) - Global type definitions
+- SvelteKit's generated `./$types` imports in route files
+
+## Component Prop Typing
+
+```typescript
+// In .svelte files - always type props
+let {
+	title,
+	items = [],
+	onSelect
+} = $props<{
+	title: string;
+	items?: string[];
+	onSelect?: (item: string) => void;
+}>();
+```
+
+## Route File Patterns
+
+Follow these patterns for route files:
+
+### Page Server Files (+page.server.ts)
+
+```typescript
+import type { PageServerLoad } from './$types';
+
+export const load = (async ({ params, url }) => {
+	return {
+		// typed return data
+	};
+}) satisfies PageServerLoad;
+```
+
+### Layout Files (+layout.ts)
+
+```typescript
+import type { LayoutLoad } from './$types';
+
+export const load = (async ({ url }) => {
+	return {
+		// typed return data
+	};
+}) satisfies LayoutLoad;
+```
+
+## Type Organization
+
+- Define shared types in `src/lib/types/`
+- Use descriptive interface names
+- Export types that might be reused
+
+## Form and Data Handling
+
+For contact forms and data processing:
+
+- Type form data interfaces
+- Use proper validation with typed schemas
+- Type server action responses
+
+## References to Project Types
+
+Custom types are defined in [src/types/](mdc:src/types/):
+
+- [qrcode.d.ts](mdc:src/types/qrcode.d.ts) - QR code library types
+
+## Best Practices
+
+- Use `satisfies` for better type inference
+- Prefer interfaces over type aliases for object shapes
+- Use proper null/undefined handling with optional chaining
+- Type event handlers appropriately
