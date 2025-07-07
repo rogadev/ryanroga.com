@@ -1,193 +1,300 @@
-# Hi, I'm Ryan! 👋
+# Roga Web Development
 
-## About Me
+[![Svelte 5](https://img.shields.io/badge/Svelte-5-orange.svg)](https://svelte.dev/)
+[![SvelteKit](https://img.shields.io/badge/SvelteKit-2.0-orange.svg)](https://kit.svelte.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-blue.svg)](https://tailwindcss.com/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed-Vercel-black.svg)](https://vercel.com/)
 
-🌐 I am web developer specializing in full-stack web application development. Over the years, I have successfully developed software solutions that address complex business needs. As a full-stack web developer, I have collaborated with diverse clients, translating their requirements into functional and scalable applications.
+Professional web development services website built with modern technologies. This is the portfolio and business website for Roga Web Development, specializing in custom web applications for small businesses.
 
-🚀 My expertise includes creating innovative solutions for business operations and logistics management, task automation, customer relationship enhancements, AI integration, and educational tools. I prioritize user-centered design, ensuring streamlined interfaces and robust backend architectures that enhance overall performance. Proficient in frameworks like Next.js, Nuxt 3, Vue 3, TypeScript, and TailwindCSS, I consistently adhere to coding best practices.
+🌐 **Live Site**: [roga.dev](https://roga.dev)
 
-🔧 I am currently working as a freelance Web Developer under contract with Telus on the Tech Central project, a comprehensive platform designed to centralize and streamline technician tools and workflows. This enterprise-level application consolidates multiple disparate systems into a unified interface, significantly improving operational efficiency for field technicians across Telus's network operations. The platform leverages Next.js for robust frontend performance, integrates with dotCMS for content management, and utilizes Google Cloud Platform for scalable infrastructure. This project demonstrates my ability to work on large-scale enterprise applications while collaborating with cross-functional teams to deliver solutions that directly impact thousands of technicians and improve customer service delivery.
+## 🚀 Features
 
-📬 Feel free to reach out: [Email](mailto:ryanroga@gmail.com) | [LinkedIn Profile](https://www.linkedin.com/in/ryanroga/)
+### Business Features
 
-## Languages:
+- **Professional Portfolio** - Showcasing web development projects and case studies
+- **Service Offerings** - Full-stack development, SvelteKit, Vue.js, TypeScript expertise
+- **Contact Form** - Integrated email system with auto-reply functionality
+- **Client Testimonials** - Social proof and client logos
+- **Responsive Design** - Mobile-first, modern UI/UX
+- **SEO Optimized** - Meta tags, Open Graph, Twitter Cards
 
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![HTML](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![HTML](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+### Technical Features
 
-## Familiar Tools:
+- **Svelte 5 with Runes** - Latest Svelte features for reactive state management
+- **TypeScript** - Full type safety across the application
+- **Tailwind CSS** - Utility-first styling with custom components
+- **Server-Side Rendering** - SvelteKit for optimal performance
+- **Email Integration** - Resend API for contact form functionality
+- **Static Assets** - Optimized images, fonts, and logos
 
-![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
-![Nuxt.js](https://img.shields.io/badge/-Nuxt.js-00DC82?style=flat&logo=nuxt.js&logoColor=white)
-![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat&logo=next.js&logoColor=white)
-![Svelte](https://img.shields.io/badge/-Svelte-FF3E00?style=flat&logo=svelte&logoColor=white)
-![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/-Express-000000?style=flat&logo=express&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white)
-![Prisma](https://img.shields.io/badge/-Prisma-2D3748?style=flat&logo=prisma&logoColor=white)
-![Supabase](https://img.shields.io/badge/-Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white)
-![dotCMS](https://img.shields.io/badge/-dotCMS-FF6B35?style=flat&logo=contentful&logoColor=white)
-![OpenAI API](https://img.shields.io/badge/-OpenAI_API-412991?style=flat&logo=openai&logoColor=white)
-![Vitest](https://img.shields.io/badge/-Vitest-4B8BBE?style=flat&logo=vitest&logoColor=white)
-![Jest](https://img.shields.io/badge/-Jest-C21325?style=flat&logo=jest&logoColor=white)
-![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)
-![npm](https://img.shields.io/badge/-npm-CB3837?style=flat&logo=npm&logoColor=white)
-![pnpm](https://img.shields.io/badge/-pnpm-F69220?style=flat&logo=pnpm&logoColor=white)
-![yarn](https://img.shields.io/badge/-Yarn-2C8EBB?style=flat&logo=yarn&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+## 🛠️ Tech Stack
 
-## Additional Technologies:
+### Core Framework
 
-I have practical experience with a variety of other technologies, which I am capable of using effectively in projects and am actively enhancing my skills in:
+- **[SvelteKit](https://kit.svelte.dev/)** - Full-stack framework
+- **[Svelte 5](https://svelte.dev/)** - Component framework with runes
+- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
+- **[Vite](https://vitejs.dev/)** - Build tool and dev server
 
-![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=white)
-![Astro](https://img.shields.io/badge/-Astro-000?style=flat&logo=astro&logoColor=white)
-![AWS](https://img.shields.io/badge/-AWS-FF9900?style=flat&logo=amazonwebservices&logoColor=black)
-![GCP](https://img.shields.io/badge/-Google_Cloud_Platform-4285F4?style=flat&logo=google-cloud&logoColor=white)
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
-![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![JWT](https://img.shields.io/badge/-JWT-000000?style=flat&logo=json-web-tokens&logoColor=white)
-![OAuth](https://img.shields.io/badge/-OAuth-EB5424?style=flat&logo=oauth&logoColor=white)
-![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)
-![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
-![Puppeteer](https://img.shields.io/badge/-Puppeteer-40B5A4?style=flat&logo=puppeteer&logoColor=white)
-![Cypress](https://img.shields.io/badge/-Cypress-17202C?style=flat&logo=cypress&logoColor=white)
-![Mocha](https://img.shields.io/badge/-Mocha-8D6748?style=flat&logo=mocha&logoColor=white)
-![IoT](https://img.shields.io/badge/-IoT-3C873A?style=flat&logo=wikiquote&logoColor=white)
-![Microcontrollers](https://img.shields.io/badge/-Microcontrollers-007ACC?style=flat&logo=arduino&logoColor=white)
+### Styling & UI
 
-## Featured Projects
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS
+- **[Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-forms)** - Form styling
+- **[Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography)** - Typography plugin
+- **[Iconify](https://iconify.design/)** - Icon system
+- **Poppins Font** - Custom web fonts
 
-### Telus Tech Central Platform
+### Backend & Services
 
-![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![dotCMS](https://img.shields.io/badge/-dotCMS-FF6B35?style=flat&logo=contentful&logoColor=white)
-![GCP](https://img.shields.io/badge/-Google_Cloud_Platform-4285F4?style=flat&logo=google-cloud&logoColor=white)
-![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=white)
+- **[Resend](https://resend.com/)** - Email API for contact forms
+- **[Vercel](https://vercel.com/)** - Deployment and hosting
+- QR Code generation for projects
 
-Currently working with Telus on the Tech Central project, a comprehensive platform designed to centralize and streamline technician tools and workflows. This enterprise-level application consolidates multiple disparate systems into a unified interface, significantly improving operational efficiency for field technicians across Telus's network operations. The platform leverages Next.js for robust frontend performance, integrates with dotCMS for content management, and utilizes Google Cloud Platform for scalable infrastructure. This project demonstrates my ability to work on large-scale enterprise applications while collaborating with cross-functional teams to deliver solutions that directly impact thousands of technicians and improve customer service delivery.
+### Development Tools
 
-### CarEvo Logistics Web Application
+- **[ESLint](https://eslint.org/)** - Linting
+- **[Prettier](https://prettier.io/)** - Code formatting
+- **[Vitest](https://vitest.dev/)** - Testing framework
+- **[Playwright](https://playwright.dev/)** - End-to-end testing
+- **pnpm** - Package manager
 
-[![Client](https://img.shields.io/badge/-Client-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://carevo.ca)
+## 📁 Project Structure
 
-![Nuxt.js](https://img.shields.io/badge/-Nuxt.js-00C58E?style=flat&logo=nuxt.js&logoColor=white)
-![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
-![Prisma](https://img.shields.io/badge/-Prisma-2D3748?style=flat&logo=prisma&logoColor=white)
-![Supabase](https://img.shields.io/badge/-Supabase-639?style=flat&logo=supabase&logoColor=white)
+```
+src/
+├── lib/
+│   ├── components/           # Reusable components
+│   │   ├── case-studies/    # Case study specific components
+│   │   └── archive/         # Legacy components
+│   └── types/               # TypeScript type definitions
+├── routes/                  # SvelteKit routes
+│   ├── about/              # About page
+│   ├── contact/            # Contact form with server actions
+│   ├── development/        # Development services page
+│   ├── projects/           # Portfolio and case studies
+│   │   ├── eztripr-trip-tracker/
+│   │   └── lot-logistics-web-application/
+│   ├── resume/             # Resume pages
+│   ├── ai/                 # AI services page
+│   ├── privacy/            # Privacy policy
+│   └── terms/              # Terms of service
+└── app.html                # HTML template
 
-The Carevo Auto Solutions Web Application optimizes the logistics and management of used vehicles for Carevo, a premier online used car dealership in Eastern Canada. This comprehensive tool enhances operational efficiency by facilitating vehicle handling across multiple lots, tracking services, and providing timely updates for both logistics and sales teams. Seamlessly integrating vendor portal features, real-time vehicle tracking, request management, and QR code functionality, this application ensures smooth operations and enhanced customer experiences. Built with Nuxt 3, Vue 3, TypeScript, and TailwindCSS, this project exemplifies my expertise in creating scalable and user-friendly web solutions tailored to specific industry needs.
+static/
+├── images/                 # Project images and screenshots
+├── logos/                  # Client and technology logos
+├── fonts/                  # Poppins font files
+└── icons/                  # Favicon and app icons
+```
 
-### VIU Career Outlooks Web Application
+## 🚀 Getting Started
 
-[![Live](https://img.shields.io/badge/-Live-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://career-outlooks.viu.ca) [![Repo](https://img.shields.io/badge/-Repo-181717?style=flat&logo=github&logoColor=white)](https://github.com/rogadev/viu-career-outlooks)
+### Prerequisites
 
-#### Data Collection
+- **Node.js** 18+
+- **pnpm** (recommended package manager)
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/-Express-000000?style=flat&logo=express&logoColor=white)
-![Puppeteer](https://img.shields.io/badge/-Puppeteer-40B5A4?style=flat&logo=puppeteer&logoColor=white)
+### Installation
 
-#### Proof of Concept
+1. **Clone the repository**
 
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
-![Nuxt.js](https://img.shields.io/badge/-Nuxt.js-00DC82?style=flat&logo=nuxt.js&logoColor=white)
+   ```bash
+   git clone https://github.com/rogadev/ryanroga.com.git
+   cd ryanroga.com
+   ```
 
-#### Final Project
+2. **Install dependencies**
 
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![Svelte](https://img.shields.io/badge/-Svelte-FF3E00?style=flat&logo=svelte&logoColor=white)
-![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
-![Prisma](https://img.shields.io/badge/-Prisma-2D3748?style=flat&logo=prisma&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white)
-![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat&logo=vite&logoColor=white)
-![Fuse.js](https://img.shields.io/badge/-Fuse.js-F93C00?style=flat&logo=node.js&logoColor=white)
-![node-cache](https://img.shields.io/badge/-node__cache-339933?style=flat&logo=node.js&logoColor=white)
+   ```bash
+   pnpm install
+   ```
 
-The VIU Career Outlooks Web Application represents a pivotal collaboration between myself and Vancouver Island University, conceived during my 2022 summer internship as part of the ITAS Web and Mobile Development Diploma program. Aimed at aiding prospective students in making informed decisions regarding their educational and professional paths, this innovative tool seamlessly connects VIU programs and credentials with real-world employment opportunities. By integrating data scraping techniques and database management with Prisma, I ensured the accuracy and relevance of employment outlooks presented to users. Currently live on VIU's website, the application provides detailed insights into career pathways, job prospects, and industry trends across British Columbia. As I continue to evolve this project, I'm enhancing its functionality with features such as user authentication and personalized price sheets, while transitioning to modern technologies like Nuxt, TypeScript, and Tailwind CSS for improved performance and usability.
+3. **Set up environment variables**
 
-### Granny Go Go Trip Tracker (Capstone Project)
+   ```bash
+   cp env.example .env
+   ```
 
-[![Client](https://img.shields.io/badge/-Client-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://www.grannygogo.ca/) [![Repo](https://img.shields.io/badge/-Repo-181717?style=flat&logo=github&logoColor=white)](https://github.com/rogadev/capstone)
+   Configure your environment variables:
 
-![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
-![Nuxt.js](https://img.shields.io/badge/-Nuxt.js-00DC82?style=flat&logo=nuxt.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white)
-![Prisma](https://img.shields.io/badge/-Prisma-2D3748?style=flat&logo=prisma&logoColor=white)
-![Supabase](https://img.shields.io/badge/-Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white)
-![Google Maps API](https://img.shields.io/badge/-Google_Maps_API-4285F4?style=flat&logo=google-maps&logoColor=white)
-![OpenAI API](https://img.shields.io/badge/-OpenAI_API-412991?style=flat&logo=openai&logoColor=white)
-![Zod](https://img.shields.io/badge/-Zod-3C873A?style=flat&logo=zod&logoColor=white)
-![Vitest](https://img.shields.io/badge/-Vitest-4B8BBE?style=flat&logo=vitest&logoColor=white)
-![Tailwind Forms](https://img.shields.io/badge/-Tailwind_Forms-06B6D4?style=flat&logo=tailwind-css&logoColor=white)
-![Tailwind Typography](https://img.shields.io/badge/-Tailwind_Typography-06B6D4?style=flat&logo=tailwind-css&logoColor=white)
-![Nuxt Icon](https://img.shields.io/badge/-Nuxt_Icon-00DC82?style=flat&logo=nuxt.js&logoColor=white)
-![Chalk](https://img.shields.io/badge/-Chalk-FFFFFF?style=flat&logo=chalk&logoColor=black)
-![eslint](https://img.shields.io/badge/-eslint-4B32C3?style=flat&logo=eslint&logoColor=white)
-![DaisyUI](https://img.shields.io/badge/-DaisyUI-4B8BBE?style=flat&logo=daisyui&logoColor=white)
-![Nanoid](https://img.shields.io/badge/-Nanoid-03A9F4?style=flat&logo=nanoid&logoColor=white)
-![Consola](https://img.shields.io/badge/-Consola-4CAF50?style=flat&logo=consola&logoColor=white)
-![Superjson](https://img.shields.io/badge/-Superjson-009688?style=flat&logo=json&logoColor=white)
+   ```env
+   RESEND_API_KEY=your_resend_api_key_here
+   ```
 
-The Granny Go Go Trip Tracker project offers a comprehensive solution for modernizing trip scheduling and management within the medical transportation sector. Developed with a focus on enhancing driver efficiency and passenger communication, this intuitive web application simplifies trip planning and execution. Leveraging a tech stack comprised of TypeScript, Vue 3, Nuxt 3, and Tailwind CSS, I designed a robust frontend interface that provides drivers with essential trip details at a glance. The integration of OpenAI's Chat Completion API with GPT-3.5-Turbo streamlines schedule generation, allowing drivers to create optimized driving routes from email dispatches effortlessly. Additionally, the application features AI-powered conflict detection and route optimization functionalities, ensuring smooth and timely transportation experiences for passengers. By prioritizing usability and functionality, the Granny Go Go Trip Tracker project demonstrates my proficiency in developing innovative solutions that address real-world logistical challenges within the medical transportation industry.
+4. **Start development server**
+   ```bash
+   pnpm dev
+   ```
 
-## Additional Projects
+Visit [http://localhost:5173](http://localhost:5173) to view the application.
 
-### MossAway Victoria, CMS Website
+## 📧 Contact Form Setup
 
-[![Client](https://img.shields.io/badge/-Client-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://mossaway.ca/) [![Live](https://img.shields.io/badge/-Live-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://victoria-mossaway-ca.vercel.app/) [![Repo](https://img.shields.io/badge/-Repo-181717?style=flat&logo=github&logoColor=white)](https://github.com/rogadev/victoria.mossaway.ca)
+The contact form uses [Resend](https://resend.com/) for email delivery. See [CONTACT_FORM_SETUP.md](./CONTACT_FORM_SETUP.md) for detailed setup instructions.
 
-![Astro](https://img.shields.io/badge/-Astro-000?style=flat&logo=astro&logoColor=white)
-![Svelte](https://img.shields.io/badge/-Svelte-FF3E00?style=flat&logo=svelte&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+### Quick Setup:
 
-As a part of my ITAS268 Final Project, I created the Victoria MossAway Portfolio using Astro, a modern frontend framework. Departing from traditional CMS platforms like Drupal or WordPress, I crafted a custom CMS solution tailored to my needs. Leveraging AI technology, I generated unique moss monster images and optimized text to enhance SEO and engage visitors effectively. Despite its short-lived duration due to the sale of MossAway, this portfolio site proved highly effective, ranking organically on Google and competently representing my work without conflicting with the SEO of the original MossAway site.
+1. Create a Resend account at [resend.com](https://resend.com)
+2. Get your API key from the dashboard
+3. Add `RESEND_API_KEY` to your `.env` file
+4. Configure sender domains in production
 
-### Password Generator
+## 🛠️ Development
 
-[![Live](https://img.shields.io/badge/-Live-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://passwords.roga.dev) [![Repo](https://img.shields.io/badge/-Repo-181717?style=flat&logo=github&logoColor=white)](https://github.com/rogadev/roga-password-generator)
+### Available Scripts
 
-![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+```bash
+# Development
+pnpm dev              # Start dev server
+pnpm dev --host       # Start dev server with network access
 
-This basic Password Generator is a simple yet effective tool for generating secure passwords quickly and easily. Built in just a couple of hours, this lightweight application allows users to customize their passwords by choosing whether to include special characters, uppercase and/or lowercase letters, and numbers. With a click, users can save their generated password to the clipboard for convenience. Leveraging Vue.js for frontend functionality and TypeScript for robust type-checking, the RogaDev Password Generator demonstrates my proficiency in crafting responsive and visually appealing interfaces. Despite its simplicity, this project underscores my commitment to delivering effective solutions that meet user needs in a straightforward manner.
+# Building
+pnpm build            # Build for production
+pnpm preview          # Preview production build
 
-### [Window Cleaning Project Evaluation Tool](https://www.ezeval.app/)
+# Code Quality
+pnpm lint             # Run ESLint
+pnpm format           # Format code with Prettier
+pnpm check            # Type check with svelte-check
+pnpm check:watch      # Watch mode for type checking
 
-[![Live](https://img.shields.io/badge/-Live-4285F4?style=flat&logo=google-chrome&logoColor=white)](https://www.ezeval.app/) [![Repo](https://img.shields.io/badge/-Repo-181717?style=flat&logo=github&logoColor=white)](https://github.com/rogadev/roga-window-quoter)
+# Testing
+pnpm test             # Run Vitest tests
+```
 
-![HTML](https://img.shields.io/badge/-HTML-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/-CSS-1572B6?style=flat&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+### Svelte 5 Development Guidelines
 
-Initially developed during my first year of school, the Window Cleaning Project Evaluation Tool originated from a need within my previous business, which specialized in exterior cleaning services. Faced with the challenge of generating accurate window cleaning quotes efficiently, I identified a gap in available tools and decided to create a solution myself. Leveraging vanilla HTML, CSS, and JavaScript, I crafted a mobile-friendly application that prioritized simplicity, speed, and effectiveness. This initial version proved highly successful in streamlining the quotation process. Currently, I'm actively enhancing the tool for a future version. This new iteration incorporates advanced features such as user authentication, personalized price sheets with save functionality, and a complete rewrite using modern technologies including Nuxt, TypeScript, and Tailwind CSS. Through this ongoing development, I aim to further improve the tool's functionality and usability, catering to the evolving needs of window cleaning professionals.
+This project uses **Svelte 5 with runes mode**. Key patterns:
 
-## Experience
+```svelte
+<svelte:options runes={true} />
 
-- **Freelance Web Developer (Contract with Telus)**
-  - Currently working on the Tech Central project, developing enterprise-level applications that centralize technician tools and improve operational efficiency across Telus's network operations.
-- **Freelance Web Developer**
-  - Developing custom web solutions for various clients including CarEvo and educational tools for VIU.
-- **Web Developer, VIU Web Department**
-  - Developed key projects like the VIU Career Outlooks web app, enhancing the student interface for career planning.
+<script>
+	import type { Snippet } from 'svelte';
 
-## Education
+	// Props with $props()
+	let { title, children, onClick } = $props<{
+		title: string;
+		children?: Snippet;
+		onClick?: () => void;
+	}>();
 
-- **Diploma in Web and Mobile Application Development**
-  - Vancouver Island University, Top of my class
+	// State with $state()
+	let count = $state(0);
 
-## Let's Connect!
+	// Derived values with $derived()
+	let doubled = $derived(count * 2);
 
-Feel free to [follow me on GitHub](https://github.com/rogadev) to stay updated on my projects.
+	// Effects with $effect()
+	$effect(() => {
+		console.log('Count changed:', count);
+	});
+</script>
 
-Thank you for checking out my profile!
+<!-- Use {@render children?.()} instead of <slot /> -->
+<div>
+	{@render children?.()}
+</div>
+```
+
+### Code Quality Standards
+
+- **TypeScript** - All files must be properly typed
+- **Svelte 5 Syntax** - Use runes, avoid deprecated patterns
+- **Component Structure** - Follow established patterns in `/lib/components`
+- **Responsive Design** - Mobile-first with Tailwind classes
+- **SEO** - Proper meta tags and semantic HTML
+
+## 📱 Pages & Features
+
+### Main Sections
+
+- **Homepage** - Hero, services, process, tech stack, testimonials
+- **About** - Professional background and expertise
+- **Services** - Web development offerings
+- **Projects** - Portfolio with detailed case studies
+- **Contact** - Contact form with email integration
+- **Resume** - Professional experience and skills
+
+### Case Studies
+
+- **EzTripr Trip Tracker** - React/Node.js travel application
+- **LOT Logistics** - Vue.js/Laravel logistics platform
+- Additional projects and small applications
+
+## 🚀 Deployment
+
+### Vercel Deployment
+
+This project is configured for deployment on Vercel:
+
+1. **Connect your repository** to Vercel
+2. **Set environment variables** in Vercel dashboard:
+   - `RESEND_API_KEY`
+3. **Deploy** - Automatic deployments from main branch
+
+### Build Configuration
+
+- **Adapter**: `@sveltejs/adapter-vercel`
+- **Node.js Version**: 18+
+- **Build Command**: `pnpm build`
+- **Output Directory**: `.svelte-kit`
+
+## 🔧 Customization
+
+### Adding New Projects
+
+1. Create project directory in `src/routes/projects/`
+2. Add `+page.svelte` with project details
+3. Update project listings and navigation
+4. Add project images to `static/images/`
+
+### Modifying Contact Form
+
+1. Edit form fields in `src/routes/contact/+page.svelte`
+2. Update server action in `src/routes/contact/+page.server.ts`
+3. Customize email templates in the server action
+
+### Adding New Pages
+
+1. Create route directory in `src/routes/`
+2. Add `+page.svelte` for the page content
+3. Optional: Add `+page.ts` for data loading
+4. Update navigation components
+
+## 🤝 Contributing
+
+### Development Workflow
+
+1. Create feature branch from `main`
+2. Make changes following code quality standards
+3. Test thoroughly (dev server, build, lint)
+4. Submit pull request with clear description
+
+### Code Style
+
+- Use Prettier for formatting (configured)
+- Follow ESLint rules (configured)
+- Use TypeScript for type safety
+- Follow Svelte 5 patterns and runes
+- Write semantic, accessible HTML
+
+## 📄 License
+
+This project is for Roga Web Development business purposes. See individual component licenses for third-party code.
+
+## 📞 Contact
+
+**Ryan Roga** - Web Developer
+
+- 🌐 Website: [roga.dev](https://roga.dev)
+- 📧 Email: ryan@roga.dev
+- 💼 LinkedIn: [linkedin.com/in/ryanroga](https://linkedin.com/in/ryanroga)
+- 🐙 GitHub: [github.com/rogadev](https://github.com/rogadev)
+
+---
+
+Built with ❤️ using SvelteKit and modern web technologies.
