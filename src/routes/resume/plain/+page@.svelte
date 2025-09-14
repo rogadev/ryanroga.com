@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Project from './Project.svelte';
+	import RedactedEmail from '$lib/components/RedactedEmail.svelte';
+	import RedactedPhone from '$lib/components/RedactedPhone.svelte';
 
 	import Icon from '@iconify/svelte';
 </script>
@@ -25,9 +27,9 @@
 		</div>
 	</div>
 	<div class="flex flex-row justify-between items-center">
-		<p>Dartmouth, Nova Scotia<span class="hidden sm:inline">, Canada</span></p>
-		<a class="hover:text-blue-700" href="tel:+1-902-830-8881">(902) 830-8881</a>
-		<a class="hover:text-blue-700" href="mailto:ryan@roga.dev" target="_blank">ryan@roga.dev</a>
+		<p>Cumberland, BC<span class="hidden sm:inline">, Canada</span></p>
+		<RedactedPhone />
+		<RedactedEmail />
 	</div>
 </section>
 <main class="mx-auto max-w-5xl p-6 prose">
