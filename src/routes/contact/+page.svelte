@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { fly } from 'svelte/transition';
+	import RedactedEmail from '$lib/components/RedactedEmail.svelte';
 
 	let isVisible = $state(false);
 
@@ -176,12 +177,9 @@
 									</svg>
 								</div>
 								<div>
-									<a
-										href="mailto:ryan@roga.dev"
-										class="text-lg font-medium text-gray-900 hover:text-indigo-600 transition-colors"
-									>
-										ryan@roga.dev
-									</a>
+									<div class="text-lg font-medium text-gray-900">
+										<RedactedEmail />
+									</div>
 									<p class="text-sm text-gray-600">Best for detailed project discussions</p>
 								</div>
 							</div>
@@ -300,10 +298,7 @@
 							</p>
 							<p class="leading-relaxed">
 								In the meantime, please feel free to reach out using any of the contact methods
-								listed on the left, or send me an email directly at <a
-									href="mailto:ryan@roga.dev"
-									class="text-indigo-600 hover:text-indigo-500 font-semibold">ryan@roga.dev</a
-								>.
+								listed on the left, or contact me directly at <RedactedEmail />.
 							</p>
 							<div class="mt-6 p-4 bg-white rounded-lg border border-orange-200">
 								<p class="text-sm text-gray-600">
@@ -420,12 +415,11 @@
 					together and give your business the competitive edge it deserves.
 				</p>
 				<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
-					<a
-						href="mailto:ryan@roga.dev"
-						class="rounded-lg bg-white px-8 py-4 text-base font-semibold text-indigo-600 shadow-lg hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200 hover:shadow-xl hover:scale-105"
+					<div
+						class="rounded-lg bg-white px-8 py-4 text-base font-semibold text-indigo-600 shadow-lg"
 					>
-						Email Me Now
-					</a>
+						<RedactedEmail />
+					</div>
 					<a
 						href="/projects"
 						class="rounded-lg border-2 border-white px-8 py-4 text-base font-semibold text-white hover:bg-white hover:text-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
