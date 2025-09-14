@@ -116,7 +116,10 @@
 	<section class="py-16 sm:py-24">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center mb-16">
-				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+				<h2
+					id="choose-how-to-connect"
+					class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+				>
 					Choose How to Connect
 				</h2>
 				<p class="mt-4 text-lg leading-8 text-gray-600">
