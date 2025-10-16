@@ -1,5 +1,10 @@
-import adapter from '@sveltejs/adapter-vercel';
+import adapterVercel from '@sveltejs/adapter-vercel';
+import adapterAuto from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+// Use adapter-auto on Windows for local builds (to avoid symlink issues),
+// but adapter-vercel will be used in Vercel's CI/CD environment
+const adapter = process.env.VERCEL ? adapterVercel : adapterAuto;
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -7,13 +12,9 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			// Configure ISR for better caching
-			isr: {
-				// Enable ISR globally with a 1 hour cache
-				expiration: 3600, // 1 hour in seconds
-				// Optional: Add bypass token for on-demand revalidation
-				bypassToken: process.env.VERCEL_REVALIDATE_TOKEN
-			}
+			// Windows compatibility - bundle instead of symlinking
+			runtime: 'nodejs20.x',
+			split: false
 		}),
 		alias: {
 			'@/*': './path/to/lib/*'
