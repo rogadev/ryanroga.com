@@ -15,8 +15,7 @@
 				Frequently Asked Questions
 			</h2>
 			<p class="mt-4 text-lg leading-8 text-gray-600">
-				Get answers to the most common questions small business owners ask about web development
-				projects.
+				Clear, honest answers to how I price, build, and support your project.
 			</p>
 		</div>
 
@@ -49,9 +48,7 @@
 					{#if openItems[1]}
 						<div class="px-6 pb-6">
 							<p class="text-gray-600 mb-4">
-								Professional websites start from $2,500 for small business sites and can range up to
-								$15,000+ for complex custom applications. The final cost depends on your specific
-								requirements:
+								Pricing depends on scope and complexity. Most projects fit one of these ranges:
 							</p>
 							<ul class="space-y-2 text-gray-600">
 								<li class="flex items-start gap-2">
@@ -111,8 +108,7 @@
 					{#if openItems[2]}
 						<div class="px-6 pb-6">
 							<p class="text-gray-600 mb-4">
-								Timeline estimates* depend on the complexity, scope, and specific requirements of
-								your project:
+								Timelines vary by scope and feedback cycles. Typical ranges:
 							</p>
 							<ul class="space-y-2 text-gray-600 mb-4">
 								<li class="flex items-start gap-2">
@@ -171,8 +167,7 @@
 					{#if openItems[3]}
 						<div class="px-6 pb-6">
 							<p class="text-gray-600 mb-4">
-								It depends on your needs and project requirements. I offer different approaches
-								based on what works best for your situation:
+								Options tailored to your team—choose self‑managed, developer‑managed, or hybrid:
 							</p>
 							<div class="mb-4">
 								<h5 class="font-semibold text-gray-900 mb-2">Dynamic Web Applications:</h5>
@@ -262,8 +257,8 @@
 					{#if openItems[4]}
 						<div class="px-6 pb-6">
 							<p class="text-gray-600 mb-4">
-								Your satisfaction is my top priority. Here's my structured approach to ensure you
-								love your website:
+								A structured review process with built‑in revision rounds ensures the final result
+								meets agreed objectives:
 							</p>
 							<ul class="space-y-2 text-gray-600 mb-4">
 								<li class="flex items-start gap-2">
@@ -563,7 +558,7 @@
 				</p>
 				<a
 					href="/contact"
-					class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-200"
+					class="inline-flex items-center gap-2 rounded-lg bg-sky-600 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 transition-all duration-200"
 				>
 					Schedule Free Consultation
 					<svg

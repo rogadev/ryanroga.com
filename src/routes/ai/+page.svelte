@@ -139,18 +139,7 @@
 	</script>
 </svelte:head>
 
-<!-- Decorative background elements -->
-<div class="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
-	<div
-		class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
-	></div>
-	<div
-		class="absolute top-1/3 left-1/3 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
-	></div>
-	<div
-		class="absolute bottom-1/4 right-1/3 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
-	></div>
-</div>
+<!-- Decorative background elements removed -->
 
 <main class="min-h-screen">
 	<!-- Hero Section -->
@@ -158,10 +147,10 @@
 		<div class="max-w-7xl mx-auto">
 			<div class="flex flex-col md:flex-row items-center gap-12">
 				<div class="w-full md:w-1/2 animate-on-scroll">
-					<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+					<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 text-balance">
 						AI Training That <span class="text-blue-600">Transforms</span> Your Business
 					</h1>
-					<p class="text-xl text-gray-700 mb-8">
+					<p class="text-xl text-gray-700 mb-8 text-pretty">
 						Unlock the power of AI for your team with practical, hands-on training that delivers
 						immediate value. Learn how to leverage AI tools to boost productivity, enhance
 						creativity, and solve real business challenges.
@@ -169,13 +158,13 @@
 					<div class="flex flex-wrap gap-4">
 						<a
 							href="#pricing"
-							class="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg text-white font-medium hover:from-blue-600 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+							class="inline-block px-8 py-4 bg-gradient-to-r from-sky-500 to-teal-600 rounded-lg text-white font-medium hover:from-sky-600 hover:to-teal-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
 						>
 							View Training Options
 						</a>
 						<a
 							href="/contact"
-							class="inline-block px-8 py-4 bg-transparent border-2 border-blue-500 rounded-lg text-blue-700 font-medium hover:bg-blue-50 transition-all"
+							class="inline-block px-8 py-4 bg-transparent border-2 border-sky-500 rounded-lg text-sky-700 font-medium hover:bg-blue-50 transition-all"
 						>
 							Contact Us
 						</a>
@@ -187,14 +176,14 @@
 							class="absolute -top-6 -left-6 w-24 h-24 bg-blue-100 rounded-lg transform rotate-6"
 						></div>
 						<div
-							class="absolute -bottom-6 -right-6 w-24 h-24 bg-indigo-100 rounded-lg transform -rotate-6"
+							class="absolute -bottom-6 -right-6 w-24 h-24 bg-teal-100 rounded-lg transform -rotate-6"
 						></div>
 						<div
 							class="relative bg-white rounded-2xl p-8 shadow-xl border border-gray-100 overflow-hidden"
 						>
 							<div class="flex items-center mb-6">
 								<div
-									class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white mr-4"
+									class="w-12 h-12 bg-gradient-to-br from-sky-500 to-teal-600 rounded-lg flex items-center justify-center text-white mr-4"
 								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -282,12 +271,12 @@
 	<section class="py-16 px-4 bg-gray-50">
 		<div class="max-w-7xl mx-auto">
 			<div class="text-center mb-16 animate-on-scroll">
-				<h2 class="inline-block text-4xl font-bold relative">
+				<h2 class="inline-block text-4xl font-bold relative text-balance">
 					<span class="relative z-10 text-gray-900">Why AI Training Matters Now</span>
 					<span class="absolute -bottom-3 left-0 w-full h-3 bg-blue-500/30 transform -skew-x-3"
 					></span>
 				</h2>
-				<p class="mt-6 text-xl text-gray-700 max-w-3xl mx-auto">
+				<p class="mt-6 text-xl text-gray-700 max-w-3xl mx-auto text-pretty">
 					Organizations using AI effectively report 40% higher productivity. Don't get left behind
 					in the AI revolution.
 				</p>
@@ -324,7 +313,7 @@
 				<!-- Benefit 2 -->
 				<div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
 					<div
-						class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6 text-indigo-600"
+						class="w-16 h-16 bg-sky-100 rounded-lg flex items-center justify-center mb-6 text-sky-600"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -351,7 +340,7 @@
 				<!-- Benefit 3 -->
 				<div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
 					<div
-						class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6 text-purple-600"
+						class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mb-6 text-teal-600"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -382,12 +371,12 @@
 	<section class="py-16 px-4 bg-white">
 		<div class="max-w-7xl mx-auto">
 			<div class="text-center mb-16 animate-on-scroll">
-				<h2 class="inline-block text-4xl font-bold relative">
+				<h2 class="inline-block text-4xl font-bold relative text-balance">
 					<span class="relative z-10 text-gray-900">What You'll Master</span>
 					<span class="absolute -bottom-3 left-0 w-full h-3 bg-blue-500/30 transform -skew-x-3"
 					></span>
 				</h2>
-				<p class="mt-6 text-xl text-gray-700 max-w-3xl mx-auto">
+				<p class="mt-6 text-xl text-gray-700 max-w-3xl mx-auto text-pretty">
 					Comprehensive AI training covering the tools and techniques that matter most for your
 					business success.
 				</p>
@@ -541,7 +530,7 @@
 	<!-- Pricing Section -->
 	<section
 		id="pricing"
-		class="py-16 md:py-24 px-4 bg-gradient-to-b from-indigo-900 to-blue-900 text-white"
+		class="py-16 md:py-24 px-4 bg-gradient-to-b from-sky-900 to-teal-900 text-white"
 	>
 		<div class="max-w-7xl mx-auto">
 			<div class="max-w-4xl mx-auto text-center mb-16 animate-on-scroll">
@@ -953,17 +942,19 @@
 	</section>
 
 	<!-- CTA Section -->
-	<section class="py-20 px-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+	<section class="py-20 px-4 bg-gradient-to-r from-sky-600 to-teal-600 text-white">
 		<div class="max-w-5xl mx-auto text-center animate-on-scroll">
-			<h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to 10x Your Productivity with AI?</h2>
-			<p class="text-xl opacity-90 max-w-2xl mx-auto mb-10">
+			<h2 class="text-4xl md:text-5xl font-bold mb-6 text-balance">
+				Ready to 10x Your Productivity with AI?
+			</h2>
+			<p class="text-xl opacity-90 max-w-2xl mx-auto mb-10 text-pretty">
 				Join the AI revolution and transform your workflow. Schedule your personalized training
 				session today and start seeing results immediately.
 			</p>
 			<div class="flex flex-wrap justify-center gap-6">
 				<a
 					href="https://calendly.com/ryan-awq/ai-office-training"
-					class="inline-block px-8 py-4 bg-white text-indigo-700 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+					class="inline-block px-8 py-4 bg-white text-sky-700 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
 				>
 					Schedule Your Training Session
 				</a>
@@ -979,33 +970,6 @@
 </main>
 
 <style>
-	@keyframes blob {
-		0% {
-			transform: translate(0px, 0px) scale(1);
-		}
-		33% {
-			transform: translate(15px, -25px) scale(1.05);
-		}
-		66% {
-			transform: translate(-10px, 10px) scale(0.95);
-		}
-		100% {
-			transform: translate(0px, 0px) scale(1);
-		}
-	}
-
-	.animate-blob {
-		animation: blob 7s infinite;
-	}
-
-	.animation-delay-2000 {
-		animation-delay: 2s;
-	}
-
-	.animation-delay-4000 {
-		animation-delay: 4s;
-	}
-
 	.animate-on-scroll {
 		opacity: 0;
 		transform: translateY(30px);

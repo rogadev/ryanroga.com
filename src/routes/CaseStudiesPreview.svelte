@@ -7,10 +7,10 @@
 <section class="bg-gray-50 py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-balance">
 				Real Results for Real Businesses
 			</h2>
-			<p class="mt-4 text-lg leading-8 text-gray-600">
+			<p class="mt-4 text-lg leading-8 text-gray-600 text-pretty">
 				See how I've helped businesses like yours transform their operations and increase revenue
 				through custom web solutions.
 			</p>

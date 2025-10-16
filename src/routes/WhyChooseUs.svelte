@@ -144,7 +144,7 @@
 		<!-- The Independent Advantage for Small Businesses -->
 		<div class="mx-auto mt-16 max-w-6xl">
 			<div class="overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-200">
-				<div class="bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-4">
+				<div class="bg-gradient-to-r from-sky-600 to-teal-600 px-6 py-4">
 					<h3 class="text-lg font-semibold text-white text-center">
 						Why Small Businesses Thrive with Independent Developers
 					</h3>

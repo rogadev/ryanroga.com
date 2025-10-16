@@ -14,14 +14,14 @@
 </script>
 
 <svelte:head>
-	<title>Professional Web Development Services | Roga Web Development</title>
+	<title>Custom Web Applications for Canadian Businesses | Roga Web Development</title>
 	<meta
 		name="description"
-		content="Transform your small business with custom web applications. Expert full-stack development in modern technologies. Proven results, scalable solutions."
+		content="Automate processes, improve customer experience, and grow revenue with custom web apps and conversion-focused websites. Fixed pricing, clear timelines, measurable outcomes."
 	/>
 	<meta
 		name="keywords"
-		content="web development, small business websites, custom web applications, SvelteKit, Vue.js, TypeScript, web developer"
+		content="custom web applications, Canadian business web development, conversion-focused websites, SvelteKit, Vue.js, TypeScript, process automation, SEO, e-commerce, small business software"
 	/>
 
 	<!-- Open Graph / Facebook -->
@@ -29,11 +29,11 @@
 	<meta property="og:url" content="https://roga.dev" />
 	<meta
 		property="og:title"
-		content="Professional Web Development Services | Roga Web Development"
+		content="Custom Web Applications for Canadian Businesses | Roga Web Development"
 	/>
 	<meta
 		property="og:description"
-		content="Transform your small business with custom web applications. Expert full-stack development in modern technologies."
+		content="Automate processes, improve customer experience, and grow revenue with custom web apps and conversion-focused websites. Fixed pricing, clear timelines, measurable outcomes."
 	/>
 	<meta property="og:image" content="https://roga.dev/images/roga_dev_site_image.png" />
 	<meta property="og:image:width" content="1200" />
@@ -50,11 +50,11 @@
 	<meta name="twitter:url" content="https://roga.dev" />
 	<meta
 		name="twitter:title"
-		content="Professional Web Development Services | Roga Web Development"
+		content="Custom Web Applications for Canadian Businesses | Roga Web Development"
 	/>
 	<meta
 		name="twitter:description"
-		content="Transform your small business with custom web applications. Expert full-stack development in modern technologies."
+		content="Automate processes, improve customer experience, and grow revenue with custom web apps and conversion-focused websites. Fixed pricing, clear timelines, measurable outcomes."
 	/>
 	<meta name="twitter:image" content="https://roga.dev/images/roga_dev_site_image.png" />
 	<meta
