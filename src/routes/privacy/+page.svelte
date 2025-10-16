@@ -39,11 +39,7 @@
 	<div class="mx-auto max-w-4xl px-6 py-24 sm:py-32 lg:px-8">
 		<!-- Header -->
 		<div class="mx-auto max-w-2xl text-center mb-16">
-			<div
-				class="mb-8 inline-flex items-center rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700"
-			>
-				🔒 Privacy & Data Protection
-			</div>
+			<div class="hidden">🔒 Privacy & Data Protection</div>
 			<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
 				Privacy
 				<span class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">

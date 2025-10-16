@@ -32,18 +32,7 @@
 	/>
 </svelte:head>
 
-<!-- Decorative background elements -->
-<div class="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
-	<div
-		class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
-	></div>
-	<div
-		class="absolute top-1/3 left-1/3 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
-	></div>
-	<div
-		class="absolute bottom-1/4 right-1/3 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
-	></div>
-</div>
+<!-- Decorative background elements removed -->
 
 <DevelopmentLandingSection />
 
@@ -150,7 +139,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 px-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+<section class="py-20 px-4 bg-gradient-to-r from-sky-600 to-teal-600 text-white">
 	<div class="max-w-5xl mx-auto text-center animate-on-scroll">
 		<h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Build Something Amazing?</h2>
 		<p class="text-xl opacity-90 max-w-2xl mx-auto mb-10">
@@ -158,7 +147,7 @@
 		</p>
 		<a
 			href="/contact"
-			class="inline-block px-8 py-4 bg-white text-indigo-700 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+			class="inline-block px-8 py-4 bg-white text-sky-700 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
 		>
 			Start Your Project
 		</a>
@@ -166,33 +155,6 @@
 </section>
 
 <style>
-	@keyframes blob {
-		0% {
-			transform: translate(0px, 0px) scale(1);
-		}
-		33% {
-			transform: translate(15px, -25px) scale(1.05);
-		}
-		66% {
-			transform: translate(-10px, 10px) scale(0.95);
-		}
-		100% {
-			transform: translate(0px, 0px) scale(1);
-		}
-	}
-
-	.animate-blob {
-		animation: blob 7s infinite;
-	}
-
-	.animation-delay-2000 {
-		animation-delay: 2s;
-	}
-
-	.animation-delay-4000 {
-		animation-delay: 4s;
-	}
-
 	.animate-on-scroll {
 		opacity: 0;
 		transform: translateY(30px);

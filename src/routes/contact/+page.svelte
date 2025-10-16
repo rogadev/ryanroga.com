@@ -38,14 +38,11 @@
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center">
 				{#if isVisible}
-					<div
-						class="mb-8 inline-flex items-center rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700"
-						in:fly={{ y: 20, duration: 800, delay: 100 }}
-					>
+					<div class="hidden" in:fly={{ y: 20, duration: 800, delay: 100 }}>
 						📧 Let's Connect • Quick Response Guaranteed
 					</div>
 					<h1
-						class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl"
+						class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl text-balance"
 						in:fly={{ y: 50, duration: 1000, delay: 200 }}
 					>
 						Ready to
@@ -56,7 +53,7 @@
 						</span>
 					</h1>
 					<p
-						class="mt-6 text-lg leading-8 text-gray-600 sm:text-xl"
+						class="mt-6 text-lg leading-8 text-gray-600 sm:text-xl text-pretty"
 						in:fly={{ y: 50, duration: 1000, delay: 400 }}
 					>
 						Let's discuss how we can transform your business with modern web solutions and AI
@@ -103,16 +100,13 @@
 	</section>
 
 	<!-- Contact Options Section -->
-	<section class="py-16 sm:py-24">
+	<section class="py-16 sm:py-24" id="choose-how-to-connect">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center mb-16">
-				<h2
-					id="choose-how-to-connect"
-					class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-				>
+				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-balance">
 					Choose How to Connect
 				</h2>
-				<p class="mt-4 text-lg leading-8 text-gray-600">
+				<p class="mt-4 text-lg leading-8 text-gray-600 text-pretty">
 					Pick the method that works best for you. I'm available through multiple channels and
 					respond quickly.
 				</p>

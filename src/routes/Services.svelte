@@ -3,12 +3,12 @@
 <section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-				Services That Drive Results
+			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-balance">
+				Software that Solves Real Business Problems
 			</h2>
-			<p class="mt-4 text-lg leading-8 text-gray-600">
-				From concept to launch, I deliver complete web solutions that help your business grow and
-				compete in the digital marketplace.
+			<p class="mt-4 text-lg leading-8 text-gray-600 text-pretty">
+				From internal tools to conversion-focused websites, I deliver solutions that streamline
+				operations and drive growth.
 			</p>
 		</div>
 
@@ -37,8 +37,8 @@
 					</div>
 					<h3 class="mt-6 text-xl font-semibold text-gray-900">Custom Web Applications</h3>
 					<p class="mt-4 text-gray-600">
-						Tailored solutions that solve your specific business challenges. From inventory
-						management to customer portals, I build applications that streamline your operations.
+						Automate manual processes, centralize data, and give your team tools to work faster with
+						fewer errors.
 					</p>
 					<ul class="mt-6 space-y-2 text-sm text-gray-600">
 						<li class="flex items-center gap-2">
@@ -49,7 +49,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>Database design & management</span>
+							<span>Workflow automation and internal tools</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -59,7 +59,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>User authentication & security</span>
+							<span>Role-based access and audit trails</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -69,7 +69,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>API integrations</span>
+							<span>Third-party integrations (payments, CRM, ERP)</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -79,7 +79,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>Scalable architecture</span>
+							<span>Scalable, performance-first architecture</span>
 						</li>
 					</ul>
 				</div>
@@ -105,10 +105,10 @@
 							/>
 						</svg>
 					</div>
-					<h3 class="mt-6 text-xl font-semibold text-gray-900">Modern Business Websites</h3>
+					<h3 class="mt-6 text-xl font-semibold text-gray-900">Conversion-Focused Websites</h3>
 					<p class="mt-4 text-gray-600">
-						Professional websites that convert visitors into customers. Built for speed, SEO, and
-						mobile-first experiences that represent your brand perfectly.
+						Turn visitors into customers with fast, SEO-ready sites built for clear messaging and
+						lead capture.
 					</p>
 					<ul class="mt-6 space-y-2 text-sm text-gray-600">
 						<li class="flex items-center gap-2">
@@ -119,7 +119,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>SEO optimization</span>
+							<span>Messaging and conversion copy</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -129,7 +129,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>Lightning-fast loading</span>
+							<span>Lead capture and CRM integration</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -139,7 +139,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>Mobile responsive design</span>
+							<span>Technical and local SEO</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -149,7 +149,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>Content management system</span>
+							<span>Core Web Vitals optimization</span>
 						</li>
 					</ul>
 				</div>
@@ -175,10 +175,9 @@
 							/>
 						</svg>
 					</div>
-					<h3 class="mt-6 text-xl font-semibold text-gray-900">E-commerce Solutions</h3>
+					<h3 class="mt-6 text-xl font-semibold text-gray-900">E-commerce That Converts</h3>
 					<p class="mt-4 text-gray-600">
-						Complete online stores that drive sales. From product catalogs to secure payment
-						processing, I build e-commerce platforms that grow with your business.
+						Fast storefronts that scale with your catalog and make checkout frictionless.
 					</p>
 					<ul class="mt-6 space-y-2 text-sm text-gray-600">
 						<li class="flex items-center gap-2">
@@ -189,7 +188,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>Secure payment processing</span>
+							<span>Optimized checkout and payments</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -199,7 +198,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>Inventory management</span>
+							<span>Inventory and fulfillment workflows</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -209,7 +208,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>Order management system</span>
+							<span>Promotions, subscriptions, taxes</span>
 						</li>
 						<li class="flex items-center gap-2">
 							<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -219,7 +218,7 @@
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span>Analytics & reporting</span>
+							<span>Analytics and revenue reporting</span>
 						</li>
 					</ul>
 				</div>
@@ -251,7 +250,7 @@
 						</div>
 						<h4 class="font-semibold text-gray-900">Performance Optimization</h4>
 						<p class="mt-2 text-sm text-gray-600">
-							Speed up your existing website for better user experience and SEO rankings.
+							Sub-second load paths and Core Web Vitals improvements.
 						</p>
 					</div>
 					<div class="text-center">
@@ -274,7 +273,7 @@
 						</div>
 						<h4 class="font-semibold text-gray-900">Security Audits</h4>
 						<p class="mt-2 text-sm text-gray-600">
-							Protect your business data with comprehensive security assessments and fixes.
+							Hardening, dependency review, and access controls.
 						</p>
 					</div>
 					<div class="text-center">
@@ -302,7 +301,7 @@
 						</div>
 						<h4 class="font-semibold text-gray-900">Analytics Setup</h4>
 						<p class="mt-2 text-sm text-gray-600">
-							Track your website performance and user behavior with detailed analytics dashboards.
+							Dashboards that answer real business questions.
 						</p>
 					</div>
 					<div class="text-center">
@@ -324,9 +323,7 @@
 							</svg>
 						</div>
 						<h4 class="font-semibold text-gray-900">Maintenance & Support</h4>
-						<p class="mt-2 text-sm text-gray-600">
-							Keep your website running smoothly with ongoing maintenance and 24/7 support.
-						</p>
+						<p class="mt-2 text-sm text-gray-600">Proactive updates and monitoring.</p>
 					</div>
 				</div>
 			</div>

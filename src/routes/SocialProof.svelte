@@ -21,28 +21,24 @@
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 				Trusted by Growing Businesses
 			</h2>
-			<p class="mt-4 text-lg leading-8 text-gray-600">
+			<p class="mt-4 text-lg leading-8 text-gray-600 text-pretty">
 				See how I've helped businesses increase their online presence and drive real results.
 			</p>
 		</div>
 
 		<!-- Stats -->
-		<div class="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-4">
+		<div class="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-3">
 			<div class="text-center">
-				<div class="text-3xl font-bold text-indigo-600 sm:text-4xl">15+</div>
-				<div class="mt-2 text-sm font-medium text-gray-600">Projects Delivered</div>
+				<div class="text-3xl font-bold text-sky-700 sm:text-4xl">Flexible</div>
+				<div class="mt-2 text-sm font-medium text-gray-600">Scope & Pricing</div>
 			</div>
 			<div class="text-center">
-				<div class="text-3xl font-bold text-indigo-600 sm:text-4xl">Excellent</div>
-				<div class="mt-2 text-sm font-medium text-gray-600">Customer Satisfaction</div>
+				<div class="text-3xl font-bold text-sky-700 sm:text-4xl">Weeks</div>
+				<div class="mt-2 text-sm font-medium text-gray-600">to Launch</div>
 			</div>
 			<div class="text-center">
-				<div class="text-3xl font-bold text-indigo-600 sm:text-4xl">3x</div>
-				<div class="mt-2 text-sm font-medium text-gray-600">Average Traffic Increase</div>
-			</div>
-			<div class="text-center">
-				<div class="text-3xl font-bold text-indigo-600 sm:text-4xl">24/7</div>
-				<div class="mt-2 text-sm font-medium text-gray-600">Support Available</div>
+				<div class="text-3xl font-bold text-sky-700 sm:text-4xl">Ownership</div>
+				<div class="mt-2 text-sm font-medium text-gray-600">Code & Data</div>
 			</div>
 		</div>
 
@@ -52,7 +48,7 @@
 				<!-- CarEvo Testimonial -->
 				<div class="group relative">
 					<div
-						class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+						class="absolute inset-0 bg-gradient-to-r from-sky-500 to-teal-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"
 					></div>
 					<div class="relative bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-100">
 						<div class="lg:grid lg:grid-cols-[200px_1px_1fr] lg:gap-8 flex flex-col gap-6">

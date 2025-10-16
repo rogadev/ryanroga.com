@@ -41,7 +41,7 @@
 	<!-- Decorative elements -->
 	<div class="absolute -z-10 pointer-events-none">
 		<div
-			class="absolute top-40 right-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
+			class="absolute top-40 right-20 w-72 h-72 bg-sky-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
 		></div>
 	</div>
 
@@ -66,11 +66,11 @@
 					<div class="col-span-1 flex justify-center items-center h-16 group">
 						<Icon
 							icon={framework.icon}
-							class="h-10 w-10 text-gray-500 group-hover:text-indigo-600 transition-colors duration-300"
+							class="h-10 w-10 text-gray-500 group-hover:text-sky-600 transition-colors duration-300"
 							aria-hidden="true"
 						/>
 						<span
-							class="ml-2 text-sm font-medium text-gray-500 group-hover:text-indigo-600 transition-colors duration-300"
+							class="ml-2 text-sm font-medium text-gray-500 group-hover:text-sky-600 transition-colors duration-300"
 							>{framework.name}</span
 						>
 					</div>
@@ -85,7 +85,7 @@
 				<div class="relative pl-16 animate-on-scroll">
 					<dt class="text-base font-semibold leading-7 text-gray-900">
 						<div
-							class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 shadow-md transform transition-transform duration-300 hover:scale-110"
+							class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-sky-600 shadow-md transform transition-transform duration-300 hover:scale-110"
 						>
 							<Icon icon="mdi:account-heart" class="h-6 w-6 text-white" aria-hidden="true" />
 						</div>
@@ -100,7 +100,7 @@
 				<div class="relative pl-16 animate-on-scroll" style="transition-delay: 100ms;">
 					<dt class="text-base font-semibold leading-7 text-gray-900">
 						<div
-							class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 shadow-md transform transition-transform duration-300 hover:scale-110"
+							class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-sky-600 shadow-md transform transition-transform duration-300 hover:scale-110"
 						>
 							<Icon
 								icon="mdi:chart-bell-curve-cumulative"
@@ -118,7 +118,7 @@
 				<div class="relative pl-16 animate-on-scroll" style="transition-delay: 200ms;">
 					<dt class="text-base font-semibold leading-7 text-gray-900">
 						<div
-							class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 shadow-md transform transition-transform duration-300 hover:scale-110"
+							class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-sky-600 shadow-md transform transition-transform duration-300 hover:scale-110"
 						>
 							<Icon icon="mdi:speedometer" class="h-6 w-6 text-white" aria-hidden="true" />
 						</div>
@@ -132,7 +132,7 @@
 				<div class="relative pl-16 animate-on-scroll" style="transition-delay: 300ms;">
 					<dt class="text-base font-semibold leading-7 text-gray-900">
 						<div
-							class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 shadow-md transform transition-transform duration-300 hover:scale-110"
+							class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-sky-600 shadow-md transform transition-transform duration-300 hover:scale-110"
 						>
 							<Icon icon="mdi:shield-lock" class="h-6 w-6 text-white" aria-hidden="true" />
 						</div>
@@ -150,7 +150,7 @@
 		<div class="mt-16 flex justify-center animate-on-scroll">
 			<a
 				href="/contact"
-				class="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg text-white font-medium hover:from-blue-600 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+				class="inline-block px-8 py-4 bg-gradient-to-r from-sky-500 to-teal-600 rounded-lg text-white font-medium hover:from-sky-600 hover:to-teal-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
 			>
 				Start Your Project
 			</a>

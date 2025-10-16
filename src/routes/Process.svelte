@@ -4,11 +4,10 @@
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-				My Development Process
+				A Predictable, Low‑Risk Process
 			</h2>
 			<p class="mt-4 text-lg leading-8 text-gray-600">
-				A proven methodology that ensures your project is delivered on time, on budget, and exceeds
-				your expectations.
+				Clear milestones, visible progress, and acceptance criteria at every step.
 			</p>
 		</div>
 
@@ -22,10 +21,10 @@
 						>
 							<span class="text-xl font-bold">1</span>
 						</div>
-						<h3 class="text-xl font-semibold text-gray-900 mb-4">Discovery & Planning</h3>
+						<h3 class="text-xl font-semibold text-gray-900 mb-4">Discovery & Plan</h3>
 						<p class="text-gray-600 mb-6">
-							We start with a free consultation to understand your business goals, target audience,
-							and technical requirements. I create a detailed project roadmap and timeline.
+							We define goals, scope, and constraints. You get a written plan with timeline and
+							pricing options.
 						</p>
 						<ul class="text-sm text-gray-600 space-y-2">
 							<li class="flex items-center gap-2">
@@ -74,10 +73,9 @@
 						>
 							<span class="text-xl font-bold">2</span>
 						</div>
-						<h3 class="text-xl font-semibold text-gray-900 mb-4">Design & Wireframing</h3>
+						<h3 class="text-xl font-semibold text-gray-900 mb-4">Design & Prototype</h3>
 						<p class="text-gray-600 mb-6">
-							I create detailed wireframes and mockups that align with your brand identity. You'll
-							see exactly how your website will look before any code is written.
+							Wireframes and interactive mockups ensure alignment before development begins.
 						</p>
 						<ul class="text-sm text-gray-600 space-y-2">
 							<li class="flex items-center gap-2">
@@ -126,10 +124,9 @@
 						>
 							<span class="text-xl font-bold">3</span>
 						</div>
-						<h3 class="text-xl font-semibold text-gray-900 mb-4">Development & Testing</h3>
+						<h3 class="text-xl font-semibold text-gray-900 mb-4">Build & Validate</h3>
 						<p class="text-gray-600 mb-6">
-							Using modern technologies and best practices, I build your application with clean,
-							maintainable code. Regular updates keep you informed throughout the process.
+							Iterative delivery, weekly demos, and automated tests ensure quality.
 						</p>
 						<ul class="text-sm text-gray-600 space-y-2">
 							<li class="flex items-center gap-2">
@@ -180,8 +177,7 @@
 						</div>
 						<h3 class="text-xl font-semibold text-gray-900 mb-4">Launch & Support</h3>
 						<p class="text-gray-600 mb-6">
-							I handle the entire deployment process and provide comprehensive training. Ongoing
-							support ensures your website continues to perform optimally.
+							Zero‑downtime deployment, training, and post‑launch tuning.
 						</p>
 						<ul class="text-sm text-gray-600 space-y-2">
 							<li class="flex items-center gap-2">
@@ -245,8 +241,7 @@
 						</div>
 						<h4 class="font-semibold text-gray-900">On-Time Delivery</h4>
 						<p class="mt-2 text-sm text-gray-600">
-							Projects delivered according to agreed timeline or you get a discount on your next
-							project.
+							Milestone‑driven schedule with transparent progress.
 						</p>
 					</div>
 					<div class="text-center">
@@ -269,8 +264,7 @@
 						</div>
 						<h4 class="font-semibold text-gray-900">Quality Assurance</h4>
 						<p class="mt-2 text-sm text-gray-600">
-							Satisfaction commitment. If you're not happy with the final result, I'll work to make
-							it right.
+							Clear acceptance criteria to validate outcomes.
 						</p>
 					</div>
 					<div class="text-center">
@@ -293,8 +287,7 @@
 						</div>
 						<h4 class="font-semibold text-gray-900">Ongoing Support</h4>
 						<p class="mt-2 text-sm text-gray-600">
-							30 days of free support after launch, plus maintenance packages available for
-							long-term peace of mind.
+							30‑day post‑launch support included; maintenance plans available.
 						</p>
 					</div>
 				</div>

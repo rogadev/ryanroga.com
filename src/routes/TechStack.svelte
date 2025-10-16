@@ -7,12 +7,12 @@
 <section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-				Modern Technology Stack
+			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-balance">
+				Technology that Reduces Risk &amp; Cost
 			</h2>
-			<p class="mt-4 text-lg leading-8 text-gray-600">
-				I use cutting-edge technologies that ensure your web application is fast, secure, scalable,
-				and future-proof.
+			<p class="mt-4 text-lg leading-8 text-gray-600 text-pretty">
+				Modern tools chosen to keep your app fast, secure, and easy to maintain—without locking you
+				in.
 			</p>
 		</div>
 
@@ -40,8 +40,7 @@
 						<h3 class="text-xl font-semibold text-gray-900">Frontend Excellence</h3>
 					</div>
 					<p class="text-gray-600 mb-6">
-						Beautiful, responsive user interfaces that work flawlessly across all devices and
-						browsers.
+						Beautiful, responsive interfaces that are accessible and lightning fast.
 					</p>
 					<div class="space-y-4">
 						<div class="flex items-center gap-3">
@@ -108,7 +107,7 @@
 						<h3 class="text-xl font-semibold text-gray-900">Backend Power</h3>
 					</div>
 					<p class="text-gray-600 mb-6">
-						Robust server infrastructure that handles high traffic and keeps your data secure.
+						Reliable servers with type-safe data models and secure APIs.
 					</p>
 					<div class="space-y-4">
 						<div class="flex items-center gap-3">
@@ -175,7 +174,7 @@
 						<h3 class="text-xl font-semibold text-gray-900">Cloud & Deployment</h3>
 					</div>
 					<p class="text-gray-600 mb-6">
-						Scalable cloud infrastructure that grows with your business and ensures 99.9% uptime.
+						Battle-tested hosting and deployment with simple rollbacks and 99.9% uptime targets.
 					</p>
 					<div class="space-y-4">
 						<div class="flex items-center gap-3">
@@ -219,10 +218,8 @@
 
 		<!-- Benefits Section -->
 		<div class="mx-auto mt-16 max-w-4xl">
-			<div class="rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-600 p-8 text-white">
-				<h3 class="text-2xl font-bold text-center mb-8">
-					Why This Technology Stack Matters for Your Business
-				</h3>
+			<div class="rounded-2xl bg-gradient-to-r from-sky-500 to-teal-600 p-8 text-white">
+				<h3 class="text-2xl font-bold text-center mb-8">Why These Choices Matter</h3>
 				<div class="grid gap-6 md:grid-cols-3">
 					<div class="text-center">
 						<div
@@ -242,10 +239,8 @@
 								/>
 							</svg>
 						</div>
-						<h4 class="font-semibold mb-2">Lightning Fast</h4>
-						<p class="text-sm text-white/90">
-							Sub-second load times mean better user experience and higher conversion rates.
-						</p>
+						<h4 class="font-semibold mb-2">Faster Experiences</h4>
+						<p class="text-sm text-white/90">Better conversion and happier teams.</p>
 					</div>
 					<div class="text-center">
 						<div
@@ -265,10 +260,8 @@
 								/>
 							</svg>
 						</div>
-						<h4 class="font-semibold mb-2">Enterprise Security</h4>
-						<p class="text-sm text-white/90">
-							Bank-level security protects your business data and customer information.
-						</p>
+						<h4 class="font-semibold mb-2">Security by Design</h4>
+						<p class="text-sm text-white/90">Protect customer and business data.</p>
 					</div>
 					<div class="text-center">
 						<div
@@ -293,10 +286,8 @@
 								/>
 							</svg>
 						</div>
-						<h4 class="font-semibold mb-2">Infinitely Scalable</h4>
-						<p class="text-sm text-white/90">
-							Your website grows with your business - from startup to enterprise scale.
-						</p>
+						<h4 class="font-semibold mb-2">Built to Scale</h4>
+						<p class="text-sm text-white/90">Start small, grow without rewrites.</p>
 					</div>
 				</div>
 			</div>

@@ -62,7 +62,7 @@
 
 <!-- Hero Section -->
 <section
-	class="relative py-20 px-4 bg-gradient-to-b from-indigo-900 to-blue-800 text-white overflow-hidden mt-6"
+	class="relative py-20 px-4 bg-gradient-to-b from-sky-900 to-teal-800 text-white overflow-hidden mt-6"
 >
 	<!-- Decorative background elements -->
 	<div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -70,10 +70,10 @@
 			class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
 		></div>
 		<div
-			class="absolute top-1/3 left-1/3 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
+			class="absolute top-1/3 left-1/3 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
 		></div>
 		<div
-			class="absolute bottom-1/4 right-1/3 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
+			class="absolute bottom-1/4 right-1/3 w-96 h-96 bg-teal-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
 		></div>
 
 		<!-- Add floating geometric shapes -->
@@ -104,12 +104,12 @@
 				<span class="uppercase tracking-wider text-sm font-medium">Portfolio</span>
 			</div>
 
-			<h1 class="text-5xl md:text-6xl font-bold mb-6 relative">
+			<h1 class="text-5xl md:text-6xl font-bold mb-6 relative text-balance">
 				Our Work
 				<span class="absolute -bottom-3 left-0 w-24 h-1.5 bg-blue-400 rounded-full"></span>
 			</h1>
 
-			<p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">
+			<p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-8 text-pretty">
 				We build custom web solutions that solve real business problems. Explore our case studies to
 				see how we've helped organizations streamline operations, engage customers, and drive
 				growth.
@@ -198,7 +198,7 @@
 			<!-- Add CTA button -->
 			<a
 				href="#featured-projects"
-				class="inline-flex items-center gap-2 px-6 py-3 bg-white text-indigo-700 rounded-lg font-medium hover:bg-blue-50 transition-colors shadow-lg group"
+				class="inline-flex items-center gap-2 px-6 py-3 bg-white text-sky-700 rounded-lg font-medium hover:bg-blue-50 transition-colors shadow-lg group"
 			>
 				View Our Projects
 				<svg
@@ -301,7 +301,7 @@
 
 					<div class="flex items-start gap-4">
 						<div
-							class="flex-shrink-0 w-12 h-12 rounded-lg bg-indigo-600 flex items-center justify-center text-white"
+							class="flex-shrink-0 w-12 h-12 rounded-lg bg-sky-600 flex items-center justify-center text-white"
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -329,7 +329,7 @@
 
 					<div class="flex items-start gap-4">
 						<div
-							class="flex-shrink-0 w-12 h-12 rounded-lg bg-purple-600 flex items-center justify-center text-white"
+							class="flex-shrink-0 w-12 h-12 rounded-lg bg-teal-600 flex items-center justify-center text-white"
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -478,7 +478,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 px-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+<section class="py-20 px-4 bg-gradient-to-r from-sky-600 to-teal-600 text-white">
 	<div class="max-w-5xl mx-auto text-center animate-on-scroll">
 		<h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Build Your Next Project?</h2>
 		<p class="text-xl opacity-90 max-w-2xl mx-auto mb-10">
@@ -487,7 +487,7 @@
 		</p>
 		<a
 			href="/contact"
-			class="inline-block px-8 py-4 bg-white text-indigo-700 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+			class="inline-block px-8 py-4 bg-white text-sky-700 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
 		>
 			Start Your Project
 		</a>

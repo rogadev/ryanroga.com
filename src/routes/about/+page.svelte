@@ -81,7 +81,7 @@
 	aria-hidden="true"
 >
 	<div
-		class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#818cf8] to-[#c7d2fe] opacity-25 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+		class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#0ea5e9] to-[#5eead4] opacity-25 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
 		style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
 	></div>
 </div>
@@ -91,23 +91,17 @@
 	<section aria-labelledby="about-hero-heading" class="relative">
 		<div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
 			<div class="mx-auto max-w-2xl text-center">
-				<div
-					class="mb-8 inline-flex items-center rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700"
-				>
-					👨‍💻 Your Personal Web Development Partner
-				</div>
+				<!-- Removed badge above H1 -->
 				<h1
 					id="about-hero-heading"
-					class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl"
+					class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl text-balance"
 				>
 					I Help Small Businesses
-					<span
-						class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
-					>
+					<span class="bg-gradient-to-r from-sky-600 to-teal-500 bg-clip-text text-transparent">
 						Win Online
 					</span>
 				</h1>
-				<p class="mt-6 text-lg leading-8 text-gray-600 sm:text-xl">
+				<p class="mt-6 text-lg leading-8 text-gray-600 sm:text-xl text-pretty">
 					While big agencies treat you like a number, I treat you like a partner. I'm Ryan Roga, and
 					I build web solutions that actually move the needle for small businesses across Canada.
 				</p>
@@ -146,7 +140,7 @@
 				<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
 					<a
 						href="/contact"
-						class="rounded-lg bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-200 hover:shadow-xl hover:scale-105"
+						class="rounded-lg bg-sky-600 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 transition-all duration-200 hover:shadow-xl hover:scale-105"
 					>
 						Let's Talk About Your Project
 					</a>
@@ -165,10 +159,10 @@
 	<section class="py-16 sm:py-24 bg-gray-50">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center animate-on-scroll">
-				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-balance">
 					Tired of Being Just Another Client?
 				</h2>
-				<p class="mt-4 text-lg leading-8 text-gray-600">
+				<p class="mt-4 text-lg leading-8 text-gray-600 text-pretty">
 					Most small businesses get burned by web agencies. Here's what I hear all the time:
 				</p>
 			</div>
@@ -224,9 +218,9 @@
 			<div class="mx-auto max-w-6xl">
 				<div class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2 lg:items-center">
 					<div class="animate-on-scroll">
-						<div class="rounded-2xl bg-gradient-to-br from-indigo-50 to-purple-50 p-8">
+						<div class="rounded-2xl bg-gradient-to-br from-sky-50 to-teal-50 p-8">
 							<div class="flex items-center gap-4 mb-6">
-								<div class="h-16 w-16 rounded-full bg-indigo-600 flex items-center justify-center">
+								<div class="h-16 w-16 rounded-full bg-sky-600 flex items-center justify-center">
 									<span class="text-xl font-bold text-white">R</span>
 								</div>
 								<div>
@@ -269,21 +263,21 @@
 						</div>
 					</div>
 					<div class="animate-on-scroll" style="transition-delay: 200ms;">
-						<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+						<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-balance">
 							Why I Do This Differently
 						</h2>
-						<p class="mt-6 text-lg leading-8 text-gray-600">
+						<p class="mt-6 text-lg leading-8 text-gray-600 text-pretty">
 							I started this business because I was tired of seeing small businesses get ripped off
 							by agencies that don't understand what it's like to run a business.
 						</p>
-						<p class="mt-6 text-lg leading-8 text-gray-600">
+						<p class="mt-6 text-lg leading-8 text-gray-600 text-pretty">
 							As a graduate of VIU's top-rated Web Development program, I have the technical skills.
 							But more importantly, I understand that your website isn't just a pretty brochure—it's
 							a business tool that needs to work as hard as you do.
 						</p>
 						<div class="mt-8 space-y-6">
 							<div class="flex items-start gap-4">
-								<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+								<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-600">
 									<svg
 										class="h-6 w-6 text-white"
 										fill="none"
@@ -307,7 +301,7 @@
 								</div>
 							</div>
 							<div class="flex items-start gap-4">
-								<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+								<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-600">
 									<svg
 										class="h-6 w-6 text-white"
 										fill="none"
@@ -331,7 +325,7 @@
 								</div>
 							</div>
 							<div class="flex items-start gap-4">
-								<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+								<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-600">
 									<svg
 										class="h-6 w-6 text-white"
 										fill="none"
@@ -367,10 +361,10 @@
 	<section class="py-16 sm:py-24 bg-gray-50">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center animate-on-scroll">
-				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-balance">
 					How I Actually Work With You
 				</h2>
-				<p class="mt-4 text-lg leading-8 text-gray-600">
+				<p class="mt-4 text-lg leading-8 text-gray-600 text-pretty">
 					No corporate BS. No confusing processes. Just a straightforward partnership that gets
 					results.
 				</p>
@@ -459,17 +453,17 @@
 	<section class="py-16 sm:py-24 bg-white">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center animate-on-scroll">
-				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-balance">
 					The Independent Developer Advantage
 				</h2>
-				<p class="mt-4 text-lg leading-8 text-gray-600">
+				<p class="mt-4 text-lg leading-8 text-gray-600 text-pretty">
 					Why small businesses get better results working with me instead of big agencies.
 				</p>
 			</div>
 
 			<div class="mx-auto mt-16 max-w-6xl animate-on-scroll" style="transition-delay: 200ms;">
 				<div class="overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-200">
-					<div class="bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-4">
+					<div class="bg-gradient-to-r from-sky-600 to-teal-600 px-6 py-4">
 						<h3 class="text-lg font-semibold text-white text-center">
 							Agency vs. Independent Developer
 						</h3>
@@ -644,31 +638,31 @@
 	</section>
 
 	<!-- CTA Section -->
-	<section class="relative py-16 sm:py-24 bg-indigo-600">
+	<section class="relative py-16 sm:py-24 bg-gradient-to-r from-sky-600 to-teal-600">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center animate-on-scroll">
 				<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
 					Ready to Work With Someone Who Actually Cares?
 				</h2>
-				<p class="mt-6 text-lg leading-8 text-indigo-100">
+				<p class="mt-6 text-lg leading-8 text-indigo-100 text-pretty">
 					Let's have an honest conversation about your business and what you're trying to achieve.
 					No sales pitch, no pressure—just straight talk about what's possible.
 				</p>
 				<div class="mt-10 flex items-center justify-center gap-x-6">
 					<a
 						href="/contact"
-						class="rounded-lg bg-white px-6 py-3 text-base font-semibold text-indigo-600 shadow-lg hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200 hover:shadow-xl hover:scale-105"
+						class="rounded-lg bg-white px-6 py-3 text-base font-semibold text-sky-700 shadow-lg hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200 hover:shadow-xl hover:scale-105"
 					>
 						Let's Talk About Your Project
 					</a>
 					<a
 						href="/projects"
-						class="rounded-lg border border-white/20 bg-indigo-600 px-6 py-3 text-base font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
+						class="rounded-lg border border-white/20 bg-transparent px-6 py-3 text-base font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
 					>
 						See What I've Built
 					</a>
 				</div>
-				<div class="mt-8 text-sm text-indigo-200">
+				<div class="mt-8 text-sm text-indigo-100">
 					<p>Free consultation • No obligation • Honest advice about what you actually need</p>
 				</div>
 			</div>
@@ -682,7 +676,7 @@
 	aria-hidden="true"
 >
 	<div
-		class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#4f46e5] to-[#818cf8] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+		class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#0284c7] to-[#14b8a6] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
 		style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
 	></div>
 </div>
