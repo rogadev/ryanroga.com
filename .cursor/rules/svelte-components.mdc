@@ -1,0 +1,89 @@
+---
+globs: '*.svelte'
+description: 'Svelte Component Organization and Structure'
+---
+
+# Svelte Component Guidelines
+
+## File Organization
+
+- Place reusable components in `src/lib/components/`
+- Use descriptive, PascalCase component names
+- Group related components in subdirectories (e.g., `case-studies/`, `archive/`)
+
+## Component Structure
+
+Always follow this structure in Svelte components:
+
+```svelte
+<svelte:options runes={true} />
+
+<script>
+	// 1. Type imports
+	import type { Snippet } from 'svelte';
+
+	// 2. Regular imports
+	import Component from './Component.svelte';
+
+	// 3. Props destructuring with types
+	let { title, children, onAction, ...restProps } = $props<{
+		title: string;
+		children?: Snippet;
+		onAction?: () => void;
+	}>();
+
+	// 4. State declarations
+	let isVisible = $state(false);
+
+	// 5. Derived values
+	let displayTitle = $derived(title.toUpperCase());
+
+	// 6. Effects
+	$effect(() => {
+		// side effects
+	});
+
+	// 7. Functions
+	function handleClick() {
+		onAction?.();
+	}
+</script>
+
+<!-- 9. Template -->
+<div>
+	{@render children?.()}
+</div>
+
+<!-- 8. Styles (if needed) -->
+<style>
+	/* Component-specific styles using Tailwind */
+</style>
+```
+
+## Styling Guidelines
+
+- Use Tailwind CSS classes primarily
+- Add component-specific styles in `<style>` block only when necessary
+- Follow consistent spacing and responsive design patterns
+
+## Snippet and Children Patterns
+
+- Always type children as `Snippet` from 'svelte'
+- Use optional chaining when rendering: `{@render children?.()}`
+- For named snippets, use descriptive names with `Snippet` suffix:
+  - `headerSnippet`, `footerSnippet`, `contentSnippet`
+
+## References to Project Components
+
+When referencing components in this project:
+
+Navigation: [Navbar.svelte](mdc:src/lib/components/Navbar.svelte)
+Layout: [BaseContainer.svelte](mdc:src/lib/components/BaseContainer.svelte)
+Content: [PageContentContainer.svelte](mdc:src/lib/components/PageContentContainer.svelte)
+UI Elements: [BaseCard.svelte](mdc:src/lib/components/BaseCard.svelte)
+
+Case Study Components in [case-studies/](mdc:src/lib/components/case-studies/):
+
+- [CaseStudyHero.svelte](mdc:src/lib/components/case-studies/CaseStudyHero.svelte)
+- [TechStackSection.svelte](mdc:src/lib/components/case-studies/TechStackSection.svelte)
+- [ResultsSection.svelte](mdc:src/lib/components/case-studies/ResultsSection.svelte)

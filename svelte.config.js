@@ -11,11 +11,7 @@ const config = {
 	preprocess: [vitePreprocess({})],
 
 	kit: {
-		adapter: adapter({
-			// Windows compatibility - bundle instead of symlinking
-			runtime: 'nodejs20.x',
-			split: false
-		}),
+		adapter: adapter(),
 		alias: {
 			'@/*': './path/to/lib/*'
 		}
