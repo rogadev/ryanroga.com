@@ -1,0 +1,155 @@
+---
+description: 'Development Workflow and Code Quality'
+---
+
+# Development Workflow
+
+## Deprecation Handling Priority
+
+**CRITICAL**: When encountering Svelte deprecation linting errors:
+
+1. **Immediately fix the deprecation** using Svelte 5 equivalent
+2. **Never ignore deprecation warnings** - they must be resolved
+3. **Test functionality** after applying fixes
+4. **Document new patterns** encountered during migration
+
+## Common Deprecation Patterns to Fix
+
+### Slots → Children Rendering
+
+```svelte
+<!-- DEPRECATED (fix immediately): -->
+<slot />
+<slot name="header" />
+
+<!-- CORRECT (Svelte 5): -->
+{@render children?.()}
+{@render headerSnippet?.()}
+```
+
+### Reactive Statements → Runes
+
+```javascript
+// DEPRECATED (fix immediately):
+$: doubled = count * 2;
+let reactive;
+$: reactive = someComputation();
+
+// CORRECT (Svelte 5):
+let doubled = $derived(count * 2);
+let reactive = $derived(someComputation());
+```
+
+### Event Dispatching → Callbacks
+
+```javascript
+// DEPRECATED (fix immediately):
+import { createEventDispatcher } from 'svelte';
+const dispatch = createEventDispatcher();
+dispatch('eventName', data);
+
+// CORRECT (Svelte 5):
+let { onEventName } = $props();
+onEventName?.(data);
+```
+
+## Linting Process
+
+### Essential Commands
+
+Run these regularly during development:
+
+- `pnpm lint` - ESLint checks
+- `pnpm check` - Svelte-specific type checking
+- `pnpm build` - Build verification
+
+### Error Resolution Strategy
+
+1. **Fix deprecations first** - highest priority
+2. **TypeScript errors** - second priority
+3. **Style/formatting** - lowest priority
+4. **Never suppress deprecation warnings**
+
+## Code Quality Standards
+
+### Pre-commit Checklist
+
+- [ ] No Svelte deprecation warnings
+- [ ] TypeScript errors resolved
+- [ ] Proper component structure used
+- [ ] Svelte 5 runes syntax applied
+- [ ] Tests pass (if applicable)
+
+### Migration Patterns Documentation
+
+When you encounter and fix a new deprecation pattern:
+
+1. Document the old vs new pattern
+2. Update component examples
+3. Ensure consistent application across codebase
+
+## File Modification Workflow
+
+### When Editing Components
+
+1. Check for `<slot />` usage → Replace with `{@render children?.()}`
+2. Check for `$:` reactive statements → Replace with `$derived()` or `$effect()`
+3. Check for `export let` props → Replace with `$props()`
+4. Check for `on:event` handlers → Replace with `onevent`
+5. Add `<svelte:options runes={true} />` if syntax is ambiguous
+
+### Quality Assurance
+
+- Every component should use Svelte 5 syntax
+- Every deprecation warning should be fixed immediately
+- TypeScript should be properly applied
+- Code should follow project structure guidelines
+
+## Svelte 5 Deprecation Fix Workflow
+
+### Step-by-Step Process
+
+When encountering deprecation warnings:
+
+1. **Identify the deprecated pattern** in linting output
+2. **Replace with Svelte 5 equivalent** using migration patterns
+3. **Test the functionality** to ensure behavior is preserved
+4. **Update documentation** if encountering new patterns
+5. **Commit the changes** with descriptive migration messages
+
+### Commit Message Format
+
+Use descriptive commit messages for migrations:
+
+```
+feat: migrate ComponentName to Svelte 5 runes
+- Replace slots with children rendering
+- Convert reactive statements to $derived
+- Update event handlers to new syntax
+
+fix: replace deprecated $: with $effect in UtilityComponent
+- Convert lifecycle management to effects
+- Add proper cleanup logic
+```
+
+## Repository Maintenance
+
+### Branch Strategy
+
+- Fix deprecations on feature branches
+- Test thoroughly before merging
+- Keep main branch deprecation-free
+- Group related migration changes together
+
+### Documentation Updates
+
+- Update component examples when patterns change
+- Maintain consistency in code style
+- Document new Svelte 5 patterns as discovered
+- Keep migration guide updated with new deprecation patterns
+
+### Continuous Improvement
+
+- Regular linting to catch new deprecations early
+- Proactive migration of components before they show warnings
+- Team knowledge sharing of new patterns discovered

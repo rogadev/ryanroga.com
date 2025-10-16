@@ -1,14 +1,9 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { fly, slide } from 'svelte/transition';
-	import { enhance } from '$app/forms';
-	import type { ActionData } from './$types';
-
-	let { form }: { form: ActionData } = $props();
+	import { fly } from 'svelte/transition';
+	import RedactedEmail from '$lib/components/RedactedEmail.svelte';
 
 	let isVisible = $state(false);
-	let showForm = $state(false);
-	let isSubmitting = $state(false);
 
 	$effect(() => {
 		isVisible = true;
@@ -30,27 +25,12 @@
 			observer.observe(el);
 		});
 	});
-
-	function toggleForm() {
-		showForm = !showForm;
-	}
 </script>
 
 <svelte:head>
 	<title>Contact | Roga.dev</title>
 	<meta name="description" content="Contact Roga.dev for web development and AI solutions" />
 </svelte:head>
-
-<!-- Background decorative elements -->
-<div
-	class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-	aria-hidden="true"
->
-	<div
-		class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#818cf8] to-[#c7d2fe] opacity-25 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-		style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-	></div>
-</div>
 
 <main class="relative overflow-hidden bg-white">
 	<!-- Hero Section -->
@@ -180,12 +160,9 @@
 									</svg>
 								</div>
 								<div>
-									<a
-										href="mailto:ryan@roga.dev"
-										class="text-lg font-medium text-gray-900 hover:text-indigo-600 transition-colors"
-									>
-										ryan@roga.dev
-									</a>
+									<div class="text-lg font-medium text-gray-900">
+										<RedactedEmail />
+									</div>
 									<p class="text-sm text-gray-600">Best for detailed project discussions</p>
 								</div>
 							</div>
@@ -276,12 +253,10 @@
 					</div>
 				</div>
 
-				<!-- Contact Form -->
+				<!-- Notice About Form Removal -->
 				<div class="animate-on-scroll" style="transition-delay: 200ms;">
-					<div
-						class="rounded-2xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-all duration-300 h-full"
-					>
-						<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-600 mb-6">
+					<div class="rounded-2xl border border-orange-200 bg-orange-50 p-8 h-full">
+						<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-500 mb-6">
 							<svg
 								class="h-6 w-6 text-white"
 								fill="none"
@@ -292,152 +267,29 @@
 								<path
 									stroke-linecap="round"
 									stroke-linejoin="round"
-									d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
+									d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
 								/>
 							</svg>
 						</div>
-						<h3 class="text-xl font-semibold text-gray-900 mb-4">Send a Message</h3>
-						<p class="text-gray-600 mb-6">
-							Tell me about your project and I'll get back to you with ideas, questions, and next
-							steps.
-						</p>
-
-						<!-- Success/Error Messages -->
-						{#if form?.success}
-							<div class="mb-6 rounded-lg bg-green-50 border border-green-200 p-4" in:slide>
-								<div class="flex items-center">
-									<svg class="h-5 w-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-										<path
-											fill-rule="evenodd"
-											d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-											clip-rule="evenodd"
-										/>
-									</svg>
-									<p class="text-green-700 font-medium">{form.message}</p>
-								</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-4">
+							Contact Form Temporarily Unavailable
+						</h3>
+						<div class="text-gray-700 space-y-4">
+							<p class="leading-relaxed">
+								Due to abuse and spam, the form section of this website has been removed. We
+								apologize for the inconvenience.
+							</p>
+							<p class="leading-relaxed">
+								In the meantime, please feel free to reach out using any of the contact methods
+								listed on the left, or contact me directly at <RedactedEmail />.
+							</p>
+							<div class="mt-6 p-4 bg-white rounded-lg border border-orange-200">
+								<p class="text-sm text-gray-600">
+									<strong>Quick Tip:</strong> For the fastest response, include details about your project,
+									timeline, and any specific requirements in your email.
+								</p>
 							</div>
-						{/if}
-
-						{#if form?.error}
-							<div class="mb-6 rounded-lg bg-red-50 border border-red-200 p-4" in:slide>
-								<div class="flex items-center">
-									<svg class="h-5 w-5 text-red-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-										<path
-											fill-rule="evenodd"
-											d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-											clip-rule="evenodd"
-										/>
-									</svg>
-									<p class="text-red-700 font-medium">{form.error}</p>
-								</div>
-							</div>
-						{/if}
-
-						<form
-							method="POST"
-							class="space-y-6"
-							use:enhance={() => {
-								isSubmitting = true;
-								return async ({ update }) => {
-									await update();
-									isSubmitting = false;
-								};
-							}}
-						>
-							<div>
-								<label for="name" class="block text-sm font-medium text-gray-700 mb-2">
-									Name
-								</label>
-								<input
-									type="text"
-									id="name"
-									name="name"
-									value={form?.name || ''}
-									class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-									placeholder="Your name"
-									disabled={isSubmitting}
-									required
-								/>
-							</div>
-							<div>
-								<label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-									Email
-								</label>
-								<input
-									type="email"
-									id="email"
-									name="email"
-									value={form?.email || ''}
-									class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-									placeholder="your.email@example.com"
-									disabled={isSubmitting}
-									required
-								/>
-							</div>
-							<div>
-								<label for="project" class="block text-sm font-medium text-gray-700 mb-2">
-									Project Type
-								</label>
-								<select
-									id="project"
-									name="project"
-									value={form?.project || ''}
-									disabled={isSubmitting}
-									class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-								>
-									<option value="">Select a project type</option>
-									<option value="website">Business Website</option>
-									<option value="webapp">Custom Web Application</option>
-									<option value="ecommerce">E-commerce Store</option>
-									<option value="ai">AI Integration</option>
-									<option value="consulting">Consulting</option>
-									<option value="other">Other</option>
-								</select>
-							</div>
-							<div>
-								<label for="message" class="block text-sm font-medium text-gray-700 mb-2">
-									Project Details
-								</label>
-								<textarea
-									id="message"
-									name="message"
-									rows="4"
-									value={form?.message || ''}
-									disabled={isSubmitting}
-									class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-									placeholder="Tell me about your project, goals, timeline, and any specific requirements..."
-									required
-								></textarea>
-							</div>
-							<button
-								type="submit"
-								disabled={isSubmitting}
-								class="w-full rounded-lg bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-200 hover:shadow-xl hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-							>
-								{#if isSubmitting}
-									<div class="flex items-center justify-center gap-2">
-										<svg class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
-											<circle
-												class="opacity-25"
-												cx="12"
-												cy="12"
-												r="10"
-												stroke="currentColor"
-												stroke-width="4"
-											></circle>
-											<path
-												class="opacity-75"
-												fill="currentColor"
-												d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-											></path>
-										</svg>
-										Sending...
-									</div>
-								{:else}
-									Send Message
-								{/if}
-							</button>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -546,12 +398,11 @@
 					together and give your business the competitive edge it deserves.
 				</p>
 				<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
-					<a
-						href="mailto:ryan@roga.dev"
-						class="rounded-lg bg-white px-8 py-4 text-base font-semibold text-indigo-600 shadow-lg hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200 hover:shadow-xl hover:scale-105"
+					<div
+						class="rounded-lg bg-white px-8 py-4 text-base font-semibold text-indigo-600 shadow-lg"
 					>
-						Email Me Now
-					</a>
+						<RedactedEmail />
+					</div>
 					<a
 						href="/projects"
 						class="rounded-lg border-2 border-white px-8 py-4 text-base font-semibold text-white hover:bg-white hover:text-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
@@ -566,17 +417,6 @@
 		</div>
 	</section>
 </main>
-
-<!-- Background decorative element at bottom -->
-<div
-	class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-	aria-hidden="true"
->
-	<div
-		class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#4f46e5] to-[#818cf8] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-		style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-	></div>
-</div>
 
 <style>
 	.animate-on-scroll {

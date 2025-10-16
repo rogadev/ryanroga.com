@@ -1,0 +1,90 @@
+---
+description: 'Project Structure and Organization'
+---
+
+# Project Structure Guide
+
+This is a SvelteKit project with a specific organization pattern.
+
+## Key Project Files
+
+- [package.json](mdc:package.json) - Dependencies and scripts
+- [svelte.config.js](mdc:svelte.config.js) - SvelteKit configuration
+- [tailwind.config.cjs](mdc:tailwind.config.cjs) - Tailwind CSS configuration
+- [tsconfig.json](mdc:tsconfig.json) - TypeScript configuration
+
+## Directory Structure
+
+### Source Organization (`src/`)
+
+- [src/app.html](mdc:src/app.html) - Main HTML template
+- [src/app.d.ts](mdc:src/app.d.ts) - Global type definitions
+- [src/lib/](mdc:src/lib/) - Reusable library code
+- [src/routes/](mdc:src/routes/) - SvelteKit routes
+- [src/types/](mdc:src/types/) - Custom type definitions
+
+### Component Organization (`src/lib/components/`)
+
+- [src/lib/components/](mdc:src/lib/components/) - Main components directory
+- [src/lib/components/archive/](mdc:src/lib/components/archive/) - Archived/legacy components
+- [src/lib/components/case-studies/](mdc:src/lib/components/case-studies/) - Case study specific components
+
+### Routes Organization (`src/routes/`)
+
+Main routes structure:
+
+- [src/routes/+layout.svelte](mdc:src/routes/+layout.svelte) - Main layout
+- [src/routes/+page.svelte](mdc:src/routes/+page.svelte) - Homepage
+- [src/routes/about/](mdc:src/routes/about/) - About page
+- [src/routes/contact/](mdc:src/routes/contact/) - Contact page with form
+- [src/routes/projects/](mdc:src/routes/projects/) - Projects/portfolio section
+- [src/routes/resume/](mdc:src/routes/resume/) - Resume pages
+
+### Static Assets (`static/`)
+
+- [static/images/](mdc:static/images/) - Image assets
+- [static/logos/](mdc:static/logos/) - Logo assets
+- [static/fonts/](mdc:static/fonts/) - Font files (Poppins)
+- [static/icons/](mdc:static/icons/) - Icon assets
+
+## Development Workflow
+
+### Package Manager
+
+This project uses `pnpm` as the package manager:
+
+- Install: `pnpm install`
+- Dev server: `pnpm dev`
+- Build: `pnpm build`
+- Preview: `pnpm preview`
+- Lint: `pnpm lint`
+- Check: `pnpm check`
+
+### File Naming Conventions
+
+- Components: PascalCase (e.g., `BaseCard.svelte`)
+- Routes: kebab-case directories with SvelteKit conventions (+page.svelte, +layout.svelte)
+- Utilities: camelCase
+- Types: PascalCase interfaces
+
+### Code Quality
+
+- Follow Prettier formatting as configured
+- Use ESLint rules as defined
+- Fix deprecation warnings immediately
+- Always use TypeScript
+
+## Styling System
+
+- Primary: Tailwind CSS utility classes
+- Fonts: Poppins (loaded from static/fonts/)
+- Custom styles in [src/app.postcss](mdc:src/app.postcss)
+- Component-specific styles in `<style>` blocks when needed
+
+## Form Handling
+
+Contact form implementation in [src/routes/contact/](mdc:src/routes/contact/):
+
+- Server-side validation
+- TypeScript for form data
+- Integration with external form services

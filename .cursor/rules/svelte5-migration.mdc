@@ -1,0 +1,343 @@
+---
+globs: '*.svelte'
+description: 'Svelte 5 Migration Patterns and Deprecation Fixes'
+---
+
+# Svelte 5 Migration and Deprecation Patterns
+
+## Migration Priority
+
+When encountering Svelte deprecation linting errors:
+
+1. **Immediately fix the deprecation** using the Svelte 5 equivalent
+2. **Document the fix** by adding the pattern to this rules file
+3. **Update this section** with the specific deprecation and its modern replacement
+
+## Detailed Deprecation Patterns
+
+### Slots → Children Rendering Migration
+
+```svelte
+<!-- OLD (deprecated): -->
+<div>
+	<slot />
+</div>
+
+<!-- Also deprecated: -->
+<div>
+	<slot name="header" />
+</div>
+
+<!-- NEW (Svelte 5): -->
+<script>
+	import type { Snippet } from 'svelte';
+
+	let { children } = $props<{
+		children?: Snippet;
+	}>();
+</script>
+<div>
+	{@render children?.()}
+</div>
+
+<!-- For named slots, use snippets: -->
+<script>
+	import type { Snippet } from 'svelte';
+
+	let { headerSnippet, children } = $props<{
+		headerSnippet?: Snippet;
+		children?: Snippet;
+	}>();
+</script>
+<div>
+	{@render headerSnippet?.()}
+	{@render children?.()}
+</div>
+```
+
+**Complete Migration Pattern:**
+
+- Replace `<slot />` with `{@render children?.()}`
+- Replace named slots `<slot name="xyz" />` with snippet props `{@render xyzSnippet?.()}`
+- Always destructure `children` from `$props()` when using content projection
+- Use optional chaining (`?.()`) when rendering snippets to handle undefined snippets
+- Name snippet props consistently with `Snippet` suffix (e.g., `headerSnippet`, `footerSnippet`)
+- Import `Snippet` type from 'svelte' for proper TypeScript support
+- Always make snippet props optional unless they are explicitly required
+
+### Snippet and Children Typing Approaches
+
+**Preferred approach - Regular import:**
+
+```svelte
+<script>
+	import type { Snippet } from 'svelte';
+
+	let { children, headerSnippet, footerSnippet } = $props<{
+		children?: Snippet;
+		headerSnippet?: Snippet;
+		footerSnippet?: Snippet;
+	}>();
+</script>
+```
+
+**Alternative approach - Inline import:**
+
+```svelte
+<script>
+	let { children, headerSnippet } = $props<{
+		children?: import('svelte').Snippet;
+		headerSnippet?: import('svelte').Snippet;
+	}>();
+</script>
+```
+
+**When to use each approach:**
+
+- **Regular import**: Use when you have multiple snippet props or when the component will likely be extended with more snippets
+- **Inline import**: Use for simple components with only one snippet prop, or when you want to minimize imports
+
+### Reactive Statements → Modern Equivalents
+
+```javascript
+// OLD (deprecated):
+$: doubled = count * 2;
+$: console.log('count changed:', count);
+$: if (count > 10) {
+	handleLargeCount();
+}
+
+// NEW (Svelte 5):
+let doubled = $derived(count * 2);
+
+$effect(() => {
+	console.log('count changed:', count);
+});
+
+$effect(() => {
+	if (count > 10) {
+		handleLargeCount();
+	}
+});
+```
+
+### Component Props → $props()
+
+```javascript
+// OLD (deprecated):
+export let name;
+export let age = 25;
+export let optional;
+
+// NEW (Svelte 5):
+let { name, age = 25, optional } = $props<{
+	name: string;
+	age?: number;
+	optional?: any;
+}>();
+```
+
+### Event Handlers → New Syntax
+
+```svelte
+<!-- OLD (deprecated): -->
+<button on:click={handleClick}>Click</button>
+<input on:input={handleInput} />
+<form on:submit={handleSubmit}>
+
+<!-- NEW (Svelte 5): -->
+<button onclick={handleClick}>Click</button>
+<input oninput={handleInput} />
+<form onsubmit={handleSubmit}>
+```
+
+### Event Dispatching → Callback Props
+
+```javascript
+// OLD (deprecated):
+import { createEventDispatcher } from 'svelte';
+const dispatch = createEventDispatcher();
+
+function handleAction() {
+	dispatch('action', { data: 'value' });
+}
+
+function handlePageChange(newPage) {
+	dispatch('pageChange', { page: newPage });
+}
+
+// NEW (Svelte 5):
+let { onAction, onPageChange } = $props<{
+	onAction?: (data: { data: string }) => void;
+	onPageChange?: (data: { page: number }) => void;
+}>();
+
+function handleAction() {
+	onAction?.({ data: 'value' });
+}
+
+function handlePageChange(newPage) {
+	onPageChange?.({ page: newPage });
+}
+```
+
+**Event Callback Usage Pattern:**
+
+- Instead of dispatching events, accept callback props
+- Name callback props with `on` prefix (e.g., `onPageChange` instead of dispatching `pageChange`)
+- Call the callback directly with the data (no `.detail` property needed)
+- Always use optional chaining (`?.`) when calling callbacks to handle undefined callbacks
+
+### Lifecycle → Effects
+
+```javascript
+// OLD (deprecated):
+import { onMount, onDestroy, beforeUpdate, afterUpdate } from 'svelte';
+
+onMount(() => {
+	console.log('Component mounted');
+	return () => {
+		console.log('Component will unmount');
+	};
+});
+
+onDestroy(() => {
+	console.log('Component destroyed');
+});
+
+beforeUpdate(() => {
+	console.log('Before update');
+});
+
+afterUpdate(() => {
+	console.log('After update');
+});
+
+// NEW (Svelte 5):
+$effect(() => {
+	console.log('Component mounted');
+
+	return () => {
+		console.log('Component will unmount');
+	};
+});
+
+// For update lifecycle, use effects with dependencies
+$effect(() => {
+	// This runs after every update when dependencies change
+	console.log('After update');
+});
+```
+
+### Two-way Binding Updates
+
+```svelte
+<!-- NEW (Svelte 5) - Component definition: -->
+<script>
+	let { value = $bindable() } = $props<{
+		value?: string;
+	}>();
+</script>
+
+<!-- OLD (deprecated) - for custom components: -->
+<CustomInput bind:value={inputValue} />
+
+<!-- Usage remains the same: -->
+<CustomInput bind:value={inputValue} />
+```
+
+## Runes Mode Declaration Strategy
+
+Add explicit runes declaration when syntax could be ambiguous:
+
+```svelte
+<svelte:options runes={true} />
+
+<script>
+	// Component code using runes...
+</script>
+```
+
+**Use this directive when:**
+
+- The component syntax could be interpreted as either runes or legacy mode
+- During migration when mixing legacy and runes components in the same codebase
+- For explicit documentation/clarity in complex components
+- When working with components that don't use obvious runes syntax (like simple prop-only components)
+
+## Complete Component Migration Template
+
+```svelte
+<svelte:options runes={true} />
+
+<script>
+	// Import statements
+	import type { Snippet } from 'svelte';
+
+	// Props using $props() - with proper TypeScript typing
+	let {
+		propName = defaultValue,
+		children,
+		onCallback,
+		optionalProp,
+		...restProps
+	} = $props<{
+		propName?: string;
+		children?: Snippet;
+		onCallback?: (data: any) => void;
+		optionalProp?: boolean;
+	}>();
+
+	// State using $state()
+	let localState = $state(initialValue);
+	let complexState = $state({ nested: { value: true } });
+
+	// Derived values using $derived()
+	let computedValue = $derived(localState * 2);
+	let conditionalValue = $derived(propName ? propName.toUpperCase() : '');
+
+	// Effects using $effect()
+	$effect(() => {
+		// Mount and dependency-based side effects
+		console.log('Effect triggered');
+
+		return () => {
+			// Cleanup logic (replaces onDestroy)
+			console.log('Cleanup');
+		};
+	});
+
+	// Functions and other logic
+	function handleClick() {
+		localState += 1;
+		onCallback?.(localState);
+	}
+</script>
+
+<!-- Template -->
+<div>
+	<button onclick={handleClick}>
+		{computedValue}
+	</button>
+	{@render children?.()}
+</div>
+```
+
+## Development Workflow for Migration
+
+1. **Identify deprecated patterns** in linting output
+2. **Apply the appropriate Svelte 5 pattern** from this guide
+3. **Test functionality** to ensure behavior is preserved
+4. **Update this guide** if encountering new patterns
+5. **Commit changes** with descriptive migration messages
+
+## Key Migration Reminders
+
+- **NEVER use `<slot />` - always use `{@render children?.()}` instead**
+- Always import `Snippet` type when using children or snippet props
+- Use optional chaining (`?.()`) when rendering all snippets
+- Replace all `$:` reactive statements with `$derived()` or `$effect()`
+- Convert all `export let` props to `$props()` destructuring
+- Update event handlers from `on:event` to `onevent`
+- Replace event dispatching with callback props
+- Convert lifecycle hooks to `$effect()` with appropriate cleanup
