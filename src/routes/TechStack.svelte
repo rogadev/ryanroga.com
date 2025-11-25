@@ -44,33 +44,21 @@
 					</p>
 					<div class="space-y-4">
 						<div class="flex items-center gap-3">
-							<img
-								src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg"
-								alt="SvelteKit"
-								class="h-8 w-8"
-							/>
+							<Icon icon="logos:svelte-icon" class="h-8 w-8" />
 							<div>
 								<div class="font-medium text-gray-900">SvelteKit</div>
 								<div class="text-sm text-gray-600">Ultra-fast, lightweight framework</div>
 							</div>
 						</div>
 						<div class="flex items-center gap-3">
-							<img
-								src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-								alt="Vue.js"
-								class="h-8 w-8"
-							/>
+							<Icon icon="logos:vue" class="h-8 w-8" />
 							<div>
 								<div class="font-medium text-gray-900">Vue.js & Nuxt</div>
 								<div class="text-sm text-gray-600">Progressive web applications</div>
 							</div>
 						</div>
 						<div class="flex items-center gap-3">
-							<img
-								src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-								alt="TypeScript"
-								class="h-8 w-8"
-							/>
+							<Icon icon="logos:typescript-icon" class="h-8 w-8" />
 							<div>
 								<div class="font-medium text-gray-900">TypeScript</div>
 								<div class="text-sm text-gray-600">Type-safe, maintainable code</div>
@@ -111,22 +99,14 @@
 					</p>
 					<div class="space-y-4">
 						<div class="flex items-center gap-3">
-							<img
-								src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-								alt="Node.js"
-								class="h-8 w-8"
-							/>
+							<Icon icon="logos:nodejs-icon" class="h-8 w-8" />
 							<div>
 								<div class="font-medium text-gray-900">Node.js</div>
 								<div class="text-sm text-gray-600">High-performance runtime</div>
 							</div>
 						</div>
 						<div class="flex items-center gap-3">
-							<img
-								src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-								alt="Express"
-								class="h-8 w-8"
-							/>
+							<Icon icon="skill-icons:expressjs-dark" class="h-8 w-8" />
 							<div>
 								<div class="font-medium text-gray-900">Express.js</div>
 								<div class="text-sm text-gray-600">Fast, minimalist web framework</div>
@@ -140,11 +120,7 @@
 							</div>
 						</div>
 						<div class="flex items-center gap-3">
-							<img
-								src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-								alt="PostgreSQL"
-								class="h-8 w-8"
-							/>
+							<Icon icon="logos:postgresql" class="h-8 w-8" />
 							<div>
 								<div class="font-medium text-gray-900">PostgreSQL</div>
 								<div class="text-sm text-gray-600">Enterprise-grade database</div>
@@ -201,11 +177,7 @@
 							</div>
 						</div>
 						<div class="flex items-center gap-3">
-							<img
-								src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-								alt="Docker"
-								class="h-8 w-8"
-							/>
+							<Icon icon="logos:docker-icon" class="h-8 w-8" />
 							<div>
 								<div class="font-medium text-gray-900">Docker</div>
 								<div class="text-sm text-gray-600">Consistent deployments</div>

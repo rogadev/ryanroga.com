@@ -1,6 +1,14 @@
 <svelte:options runes={true} />
 
-<script>
+<script lang="ts">
+	let {
+		title = 'Trusted by Industry Leaders',
+		subtitle
+	}: {
+		title?: string;
+		subtitle?: string;
+	} = $props();
+
 	// Company logos data - using the actual logo files from static/logos/
 	const companies = [
 		{
@@ -38,8 +46,13 @@
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-				Trusted by Industry Leaders
+				{title}
 			</h2>
+			{#if subtitle}
+				<p class="mt-4 text-lg leading-8 text-gray-600">
+					{subtitle}
+				</p>
+			{/if}
 		</div>
 
 		<!-- Logo Carousel -->
@@ -61,6 +74,8 @@
 								src={company.logo}
 								alt={company.alt}
 								class="max-h-full max-w-full object-contain transition-all duration-300 opacity-80 hover:opacity-100"
+								width="160"
+								height="80"
 								loading="lazy"
 							/>
 						</div>
@@ -70,30 +85,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	@keyframes scroll {
-		0% {
-			transform: translateX(0);
-		}
-		100% {
-			transform: translateX(-50%);
-		}
-	}
-
-	.animate-scroll {
-		animation: scroll 40s linear infinite;
-		will-change: transform;
-	}
-
-	/* Pause animation on hover with smooth transition */
-	.animate-scroll:hover {
-		animation-play-state: paused;
-	}
-
-	/* Ensure smooth rendering */
-	.animate-scroll {
-		backface-visibility: hidden;
-		perspective: 1000px;
-	}
-</style>

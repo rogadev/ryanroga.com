@@ -33,6 +33,9 @@
 			src={project.image}
 			alt={project.title}
 			class="absolute top-0 left-0 w-full h-full object-cover object-left-top"
+			width="800"
+			height="450"
+			loading="lazy"
 			onerror={(e) => handleImageError(e, project.title)}
 		/>
 		<!-- Gradient overlay with 100% opaque white at bottom -->
