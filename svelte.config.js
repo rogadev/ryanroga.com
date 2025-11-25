@@ -11,10 +11,7 @@ const config = {
 	preprocess: [vitePreprocess({})],
 
 	kit: {
-		adapter: adapter(),
-		alias: {
-			'@/*': './path/to/lib/*'
-		}
+		adapter: adapter()
 	}
 };
 

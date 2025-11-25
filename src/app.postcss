@@ -2,3 +2,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Shared scroll animation styles */
+@layer utilities {
+	.animate-on-scroll {
+		opacity: 0;
+		transform: translateY(30px);
+		transition:
+			opacity 0.6s ease-out,
+			transform 0.6s ease-out;
+	}
+
+	.animate-on-scroll.animate-in {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Shared logo carousel animation */
+@layer utilities {
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	.animate-scroll {
+		animation: scroll 40s linear infinite;
+		will-change: transform;
+		backface-visibility: hidden;
+		perspective: 1000px;
+	}
+
+	.animate-scroll:hover {
+		animation-play-state: paused;
+	}
+}

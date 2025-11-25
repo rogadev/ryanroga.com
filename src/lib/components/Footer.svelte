@@ -88,7 +88,7 @@
 			<!-- Company Info -->
 			<div class="space-y-6">
 				<div class="flex gap-4 items-center">
-					<img class="h-8 w-8" src="/logo/android-chrome-192x192.png" alt="Roga.dev" />
+					<img class="h-8 w-8" src="/logo/android-chrome-192x192.png" alt="Roga.dev" width="32" height="32" />
 					<div>
 						<p class="text-lg font-semibold text-gray-900">Roga Web Development</p>
 						<p class="text-sm text-gray-600">Professional web solutions for small business</p>

@@ -52,7 +52,7 @@
 		<div class="flex lg:flex-1">
 			<a href="/" class="-m-1.5 p-1.5 flex items-center gap-3 group">
 				<span class="sr-only">Roga Web Development</span>
-				<img class="h-8 w-auto" src="/logo/favicon-32x32.png" alt="Roga Web Development Logo" />
+				<img class="h-8 w-auto" src="/logo/favicon-32x32.png" alt="Roga Web Development Logo" width="32" height="32" />
 				<span
 					class="text-lg font-bold tracking-tight text-gray-600 transition-colors duration-200 group-hover:text-gray-800 relative"
 				>
@@ -124,7 +124,7 @@
 				<div class="flex items-center justify-between">
 					<a href="/" class="-m-1.5 p-1.5">
 						<span class="sr-only">Roga Web Development</span>
-						<img class="h-8 w-auto" src="/logo/favicon-32x32.png" alt="Roga Web Development Logo" />
+						<img class="h-8 w-auto" src="/logo/favicon-32x32.png" alt="Roga Web Development Logo" width="32" height="32" />
 					</a>
 					<button
 						onclick={() => {

@@ -1,25 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Poppins font - self-hosted with font-display: swap */
 
 /* poppins-regular - latin */
 @font-face {
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 400;
+	font-display: swap;
 	src:
 		local('Poppins Regular'),
 		local('Poppins-Regular'),
 		url('/fonts/Poppins-Regular.ttf') format('truetype');
 }
 
-/* poppins-italic */
+/* poppins-medium */
 @font-face {
 	font-family: 'Poppins';
-	font-style: italic;
-	font-weight: 400;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
 	src:
-		local('Poppins Italic'),
-		local('Poppins-Italic'),
-		url('/fonts/Poppins-Italic.ttf') format('truetype');
+		local('Poppins Medium'),
+		local('Poppins-Medium'),
+		url('/fonts/Poppins-Medium.ttf') format('truetype');
+}
+
+/* poppins-semibold */
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src:
+		local('Poppins SemiBold'),
+		local('Poppins-SemiBold'),
+		url('/fonts/Poppins-SemiBold.ttf') format('truetype');
 }
 
 /* poppins-bold */
@@ -27,21 +41,11 @@
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 700;
+	font-display: swap;
 	src:
 		local('Poppins Bold'),
 		local('Poppins-Bold'),
 		url('/fonts/Poppins-Bold.ttf') format('truetype');
-}
-
-/* poppins-bold-italic */
-@font-face {
-	font-family: 'Poppins';
-	font-style: italic;
-	font-weight: 700;
-	src:
-		local('Poppins Bold Italic'),
-		local('Poppins-BoldItalic'),
-		url('/fonts/Poppins-BoldItalic.ttf') format('truetype');
 }
 
 :root {
@@ -49,20 +53,7 @@
 		Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
 		'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
-	--color-bg-0: rgb(202, 216, 228);
-	--color-bg-1: hsl(209, 36%, 86%);
-	--color-bg-2: hsl(224, 44%, 95%);
-	--color-theme-1: #ff3e00;
-	--color-theme-2: #4075a6;
-	--color-text: rgba(0, 0, 0, 0.7);
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
 	font-family: var(--font-body);
-	color: var(--color-text);
-}
-
-body {
-	background-color: var(--color-bg-0);
 }
 
 .visually-hidden {
@@ -75,112 +66,4 @@ body {
 	position: absolute;
 	width: 1px;
 	white-space: nowrap;
-}
-
-.poppins-thin {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 100;
-	font-style: normal;
-}
-
-.poppins-extralight {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 200;
-	font-style: normal;
-}
-
-.poppins-light {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 300;
-	font-style: normal;
-}
-
-.poppins-regular {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
-	font-style: normal;
-}
-
-.poppins-medium {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 500;
-	font-style: normal;
-}
-
-.poppins-semibold {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 600;
-	font-style: normal;
-}
-
-.poppins-bold {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 700;
-	font-style: normal;
-}
-
-.poppins-extrabold {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 800;
-	font-style: normal;
-}
-
-.poppins-black {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 900;
-	font-style: normal;
-}
-
-.poppins-thin-italic {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 100;
-	font-style: italic;
-}
-
-.poppins-extralight-italic {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 200;
-	font-style: italic;
-}
-
-.poppins-light-italic {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 300;
-	font-style: italic;
-}
-
-.poppins-regular-italic {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
-	font-style: italic;
-}
-
-.poppins-medium-italic {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 500;
-	font-style: italic;
-}
-
-.poppins-semibold-italic {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 600;
-	font-style: italic;
-}
-
-.poppins-bold-italic {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 700;
-	font-style: italic;
-}
-
-.poppins-extrabold-italic {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 800;
-	font-style: italic;
-}
-
-.poppins-black-italic {
-	font-family: 'Poppins', sans-serif;
-	font-weight: 900;
-	font-style: italic;
 }

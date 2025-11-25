@@ -2,28 +2,14 @@
 	import Icon from '@iconify/svelte';
 	import { fly } from 'svelte/transition';
 	import RedactedEmail from '$lib/components/RedactedEmail.svelte';
+	import ClientLogos from '../ClientLogos.svelte';
+	import { initScrollAnimations } from '$lib/actions/scrollAnimation';
 
 	let isVisible = $state(false);
 
 	$effect(() => {
 		isVisible = true;
-
-		// Intersection observer for scroll animations
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('animate-in');
-						observer.unobserve(entry.target);
-					}
-				});
-			},
-			{ threshold: 0.1 }
-		);
-
-		document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-			observer.observe(el);
-		});
+		return initScrollAnimations();
 	});
 </script>
 
@@ -307,6 +293,9 @@
 								class="w-32 h-32 rounded-full object-cover object-center border-4 border-indigo-100"
 								src="/images/ryanroga.jpg"
 								alt="Ryan Roga"
+								width="128"
+								height="128"
+								loading="lazy"
 							/>
 						</div>
 						<div class="flex-1 text-center lg:text-left">
@@ -345,46 +334,11 @@
 		</div>
 	</section>
 
-	<!-- Client Logos -->
-	<section class="bg-white py-16 sm:py-24">
-		<div class="mx-auto max-w-7xl px-6 lg:px-8">
-			<div class="mx-auto max-w-2xl text-center">
-				<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-					Join These Industry Leaders
-				</h2>
-				<p class="mt-4 text-lg leading-8 text-gray-600">
-					Companies that have trusted us to deliver exceptional web solutions
-				</p>
-			</div>
-
-			<!-- Logo Carousel -->
-			<div class="mt-12 overflow-hidden">
-				<div class="relative">
-					<!-- Gradient overlays for smooth fade effect -->
-					<div
-						class="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white to-transparent"
-					></div>
-					<div
-						class="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white to-transparent"
-					></div>
-
-					<!-- Scrolling container -->
-					<div class="flex animate-scroll space-x-12 sm:space-x-16">
-						{#each [{ name: 'Telus', logo: '/logos/TELUS_Logo.svg', alt: 'Telus logo' }, { name: 'Vancouver Island University', logo: '/logos/VIU-logo.png', alt: 'Vancouver Island University logo' }, { name: 'Granny Go Go', logo: '/logos/granny-go-go.png', alt: 'Granny Go Go logo' }, { name: 'MossAway', logo: '/logos/mossaway.png', alt: 'MossAway logo' }, { name: 'CarEvo', logo: '/logos/carevo.webp', alt: 'CarEvo logo' }, { name: 'Telus', logo: '/logos/TELUS_Logo.svg', alt: 'Telus logo' }, { name: 'Vancouver Island University', logo: '/logos/VIU-logo.png', alt: 'Vancouver Island University logo' }, { name: 'Granny Go Go', logo: '/logos/granny-go-go.png', alt: 'Granny Go Go logo' }, { name: 'MossAway', logo: '/logos/mossaway.png', alt: 'MossAway logo' }, { name: 'CarEvo', logo: '/logos/carevo.webp', alt: 'CarEvo logo' }] as company}
-							<div class="flex-shrink-0 flex items-center justify-center h-16 w-32 sm:h-20 sm:w-40">
-								<img
-									src={company.logo}
-									alt={company.alt}
-									class="max-h-full max-w-full object-contain transition-all duration-300 opacity-80 hover:opacity-100"
-									loading="lazy"
-								/>
-							</div>
-						{/each}
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<!-- Client Logos - Using shared component -->
+	<ClientLogos
+		title="Join These Industry Leaders"
+		subtitle="Companies that have trusted us to deliver exceptional web solutions"
+	/>
 
 	<!-- CTA Section -->
 	<section class="bg-gradient-to-r from-indigo-600 to-purple-700 py-16 sm:py-24">
@@ -417,40 +371,3 @@
 		</div>
 	</section>
 </main>
-
-<style>
-	.animate-on-scroll {
-		opacity: 0;
-		transform: translateY(30px);
-		transition:
-			opacity 0.6s ease-out,
-			transform 0.6s ease-out;
-	}
-
-	:global(.animate-on-scroll.animate-in) {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	/* Logo carousel animations */
-	@keyframes scroll {
-		0% {
-			transform: translateX(0);
-		}
-		100% {
-			transform: translateX(-50%);
-		}
-	}
-
-	.animate-scroll {
-		animation: scroll 40s linear infinite;
-		will-change: transform;
-		backface-visibility: hidden;
-		perspective: 1000px;
-	}
-
-	/* Pause animation on hover with smooth transition */
-	.animate-scroll:hover {
-		animation-play-state: paused;
-	}
-</style>
