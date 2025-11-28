@@ -57,11 +57,14 @@
 								<div
 									class="h-16 w-16 lg:h-20 lg:w-20 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg flex-shrink-0"
 								>
-									<img
-										src="/logos/carevo-square.png"
-										alt="CarEvo Auto Solutions"
-										class="h-14 w-14 lg:h-18 lg:w-18 object-cover"
-									/>
+								<img
+									src="/logos/carevo-square.png"
+									alt="CarEvo Auto Solutions"
+									class="h-14 w-14 lg:h-18 lg:w-18 object-cover"
+									width="72"
+									height="72"
+									loading="lazy"
+								/>
 								</div>
 								<div class="lg:mt-4 flex-1 lg:flex-none">
 									<div class="font-bold text-gray-900 text-lg">CarEvo Auto Solutions</div>
@@ -152,11 +155,14 @@
 								<div
 									class="h-16 w-16 lg:h-20 lg:w-20 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg flex-shrink-0"
 								>
-									<img
-										src="/logos/viu logo square.png"
-										alt="Vancouver Island University"
-										class="h-16 w-16 lg:h-20 lg:w-20 object-cover"
-									/>
+								<img
+									src="/logos/viu logo square.png"
+									alt="Vancouver Island University"
+									class="h-16 w-16 lg:h-20 lg:w-20 object-cover"
+									width="80"
+									height="80"
+									loading="lazy"
+								/>
 								</div>
 								<div class="lg:mt-4 flex-1 lg:flex-none">
 									<div class="font-bold text-gray-900 text-lg">Vancouver Island University</div>
