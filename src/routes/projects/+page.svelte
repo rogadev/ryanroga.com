@@ -235,29 +235,6 @@
 	</div>
 </section>
 
-<!-- Featured Projects Section -->
-<section id="featured-projects" class="py-20 px-4 bg-white">
-	<div class="max-w-7xl mx-auto">
-		<div class="text-center mb-16 animate-on-scroll">
-			<h2 class="inline-block text-4xl md:text-5xl font-bold relative">
-				<span class="relative z-10 text-gray-900">Featured Projects</span>
-				<span class="absolute -bottom-3 left-0 w-full h-3 bg-blue-500/30 transform -skew-x-3"
-				></span>
-			</h2>
-			<p class="mt-6 text-xl text-gray-700 max-w-2xl mx-auto">
-				Explore our recent work and discover how we've helped businesses transform their digital
-				presence
-			</p>
-		</div>
-
-		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll">
-			{#each featuredProjects as project, i}
-				<ProjectCard {project} delay={i * 200} {handleImageError} />
-			{/each}
-		</div>
-	</div>
-</section>
-
 <!-- Our Approach Section -->
 <section class="py-20 px-4 bg-gray-50">
 	<div class="max-w-7xl mx-auto">
@@ -473,6 +450,29 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Featured Projects Section -->
+<section id="featured-projects" class="py-20 px-4 bg-white">
+	<div class="max-w-7xl mx-auto">
+		<div class="text-center mb-16 animate-on-scroll">
+			<h2 class="inline-block text-4xl md:text-5xl font-bold relative">
+				<span class="relative z-10 text-gray-900">Featured Projects</span>
+				<span class="absolute -bottom-3 left-0 w-full h-3 bg-blue-500/30 transform -skew-x-3"
+				></span>
+			</h2>
+			<p class="mt-6 text-xl text-gray-700 max-w-2xl mx-auto">
+				Explore our recent work and discover how we've helped businesses transform their digital
+				presence
+			</p>
+		</div>
+
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll">
+			{#each featuredProjects as project, i}
+				<ProjectCard {project} delay={i * 200} {handleImageError} />
+			{/each}
 		</div>
 	</div>
 </section>
