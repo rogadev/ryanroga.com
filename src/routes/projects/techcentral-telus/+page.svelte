@@ -99,16 +99,16 @@
 				across Canadian regions, in both English and French.
 			</p>
 
-		<!-- Key Stats -->
-		<div class="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
-			<div class="rounded-xl bg-gray-50 p-4 text-center">
-				<div class="text-2xl font-bold text-gray-900">2025–2026</div>
-				<div class="text-sm text-gray-600">Development</div>
-			</div>
-			<div class="rounded-xl bg-gray-50 p-4 text-center">
-				<div class="text-2xl font-bold text-gray-900">Jan 2026</div>
-				<div class="text-sm text-gray-600">Launch</div>
-			</div>
+			<!-- Key Stats -->
+			<div class="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
+				<div class="rounded-xl bg-gray-50 p-4 text-center">
+					<div class="text-2xl font-bold text-gray-900">2025–2026</div>
+					<div class="text-sm text-gray-600">Development</div>
+				</div>
+				<div class="rounded-xl bg-gray-50 p-4 text-center">
+					<div class="text-2xl font-bold text-gray-900">Jan 2026</div>
+					<div class="text-sm text-gray-600">Launch</div>
+				</div>
 				<div class="rounded-xl bg-gray-50 p-4 text-center">
 					<div class="text-2xl font-bold text-gray-900">Bilingual</div>
 					<div class="text-sm text-gray-600">EN-CA / FR-CA</div>
@@ -417,30 +417,30 @@
 								Vitest
 							</div>
 						</div>
-					<div class="group relative">
-						<Icon icon="logos:playwright" class="h-10 w-10" />
-						<div
-							class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
-						>
-							Playwright
+						<div class="group relative">
+							<Icon icon="logos:playwright" class="h-10 w-10" />
+							<div
+								class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
+							>
+								Playwright
+							</div>
 						</div>
-					</div>
-					<div class="group relative">
-						<Icon icon="logos:python" class="h-10 w-10" />
-						<div
-							class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
-						>
-							Python
+						<div class="group relative">
+							<Icon icon="logos:python" class="h-10 w-10" />
+							<div
+								class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
+							>
+								Python
+							</div>
 						</div>
-					</div>
-					<div class="group relative">
-						<Icon icon="simple-icons:googlegemini" class="h-10 w-10 text-blue-600" />
-						<div
-							class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
-						>
-							Google Gemini
+						<div class="group relative">
+							<Icon icon="simple-icons:googlegemini" class="h-10 w-10 text-blue-600" />
+							<div
+								class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
+							>
+								Google Gemini
+							</div>
 						</div>
-					</div>
 					</div>
 				</div>
 
@@ -503,58 +503,70 @@
 				Business Impact
 			</h2>
 
-		<div class="mt-8 space-y-6">
-			<div
-				class="animate-on-scroll rounded-xl bg-white border border-gray-200 p-6"
-				style="transition-delay: 50ms;"
-			>
-				<div class="flex items-start gap-4">
-					<div
-						class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 flex-shrink-0"
-					>
-						<svg class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-						</svg>
-					</div>
-					<div>
-						<h3 class="font-semibold text-gray-900">AI-Powered Knowledge Assistant</h3>
-						<p class="text-gray-600 text-sm mt-1">
-							Intelligent chatbot integration that ingests articles in real-time, providing employees with conversational access to a wide range of business knowledge. The AI automatically stays current with content updates.
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div
-				class="animate-on-scroll rounded-xl bg-white border border-gray-200 p-6"
-				style="transition-delay: 150ms;"
-			>
-				<div class="flex items-start gap-4">
-					<div
-						class="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 flex-shrink-0"
-					>
-						<svg class="h-5 w-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-							<path
-								fill-rule="evenodd"
-								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-								clip-rule="evenodd"
-							/>
-						</svg>
-					</div>
-					<div>
-						<h3 class="font-semibold text-gray-900">Reduced Operational Friction</h3>
-						<p class="text-gray-600 text-sm mt-1">
-							Faster, more reliable access to internal guidance reduces friction for frontline and
-							support teams - they find what they need without hunting.
-						</p>
+			<div class="mt-8 space-y-6">
+				<div
+					class="animate-on-scroll rounded-xl bg-white border border-gray-200 p-6"
+					style="transition-delay: 50ms;"
+				>
+					<div class="flex items-start gap-4">
+						<div
+							class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 flex-shrink-0"
+						>
+							<svg
+								class="h-5 w-5 text-indigo-600"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+								/>
+							</svg>
+						</div>
+						<div>
+							<h3 class="font-semibold text-gray-900">AI-Powered Knowledge Assistant</h3>
+							<p class="text-gray-600 text-sm mt-1">
+								Intelligent chatbot integration that ingests articles in real-time, providing
+								employees with conversational access to a wide range of business knowledge. The AI
+								automatically stays current with content updates.
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div
-				class="animate-on-scroll rounded-xl bg-white border border-gray-200 p-6"
-				style="transition-delay: 250ms;"
-			>
+				<div
+					class="animate-on-scroll rounded-xl bg-white border border-gray-200 p-6"
+					style="transition-delay: 150ms;"
+				>
+					<div class="flex items-start gap-4">
+						<div
+							class="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 flex-shrink-0"
+						>
+							<svg class="h-5 w-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+								<path
+									fill-rule="evenodd"
+									d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+						</div>
+						<div>
+							<h3 class="font-semibold text-gray-900">Reduced Operational Friction</h3>
+							<p class="text-gray-600 text-sm mt-1">
+								Faster, more reliable access to internal guidance reduces friction for frontline and
+								support teams - they find what they need without hunting.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div
+					class="animate-on-scroll rounded-xl bg-white border border-gray-200 p-6"
+					style="transition-delay: 250ms;"
+				>
 					<div class="flex items-start gap-4">
 						<div
 							class="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 flex-shrink-0"
@@ -577,10 +589,10 @@
 					</div>
 				</div>
 
-			<div
-				class="animate-on-scroll rounded-xl bg-white border border-gray-200 p-6"
-				style="transition-delay: 350ms;"
-			>
+				<div
+					class="animate-on-scroll rounded-xl bg-white border border-gray-200 p-6"
+					style="transition-delay: 350ms;"
+				>
 					<div class="flex items-start gap-4">
 						<div
 							class="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 flex-shrink-0"
