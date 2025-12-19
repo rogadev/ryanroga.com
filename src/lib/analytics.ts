@@ -38,7 +38,7 @@ const isBrowser = typeof window !== 'undefined';
 
 // Check if Google Analytics is available
 function hasGtag(): boolean {
-	return isBrowser && typeof (window as unknown as { gtag?: unknown }).gtag === 'function';
+	return isBrowser && typeof (window as unknown as { gtag?: unknown; }).gtag === 'function';
 }
 
 /**
@@ -61,7 +61,7 @@ export function trackEvent(eventName: AnalyticsEvent, params?: EventParams): voi
 
 	// Send to Google Analytics if available
 	if (hasGtag()) {
-		const gtag = (window as unknown as { gtag: (...args: unknown[]) => void }).gtag;
+		const gtag = (window as unknown as { gtag: (...args: unknown[]) => void; }).gtag;
 		gtag('event', eventName, params);
 	}
 
@@ -125,13 +125,18 @@ export function trackScrollDepth(depth: 25 | 50 | 75 | 100): void {
  * Initialize scroll depth tracking for the current page
  */
 export function initScrollTracking(): () => void {
-	if (!isBrowser) return () => {};
+	if (!isBrowser) return () => { };
 
 	const trackedDepths = new Set<number>();
 
 	const handleScroll = () => {
 		const scrollTop = window.scrollY;
 		const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+		// Guard against edge case where content fits entirely within viewport
+		// docHeight would be 0 or negative, causing division by zero
+		if (docHeight <= 0) return;
+
 		const scrollPercent = (scrollTop / docHeight) * 100;
 
 		const depths = [25, 50, 75, 100] as const;
@@ -157,7 +162,7 @@ export function initScrollTracking(): () => void {
  * <a href="/contact" data-track="book_call" data-track-source="hero">Book a Call</a>
  */
 export function initClickTracking(): () => void {
-	if (!isBrowser) return () => {};
+	if (!isBrowser) return () => { };
 
 	const handleClick = (event: MouseEvent) => {
 		const target = event.target as HTMLElement;
