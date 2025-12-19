@@ -16,8 +16,14 @@
 </svelte:head>
 
 <!-- Hero -->
-<div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-	<div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#f97316] to-[#0ea5e9] opacity-25 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+<div
+	class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+	aria-hidden="true"
+>
+	<div
+		class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#f97316] to-[#0ea5e9] opacity-25 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+		style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+	></div>
 </div>
 <section class="relative overflow-hidden">
 	<div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
@@ -54,9 +60,7 @@
 <section class="py-16 sm:py-24 bg-gray-50">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center mb-16">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-				What's Included
-			</h2>
+			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What's Included</h2>
 		</div>
 
 		<div class="mx-auto max-w-4xl grid gap-8 lg:grid-cols-2">
@@ -70,8 +74,8 @@
 			<div class="rounded-xl bg-white p-6 shadow-sm border border-gray-200">
 				<h3 class="font-semibold text-gray-900 mb-3">Monitoring & Alerts</h3>
 				<p class="text-gray-600 text-sm">
-					Uptime monitoring, error tracking, and performance alerts. Know about issues before
-					users report them.
+					Uptime monitoring, error tracking, and performance alerts. Know about issues before users
+					report them.
 				</p>
 			</div>
 			<div class="rounded-xl bg-white p-6 shadow-sm border border-gray-200">
@@ -107,40 +111,54 @@
 <section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center mb-16">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-				Maintenance Plans
-			</h2>
-			<p class="mt-4 text-lg text-gray-600">
-				Predictable monthly costs, no surprises
-			</p>
+			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Maintenance Plans</h2>
+			<p class="mt-4 text-lg text-gray-600">Predictable monthly costs, no surprises</p>
 		</div>
 
 		<div class="mx-auto max-w-4xl grid gap-8 lg:grid-cols-3">
 			<div class="rounded-xl bg-white p-8 shadow-sm border border-gray-200">
 				<h3 class="font-semibold text-gray-900 text-lg mb-2">Basic</h3>
-				<div class="text-3xl font-bold text-gray-900 mb-4">$199<span class="text-lg font-normal text-gray-500">/month</span></div>
+				<div class="text-3xl font-bold text-gray-900 mb-4">
+					$249<span class="text-lg font-normal text-gray-500">/month</span>
+				</div>
 				<ul class="space-y-3 text-sm text-gray-600 mb-6">
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>Uptime monitoring</span>
 					</li>
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>Security updates</span>
 					</li>
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>2 hours support/month</span>
 					</li>
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>48-hour response</span>
 					</li>
@@ -148,31 +166,53 @@
 			</div>
 
 			<div class="rounded-xl bg-orange-50 p-8 shadow-sm border-2 border-orange-300 relative">
-				<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</div>
+				<div
+					class="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full"
+				>
+					Most Popular
+				</div>
 				<h3 class="font-semibold text-gray-900 text-lg mb-2">Standard</h3>
-				<div class="text-3xl font-bold text-gray-900 mb-4">$399<span class="text-lg font-normal text-gray-500">/month</span></div>
+				<div class="text-3xl font-bold text-gray-900 mb-4">
+					$649<span class="text-lg font-normal text-gray-500">/month</span>
+				</div>
 				<ul class="space-y-3 text-sm text-gray-600 mb-6">
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>Everything in Basic</span>
 					</li>
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>5 hours support/month</span>
 					</li>
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>24-hour response</span>
 					</li>
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>Monthly check-in call</span>
 					</li>
@@ -181,29 +221,47 @@
 
 			<div class="rounded-xl bg-white p-8 shadow-sm border border-gray-200">
 				<h3 class="font-semibold text-gray-900 text-lg mb-2">Premium</h3>
-				<div class="text-3xl font-bold text-gray-900 mb-4">$799<span class="text-lg font-normal text-gray-500">/month</span></div>
+				<div class="text-3xl font-bold text-gray-900 mb-4">
+					$1,299<span class="text-lg font-normal text-gray-500">/month</span>
+				</div>
 				<ul class="space-y-3 text-sm text-gray-600 mb-6">
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>Everything in Standard</span>
 					</li>
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>10 hours support/month</span>
 					</li>
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>4-hour critical response</span>
 					</li>
 					<li class="flex items-start gap-2">
 						<svg class="h-5 w-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							<path
+								fill-rule="evenodd"
+								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+								clip-rule="evenodd"
+							/>
 						</svg>
 						<span>Quarterly roadmap review</span>
 					</li>
@@ -212,7 +270,8 @@
 		</div>
 
 		<p class="mt-8 text-center text-sm text-gray-500">
-			Need something custom? Let's talk about what you need.
+			Need something custom? Let's talk. Work beyond included hours is billed hourly at a discounted
+			retainer rate.
 		</p>
 	</div>
 </section>
@@ -241,4 +300,3 @@
 		</div>
 	</div>
 </section>
-
