@@ -1,11 +1,7 @@
 <svelte:options runes={true} />
 
 <script lang="ts">
-	let isVisible = $state(false);
-
 	$effect(() => {
-		isVisible = true;
-
 		// Simple intersection observer for scroll animations
 		const observer = new IntersectionObserver(
 			(entries) => {
