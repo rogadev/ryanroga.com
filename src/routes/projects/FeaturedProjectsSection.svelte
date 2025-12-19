@@ -21,7 +21,7 @@
 			slug: 'lot-logistics-web-application',
 			client: 'CarEvo',
 			description:
-				"Vehicle tracking system that replaced spreadsheets with QR-based inventory management, achieving 99.9% visibility and 40% efficiency gains.",
+				'Vehicle tracking system that replaced spreadsheets with QR-based inventory management, achieving 99.9% visibility and 40% efficiency gains.',
 			image: '/images/Product_example.png',
 			tags: ['Internal Tool', 'Vue.js', 'Supabase', 'Logistics']
 		},
@@ -51,8 +51,7 @@
 		<div class="text-center mb-16 animate-on-scroll">
 			<h2 class="inline-block text-4xl md:text-5xl font-bold relative">
 				<span class="relative z-10 text-gray-900">Featured Projects</span>
-				<span class="absolute -bottom-3 left-0 w-full h-3 bg-sky-500/30 transform -skew-x-3"
-				></span>
+				<span class="absolute -bottom-3 left-0 w-full h-3 bg-sky-500/30 transform -skew-x-3"></span>
 			</h2>
 			<p class="mt-6 text-xl text-gray-700 max-w-2xl mx-auto">
 				Internal tools and web applications that teams rely on every day

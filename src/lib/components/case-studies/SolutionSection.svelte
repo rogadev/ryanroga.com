@@ -47,7 +47,7 @@
 					<h3 class="text-3xl font-bold mb-6 text-white">Key Features</h3>
 
 					<div class="space-y-6">
-						{#each features as feature, i}
+						{#each features as feature}
 							<div class="flex items-start gap-4">
 								<div
 									class="flex-shrink-0 w-12 h-12 rounded-lg bg-{feature.color ||
@@ -60,6 +60,7 @@
 										viewBox="0 0 24 24"
 										stroke="currentColor"
 									>
+										<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 										{@html feature.icon}
 									</svg>
 								</div>

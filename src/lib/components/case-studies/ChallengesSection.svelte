@@ -56,6 +56,7 @@
 								viewBox="0 0 24 24"
 								stroke="currentColor"
 							>
+								<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 								{@html challenge.icon}
 							</svg>
 						</div>

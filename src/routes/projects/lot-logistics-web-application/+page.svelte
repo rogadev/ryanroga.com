@@ -3,8 +3,6 @@
 	import VehicleQRCode from './VehicleQRCode.svelte';
 	import Icon from '@iconify/svelte';
 
-	let isVisible = $state(false);
-
 	// Function to handle image loading errors
 	function handleImageError(event: Event): void {
 		const img = event.currentTarget as HTMLImageElement;
@@ -13,8 +11,6 @@
 
 	// Add animation functionality
 	$effect(() => {
-		isVisible = true;
-
 		// Apply gray background to body
 		document.body.classList.add('bg-gray-50');
 

@@ -46,7 +46,7 @@
 		</button>
 	</div>
 	<div class="hidden md:-mt-px md:flex">
-		{#each new Array(numberOfPages) as _, index}
+		{#each [...Array(numberOfPages).keys()] as index}
 			<button
 				onclick={() => {
 					currentPage = index + 1;

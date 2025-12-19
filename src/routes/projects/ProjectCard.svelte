@@ -23,7 +23,7 @@
 
 	// Determine the href - use external URL if no slug, otherwise internal link
 	// If no slug and no external URL, it's a disabled card
-	const href = project.slug ? `/projects/${project.slug}` : project.externalUrl ?? '#';
+	const href = project.slug ? `/projects/${project.slug}` : (project.externalUrl ?? '#');
 	const isExternal = !project.slug && project.externalUrl;
 	const isDisabled = !project.slug && !project.externalUrl;
 </script>
@@ -47,7 +47,9 @@
 				onerror={(e) => handleImageError(e, project.title)}
 			/>
 			<!-- Gradient overlay with 100% opaque white at bottom -->
-			<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white"></div>
+			<div
+				class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white"
+			></div>
 		</div>
 
 		<!-- Content container -->
@@ -61,9 +63,22 @@
 			<!-- Notice badge -->
 			{#if project.notice}
 				<div class="mb-4">
-					<span class="inline-flex items-center gap-2 px-3 py-2 bg-amber-50 text-amber-800 text-sm font-medium rounded-lg border border-amber-200">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+					<span
+						class="inline-flex items-center gap-2 px-3 py-2 bg-amber-50 text-amber-800 text-sm font-medium rounded-lg border border-amber-200"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-4 w-4"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+							/>
 						</svg>
 						{project.notice}
 					</span>
@@ -118,7 +133,9 @@
 				onerror={(e) => handleImageError(e, project.title)}
 			/>
 			<!-- Gradient overlay with 100% opaque white at bottom -->
-			<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white"></div>
+			<div
+				class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white"
+			></div>
 		</div>
 
 		<!-- Content container -->

@@ -33,7 +33,7 @@
 	$effect(() => {
 		// Apply gray background to body
 		document.body.classList.add('bg-gray-50');
-		
+
 		// Intersection observer for scroll animations
 		const observer = new IntersectionObserver(
 			(entries) => {
