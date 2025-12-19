@@ -20,19 +20,19 @@
 
 	const services = [
 		{
-			name: 'Custom Web Applications',
+			name: 'Internal Tools & Dashboards',
+			href: '/internal-tools'
+		},
+		{
+			name: 'Workflow Automation',
+			href: '/internal-tools'
+		},
+		{
+			name: 'Web Applications',
 			href: '/development'
 		},
 		{
-			name: 'Business Websites',
-			href: '/development'
-		},
-		{
-			name: 'E-commerce Solutions',
-			href: '/development'
-		},
-		{
-			name: 'AI Integration Services',
+			name: 'AI Integration',
 			href: '/ai'
 		}
 	];
@@ -47,8 +47,8 @@
 			href: '/projects'
 		},
 		{
-			name: 'Resume',
-			href: '/resume'
+			name: 'Free Tools',
+			href: '/free-tools'
 		},
 		{
 			name: 'Contact',
@@ -69,14 +69,19 @@
 
 	const featuredProjects = [
 		{
+			name: 'TELUS TechCentral',
+			href: '/projects/techcentral-telus',
+			description: 'Internal content platform'
+		},
+		{
 			name: 'CarEvo Lot Logistics',
 			href: '/projects/lot-logistics-web-application',
 			description: 'Inventory management system'
 		},
 		{
-			name: 'EzTripR Trip Tracker',
-			href: '/projects/eztripr-trip-tracker',
-			description: 'Driver logistics platform'
+			name: 'VIU Career Outlooks',
+			href: 'https://career-outlooks.viu.ca',
+			description: 'Educational web platform'
 		}
 	];
 </script>
@@ -100,15 +105,16 @@
 					/>
 					<div>
 						<p class="text-lg font-semibold text-gray-900">Roga Web Development</p>
-						<p class="text-sm text-gray-600">Professional web solutions for small business</p>
+						<p class="text-sm text-gray-600">Internal tools & web applications</p>
 					</div>
 				</div>
 				<p class="text-sm text-gray-600 max-w-lg leading-relaxed">
-					Transforming small businesses across Canada with custom web applications, modern websites,
-					and e-commerce solutions. No upfront costs, proven results.
+					I help growing businesses replace spreadsheets with dashboards, admin panels, and workflow
+					tools that teams actually use. Solo developer delivering enterprise-quality solutions
+					across North America.
 				</p>
 				<div class="flex space-x-5">
-					{#each socials as { label, href, icon }}
+					{#each socials as { label, href, icon } (href)}
 						<FooterSocial {label} {href} {icon} />
 					{/each}
 				</div>
@@ -116,7 +122,7 @@
 				<div class="flex flex-wrap gap-6 text-sm text-gray-600">
 					<p class="flex items-center gap-2">
 						<svg
-							class="h-4 w-4 text-indigo-600"
+							class="h-4 w-4 text-sky-600"
 							fill="none"
 							viewBox="0 0 24 24"
 							stroke-width="1.5"
@@ -132,7 +138,7 @@
 					</p>
 					<p class="flex items-center gap-2">
 						<svg
-							class="h-4 w-4 text-indigo-600"
+							class="h-4 w-4 text-sky-600"
 							fill="none"
 							viewBox="0 0 24 24"
 							stroke-width="1.5"
@@ -149,7 +155,7 @@
 								d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
 							/>
 						</svg>
-						<span>Western Canada</span>
+						<span>BC, Canada (PT timezone)</span>
 					</p>
 				</div>
 			</div>
@@ -158,7 +164,7 @@
 			<div>
 				<h3 class="text-sm font-semibold leading-6 text-gray-900">Services</h3>
 				<ul role="list" class="mt-6 space-y-4">
-					{#each services as { name, href }}
+					{#each services as { name, href } (name)}
 						<FooterItem {name} {href} />
 					{/each}
 				</ul>
@@ -168,7 +174,7 @@
 			<div>
 				<h3 class="text-sm font-semibold leading-6 text-gray-900">Company</h3>
 				<ul role="list" class="mt-6 space-y-4">
-					{#each company as { name, href }}
+					{#each company as { name, href } (href)}
 						<FooterItem {name} {href} />
 					{/each}
 				</ul>
@@ -176,7 +182,7 @@
 				<div class="mt-8 pt-6 border-t border-gray-200 lg:border-0 lg:pt-0 lg:mt-6">
 					<h3 class="text-sm font-semibold leading-6 text-gray-900 lg:hidden">Legal</h3>
 					<ul role="list" class="mt-4 lg:mt-0 space-y-3">
-						{#each legal as { name, href }}
+						{#each legal as { name, href } (href)}
 							<FooterItem {name} {href} />
 						{/each}
 					</ul>
@@ -187,11 +193,11 @@
 			<div>
 				<h3 class="text-sm font-semibold leading-6 text-gray-900">Featured Work</h3>
 				<ul role="list" class="mt-6 space-y-4">
-					{#each featuredProjects as { name, href, description }}
+					{#each featuredProjects as { name, href, description } (href)}
 						<li>
 							<a
 								{href}
-								class="block text-sm leading-6 text-gray-600 hover:text-indigo-600 transition-colors"
+								class="block text-sm leading-6 text-gray-600 hover:text-sky-600 transition-colors"
 							>
 								<div class="font-medium">{name}</div>
 								<div class="text-xs text-gray-500">{description}</div>
@@ -201,21 +207,21 @@
 					<li>
 						<a
 							href="/projects"
-							class="inline-block text-sm leading-6 text-indigo-600 hover:text-indigo-500 font-medium transition-colors"
+							class="inline-block text-sm leading-6 text-sky-600 hover:text-sky-500 font-medium transition-colors"
 						>
 							View All Projects →
 						</a>
 					</li>
 				</ul>
 				<!-- CTA Section -->
-				<div class="mt-8 p-4 bg-indigo-50 rounded-xl border border-indigo-100">
-					<h4 class="text-sm font-semibold text-indigo-900 mb-2">Ready to get started?</h4>
-					<p class="text-xs text-indigo-700 mb-3">Free consultation • No upfront costs</p>
+				<div class="mt-8 p-4 bg-sky-50 rounded-xl border border-sky-100">
+					<h4 class="text-sm font-semibold text-sky-900 mb-2">Ready to get started?</h4>
+					<p class="text-xs text-sky-700 mb-3">Free 15-min call • Scoped proposal in 48 hours</p>
 					<a
 						href="/contact"
-						class="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
+						class="inline-flex items-center text-sm font-medium text-sky-600 hover:text-sky-500 transition-colors"
 					>
-						Start Your Project
+						Book a Call
 						<svg
 							class="ml-1 h-3 w-3"
 							fill="none"

@@ -11,20 +11,20 @@
 			href: '/'
 		},
 		{
-			name: 'About',
-			href: '/about'
-		},
-		{
-			name: 'Development',
-			href: '/development'
+			name: 'Internal Tools',
+			href: '/internal-tools'
 		},
 		{
 			name: 'Projects',
 			href: '/projects'
 		},
 		{
-			name: 'AI Training',
-			href: '/ai'
+			name: 'Free Tools',
+			href: '/free-tools'
+		},
+		{
+			name: 'About',
+			href: '/about'
 		}
 	];
 	let isMobileMenuOpen = $state(false);
@@ -95,7 +95,7 @@
 			</button>
 		</div>
 		<div class="hidden lg:flex lg:gap-x-12">
-			{#each tabs as { name, href }}
+			{#each tabs as { name, href } (href)}
 				<a
 					{href}
 					class="text-sm font-semibold leading-6 text-gray-900 relative group"
@@ -110,12 +110,13 @@
 			{/each}
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
-			<a href="/contact" class="text-sm font-semibold leading-6 text-gray-900 relative group">
-				Contact <span aria-hidden="true">&rarr;</span>
-				<span
-					class="absolute -bottom-[5px] left-0 h-0.5 bg-gray-600 transition-all duration-300
-					{currentPath === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'}"
-				></span>
+			<a
+				href="/contact"
+				class="rounded-lg bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 transition-all duration-200"
+				data-track="book_call"
+				data-track-source="navbar"
+			>
+				Book a Call
 			</a>
 		</div>
 	</nav>
@@ -161,7 +162,7 @@
 				<div class="mt-6 flow-root">
 					<div class="-my-6 divide-y divide-gray-500/10">
 						<div class="space-y-2 py-6">
-							{#each tabs as { name, href }}
+							{#each tabs as { name, href } (href)}
 								<a
 									{href}
 									onclick={() => (isMobileMenuOpen = false)}
@@ -176,13 +177,15 @@
 								</a>
 							{/each}
 						</div>
-						<!-- <div class="py-6">
-						<a
-							href="#"
-							class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-							>Log in</a
-						>
-					</div> -->
+						<div class="py-6">
+							<a
+								href="/contact"
+								onclick={() => (isMobileMenuOpen = false)}
+								class="block rounded-lg bg-sky-600 px-4 py-3 text-center text-base font-semibold text-white shadow-sm hover:bg-sky-500 transition-all duration-200"
+							>
+								Book a Call
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

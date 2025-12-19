@@ -3,8 +3,6 @@
 	import VehicleQRCode from './VehicleQRCode.svelte';
 	import Icon from '@iconify/svelte';
 
-	let isVisible = $state(false);
-
 	// Function to handle image loading errors
 	function handleImageError(event: Event): void {
 		const img = event.currentTarget as HTMLImageElement;
@@ -13,7 +11,8 @@
 
 	// Add animation functionality
 	$effect(() => {
-		isVisible = true;
+		// Apply gray background to body
+		document.body.classList.add('bg-gray-50');
 
 		// Intersection observer for scroll animations
 		const observer = new IntersectionObserver(
@@ -31,6 +30,11 @@
 		document.querySelectorAll('.animate-on-scroll').forEach((el) => {
 			observer.observe(el);
 		});
+
+		// Cleanup
+		return () => {
+			document.body.classList.remove('bg-gray-50');
+		};
 	});
 </script>
 
@@ -55,7 +59,7 @@
 	></div>
 </div>
 
-<main class="min-h-screen bg-white text-gray-900">
+<main class="min-h-screen text-gray-900">
 	<!-- Hero Section -->
 	<section class="relative pt-24 pb-16 md:pt-32 md:pb-24 px-4">
 		<div class="max-w-7xl mx-auto">

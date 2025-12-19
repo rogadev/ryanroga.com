@@ -1,11 +1,7 @@
 <svelte:options runes={true} />
 
 <script lang="ts">
-	let isVisible = $state(false);
-
 	$effect(() => {
-		isVisible = true;
-
 		// Simple intersection observer for scroll animations
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -272,8 +268,8 @@
 						</p>
 						<p class="mt-6 text-lg leading-8 text-gray-600 text-pretty">
 							As a graduate of VIU's top-rated Web Development program, I have the technical skills.
-							But more importantly, I understand that your website isn't just a pretty brochure—it's
-							a business tool that needs to work as hard as you do.
+							But more importantly, I understand that your website isn't just a pretty brochure -
+							it's a business tool that needs to work as hard as you do.
 						</p>
 						<div class="mt-8 space-y-6">
 							<div class="flex items-start gap-4">
@@ -436,7 +432,7 @@
 								<h3 class="text-xl font-semibold text-gray-900">Grow Together</h3>
 							</div>
 							<p class="text-gray-600 mb-4">
-								As your business grows, your website should too. I'm here for the long haul—new
+								As your business grows, your website should too. I'm here for the long haul - new
 								features, performance improvements, or just someone to bounce ideas off of.
 							</p>
 							<div class="text-sm text-indigo-700 bg-indigo-50 rounded-lg p-3">
@@ -646,7 +642,7 @@
 				</h2>
 				<p class="mt-6 text-lg leading-8 text-indigo-100 text-pretty">
 					Let's have an honest conversation about your business and what you're trying to achieve.
-					No sales pitch, no pressure—just straight talk about what's possible.
+					No sales pitch, no pressure - just straight talk about what's possible.
 				</p>
 				<div class="mt-10 flex items-center justify-center gap-x-6">
 					<a

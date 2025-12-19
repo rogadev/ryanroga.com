@@ -1,9 +1,5 @@
 <script>
-	let isVisible = $state(false);
-
 	$effect(() => {
-		isVisible = true;
-
 		// Intersection observer for scroll animations
 		const observer = new IntersectionObserver(
 			(entries) => {

@@ -300,9 +300,8 @@
 								<div class="flex items-center">
 									<Icon icon="mdi:earth" class="w-5 h-5 text-indigo-600 mr-3" />
 									<span class="text-gray-700"
-										>Website: <a
-											href="/contact#choose-how-to-connect"
-											class="text-indigo-600 hover:text-indigo-500">roga.dev/contact</a
+										>Website: <a href="/contact#book" class="text-indigo-600 hover:text-indigo-500"
+											>roga.dev/contact</a
 										></span
 									>
 								</div>

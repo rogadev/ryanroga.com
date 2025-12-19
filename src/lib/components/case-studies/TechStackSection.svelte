@@ -49,6 +49,7 @@
 					>
 						<div class="w-16 h-16 mb-4 flex items-center justify-center">
 							<svg viewBox="0 0 24 24" class="w-12 h-12 text-{tech.color}-500">
+								<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 								{@html tech.icon}
 							</svg>
 						</div>
