@@ -337,7 +337,7 @@
 								<li class="flex items-start gap-2">
 									<span class="text-green-600 font-bold">✓</span>
 									<span
-										><strong>Monthly maintenance plans:</strong> Starting at $99/month for updates, backups,
+										><strong>Monthly maintenance plans:</strong> Starting at $249/month for updates, monitoring,
 										and security</span
 									>
 								</li>

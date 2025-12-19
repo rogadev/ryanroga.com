@@ -11,14 +11,14 @@
 				I'll point you in the right direction. No pitch, no pressure.
 			</p>
 			<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
-			<a
-				href="/contact"
-				class="rounded-lg bg-white px-8 py-4 text-base font-semibold text-sky-700 shadow-lg hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200 hover:shadow-xl hover:scale-105"
-				data-track="book_call"
-				data-track-source="final_cta"
-			>
-				Book a free call
-			</a>
+				<a
+					href="/contact"
+					class="rounded-lg bg-white px-8 py-4 text-base font-semibold text-sky-700 shadow-lg hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200 hover:shadow-xl hover:scale-105"
+					data-track="book_call"
+					data-track-source="final_cta"
+				>
+					Book a free call
+				</a>
 				<a
 					href="/projects"
 					class="rounded-lg border-2 border-white px-8 py-4 text-base font-semibold text-white hover:bg-white hover:text-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
@@ -26,7 +26,9 @@
 					See case studies
 				</a>
 			</div>
-			<div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-sky-100">
+			<div
+				class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-sky-100"
+			>
 				<span class="flex items-center gap-2">
 					<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
 						<path

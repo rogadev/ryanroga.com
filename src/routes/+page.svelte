@@ -89,10 +89,7 @@
 				"name": "North America"
 			},
 			"priceRange": "$$",
-			"sameAs": [
-				"https://github.com/rogadev",
-				"https://www.linkedin.com/in/rogadev/"
-			],
+			"sameAs": ["https://github.com/rogadev", "https://www.linkedin.com/in/rogadev/"],
 			"hasOfferCatalog": {
 				"@type": "OfferCatalog",
 				"name": "Web Development Services",
@@ -153,7 +150,7 @@
 					"name": "Do you provide ongoing support after launch?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "Yes. Every project includes 30 days of free support. Monthly maintenance plans are available starting at $199/month for ongoing updates, monitoring, and feature additions."
+						"text": "Yes. Every project includes 30 days of free support. Monthly maintenance plans are available starting at $249/month for ongoing updates, monitoring, and feature additions."
 					}
 				}
 			]
