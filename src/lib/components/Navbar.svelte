@@ -95,7 +95,7 @@
 			</button>
 		</div>
 		<div class="hidden lg:flex lg:gap-x-12">
-			{#each tabs as { name, href }}
+			{#each tabs as { name, href } (href)}
 				<a
 					{href}
 					class="text-sm font-semibold leading-6 text-gray-900 relative group"
@@ -110,14 +110,14 @@
 			{/each}
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
-		<a
-			href="/contact"
-			class="rounded-lg bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 transition-all duration-200"
-			data-track="book_call"
-			data-track-source="navbar"
-		>
-			Book a Call
-		</a>
+			<a
+				href="/contact"
+				class="rounded-lg bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 transition-all duration-200"
+				data-track="book_call"
+				data-track-source="navbar"
+			>
+				Book a Call
+			</a>
 		</div>
 	</nav>
 	<!-- Mobile menu, show/hide based on menu open state. -->
@@ -162,7 +162,7 @@
 				<div class="mt-6 flow-root">
 					<div class="-my-6 divide-y divide-gray-500/10">
 						<div class="space-y-2 py-6">
-							{#each tabs as { name, href }}
+							{#each tabs as { name, href } (href)}
 								<a
 									{href}
 									onclick={() => (isMobileMenuOpen = false)}

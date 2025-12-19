@@ -114,7 +114,7 @@
 					across North America.
 				</p>
 				<div class="flex space-x-5">
-					{#each socials as { label, href, icon }}
+					{#each socials as { label, href, icon } (href)}
 						<FooterSocial {label} {href} {icon} />
 					{/each}
 				</div>
@@ -164,7 +164,7 @@
 			<div>
 				<h3 class="text-sm font-semibold leading-6 text-gray-900">Services</h3>
 				<ul role="list" class="mt-6 space-y-4">
-					{#each services as { name, href }}
+					{#each services as { name, href } (href)}
 						<FooterItem {name} {href} />
 					{/each}
 				</ul>
@@ -174,7 +174,7 @@
 			<div>
 				<h3 class="text-sm font-semibold leading-6 text-gray-900">Company</h3>
 				<ul role="list" class="mt-6 space-y-4">
-					{#each company as { name, href }}
+					{#each company as { name, href } (href)}
 						<FooterItem {name} {href} />
 					{/each}
 				</ul>
@@ -182,7 +182,7 @@
 				<div class="mt-8 pt-6 border-t border-gray-200 lg:border-0 lg:pt-0 lg:mt-6">
 					<h3 class="text-sm font-semibold leading-6 text-gray-900 lg:hidden">Legal</h3>
 					<ul role="list" class="mt-4 lg:mt-0 space-y-3">
-						{#each legal as { name, href }}
+						{#each legal as { name, href } (href)}
 							<FooterItem {name} {href} />
 						{/each}
 					</ul>
@@ -193,7 +193,7 @@
 			<div>
 				<h3 class="text-sm font-semibold leading-6 text-gray-900">Featured Work</h3>
 				<ul role="list" class="mt-6 space-y-4">
-					{#each featuredProjects as { name, href, description }}
+					{#each featuredProjects as { name, href, description } (href)}
 						<li>
 							<a
 								{href}
