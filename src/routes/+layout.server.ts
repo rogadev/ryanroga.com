@@ -2,4 +2,4 @@
 export const prerender = true;
 
 // Optional: Configure trailingSlash behavior
-export const trailingSlash = 'ignore'; 
+export const trailingSlash = 'ignore';

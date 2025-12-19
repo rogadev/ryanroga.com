@@ -64,4 +64,3 @@ export function initScrollAnimations(threshold = 0.1): () => void {
 
 	return () => observer.disconnect();
 }
-
