@@ -94,7 +94,10 @@ export function trackCTAClick(ctaName: string, destination?: string): void {
 /**
  * Track page views for specific page types
  */
-export function trackPageView(pageType: 'case_study' | 'service' | 'contact' | 'project', pageName: string): void {
+export function trackPageView(
+	pageType: 'case_study' | 'service' | 'contact' | 'project',
+	pageName: string
+): void {
 	const eventMap = {
 		case_study: 'case_study_view',
 		service: 'service_page_view',
@@ -179,4 +182,3 @@ export function initClickTracking(): () => void {
 		document.removeEventListener('click', handleClick);
 	};
 }
-
