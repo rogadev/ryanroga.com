@@ -167,7 +167,7 @@
 					{#if openItems[3]}
 						<div class="px-6 pb-6">
 							<p class="text-gray-600 mb-4">
-								Options tailored to your team—choose self‑managed, developer‑managed, or hybrid:
+								Options tailored to your team - choose self‑managed, developer‑managed, or hybrid:
 							</p>
 							<div class="mb-4">
 								<h5 class="font-semibold text-gray-900 mb-2">Dynamic Web Applications:</h5>

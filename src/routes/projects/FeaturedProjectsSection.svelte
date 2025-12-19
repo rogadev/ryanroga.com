@@ -6,24 +6,35 @@
 	// Project data - this could come from an API or data file
 	const featuredProjects = [
 		{
+			id: 'techcentral-telus',
+			title: 'TechCentral (TELUS)',
+			slug: 'techcentral-telus',
+			client: 'TELUS Communications',
+			description:
+				'Internal content delivery platform serving employees across Canada in English and French with unified search, preferences, and CMS preview workflows.',
+			image: '/logos/TELUS_Logo.svg',
+			tags: ['Internal Platform', 'Next.js 15', 'Bilingual', 'Enterprise']
+		},
+		{
 			id: 'carevo-logistics',
 			title: 'CarEvo Lot Logistics',
 			slug: 'lot-logistics-web-application',
 			client: 'CarEvo',
 			description:
-				"Vehicle tracking system for CarEvo's lot team to monitor service appointments and vendor trips",
+				"Vehicle tracking system that replaced spreadsheets with QR-based inventory management, achieving 99.9% visibility and 40% efficiency gains.",
 			image: '/images/Product_example.png',
-			tags: ['Web Application', 'Logistics', 'Tracking System']
+			tags: ['Internal Tool', 'Vue.js', 'Supabase', 'Logistics']
 		},
 		{
-			id: 'eztripr',
-			title: 'EZTripr Trip Tracker',
-			slug: 'eztripr-trip-tracker',
-			client: 'Granny Go Go',
+			id: 'viu-career-outlooks',
+			title: 'VIU Career Outlooks',
+			slug: null, // no link - under renovation
+			client: 'Vancouver Island University',
 			description:
-				'Medical patient trip tracking application for Granny Go Go drivers across Vancouver Island',
-			image: '/images/eztripr.png',
-			tags: ['Healthcare', 'Transportation', 'Tracking System']
+				'Educational platform connecting academic programs to real employment data, serving 10K+ students across BC.',
+			notice: 'Currently undergoing revamp and improvements',
+			image: '/logos/VIU-logo.png',
+			tags: ['Educational Platform', 'SvelteKit', 'Data Integration']
 		}
 	];
 
@@ -40,12 +51,11 @@
 		<div class="text-center mb-16 animate-on-scroll">
 			<h2 class="inline-block text-4xl md:text-5xl font-bold relative">
 				<span class="relative z-10 text-gray-900">Featured Projects</span>
-				<span class="absolute -bottom-3 left-0 w-full h-3 bg-blue-500/30 transform -skew-x-3"
+				<span class="absolute -bottom-3 left-0 w-full h-3 bg-sky-500/30 transform -skew-x-3"
 				></span>
 			</h2>
 			<p class="mt-6 text-xl text-gray-700 max-w-2xl mx-auto">
-				Explore our recent work and discover how we've helped businesses transform their digital
-				presence
+				Internal tools and web applications that teams rely on every day
 			</p>
 		</div>
 

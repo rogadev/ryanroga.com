@@ -11,8 +11,8 @@
 				Technology that Reduces Cost &amp; Risk
 			</h2>
 			<p class="mt-4 text-lg leading-8 text-gray-600 text-pretty">
-				Modern tools chosen to keep your app fast, secure, and easy to maintain—without locking you
-				in.
+				Modern tools chosen to keep your app fast, secure, and easy to maintain - without locking
+				you in.
 			</p>
 		</div>
 

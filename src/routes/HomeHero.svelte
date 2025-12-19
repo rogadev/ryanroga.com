@@ -16,14 +16,15 @@
 				id="hero-heading"
 				class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl"
 			>
-				Transform Your Business with
+				Replace Spreadsheets with
 				<span class="bg-gradient-to-r from-sky-600 to-teal-500 bg-clip-text text-transparent">
-					Custom Web Applications
+					Internal Tools That Work
 				</span>
 			</h1>
 			<p class="mt-6 text-lg leading-8 text-gray-600 sm:text-xl text-balance">
-				We design and build fast, reliable web apps and conversion-focused websites for Canadian
-				businesses. Fixed pricing, clear timelines, measurable outcomes.
+				I build dashboards, admin panels, and workflow tools that eliminate manual processes, reduce
+				errors, and give your team real-time visibility. Solo developer delivering
+				enterprise-quality apps for growing businesses across North America.
 			</p>
 			<div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
 				<div class="flex items-center justify-center gap-2 text-sm text-gray-600">
@@ -34,7 +35,7 @@
 							clip-rule="evenodd"
 						/>
 					</svg>
-					<span class="whitespace-nowrap">Flexible scope & pricing</span>
+					<span class="whitespace-nowrap">MVP in 6–12 weeks</span>
 				</div>
 				<div class="flex items-center justify-center gap-2 text-sm text-gray-600">
 					<svg class="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -55,15 +56,17 @@
 							clip-rule="evenodd"
 						/>
 					</svg>
-					<span class="whitespace-nowrap">Own your code & data</span>
+					<span class="whitespace-nowrap">You own the code</span>
 				</div>
 			</div>
 			<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
 				<a
 					href="/contact"
 					class="rounded-lg bg-sky-600 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 transition-all duration-200 hover:shadow-xl hover:scale-105"
+					data-track="book_call"
+					data-track-source="hero"
 				>
-					Get a free 15-min consult
+					Book a free 15-min call
 				</a>
 				<a
 					href="/projects"
@@ -74,7 +77,8 @@
 			</div>
 			<div class="mt-8 text-sm text-gray-500">
 				<p class="text-balance">
-					Trusted by Canadian businesses • Transparent pricing • Free consultation
+					Trusted by established companies like TELUS and by growing businesses across North
+					America.
 				</p>
 			</div>
 		</div>

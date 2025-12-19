@@ -31,6 +31,9 @@
 
 	// Add animation functionality
 	$effect(() => {
+		// Apply gray background to body
+		document.body.classList.add('bg-gray-50');
+		
 		// Intersection observer for scroll animations
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -53,6 +56,7 @@
 
 		// Cleanup
 		return () => {
+			document.body.classList.remove('bg-gray-50');
 			document.removeEventListener('keydown', handleKeydown);
 		};
 	});
@@ -79,7 +83,7 @@
 	></div>
 </div>
 
-<main class="min-h-screen bg-white text-gray-900">
+<main class="min-h-screen text-gray-900">
 	<!-- Hero Section -->
 	<section class="relative pt-16 pb-12 md:pt-24 md:pb-16 px-4">
 		<div class="max-w-7xl mx-auto">
