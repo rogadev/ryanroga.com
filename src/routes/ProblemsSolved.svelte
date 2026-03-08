@@ -14,7 +14,6 @@
 
 		<div class="mx-auto mt-14 max-w-6xl">
 			<div class="grid gap-8 lg:grid-cols-3">
-				<!-- Card 1 -->
 				<div
 					class="group flex h-full flex-col rounded-2xl bg-white border border-gray-200 hover:border-sky-200 transition-all duration-300 hover:shadow-lg"
 				>
@@ -70,7 +69,6 @@
 					</div>
 				</div>
 
-				<!-- Card 2 -->
 				<div
 					class="group flex h-full flex-col rounded-2xl bg-white border border-gray-200 hover:border-sky-200 transition-all duration-300 hover:shadow-lg"
 				>
@@ -131,7 +129,6 @@
 					</div>
 				</div>
 
-				<!-- Card 3 -->
 				<div
 					class="group flex h-full flex-col rounded-2xl bg-white border border-gray-200 hover:border-sky-200 transition-all duration-300 hover:shadow-lg"
 				>

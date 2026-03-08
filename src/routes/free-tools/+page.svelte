@@ -103,7 +103,6 @@
 	<link rel="canonical" href="https://roga.dev/free-tools" />
 </svelte:head>
 
-<!-- Hero — compact, integrated -->
 <div
 	class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 	aria-hidden="true"
@@ -130,7 +129,6 @@
 	</div>
 </section>
 
-<!-- Tools Grid -->
 <section class="pb-16 sm:pb-24 pt-4">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="grid gap-6 sm:grid-cols-2">
@@ -142,8 +140,8 @@
 					rel="noopener noreferrer"
 					class="group rounded-2xl bg-white p-6 sm:p-8 shadow-sm border {colors.border} transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col"
 				>
-					<!-- Header: icon + name + tags -->
-					<div class="flex items-start gap-4 mb-4">
+				<!-- Header: icon + name + tags -->
+				<div class="flex items-start gap-4 mb-4">
 						<div
 							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl {colors.iconBg} transition-colors"
 						>
@@ -209,7 +207,6 @@
 	</div>
 </section>
 
-<!-- Why Free + CTA — compact combined section -->
 <section class="py-12 sm:py-16 bg-gray-50">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl flex flex-col sm:flex-row items-center gap-6 sm:gap-10">

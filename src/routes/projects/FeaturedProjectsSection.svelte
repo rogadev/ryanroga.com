@@ -3,7 +3,6 @@
 <script lang="ts">
 	import ProjectCard from './ProjectCard.svelte';
 
-	// Project data - this could come from an API or data file
 	const featuredProjects = [
 		{
 			id: 'techcentral-telus',
@@ -59,14 +58,12 @@
 		}
 	];
 
-	// Function to handle image loading errors
 	function handleImageError(event: Event, fallbackText: string) {
 		const target = event.target as HTMLImageElement;
 		target.src = `https://placehold.co/800x450/e2e8f0/475569?text=${encodeURIComponent(fallbackText)}`;
 	}
 </script>
 
-<!-- Featured Projects Section -->
 <section id="featured-projects" class="py-20 px-4 bg-white">
 	<div class="max-w-7xl mx-auto">
 		<div class="text-center mb-16 animate-on-scroll">

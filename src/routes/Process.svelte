@@ -13,7 +13,6 @@
 
 		<div class="mx-auto mt-16 max-w-6xl">
 			<div class="grid gap-8 lg:grid-cols-4">
-				<!-- Step 1: Discovery -->
 				<div class="relative">
 					<div class="flex flex-col items-center text-center">
 						<div
@@ -59,13 +58,12 @@
 							</li>
 						</ul>
 					</div>
-					<!-- Connector line -->
-					<div
-						class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-indigo-200 -translate-y-1/2"
-					></div>
+				<!-- Horizontal connector between steps (desktop only) -->
+				<div
+					class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-indigo-200 -translate-y-1/2"
+				></div>
 				</div>
 
-				<!-- Step 2: Design -->
 				<div class="relative">
 					<div class="flex flex-col items-center text-center">
 						<div
@@ -110,13 +108,12 @@
 							</li>
 						</ul>
 					</div>
-					<!-- Connector line -->
+					<!-- Horizontal connector between steps (desktop only) -->
 					<div
 						class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-indigo-200 -translate-y-1/2"
 					></div>
 				</div>
 
-				<!-- Step 3: Development -->
 				<div class="relative">
 					<div class="flex flex-col items-center text-center">
 						<div
@@ -161,13 +158,12 @@
 							</li>
 						</ul>
 					</div>
-					<!-- Connector line -->
+					<!-- Horizontal connector between steps (desktop only) -->
 					<div
 						class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-indigo-200 -translate-y-1/2"
 					></div>
 				</div>
 
-				<!-- Step 4: Launch -->
 				<div class="relative">
 					<div class="flex flex-col items-center text-center">
 						<div
@@ -216,7 +212,6 @@
 			</div>
 		</div>
 
-		<!-- Timeline & Guarantees -->
 		<div class="mx-auto mt-16 max-w-4xl">
 			<div class="rounded-2xl bg-gray-50 p-8 shadow-sm border border-gray-200">
 				<h3 class="text-xl font-semibold text-gray-900 text-center mb-8">Project Guarantees</h3>

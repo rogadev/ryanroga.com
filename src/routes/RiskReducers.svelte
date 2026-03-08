@@ -202,7 +202,6 @@
 			</div>
 		</div>
 
-		<!-- Support CTA -->
 		<div class="mx-auto mt-16 max-w-4xl">
 			<div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-200">
 				<div class="grid gap-8 lg:grid-cols-2 items-center">

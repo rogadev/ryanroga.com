@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 
-	// Animation setup
+	// Observe elements with .animate-on-scroll and add .animate-in once visible.
+	// unobserve after trigger so the animation fires only once per element.
 	$effect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -55,7 +56,6 @@
 	</script>
 </svelte:head>
 
-<!-- Hero -->
 <div
 	class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 	aria-hidden="true"
@@ -123,7 +123,6 @@
 	</div>
 </section>
 
-<!-- Executive Summary -->
 <section class="py-16 sm:py-24 bg-gray-50">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -153,7 +152,6 @@
 	</div>
 </section>
 
-<!-- The Problem -->
 <section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -190,7 +188,6 @@
 	</div>
 </section>
 
-<!-- The Solution -->
 <section class="py-16 sm:py-24 bg-gray-50">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -418,7 +415,6 @@
 	</div>
 </section>
 
-<!-- Technical Implementation -->
 <section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -566,7 +562,6 @@
 	</div>
 </section>
 
-<!-- Business Impact -->
 <section class="py-16 sm:py-24 bg-gray-50">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -716,7 +711,6 @@
 	</div>
 </section>
 
-<!-- Solo Developer Responsibilities -->
 <section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -773,7 +767,6 @@
 	</div>
 </section>
 
-<!-- CTA -->
 <section class="py-16 sm:py-24 bg-gradient-to-r from-sky-600 to-teal-600">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
