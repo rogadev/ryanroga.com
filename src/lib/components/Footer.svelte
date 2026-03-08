@@ -79,9 +79,9 @@
 			description: 'Inventory management system'
 		},
 		{
-			name: 'VIU Career Outlooks',
-			href: 'https://career-outlooks.viu.ca',
-			description: 'Educational web platform'
+			name: 'E&EO Career Outlooks',
+			href: 'https://eaeo.ca',
+			description: 'Canadian career investigation platform'
 		}
 	];
 </script>

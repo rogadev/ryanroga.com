@@ -4,11 +4,11 @@
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-balance">
-				Built for Security, Ownership, and Long-Term Success
+				Your Investment Is Protected
 			</h2>
 			<p class="mt-4 text-lg leading-8 text-gray-600 text-pretty">
-				You're investing in a business tool - not a dependency. Here's how I protect your
-				investment.
+				You're investing in software that should serve your business for years. Here's how I make
+				sure it does.
 			</p>
 		</div>
 

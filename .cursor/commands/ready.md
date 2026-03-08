@@ -51,7 +51,7 @@ This runs in order: `pnpm fix` → unit tests → integration tests → build �
 
 ## Summary
 
-| State | Action |
-|-------|--------|
+| State               | Action                                                              |
+| ------------------- | ------------------------------------------------------------------- |
 | `pnpm ready` failed | Fix issues → run `pnpm ready` again → do not commit until it passes |
-| `pnpm ready` passed | Create commit(s) from uncommitted files with good messages |
+| `pnpm ready` passed | Create commit(s) from uncommitted files with good messages          |

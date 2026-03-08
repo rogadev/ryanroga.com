@@ -33,7 +33,7 @@ $ARGUMENTS
 title: 'Human-readable title (sentence case)'
 date: YYYY-MM-DD
 summary: 'One sentence for cards/lists. User benefit, not implementation.'
-category: feature   # feature | improvement | fix
+category: feature # feature | improvement | fix
 ---
 ```
 

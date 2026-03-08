@@ -4,11 +4,11 @@
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-balance">
-				Ready to Replace Spreadsheets with Real Tools?
+				Let's Build Something That Moves Your Business Forward
 			</h2>
 			<p class="mt-6 text-lg leading-8 text-sky-100 text-pretty">
-				Book a free 15-minute call. Tell me what's broken. I'll tell you if I can help - and if not,
-				I'll point you in the right direction. No pitch, no pressure.
+				Book a free 15-minute call. Tell me what you're trying to accomplish and I'll give you
+				honest advice on the best path forward - even if that means I'm not the right fit.
 			</p>
 			<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
 				<a
@@ -17,13 +17,13 @@
 					data-track="book_call"
 					data-track-source="final_cta"
 				>
-					Book a free call
+					Book a free consultation
 				</a>
 				<a
 					href="/projects"
 					class="rounded-lg border-2 border-white px-8 py-4 text-base font-semibold text-white hover:bg-white hover:text-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
 				>
-					See case studies
+					View past projects
 				</a>
 			</div>
 			<div
@@ -37,7 +37,7 @@
 							clip-rule="evenodd"
 						/>
 					</svg>
-					Free consultation
+					No obligation, no pitch
 				</span>
 				<span class="flex items-center gap-2">
 					<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -47,7 +47,7 @@
 							clip-rule="evenodd"
 						/>
 					</svg>
-					Scoped proposal in 48 hours
+					Proposal within 48 hours
 				</span>
 				<span class="flex items-center gap-2">
 					<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -57,7 +57,7 @@
 							clip-rule="evenodd"
 						/>
 					</svg>
-					Fixed pricing options
+					Transparent, fixed pricing
 				</span>
 			</div>
 		</div>

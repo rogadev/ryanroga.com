@@ -15,6 +15,7 @@ If provided, treat `$ARGUMENTS` as an optional **space-separated list of file/di
 Make `pnpm lint` pass with **minimal, high-quality diffs**.
 
 ## Rules (important)
+
 - Use **pnpm** only.
 - Prefer **small, targeted fixes** over broad refactors or formatting the whole repo.
 - Do **not** change behavior unless the lint error indicates a real bug.
@@ -27,6 +28,7 @@ Make `pnpm lint` pass with **minimal, high-quality diffs**.
 - If Prettier fails to parse a `.svelte` file, check `AGENTS.md` → **“Svelte: common lint/check gotchas”** (common cause: `await` inside a non-`async` function, e.g. `await goto(...)`).
 
 ## Procedure (fast + reliable)
+
 1. Run `pnpm lint` and capture the full output.
 2. Classify failures:
    - **Prettier failures**: fix only the files mentioned.
@@ -38,7 +40,9 @@ Make `pnpm lint` pass with **minimal, high-quality diffs**.
 4. Repeat steps 2–3 until `pnpm lint` is clean.
 
 ## Output requirements
+
 When finished, report:
+
 - The **exact command(s)** you ran (especially any `--fix`/`--write` commands).
 - A short list of **files changed** and **what was fixed** (1 line per file, high-signal).
 - Confirmation: `pnpm lint` passes.

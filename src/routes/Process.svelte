@@ -1,13 +1,13 @@
 <svelte:options runes={true} />
 
-<section class="bg-gray-50 py-16 sm:py-24">
+<section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-				A Predictable, Low‑Risk Process
+				How We'll Work Together
 			</h2>
 			<p class="mt-4 text-lg leading-8 text-gray-600">
-				Clear milestones, visible progress, and acceptance criteria at every step.
+				A straightforward process with clear milestones, weekly progress, and no surprises.
 			</p>
 		</div>
 
@@ -218,7 +218,7 @@
 
 		<!-- Timeline & Guarantees -->
 		<div class="mx-auto mt-16 max-w-4xl">
-			<div class="rounded-2xl bg-white p-8 shadow-sm">
+			<div class="rounded-2xl bg-gray-50 p-8 shadow-sm border border-gray-200">
 				<h3 class="text-xl font-semibold text-gray-900 text-center mb-8">Project Guarantees</h3>
 				<div class="grid gap-8 md:grid-cols-3">
 					<div class="text-center">

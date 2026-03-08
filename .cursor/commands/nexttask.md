@@ -1,8 +1,7 @@
 # NextTask — Cursor Agent Command
 
 > **Project:** Roga Labs — `rogadev/plants` (SvelteKit)
-> **GitHub Project:** #4 — <https://github.com/users/rogadev/projects/4/views/1>
-> **Phase:** Pre-alpha (greenfield — no legacy, no backwards compatibility)
+> **GitHub Project:** #4 — <https://github.com/users/rogadev/projects/4/views/1> > **Phase:** Pre-alpha (greenfield — no legacy, no backwards compatibility)
 > **Base Branch:** `dev`
 
 ---
@@ -107,20 +106,20 @@ Before writing anything, orient yourself:
 
 Follow the **testing pyramid** strictly:
 
-| Layer | Scope | Rule |
-|---|---|---|
-| **Unit tests** | Functions, utilities, components in isolation | **Test everything.** Every function, every edge case, every branch. |
-| **Integration tests** | Module interactions, API routes, data flow | **Test important things.** Critical paths and contracts between modules. |
-| **E2E tests** | Full user flows through the UI | **Only if absolutely essential.** When the UI interaction cannot be verified any other way. |
+| Layer                 | Scope                                         | Rule                                                                                        |
+| --------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **Unit tests**        | Functions, utilities, components in isolation | **Test everything.** Every function, every edge case, every branch.                         |
+| **Integration tests** | Module interactions, API routes, data flow    | **Test important things.** Critical paths and contracts between modules.                    |
+| **E2E tests**         | Full user flows through the UI                | **Only if absolutely essential.** When the UI interaction cannot be verified any other way. |
 
 #### File Naming Conventions
 
-| Test type | Pattern | Example |
-|---|---|---|
-| Svelte component tests | `*.svelte.test.ts` | `Button.svelte.test.ts` |
-| Server / utility unit tests | `*.test.ts` | `qr-utils.test.ts` |
-| Integration tests | `*.integration.test.ts` | `stage-api.integration.test.ts` |
-| E2E tests (Playwright) | `tests/*.spec.ts` | `tests/scanner.spec.ts` |
+| Test type                   | Pattern                 | Example                         |
+| --------------------------- | ----------------------- | ------------------------------- |
+| Svelte component tests      | `*.svelte.test.ts`      | `Button.svelte.test.ts`         |
+| Server / utility unit tests | `*.test.ts`             | `qr-utils.test.ts`              |
+| Integration tests           | `*.integration.test.ts` | `stage-api.integration.test.ts` |
+| E2E tests (Playwright)      | `tests/*.spec.ts`       | `tests/scanner.spec.ts`         |
 
 #### TDD Cycle
 
@@ -246,13 +245,13 @@ These IDs are needed for project board status updates. If commands fail, re-disc
 gh project field-list 4 --owner rogadev --format json
 ```
 
-| Resource | ID |
-|---|---|
-| Project node ID | `PVT_kwHOA6j31c4BQgjr` |
-| Status field ID | `PVTSSF_lAHOA6j31c4BQgjrzg-m04s` |
-| "Todo" option | `f75ad846` |
-| "In progress" option | `47fc9ee4` |
-| "Done" option | `98236657` |
+| Resource             | ID                               |
+| -------------------- | -------------------------------- |
+| Project node ID      | `PVT_kwHOA6j31c4BQgjr`           |
+| Status field ID      | `PVTSSF_lAHOA6j31c4BQgjrzg-m04s` |
+| "Todo" option        | `f75ad846`                       |
+| "In progress" option | `47fc9ee4`                       |
+| "Done" option        | `98236657`                       |
 
 ---
 

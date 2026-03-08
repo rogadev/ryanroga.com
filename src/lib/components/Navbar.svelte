@@ -44,8 +44,8 @@
 </script>
 
 <header
-	class="absolute inset-x-0 top-0 z-50 transition-all duration-300 bg-transparent backdrop-blur-none shadow-none {isScrolled
-		? 'bg-white/80 backdrop-blur-md shadow-sm'
+	class="absolute inset-x-0 top-0 z-50 transition-all duration-300 bg-white {isScrolled
+		? 'shadow-sm'
 		: ''}"
 >
 	<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">

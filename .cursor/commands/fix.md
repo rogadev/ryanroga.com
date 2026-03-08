@@ -20,23 +20,29 @@ Tip: If `pnpm check` fails with a Svelte-specific message, prefer validating beh
 ## Process
 
 ### 1. Auto-fix formatting + lint where possible
+
 ```bash
 pnpm lint:fix
 ```
+
 - **Analyze output carefully** — don't just run and move on
 - This runs **Prettier write** + **ESLint --fix**; re-run if fixes cascade
 - If anything remains, fix manually (don't “paper over” with `any` unless truly unavoidable)
 
 ### 2. Verify lint (clean check)
+
 ```bash
 pnpm lint
 ```
+
 - Ensures **Prettier check** + **ESLint** pass without errors
 
 ### 3. Run SvelteKit type + quality checks
+
 ```bash
 pnpm check
 ```
+
 - Runs `svelte-kit sync` and then `svelte-check` against `tsconfig.json`
 - Fix all Svelte/TypeScript errors (component props, events, bindings, action data, etc.)
 
@@ -51,6 +57,7 @@ pnpm check
 ## Success Criteria
 
 These commands must run without errors:
+
 - `pnpm lint`
 - `pnpm check`
 

@@ -59,6 +59,7 @@ Apply fixes following these principles:
 ### Step 6: Report to User
 
 Summarize:
+
 - What the error was
 - Why it happened (root cause)
 - What you fixed
