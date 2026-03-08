@@ -15,7 +15,6 @@
  * - scroll_depth: User scrolls to 50%, 75%, or 100% of page
  */
 
-// Event types for type safety
 export type AnalyticsEvent =
 	| 'book_call_click'
 	| 'case_study_view'
@@ -33,12 +32,10 @@ export interface EventParams {
 	[key: string]: string | number | boolean | undefined;
 }
 
-// Check if we're in a browser environment
 const isBrowser = typeof window !== 'undefined';
 
-// Check if Google Analytics is available
 function hasGtag(): boolean {
-	return isBrowser && typeof (window as unknown as { gtag?: unknown; }).gtag === 'function';
+	return isBrowser && typeof (window as unknown as { gtag?: unknown }).gtag === 'function';
 }
 
 /**
@@ -54,19 +51,14 @@ export function trackEvent(eventName: AnalyticsEvent, params?: EventParams): voi
 		...params
 	};
 
-	// Development logging
 	if (import.meta.env.DEV) {
 		console.log('[Analytics]', eventName, eventData);
 	}
 
-	// Send to Google Analytics if available
 	if (hasGtag()) {
-		const gtag = (window as unknown as { gtag: (...args: unknown[]) => void; }).gtag;
+		const gtag = (window as unknown as { gtag: (...args: unknown[]) => void }).gtag;
 		gtag('event', eventName, params);
 	}
-
-	// You can add additional analytics providers here
-	// e.g., Plausible, Fathom, custom backend, etc.
 }
 
 /**
@@ -125,7 +117,7 @@ export function trackScrollDepth(depth: 25 | 50 | 75 | 100): void {
  * Initialize scroll depth tracking for the current page
  */
 export function initScrollTracking(): () => void {
-	if (!isBrowser) return () => { };
+	if (!isBrowser) return () => {};
 
 	const trackedDepths = new Set<number>();
 
@@ -162,7 +154,7 @@ export function initScrollTracking(): () => void {
  * <a href="/contact" data-track="book_call" data-track-source="hero">Book a Call</a>
  */
 export function initClickTracking(): () => void {
-	if (!isBrowser) return () => { };
+	if (!isBrowser) return () => {};
 
 	const handleClick = (event: MouseEvent) => {
 		const target = event.target as HTMLElement;

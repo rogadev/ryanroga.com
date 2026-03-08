@@ -13,14 +13,14 @@
 </script>
 
 <svelte:head>
-	<title>Internal Tools & Web Applications for Growing Businesses | Roga Web Development</title>
+	<title>Custom Web Apps, SaaS & Business Websites | Roga Web Development</title>
 	<meta
 		name="description"
-		content="Replace spreadsheets with dashboards, admin panels, and workflow tools that actually work. Solo developer delivering enterprise-quality internal tools for businesses across North America. MVP in 6-12 weeks."
+		content="Senior full-stack developer building custom web applications, SaaS platforms, internal tools, and business websites for growing companies across North America. Fixed pricing, you own the code."
 	/>
 	<meta
 		name="keywords"
-		content="internal tools developer, custom web applications, dashboards, admin panels, workflow automation, RBAC, audit logs, integrations, SvelteKit, Next.js, TypeScript"
+		content="custom web development, web application developer, SaaS development, business website, internal tools, workflow automation, full stack developer, freelance web developer, North America"
 	/>
 
 	<!-- Open Graph / Facebook -->
@@ -28,18 +28,18 @@
 	<meta property="og:url" content="https://roga.dev" />
 	<meta
 		property="og:title"
-		content="Internal Tools & Web Applications for Growing Businesses | Roga Web Development"
+		content="Custom Web Apps, SaaS & Business Websites | Roga Web Development"
 	/>
 	<meta
 		property="og:description"
-		content="Replace spreadsheets with dashboards, admin panels, and workflow tools that actually work. Solo developer delivering enterprise-quality internal tools for businesses across North America."
+		content="Full-stack developer building custom web applications, SaaS platforms, business websites, and internal tools. Transparent pricing. You own the code."
 	/>
 	<meta property="og:image" content="https://roga.dev/images/roga_dev_site_image.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta
 		property="og:image:alt"
-		content="Roga Web Development - Internal Tools & Web Applications"
+		content="Roga Web Development - Custom Software & Web Development"
 	/>
 	<meta property="og:site_name" content="Roga Web Development" />
 	<meta property="og:locale" content="en_US" />
@@ -49,16 +49,16 @@
 	<meta name="twitter:url" content="https://roga.dev" />
 	<meta
 		name="twitter:title"
-		content="Internal Tools & Web Applications for Growing Businesses | Roga Web Development"
+		content="Custom Web Apps, SaaS & Business Websites | Roga Web Development"
 	/>
 	<meta
 		name="twitter:description"
-		content="Replace spreadsheets with dashboards, admin panels, and workflow tools that actually work. Solo developer delivering enterprise-quality internal tools for businesses across North America."
+		content="Full-stack developer building custom web applications, SaaS platforms, business websites, and internal tools. Transparent pricing. You own the code."
 	/>
 	<meta name="twitter:image" content="https://roga.dev/images/roga_dev_site_image.png" />
 	<meta
 		name="twitter:image:alt"
-		content="Roga Web Development - Internal Tools & Web Applications"
+		content="Roga Web Development - Custom Software & Web Development"
 	/>
 
 	<!-- Additional Meta Tags -->
@@ -75,7 +75,7 @@
 			"@context": "https://schema.org",
 			"@type": "ProfessionalService",
 			"name": "Roga Web Development",
-			"description": "Custom internal tools, dashboards, admin panels, and web applications for growing businesses across North America",
+			"description": "Full-stack web developer building custom web applications, SaaS platforms, business websites, and internal tools for growing businesses across North America",
 			"url": "https://roga.dev",
 			"logo": "https://roga.dev/logo/android-chrome-512x512.png",
 			"image": "https://roga.dev/images/roga_dev_site_image.png",
@@ -98,24 +98,32 @@
 						"@type": "Offer",
 						"itemOffered": {
 							"@type": "Service",
-							"name": "Internal Tools Development",
-							"url": "https://roga.dev/internal-tools"
+							"name": "Custom Web Applications & SaaS Development",
+							"description": "Full-stack web applications and SaaS platforms with user authentication, database design, and payment processing"
 						}
 					},
 					{
 						"@type": "Offer",
 						"itemOffered": {
 							"@type": "Service",
-							"name": "Dashboards & Admin Panels",
-							"url": "https://roga.dev/services/dashboards"
+							"name": "Business Websites & E-Commerce",
+							"description": "Fast, SEO-optimized business websites and online stores built to convert visitors into customers"
 						}
 					},
 					{
 						"@type": "Offer",
 						"itemOffered": {
 							"@type": "Service",
-							"name": "Workflow Automation",
-							"url": "https://roga.dev/services/workflow-automation"
+							"name": "Internal Tools & Dashboards",
+							"description": "Custom dashboards, admin panels, and operational tools that replace spreadsheets and manual processes"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Workflow Automation & Integrations",
+							"description": "Process automation connecting your existing tools with custom integrations and automated workflows"
 						}
 					}
 				]
@@ -131,18 +139,18 @@
 			"mainEntity": [
 				{
 					"@type": "Question",
-					"name": "How much does a custom internal tool cost?",
+					"name": "How much does a custom web development project cost?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "Most projects range from $8,000–$25,000 depending on complexity. A simple dashboard with one data source is on the lower end; a multi-user workflow tool with integrations is higher. Fixed pricing is provided after a scoping call."
+						"text": "Business websites range from $2,500-$5,000. E-commerce stores from $5,000-$10,000. Custom web applications and SaaS platforms from $8,000-$25,000+. Fixed pricing is provided after a scoping call with no hourly billing surprises."
 					}
 				},
 				{
 					"@type": "Question",
-					"name": "How long does it take to build an internal tool?",
+					"name": "How long does it take to build a custom web application?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "MVP in 6–12 weeks is typical. You'll see working software weekly, not a big reveal at the end. Timeline depends on scope and feedback cycles."
+						"text": "Business websites take 2-4 weeks. E-commerce stores take 4-8 weeks. Web application MVPs take 6-12 weeks. You see working software weekly throughout development."
 					}
 				},
 				{
@@ -150,7 +158,15 @@
 					"name": "Do you provide ongoing support after launch?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "Yes. Every project includes 30 days of free support. Monthly maintenance plans are available starting at $249/month for ongoing updates, monitoring, and feature additions."
+						"text": "Yes. Every project includes 30 days of free support. Monthly maintenance plans are available starting at $249/month for ongoing updates, monitoring, security patches, and new features."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Do I own the code you build for me?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Yes. You own 100% of the source code, design assets, and documentation. Everything is built with standard technologies and stored in a version-controlled repository you control. No lock-in."
 					}
 				}
 			]
@@ -158,32 +174,23 @@
 	</script>
 </svelte:head>
 
-<!-- 1. Hero: internal-tools-first promise + proof hint + "Book a call" CTA -->
 <HomeHero />
 
-<!-- 2. Proof (fast): logos + strongest outcomes -->
 <ClientLogos
-	title="Trusted by Industry Leaders"
-	subtitle="From TELUS to growing startups, I build internal tools that teams actually use"
+	title="Trusted by Businesses Across North America"
+	subtitle="From enterprise companies like TELUS to local businesses and startups"
 />
 
-<!-- 3. Problems you solve: replace spreadsheets, reduce errors, visibility -->
 <ProblemsSolved />
 
-<!-- 4. What you build: dashboards, admin panels, integrations, RBAC -->
 <WhatIBuild />
 
-<!-- 5. Case studies preview: metrics visible -->
 <CaseStudiesPreview />
 
-<!-- 6. Process: milestones + what client receives -->
 <Process />
 
-<!-- 7. Risk reducers: security, ownership, documentation, support -->
 <RiskReducers />
 
-<!-- 8. FAQ: buyer objections -->
 <FAQ />
 
-<!-- 9. Final CTA: book a call -->
 <FinalCTA />

@@ -79,9 +79,9 @@
 			description: 'Inventory management system'
 		},
 		{
-			name: 'VIU Career Outlooks',
-			href: 'https://career-outlooks.viu.ca',
-			description: 'Educational web platform'
+			name: 'E&EO Career Outlooks',
+			href: 'https://eaeo.ca',
+			description: 'Canadian career investigation platform'
 		}
 	];
 </script>
@@ -93,7 +93,6 @@
 		<div
 			class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-[2.5fr_1fr_1fr_1fr] xl:gap-12 2xl:gap-16"
 		>
-			<!-- Company Info - wider first column on xl -->
 			<div class="space-y-6 xl:pr-12">
 				<div class="flex gap-4 items-center">
 					<img
@@ -118,8 +117,7 @@
 						<FooterSocial {label} {href} {icon} />
 					{/each}
 				</div>
-				<!-- Contact Info -->
-				<div class="flex flex-wrap gap-6 text-sm text-gray-600">
+					<div class="flex flex-wrap gap-6 text-sm text-gray-600">
 					<p class="flex items-center gap-2">
 						<svg
 							class="h-4 w-4 text-sky-600"
@@ -160,7 +158,6 @@
 				</div>
 			</div>
 
-			<!-- Services -->
 			<div>
 				<h3 class="text-sm font-semibold leading-6 text-gray-900">Services</h3>
 				<ul role="list" class="mt-6 space-y-4">
@@ -170,7 +167,6 @@
 				</ul>
 			</div>
 
-			<!-- Company -->
 			<div>
 				<h3 class="text-sm font-semibold leading-6 text-gray-900">Company</h3>
 				<ul role="list" class="mt-6 space-y-4">
@@ -178,7 +174,7 @@
 						<FooterItem {name} {href} />
 					{/each}
 				</ul>
-				<!-- Legal links -->
+				<!-- Legal links hidden in Company column at lg+; shown inline below lg -->
 				<div class="mt-8 pt-6 border-t border-gray-200 lg:border-0 lg:pt-0 lg:mt-6">
 					<h3 class="text-sm font-semibold leading-6 text-gray-900 lg:hidden">Legal</h3>
 					<ul role="list" class="mt-4 lg:mt-0 space-y-3">
@@ -189,7 +185,6 @@
 				</div>
 			</div>
 
-			<!-- Featured Work + CTA -->
 			<div>
 				<h3 class="text-sm font-semibold leading-6 text-gray-900">Featured Work</h3>
 				<ul role="list" class="mt-6 space-y-4">
@@ -213,7 +208,6 @@
 						</a>
 					</li>
 				</ul>
-				<!-- CTA Section -->
 				<div class="mt-8 p-4 bg-sky-50 rounded-xl border border-sky-100">
 					<h4 class="text-sm font-semibold text-sky-900 mb-2">Ready to get started?</h4>
 					<p class="text-xs text-sky-700 mb-3">Free 15-min call • Scoped proposal in 48 hours</p>
@@ -240,7 +234,6 @@
 			</div>
 		</div>
 
-		<!-- Bottom Section -->
 		<div class="mt-16 border-t border-gray-200 pt-8 sm:mt-20 lg:mt-24">
 			<p class="text-xs leading-5 text-gray-500">
 				&copy; {new Date().getFullYear()} Ryan Roga. All rights reserved.

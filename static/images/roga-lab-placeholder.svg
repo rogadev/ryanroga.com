@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#ecfdf5"/>
+  <g transform="translate(400,180)">
+    <circle cx="0" cy="0" r="60" fill="#059669" opacity="0.15"/>
+    <path d="M-20 10 C-20-20 0-40 0-40 C0-40 20-20 20 10 C20 25 10 30 0 30 C-10 30-20 25-20 10Z" fill="#059669" opacity="0.8"/>
+    <line x1="0" y1="30" x2="0" y2="50" stroke="#059669" stroke-width="3"/>
+    <line x1="-12" y1="42" x2="0" y2="30" stroke="#059669" stroke-width="2"/>
+    <line x1="12" y1="38" x2="0" y2="26" stroke="#059669" stroke-width="2"/>
+  </g>
+  <text x="400" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="32" font-weight="bold" fill="#065f46">Roga Lab</text>
+  <text x="400" y="315" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#047857">Plant Tissue Culture LIMS</text>
+</svg>

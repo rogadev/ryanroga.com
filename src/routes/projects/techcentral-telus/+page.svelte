@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 
-	// Animation setup
+	// Observe elements with .animate-on-scroll and add .animate-in once visible.
+	// unobserve after trigger so the animation fires only once per element.
 	$effect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -22,15 +23,15 @@
 </script>
 
 <svelte:head>
-	<title>TechCentral (TELUS) Case Study | Internal Content Platform | Roga Web Development</title>
+	<title>TechCentral (TELUS) Case Study | Enterprise Knowledge Hub | Roga Web Development</title>
 	<meta
 		name="description"
-		content="How I built TechCentral, an internal content platform for TELUS Communications serving employees across Canada in English and French."
+		content="How I built TechCentral, an enterprise knowledge hub for TELUS serving 2,500+ technicians Canada-wide with bilingual content, AI-powered chat, and headless CMS integration."
 	/>
 	<meta property="og:title" content="TechCentral (TELUS) Case Study | Roga Web Development" />
 	<meta
 		property="og:description"
-		content="Internal content platform for TELUS Communications with bilingual support, unified search, and CMS-driven delivery."
+		content="Enterprise knowledge hub for TELUS Communications serving 2,500+ technicians with bilingual support, AI chatbot with RAG, unified search, and dotCMS-driven delivery."
 	/>
 	<link rel="canonical" href="https://roga.dev/projects/techcentral-telus" />
 
@@ -40,7 +41,7 @@
 			"@context": "https://schema.org",
 			"@type": "CreativeWork",
 			"name": "TechCentral",
-			"description": "Internal content delivery platform for TELUS Communications",
+			"description": "Enterprise knowledge hub for TELUS Communications serving 2,500+ technicians Canada-wide",
 			"creator": {
 				"@type": "Person",
 				"name": "Ryan Roga",
@@ -55,7 +56,6 @@
 	</script>
 </svelte:head>
 
-<!-- Hero -->
 <div
 	class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 	aria-hidden="true"
@@ -92,21 +92,22 @@
 			<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
 				TechCentral
 			</h1>
-			<p class="mt-2 text-xl text-gray-600">Internal Content Delivery Platform</p>
+			<p class="mt-2 text-xl text-gray-600">Enterprise Knowledge Hub & Content Platform</p>
 
 			<p class="mt-6 text-lg leading-8 text-gray-600">
-				Internal web platform that delivers CMS-managed content quickly and reliably for employees
-				across Canadian regions, in both English and French.
+				Enterprise knowledge hub and frontend for dotCMS, serving 2,500+ technicians Canada-wide.
+				Bilingual (EN-CA / FR-CA), region- and audience-aware, with AI-powered chat and
+				high-performance search.
 			</p>
 
 			<!-- Key Stats -->
 			<div class="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
 				<div class="rounded-xl bg-gray-50 p-4 text-center">
-					<div class="text-2xl font-bold text-gray-900">2025–2026</div>
-					<div class="text-sm text-gray-600">Development</div>
+					<div class="text-2xl font-bold text-gray-900">2,500+</div>
+					<div class="text-sm text-gray-600">Technicians</div>
 				</div>
 				<div class="rounded-xl bg-gray-50 p-4 text-center">
-					<div class="text-2xl font-bold text-gray-900">Jan 2026</div>
+					<div class="text-2xl font-bold text-gray-900">Feb 2026</div>
 					<div class="text-sm text-gray-600">Launch</div>
 				</div>
 				<div class="rounded-xl bg-gray-50 p-4 text-center">
@@ -114,15 +115,14 @@
 					<div class="text-sm text-gray-600">EN-CA / FR-CA</div>
 				</div>
 				<div class="rounded-xl bg-gray-50 p-4 text-center">
-					<div class="text-2xl font-bold text-gray-900">Enterprise</div>
-					<div class="text-sm text-gray-600">Scale</div>
+					<div class="text-2xl font-bold text-gray-900">AI + RAG</div>
+					<div class="text-sm text-gray-600">Chat Assistant</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- Executive Summary -->
 <section class="py-16 sm:py-24 bg-gray-50">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -134,22 +134,24 @@
 				style="transition-delay: 100ms;"
 			>
 				<p>
-					TechCentral is an internal knowledge and content delivery platform that helps TELUS
-					employees find the right guidance fast, tailored by <strong>language (EN-CA/FR-CA)</strong
-					>
-					and <strong>region/audience</strong>.
+					TechCentral is an enterprise knowledge hub and custom frontend for <strong>dotCMS</strong
+					>, serving over <strong>2,500 technicians Canada-wide</strong> since its launch on
+					February 23, 2026. Tailored by <strong>language (EN-CA/FR-CA)</strong> and
+					<strong>region/audience</strong>, it's the single source of truth for job aids, billing,
+					training, policies, and more.
 				</p>
 				<p>
-					The platform focuses on usability (onboarding, consistent navigation, favourites) and
-					reliability (tested workflows, predictable behaviour). It serves as a central hub where
-					employees can discover, search, and save content relevant to their role and location.
+					The platform combines a headless CMS with a high-performance Next.js frontend, unified
+					search, favourites, trending content, and an <strong
+						>AI-powered Learning Hub Assistant</strong
+					> that uses RAG to ingest articles for accurate, interactive Q&A. TELUS has extended the contract
+					based on the platform's success.
 				</p>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- The Problem -->
 <section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -186,7 +188,6 @@
 	</div>
 </section>
 
-<!-- The Solution -->
 <section class="py-16 sm:py-24 bg-gray-50">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -215,11 +216,14 @@
 							</svg>
 						</div>
 						<div>
-							<h3 class="text-lg font-semibold text-gray-900">Headless CMS-Driven Site</h3>
+							<h3 class="text-lg font-semibold text-gray-900">
+								Full dotCMS Integration (Headless CMS)
+							</h3>
 							<p class="mt-2 text-gray-600">
-								Frontend application consuming content from <strong>DotCMS</strong>. Authoring stays
-								in the CMS; delivery/UX is handled by the app with production-grade integration
-								patterns (services/adapters).
+								Custom high-performance frontend consuming content from <strong>dotCMS</strong> via GraphQL.
+								Multiple content types (Job Aids, Billing, Training, News, Policies, and more), audience/region
+								filtering, taxonomy, webhooks for search/cache invalidation, and VTL preview templates.
+								Authoring stays in the CMS; delivery is the custom app.
 							</p>
 						</div>
 					</div>
@@ -278,9 +282,9 @@
 						<div>
 							<h3 class="text-lg font-semibold text-gray-900">Unified Search</h3>
 							<p class="mt-2 text-gray-600">
-								One search experience across multiple content types. Fast, typo-tolerant (including
-								diacritics handling for French), and shareable via URL state. Server-side execution
-								with in-memory per-pod caching.
+								Fuse.js-powered server-side search across all content types. Typo-tolerant with
+								bilingual diacritics handling, permalinkable results, and p95 latency under 150ms.
+								In-memory per-pod caching with shareable URL state.
 							</p>
 						</div>
 					</div>
@@ -343,12 +347,74 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="animate-on-scroll" style="transition-delay: 600ms;">
+					<div class="flex items-start gap-4">
+						<div
+							class="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-100 flex-shrink-0"
+						>
+							<svg
+								class="h-5 w-5 text-violet-600"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+								/>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-lg font-semibold text-gray-900">AI-Powered Learning Hub Assistant</h3>
+							<p class="mt-2 text-gray-600">
+								Integrated chat button in the header opens the Learning Hub Assistant - a technician
+								co-pilot that uses <strong>RAG</strong> to ingest TechCentral/dotCMS articles, providing
+								accurate, conversational Q&A grounded in the same content users browse and search.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="animate-on-scroll" style="transition-delay: 700ms;">
+					<div class="flex items-start gap-4">
+						<div
+							class="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-100 flex-shrink-0"
+						>
+							<svg
+								class="h-5 w-5 text-amber-600"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
+								/>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-lg font-semibold text-gray-900">
+								Trending, Alerts & Operational Tools
+							</h3>
+							<p class="mt-2 text-gray-600">
+								Trending articles by view count over a rolling window, real-time alerts and quick
+								links from dotCMS, onboarding flows, article freshness badges, ratings, table of
+								contents, and admin tools including search index rebuild/preview and outdated links
+								scanner.
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- Technical Implementation -->
 <section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -447,11 +513,12 @@
 				<!-- Architecture Details -->
 				<div class="space-y-6">
 					<div class="rounded-xl bg-white border border-gray-200 p-6">
-						<h3 class="font-semibold text-gray-900 mb-2">CMS Integration</h3>
+						<h3 class="font-semibold text-gray-900 mb-2">dotCMS Integration</h3>
 						<p class="text-gray-600 text-sm">
-							DotCMS (headless) with production-grade integration patterns. Services/adapters
-							abstract CMS API complexity and handle edge cases (API limits, image delivery
-							constraints) with pragmatic mitigations.
+							dotCMS as the headless content engine consumed via GraphQL. Multiple content types
+							(Job Aids, Billing, Training, News, Policies, ValueGen, HBR, Quick Links, Alerts,
+							Help), audience/region filtering, taxonomy, webhooks for search/cache invalidation,
+							and optional VTL preview templates.
 						</p>
 					</div>
 
@@ -495,7 +562,6 @@
 	</div>
 </section>
 
-<!-- Business Impact -->
 <section class="py-16 sm:py-24 bg-gray-50">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -529,9 +595,9 @@
 						<div>
 							<h3 class="font-semibold text-gray-900">AI-Powered Knowledge Assistant</h3>
 							<p class="text-gray-600 text-sm mt-1">
-								Intelligent chatbot integration that ingests articles in real-time, providing
-								employees with conversational access to a wide range of business knowledge. The AI
-								automatically stays current with content updates.
+								The Learning Hub Assistant uses RAG to ingest TechCentral/dotCMS articles, giving
+								2,500+ technicians conversational access to job aids, policies, and training
+								content. Answers are grounded in the same content they browse and search.
 							</p>
 						</div>
 					</div>
@@ -614,12 +680,37 @@
 						</div>
 					</div>
 				</div>
+
+				<div
+					class="animate-on-scroll rounded-xl bg-white border-2 border-purple-200 p-6"
+					style="transition-delay: 450ms;"
+				>
+					<div class="flex items-start gap-4">
+						<div
+							class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 flex-shrink-0"
+						>
+							<svg class="h-5 w-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+								<path
+									fill-rule="evenodd"
+									d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+						</div>
+						<div>
+							<h3 class="font-semibold text-gray-900">Contract Extended</h3>
+							<p class="text-gray-600 text-sm mt-1">
+								Based on the platform's success and adoption by 2,500+ technicians, TELUS extended
+								the development contract for continued feature development and support.
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- Solo Developer Responsibilities -->
 <section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-3xl">
@@ -676,7 +767,6 @@
 	</div>
 </section>
 
-<!-- CTA -->
 <section class="py-16 sm:py-24 bg-gradient-to-r from-sky-600 to-teal-600">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">

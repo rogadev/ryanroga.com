@@ -8,10 +8,10 @@
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-balance">
-				Real Results for Real Businesses
+				Real Projects, Real Results
 			</h2>
 			<p class="mt-4 text-lg leading-8 text-gray-600 text-pretty">
-				Internal tools and web applications that teams rely on every day.
+				Web applications, platforms, and tools that businesses and teams rely on every day.
 			</p>
 		</div>
 
@@ -27,7 +27,7 @@
 						<div class="text-center">
 							<img src="/logos/TELUS_Logo.svg" alt="TELUS" class="h-16 mx-auto mb-4" />
 							<h3 class="text-2xl font-bold text-gray-900">TechCentral</h3>
-							<p class="text-sm text-gray-600 mt-2">Internal Content Platform</p>
+							<p class="text-sm text-gray-600 mt-2">Enterprise Knowledge Hub</p>
 						</div>
 					</div>
 					<div class="p-8">
@@ -41,24 +41,24 @@
 							>
 						</div>
 						<h4 class="text-lg font-semibold text-gray-900 mb-3">
-							Bilingual Content Delivery for Canadian Employees
+							Enterprise Knowledge Hub for 2,500+ Technicians
 						</h4>
 						<p class="text-gray-600 mb-6">
-							Built an internal platform delivering CMS-managed content in English and French, with
-							unified search, user preferences, and editor preview workflows.
+							Enterprise knowledge hub and dotCMS frontend with bilingual content, AI-powered chat
+							with RAG, unified search, and region-aware delivery across Canada.
 						</p>
 						<div class="grid grid-cols-3 gap-4 mb-6">
 							<div class="text-center">
-								<div class="text-xl font-bold text-purple-600">Next.js 15</div>
-								<div class="text-xs text-gray-600">React 19</div>
+								<div class="text-xl font-bold text-purple-600">2,500+</div>
+								<div class="text-xs text-gray-600">Technicians</div>
+							</div>
+							<div class="text-center">
+								<div class="text-xl font-bold text-purple-600">AI + RAG</div>
+								<div class="text-xs text-gray-600">Chat Assistant</div>
 							</div>
 							<div class="text-center">
 								<div class="text-xl font-bold text-purple-600">Bilingual</div>
 								<div class="text-xs text-gray-600">EN-CA / FR-CA</div>
-							</div>
-							<div class="text-center">
-								<div class="text-xl font-bold text-purple-600">Jan 2026</div>
-								<div class="text-xs text-gray-600">Launch</div>
 							</div>
 						</div>
 						<div class="flex flex-wrap gap-3 mb-6 justify-center">
@@ -191,7 +191,129 @@
 					</div>
 				</div>
 
-				<!-- VIU Case Study -->
+				<!-- Roga Lab -->
+				<div
+					class="group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all duration-300"
+				>
+					<div
+						class="aspect-[16/9] bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center"
+					>
+						<div class="text-center">
+							<div
+								class="h-12 w-12 mx-auto rounded-full bg-emerald-600 flex items-center justify-center mb-3"
+							>
+								<svg
+									class="h-6 w-6 text-white"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
+									/>
+								</svg>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900">Roga Lab</h3>
+							<p class="text-xs text-gray-600 mt-1">LIMS SaaS</p>
+						</div>
+					</div>
+					<div class="p-6">
+						<h4 class="text-base font-semibold text-gray-900 mb-2">
+							Plant Tissue Culture Lab LIMS
+						</h4>
+						<p class="text-gray-600 text-sm mb-4">
+							Lab information management system for plant tissue culture workflows, media recipes,
+							and contamination tracking.
+						</p>
+						<div class="grid grid-cols-2 gap-2 mb-4">
+							<div class="text-center">
+								<div class="text-lg font-bold text-emerald-600">SaaS</div>
+								<div class="text-xs text-gray-600">Platform</div>
+							</div>
+							<div class="text-center">
+								<span
+									class="inline-flex items-center rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-700"
+									>Alpha</span
+								>
+								<div class="text-xs text-gray-600 mt-1">Testing</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- CopyCleanse -->
+				<div
+					class="group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all duration-300"
+				>
+					<div
+						class="aspect-[16/9] bg-gradient-to-br from-teal-50 to-cyan-100 flex items-center justify-center"
+					>
+						<div class="text-center">
+							<div
+								class="h-12 w-12 mx-auto rounded-full bg-teal-600 flex items-center justify-center mb-3"
+							>
+								<svg
+									class="h-6 w-6 text-white"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
+									/>
+								</svg>
+							</div>
+							<h3 class="text-lg font-semibold text-gray-900">CopyCleanse</h3>
+							<p class="text-xs text-gray-600 mt-1">Free Tool</p>
+						</div>
+					</div>
+					<div class="p-6">
+						<h4 class="text-base font-semibold text-gray-900 mb-2">AI Text Cleaning Tool</h4>
+						<p class="text-gray-600 text-sm mb-4">
+							Strips hidden characters, normalizes formatting, and removes AI tracking parameters.
+							100% browser-based.
+						</p>
+						<div class="grid grid-cols-2 gap-2 mb-4">
+							<div class="text-center">
+								<div class="text-lg font-bold text-teal-600">Free</div>
+								<div class="text-xs text-gray-600">No Sign-up</div>
+							</div>
+							<div class="text-center">
+								<div class="text-lg font-bold text-teal-600">100%</div>
+								<div class="text-xs text-gray-600">Client-Side</div>
+							</div>
+						</div>
+						<a
+							href="https://copycleanse.com"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-1 text-sm font-semibold text-teal-600 hover:text-teal-500"
+						>
+							View Live Site
+							<svg
+								class="h-4 w-4"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+								/>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- E&EO Career Outlooks -->
 				<div
 					class="group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all duration-300"
 				>
@@ -212,31 +334,34 @@
 									<path
 										stroke-linecap="round"
 										stroke-linejoin="round"
-										d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
+										d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"
 									/>
 								</svg>
 							</div>
-							<h3 class="text-lg font-semibold text-gray-900">VIU Career Outlooks</h3>
-							<p class="text-xs text-gray-600 mt-1">Educational Platform</p>
+							<h3 class="text-lg font-semibold text-gray-900">E&EO</h3>
+							<p class="text-xs text-gray-600 mt-1">Career Platform</p>
 						</div>
 					</div>
 					<div class="p-6">
-						<h4 class="text-base font-semibold text-gray-900 mb-2">Career Exploration Tool</h4>
+						<h4 class="text-base font-semibold text-gray-900 mb-2">
+							Employment & Education Outlooks
+						</h4>
 						<p class="text-gray-600 text-sm mb-4">
-							Connects academic programs to real employment data across BC.
+							Career investigation platform for Canada with StatsCan data, regional outlooks, and
+							salary insights.
 						</p>
 						<div class="grid grid-cols-2 gap-2 mb-4">
 							<div class="text-center">
-								<div class="text-lg font-bold text-green-600">10K+</div>
-								<div class="text-xs text-gray-600">Students</div>
+								<div class="text-lg font-bold text-green-600">516</div>
+								<div class="text-xs text-gray-600">NOC Occupations</div>
 							</div>
 							<div class="text-center">
-								<div class="text-lg font-bold text-green-600">500+</div>
-								<div class="text-xs text-gray-600">Career Paths</div>
+								<div class="text-lg font-bold text-green-600">99+</div>
+								<div class="text-xs text-gray-600">Regions</div>
 							</div>
 						</div>
 						<a
-							href="https://career-outlooks.viu.ca"
+							href="https://eaeo.ca"
 							target="_blank"
 							rel="noopener noreferrer"
 							class="inline-flex items-center gap-1 text-sm font-semibold text-green-600 hover:text-green-500"
