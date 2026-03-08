@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#f0fdfa"/>
+  <g transform="translate(400,170)">
+    <circle cx="0" cy="0" r="55" fill="#0d9488" opacity="0.15"/>
+    <rect x="-25" y="-35" width="50" height="65" rx="4" fill="#0d9488" opacity="0.2" stroke="#0d9488" stroke-width="2"/>
+    <path d="M-12-15 L12-15 M-12-5 L12-5 M-12 5 L8 5 M-12 15 L5 15" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="20" cy="20" r="14" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+    <path d="M15 15 L25 25" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <text x="400" y="275" text-anchor="middle" font-family="system-ui,sans-serif" font-size="32" font-weight="bold" fill="#134e4a">CopyCleanse</text>
+  <text x="400" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#0d9488">Clean AI Text, Auto-Magically</text>
+</svg>
