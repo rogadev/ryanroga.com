@@ -112,17 +112,14 @@ Edit the HTML and text content in the `resend.emails.send()` calls.
 ### Common Issues:
 
 1. **"Unauthorized" or API errors**
-
    - Double-check your API key is correct and starts with `re_`
    - Make sure the API key is properly set in your `.env` file
 
 2. **"Domain not verified" errors**
-
    - For development: use `onboarding@resend.dev` as the from address
    - For production: verify your domain in the Resend dashboard
 
 3. **Emails not received**
-
    - Check spam/junk folders
    - Verify the recipient email address
    - Check Resend dashboard logs for delivery status

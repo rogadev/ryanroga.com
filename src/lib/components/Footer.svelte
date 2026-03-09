@@ -117,7 +117,7 @@
 						<FooterSocial {label} {href} {icon} />
 					{/each}
 				</div>
-					<div class="flex flex-wrap gap-6 text-sm text-gray-600">
+				<div class="flex flex-wrap gap-6 text-sm text-gray-600">
 					<p class="flex items-center gap-2">
 						<svg
 							class="h-4 w-4 text-sky-600"

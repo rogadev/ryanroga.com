@@ -60,7 +60,6 @@ When `$ARGUMENTS` is empty or not provided:
 
 3. **Repo state — scope of changes**  
    Consider **all** of the following so no feature update is missed (uncommitted, committed on branch, or both):
-
    - **Uncommitted:** `git status` and `git diff` (staged and unstaged). Often the main source: work-in-progress or just-finished features, docs, specs. Always include this.
    - **Committed on current branch:** Commits not yet on the base branch (e.g. `git log main..HEAD --oneline` or `origin/main..HEAD`). Covers: several pushes to `dev`, ready-to-PR work, or an afterthought update where the code is already committed but the blog wasn’t.
    - **PR / comparison (optional):** If the user is clearly working from a PR description or a compare URL, use that too; otherwise infer from uncommitted + branch commits.

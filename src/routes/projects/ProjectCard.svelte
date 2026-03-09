@@ -21,11 +21,9 @@
 		handleImageError: (event: Event, fallbackText: string) => void;
 	} = $props();
 
-	// Determine the href - use external URL if no slug, otherwise internal link
-	// If no slug and no external URL, it's a disabled card
-	const href = project.slug ? `/projects/${project.slug}` : (project.externalUrl ?? '#');
-	const isExternal = !project.slug && project.externalUrl;
-	const isDisabled = !project.slug && !project.externalUrl;
+	const href = $derived(project.slug ? `/projects/${project.slug}` : (project.externalUrl ?? '#'));
+	const isExternal = $derived(!project.slug && project.externalUrl);
+	const isDisabled = $derived(!project.slug && !project.externalUrl);
 </script>
 
 <!-- Wrap entire card in an anchor tag or div depending on disabled state -->

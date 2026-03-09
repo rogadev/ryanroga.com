@@ -140,8 +140,8 @@
 					rel="noopener noreferrer"
 					class="group rounded-2xl bg-white p-6 sm:p-8 shadow-sm border {colors.border} transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col"
 				>
-				<!-- Header: icon + name + tags -->
-				<div class="flex items-start gap-4 mb-4">
+					<!-- Header: icon + name + tags -->
+					<div class="flex items-start gap-4 mb-4">
 						<div
 							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl {colors.iconBg} transition-colors"
 						>

@@ -63,8 +63,8 @@
 			Vue, and more.
 		</li>
 		<li>
-			<strong>Full-Stack Development:</strong> Developed robust full-stack web applications catering
-			to specific client needs.
+			<strong>Full-Stack Development:</strong> Developed robust full-stack web applications catering to
+			specific client needs.
 		</li>
 		<li>
 			<strong>Agile Development Methodology:</strong> Adopted agile principles for rapid feature deployment
