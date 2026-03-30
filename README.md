@@ -8,15 +8,15 @@
 
 Professional web development services website built with modern technologies. This is the portfolio and business website for Roga Web Development, specializing in custom web applications for small businesses.
 
-🌐 **Live Site**: [roga.dev](https://roga.dev)
+**Live Site**: [roga.dev](https://roga.dev)
 
-## 🚀 Features
+## Features
 
 ### Business Features
 
 - **Professional Portfolio** - Showcasing web development projects and case studies
 - **Service Offerings** - Full-stack development, SvelteKit, Vue.js, TypeScript expertise
-- **Contact Form** - Integrated email system with auto-reply functionality
+- **Contact Page** - Book a free 15-minute consultation call
 - **Client Testimonials** - Social proof and client logos
 - **Responsive Design** - Mobile-first, modern UI/UX
 - **SEO Optimized** - Meta tags, Open Graph, Twitter Cards
@@ -26,11 +26,11 @@ Professional web development services website built with modern technologies. Th
 - **Svelte 5 with Runes** - Latest Svelte features for reactive state management
 - **TypeScript** - Full type safety across the application
 - **Tailwind CSS** - Utility-first styling with custom components
-- **Server-Side Rendering** - SvelteKit for optimal performance
-- **Email Integration** - Resend API for contact form functionality
+- **Static Prerendering** - All pages prerendered for optimal performance
+- **Custom Analytics** - Lightweight GA4 tracking with `data-track` attributes
 - **Static Assets** - Optimized images, fonts, and logos
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core Framework
 
@@ -47,55 +47,63 @@ Professional web development services website built with modern technologies. Th
 - **[Iconify](https://iconify.design/)** - Icon system
 - **Poppins Font** - Custom web fonts
 
-### Backend & Services
+### Deployment
 
-- **[Resend](https://resend.com/)** - Email API for contact forms
-- **[Vercel](https://vercel.com/)** - Deployment and hosting
-- QR Code generation for projects
+- **[Vercel](https://vercel.com/)** - Deployment and hosting (Node.js 22.x runtime)
+- **Adapter**: `adapter-vercel` on CI, `adapter-auto` locally (avoids Windows symlink issues)
 
 ### Development Tools
 
 - **[ESLint](https://eslint.org/)** - Linting
 - **[Prettier](https://prettier.io/)** - Code formatting
 - **[Vitest](https://vitest.dev/)** - Testing framework
-- **[Playwright](https://playwright.dev/)** - End-to-end testing
 - **pnpm** - Package manager
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
 ├── lib/
-│   ├── components/           # Reusable components
-│   │   ├── case-studies/    # Case study specific components
-│   │   └── archive/         # Legacy components
-│   └── types/               # TypeScript type definitions
-├── routes/                  # SvelteKit routes
-│   ├── about/              # About page
-│   ├── contact/            # Contact form with server actions
-│   ├── development/        # Development services page
-│   ├── projects/           # Portfolio and case studies
+│   ├── actions/                # Svelte actions (scroll animations)
+│   ├── analytics.ts            # Custom GA4 analytics
+│   └── components/             # Reusable components
+│       ├── case-studies/       # Case study specific components
+│       └── archive/            # Legacy components
+├── routes/                     # SvelteKit routes
+│   ├── about/                  # About page
+│   ├── ai/                     # AI services page
+│   ├── contact/                # Contact/booking page (client-side)
+│   ├── development/            # Development services page
+│   ├── free-tools/             # Free tools page
+│   ├── internal-tools/         # Internal tools page
+│   ├── privacy/                # Privacy policy
+│   ├── projects/               # Portfolio and case studies
+│   │   ├── copycleanse/
 │   │   ├── eztripr-trip-tracker/
-│   │   └── lot-logistics-web-application/
-│   ├── resume/             # Resume pages
-│   ├── ai/                 # AI services page
-│   ├── privacy/            # Privacy policy
-│   └── terms/              # Terms of service
-└── app.html                # HTML template
+│   │   ├── lot-logistics-web-application/
+│   │   └── techcentral-telus/
+│   ├── services/               # Service detail pages
+│   │   ├── dashboards/
+│   │   ├── integrations/
+│   │   ├── maintenance/
+│   │   ├── rbac-audit-logs/
+│   │   └── workflow-automation/
+│   └── sitemap.xml/            # Dynamic sitemap
+└── app.html                    # HTML template
 
 static/
-├── images/                 # Project images and screenshots
-├── logos/                  # Client and technology logos
-├── fonts/                  # Poppins font files
-└── icons/                  # Favicon and app icons
+├── images/                     # Project images and screenshots
+├── logos/                      # Client and technology logos
+├── fonts/                      # Poppins font files
+└── icons/                      # Favicon and app icons
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
 - **Node.js** 18+
-- **pnpm** (recommended package manager)
+- **pnpm** (required package manager)
 
 ### Installation
 
@@ -112,37 +120,14 @@ static/
    pnpm install
    ```
 
-3. **Set up environment variables**
-
-   ```bash
-   cp env.example .env
-   ```
-
-   Configure your environment variables:
-
-   ```env
-   RESEND_API_KEY=your_resend_api_key_here
-   ```
-
-4. **Start development server**
+3. **Start development server**
    ```bash
    pnpm dev
    ```
 
 Visit [http://localhost:5173](http://localhost:5173) to view the application.
 
-## 📧 Contact Form Setup
-
-The contact form uses [Resend](https://resend.com/) for email delivery. See [CONTACT_FORM_SETUP.md](./CONTACT_FORM_SETUP.md) for detailed setup instructions.
-
-### Quick Setup:
-
-1. Create a Resend account at [resend.com](https://resend.com)
-2. Get your API key from the dashboard
-3. Add `RESEND_API_KEY` to your `.env` file
-4. Configure sender domains in production
-
-## 🛠️ Development
+## Development
 
 ### Available Scripts
 
@@ -156,13 +141,17 @@ pnpm build            # Build for production
 pnpm preview          # Preview production build
 
 # Code Quality
-pnpm lint             # Run ESLint
+pnpm lint             # Prettier + ESLint checks (read-only)
+pnpm lint:fix         # Auto-fix lint issues
 pnpm format           # Format code with Prettier
 pnpm check            # Type check with svelte-check
-pnpm check:watch      # Watch mode for type checking
 
 # Testing
-pnpm test             # Run Vitest tests
+pnpm test             # Run Vitest in watch mode
+pnpm test:run         # Run Vitest once (CI-friendly)
+
+# Full Check
+pnpm ready            # Format + lint fix + type check + test + build
 ```
 
 ### Svelte 5 Development Guidelines
@@ -208,70 +197,48 @@ This project uses **Svelte 5 with runes mode**. Key patterns:
 - **Responsive Design** - Mobile-first with Tailwind classes
 - **SEO** - Proper meta tags and semantic HTML
 
-## 📱 Pages & Features
+## Pages & Features
 
 ### Main Sections
 
 - **Homepage** - Hero, services, process, tech stack, testimonials
 - **About** - Professional background and expertise
-- **Services** - Web development offerings
+- **Services** - Web development offerings with detail pages (dashboards, integrations, maintenance, RBAC & audit logs, workflow automation)
 - **Projects** - Portfolio with detailed case studies
-- **Contact** - Contact form with email integration
-- **Resume** - Professional experience and skills
+- **Contact** - Book a free 15-minute consultation call
+- **Free Tools** - Public utility tools
+- **AI** - AI services page
 
 ### Case Studies
 
 - **EzTripr Trip Tracker** - React/Node.js travel application
 - **LOT Logistics** - Vue.js/Laravel logistics platform
-- Additional projects and small applications
+- **CopyCleanse** - Content cleaning tool
+- **TechCentral TELUS** - Enterprise technician management system
 
-## 🚀 Deployment
+## Deployment
 
 ### Vercel Deployment
 
 This project is configured for deployment on Vercel:
 
 1. **Connect your repository** to Vercel
-2. **Set environment variables** in Vercel dashboard:
-   - `RESEND_API_KEY`
-3. **Deploy** - Automatic deployments from main branch
+2. **Deploy** - Automatic deployments from main branch
 
 ### Build Configuration
 
-- **Adapter**: `@sveltejs/adapter-vercel`
-- **Node.js Version**: 18+
+- **Adapter**: `@sveltejs/adapter-vercel` (CI) / `@sveltejs/adapter-auto` (local)
+- **Node.js Runtime**: 22.x
 - **Build Command**: `pnpm build`
 - **Output Directory**: `.svelte-kit`
 
-## 🔧 Customization
-
-### Adding New Projects
-
-1. Create project directory in `src/routes/projects/`
-2. Add `+page.svelte` with project details
-3. Update project listings and navigation
-4. Add project images to `static/images/`
-
-### Modifying Contact Form
-
-1. Edit form fields in `src/routes/contact/+page.svelte`
-2. Update server action in `src/routes/contact/+page.server.ts`
-3. Customize email templates in the server action
-
-### Adding New Pages
-
-1. Create route directory in `src/routes/`
-2. Add `+page.svelte` for the page content
-3. Optional: Add `+page.ts` for data loading
-4. Update navigation components
-
-## 🤝 Contributing
+## Contributing
 
 ### Development Workflow
 
 1. Create feature branch from `main`
 2. Make changes following code quality standards
-3. Test thoroughly (dev server, build, lint)
+3. Run `pnpm ready` to verify everything passes
 4. Submit pull request with clear description
 
 ### Code Style
@@ -282,19 +249,19 @@ This project is configured for deployment on Vercel:
 - Follow Svelte 5 patterns and runes
 - Write semantic, accessible HTML
 
-## 📄 License
+## License
 
 This project is for Roga Web Development business purposes. See individual component licenses for third-party code.
 
-## 📞 Contact
+## Contact
 
 **Ryan Roga** - Web Developer
 
-- 🌐 Website: [roga.dev](https://roga.dev)
-- 📧 Email: ryan@roga.dev
-- 💼 LinkedIn: [linkedin.com/in/ryanroga](https://linkedin.com/in/ryanroga)
-- 🐙 GitHub: [github.com/rogadev](https://github.com/rogadev)
+- Website: [roga.dev](https://roga.dev)
+- Email: ryan@roga.dev
+- LinkedIn: [linkedin.com/in/ryanroga](https://linkedin.com/in/ryanroga)
+- GitHub: [github.com/rogadev](https://github.com/rogadev)
 
 ---
 
-Built with ❤️ using SvelteKit and modern web technologies.
+Built with SvelteKit and modern web technologies.
