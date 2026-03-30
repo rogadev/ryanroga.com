@@ -9,7 +9,6 @@ You are an expert in SvelteKit and Svelte 5 (runes mode). You are tasked with re
 After making changes, consider what success looks like and verify the implementation:
 
 1. **Identify verification method**: What's the best way to confirm these changes work?
-
    - Unit tests exist? Run them with `pnpm test:unit` or `pnpm test:unit <path>`
    - E2E tests cover this functionality? Run with `pnpm test:e2e`
    - Is this a UI component or page? Navigate to it in the browser to verify visually

@@ -15,6 +15,22 @@
 		content="API integrations, Stripe integration, HubSpot integration, QuickBooks integration, CRM integration, payment integration"
 	/>
 	<link rel="canonical" href="https://roga.dev/services/integrations" />
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": "Third-Party Integrations",
+			"description": "Connect your business tools. Stripe, HubSpot, QuickBooks, Salesforce, and more. Build integrations that keep your systems in sync automatically.",
+			"provider": {
+				"@type": "Person",
+				"name": "Ryan Roga",
+				"url": "https://roga.dev"
+			},
+			"serviceType": "API Integration Development",
+			"areaServed": "North America"
+		}
+	</script>
 </svelte:head>
 
 <!-- Hero -->

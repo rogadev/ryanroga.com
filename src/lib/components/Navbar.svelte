@@ -29,8 +29,48 @@
 	];
 	let isMobileMenuOpen = $state(false);
 	let isScrolled = $state(false);
+	/** @type {HTMLDivElement | undefined} */
+	let mobileMenuPanel = $state();
 
 	let currentPath = $derived(page.url.pathname);
+
+	// Focus trap for mobile menu
+	$effect(() => {
+		if (!isMobileMenuOpen || !mobileMenuPanel) return;
+
+		const focusableSelector =
+			'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])';
+		const focusableElements = mobileMenuPanel.querySelectorAll(focusableSelector);
+		const firstEl = /** @type {HTMLElement} */ (focusableElements[0]);
+		const lastEl = /** @type {HTMLElement} */ (focusableElements[focusableElements.length - 1]);
+
+		function handleKeydown(/** @type {KeyboardEvent} */ e) {
+			if (e.key === 'Escape') {
+				isMobileMenuOpen = false;
+				return;
+			}
+			if (e.key !== 'Tab') return;
+
+			if (e.shiftKey) {
+				if (document.activeElement === firstEl) {
+					e.preventDefault();
+					lastEl?.focus();
+				}
+			} else {
+				if (document.activeElement === lastEl) {
+					e.preventDefault();
+					firstEl?.focus();
+				}
+			}
+		}
+
+		// Focus the close button when menu opens
+		const closeBtn = /** @type {HTMLElement} */ (mobileMenuPanel.querySelector('button'));
+		closeBtn?.focus();
+
+		document.addEventListener('keydown', handleKeydown);
+		return () => document.removeEventListener('keydown', handleKeydown);
+	});
 
 	onMount(() => {
 		const handleScroll = () => {
@@ -123,6 +163,7 @@
 		<div transition:fade class="lg:hidden" role="dialog" aria-modal="true">
 			<div class="fixed inset-0 z-50"></div>
 			<div
+				bind:this={mobileMenuPanel}
 				class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
 			>
 				<div class="flex items-center justify-between">

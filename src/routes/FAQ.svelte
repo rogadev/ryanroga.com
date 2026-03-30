@@ -62,8 +62,7 @@
 								<li class="flex items-start gap-2">
 									<span class="text-indigo-600 font-bold">-</span>
 									<span
-										><strong>E-Commerce Store:</strong> $5,000 - $10,000 (product catalog, checkout,
-										inventory)</span
+										><strong>E-Commerce Store:</strong> $5,000 - $10,000 (product catalog, checkout, inventory)</span
 									>
 								</li>
 								<li class="flex items-start gap-2">

@@ -26,12 +26,12 @@
 	<title>TechCentral (TELUS) Case Study | Enterprise Knowledge Hub | Roga Web Development</title>
 	<meta
 		name="description"
-		content="How I built TechCentral, an enterprise knowledge hub for TELUS serving 2,500+ technicians Canada-wide with bilingual content, AI-powered chat, and headless CMS integration."
+		content="How I built TechCentral, an enterprise knowledge hub for TELUS serving 2,200+ technicians Canada-wide with bilingual content, AI-powered chat, and headless CMS integration."
 	/>
 	<meta property="og:title" content="TechCentral (TELUS) Case Study | Roga Web Development" />
 	<meta
 		property="og:description"
-		content="Enterprise knowledge hub for TELUS Communications serving 2,500+ technicians with bilingual support, AI chatbot with RAG, unified search, and dotCMS-driven delivery."
+		content="Enterprise knowledge hub for TELUS Communications serving 2,200+ technicians with bilingual support, AI chatbot with RAG, unified search, and dotCMS-driven delivery."
 	/>
 	<link rel="canonical" href="https://roga.dev/projects/techcentral-telus" />
 
@@ -41,7 +41,7 @@
 			"@context": "https://schema.org",
 			"@type": "CreativeWork",
 			"name": "TechCentral",
-			"description": "Enterprise knowledge hub for TELUS Communications serving 2,500+ technicians Canada-wide",
+			"description": "Enterprise knowledge hub for TELUS Communications serving 2,200+ technicians Canada-wide",
 			"creator": {
 				"@type": "Person",
 				"name": "Ryan Roga",
@@ -95,28 +95,32 @@
 			<p class="mt-2 text-xl text-gray-600">Enterprise Knowledge Hub & Content Platform</p>
 
 			<p class="mt-6 text-lg leading-8 text-gray-600">
-				Enterprise knowledge hub and frontend for dotCMS, serving 2,500+ technicians Canada-wide.
+				Enterprise knowledge hub and frontend for dotCMS, serving 2,200+ technicians Canada-wide.
 				Bilingual (EN-CA / FR-CA), region- and audience-aware, with AI-powered chat and
 				high-performance search.
 			</p>
 
 			<!-- Key Stats -->
-			<div class="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
+			<div class="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-5">
 				<div class="rounded-xl bg-gray-50 p-4 text-center">
-					<div class="text-2xl font-bold text-gray-900">2,500+</div>
+					<div class="text-2xl font-bold text-gray-900">2,200+</div>
 					<div class="text-sm text-gray-600">Technicians</div>
-				</div>
-				<div class="rounded-xl bg-gray-50 p-4 text-center">
-					<div class="text-2xl font-bold text-gray-900">Feb 2026</div>
-					<div class="text-sm text-gray-600">Launch</div>
 				</div>
 				<div class="rounded-xl bg-gray-50 p-4 text-center">
 					<div class="text-2xl font-bold text-gray-900">Bilingual</div>
 					<div class="text-sm text-gray-600">EN-CA / FR-CA</div>
 				</div>
 				<div class="rounded-xl bg-gray-50 p-4 text-center">
+					<div class="text-2xl font-bold text-gray-900">&lt;150ms</div>
+					<div class="text-sm text-gray-600">Search p95</div>
+				</div>
+				<div class="rounded-xl bg-gray-50 p-4 text-center">
 					<div class="text-2xl font-bold text-gray-900">AI + RAG</div>
 					<div class="text-sm text-gray-600">Chat Assistant</div>
+				</div>
+				<div class="rounded-xl bg-gray-50 p-4 text-center">
+					<div class="text-2xl font-bold text-gray-900">2,000+</div>
+					<div class="text-sm text-gray-600">Articles Migrated</div>
 				</div>
 			</div>
 		</div>
@@ -135,18 +139,133 @@
 			>
 				<p>
 					TechCentral is an enterprise knowledge hub and custom frontend for <strong>dotCMS</strong
-					>, serving over <strong>2,500 technicians Canada-wide</strong> since its launch on
+					>, serving over <strong>2,200 technicians Canada-wide</strong> since its launch on
 					February 23, 2026. Tailored by <strong>language (EN-CA/FR-CA)</strong> and
 					<strong>region/audience</strong>, it's the single source of truth for job aids, billing,
 					training, policies, and more.
 				</p>
 				<p>
-					The platform combines a headless CMS with a high-performance Next.js frontend, unified
+					The platform migrated over <strong>2,000 articles from 7+ stakeholder groups</strong> and
+					combines a headless CMS with a high-performance Next.js frontend, unified
 					search, favourites, trending content, and an <strong
 						>AI-powered Learning Hub Assistant</strong
-					> that uses RAG to ingest articles for accurate, interactive Q&A. TELUS has extended the contract
-					based on the platform's success.
+					> that uses RAG to ingest articles for accurate, interactive Q&A. Based on the platform's
+					success, TELUS extended the contract by 12 months, with new projects underway including
+					an LMS and certification system for technicians.
 				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="py-16 sm:py-24">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8">
+		<div class="mx-auto max-w-3xl">
+			<h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl animate-on-scroll">
+				System Architecture
+			</h2>
+			<p class="mt-4 text-gray-600 animate-on-scroll" style="transition-delay: 100ms;">
+				TechCentral sits between a headless CMS and 2,200+ end users, orchestrating content
+				delivery, search, user data, and AI-powered chat through a single Next.js application.
+			</p>
+
+			<div class="mt-10 animate-on-scroll" style="transition-delay: 200ms;">
+				<div class="rounded-2xl bg-gray-50 border border-gray-200 p-6 sm:p-8 overflow-x-auto">
+					<div class="flex flex-col items-center gap-6 min-w-[320px]">
+						<!-- Top row: dotCMS -->
+						<div
+							class="w-full max-w-xs rounded-xl bg-white border-2 border-purple-200 p-4 text-center shadow-sm"
+						>
+							<div class="text-xs font-medium text-purple-600 uppercase tracking-wide mb-1">
+								Content Engine
+							</div>
+							<div class="text-lg font-bold text-gray-900">dotCMS</div>
+							<div class="text-xs text-gray-500 mt-1">
+								GraphQL API &middot; Webhooks &middot; 9 Content Types
+							</div>
+						</div>
+
+						<!-- Arrow down -->
+						<div class="flex flex-col items-center">
+							<svg
+								class="h-6 w-6 text-gray-400"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"
+								/>
+							</svg>
+						</div>
+
+						<!-- Middle row: Next.js app with branches -->
+						<div class="w-full">
+							<div class="rounded-xl bg-white border-2 border-sky-200 p-4 text-center shadow-sm">
+								<div class="text-xs font-medium text-sky-600 uppercase tracking-wide mb-1">
+									Application
+								</div>
+								<div class="text-lg font-bold text-gray-900">Next.js 15 + React 19</div>
+								<div class="text-xs text-gray-500 mt-1">
+									SSR &middot; Server Components &middot; TypeScript
+								</div>
+
+								<!-- Branch services -->
+								<div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2">
+									<div class="rounded-lg bg-indigo-50 border border-indigo-100 px-3 py-2">
+										<div class="text-xs font-semibold text-indigo-700">Fuse.js</div>
+										<div class="text-[10px] text-indigo-500">Search Index</div>
+									</div>
+									<div class="rounded-lg bg-green-50 border border-green-100 px-3 py-2">
+										<div class="text-xs font-semibold text-green-700">PostgreSQL</div>
+										<div class="text-[10px] text-green-500">User Data</div>
+									</div>
+									<div class="rounded-lg bg-violet-50 border border-violet-100 px-3 py-2">
+										<div class="text-xs font-semibold text-violet-700">AI / RAG</div>
+										<div class="text-[10px] text-violet-500">Chat Assistant</div>
+									</div>
+									<div class="rounded-lg bg-amber-50 border border-amber-100 px-3 py-2">
+										<div class="text-xs font-semibold text-amber-700">Prisma</div>
+										<div class="text-[10px] text-amber-500">ORM Layer</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Arrow down -->
+						<div class="flex flex-col items-center">
+							<svg
+								class="h-6 w-6 text-gray-400"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"
+								/>
+							</svg>
+						</div>
+
+						<!-- Bottom row: Users -->
+						<div
+							class="w-full max-w-xs rounded-xl bg-white border-2 border-green-200 p-4 text-center shadow-sm"
+						>
+							<div class="text-xs font-medium text-green-600 uppercase tracking-wide mb-1">
+								End Users
+							</div>
+							<div class="text-lg font-bold text-gray-900">2,200+ Technicians</div>
+							<div class="text-xs text-gray-500 mt-1">
+								Bilingual &middot; Region-Aware &middot; Cross-Device
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -282,9 +401,13 @@
 						<div>
 							<h3 class="text-lg font-semibold text-gray-900">Unified Search</h3>
 							<p class="mt-2 text-gray-600">
-								Fuse.js-powered server-side search across all content types. Typo-tolerant with
-								bilingual diacritics handling, permalinkable results, and p95 latency under 150ms.
-								In-memory per-pod caching with shareable URL state.
+								Fuse.js-powered server-side search with a <strong
+									>three-pass execution strategy</strong
+								>: original query, diacritic-normalized query (with scoring penalty), and spelling
+								variation expansion -- deduplicated and ranked into a 0-100 relevance score.
+								Weighted keys (title 60%, description 30%, tags 10%), percentile thresholding to cut
+								noise, and bilingual indexes (EN-CA / FR-CA) built separately with in-memory per-pod
+								caching. Permalinkable URL state and <strong>p95 latency under 150ms</strong>.
 							</p>
 						</div>
 					</div>
@@ -312,8 +435,13 @@
 						<div>
 							<h3 class="text-lg font-semibold text-gray-900">User Preferences + Favourites</h3>
 							<p class="mt-2 text-gray-600">
-								Preference persistence for a consistent experience across visits. Users can save
-								favourites and maintain their settings via Cloud SQL (PostgreSQL) + Prisma.
+								Database-backed favourites with <strong>offline-first sync</strong>: optimistic UI
+								updates, a queued offline buffer with exponential backoff and automatic retry, and
+								cross-device sync via PostgreSQL. Conflict resolution uses a latest-wins strategy
+								with server-authoritative deletes. User preferences use a
+								<strong>hybrid localStorage + cookie architecture</strong> so middleware and server components
+								can read language and region settings without round-trips, while the client retains richer
+								profile data locally.
 							</p>
 						</div>
 					</div>
@@ -525,18 +653,23 @@
 					<div class="rounded-xl bg-white border border-gray-200 p-6">
 						<h3 class="font-semibold text-gray-900 mb-2">Data Layer</h3>
 						<p class="text-gray-600 text-sm">
-							Cloud SQL (PostgreSQL) + Prisma for preferences, favourites, sessions, and event-style
-							telemetry. Deliberate Node.js runtime choice to support DB-backed session handling in
-							middleware.
+							Cloud SQL (PostgreSQL) + Prisma for favourites, sessions, article views, and ratings.
+							Deliberate Node.js runtime choice to support DB-backed session handling in middleware.
+							User preferences use a hybrid storage model -- a ~200-byte cookie for SSR/middleware
+							(language, regions, onboarding state) synced with richer localStorage data on the
+							client via a singleton ProfileService.
 						</p>
 					</div>
 
 					<div class="rounded-xl bg-white border border-gray-200 p-6">
 						<h3 class="font-semibold text-gray-900 mb-2">Search Architecture</h3>
 						<p class="text-gray-600 text-sm">
-							Server-side execution with in-memory per-pod caching. Bilingual normalization
-							(diacritics), spelling variations, relevance scoring, and URL-as-state for
-							shareability.
+							Server-side Fuse.js execution with in-memory per-pod caching and a three-pass
+							pipeline: original query, diacritic-normalized pass, and spelling-variation expansion
+							-- each with calibrated scoring penalties, then deduplicated and thresholded. Separate
+							bilingual indexes with webhook-triggered rebuilds. Includes a pagination workaround
+							for a known dotCMS offset bug that returns empty results, ensuring reliable
+							full-corpus indexing despite upstream limitations.
 						</p>
 					</div>
 
@@ -550,10 +683,12 @@
 					</div>
 
 					<div class="rounded-xl bg-white border border-gray-200 p-6">
-						<h3 class="font-semibold text-gray-900 mb-2">Deployment Readiness</h3>
+						<h3 class="font-semibold text-gray-900 mb-2">Deployment & Operations</h3>
 						<p class="text-gray-600 text-sm">
-							Designed for containerized GKE-style operations. Secure secrets handling, CI-friendly
-							workflows, and structured documentation for maintainability.
+							Containerized on GKE with multi-stage Docker builds. Search index rebuilt via
+							Kubernetes CronJob and webhook-triggered cache invalidation on CMS publish. Kubernetes
+							health probes (liveness, readiness, startup), structured Pino logging, and CI/CD via
+							GitHub Actions. Secure secrets handling and documented runbooks for maintainability.
 						</p>
 					</div>
 				</div>
@@ -596,7 +731,7 @@
 							<h3 class="font-semibold text-gray-900">AI-Powered Knowledge Assistant</h3>
 							<p class="text-gray-600 text-sm mt-1">
 								The Learning Hub Assistant uses RAG to ingest TechCentral/dotCMS articles, giving
-								2,500+ technicians conversational access to job aids, policies, and training
+								2,200+ technicians conversational access to job aids, policies, and training
 								content. Answers are grounded in the same content they browse and search.
 							</p>
 						</div>
@@ -700,8 +835,9 @@
 						<div>
 							<h3 class="font-semibold text-gray-900">Contract Extended</h3>
 							<p class="text-gray-600 text-sm mt-1">
-								Based on the platform's success and adoption by 2,500+ technicians, TELUS extended
-								the development contract for continued feature development and support.
+								Based on the platform's success and adoption by 2,200+ technicians, TELUS extended
+								the contract by 12 months, with new projects underway including an LMS and
+								certification system for technicians.
 							</p>
 						</div>
 					</div>

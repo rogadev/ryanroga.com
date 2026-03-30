@@ -10,7 +10,7 @@
 			slug: 'techcentral-telus',
 			client: 'TELUS Communications',
 			description:
-				'Enterprise knowledge hub serving 2,500+ technicians Canada-wide with bilingual content, AI-powered chat with RAG, unified search, and dotCMS integration.',
+				'Enterprise knowledge hub serving 2,200+ technicians Canada-wide with bilingual content, AI-powered chat with RAG, unified search, and dotCMS integration.',
 			image: '/logos/TELUS_Logo.svg',
 			tags: ['Enterprise Platform', 'Next.js 15', 'AI + RAG', 'Bilingual']
 		},

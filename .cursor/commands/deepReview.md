@@ -329,7 +329,6 @@ Structure your review as follows:
 After completing your manual review, use the Svelte MCP tools to validate your findings and catch additional issues:
 
 1. **Run the Svelte MCP `svelte_check` tool** on any Svelte components you reviewed. This will:
-
    - Detect additional type errors specific to Svelte syntax
    - Identify accessibility violations
    - Flag unused CSS selectors

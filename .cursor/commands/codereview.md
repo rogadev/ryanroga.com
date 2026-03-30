@@ -161,19 +161,16 @@ export const deletePost = command(z.object({ id: z.string() }), async ({ id }) =
 Flag files that violate these principles:
 
 1. **+page.svelte** — UI rendering, state binding, event handlers
-
    - ❌ No direct database calls
    - ❌ No business logic beyond simple conditionals
    - ❌ No fetch calls (use remote functions)
 
 2. **+page.server.ts / +layout.server.ts** — Use sparingly
-
    - ✅ Auth guards, redirects
    - ✅ SSR-critical data only
    - ❌ Not for data that should show loading states
 
 3. **.remote.ts files** — Server logic
-
    - ✅ Database operations
    - ✅ External API calls
    - ✅ Business logic

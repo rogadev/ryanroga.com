@@ -58,10 +58,10 @@
 							</li>
 						</ul>
 					</div>
-				<!-- Horizontal connector between steps (desktop only) -->
-				<div
-					class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-indigo-200 -translate-y-1/2"
-				></div>
+					<!-- Horizontal connector between steps (desktop only) -->
+					<div
+						class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-indigo-200 -translate-y-1/2"
+					></div>
 				</div>
 
 				<div class="relative">

@@ -13,6 +13,22 @@
 		content="web application maintenance, ongoing support, bug fixes, monitoring, updates, post-launch support"
 	/>
 	<link rel="canonical" href="https://roga.dev/services/maintenance" />
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": "Maintenance & Support",
+			"description": "Ongoing maintenance, monitoring, bug fixes, and feature additions for your web applications. Keep your tools running smoothly after launch.",
+			"provider": {
+				"@type": "Person",
+				"name": "Ryan Roga",
+				"url": "https://roga.dev"
+			},
+			"serviceType": "Web Application Maintenance",
+			"areaServed": "North America"
+		}
+	</script>
 </svelte:head>
 
 <!-- Hero -->
