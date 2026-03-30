@@ -15,6 +15,22 @@
 		content="RBAC, role-based access control, audit logs, security, compliance, access control, user permissions"
 	/>
 	<link rel="canonical" href="https://roga.dev/services/rbac-audit-logs" />
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": "Role-Based Access Control & Audit Logs",
+			"description": "Secure your internal tools with RBAC and maintain compliance with detailed audit trails. Control who sees what and track every change.",
+			"provider": {
+				"@type": "Person",
+				"name": "Ryan Roga",
+				"url": "https://roga.dev"
+			},
+			"serviceType": "Security & Compliance Development",
+			"areaServed": "North America"
+		}
+	</script>
 </svelte:head>
 
 <!-- Hero -->

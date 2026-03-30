@@ -41,7 +41,7 @@
 							>
 						</div>
 						<h4 class="text-lg font-semibold text-gray-900 mb-3">
-							Enterprise Knowledge Hub for 2,500+ Technicians
+							Enterprise Knowledge Hub for 2,200+ Technicians
 						</h4>
 						<p class="text-gray-600 mb-6">
 							Enterprise knowledge hub and dotCMS frontend with bilingual content, AI-powered chat
@@ -49,7 +49,7 @@
 						</p>
 						<div class="grid grid-cols-3 gap-4 mb-6">
 							<div class="text-center">
-								<div class="text-xl font-bold text-purple-600">2,500+</div>
+								<div class="text-xl font-bold text-purple-600">2,200+</div>
 								<div class="text-xs text-gray-600">Technicians</div>
 							</div>
 							<div class="text-center">

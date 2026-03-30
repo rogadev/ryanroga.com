@@ -26,12 +26,12 @@
 	<title>TechCentral (TELUS) Case Study | Enterprise Knowledge Hub | Roga Web Development</title>
 	<meta
 		name="description"
-		content="How I built TechCentral, an enterprise knowledge hub for TELUS serving 2,500+ technicians Canada-wide with bilingual content, AI-powered chat, and headless CMS integration."
+		content="How I built TechCentral, an enterprise knowledge hub for TELUS serving 2,200+ technicians Canada-wide with bilingual content, AI-powered chat, and headless CMS integration."
 	/>
 	<meta property="og:title" content="TechCentral (TELUS) Case Study | Roga Web Development" />
 	<meta
 		property="og:description"
-		content="Enterprise knowledge hub for TELUS Communications serving 2,500+ technicians with bilingual support, AI chatbot with RAG, unified search, and dotCMS-driven delivery."
+		content="Enterprise knowledge hub for TELUS Communications serving 2,200+ technicians with bilingual support, AI chatbot with RAG, unified search, and dotCMS-driven delivery."
 	/>
 	<link rel="canonical" href="https://roga.dev/projects/techcentral-telus" />
 
@@ -41,7 +41,7 @@
 			"@context": "https://schema.org",
 			"@type": "CreativeWork",
 			"name": "TechCentral",
-			"description": "Enterprise knowledge hub for TELUS Communications serving 2,500+ technicians Canada-wide",
+			"description": "Enterprise knowledge hub for TELUS Communications serving 2,200+ technicians Canada-wide",
 			"creator": {
 				"@type": "Person",
 				"name": "Ryan Roga",
@@ -95,7 +95,7 @@
 			<p class="mt-2 text-xl text-gray-600">Enterprise Knowledge Hub & Content Platform</p>
 
 			<p class="mt-6 text-lg leading-8 text-gray-600">
-				Enterprise knowledge hub and frontend for dotCMS, serving 2,500+ technicians Canada-wide.
+				Enterprise knowledge hub and frontend for dotCMS, serving 2,200+ technicians Canada-wide.
 				Bilingual (EN-CA / FR-CA), region- and audience-aware, with AI-powered chat and
 				high-performance search.
 			</p>
@@ -103,7 +103,7 @@
 			<!-- Key Stats -->
 			<div class="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-5">
 				<div class="rounded-xl bg-gray-50 p-4 text-center">
-					<div class="text-2xl font-bold text-gray-900">2,500+</div>
+					<div class="text-2xl font-bold text-gray-900">2,200+</div>
 					<div class="text-sm text-gray-600">Technicians</div>
 				</div>
 				<div class="rounded-xl bg-gray-50 p-4 text-center">
@@ -119,8 +119,8 @@
 					<div class="text-sm text-gray-600">Chat Assistant</div>
 				</div>
 				<div class="rounded-xl bg-gray-50 p-4 text-center">
-					<div class="text-2xl font-bold text-gray-900">9</div>
-					<div class="text-sm text-gray-600">Content Types</div>
+					<div class="text-2xl font-bold text-gray-900">2,000+</div>
+					<div class="text-sm text-gray-600">Articles Migrated</div>
 				</div>
 			</div>
 		</div>
@@ -139,17 +139,19 @@
 			>
 				<p>
 					TechCentral is an enterprise knowledge hub and custom frontend for <strong>dotCMS</strong
-					>, serving over <strong>2,500 technicians Canada-wide</strong> since its launch on
+					>, serving over <strong>2,200 technicians Canada-wide</strong> since its launch on
 					February 23, 2026. Tailored by <strong>language (EN-CA/FR-CA)</strong> and
 					<strong>region/audience</strong>, it's the single source of truth for job aids, billing,
 					training, policies, and more.
 				</p>
 				<p>
-					The platform combines a headless CMS with a high-performance Next.js frontend, unified
+					The platform migrated over <strong>2,000 articles from 7+ stakeholder groups</strong> and
+					combines a headless CMS with a high-performance Next.js frontend, unified
 					search, favourites, trending content, and an <strong
 						>AI-powered Learning Hub Assistant</strong
-					> that uses RAG to ingest articles for accurate, interactive Q&A. TELUS has extended the contract
-					based on the platform's success.
+					> that uses RAG to ingest articles for accurate, interactive Q&A. Based on the platform's
+					success, TELUS extended the contract by 12 months, with new projects underway including
+					an LMS and certification system for technicians.
 				</p>
 			</div>
 		</div>
@@ -163,7 +165,7 @@
 				System Architecture
 			</h2>
 			<p class="mt-4 text-gray-600 animate-on-scroll" style="transition-delay: 100ms;">
-				TechCentral sits between a headless CMS and 2,500+ end users, orchestrating content
+				TechCentral sits between a headless CMS and 2,200+ end users, orchestrating content
 				delivery, search, user data, and AI-powered chat through a single Next.js application.
 			</p>
 
@@ -257,7 +259,7 @@
 							<div class="text-xs font-medium text-green-600 uppercase tracking-wide mb-1">
 								End Users
 							</div>
-							<div class="text-lg font-bold text-gray-900">2,500+ Technicians</div>
+							<div class="text-lg font-bold text-gray-900">2,200+ Technicians</div>
 							<div class="text-xs text-gray-500 mt-1">
 								Bilingual &middot; Region-Aware &middot; Cross-Device
 							</div>
@@ -729,7 +731,7 @@
 							<h3 class="font-semibold text-gray-900">AI-Powered Knowledge Assistant</h3>
 							<p class="text-gray-600 text-sm mt-1">
 								The Learning Hub Assistant uses RAG to ingest TechCentral/dotCMS articles, giving
-								2,500+ technicians conversational access to job aids, policies, and training
+								2,200+ technicians conversational access to job aids, policies, and training
 								content. Answers are grounded in the same content they browse and search.
 							</p>
 						</div>
@@ -833,8 +835,9 @@
 						<div>
 							<h3 class="font-semibold text-gray-900">Contract Extended</h3>
 							<p class="text-gray-600 text-sm mt-1">
-								Based on the platform's success and adoption by 2,500+ technicians, TELUS extended
-								the development contract for continued feature development and support.
+								Based on the platform's success and adoption by 2,200+ technicians, TELUS extended
+								the contract by 12 months, with new projects underway including an LMS and
+								certification system for technicians.
 							</p>
 						</div>
 					</div>

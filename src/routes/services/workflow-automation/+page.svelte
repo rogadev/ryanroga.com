@@ -13,6 +13,22 @@
 		content="workflow automation, approval flows, process automation, business automation, task automation, notifications"
 	/>
 	<link rel="canonical" href="https://roga.dev/services/workflow-automation" />
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": "Workflow Automation",
+			"description": "Automate approval workflows, notifications, and repetitive tasks. Build processes that run themselves.",
+			"provider": {
+				"@type": "Person",
+				"name": "Ryan Roga",
+				"url": "https://roga.dev"
+			},
+			"serviceType": "Workflow Automation",
+			"areaServed": "North America"
+		}
+	</script>
 </svelte:head>
 
 <!-- Hero -->
