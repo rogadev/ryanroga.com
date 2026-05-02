@@ -1,0 +1,9 @@
+dist/
+.astro/
+.vercel/
+.output/
+node_modules/
+_references/
+.beads/
+.fallow/
+pnpm-lock.yaml
