@@ -1,0 +1,47 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: America/Vancouver
+    open-pull-requests-limit: 5
+    groups:
+      astro:
+        patterns:
+          - astro
+          - '@astrojs/*'
+      svelte:
+        patterns:
+          - svelte
+          - '@astrojs/svelte'
+          - eslint-plugin-svelte
+          - prettier-plugin-svelte
+          - svelte-eslint-parser
+      tailwind:
+        patterns:
+          - tailwindcss
+          - '@tailwindcss/*'
+      lint-format:
+        patterns:
+          - eslint
+          - eslint-*
+          - '@typescript-eslint/*'
+          - typescript-eslint
+          - oxlint
+          - prettier
+          - prettier-*
+      types:
+        patterns:
+          - '@types/*'
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: America/Vancouver
+    open-pull-requests-limit: 3
