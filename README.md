@@ -46,19 +46,19 @@ If `pnpm install` aborts with `ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`, pref
 
 ## Scripts
 
-| Command           | Action                                                       |
-| :---------------- | :----------------------------------------------------------- |
-| `pnpm dev`        | Start dev server at `localhost:4321`                         |
-| `pnpm devo`       | Start dev server and open browser                            |
-| `pnpm build`      | Build static site to `dist/`                                 |
-| `pnpm preview`    | Preview the production build                                 |
-| `pnpm check`      | `astro check` — TypeScript + content schema validation       |
-| `pnpm lint`       | `oxlint` then `eslint`                                       |
-| `pnpm lint:fast`  | `oxlint` only                                                |
-| `pnpm lint:fix`   | Auto-fix lint issues                                         |
-| `pnpm format`     | Prettier write                                               |
-| `pnpm fix`        | Format + format-check + lint:fix + lint                      |
-| `pnpm ready`      | `pnpm fix && pnpm check` — pre-commit gate                   |
+| Command          | Action                                                 |
+| :--------------- | :----------------------------------------------------- |
+| `pnpm dev`       | Start dev server at `localhost:4321`                   |
+| `pnpm devo`      | Start dev server and open browser                      |
+| `pnpm build`     | Build static site to `dist/`                           |
+| `pnpm preview`   | Preview the production build                           |
+| `pnpm check`     | `astro check` — TypeScript + content schema validation |
+| `pnpm lint`      | `oxlint` then `eslint`                                 |
+| `pnpm lint:fast` | `oxlint` only                                          |
+| `pnpm lint:fix`  | Auto-fix lint issues                                   |
+| `pnpm format`    | Prettier write                                         |
+| `pnpm fix`       | Format + format-check + lint:fix + lint                |
+| `pnpm ready`     | `pnpm fix && pnpm check` — pre-commit gate             |
 
 ## Project structure
 

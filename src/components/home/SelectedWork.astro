@@ -4,7 +4,7 @@ import Section from '../Section.astro';
 
 const work = (await getCollection('work'))
 	.filter((entry) => entry.data.featured && entry.data.status !== 'draft')
-	.sort((a, b) => a.data.order - b.data.order);
+	.toSorted((a, b) => a.data.order - b.data.order);
 ---
 
 <Section
