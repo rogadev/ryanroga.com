@@ -13,10 +13,13 @@
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro",
-    "lint": "eslint .",
+    "lint": "oxlint && eslint .",
     "lint:fast": "oxlint",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "lint:fix": "oxlint --fix && eslint --fix .",
+    "format": "prettier --write . --log-level warn",
+    "format:check": "prettier --check . --log-level warn",
+    "fix": "pnpm format && pnpm format:check && pnpm lint:fix && pnpm lint",
+    "ready": "pnpm fix && pnpm check"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
