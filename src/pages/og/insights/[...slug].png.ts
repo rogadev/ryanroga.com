@@ -22,7 +22,13 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', {
 
 export const GET: APIRoute<Props> = async ({ props }) => {
 	const { data } = props.entry;
-	const tagPart = data.tags.length > 0 ? data.tags.slice(0, 3).map((t) => `#${t}`).join(' · ') : '';
+	const tagPart =
+		data.tags.length > 0
+			? data.tags
+					.slice(0, 3)
+					.map((t) => `#${t}`)
+					.join(' · ')
+			: '';
 	const datePart = dateFormatter.format(data.pubDate);
 	const footnote = tagPart ? `${datePart} · ${tagPart}` : datePart;
 
