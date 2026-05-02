@@ -1,0 +1,46 @@
+---
+/**
+ * Visible placeholder for case-study screenshots that don't exist yet.
+ * Renders a browser-frame mockup so the prose has visual weight without
+ * faking imagery. Caption describes what the real screenshot will show.
+ */
+interface Props {
+	caption: string;
+	aspect?: '16/10' | '16/9' | '4/3' | '1/1';
+}
+
+const { caption, aspect = '16/10' } = Astro.props;
+
+const aspectClass =
+	{
+		'16/10': 'aspect-[16/10]',
+		'16/9': 'aspect-video',
+		'4/3': 'aspect-[4/3]',
+		'1/1': 'aspect-square',
+	}[aspect];
+---
+
+<figure class="my-8 overflow-hidden rounded-lg border border-border bg-bg-soft">
+	<div
+		class="flex items-center justify-between gap-2 border-b border-border px-3 py-2"
+		aria-hidden="true"
+	>
+		<span class="flex items-center gap-1.5">
+			<span class="h-2 w-2 rounded-full bg-border-strong"></span>
+			<span class="h-2 w-2 rounded-full bg-border-strong"></span>
+			<span class="h-2 w-2 rounded-full bg-border-strong"></span>
+		</span>
+		<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+			Screenshot pending
+		</span>
+		<span class="w-12"></span>
+	</div>
+	<div
+		class={`relative ${aspectClass} flex items-center justify-center bg-bg`}
+		style="background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px); background-size: 20px 20px;"
+	>
+		<p class="rounded-sm border border-border bg-bg-soft px-3 py-1.5 font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+			{caption}
+		</p>
+	</div>
+</figure>

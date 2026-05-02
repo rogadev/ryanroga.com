@@ -1,0 +1,43 @@
+---
+id: EAEO-004
+client: E&EO · eaeo.ca
+industry: Public site · Education
+headline: Free career-exploration platform connecting Canadian credentials to real employment outlooks.
+outcome: BC institutions and credentials live now; expanding nationwide by late 2026.
+tags:
+  - SvelteKit
+  - StatsCan data
+  - Public site
+period: 2024 — Present
+role: Lead architect & full-stack developer
+status: live
+featured: true
+order: 4
+liveUrl: https://eaeo.ca
+---
+
+## Context
+
+E&EO ("Education & Employment Outlooks") connects Canadian post-secondary credentials — diplomas, certificates, degrees — to the labour-market outlooks that follow them. It's a free, public tool aimed at prospective students, career-changers, and the educators and counsellors who advise them.
+
+The premise is simple: if you're considering a credential, you should be able to see, in one place, what jobs it leads to, what those jobs typically pay, and what the regional outlook is.
+
+## Approach
+
+The platform pulls structured data from Statistics Canada and the Government of Canada's Labour Market Information feeds, normalizes it against credential metadata from participating institutions, and surfaces it in a clean, search-friendly UI. It descends from earlier work on the [VIU Career Outlooks](https://career-outlooks.viu.ca) tool I built during my co-op, scaled to multiple institutions and provinces.
+
+![E&EO landing page — credential search and labour-market outlook for BC institutions.](/images/work/eaeo/hero.png)
+
+## What you actually see
+
+The interface is built around a simple question: *what does this credential lead to?* You start with a program or NOC code and the page resolves into the jobs typically held, regional outlooks, and employment trends — the data prospective students and career counsellors actually want to compare across credentials.
+
+![Career outlook detail — three-year regional projection rendered against credential metadata.](/images/work/eaeo/example.png)
+
+## Status
+
+BC institutions and credentials are live now. Expansion to the rest of Canada is rolling out through late 2026.
+
+## More coming
+
+A full case study with the data architecture, scaling considerations, and lessons from running a public-facing site against government data feeds is being written. In the meantime — headline, scope, and stack are accurate. For specifics, [book a call](/contact).

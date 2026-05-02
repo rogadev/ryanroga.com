@@ -11,7 +11,7 @@
 - We build the new site in this same repo, at the root. Same Vercel project, same domain.
 - Every phase ends with something deployable. No big-bang merge.
 - We do not rebuild every old route on day one. Home + work + one case study + blog scaffold is enough to cut over.
-- Content is migrated *deliberately*, not bulk-copied. A lot of old copy was written for a different positioning and should be rewritten.
+- Content is migrated _deliberately_, not bulk-copied. A lot of old copy was written for a different positioning and should be rewritten.
 
 ## Phases
 
@@ -102,13 +102,13 @@
 
 ## Risks and how we handle them
 
-| Risk | Mitigation |
-| --- | --- |
-| Scope creep on case studies | Cap at 4 for launch, the rest can come later as blog posts. |
+| Risk                                               | Mitigation                                                             |
+| -------------------------------------------------- | ---------------------------------------------------------------------- |
+| Scope creep on case studies                        | Cap at 4 for launch, the rest can come later as blog posts.            |
 | Astro + Svelte island hydration order causing FOUC | Theme is set via inline script before paint; islands are non-blocking. |
-| Lighthouse regressions when we add the blog | Budget per route; CI check against `@lhci/cli` on PRs. |
-| Domain / DNS hiccup at cutover | Same Vercel project; cutover is a deploy, not a DNS change. |
-| Lost SEO from URL changes | Per-URL redirect map in Phase 6, no exceptions. |
+| Lighthouse regressions when we add the blog        | Budget per route; CI check against `@lhci/cli` on PRs.                 |
+| Domain / DNS hiccup at cutover                     | Same Vercel project; cutover is a deploy, not a DNS change.            |
+| Lost SEO from URL changes                          | Per-URL redirect map in Phase 6, no exceptions.                        |
 
 ## Open questions for Ryan before Phase 1
 

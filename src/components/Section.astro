@@ -1,0 +1,55 @@
+---
+/**
+ * Section — bordered "frame" with consistent vertical rhythm.
+ * Optional eyebrow label (mono, small, uppercase) and section heading.
+ */
+interface Props {
+	id?: string;
+	eyebrow?: string;
+	heading?: string;
+	dek?: string;
+	class?: string;
+	bordered?: boolean;
+	dense?: boolean;
+}
+
+const {
+	id,
+	eyebrow,
+	heading,
+	dek,
+	class: className = '',
+	bordered = true,
+	dense = false,
+} = Astro.props;
+---
+
+<section
+	id={id}
+	class:list={[
+		'relative',
+		bordered && 'border-t border-border',
+		dense ? 'py-12 sm:py-16' : 'py-20 sm:py-28',
+		className,
+	]}
+>
+	{
+		(eyebrow || heading || dek) && (
+			<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+				<header class="mb-12 max-w-3xl sm:mb-16">
+					{eyebrow && (
+						<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">{eyebrow}</p>
+					)}
+					{heading && (
+						<h2 class="mt-4 text-3xl font-medium tracking-tight text-balance sm:text-4xl">
+							{heading}
+						</h2>
+					)}
+					{dek && <p class="mt-4 max-w-2xl text-lg text-fg-muted text-pretty">{dek}</p>}
+				</header>
+			</div>
+		)
+	}
+
+	<slot />
+</section>

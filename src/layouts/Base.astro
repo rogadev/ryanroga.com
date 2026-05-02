@@ -1,0 +1,42 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	/** Override the auto-derived OG path (absolute, e.g. `/og/custom.png`). */
+	ogPath?: string;
+	noindex?: boolean;
+}
+
+const { title, description, ogPath, noindex } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead {title} {description} {ogPath} {noindex} />
+		{/* No-FOUC theme bootstrap. Runs before paint. */}
+		<script is:inline>
+			(() => {
+				try {
+					const stored = localStorage.getItem('theme');
+					const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+					const theme = stored ?? (prefersLight ? 'light' : 'dark');
+					if (theme === 'light') document.documentElement.classList.add('light');
+				} catch {
+					/* ignore */
+				}
+			})();
+		</script>
+	</head>
+	<body class="flex min-h-dvh flex-col bg-bg text-fg">
+		<Header />
+		<main class="flex-1">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

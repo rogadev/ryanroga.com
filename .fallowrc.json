@@ -1,0 +1,13 @@
+{
+	"$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
+	"ignorePatterns": [
+		"_references/**",
+		"docs/**",
+		".astro/**",
+		".vercel/**",
+		".output/**",
+		".fallow/**",
+		"dist/**",
+		"node_modules/**"
+	]
+}

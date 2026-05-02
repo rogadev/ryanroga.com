@@ -10,7 +10,7 @@
 
 The current site reads as "competent freelance portfolio." It does not read as a person who builds the kind of internal tools, dashboards, and operational software that the work actually delivers. The redesign is a credibility play: the site itself should be a sample of the work — dense, fast, restrained, considered.
 
-Audience is operators and decision-makers at small-to-mid businesses who already need software built and are deciding *who* to trust. They are not browsing for inspiration. They are filtering.
+Audience is operators and decision-makers at small-to-mid businesses who already need software built and are deciding _who_ to trust. They are not browsing for inspiration. They are filtering.
 
 ## 2. Positioning
 
@@ -23,33 +23,43 @@ Audience is operators and decision-makers at small-to-mid businesses who already
 These are pulled from what experts consistently single out about Linear, Stripe, Vercel, and Resend — and translated into rules for this site.
 
 ### 3.1 Density without overwhelm
+
 Linear and Stripe both put more information per screen than typical SaaS marketing — but they read calmly because typographic hierarchy and whitespace are deliberate. We pack content in. We do not pad sections to look "premium."
 
 ### 3.2 Typography is the design
+
 When type is set well, ornamentation becomes unnecessary. Pick a strong sans (geometric, neutral) and a mono with personality. Use weight, size, and tracking — not color or borders — to build hierarchy. The site should hold up if you turned color off.
 
 ### 3.3 Restraint with color
+
 One accent. Used for action, status, or emphasis — never decoration. Everything else is a grayscale ramp. Linear and Vercel both win this way. Resend especially.
 
 ### 3.4 Purposeful motion only
+
 Micro-interactions confirm action (40–200ms). No scroll-triggered fade-ins. No decorative parallax. If motion is not communicating something, remove it.
 
 ### 3.5 Real product surfaces, not illustrations
+
 Linear shows real app screens. Stripe shows real API responses. Vercel shows real deployment logs. We show real dashboards, real query results, real interfaces. No vector illustrations of "the cloud." No abstract gradients.
 
 ### 3.6 Borders, not shadows
+
 Hairline borders (1px, low-contrast) define structure. Drop shadows are out — they read as 2018 SaaS. Where we need elevation, we use a slightly lighter surface.
 
 ### 3.7 Empty / error / loading states are first-class
+
 Every interactive surface gets all four states designed at once. Skeleton states that look intentional, not broken. Vercel is the model here.
 
 ### 3.8 Monospace as personality
+
 Use mono for technical content — code, IDs, timestamps, file paths, command palette. Treat it as part of the brand language, not just `<code>` formatting. Vercel does this to signal "we are engineers."
 
 ### 3.9 Performance is design
+
 Subset fonts. No CLS. Above-the-fold renders < 100ms after HTML arrives. Lighthouse 100/100/100/100 is the floor, not the goal.
 
 ### 3.10 Dark mode is a peer
+
 Dark and light are designed in parallel, not "dark = invert." Both look intentional. Default to system preference.
 
 ## 4. What the home page must do
@@ -67,7 +77,7 @@ Below the fold (still on the home page):
 6. **A signal of recency** — the latest blog post or two, headline + date + read time. Cheap proof that I am still paying attention.
 7. **One clear CTA** at the bottom.
 
-What is *not* on the home page anymore: a tech-stack logo wall, a generic "process" diagram, an FAQ with five obvious questions, decorative gradients, a hero illustration.
+What is _not_ on the home page anymore: a tech-stack logo wall, a generic "process" diagram, an FAQ with five obvious questions, decorative gradients, a hero illustration.
 
 ## 5. Information architecture
 

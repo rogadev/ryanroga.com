@@ -1,0 +1,350 @@
+---
+import Section from '../components/Section.astro';
+import { BOOKING_URL, SITE_LOCATION, SOCIAL, STUDIO_NAME } from '../consts';
+import Base from '../layouts/Base.astro';
+
+const title = `Resume · Ryan Roga · ${STUDIO_NAME}`;
+const description = `Resume of Ryan Roga — founder of ${STUDIO_NAME}. Full-stack developer, systems architect, and AI consultant based in ${SITE_LOCATION}.`;
+
+const skills = [
+	{
+		group: 'Languages',
+		items: ['TypeScript', 'JavaScript', 'Python', 'HTML', 'CSS · Tailwind'],
+	},
+	{
+		group: 'Frameworks',
+		items: ['Astro', 'SvelteKit', 'Svelte 5', 'Nuxt', 'Vue', 'React', 'Node.js · Express'],
+	},
+	{
+		group: 'Data & infra',
+		items: ['Postgres', 'Prisma', 'Supabase', 'Vercel', 'Railway', 'Zod'],
+	},
+	{
+		group: 'AI',
+		items: ['OpenAI API', 'Anthropic API', 'Vercel AI SDK', 'RAG', 'Eval'],
+	},
+	{
+		group: 'Practice',
+		items: [
+			'Product discovery',
+			'Systems architecture',
+			'CI/CD',
+			'Vitest · Jest',
+			'Code review',
+			'Technical writing',
+		],
+	},
+];
+
+const experience = [
+	{
+		role: 'Founder · Software Studio',
+		org: STUDIO_NAME,
+		location: SITE_LOCATION,
+		period: '2021 — Present',
+		body: 'End-to-end software for businesses: product strategy, systems architecture, full-stack web development, AI integration, and ongoing maintenance. Selected clients include TELUS, E&EO, CopyCleanse, Lot Logistics, and EzTripr. Engagement formats range from short scoped builds to multi-year fractional partnerships.',
+		bullets: [
+			'Lead architect on TELUS TechCentral — multi-tenant operations platform launched April 2026, now with 2,500+ active users and hundreds of daily actives.',
+			"Awarded the follow-on contract for Project Summit — overhauling TELUS's training, mentorship, and credential-certification system from the ground up. Launching 2027.",
+			'Designed and shipped LLM-backed features in production (retrieval, structured output, evaluation pipelines) for client tools, including TC Tools — an AI-assisted content toolkit inside TechCentral.',
+			'Maintain and operate live software for clients across telecom, education, logistics, and home services.',
+		],
+	},
+	{
+		role: 'Web Developer (Co-op)',
+		org: 'Vancouver Island University',
+		location: 'Nanaimo, BC',
+		period: 'Apr 2022 — Sep 2022',
+		body: 'Designed and built the VIU Career Outlooks tool — a full-stack web app helping prospective students explore career paths, integrating real-time labour-market data from the Government of Canada.',
+		bullets: [
+			'Led architecture and delivery from blank repo to production deploy on Vercel.',
+			'Built a Node/Express scraping backend and a Nuxt proof-of-concept before settling on SvelteKit for the production UI.',
+			'Tool remains in active use by VIU students.',
+		],
+	},
+	{
+		role: 'Founder / CEO',
+		org: 'MossAway Services Inc.',
+		location: 'Victoria, BC',
+		period: 'Dec 2017 — May 2023',
+		body: "Founded and grew a home-services company from scratch. Built the website and a CallRail + Zapier automation pipeline that handled quoting, scheduling, and customer follow-up — the system was responsible for 100% of the company's leads, fully organic.",
+		bullets: [
+			'Awarded the Better Business Bureau Torch Award for Trust & Integrity (2019).',
+			'Built a mobile quoting tool for partner companies — boosted closing rate by 30%.',
+			'Sold/wound down operations in 2023 to go full-time on software.',
+		],
+	},
+];
+
+const projects = [
+	{
+		name: 'TechCentral · TELUS',
+		summary:
+			'Operations & training platform for 2,200+ field technicians. Multi-tenant, RBAC, audit logs, LMS in development.',
+		tech: ['SvelteKit', 'Postgres', 'TypeScript', 'RBAC', 'Audit logs'],
+	},
+	{
+		name: 'VIU Career Outlooks',
+		summary:
+			'Full-stack web app for prospective students to explore career paths. Built during VIU co-op, still in production.',
+		tech: ['SvelteKit', 'Node · Express', 'Puppeteer', 'Vercel KV', 'Tailwind'],
+		links: [
+			{ label: 'Live', url: 'https://career-outlooks.viu.ca' },
+			{ label: 'Repo', url: 'https://github.com/rogadev/viu-career-outlooks' },
+		],
+	},
+	{
+		name: 'EzTripr',
+		summary:
+			'Capstone project — trip-planning tool for a senior-transport service. Multi-passenger routing with live ETAs and driver UI.',
+		tech: ['Nuxt 3', 'Supabase', 'Prisma', 'Mapbox', 'Google Maps API', 'OpenAI', 'TypeScript'],
+		links: [{ label: 'Repo', url: 'https://github.com/rogadev/capstone' }],
+	},
+];
+
+const education = {
+	credential: 'Diploma · Web & Mobile Application Development',
+	school: 'Vancouver Island University',
+	location: 'Nanaimo, BC',
+	year: '2023',
+	notes: [
+		"Top of program. Co-op placement with VIU's IT department.",
+		'Tutored fellow students one-on-one and in groups during the JavaScript modules.',
+	],
+};
+---
+
+<Base title={title} description={description}>
+	<!-- Header -->
+	<section class="border-b border-border">
+		<div class="mx-auto w-full max-w-page px-6 py-16 sm:px-8 sm:py-20">
+			<div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+				<div class="lg:col-span-8">
+					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+						Resume · Ryan Roga
+					</p>
+					<h1 class="mt-4 text-4xl font-medium tracking-tight text-balance sm:text-5xl">
+						Full-stack developer, systems architect, AI consultant.
+					</h1>
+					<p class="mt-4 max-w-2xl text-lg text-fg-muted text-pretty">
+						Founder of {STUDIO_NAME}. I design, ship, and maintain business software end-to-end —
+						web applications, internal tools, integrations, and AI features. Available for new
+						engagements: project work, fractional partnerships, or short technical advisory.
+					</p>
+				</div>
+				<aside class="lg:col-span-4 lg:text-right">
+					<dl
+						class="grid grid-cols-1 gap-3 font-mono text-2xs tracking-[0.12em] text-fg-muted uppercase"
+					>
+						<div>
+							<dt class="text-fg-subtle">Contact</dt>
+							<dd class="mt-0.5 break-all">
+								<a
+									class="text-fg hover:underline"
+									href={BOOKING_URL}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Book a call
+								</a>
+							</dd>
+						</div>
+						<div>
+							<dt class="text-fg-subtle">Location</dt>
+							<dd class="mt-0.5">{SITE_LOCATION}</dd>
+						</div>
+						<div>
+							<dt class="text-fg-subtle">Web</dt>
+							<dd class="mt-0.5">
+								<a class="text-fg hover:underline" href="https://roga.dev">roga.dev</a>
+							</dd>
+						</div>
+						<div>
+							<dt class="text-fg-subtle">Profiles</dt>
+							<dd class="mt-0.5 flex flex-wrap gap-3 lg:justify-end">
+								<a
+									class="text-fg hover:underline"
+									href={SOCIAL.github}
+									target="_blank"
+									rel="noopener noreferrer">GitHub</a
+								>
+								<a
+									class="text-fg hover:underline"
+									href={SOCIAL.linkedin}
+									target="_blank"
+									rel="noopener noreferrer">LinkedIn</a
+								>
+							</dd>
+						</div>
+					</dl>
+				</aside>
+			</div>
+		</div>
+	</section>
+
+	<!-- Skills -->
+	<Section eyebrow="Skills" heading="What I work with." bordered={false}>
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<dl
+				class="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-5"
+			>
+				{
+					skills.map((g) => (
+						<div class="bg-bg p-5">
+							<dt class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+								{g.group}
+							</dt>
+							<dd class="mt-3 flex flex-wrap gap-1.5 font-mono text-2xs">
+								{g.items.map((s) => (
+									<span class="rounded-sm border border-border px-1.5 py-0.5 text-fg-muted">
+										{s}
+									</span>
+								))}
+							</dd>
+						</div>
+					))
+				}
+			</dl>
+		</div>
+	</Section>
+
+	<!-- Experience -->
+	<Section eyebrow="Experience" heading="Where I've shipped.">
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<ol class="divide-y divide-border border-y border-border">
+				{
+					experience.map((e) => (
+						<li class="grid gap-3 py-8 sm:grid-cols-12 sm:gap-8">
+							<div class="sm:col-span-4">
+								<p class="text-base font-medium text-fg">{e.role}</p>
+								<p class="mt-1 text-sm text-fg-muted">{e.org}</p>
+								<p class="mt-2 font-mono text-2xs tracking-[0.16em] text-fg-subtle uppercase">
+									{e.period} · {e.location}
+								</p>
+							</div>
+							<div class="sm:col-span-8">
+								<p class="text-fg-muted text-pretty">{e.body}</p>
+								<ul class="mt-4 space-y-2 text-sm text-fg-muted" role="list">
+									{e.bullets.map((b) => (
+										<li class="flex gap-2.5">
+											<span
+												class="mt-1.5 inline-block h-1 w-1 flex-shrink-0 rounded-full bg-[var(--color-accent)]"
+												aria-hidden="true"
+											/>
+											<span class="text-pretty">{b}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						</li>
+					))
+				}
+			</ol>
+		</div>
+	</Section>
+
+	<!-- Selected projects -->
+	<Section eyebrow="Selected projects" heading="A few things I've built.">
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<ul
+				class="grid gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-3"
+				role="list"
+			>
+				{
+					projects.map((p) => (
+						<li class="flex flex-col gap-3 bg-bg p-6">
+							<h3 class="text-base font-medium text-fg">{p.name}</h3>
+							<p class="text-sm text-fg-muted text-pretty">{p.summary}</p>
+							<ul class="mt-auto flex flex-wrap gap-1.5 font-mono text-2xs" role="list">
+								{p.tech.map((t) => (
+									<li class="rounded-sm border border-border px-1.5 py-0.5 text-fg-muted">{t}</li>
+								))}
+							</ul>
+							{p.links && (
+								<ul class="flex gap-3 font-mono text-2xs tracking-[0.16em] uppercase" role="list">
+									{p.links.map((l) => (
+										<li>
+											<a
+												href={l.url}
+												target="_blank"
+												rel="noopener noreferrer"
+												class="text-fg-muted underline-offset-4 hover:text-fg hover:underline"
+											>
+												{l.label} →
+											</a>
+										</li>
+									))}
+								</ul>
+							)}
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</Section>
+
+	<!-- Education -->
+	<Section eyebrow="Education" heading="Formal training.">
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<div class="grid gap-3 border-y border-border py-8 sm:grid-cols-12 sm:gap-8">
+				<div class="sm:col-span-4">
+					<p class="text-base font-medium text-fg">{education.credential}</p>
+					<p class="mt-1 text-sm text-fg-muted">{education.school}</p>
+					<p class="mt-2 font-mono text-2xs tracking-[0.16em] text-fg-subtle uppercase">
+						{education.year} · {education.location}
+					</p>
+				</div>
+				<div class="sm:col-span-8">
+					<ul class="space-y-2 text-sm text-fg-muted" role="list">
+						{
+							education.notes.map((n) => (
+								<li class="flex gap-2.5">
+									<span
+										class="mt-1.5 inline-block h-1 w-1 flex-shrink-0 rounded-full bg-[var(--color-accent)]"
+										aria-hidden="true"
+									/>
+									<span class="text-pretty">{n}</span>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</Section>
+
+	<!-- References -->
+	<Section
+		eyebrow="References"
+		heading="Available on request."
+		dek="Past clients, instructors, and colleagues. Contact details shared after an introductory call."
+	>
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<p class="font-mono text-sm text-fg-muted">
+				References from VIU instructors, TELUS / TechCentral colleagues, and former MossAway
+				Services partners are available on request.
+			</p>
+		</div>
+	</Section>
+
+	<!-- Footer CTA -->
+	<section class="border-t border-border bg-bg-soft">
+		<div class="mx-auto w-full max-w-page px-6 py-16 sm:px-8 sm:py-20">
+			<div class="flex flex-wrap items-center justify-between gap-6">
+				<p class="font-mono text-2xs tracking-[0.16em] text-fg-subtle uppercase">
+					Last updated · {
+						new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long' })
+					}
+				</p>
+				<div class="flex flex-wrap items-center gap-3">
+					<a
+						href="/contact"
+						class="inline-flex items-center gap-2 rounded-md bg-fg px-4 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-90"
+					>
+						Book a call
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Base>

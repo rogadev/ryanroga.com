@@ -1,0 +1,290 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { STUDIO_NAME } from '../consts';
+import Base from './Base.astro';
+
+interface Props {
+	entry: CollectionEntry<'work'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+
+const statusLabel = {
+	live: 'Live · in production',
+	'in-development': 'In development',
+	archived: 'Archived',
+	draft: 'Draft',
+}[data.status];
+
+const statusColor = {
+	live: 'var(--color-positive)',
+	'in-development': 'var(--color-warning)',
+	archived: 'var(--color-fg-subtle)',
+	draft: 'var(--color-fg-subtle)',
+}[data.status];
+
+const title = `${data.client} · ${STUDIO_NAME}`;
+const description = data.headline;
+---
+
+<Base {title} {description}>
+	<!-- Header -->
+	<section class="border-b border-border">
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<div class="pt-16 pb-12 sm:pt-20 sm:pb-16">
+				<a
+					href="/work"
+					class="inline-flex items-center gap-2 font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase transition-colors hover:text-fg"
+				>
+					<svg
+						width="12"
+						height="12"
+						viewBox="0 0 16 16"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+					>
+						<path d="M13 8H3M7 4L3 8l4 4"></path>
+					</svg>
+					All work
+				</a>
+
+				<div class="mt-10 grid gap-8 lg:grid-cols-12 lg:gap-12">
+					<div class="lg:col-span-8">
+						<div
+							class="flex flex-wrap items-center gap-3 font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase"
+						>
+							<span>{data.id}</span>
+							<span class="text-border-strong">·</span>
+							<span>{data.industry}</span>
+							<span class="text-border-strong">·</span>
+							<span class="inline-flex items-center gap-1.5">
+								<span
+									class="h-1.5 w-1.5 rounded-full"
+									style={`background-color: ${statusColor}`}
+									aria-hidden="true"></span>
+								{statusLabel}
+							</span>
+						</div>
+						<p
+							class="mt-6 font-mono text-2xs tracking-[0.16em] text-[var(--color-accent)] uppercase"
+						>
+							{data.client}
+						</p>
+						<h1 class="mt-3 text-4xl font-medium tracking-tight text-balance sm:text-5xl">
+							{data.headline}
+						</h1>
+						<p class="mt-6 max-w-2xl text-lg text-fg-muted text-pretty sm:text-xl">
+							{data.outcome}
+						</p>
+					</div>
+
+					<aside class="lg:col-span-4">
+						<dl
+							class="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border"
+						>
+							<div class="bg-bg-soft px-4 py-4">
+								<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Role</dt>
+								<dd class="mt-1 text-sm text-fg">{data.role}</dd>
+							</div>
+							<div class="bg-bg-soft px-4 py-4">
+								<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Period</dt>
+								<dd class="mt-1 text-sm text-fg">{data.period}</dd>
+							</div>
+							<div class="col-span-2 bg-bg-soft px-4 py-4">
+								<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Stack</dt>
+								<dd class="mt-2 flex flex-wrap gap-1.5 font-mono text-2xs">
+									{
+										data.tags.map((t) => (
+											<span class="rounded-sm border border-border px-1.5 py-0.5 text-fg-muted">
+												{t}
+											</span>
+										))
+									}
+								</dd>
+							</div>
+							{
+								(data.liveUrl || data.repoUrl) && (
+									<div class="col-span-2 flex items-center gap-4 bg-bg-soft px-4 py-4 font-mono text-2xs tracking-[0.18em] uppercase">
+										{data.liveUrl && (
+											<a
+												href={data.liveUrl}
+												target="_blank"
+												rel="noopener noreferrer"
+												class="text-fg underline-offset-4 hover:underline"
+											>
+												Live →
+											</a>
+										)}
+										{data.repoUrl && (
+											<a
+												href={data.repoUrl}
+												target="_blank"
+												rel="noopener noreferrer"
+												class="text-fg underline-offset-4 hover:underline"
+											>
+												Repo →
+											</a>
+										)}
+									</div>
+								)
+							}
+						</dl>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Body / MDX content -->
+	<article class="border-b border-border">
+		<div class="mx-auto w-full max-w-page px-6 py-16 sm:px-8 sm:py-20">
+			<div class="prose-case max-w-3xl">
+				<slot />
+			</div>
+		</div>
+	</article>
+
+	<!-- End CTA -->
+	<section class="bg-bg-soft">
+		<div class="mx-auto w-full max-w-page px-6 py-16 sm:px-8 sm:py-20">
+			<div class="grid gap-6 lg:grid-cols-12 lg:items-center">
+				<div class="lg:col-span-8">
+					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+						Got a project like this?
+					</p>
+					<h2 class="mt-3 text-2xl font-medium tracking-tight text-balance sm:text-3xl">
+						The first call is a free 30 minutes.
+					</h2>
+				</div>
+				<div class="flex flex-wrap items-center gap-3 lg:col-span-4 lg:justify-end">
+					<a
+						href="/contact"
+						class="inline-flex items-center gap-2 rounded-md bg-fg px-4 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-90"
+					>
+						Book a call
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Base>
+
+<style is:global>
+	/* Case-study prose — dense, editorial. Scoped to .prose-case so it doesn't leak. */
+	.prose-case h2 {
+		margin-top: 3rem;
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+		font-weight: 500;
+		letter-spacing: -0.01em;
+		color: var(--color-fg);
+	}
+	.prose-case h2:first-child {
+		margin-top: 0;
+	}
+	.prose-case h3 {
+		margin-top: 2rem;
+		margin-bottom: 0.5rem;
+		font-size: 1.125rem;
+		font-weight: 500;
+		color: var(--color-fg);
+	}
+	.prose-case p,
+	.prose-case ul,
+	.prose-case ol {
+		margin-bottom: 1.25rem;
+		font-size: 1.0625rem;
+		line-height: 1.7;
+		color: var(--color-fg-muted);
+		text-wrap: pretty;
+	}
+	.prose-case ul,
+	.prose-case ol {
+		padding-left: 1.25rem;
+	}
+	.prose-case ul {
+		list-style: none;
+	}
+	.prose-case ul li {
+		position: relative;
+		padding-left: 1.25rem;
+	}
+	.prose-case ul li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0.7em;
+		width: 0.25rem;
+		height: 0.25rem;
+		border-radius: 9999px;
+		background-color: var(--color-accent);
+	}
+	.prose-case ol {
+		list-style: decimal;
+	}
+	.prose-case ol li::marker {
+		color: var(--color-fg-subtle);
+		font-variant-numeric: tabular-nums;
+	}
+	.prose-case strong {
+		color: var(--color-fg);
+		font-weight: 500;
+	}
+	.prose-case a {
+		color: var(--color-fg);
+		text-decoration: underline;
+		text-underline-offset: 4px;
+		text-decoration-color: var(--color-border-strong);
+	}
+	.prose-case a:hover {
+		text-decoration-color: var(--color-accent);
+	}
+	.prose-case code {
+		padding: 0.125rem 0.375rem;
+		border-radius: 0.25rem;
+		background-color: var(--color-bg-elevated);
+		font-size: 0.875em;
+		color: var(--color-fg);
+	}
+	/* Code blocks — frame only. Shiki paints inside via CSS vars in global.css. */
+	.prose-case pre.astro-code {
+		margin: 1.5rem 0;
+		padding: 1.25rem 1.5rem;
+		overflow-x: auto;
+		border: 1px solid var(--color-border);
+		border-radius: 0.5rem;
+		font-size: 0.875rem;
+		line-height: 1.7;
+	}
+	.prose-case pre.astro-code code {
+		display: grid;
+		padding: 0;
+		background: transparent;
+		font-size: inherit;
+	}
+	.prose-case pre.astro-code .line {
+		min-height: 1lh;
+	}
+	.prose-case blockquote {
+		margin: 2rem 0;
+		padding: 0.5rem 0 0.5rem 1.25rem;
+		border-left: 2px solid var(--color-accent);
+		font-style: italic;
+		color: var(--color-fg);
+	}
+	.prose-case hr {
+		margin: 3rem 0;
+		border: 0;
+		border-top: 1px solid var(--color-border);
+	}
+	.prose-case img {
+		margin: 2rem 0;
+		border: 1px solid var(--color-border);
+		border-radius: 0.5rem;
+	}
+</style>

@@ -2,40 +2,40 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
+## Project overview
 
-Personal portfolio/business website for Ryan Roga (roga.dev). Currently mid-redesign: Astro 6 with selective Svelte 5 islands, Tailwind CSS v4, MDX-driven blog. Deployed on Vercel as a static site.
+Personal portfolio / business website for Ryan Roga (roga.dev). The stack pivoted from SvelteKit to **Astro 6 + Svelte 5 islands** in May 2026 (`package.json` 2.0.0 marks the cutover). The previous SvelteKit build is preserved read-only at `_references/old-svelte-site/` for content lift only — never edit it. The redesign is mid-flight; design principles and the phased migration plan live in `docs/BRIEF.md` and `docs/PLAN.md`. Read both before substantive UI or content changes.
 
-The previous SvelteKit version is archived at `_references/old-svelte-site/` for content lift only — do not edit it. Design brief and migration plan live in `docs/BRIEF.md` and `docs/PLAN.md`; consult them before substantive changes.
+Static-only output, deployed on Vercel.
 
 ## Commands
 
-- **Package manager**: pnpm (required), Node ≥ 22.12
-- `pnpm dev` — Start Astro dev server (localhost:4321)
-- `pnpm build` — Static build to `dist/`
-- `pnpm preview` — Preview the production build
-- `pnpm check` — `astro check` (TypeScript + content schema validation)
+- **Package manager**: pnpm (required), Node ≥ 22.12.
+- `pnpm dev` — Astro dev server at localhost:4321.
+- `pnpm build` — static build to `dist/`.
+- `pnpm preview` — preview the production build.
+- `pnpm check` — `astro check` (TypeScript + content schema validation).
 
-When `pnpm install` aborts with `ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`, prefix with `CI=true`. `sharp` and `esbuild` are allowlisted in `package.json` under `pnpm.onlyBuiltDependencies` so their post-install scripts run.
+If `pnpm install` aborts with `ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`, prefix with `CI=true`. `sharp` and `esbuild` are allowlisted in `package.json` under `pnpm.onlyBuiltDependencies` so their post-install scripts run.
 
 ## Architecture
 
-- **Framework**: Astro 6 (`astro.config.mjs`) — static output, Svelte 5 islands via `@astrojs/svelte`, MDX via `@astrojs/mdx`, sitemap via `@astrojs/sitemap`.
-- **Styling**: Tailwind CSS v4 via `@tailwindcss/vite` (no `@astrojs/tailwind`, no `tailwind.config.js` — config lives in `src/styles/global.css` using `@theme`). Imported once via `BaseHead.astro` → `src/styles/global.css`.
-- **Fonts**: Astro's built-in font system (`fontProviders.local`) declared in `astro.config.mjs`. Atkinson is the starter default; will be replaced with Geist or Inter during Phase 1 of the redesign.
-- **Hosting**: Vercel, static-only. No adapter — Vercel auto-detects `dist/`. If we ever need image optimization at the edge or ISR, install `@astrojs/vercel`.
-- **Content**: Blog and case-study posts as Astro content collections (see `src/content.config.ts`). MDX preferred for posts; plain `.md` is fine when no components are needed.
+- **Framework** — Astro 6 (`astro.config.mjs`), static output, no SSR adapter. Vercel auto-detects `dist/`. If edge image optimization or ISR is ever needed, add `@astrojs/vercel`.
+- **Interactivity** — Svelte 5 islands via `@astrojs/svelte`. `svelte.config.js` uses `vitePreprocess`. Default to `.astro` components; reach for `.svelte` only when state, events, or browser APIs are actually required.
+- **Styling** — Tailwind CSS v4 via `@tailwindcss/vite`. **No `@astrojs/tailwind`, no `tailwind.config.js`, no PostCSS config** — design tokens live in `src/styles/global.css` using the v4 `@theme` directive. Stylesheet is imported once in `src/components/BaseHead.astro`.
+- **Content** — Astro content collections (`src/content.config.ts`). Prefer MDX for posts that embed components; plain `.md` is fine otherwise. Site-wide constants (title, tagline, description, social, contact, roles) live in `src/consts.ts` — import from there rather than hard-coding.
+- **Fonts** — in flux during Phase 1. `@fontsource-variable/geist` and `@fontsource-variable/geist-mono` are installed in deps but not yet imported; font wiring is part of the design-system phase.
 
 ## Page composition
 
-- **Pages**: `src/pages/*.astro` (routes are file-based; `index.astro`, `about.astro`, `blog/[...slug].astro`, etc.).
-- **Layouts**: `src/layouts/` — currently `BlogPost.astro`. Add a `Base.astro` when the design system lands in Phase 1.
-- **Components**: `src/components/` — `.astro` for static, `.svelte` only when interactivity is real (state, events, browser APIs). Default to Astro.
-- **Svelte islands**: import the `.svelte` file in an `.astro` page and add a client directive (`client:load`, `client:idle`, `client:visible`). Without a directive, Svelte renders as static HTML — fine if you don't need hydration.
+- **Pages** — `src/pages/*.astro` with file-based routing (`index.astro`, `about.astro`, `blog/[...slug].astro`, `rss.xml.js`, etc.).
+- **Layouts** — `src/layouts/`, currently `BlogPost.astro`. A shared `Base.astro` will land in Phase 1.
+- **Components** — `src/components/`. `.astro` for static, `.svelte` only when interactivity is real.
+- **Adding a Svelte island** — import the `.svelte` file inside an `.astro` page and add a client directive (`client:load`, `client:idle`, `client:visible`). Without a directive, Svelte renders as static HTML — fine if you don't need hydration.
 
-## Svelte 5 requirements (when writing islands)
+## Svelte 5 (when writing islands)
 
-This project uses Svelte 5 in runes mode. **Do not use Svelte 4 patterns:**
+Runes mode only. Do **not** use Svelte 4 patterns:
 
 - `$props()` not `export let`
 - `$state()`, `$derived()`, `$effect()` not `$:` reactive statements
@@ -48,25 +48,56 @@ This project uses Svelte 5 in runes mode. **Do not use Svelte 4 patterns:**
 
 1. Type imports → 2. Regular imports → 3. `$props()` → 4. `$state()` → 5. `$derived()` → 6. `$effect()` → 7. Functions → 8. Template → 9. Styles
 
+## Quality bars
+
+Every component and page must satisfy these three. They are hard requirements, not aspirations — work that misses any of them is incomplete and should not be marked done.
+
+### Mobile-first
+
+- Author base styles for the smallest viewport, then layer up with Tailwind breakpoints (`sm:`, `md:`, `lg:`). Never desktop-first with overrides downward.
+- Touch targets ≥ 44×44 px on any interactive element (buttons, links, icon controls). Use `min-h-11 min-w-11` or larger.
+- Mentally test the layout at 320 px wide before reaching for desktop styles.
+
+### Fully responsive
+
+- No horizontal scroll from 320 px to 1920 px+. If content overflows, fix the layout — don't hide it.
+- Images: prefer Astro's `<Image>` for raster; always `max-width: 100%; height: auto`. Use `<picture>` or `getImage()` when art-direction differs by breakpoint.
+- Containers use max-width + auto margin; never hard-code pixel widths for content regions.
+- Typography prefers fluid scales (`clamp()` or stepped Tailwind utilities at breakpoints) over jumping between two fixed sizes.
+
+### Accessibility (WCAG 2.2 AA)
+
+- **Semantic HTML first.** `<button>` not `<div onclick>`. Use `<nav>`, `<main>`, `<article>`, `<section>`, `<header>`, `<footer>` for landmarks. Reach for ARIA only when no semantic element exists.
+- **Images**: every `<img>` has an `alt`. Decorative → `alt=""`. Meaningful → describe what it conveys, not what it looks like.
+- **Color contrast** ≥ 4.5:1 for normal text, ≥ 3:1 for large text and UI controls. Verify before shipping.
+- **Focus** is always visible — never `outline: none` without a replacement ring. Tab order must follow visual order.
+- **Keyboard**: every interactive element reachable and operable via keyboard alone. `Esc` closes overlays and menus; focus is trapped inside open dialogs and restored on close.
+- **Forms**: `<label>` paired to its input via `for`/`id`. Error messages associated via `aria-describedby`. Required state communicated beyond color.
+- **Color alone never conveys state.** Pair red/green/etc. with icon or text.
+- **Motion**: respect `prefers-reduced-motion` — non-essential animation must reduce or stop.
+- **Page basics**: `lang` on `<html>`, unique `<title>`, exactly one `<h1>`, skip-to-main-content link as the first focusable element.
+
 ## Conventions
 
+- TypeScript everywhere; `import type` for type-only imports.
 - Components: PascalCase filenames (`BaseCard.astro`, `IslandSmokeTest.svelte`).
 - Routes: kebab-case directories.
-- TypeScript everywhere; `import type` for type-only imports.
-- Tailwind utilities preferred over custom CSS for layout/spacing/typography. Reach for tokens (`@theme` in `global.css`) before raw values once the design system lands.
-- One accent color, restrained palette — see `docs/BRIEF.md` §3.3 for the rationale.
-- No drop shadows; use 1px hairline borders for structure (brief §3.6).
-- Real product screenshots, never abstract illustrations (brief §3.5).
+- Tailwind utilities preferred over custom CSS for layout, spacing, and typography. Reach for `@theme` tokens before raw values once the design system lands.
+- Design rules from the brief: one accent color, restrained palette (`docs/BRIEF.md` §3.3); no drop shadows — use 1px hairline borders for structure (§3.6); real product screenshots, never abstract illustrations (§3.5).
+
+## Copy & titles
+
+- **Never use the word "engineer" to describe Ryan or his work.** "Engineer" is a protected professional title in BC/Canada (Engineers and Geoscientists BC) — using it without a P.Eng. designation is a regulatory violation, not just a stylistic choice. This applies to job titles ("Software Engineer", "DevOps Engineer", etc.), prose ("built by one engineer"), and meta tags. Use **Developer**, **Technical Lead**, **Specialist**, or role-specific alternatives (e.g. "Integration Specialist" not "Integration Engineer"). Generic references to other companies' engineering practices in design docs are fine — the rule is about how Ryan presents himself.
 
 ## What lives where
 
 - `docs/BRIEF.md` — design principles, IA, success criteria.
 - `docs/PLAN.md` — phased migration plan with exit criteria per phase.
-- `_references/old-svelte-site/` — read-only archive of the previous build.
-- `_references/techcentral-showcase/` — pre-existing reference, untouched.
-
+- `_references/old-svelte-site/` — read-only archive of the previous SvelteKit build. Lift content; do not edit. Gitignored.
+- `_references/techcentral-showcase/` — pre-existing reference content, untouched. Gitignored.
 
 <!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:ca08a54f -->
+
 ## Beads Issue Tracker
 
 This project uses **bd (beads)** for issue tracking. Run `bd prime` to see full workflow context and commands.
@@ -107,6 +138,7 @@ bd close <id>         # Complete work
 7. **Hand off** - Provide context for next session
 
 **CRITICAL RULES:**
+
 - Work is NOT complete until `git push` succeeds
 - NEVER stop before pushing - that leaves work stranded locally
 - NEVER say "ready to push when you are" - YOU must push

@@ -1,0 +1,45 @@
+---
+id: LL-005
+client: Carevo · Lot Logistics
+industry: Automotive · Used-vehicle ops
+headline: QR-driven vehicle and vendor tracking for dealership lots.
+outcome: Scan a key to view or update service, detailing, MVI, and lot-transfer status — vendors and lot staff finally on the same page.
+tags:
+  - Nuxt 3
+  - Supabase
+  - QR codes
+  - Mobile-first
+period: '2023'
+role: Full-stack developer
+status: live
+featured: true
+order: 5
+---
+
+import ScreenshotPending from '../../components/ScreenshotPending.astro'
+
+## Context
+
+Used-vehicle dealership operations are a coordination problem dressed up as a paperwork problem. A car arrives, gets serviced, gets detailed, gets a motor-vehicle inspection, moves between lots, and eventually sells. Each of those steps involves a different vendor, a different worksheet, and a different person who needs to know whether the previous step is done.
+
+Lot Logistics is the web app that puts it all behind a QR code on the keys.
+
+<ScreenshotPending caption="Vehicle detail — current state, last update, and the next step waiting for someone." aspect="4/3" />
+
+## What was built
+
+A mobile-first web application — no app install — that lets anyone with permission scan a vehicle's key tag and immediately see its current state and update it:
+
+- **Service** status, including which shop has it and when it's expected back.
+- **Detailing** state.
+- **MVI** progress.
+- **Lot-to-lot transfers** — where the vehicle is and where it's going.
+- **Vendor coordination** — vendors update their own steps without needing a CRM seat.
+
+Built with Nuxt 3 on Supabase, deployed at a footprint small enough to operate cheaply at the per-lot scale Carevo needed.
+
+<ScreenshotPending caption="Lot view — every vehicle on a lot, what's holding each one, and who's accountable." />
+
+## More coming
+
+The full case study lands soon. Headline, scope, and stack are accurate. For specifics on the QR flow, the vendor permission model, or how the app handles offline-first updates from spotty lot Wi-Fi — [book a call](/contact).
