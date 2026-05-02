@@ -6,4 +6,7 @@ node_modules/
 _references/
 .beads/
 .fallow/
+.claude/
+.cursor/
+tmp/
 pnpm-lock.yaml
