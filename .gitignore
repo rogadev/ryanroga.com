@@ -26,3 +26,8 @@ vite.config.ts.timestamp-*
 
 # Legacy reference content (old SvelteKit site)
 _references
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
