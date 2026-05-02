@@ -21,8 +21,9 @@ vite.config.ts.timestamp-*
 
 # Editor / tooling
 .cursorrules
-.claude
+.claude/settings.local.json
 .fallow
+tmp/
 
 # Legacy reference content (old SvelteKit site)
 _references
