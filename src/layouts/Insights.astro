@@ -1,0 +1,325 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { STUDIO_NAME } from '../consts';
+import Base from './Base.astro';
+
+interface Props {
+	entry: CollectionEntry<'insights'>;
+}
+
+const { entry } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags, readingTime } = entry.data;
+
+const dateFormatter = new Intl.DateTimeFormat('en-US', {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
+});
+
+const pageTitle = `${title} · ${STUDIO_NAME}`;
+---
+
+<Base title={pageTitle} {description} noindex={entry.data.draft}>
+	<!-- Header -->
+	<section class="border-b border-border">
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<div class="pt-16 pb-12 sm:pt-20 sm:pb-16">
+				<a
+					href="/insights"
+					class="inline-flex items-center gap-2 font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase transition-colors hover:text-fg"
+				>
+					<svg
+						width="12"
+						height="12"
+						viewBox="0 0 16 16"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+					>
+						<path d="M13 8H3M7 4L3 8l4 4" />
+					</svg>
+					All insights
+				</a>
+
+				<div class="mt-10 max-w-3xl">
+					<div class="flex flex-wrap items-center gap-3 font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+						<time datetime={pubDate.toISOString()}>{dateFormatter.format(pubDate)}</time>
+						{
+							readingTime && (
+								<>
+									<span class="text-border-strong">·</span>
+									<span>{readingTime}</span>
+								</>
+							)
+						}
+						{
+							tags.length > 0 && (
+								<>
+									<span class="text-border-strong">·</span>
+									<ul class="flex flex-wrap gap-2" role="list">
+										{tags.map((t) => (
+											<li>
+												<a
+													href={`/insights?tag=${encodeURIComponent(t)}`}
+													class="rounded-sm border border-border px-1.5 py-0.5 text-fg-muted transition-colors hover:text-fg"
+												>
+													#{t}
+												</a>
+											</li>
+										))}
+									</ul>
+								</>
+							)
+						}
+					</div>
+
+					<h1 class="mt-6 text-4xl font-medium tracking-tight text-balance sm:text-5xl">
+						{title}
+					</h1>
+					<p class="mt-5 text-lg text-fg-muted text-pretty sm:text-xl">{description}</p>
+
+					{
+						updatedDate && (
+							<p class="mt-6 font-mono text-2xs tracking-[0.16em] text-fg-subtle uppercase">
+								Updated · {dateFormatter.format(updatedDate)}
+							</p>
+						)
+					}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Hero image (optional) -->
+	{
+		heroImage && (
+			<div class="border-b border-border">
+				<div class="mx-auto w-full max-w-page px-6 py-8 sm:px-8 sm:py-10">
+					<figure class="overflow-hidden rounded-lg border border-border bg-bg-soft">
+						<Image
+							src={heroImage}
+							alt=""
+							widths={[640, 1024, 1440]}
+							sizes="(max-width: 1024px) 100vw, 1024px"
+							class="aspect-[16/9] w-full object-cover"
+							loading="eager"
+						/>
+					</figure>
+				</div>
+			</div>
+		)
+	}
+
+	<!-- Body -->
+	<article class="border-b border-border">
+		<div class="mx-auto w-full max-w-page px-6 py-16 sm:px-8 sm:py-20">
+			<div class="prose-insights mx-auto max-w-3xl">
+				<slot />
+			</div>
+		</div>
+	</article>
+
+	<!-- End CTA -->
+	<section class="bg-bg-soft">
+		<div class="mx-auto w-full max-w-page px-6 py-16 sm:px-8 sm:py-20">
+			<div class="grid gap-6 lg:grid-cols-12 lg:items-center">
+				<div class="lg:col-span-8">
+					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+						Read more
+					</p>
+					<h2 class="mt-3 text-2xl font-medium tracking-tight text-balance sm:text-3xl">
+						More from {STUDIO_NAME}.
+					</h2>
+				</div>
+				<div class="flex flex-wrap items-center gap-3 lg:col-span-4 lg:justify-end">
+					<a
+						href="/insights"
+						class="inline-flex items-center gap-2 rounded-md border border-border-strong px-4 py-2.5 text-sm text-fg transition-colors hover:border-fg-subtle"
+					>
+						All insights
+					</a>
+					<a
+						href="/contact"
+						class="inline-flex items-center gap-2 rounded-md bg-fg px-4 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-90"
+					>
+						Book a call
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Base>
+
+<style is:global>
+	/* Insights prose — editorial, scoped to .prose-insights so it doesn't leak. */
+	.prose-insights h2 {
+		margin-top: 3rem;
+		margin-bottom: 1rem;
+		font-size: 1.625rem;
+		font-weight: 500;
+		letter-spacing: -0.01em;
+		color: var(--color-fg);
+		scroll-margin-top: 5rem;
+	}
+	.prose-insights h2:first-child {
+		margin-top: 0;
+	}
+	.prose-insights h3 {
+		margin-top: 2.5rem;
+		margin-bottom: 0.5rem;
+		font-size: 1.25rem;
+		font-weight: 500;
+		color: var(--color-fg);
+		scroll-margin-top: 5rem;
+	}
+	.prose-insights h4 {
+		margin-top: 2rem;
+		margin-bottom: 0.5rem;
+		font-size: 1.0625rem;
+		font-weight: 500;
+		color: var(--color-fg);
+	}
+	.prose-insights p,
+	.prose-insights ul,
+	.prose-insights ol {
+		margin-bottom: 1.25rem;
+		font-size: 1.0625rem;
+		line-height: 1.75;
+		color: var(--color-fg-muted);
+		text-wrap: pretty;
+	}
+	.prose-insights p:has(+ ul),
+	.prose-insights p:has(+ ol) {
+		margin-bottom: 0.5rem;
+	}
+	.prose-insights ul,
+	.prose-insights ol {
+		padding-left: 1.25rem;
+	}
+	.prose-insights ul {
+		list-style: none;
+	}
+	.prose-insights ul li {
+		position: relative;
+		padding-left: 1.25rem;
+	}
+	.prose-insights ul li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0.75em;
+		width: 0.25rem;
+		height: 0.25rem;
+		border-radius: 9999px;
+		background-color: var(--color-accent);
+	}
+	.prose-insights ol {
+		list-style: decimal;
+	}
+	.prose-insights ol li::marker {
+		color: var(--color-fg-subtle);
+		font-variant-numeric: tabular-nums;
+	}
+	.prose-insights strong {
+		color: var(--color-fg);
+		font-weight: 500;
+	}
+	.prose-insights em {
+		font-style: italic;
+		color: var(--color-fg);
+	}
+	.prose-insights a {
+		color: var(--color-fg);
+		text-decoration: underline;
+		text-underline-offset: 4px;
+		text-decoration-color: var(--color-border-strong);
+		transition: text-decoration-color 0.15s ease;
+	}
+	.prose-insights a:hover {
+		text-decoration-color: var(--color-accent);
+	}
+	.prose-insights code {
+		padding: 0.125rem 0.375rem;
+		border-radius: 0.25rem;
+		background-color: var(--color-bg-elevated);
+		font-size: 0.875em;
+		color: var(--color-fg);
+	}
+	/* Code blocks — frame only. Shiki paints inside via CSS vars in global.css. */
+	.prose-insights pre.astro-code {
+		margin: 1.5rem 0;
+		padding: 1.25rem 1.5rem;
+		overflow-x: auto;
+		border: 1px solid var(--color-border);
+		border-radius: 0.5rem;
+		font-size: 0.875rem;
+		line-height: 1.7;
+	}
+	.prose-insights pre.astro-code code {
+		display: grid; /* makes line transformers (highlight/focus/diff) work edge-to-edge */
+		padding: 0;
+		font-size: inherit;
+		background: transparent;
+		counter-reset: step;
+		counter-increment: step 0;
+	}
+	.prose-insights pre.astro-code .line {
+		min-height: 1lh;
+	}
+	.prose-insights blockquote {
+		margin: 2rem 0;
+		padding: 0.5rem 0 0.5rem 1.5rem;
+		border-left: 2px solid var(--color-accent);
+		font-style: italic;
+		color: var(--color-fg);
+	}
+	.prose-insights hr {
+		margin: 3rem auto;
+		width: 4rem;
+		border: 0;
+		border-top: 1px solid var(--color-border-strong);
+	}
+	.prose-insights img {
+		margin: 2rem 0;
+		border: 1px solid var(--color-border);
+		border-radius: 0.5rem;
+	}
+	.prose-insights figure {
+		margin: 2rem 0;
+	}
+	.prose-insights figcaption {
+		margin-top: 0.5rem;
+		font-family: var(--font-mono);
+		font-size: 0.6875rem;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--color-fg-subtle);
+	}
+	.prose-insights table {
+		width: 100%;
+		margin: 2rem 0;
+		border-collapse: collapse;
+		font-size: 0.9375rem;
+	}
+	.prose-insights th,
+	.prose-insights td {
+		padding: 0.625rem 1rem;
+		text-align: left;
+		border-bottom: 1px solid var(--color-border);
+	}
+	.prose-insights th {
+		font-weight: 500;
+		color: var(--color-fg);
+		font-family: var(--font-mono);
+		font-size: 0.6875rem;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+	.prose-insights td {
+		color: var(--color-fg-muted);
+	}
+</style>

@@ -1,78 +1,65 @@
 {
-	"name": "rogadev",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"test": "vitest",
-		"test:run": "vitest run --passWithNoTests",
-		"lint": "prettier --check . && eslint .",
-		"lint:fix": "prettier --write . && eslint . --fix",
-		"format": "prettier --write .",
-		"fix": "prettier --write . && eslint . --fix",
-		"ready": "pnpm run fix && pnpm run check && pnpm run test:run && pnpm run build"
-	},
-	"devDependencies": {
-		"@iconify/svelte": "^3.1.6",
-		"@neoconfetti/svelte": "^2.2.2",
-		"@playwright/test": "^1.58.2",
-		"@sveltejs/adapter-auto": "^3.3.1",
-		"@sveltejs/adapter-vercel": "^5.7.2",
-		"@sveltejs/kit": "^2.53.4",
-		"@sveltejs/vite-plugin-svelte": "^4.0.4",
-		"@tailwindcss/forms": "^0.5.11",
-		"@tailwindcss/typography": "^0.5.19",
-		"@types/eslint": "^8.56.12",
-		"@types/node": "^22.19.15",
-		"@typescript-eslint/eslint-plugin": "^7.18.0",
-		"@typescript-eslint/parser": "^7.18.0",
-		"autoprefixer": "^10.4.27",
-		"eslint": "^8.57.1",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.46.1",
-		"postcss": "^8.5.8",
-		"postcss-load-config": "^5.1.0",
-		"prettier": "^3.8.1",
-		"prettier-plugin-svelte": "^3.5.1",
-		"prettier-plugin-tailwindcss": "^0.5.14",
-		"svelte": "^5.53.7",
-		"svelte-check": "^4.4.5",
-		"tailwindcss": "^3.4.17",
-		"tslib": "^2.8.1",
-		"typescript": "^5.9.3",
-		"vite": "^5.4.21",
-		"vitest": "^1.6.1"
-	},
+	"name": "ryanroga-com",
 	"type": "module",
+	"version": "2.0.0",
+	"private": true,
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"devo": "astro dev --open",
+		"build": "astro build",
+		"preview": "astro preview",
+		"check": "astro check",
+		"astro": "astro",
+		"lint": "oxlint && eslint .",
+		"lint:fast": "oxlint",
+		"lint:fix": "oxlint --fix && eslint --fix .",
+		"format": "prettier --write . --log-level warn",
+		"format:check": "prettier --check . --log-level warn",
+		"fix": "pnpm format && pnpm format:check && pnpm lint:fix && pnpm lint",
+		"ready": "pnpm fix && pnpm check"
+	},
 	"pnpm": {
-		"overrides": {
-			"vite@>=5.1.0 <=5.1.6": ">=5.1.7",
-			"esbuild@<=0.24.2": ">=0.25.0",
-			"cookie@<0.7.0": ">=0.7.0",
-			"@sveltejs/adapter-vercel@<6.3.2": ">=6.3.2",
-			"glob@>=10.2.0 <10.5.0": ">=10.5.0",
-			"rollup@>=4.0.0 <4.59.0": ">=4.59.0",
-			"tar": ">=7.5.11",
-			"minimatch": ">=9.0.7",
-			"brace-expansion": ">=2.0.3",
-			"js-yaml": ">=4.1.1",
-			"ajv": ">=6.14.0",
-			"devalue": ">=5.6.4",
-			"flatted": ">=3.4.2",
-			"picomatch": ">=4.0.4",
-			"yaml": ">=2.8.3"
-		},
 		"onlyBuiltDependencies": [
 			"esbuild",
-			"svelte-preprocess"
-		]
+			"sharp"
+		],
+		"overrides": {
+			"yaml@>=2.0.0 <2.8.3": ">=2.8.3"
+		}
 	},
 	"dependencies": {
-		"@tailwindcss/aspect-ratio": "^0.4.2",
-		"qrcode": "^1.5.4",
-		"resend": "^4.8.0"
+		"@astrojs/mdx": "^5.0.4",
+		"@astrojs/rss": "^4.0.18",
+		"@astrojs/sitemap": "^3.7.2",
+		"@astrojs/svelte": "^8.1.0",
+		"@fontsource-variable/geist": "^5.2.8",
+		"@fontsource-variable/geist-mono": "^5.2.7",
+		"@fontsource/geist-mono": "^5.2.7",
+		"@fontsource/geist-sans": "^5.2.5",
+		"@shikijs/transformers": "^4.0.2",
+		"@tailwindcss/vite": "^4.2.4",
+		"astro": "^6.2.1",
+		"satori": "^0.26.0",
+		"sharp": "^0.34.3",
+		"svelte": "^5.55.5",
+		"tailwindcss": "^4.2.4",
+		"typescript": "^5.9.3"
+	},
+	"devDependencies": {
+		"@astrojs/check": "^0.9.9",
+		"astro-eslint-parser": "^1.4.0",
+		"eslint": "^10.3.0",
+		"eslint-plugin-astro": "^1.7.0",
+		"eslint-plugin-svelte": "^3.17.1",
+		"globals": "^17.6.0",
+		"oxlint": "^1.62.0",
+		"prettier": "^3.8.3",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-svelte": "^3.5.1",
+		"svelte-eslint-parser": "^1.6.0",
+		"typescript-eslint": "^8.59.1"
 	}
 }

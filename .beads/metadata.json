@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "server",
+  "dolt_database": "roga",
+  "project_id": "f795b396-56d7-403a-93de-175491c34e5e"
+}

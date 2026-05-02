@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import Section from '../Section.astro';
+
+type PostEntry = Awaited<ReturnType<typeof getCollection<'insights'>>>[number];
+
+const posts: PostEntry[] = (await getCollection('insights', ({ data }) => !data.draft))
+	.toSorted((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+	.slice(0, 3);
+
+const dateFormatter = new Intl.DateTimeFormat('en-US', {
+	year: 'numeric',
+	month: 'short',
+	day: 'numeric',
+});
+---
+
+<Section
+	id="insights"
+	eyebrow="Insights"
+	heading="Notes from the work."
+	dek="Project write-ups, opinions on tooling, and pragmatic takes on what AI is changing about how this software gets built."
+>
+	<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+		<ul class="divide-y divide-border border-y border-border" role="list">
+			{
+				posts.map((post) => (
+					<li>
+						<a
+							href={`/insights/${post.id}/`}
+							class="group flex flex-col gap-3 py-6 transition-colors hover:bg-bg-soft sm:flex-row sm:items-baseline sm:justify-between sm:gap-8 sm:py-7"
+						>
+							<div class="flex-1">
+								<h3 class="text-lg font-medium tracking-tight text-balance text-fg group-hover:underline group-hover:underline-offset-4">
+									{post.data.title}
+								</h3>
+								{post.data.description && (
+									<p class="mt-1.5 text-sm text-fg-muted">{post.data.description}</p>
+								)}
+							</div>
+							<time
+								datetime={new Date(post.data.pubDate).toISOString()}
+								class="font-mono text-2xs tracking-[0.16em] whitespace-nowrap text-fg-subtle uppercase"
+							>
+								{dateFormatter.format(new Date(post.data.pubDate))}
+							</time>
+						</a>
+					</li>
+				))
+			}
+			{
+				posts.length === 0 && (
+					<li class="py-10 text-center text-sm text-fg-muted">
+						First post lands soon — Roga Digital just relaunched.
+					</li>
+				)
+			}
+		</ul>
+
+		<div class="mt-10">
+			<a
+				href="/insights"
+				class="inline-flex items-center gap-2 font-mono text-xs tracking-[0.16em] text-fg-muted uppercase transition-colors hover:text-fg"
+			>
+				All insights
+				<svg
+					width="12"
+					height="12"
+					viewBox="0 0 16 16"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					aria-hidden="true"
+				>
+					<path d="M3 8h10M9 4l4 4-4 4"></path>
+				</svg>
+			</a>
+		</div>
+	</div>
+</Section>

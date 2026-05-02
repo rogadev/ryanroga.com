@@ -1,0 +1,106 @@
+---
+import Section from '../Section.astro';
+
+interface Capability {
+	number: string;
+	title: string;
+	description: string;
+	tags: string[];
+}
+
+const capabilities: Capability[] = [
+	{
+		number: '01',
+		title: 'Product strategy & management',
+		description:
+			'Discovery, scope shaping, prioritization, and roadmaps. I figure out what to build before we build it — and what not to.',
+		tags: ['Discovery', 'Scoping', 'Roadmaps', 'User research'],
+	},
+	{
+		number: '02',
+		title: 'Systems architecture',
+		description:
+			'Database design, API contracts, service boundaries, security and access control. Decisions that hold up at year three.',
+		tags: ['Postgres', 'REST · GraphQL', 'RBAC', 'Audit logs'],
+	},
+	{
+		number: '03',
+		title: 'Full-stack web development',
+		description:
+			'Production web applications — front to back, design to deploy. TypeScript, Svelte/Astro, Node, Python where it earns it.',
+		tags: ['TypeScript', 'Svelte · Astro', 'Node · Python', 'Vercel · Railway'],
+	},
+	{
+		number: '04',
+		title: 'Internal tools & dashboards',
+		description:
+			'The interfaces your team uses every day — fast, dense, kind to power users. Built to actually save time, not just look the part.',
+		tags: ['Operational UI', 'Reporting', 'Workflow tooling'],
+	},
+	{
+		number: '05',
+		title: 'AI integration & consulting',
+		description:
+			"LLM features, retrieval, agents, and pragmatic automation. Honest assessment of what AI changes and what it doesn't.",
+		tags: ['LLMs', 'RAG', 'Agents', 'Eval'],
+	},
+	{
+		number: '06',
+		title: 'Integrations & workflow automation',
+		description:
+			'Third-party APIs, ETL pipelines, webhooks, scheduled jobs. The plumbing that keeps your business systems in sync.',
+		tags: ['REST · Webhooks', 'Stripe · QuickBooks', 'ETL', 'Background jobs'],
+	},
+	{
+		number: '07',
+		title: 'Maintenance & ongoing partnership',
+		description:
+			'Long-term support of software you already own. Audits, gradual rebuilds, on-call for the things that matter.',
+		tags: ['Audits', 'Rebuilds', 'On-call', 'Documentation'],
+	},
+	{
+		number: '08',
+		title: 'Technical advisory',
+		description:
+			'Architecture reviews, hire decisions, code review, second opinions. A pair of senior eyes when the stakes are high.',
+		tags: ['Code review', 'Architecture review', 'Hiring · Vendors'],
+	},
+];
+---
+
+<Section
+	id="capabilities"
+	eyebrow="Capabilities"
+	heading="One studio, the whole stack."
+	dek="Most agencies hand you off — strategy team, design team, dev team, ops. Roga Digital gives you a single point of accountability across product, architecture, code, AI, and ops, from the first conversation to the last bug."
+>
+	<div class="mx-auto w-full max-w-page">
+		<ul
+			class="grid grid-cols-1 gap-px overflow-hidden border-y border-border bg-border sm:grid-cols-2 lg:grid-cols-4"
+			role="list"
+		>
+			{
+				capabilities.map((c) => (
+					<li class="group flex flex-col gap-4 bg-bg p-6 transition-colors hover:bg-bg-soft sm:p-8">
+						<div class="flex items-baseline justify-between gap-3">
+							<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+								{c.number}
+							</span>
+							<span
+								class="h-px flex-1 bg-border transition-colors group-hover:bg-border-strong"
+								aria-hidden="true"
+							/>
+						</div>
+						<h3 class="text-base font-medium tracking-tight text-fg">{c.title}</h3>
+						<p class="text-sm text-fg-muted">{c.description}</p>
+						<ul class="mt-auto flex flex-wrap gap-1.5 pt-2 font-mono text-2xs" role="list">
+							{c.tags.map((t) => (
+								<li class="rounded-sm bg-bg-elevated px-1.5 py-0.5 text-fg-subtle">{t}</li>
+							))}
+						</ul>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</Section>

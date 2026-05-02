@@ -1,0 +1,26 @@
+---
+import { INDUSTRIES } from '../../consts';
+---
+
+<section aria-label="Industries served" class="border-t border-b border-border">
+	<div class="mx-auto w-full max-w-page px-6 py-6 sm:px-8 sm:py-8">
+		<ul
+			class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-sm text-fg-muted sm:gap-x-4"
+			role="list"
+		>
+			{
+				INDUSTRIES.map((industry) => (
+					<li class="flex items-center gap-x-3 sm:gap-x-4">
+						<span>{industry}</span>
+						<span aria-hidden="true" class="text-fg-subtle">
+							·
+						</span>
+					</li>
+				))
+			}
+			<li class="flex items-center">
+				<span>+ More</span>
+			</li>
+		</ul>
+	</div>
+</section>

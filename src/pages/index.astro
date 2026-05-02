@@ -1,0 +1,21 @@
+---
+import Approach from '../components/home/Approach.astro';
+import Capabilities from '../components/home/Capabilities.astro';
+import EndCTA from '../components/home/EndCTA.astro';
+import Hero from '../components/home/Hero.astro';
+import Industries from '../components/home/Industries.astro';
+import RecentWriting from '../components/home/RecentWriting.astro';
+import SelectedWork from '../components/home/SelectedWork.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Base from '../layouts/Base.astro';
+---
+
+<Base title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<Hero />
+	<Industries />
+	<Capabilities />
+	<SelectedWork />
+	<Approach />
+	<RecentWriting />
+	<EndCTA />
+</Base>

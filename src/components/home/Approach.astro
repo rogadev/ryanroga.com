@@ -1,0 +1,46 @@
+---
+import Section from '../Section.astro';
+
+const principles = [
+	{
+		num: '01',
+		heading: 'Scope first, code second.',
+		body: 'Most software fails before the first commit. We start with what the business actually needs to change, then work back to the smallest thing that gets there.',
+	},
+	{
+		num: '02',
+		heading: 'No handoffs.',
+		body: "You don't get passed between strategy, design, dev, and ops. The same hands plan the work, write the code, deploy it, and answer when it breaks.",
+	},
+	{
+		num: '03',
+		heading: 'Built to outlast the launch.',
+		body: 'The fun part is launch. The work is what happens after. Every project ships with documentation, runbooks, and monitors — designed for the team that inherits it.',
+	},
+];
+---
+
+<Section
+	id="approach"
+	eyebrow="How It Works"
+	heading="A small number of strong defaults."
+	dek="A small studio means a tight loop and clear ownership. Here's what that actually looks like."
+>
+	<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+		<ol
+			class="grid gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-3"
+		>
+			{
+				principles.map((p) => (
+					<li class="flex flex-col gap-4 bg-bg p-8">
+						<span class="font-mono text-2xs tracking-[0.18em] text-[var(--color-accent)] uppercase">
+							{p.num}
+						</span>
+						<h3 class="text-xl font-medium tracking-tight text-balance text-fg">{p.heading}</h3>
+						<p class="text-sm text-fg-muted text-pretty">{p.body}</p>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+</Section>

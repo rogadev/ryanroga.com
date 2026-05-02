@@ -1,0 +1,43 @@
+---
+id: CC-006
+client: CopyCleanse
+industry: Browser tool · AI text cleanup
+headline: Strips the invisible AI fingerprints — zero-width chars, smart quotes, tracking params — from any pasted text.
+outcome: Runs entirely in the browser. No signup, no upload, no storage — one paste, one click, clean text.
+tags:
+  - Browser-only
+  - Privacy
+  - Unicode
+period: '2025'
+role: Designer & developer
+status: live
+featured: true
+order: 6
+---
+
+import ScreenshotPending from '../../components/ScreenshotPending.astro'
+
+## Context
+
+LLM-generated text comes with a quiet trail. Zero-width spaces. Curly quotes where straight ones belong. Em-dashes that pattern-match as a "tell." Sometimes tracking parameters from a clipboard manager. None of it shows up visually — but it shows up to anything that looks closely.
+
+CopyCleanse is a small, focused tool for stripping those fingerprints out of pasted text — fast, in the browser, with nothing leaving the machine.
+
+## How it works
+
+Paste text. Click clean. Copy the result. That's it.
+
+<ScreenshotPending caption="The whole interface — paste, clean, copy. Diff hidden by default; on demand if you want to see what changed." aspect="16/9" />
+
+Everything happens in the browser. No signup, no upload, no server-side storage of any kind. The entire app is shipped as static assets and runs in the user's tab.
+
+The cleaning rules cover:
+
+- Zero-width and other invisible Unicode characters.
+- Smart-quote and dash normalization (smart → straight, when that's what you want).
+- Common tracking parameters in pasted URLs.
+- A growing rule list driven by what's actually showing up in real-world LLM output.
+
+## More coming
+
+The full case study with the rule architecture and how the tool keeps up with new fingerprints is being written. Stack and scope are accurate. For specifics, [book a call](/contact).

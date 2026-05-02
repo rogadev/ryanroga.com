@@ -1,0 +1,241 @@
+---
+import Section from '../components/Section.astro';
+import { BOOKING_URL, SITE_LOCATION, SOCIAL, STUDIO_NAME } from '../consts';
+import Base from '../layouts/Base.astro';
+
+const title = `Contact · ${STUDIO_NAME}`;
+const description = `Book a free 30-minute call with ${STUDIO_NAME}. No pitch, no pressure — just an honest read on whether the studio is the right fit for your project.`;
+
+const expect = [
+	{
+		n: '01',
+		h: "Tell me what you're working on.",
+		b: "Don't worry about polish — bullet points, a Loom, or a paragraph. The clearer the picture of what's broken or missing, the more useful the call.",
+	},
+	{
+		n: '02',
+		h: 'A free 30-minute call.',
+		b: "I ask about the problem, what you've tried, who's affected, and what success looks like. No deck, no pitch.",
+	},
+	{
+		n: '03',
+		h: 'A written summary in 48 hours.',
+		b: "If I think I can help, you get a written read of the scope, what I'd build first, what I'd defer, and a rough budget. If I'm not the right fit, I'll say so and try to point you somewhere useful.",
+	},
+];
+
+const helpful = [
+	'A short description of the problem (no jargon required).',
+	'How your team works around it today — the manual workaround.',
+	'What success looks like — saved hours, revenue, fewer mistakes.',
+	'Constraints worth knowing: deadlines, existing systems, team size, budget range.',
+];
+---
+
+<Base title={title} description={description}>
+	<!-- Hero -->
+	<section class="border-b border-border">
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<div class="grid gap-12 pt-20 pb-16 sm:pt-28 sm:pb-20 lg:grid-cols-12 lg:gap-16">
+				<div class="lg:col-span-7">
+					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Contact</p>
+					<h1 class="mt-6 text-4xl font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl">
+						Let's talk about
+						<span class="text-fg-muted">your project.</span>
+					</h1>
+					<p class="mt-6 max-w-2xl text-lg text-fg-muted text-pretty sm:text-xl">
+						Book a free 30 minutes. I ask about what's broken, what you've tried, and what success
+						looks like. If I can help, you'll have a written summary and rough scope inside 48
+						hours. If I can't, I'll say so.
+					</p>
+				</div>
+				<div class="lg:col-span-5">
+					<dl
+						class="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3"
+					>
+						<div class="bg-bg-soft px-4 py-4">
+							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Format</dt>
+							<dd class="mt-1 text-sm text-fg">30-min call</dd>
+						</div>
+						<div class="bg-bg-soft px-4 py-4">
+							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Cost</dt>
+							<dd class="mt-1 text-sm text-fg">Free, no pitch</dd>
+						</div>
+						<div class="bg-bg-soft px-4 py-4">
+							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Reply</dt>
+							<dd class="mt-1 text-sm text-fg">≤ 48 hours</dd>
+						</div>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Two paths: Book vs Email -->
+	<section class="border-b border-border">
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<div
+				class="grid gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-2 my-16"
+			>
+				<!-- Book a call -->
+				<div class="flex flex-col gap-6 bg-bg p-8 sm:p-10">
+					<p class="font-mono text-2xs tracking-[0.18em] text-[var(--color-accent)] uppercase">
+						Recommended
+					</p>
+					<h2 class="text-2xl font-medium tracking-tight text-balance text-fg sm:text-3xl">
+						Book a 30-minute call.
+					</h2>
+					<p class="text-fg-muted text-pretty">
+						Pick a time that works for you. The link goes to my calendar — pick any open slot, no
+						back-and-forth.
+					</p>
+					<a
+						href={BOOKING_URL}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="mt-2 inline-flex items-center justify-center gap-2 self-start rounded-md bg-fg px-5 py-3 text-sm font-medium text-bg transition-opacity hover:opacity-90"
+					>
+						Open my calendar
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 16 16"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<path d="M3 8h10M9 4l4 4-4 4"></path>
+						</svg>
+					</a>
+					<p class="font-mono text-2xs tracking-wide text-fg-subtle">
+						{BOOKING_URL.replace(/^https?:\/\//, '')}
+					</p>
+				</div>
+
+				<!-- Other channels -->
+				<div class="flex flex-col gap-6 bg-bg p-8 sm:p-10">
+					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+						Or find me elsewhere
+					</p>
+					<h2 class="text-2xl font-medium tracking-tight text-balance text-fg sm:text-3xl">
+						LinkedIn, GitHub, the usual.
+					</h2>
+					<p class="text-fg-muted text-pretty">
+						Not ready to book yet? LinkedIn is the fastest way to reach me for a quick message. Code
+						lives on GitHub.
+					</p>
+					<ul class="space-y-3 text-sm" role="list">
+						<li>
+							<a
+								href={SOCIAL.linkedin}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="group inline-flex items-center gap-2"
+							>
+								<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+									LinkedIn
+								</span>
+								<span class="text-fg underline-offset-4 group-hover:underline"> in/ryanroga </span>
+							</a>
+						</li>
+						<li>
+							<a
+								href={SOCIAL.github}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="group inline-flex items-center gap-2"
+							>
+								<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+									GitHub
+								</span>
+								<span class="text-fg underline-offset-4 group-hover:underline"> @rogadev </span>
+							</a>
+						</li>
+						<li>
+							<div class="inline-flex items-center gap-2">
+								<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+									Based
+								</span>
+								<span class="text-fg">{SITE_LOCATION}</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- What to expect -->
+	<Section
+		eyebrow="What to expect"
+		heading="How a typical engagement starts."
+		dek="Three short steps from first message to a real read on whether we should work together."
+	>
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<ol
+				class="grid gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-3"
+			>
+				{
+					expect.map((p) => (
+						<li class="flex flex-col gap-3 bg-bg p-8">
+							<span class="font-mono text-2xs tracking-[0.18em] text-[var(--color-accent)] uppercase">
+								{p.n}
+							</span>
+							<h3 class="text-xl font-medium tracking-tight text-balance text-fg">{p.h}</h3>
+							<p class="text-sm text-fg-muted text-pretty">{p.b}</p>
+						</li>
+					))
+				}
+			</ol>
+		</div>
+	</Section>
+
+	<!-- What's helpful for the first call -->
+	<Section
+		eyebrow="Before the call"
+		heading="What's helpful to bring."
+		dek="None of this is required — but if you have it handy, the call goes further."
+	>
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<ul class="divide-y divide-border border-y border-border" role="list">
+				{
+					helpful.map((item, i) => (
+						<li class="flex items-start gap-6 py-5">
+							<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase pt-0.5">
+								{String(i + 1).padStart(2, '0')}
+							</span>
+							<span class="text-fg text-pretty">{item}</span>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</Section>
+
+	<!-- End note -->
+	<section class="border-t border-border bg-bg-soft">
+		<div class="mx-auto w-full max-w-page px-6 py-16 sm:px-8 sm:py-20">
+			<div class="grid gap-6 lg:grid-cols-12 lg:items-center">
+				<p class="text-fg-muted text-pretty lg:col-span-8">
+					Not ready to talk yet? That's fine. The
+					<a href="/work" class="text-fg underline-offset-4 hover:underline">selected work</a>
+					and <a href="/insights" class="text-fg underline-offset-4 hover:underline">writing</a>
+					give the clearest picture of how {STUDIO_NAME} approaches a project.
+				</p>
+				<div class="flex flex-wrap items-center gap-3 lg:col-span-4 lg:justify-end">
+					<a
+						href={BOOKING_URL}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center gap-2 rounded-md bg-fg px-4 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-90"
+					>
+						Book a call
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Base>

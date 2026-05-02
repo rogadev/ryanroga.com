@@ -1,300 +1,131 @@
-# Roga Web Development
+# roga.dev
 
-[![Svelte 5](https://img.shields.io/badge/Svelte-5-orange.svg)](https://svelte.dev/)
-[![SvelteKit](https://img.shields.io/badge/SvelteKit-2.0-orange.svg)](https://kit.svelte.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-blue.svg)](https://tailwindcss.com/)
+[![Astro 6](https://img.shields.io/badge/Astro-6-ff5d01.svg)](https://astro.build/)
+[![Svelte 5](https://img.shields.io/badge/Svelte-5-ff3e00.svg)](https://svelte.dev/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-v4-38bdf8.svg)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6.svg)](https://www.typescriptlang.org/)
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed-Vercel-black.svg)](https://vercel.com/)
 
-Professional web development services website built with modern technologies. This is the portfolio and business website for Roga Web Development, specializing in custom web applications for small businesses.
+Portfolio and business website for **Roga Digital** — a software studio building internal tools, dashboards, integrations, and AI features for businesses.
 
-🌐 **Live Site**: [roga.dev](https://roga.dev)
+**Live site**: [roga.dev](https://roga.dev)
 
-## 🚀 Features
+> **Status**: mid-redesign. Stack pivoted from SvelteKit to Astro + Svelte islands in May 2026 (`package.json` 2.0.0 marks the cutover). The previous SvelteKit build is preserved read-only at `_references/old-svelte-site/` for content lift only. Design principles and the phased migration plan live in [`docs/BRIEF.md`](docs/BRIEF.md) and [`docs/PLAN.md`](docs/PLAN.md).
 
-### Business Features
+## Tech stack
 
-- **Professional Portfolio** - Showcasing web development projects and case studies
-- **Service Offerings** - Full-stack development, SvelteKit, Vue.js, TypeScript expertise
-- **Contact Form** - Integrated email system with auto-reply functionality
-- **Client Testimonials** - Social proof and client logos
-- **Responsive Design** - Mobile-first, modern UI/UX
-- **SEO Optimized** - Meta tags, Open Graph, Twitter Cards
+- **[Astro 6](https://astro.build/)** — static output, no SSR adapter. Vercel auto-detects `dist/`.
+- **[Svelte 5](https://svelte.dev/)** islands via `@astrojs/svelte`. Runes mode only.
+- **[Tailwind CSS v4](https://tailwindcss.com/)** via `@tailwindcss/vite` — no `tailwind.config.js`, no PostCSS config. Tokens live in `src/styles/global.css` under `@theme`.
+- **[MDX](https://mdxjs.com/)** + Astro content collections for posts (`src/content/insights/`).
+- **[Shiki](https://shiki.style/)** with dual `github-dark-default` / `github-light` themes for code blocks.
+- **[Geist](https://vercel.com/font)** + **Geist Mono** via `@fontsource-variable`.
+- **[Satori](https://github.com/vercel/satori)** for OG image generation.
+- **TypeScript** everywhere.
+- **[Vercel](https://vercel.com/)** for hosting (static `dist/`).
 
-### Technical Features
-
-- **Svelte 5 with Runes** - Latest Svelte features for reactive state management
-- **TypeScript** - Full type safety across the application
-- **Tailwind CSS** - Utility-first styling with custom components
-- **Server-Side Rendering** - SvelteKit for optimal performance
-- **Email Integration** - Resend API for contact form functionality
-- **Static Assets** - Optimized images, fonts, and logos
-
-## 🛠️ Tech Stack
-
-### Core Framework
-
-- **[SvelteKit](https://kit.svelte.dev/)** - Full-stack framework
-- **[Svelte 5](https://svelte.dev/)** - Component framework with runes
-- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
-- **[Vite](https://vitejs.dev/)** - Build tool and dev server
-
-### Styling & UI
-
-- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS
-- **[Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-forms)** - Form styling
-- **[Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography)** - Typography plugin
-- **[Iconify](https://iconify.design/)** - Icon system
-- **Poppins Font** - Custom web fonts
-
-### Backend & Services
-
-- **[Resend](https://resend.com/)** - Email API for contact forms
-- **[Vercel](https://vercel.com/)** - Deployment and hosting
-- QR Code generation for projects
-
-### Development Tools
-
-- **[ESLint](https://eslint.org/)** - Linting
-- **[Prettier](https://prettier.io/)** - Code formatting
-- **[Vitest](https://vitest.dev/)** - Testing framework
-- **[Playwright](https://playwright.dev/)** - End-to-end testing
-- **pnpm** - Package manager
-
-## 📁 Project Structure
-
-```
-src/
-├── lib/
-│   ├── components/           # Reusable components
-│   │   ├── case-studies/    # Case study specific components
-│   │   └── archive/         # Legacy components
-│   └── types/               # TypeScript type definitions
-├── routes/                  # SvelteKit routes
-│   ├── about/              # About page
-│   ├── contact/            # Contact form with server actions
-│   ├── development/        # Development services page
-│   ├── projects/           # Portfolio and case studies
-│   │   ├── eztripr-trip-tracker/
-│   │   └── lot-logistics-web-application/
-│   ├── resume/             # Resume pages
-│   ├── ai/                 # AI services page
-│   ├── privacy/            # Privacy policy
-│   └── terms/              # Terms of service
-└── app.html                # HTML template
-
-static/
-├── images/                 # Project images and screenshots
-├── logos/                  # Client and technology logos
-├── fonts/                  # Poppins font files
-└── icons/                  # Favicon and app icons
-```
-
-## 🚀 Getting Started
+## Getting started
 
 ### Prerequisites
 
-- **Node.js** 18+
-- **pnpm** (recommended package manager)
+- **Node.js** ≥ 22.12
+- **pnpm** (required)
 
-### Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/rogadev/ryanroga.com.git
-   cd ryanroga.com
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   pnpm install
-   ```
-
-3. **Set up environment variables**
-
-   ```bash
-   cp env.example .env
-   ```
-
-   Configure your environment variables:
-
-   ```env
-   RESEND_API_KEY=your_resend_api_key_here
-   ```
-
-4. **Start development server**
-   ```bash
-   pnpm dev
-   ```
-
-Visit [http://localhost:5173](http://localhost:5173) to view the application.
-
-## 📧 Contact Form Setup
-
-The contact form uses [Resend](https://resend.com/) for email delivery. See [CONTACT_FORM_SETUP.md](./CONTACT_FORM_SETUP.md) for detailed setup instructions.
-
-### Quick Setup:
-
-1. Create a Resend account at [resend.com](https://resend.com)
-2. Get your API key from the dashboard
-3. Add `RESEND_API_KEY` to your `.env` file
-4. Configure sender domains in production
-
-## 🛠️ Development
-
-### Available Scripts
+### Install & run
 
 ```bash
-# Development
-pnpm dev              # Start dev server
-pnpm dev --host       # Start dev server with network access
-
-# Building
-pnpm build            # Build for production
-pnpm preview          # Preview production build
-
-# Code Quality
-pnpm lint             # Run ESLint
-pnpm format           # Format code with Prettier
-pnpm check            # Type check with svelte-check
-pnpm check:watch      # Watch mode for type checking
-
-# Testing
-pnpm test             # Run Vitest tests
+git clone https://github.com/rogadev/ryanroga.com.git
+cd ryanroga.com
+pnpm install
+pnpm dev
 ```
 
-### Svelte 5 Development Guidelines
+Dev server runs at [http://localhost:4321](http://localhost:4321).
 
-This project uses **Svelte 5 with runes mode**. Key patterns:
+If `pnpm install` aborts with `ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`, prefix with `CI=true`. `sharp` and `esbuild` are allowlisted under `pnpm.onlyBuiltDependencies` so their post-install scripts run.
 
-```svelte
-<svelte:options runes={true} />
+## Scripts
 
-<script>
-	import type { Snippet } from 'svelte';
+| Command           | Action                                                       |
+| :---------------- | :----------------------------------------------------------- |
+| `pnpm dev`        | Start dev server at `localhost:4321`                         |
+| `pnpm devo`       | Start dev server and open browser                            |
+| `pnpm build`      | Build static site to `dist/`                                 |
+| `pnpm preview`    | Preview the production build                                 |
+| `pnpm check`      | `astro check` — TypeScript + content schema validation       |
+| `pnpm lint`       | `oxlint` then `eslint`                                       |
+| `pnpm lint:fast`  | `oxlint` only                                                |
+| `pnpm lint:fix`   | Auto-fix lint issues                                         |
+| `pnpm format`     | Prettier write                                               |
+| `pnpm fix`        | Format + format-check + lint:fix + lint                      |
+| `pnpm ready`      | `pnpm fix && pnpm check` — pre-commit gate                   |
 
-	// Props with $props()
-	let { title, children, onClick } = $props<{
-		title: string;
-		children?: Snippet;
-		onClick?: () => void;
-	}>();
+## Project structure
 
-	// State with $state()
-	let count = $state(0);
+```
+src/
+├── assets/             # Imported assets (optimized at build time)
+├── components/         # .astro for static, .svelte only when interactivity is real
+├── content/
+│   └── insights/       # MDX/Markdown posts (collection)
+├── layouts/            # Shared page layouts
+├── pages/              # File-based routing (.astro, .md, .mdx, endpoints)
+│   ├── insights/       # /insights index + [...slug] post route
+│   └── rss.xml.js      # RSS feed
+├── styles/
+│   └── global.css      # Tailwind v4 import + @theme tokens
+├── consts.ts           # Site-wide constants (title, tagline, social, roles)
+└── content.config.ts   # Content collection schemas
 
-	// Derived values with $derived()
-	let doubled = $derived(count * 2);
-
-	// Effects with $effect()
-	$effect(() => {
-		console.log('Count changed:', count);
-	});
-</script>
-
-<!-- Use {@render children?.()} instead of <slot /> -->
-<div>
-	{@render children?.()}
-</div>
+public/                 # Static assets served as-is
+docs/                   # BRIEF.md, PLAN.md
+_references/            # Read-only archives (gitignored)
 ```
 
-### Code Quality Standards
+`/blog` and `/blog/[...slug]` redirect to `/insights` (configured in `astro.config.mjs`).
 
-- **TypeScript** - All files must be properly typed
-- **Svelte 5 Syntax** - Use runes, avoid deprecated patterns
-- **Component Structure** - Follow established patterns in `/lib/components`
-- **Responsive Design** - Mobile-first with Tailwind classes
-- **SEO** - Proper meta tags and semantic HTML
+## Conventions
 
-## 📱 Pages & Features
+- **Components**: PascalCase filenames. Default to `.astro`; reach for `.svelte` only when state, events, or browser APIs are actually required.
+- **Routes**: kebab-case directories.
+- **TypeScript**: `import type` for type-only imports.
+- **Styling**: Tailwind utilities first; use `@theme` tokens before raw values.
+- **Content**: prefer MDX for posts that embed components; plain `.md` is fine otherwise.
+- **Site constants**: import from `src/consts.ts` rather than hard-coding titles, social links, etc.
 
-### Main Sections
+### Svelte 5 (when writing islands)
 
-- **Homepage** - Hero, services, process, tech stack, testimonials
-- **About** - Professional background and expertise
-- **Services** - Web development offerings
-- **Projects** - Portfolio with detailed case studies
-- **Contact** - Contact form with email integration
-- **Resume** - Professional experience and skills
+Runes mode only — no Svelte 4 patterns:
 
-### Case Studies
+- `$props()` not `export let`
+- `$state()`, `$derived()`, `$effect()` not `$:` reactive statements
+- `{@render children?.()}` not `<slot />`; named snippets not named slots
+- `onclick={handler}` not `on:click={handler}`
+- Callback props (e.g. `onPageChange`) not `createEventDispatcher`
 
-- **EzTripr Trip Tracker** - React/Node.js travel application
-- **LOT Logistics** - Vue.js/Laravel logistics platform
-- Additional projects and small applications
+To hydrate an island, add a client directive when importing into an `.astro` file (`client:load`, `client:idle`, `client:visible`). Without one, Svelte renders as static HTML.
 
-## 🚀 Deployment
+## Quality bars
 
-### Vercel Deployment
+Every component and page must satisfy all three (full detail in [`CLAUDE.md`](CLAUDE.md)):
 
-This project is configured for deployment on Vercel:
+- **Mobile-first** — author base styles for the smallest viewport, then layer up. Touch targets ≥ 44×44 px.
+- **Fully responsive** — no horizontal scroll from 320 px to 1920 px+. Fluid typography preferred.
+- **Accessible (WCAG 2.2 AA)** — semantic HTML first, visible focus, keyboard-operable, color is never the only signal, motion respects `prefers-reduced-motion`.
 
-1. **Connect your repository** to Vercel
-2. **Set environment variables** in Vercel dashboard:
-   - `RESEND_API_KEY`
-3. **Deploy** - Automatic deployments from main branch
+## Deployment
 
-### Build Configuration
+Static output, deployed on Vercel from the `main` branch. Vercel auto-detects `dist/`. No SSR adapter is configured — if edge image optimization or ISR is ever needed, add `@astrojs/vercel`.
 
-- **Adapter**: `@sveltejs/adapter-vercel`
-- **Node.js Version**: 18+
-- **Build Command**: `pnpm build`
-- **Output Directory**: `.svelte-kit`
+## Issue tracking
 
-## 🔧 Customization
+This project uses **[bd (beads)](https://github.com/steveyegge/beads)** for task tracking. Run `bd ready` for available work, `bd show <id>` for details. See [`CLAUDE.md`](CLAUDE.md) for the full workflow.
 
-### Adding New Projects
+## Contact
 
-1. Create project directory in `src/routes/projects/`
-2. Add `+page.svelte` with project details
-3. Update project listings and navigation
-4. Add project images to `static/images/`
+**Ryan Roga** — Roga Digital, Vancouver Island, BC
 
-### Modifying Contact Form
-
-1. Edit form fields in `src/routes/contact/+page.svelte`
-2. Update server action in `src/routes/contact/+page.server.ts`
-3. Customize email templates in the server action
-
-### Adding New Pages
-
-1. Create route directory in `src/routes/`
-2. Add `+page.svelte` for the page content
-3. Optional: Add `+page.ts` for data loading
-4. Update navigation components
-
-## 🤝 Contributing
-
-### Development Workflow
-
-1. Create feature branch from `main`
-2. Make changes following code quality standards
-3. Test thoroughly (dev server, build, lint)
-4. Submit pull request with clear description
-
-### Code Style
-
-- Use Prettier for formatting (configured)
-- Follow ESLint rules (configured)
-- Use TypeScript for type safety
-- Follow Svelte 5 patterns and runes
-- Write semantic, accessible HTML
-
-## 📄 License
-
-This project is for Roga Web Development business purposes. See individual component licenses for third-party code.
-
-## 📞 Contact
-
-**Ryan Roga** - Web Developer
-
-- 🌐 Website: [roga.dev](https://roga.dev)
-- 📧 Email: ryan@roga.dev
-- 💼 LinkedIn: [linkedin.com/in/ryanroga](https://linkedin.com/in/ryanroga)
-- 🐙 GitHub: [github.com/rogadev](https://github.com/rogadev)
-
----
-
-Built with ❤️ using SvelteKit and modern web technologies.
+- Website: [roga.dev](https://roga.dev)
+- Book a call: [cal.com/ryanroga](https://cal.com/ryanroga)
+- LinkedIn: [linkedin.com/in/ryanroga](https://linkedin.com/in/ryanroga)
+- GitHub: [github.com/rogadev](https://github.com/rogadev)
