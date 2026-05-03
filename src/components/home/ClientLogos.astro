@@ -1,14 +1,20 @@
 ---
 import { Image } from 'astro:assets';
 import TelusLogo from '../../assets/clients/telus.svg';
+import carevoLogo from '../../assets/clients/carevo.webp';
+import grannyGoGoLogo from '../../assets/clients/granny-go-go.png';
+import mossawayLogo from '../../assets/clients/mossaway.png';
 import viuLogo from '../../assets/clients/viu.png';
 ---
 
 <div
-	class="flex flex-col items-start gap-5 px-6 pb-12 sm:flex-row sm:items-center sm:gap-10 sm:px-8 sm:pb-16"
+	class="flex flex-col items-start gap-5 px-6 pb-12 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-10 sm:gap-y-6 sm:px-8 sm:pb-16"
 >
 	<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Worked with</p>
-	<ul class="flex flex-wrap items-center gap-x-10 gap-y-5 sm:gap-x-14" role="list">
+	<ul
+		class="flex flex-wrap items-center gap-x-8 gap-y-5 sm:gap-x-12"
+		role="list"
+	>
 		<li>
 			<TelusLogo class="client-logo h-6 w-auto sm:h-7" aria-label="TELUS" role="img" />
 		</li>
@@ -17,6 +23,30 @@ import viuLogo from '../../assets/clients/viu.png';
 				src={viuLogo}
 				alt="Vancouver Island University"
 				class="client-logo h-11 w-auto sm:h-12"
+				loading="lazy"
+			/>
+		</li>
+		<li>
+			<Image
+				src={carevoLogo}
+				alt="Carevo"
+				class="client-logo h-9 w-auto sm:h-10"
+				loading="lazy"
+			/>
+		</li>
+		<li>
+			<Image
+				src={mossawayLogo}
+				alt="MossAway"
+				class="client-logo h-10 w-auto sm:h-12"
+				loading="lazy"
+			/>
+		</li>
+		<li>
+			<Image
+				src={grannyGoGoLogo}
+				alt="Granny Go Go"
+				class="client-logo h-5 w-auto sm:h-6"
 				loading="lazy"
 			/>
 		</li>
