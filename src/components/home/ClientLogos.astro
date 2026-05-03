@@ -6,6 +6,39 @@ import grannyGoGoLogo from '../../assets/clients/granny-go-go.png';
 import mossawayLogo from '../../assets/clients/mossaway.png';
 import paoloLogo from '../../assets/clients/serres-de-paolo.png';
 import viuLogo from '../../assets/clients/viu.png';
+
+const logos = [
+	{ type: 'image' as const, src: carevoLogo, alt: 'CarEvo', class: 'h-10 w-auto sm:h-12' },
+	{ type: 'telus' as const, alt: 'TELUS', class: 'h-7 w-auto sm:h-8' },
+	{
+		type: 'image' as const,
+		src: viuLogo,
+		alt: 'Vancouver Island University',
+		class: 'h-12 w-auto sm:h-14',
+	},
+	{
+		type: 'image' as const,
+		src: paoloLogo,
+		alt: 'Les Serres de Paolo',
+		class: 'h-12 w-auto sm:h-14',
+	},
+	{
+		type: 'image' as const,
+		src: mossawayLogo,
+		alt: 'MossAway',
+		class: 'h-12 w-auto sm:h-14',
+	},
+	{
+		type: 'image' as const,
+		src: grannyGoGoLogo,
+		alt: 'Granny Go Go',
+		class: 'h-6 w-auto sm:h-7',
+	},
+];
+
+// Three identical copies. Middle copy (1) is announced; copies 0 and 2 are
+// decorative duplicates that buffer native-touch momentum in either direction.
+const COPIES = [0, 1, 2] as const;
 ---
 
 <div class="px-6 pb-6 sm:px-8 sm:pb-8">
@@ -21,49 +54,31 @@ import viuLogo from '../../assets/clients/viu.png';
 	data-marquee-direction="forward"
 >
 	<div class="marquee-track" data-marquee-track>
-		<!-- Set A: announced to assistive tech -->
-		<div class="marquee-item">
-			<Image src={carevoLogo} alt="CarEvo" class="client-logo h-10 w-auto sm:h-12" />
-		</div>
-		<div class="marquee-item">
-			<TelusLogo class="client-logo h-7 w-auto sm:h-8" aria-label="TELUS" role="img" />
-		</div>
-		<div class="marquee-item">
-			<Image
-				src={viuLogo}
-				alt="Vancouver Island University"
-				class="client-logo h-12 w-auto sm:h-14"
-			/>
-		</div>
-		<div class="marquee-item">
-			<Image src={paoloLogo} alt="Les Serres de Paolo" class="client-logo h-12 w-auto sm:h-14" />
-		</div>
-		<div class="marquee-item">
-			<Image src={mossawayLogo} alt="MossAway" class="client-logo h-12 w-auto sm:h-14" />
-		</div>
-		<div class="marquee-item">
-			<Image src={grannyGoGoLogo} alt="Granny Go Go" class="client-logo h-6 w-auto sm:h-7" />
-		</div>
-
-		<!-- Set B: visual duplicate for seamless loop, hidden from AT -->
-		<div class="marquee-item" aria-hidden="true">
-			<Image src={carevoLogo} alt="" class="client-logo h-10 w-auto sm:h-12" loading="lazy" />
-		</div>
-		<div class="marquee-item" aria-hidden="true">
-			<TelusLogo class="client-logo h-7 w-auto sm:h-8" role="presentation" />
-		</div>
-		<div class="marquee-item" aria-hidden="true">
-			<Image src={viuLogo} alt="" class="client-logo h-12 w-auto sm:h-14" loading="lazy" />
-		</div>
-		<div class="marquee-item" aria-hidden="true">
-			<Image src={paoloLogo} alt="" class="client-logo h-12 w-auto sm:h-14" loading="lazy" />
-		</div>
-		<div class="marquee-item" aria-hidden="true">
-			<Image src={mossawayLogo} alt="" class="client-logo h-12 w-auto sm:h-14" loading="lazy" />
-		</div>
-		<div class="marquee-item" aria-hidden="true">
-			<Image src={grannyGoGoLogo} alt="" class="client-logo h-6 w-auto sm:h-7" loading="lazy" />
-		</div>
+		{
+			COPIES.flatMap((copy) =>
+				logos.map((logo) => {
+					const announced = copy === 1;
+					return (
+						<div class="marquee-item" aria-hidden={announced ? undefined : 'true'}>
+							{logo.type === 'telus' ? (
+								<TelusLogo
+									class={`client-logo ${logo.class}`}
+									aria-label={announced ? logo.alt : undefined}
+									role={announced ? 'img' : 'presentation'}
+								/>
+							) : (
+								<Image
+									src={logo.src}
+									alt={announced ? logo.alt : ''}
+									loading="eager"
+									class={`client-logo ${logo.class}`}
+								/>
+							)}
+						</div>
+					);
+				}),
+			)
+		}
 	</div>
 </div>
 
