@@ -33,8 +33,8 @@ const work = defineCollection({
 			featured: z.boolean().default(false),
 			order: z.number().default(99),
 			heroImage: z.optional(image()),
-			liveUrl: z.string().url().optional(),
-			repoUrl: z.string().url().optional(),
+			liveUrl: z.url().optional(),
+			repoUrl: z.url().optional(),
 		}),
 });
 
