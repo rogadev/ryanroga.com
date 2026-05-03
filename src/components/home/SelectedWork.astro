@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Section from '../Section.astro';
-import ClientLogos from './ClientLogos.astro';
 
 const work = (await getCollection('work'))
 	.filter((entry) => entry.data.featured && entry.data.status !== 'draft')
@@ -15,7 +14,6 @@ const work = (await getCollection('work'))
 	dek="Real projects, real outcomes. Each shipped end-to-end, well maintained, and still running in production today."
 >
 	<div class="mx-auto w-full max-w-page">
-		<ClientLogos />
 		<ul
 			class="grid grid-cols-1 gap-px overflow-hidden border-y border-border bg-border lg:grid-cols-2"
 			role="list"
