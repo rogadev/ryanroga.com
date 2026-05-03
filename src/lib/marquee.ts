@@ -33,11 +33,15 @@ export function setupMarquee(container: HTMLElement) {
 
 	const half = () => track.scrollWidth / 2;
 
-	function wrapBoth() {
+	/**
+	 * Normalize `next` into [0, h). Browsers clamp scrollLeft to >= 0, so we
+	 * have to wrap *before* the assignment — otherwise reverse autoplay gets
+	 * stuck at 0 and a leftward drag never reaches a negative value to wrap.
+	 */
+	function setScrollWrapped(next: number) {
 		const h = half();
-		if (h <= 0) return;
-		if (container.scrollLeft >= h) container.scrollLeft -= h;
-		else if (container.scrollLeft < 0) container.scrollLeft += h;
+		if (h > 0) next = ((next % h) + h) % h;
+		container.scrollLeft = next;
 	}
 
 	const isStatic = () => staticMql.matches || reducedMotion.matches;
@@ -48,8 +52,7 @@ export function setupMarquee(container: HTMLElement) {
 		const dt = (now - lastTime) / 1000;
 		lastTime = now;
 		if (!isPaused()) {
-			container.scrollLeft += SPEED * dirSign * dt;
-			wrapBoth();
+			setScrollWrapped(container.scrollLeft + SPEED * dirSign * dt);
 		}
 		rafId = requestAnimationFrame(tick);
 	}
@@ -108,8 +111,7 @@ export function setupMarquee(container: HTMLElement) {
 	container.addEventListener('pointermove', (e) => {
 		if (!dragging || e.pointerId !== activePointer) return;
 		const delta = e.clientX - dragStartX;
-		container.scrollLeft = dragStartScroll - delta;
-		wrapBoth();
+		setScrollWrapped(dragStartScroll - delta);
 		dragStartX = e.clientX;
 		dragStartScroll = container.scrollLeft;
 	});
