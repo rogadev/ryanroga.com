@@ -36,9 +36,11 @@ const logos = [
 	},
 ];
 
-// Three identical copies. Middle copy (1) is announced; copies 0 and 2 are
-// decorative duplicates that buffer native-touch momentum in either direction.
-const COPIES = [0, 1, 2] as const;
+// Five identical copies. The middle copy is announced for assistive tech;
+// the rest are decorative buffers that absorb native-touch momentum in either
+// direction before it can hit the scroll boundary and clamp.
+const COPIES = [0, 1, 2, 3, 4] as const;
+const ANNOUNCED_COPY = 2;
 ---
 
 <div class="px-6 pb-6 sm:px-8 sm:pb-8">
@@ -52,12 +54,13 @@ const COPIES = [0, 1, 2] as const;
 	tabindex="0"
 	data-marquee
 	data-marquee-direction="forward"
+	data-marquee-copies={COPIES.length}
 >
 	<div class="marquee-track" data-marquee-track>
 		{
 			COPIES.flatMap((copy) =>
 				logos.map((logo) => {
-					const announced = copy === 1;
+					const announced = copy === ANNOUNCED_COPY;
 					return (
 						<div class="marquee-item" aria-hidden={announced ? undefined : 'true'}>
 							{logo.type === 'telus' ? (

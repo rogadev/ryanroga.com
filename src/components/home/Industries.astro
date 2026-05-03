@@ -3,9 +3,11 @@ import { INDUSTRIES } from '../../consts';
 
 const items = [...INDUSTRIES, '+ More'];
 
-// Three identical copies — middle copy (1) is announced; copies 0 and 2 are
-// decorative duplicates that buffer native-touch momentum in either direction.
-const COPIES = [0, 1, 2] as const;
+// Five identical copies — the middle copy is announced for assistive tech;
+// the rest are decorative buffers that absorb native-touch momentum in either
+// direction before it can hit the scroll boundary and clamp.
+const COPIES = [0, 1, 2, 3, 4] as const;
+const ANNOUNCED_COPY = 2;
 ---
 
 <section
@@ -14,12 +16,13 @@ const COPIES = [0, 1, 2] as const;
 	tabindex="0"
 	data-marquee
 	data-marquee-direction="reverse"
+	data-marquee-copies={COPIES.length}
 >
 	<ul class="marquee-track" data-marquee-track role="list">
 		{
 			COPIES.flatMap((copy) =>
 				items.map((industry, i) => {
-					const announced = copy === 1;
+					const announced = copy === ANNOUNCED_COPY;
 					return (
 						<li class="marquee-item" aria-hidden={announced ? undefined : 'true'}>
 							<span>{industry}</span>
