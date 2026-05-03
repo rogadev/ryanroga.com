@@ -6,6 +6,7 @@ import grannyGoGoLogo from '../../assets/clients/granny-go-go.png';
 import mossawayLogo from '../../assets/clients/mossaway.png';
 import paoloLogo from '../../assets/clients/serres-de-paolo.png';
 import viuLogo from '../../assets/clients/viu.png';
+import Marquee from '../Marquee.astro';
 
 const logos = [
 	{ type: 'image' as const, src: carevoLogo, alt: 'CarEvo', class: 'h-10 w-auto sm:h-12' },
@@ -36,9 +37,6 @@ const logos = [
 	},
 ];
 
-// Five identical copies. The middle copy is announced for assistive tech;
-// the rest are decorative buffers that absorb native-touch momentum in either
-// direction before it can hit the scroll boundary and clamp.
 const COPIES = [0, 1, 2, 3, 4] as const;
 const ANNOUNCED_COPY = 2;
 ---
@@ -47,138 +45,79 @@ const ANNOUNCED_COPY = 2;
 	<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Worked with</p>
 </div>
 
-<div
-	class="marquee mb-12 sm:mb-16"
+<Marquee
+	ariaLabel="Past clients — drag to scrub"
+	direction="forward"
+	copies={COPIES.length}
 	role="region"
-	aria-label="Past clients — drag to scrub"
-	tabindex="0"
-	data-marquee
-	data-marquee-direction="forward"
-	data-marquee-copies={COPIES.length}
+	class="client-logos mb-12 sm:mb-16"
+	trackClass="client-logos-track"
 >
-	<div class="marquee-track" data-marquee-track>
-		{
-			COPIES.flatMap((copy) =>
-				logos.map((logo) => {
-					const announced = copy === ANNOUNCED_COPY;
-					return (
-						<div class="marquee-item" aria-hidden={announced ? undefined : 'true'}>
-							{logo.type === 'telus' ? (
-								<TelusLogo
-									class={`client-logo ${logo.class}`}
-									aria-label={announced ? logo.alt : undefined}
-									role={announced ? 'img' : 'presentation'}
-								/>
-							) : (
-								<Image
-									src={logo.src}
-									alt={announced ? logo.alt : ''}
-									loading="eager"
-									class={`client-logo ${logo.class}`}
-								/>
-							)}
-						</div>
-					);
-				}),
-			)
-		}
-	</div>
-</div>
+	{
+		COPIES.flatMap((copy) =>
+			logos.map((logo) => {
+				const announced = copy === ANNOUNCED_COPY;
+				return (
+					<div class="marquee-item" aria-hidden={announced ? undefined : 'true'}>
+						{logo.type === 'telus' ? (
+							<TelusLogo
+								class={`client-logo ${logo.class}`}
+								aria-label={announced ? logo.alt : undefined}
+								role={announced ? 'img' : 'presentation'}
+							/>
+						) : (
+							<Image
+								src={logo.src}
+								alt={announced ? logo.alt : ''}
+								loading="eager"
+								class={`client-logo ${logo.class}`}
+							/>
+						)}
+					</div>
+				);
+			}),
+		)
+	}
+</Marquee>
 
-<style>
-	.marquee {
-		overflow-x: auto;
-		overflow-y: hidden;
-		cursor: grab;
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-		overscroll-behavior-x: contain;
-		-webkit-mask-image: linear-gradient(
-			to right,
-			transparent,
-			black 4rem,
-			black calc(100% - 4rem),
-			transparent
-		);
-		mask-image: linear-gradient(
-			to right,
-			transparent,
-			black 4rem,
-			black calc(100% - 4rem),
-			transparent
-		);
-	}
-	.marquee::-webkit-scrollbar {
-		display: none;
-	}
-	.marquee.is-dragging {
-		cursor: grabbing;
-	}
-	.marquee.is-dragging :global(*) {
-		user-select: none;
-		pointer-events: none;
-	}
-	.marquee-track {
-		display: flex;
-		align-items: center;
-		width: max-content;
+<style is:global>
+	/* Consumer-specific styles must be global: the .client-logos and
+	   .client-logos-track elements are rendered by the Marquee component, so
+	   they don't carry this file's scoped data-cid attribute. */
+	.client-logos-track {
 		gap: 3.5rem;
 	}
 	@media (min-width: 640px) {
-		.marquee-track {
+		.client-logos-track {
 			gap: 5rem;
 		}
 	}
-	.marquee-item {
-		flex: 0 0 auto;
-	}
-	/* :global() escape so the filter reaches into <Image>/<TelusLogo> child components */
-	:global(.client-logo) {
+	.client-logo {
 		filter: brightness(0) invert(1);
 		opacity: 0.7;
 	}
-	:global(html.light .client-logo) {
+	html.light .client-logo {
 		filter: brightness(0);
 	}
-	/* Static layout: wide screens fit the full set on one line; reduced-motion
-	   gets a wrapped grid. */
 	@media (min-width: 1280px) {
-		.marquee {
-			overflow: visible;
-			cursor: auto;
-			-webkit-mask-image: none;
-			mask-image: none;
+		.client-logos {
 			padding-inline: 1.5rem;
 		}
-		.marquee-track {
+		.client-logos-track {
 			width: 100%;
 			justify-content: space-between;
 			gap: 2rem;
 		}
-		.marquee-item[aria-hidden='true'] {
-			display: none;
-		}
 	}
 	@media (prefers-reduced-motion: reduce) {
-		.marquee {
-			overflow: visible;
-			cursor: auto;
-			-webkit-mask-image: none;
-			mask-image: none;
+		.client-logos {
 			padding-inline: 1.5rem;
 		}
-		.marquee-track {
+		.client-logos-track {
 			flex-wrap: wrap;
 			width: 100%;
 			justify-content: center;
 			gap: 2.5rem;
 		}
-		.marquee-item[aria-hidden='true'] {
-			display: none;
-		}
 	}
 </style>
-
-<script>
-	import '../../lib/marquee';
-</script>
