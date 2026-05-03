@@ -41,26 +41,30 @@ const statusColor = {
 						still running today.
 					</p>
 				</div>
-				<div class="lg:col-span-4">
-					<dl
-						class="grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-border bg-border"
-					>
-						<div class="bg-bg-soft px-4 py-4">
-							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Shipped</dt>
-							<dd class="mt-1 text-xl font-medium text-fg">{work.length}</dd>
-						</div>
-						<div class="bg-bg-soft px-4 py-4">
-							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Maintained</dt>
-							<dd class="mt-1 text-xl font-medium text-fg">
-								{work.filter((w) => w.data.status === 'live').length}
-							</dd>
-						</div>
-						<div class="bg-bg-soft px-4 py-4">
-							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Clients</dt>
-							<dd class="mt-1 text-xl font-medium text-fg">7+</dd>
-						</div>
-					</dl>
-				</div>
+				{
+					/* Stats panel hidden temporarily — restore when numbers are confirmed.
+					<div class="lg:col-span-4">
+						<dl
+							class="grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-border bg-border"
+						>
+							<div class="bg-bg-soft px-4 py-4">
+								<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Shipped</dt>
+								<dd class="mt-1 text-xl font-medium text-fg">{work.length}</dd>
+							</div>
+							<div class="bg-bg-soft px-4 py-4">
+								<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Maintained</dt>
+								<dd class="mt-1 text-xl font-medium text-fg">
+									{work.filter((w) => w.data.status === 'live').length}
+								</dd>
+							</div>
+							<div class="bg-bg-soft px-4 py-4">
+								<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Clients</dt>
+								<dd class="mt-1 text-xl font-medium text-fg">7+</dd>
+							</div>
+						</dl>
+					</div>
+					*/
+				}
 			</div>
 		</div>
 	</section>
