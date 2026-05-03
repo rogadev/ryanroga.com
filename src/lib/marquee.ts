@@ -1,12 +1,19 @@
 /**
- * Drag-to-scrub marquee. Picks up any `[data-marquee]` element with a
- * `[data-marquee-track]` child whose contents are duplicated for a seamless
- * loop. Mouse uses pointer-capture drag; touch uses native momentum scroll.
+ * Drag-to-scrub marquee with bidirectional infinite scroll.
+ *
+ * Picks up any `[data-marquee]` element with a `[data-marquee-track]` child
+ * whose contents are rendered as three identical copies. Anchoring scrollLeft
+ * into the middle copy gives the user a full unit of room in either direction
+ * before native momentum hits a clamp; on scroll settle we silently recenter.
+ *
+ * Mouse uses pointer-capture drag; touch uses native momentum scroll.
  * Above 1280 px (or with reduced motion) the marquee goes static — JS stops,
  * CSS handles the layout swap.
  */
 const SPEED = 30; // px/s
 const STATIC_QUERY = '(min-width: 1280px)';
+const SETTLE_MS = 150;
+const TOUCH_RESUME_MS = 600;
 
 export function setupMarquee(container: HTMLElement) {
 	if (container.dataset.marqueeReady) return;
@@ -16,7 +23,6 @@ export function setupMarquee(container: HTMLElement) {
 	if (!track) return;
 
 	const dirSign = container.dataset.marqueeDirection === 'reverse' ? -1 : 1;
-
 	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 	const staticMql = window.matchMedia(STATIC_QUERY);
 
@@ -30,18 +36,34 @@ export function setupMarquee(container: HTMLElement) {
 	let dragStartScroll = 0;
 	let activePointer: number | null = null;
 	let touchResumeTimer = 0;
+	let scrollSettleTimer = 0;
 
-	const half = () => track.scrollWidth / 2;
+	// Track renders three identical copies side-by-side; `unit` is one copy.
+	const unit = () => track.scrollWidth / 3;
 
 	/**
-	 * Normalize `next` into [0, h). Browsers clamp scrollLeft to >= 0, so we
-	 * have to wrap *before* the assignment — otherwise reverse autoplay gets
-	 * stuck at 0 and a leftward drag never reaches a negative value to wrap.
+	 * Normalize `next` into [unit, 2*unit). Browsers clamp scrollLeft to the
+	 * scroll-range, so we have to compute the wrapped target *before* the
+	 * assignment — otherwise reverse autoplay would get stuck at 0 and a
+	 * leftward drag would never reach a negative value to wrap.
 	 */
 	function setScrollWrapped(next: number) {
-		const h = half();
-		if (h > 0) next = ((next % h) + h) % h;
+		const u = unit();
+		if (u <= 0) {
+			container.scrollLeft = next;
+			return;
+		}
+		next = ((((next - u) % u) + u) % u) + u;
 		container.scrollLeft = next;
+	}
+
+	function recenter() {
+		if (dragging) return;
+		const u = unit();
+		if (u <= 0) return;
+		if (container.scrollLeft < u || container.scrollLeft >= 2 * u) {
+			setScrollWrapped(container.scrollLeft);
+		}
 	}
 
 	const isStatic = () => staticMql.matches || reducedMotion.matches;
@@ -60,10 +82,9 @@ export function setupMarquee(container: HTMLElement) {
 	function start() {
 		stop();
 		if (isStatic()) return;
-		// Reverse direction needs room to scroll backward.
-		if (dirSign < 0 && container.scrollLeft <= 0) {
-			const h = half();
-			if (h > 0) container.scrollLeft = h;
+		const u = unit();
+		if (u > 0 && (container.scrollLeft < u || container.scrollLeft >= 2 * u)) {
+			container.scrollLeft = u;
 		}
 		lastTime = 0;
 		rafId = requestAnimationFrame(tick);
@@ -129,25 +150,36 @@ export function setupMarquee(container: HTMLElement) {
 			touchResumeTimer = window.setTimeout(() => {
 				touchActive = false;
 				touchResumeTimer = 0;
-			}, 600);
+				recenter();
+			}, TOUCH_RESUME_MS);
 		}
 	}
 	container.addEventListener('pointerup', endPointer);
 	container.addEventListener('pointercancel', endPointer);
 
+	// After native scroll momentum settles, silently recenter into the middle
+	// copy so the user always has a full unit of room in either direction.
 	container.addEventListener(
 		'scroll',
 		() => {
-			const h = half();
-			if (h > 0 && container.scrollLeft >= h) container.scrollLeft -= h;
+			if (scrollSettleTimer) window.clearTimeout(scrollSettleTimer);
+			scrollSettleTimer = window.setTimeout(() => {
+				scrollSettleTimer = 0;
+				recenter();
+			}, SETTLE_MS);
 		},
 		{ passive: true },
 	);
 
+	// Re-anchor when track width changes (images loading, viewport resize).
+	const ro = new ResizeObserver(() => {
+		if (!isStatic()) recenter();
+	});
+	ro.observe(track);
+
 	const onMqlChange = () => {
 		if (isStatic()) {
 			stop();
-			container.scrollLeft = 0;
 		} else {
 			start();
 		}
