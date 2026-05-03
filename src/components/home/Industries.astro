@@ -22,10 +22,7 @@ const ANNOUNCED_COPY = 2;
 			items.map((industry, i) => {
 				const announced = copy === ANNOUNCED_COPY;
 				return (
-					<li
-						class="marquee-item industries-item"
-						aria-hidden={announced ? undefined : 'true'}
-					>
+					<li class="marquee-item industries-item" aria-hidden={announced ? undefined : 'true'}>
 						<span>{industry}</span>
 						{i < items.length - 1 && (
 							<span aria-hidden="true" class="industry-sep">
