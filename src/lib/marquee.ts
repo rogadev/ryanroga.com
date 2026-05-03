@@ -139,7 +139,7 @@ export function setupMarquee(container: HTMLElement) {
 			const h = half();
 			if (h > 0 && container.scrollLeft >= h) container.scrollLeft -= h;
 		},
-		{ passive: true }
+		{ passive: true },
 	);
 
 	const onMqlChange = () => {
