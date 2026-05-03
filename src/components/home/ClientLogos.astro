@@ -12,8 +12,14 @@ import viuLogo from '../../assets/clients/viu.png';
 	<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Worked with</p>
 </div>
 
-<div class="marquee mb-12 sm:mb-16" role="region" aria-label="Past clients">
-	<div class="marquee-track">
+<div
+	class="marquee mb-12 sm:mb-16"
+	role="region"
+	aria-label="Past clients — drag to scrub"
+	tabindex="0"
+	data-marquee
+>
+	<div class="marquee-track" data-marquee-track>
 		<!-- Set A: announced to assistive tech -->
 		<div class="marquee-item">
 			<Image src={carevoLogo} alt="CarEvo" class="client-logo h-10 w-auto sm:h-12" />
@@ -62,7 +68,12 @@ import viuLogo from '../../assets/clients/viu.png';
 
 <style>
 	.marquee {
-		overflow: hidden;
+		overflow-x: auto;
+		overflow-y: hidden;
+		cursor: grab;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		overscroll-behavior-x: contain;
 		-webkit-mask-image: linear-gradient(
 			to right,
 			transparent,
@@ -78,13 +89,26 @@ import viuLogo from '../../assets/clients/viu.png';
 			transparent
 		);
 	}
+	.marquee::-webkit-scrollbar {
+		display: none;
+	}
+	.marquee.is-dragging {
+		cursor: grabbing;
+	}
+	.marquee.is-dragging :global(*) {
+		user-select: none;
+		pointer-events: none;
+	}
+	.marquee:focus-visible {
+		outline: 2px solid var(--color-fg, currentColor);
+		outline-offset: 4px;
+		border-radius: 4px;
+	}
 	.marquee-track {
 		display: flex;
 		align-items: center;
 		width: max-content;
 		gap: 3.5rem;
-		animation: marquee 45s linear infinite;
-		will-change: transform;
 	}
 	@media (min-width: 640px) {
 		.marquee-track {
@@ -93,19 +117,6 @@ import viuLogo from '../../assets/clients/viu.png';
 	}
 	.marquee-item {
 		flex: 0 0 auto;
-	}
-	.marquee:hover .marquee-track,
-	.marquee:focus-within .marquee-track {
-		animation-play-state: paused;
-	}
-	@keyframes marquee {
-		from {
-			transform: translate3d(0, 0, 0);
-		}
-		to {
-			/* -50% lands the duplicate set exactly where the original started — seamless. */
-			transform: translate3d(-50%, 0, 0);
-		}
 	}
 	/* :global() escape so the filter reaches into <Image>/<TelusLogo> child components */
 	:global(.client-logo) {
@@ -118,12 +129,12 @@ import viuLogo from '../../assets/clients/viu.png';
 	@media (prefers-reduced-motion: reduce) {
 		.marquee {
 			overflow: visible;
+			cursor: auto;
 			-webkit-mask-image: none;
 			mask-image: none;
 			padding-inline: 1.5rem;
 		}
 		.marquee-track {
-			animation: none;
 			flex-wrap: wrap;
 			width: 100%;
 			gap: 2.5rem;
@@ -133,3 +144,156 @@ import viuLogo from '../../assets/clients/viu.png';
 		}
 	}
 </style>
+
+<script>
+	const SPEED = 30; // px/s autoplay
+
+	function setup(container: HTMLElement) {
+		if (container.dataset.marqueeReady) return;
+		container.dataset.marqueeReady = '1';
+
+		const track = container.querySelector<HTMLElement>('[data-marquee-track]');
+		if (!track) return;
+
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+		let rafId = 0;
+		let lastTime = 0;
+		let hovering = false;
+		let focused = false;
+		let dragging = false;
+		let touchActive = false;
+		let dragStartX = 0;
+		let dragStartScroll = 0;
+		let activePointer: number | null = null;
+		let touchResumeTimer = 0;
+
+		const half = () => track.scrollWidth / 2;
+
+		function wrapForward() {
+			const h = half();
+			if (h > 0 && container.scrollLeft >= h) container.scrollLeft -= h;
+		}
+
+		function wrapBoth() {
+			const h = half();
+			if (h <= 0) return;
+			if (container.scrollLeft >= h) container.scrollLeft -= h;
+			else if (container.scrollLeft < 0) container.scrollLeft += h;
+		}
+
+		const isPaused = () =>
+			hovering || focused || dragging || touchActive || reducedMotion.matches;
+
+		function tick(now: number) {
+			if (!lastTime) lastTime = now;
+			const dt = (now - lastTime) / 1000;
+			lastTime = now;
+			if (!isPaused()) {
+				container.scrollLeft += SPEED * dt;
+				wrapForward();
+			}
+			rafId = requestAnimationFrame(tick);
+		}
+
+		function start() {
+			if (rafId) cancelAnimationFrame(rafId);
+			lastTime = 0;
+			rafId = requestAnimationFrame(tick);
+		}
+
+		function stop() {
+			if (rafId) cancelAnimationFrame(rafId);
+			rafId = 0;
+		}
+
+		container.addEventListener('mouseenter', () => {
+			hovering = true;
+		});
+		container.addEventListener('mouseleave', () => {
+			hovering = false;
+		});
+		container.addEventListener('focusin', () => {
+			focused = true;
+		});
+		container.addEventListener('focusout', () => {
+			focused = false;
+		});
+
+		container.addEventListener('pointerdown', (e) => {
+			if (reducedMotion.matches) return;
+			if (e.pointerType === 'mouse') {
+				dragging = true;
+				activePointer = e.pointerId;
+				dragStartX = e.clientX;
+				dragStartScroll = container.scrollLeft;
+				container.classList.add('is-dragging');
+				try {
+					container.setPointerCapture(e.pointerId);
+				} catch {}
+				e.preventDefault();
+			} else {
+				touchActive = true;
+				if (touchResumeTimer) {
+					window.clearTimeout(touchResumeTimer);
+					touchResumeTimer = 0;
+				}
+			}
+		});
+
+		container.addEventListener('pointermove', (e) => {
+			if (!dragging || e.pointerId !== activePointer) return;
+			const delta = e.clientX - dragStartX;
+			container.scrollLeft = dragStartScroll - delta;
+			wrapBoth();
+			// Re-anchor so subsequent moves stay continuous after a wrap.
+			dragStartX = e.clientX;
+			dragStartScroll = container.scrollLeft;
+		});
+
+		function endPointer(e: PointerEvent) {
+			if (e.pointerType === 'mouse') {
+				if (!dragging) return;
+				dragging = false;
+				container.classList.remove('is-dragging');
+				try {
+					container.releasePointerCapture(e.pointerId);
+				} catch {}
+				activePointer = null;
+			} else {
+				// Let momentum settle before resuming autoplay.
+				touchResumeTimer = window.setTimeout(() => {
+					touchActive = false;
+					touchResumeTimer = 0;
+				}, 600);
+			}
+		}
+		container.addEventListener('pointerup', endPointer);
+		container.addEventListener('pointercancel', endPointer);
+
+		container.addEventListener(
+			'scroll',
+			() => {
+				wrapForward();
+			},
+			{ passive: true }
+		);
+
+		reducedMotion.addEventListener('change', () => {
+			if (reducedMotion.matches) stop();
+			else start();
+		});
+
+		if (!reducedMotion.matches) start();
+	}
+
+	function init() {
+		document.querySelectorAll<HTMLElement>('[data-marquee]').forEach(setup);
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', init, { once: true });
+	} else {
+		init();
+	}
+</script>
