@@ -1,84 +1,54 @@
 ---
 import { INDUSTRIES } from '../../consts';
+import Marquee from '../Marquee.astro';
 
 const items = [...INDUSTRIES, '+ More'];
 
-// Three identical copies — middle copy (1) is announced; copies 0 and 2 are
-// decorative duplicates that buffer native-touch momentum in either direction.
-const COPIES = [0, 1, 2] as const;
+const COPIES = [0, 1, 2, 3, 4] as const;
+const ANNOUNCED_COPY = 2;
 ---
 
-<section
-	aria-label="Industries served — drag to scrub"
-	class="marquee border-b border-border"
-	tabindex="0"
-	data-marquee
-	data-marquee-direction="reverse"
+<Marquee
+	ariaLabel="Industries served — drag to scrub"
+	direction="reverse"
+	copies={COPIES.length}
+	rootTag="section"
+	trackTag="ul"
+	class="industries border-b border-border"
+	trackClass="industries-track"
 >
-	<ul class="marquee-track" data-marquee-track role="list">
-		{
-			COPIES.flatMap((copy) =>
-				items.map((industry, i) => {
-					const announced = copy === 1;
-					return (
-						<li class="marquee-item" aria-hidden={announced ? undefined : 'true'}>
-							<span>{industry}</span>
-							{i < items.length - 1 && (
-								<span aria-hidden="true" class="industry-sep">
-									·
-								</span>
-							)}
-						</li>
-					);
-				}),
-			)
-		}
-	</ul>
-</section>
+	{
+		COPIES.flatMap((copy) =>
+			items.map((industry, i) => {
+				const announced = copy === ANNOUNCED_COPY;
+				return (
+					<li class="marquee-item industries-item" aria-hidden={announced ? undefined : 'true'}>
+						<span>{industry}</span>
+						{i < items.length - 1 && (
+							<span aria-hidden="true" class="industry-sep">
+								·
+							</span>
+						)}
+					</li>
+				);
+			}),
+		)
+	}
+</Marquee>
 
-<style>
-	.marquee {
-		overflow-x: auto;
-		overflow-y: hidden;
-		cursor: grab;
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-		overscroll-behavior-x: contain;
+<style is:global>
+	/* Consumer-specific styles must be global: the .industries and
+	   .industries-track elements are rendered by the Marquee component, so
+	   they don't carry this file's scoped data-cid attribute. */
+	.industries {
 		padding-block: 1.5rem;
-		-webkit-mask-image: linear-gradient(
-			to right,
-			transparent,
-			black 4rem,
-			black calc(100% - 4rem),
-			transparent
-		);
-		mask-image: linear-gradient(
-			to right,
-			transparent,
-			black 4rem,
-			black calc(100% - 4rem),
-			transparent
-		);
 	}
 	@media (min-width: 640px) {
-		.marquee {
+		.industries {
 			padding-block: 2rem;
 		}
 	}
-	.marquee::-webkit-scrollbar {
-		display: none;
-	}
-	.marquee.is-dragging {
-		cursor: grabbing;
-	}
-	.marquee.is-dragging :global(*) {
-		user-select: none;
-		pointer-events: none;
-	}
-	.marquee-track {
-		display: flex;
-		align-items: center;
-		width: max-content;
+	.industries-track {
 		gap: 0.75rem;
 		margin: 0;
 		padding: 0;
@@ -88,18 +58,17 @@ const COPIES = [0, 1, 2] as const;
 		color: var(--color-fg-muted);
 	}
 	@media (min-width: 640px) {
-		.marquee-track {
+		.industries-track {
 			gap: 1rem;
 		}
 	}
-	.marquee-item {
-		flex: 0 0 auto;
+	.industries-item {
 		display: flex;
 		align-items: center;
 		gap: 0.75rem;
 	}
 	@media (min-width: 640px) {
-		.marquee-item {
+		.industries-item {
 			gap: 1rem;
 		}
 	}
@@ -107,43 +76,25 @@ const COPIES = [0, 1, 2] as const;
 		color: var(--color-fg-subtle);
 	}
 	@media (min-width: 1280px) {
-		.marquee {
-			overflow: visible;
-			cursor: auto;
-			-webkit-mask-image: none;
-			mask-image: none;
+		.industries {
 			padding-inline: 2rem;
 		}
-		.marquee-track {
+		.industries-track {
 			flex-wrap: wrap;
 			width: 100%;
 			justify-content: center;
 			row-gap: 0.375rem;
-		}
-		.marquee-item[aria-hidden='true'] {
-			display: none;
 		}
 	}
 	@media (prefers-reduced-motion: reduce) {
-		.marquee {
-			overflow: visible;
-			cursor: auto;
-			-webkit-mask-image: none;
-			mask-image: none;
+		.industries {
 			padding-inline: 1.5rem;
 		}
-		.marquee-track {
+		.industries-track {
 			flex-wrap: wrap;
 			width: 100%;
 			justify-content: center;
 			row-gap: 0.375rem;
 		}
-		.marquee-item[aria-hidden='true'] {
-			display: none;
-		}
 	}
 </style>
-
-<script>
-	import '../../lib/marquee';
-</script>

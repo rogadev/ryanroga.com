@@ -1,0 +1,124 @@
+---
+/**
+ * Drag-to-scrub marquee primitive.
+ *
+ * Owns the outer wrapper, the masked overflow CSS, and the JS hookup
+ * (`src/lib/marquee.ts`). Consumers provide N pre-duplicated copies of their
+ * items via the default slot — one copy is announced to assistive tech, the
+ * rest are decorative buffers. `copies` should match the number of copies
+ * rendered into the slot so scrollLeft can be anchored into the middle.
+ */
+type RootTag = 'div' | 'section';
+type TrackTag = 'div' | 'ul';
+
+interface Props {
+	ariaLabel: string;
+	direction?: 'forward' | 'reverse';
+	copies?: number;
+	rootTag?: RootTag;
+	trackTag?: TrackTag;
+	role?: 'region' | 'group';
+	class?: string;
+	trackClass?: string;
+}
+
+const {
+	ariaLabel,
+	direction = 'forward',
+	copies = 5,
+	rootTag: Root = 'div',
+	trackTag: Track = 'div',
+	role,
+	class: rootClass,
+	trackClass,
+} = Astro.props;
+---
+
+<Root
+	class:list={['marquee', rootClass]}
+	role={role}
+	aria-label={ariaLabel}
+	tabindex="0"
+	data-marquee
+	data-marquee-direction={direction}
+	data-marquee-copies={copies}
+>
+	<Track
+		class:list={['marquee-track', trackClass]}
+		role={Track === 'ul' ? 'list' : undefined}
+		data-marquee-track
+	>
+		<slot />
+	</Track>
+</Root>
+
+<style is:global>
+	.marquee {
+		overflow-x: auto;
+		overflow-y: hidden;
+		cursor: grab;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		overscroll-behavior-x: contain;
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 4rem,
+			black calc(100% - 4rem),
+			transparent
+		);
+		mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 4rem,
+			black calc(100% - 4rem),
+			transparent
+		);
+	}
+	.marquee::-webkit-scrollbar {
+		display: none;
+	}
+	.marquee.is-dragging {
+		cursor: grabbing;
+	}
+	.marquee.is-dragging * {
+		user-select: none;
+		pointer-events: none;
+	}
+	.marquee-track {
+		display: flex;
+		align-items: center;
+		width: max-content;
+	}
+	.marquee-item {
+		flex: 0 0 auto;
+	}
+	/* Static layout: above 1280px or with reduced motion the marquee stops
+	   scrolling and the consumer's CSS handles the layout swap. */
+	@media (min-width: 1280px) {
+		.marquee {
+			overflow: visible;
+			cursor: auto;
+			-webkit-mask-image: none;
+			mask-image: none;
+		}
+		.marquee-item[aria-hidden='true'] {
+			display: none;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.marquee {
+			overflow: visible;
+			cursor: auto;
+			-webkit-mask-image: none;
+			mask-image: none;
+		}
+		.marquee-item[aria-hidden='true'] {
+			display: none;
+		}
+	}
+</style>
+
+<script>
+	import '../lib/marquee';
+</script>

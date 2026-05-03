@@ -2,9 +2,11 @@
  * Drag-to-scrub marquee with bidirectional infinite scroll.
  *
  * Picks up any `[data-marquee]` element with a `[data-marquee-track]` child
- * whose contents are rendered as three identical copies. Anchoring scrollLeft
- * into the middle copy gives the user a full unit of room in either direction
- * before native momentum hits a clamp; on scroll settle we silently recenter.
+ * whose contents are rendered as N identical copies (set via
+ * `data-marquee-copies`, default 3). scrollLeft is anchored into the middle
+ * copy so the user has a multi-unit buffer in either direction before native
+ * momentum hits the scroll boundary and clamps; on scroll settle we silently
+ * recenter. Bigger N = more buffer for fast flicks (at the cost of DOM).
  *
  * Mouse uses pointer-capture drag; touch uses native momentum scroll.
  * Above 1280 px (or with reduced motion) the marquee goes static — JS stops,
@@ -13,7 +15,6 @@
 const SPEED = 30; // px/s
 const STATIC_QUERY = '(min-width: 1280px)';
 const SETTLE_MS = 150;
-const TOUCH_RESUME_MS = 600;
 
 export function setupMarquee(container: HTMLElement) {
 	if (container.dataset.marqueeReady) return;
@@ -23,6 +24,8 @@ export function setupMarquee(container: HTMLElement) {
 	if (!track) return;
 
 	const dirSign = container.dataset.marqueeDirection === 'reverse' ? -1 : 1;
+	const copyCount = Math.max(1, Number(container.dataset.marqueeCopies) || 3);
+	const anchorCopy = Math.floor(copyCount / 2);
 	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 	const staticMql = window.matchMedia(STATIC_QUERY);
 
@@ -32,20 +35,20 @@ export function setupMarquee(container: HTMLElement) {
 	let focused = false;
 	let dragging = false;
 	let touchActive = false;
+	let touchSettling = false;
 	let dragStartX = 0;
 	let dragStartScroll = 0;
 	let activePointer: number | null = null;
-	let touchResumeTimer = 0;
 	let scrollSettleTimer = 0;
 
-	// Track renders three identical copies side-by-side; `unit` is one copy.
-	const unit = () => track.scrollWidth / 3;
+	// Track renders `copyCount` identical copies side-by-side; `unit` is one copy.
+	const unit = () => track.scrollWidth / copyCount;
 
 	/**
-	 * Normalize `next` into [unit, 2*unit). Browsers clamp scrollLeft to the
-	 * scroll-range, so we have to compute the wrapped target *before* the
-	 * assignment — otherwise reverse autoplay would get stuck at 0 and a
-	 * leftward drag would never reach a negative value to wrap.
+	 * Normalize `next` into [anchorOffset, anchorOffset + unit). Browsers clamp
+	 * scrollLeft to the scroll-range, so we have to compute the wrapped target
+	 * *before* the assignment — otherwise reverse autoplay would get stuck at 0
+	 * and a leftward drag would never reach a negative value to wrap.
 	 */
 	function setScrollWrapped(next: number) {
 		const u = unit();
@@ -53,15 +56,17 @@ export function setupMarquee(container: HTMLElement) {
 			container.scrollLeft = next;
 			return;
 		}
-		next = ((((next - u) % u) + u) % u) + u;
+		const anchor = anchorCopy * u;
+		next = ((((next - anchor) % u) + u) % u) + anchor;
 		container.scrollLeft = next;
 	}
 
 	function recenter() {
-		if (dragging) return;
+		if (dragging || touchActive) return;
 		const u = unit();
 		if (u <= 0) return;
-		if (container.scrollLeft < u || container.scrollLeft >= 2 * u) {
+		const anchor = anchorCopy * u;
+		if (container.scrollLeft < anchor || container.scrollLeft >= anchor + u) {
 			setScrollWrapped(container.scrollLeft);
 		}
 	}
@@ -83,8 +88,11 @@ export function setupMarquee(container: HTMLElement) {
 		stop();
 		if (isStatic()) return;
 		const u = unit();
-		if (u > 0 && (container.scrollLeft < u || container.scrollLeft >= 2 * u)) {
-			container.scrollLeft = u;
+		if (u > 0) {
+			const anchor = anchorCopy * u;
+			if (container.scrollLeft < anchor || container.scrollLeft >= anchor + u) {
+				container.scrollLeft = anchor;
+			}
 		}
 		lastTime = 0;
 		rafId = requestAnimationFrame(tick);
@@ -122,10 +130,7 @@ export function setupMarquee(container: HTMLElement) {
 			e.preventDefault();
 		} else {
 			touchActive = true;
-			if (touchResumeTimer) {
-				window.clearTimeout(touchResumeTimer);
-				touchResumeTimer = 0;
-			}
+			touchSettling = false;
 		}
 	});
 
@@ -147,11 +152,11 @@ export function setupMarquee(container: HTMLElement) {
 			} catch {}
 			activePointer = null;
 		} else {
-			touchResumeTimer = window.setTimeout(() => {
-				touchActive = false;
-				touchResumeTimer = 0;
-				recenter();
-			}, TOUCH_RESUME_MS);
+			// Don't resume auto-scroll on a fixed timer — that fights native
+			// momentum on a fast flick (programmatic scrollLeft kills it,
+			// looking like the marquee snapped). Wait for the scroll-settle
+			// handler below to confirm momentum has actually ended.
+			touchSettling = true;
 		}
 	}
 	container.addEventListener('pointerup', endPointer);
@@ -165,6 +170,10 @@ export function setupMarquee(container: HTMLElement) {
 			if (scrollSettleTimer) window.clearTimeout(scrollSettleTimer);
 			scrollSettleTimer = window.setTimeout(() => {
 				scrollSettleTimer = 0;
+				if (touchSettling) {
+					touchSettling = false;
+					touchActive = false;
+				}
 				recenter();
 			}, SETTLE_MS);
 		},
