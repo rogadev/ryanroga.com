@@ -7,58 +7,121 @@ import mossawayLogo from '../../assets/clients/mossaway.png';
 import viuLogo from '../../assets/clients/viu.png';
 ---
 
-<div
-	class="flex flex-col items-start gap-5 px-6 pb-12 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-10 sm:gap-y-6 sm:px-8 sm:pb-16"
->
+<div class="px-6 pb-6 sm:px-8 sm:pb-8">
 	<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Worked with</p>
-	<ul
-		class="flex flex-wrap items-center gap-x-8 gap-y-5 sm:gap-x-12"
-		role="list"
-	>
-		<li>
-			<TelusLogo class="client-logo h-6 w-auto sm:h-7" aria-label="TELUS" role="img" />
-		</li>
-		<li>
+</div>
+
+<div class="marquee mb-12 sm:mb-16" role="region" aria-label="Past clients">
+	<div class="marquee-track">
+		<!-- Set A: announced to assistive tech -->
+		<div class="marquee-item">
+			<TelusLogo class="client-logo h-7 w-auto sm:h-8" aria-label="TELUS" role="img" />
+		</div>
+		<div class="marquee-item">
 			<Image
 				src={viuLogo}
 				alt="Vancouver Island University"
-				class="client-logo h-11 w-auto sm:h-12"
-				loading="lazy"
+				class="client-logo h-12 w-auto sm:h-14"
 			/>
-		</li>
-		<li>
-			<Image
-				src={carevoLogo}
-				alt="Carevo"
-				class="client-logo h-9 w-auto sm:h-10"
-				loading="lazy"
-			/>
-		</li>
-		<li>
-			<Image
-				src={mossawayLogo}
-				alt="MossAway"
-				class="client-logo h-10 w-auto sm:h-12"
-				loading="lazy"
-			/>
-		</li>
-		<li>
-			<Image
-				src={grannyGoGoLogo}
-				alt="Granny Go Go"
-				class="client-logo h-5 w-auto sm:h-6"
-				loading="lazy"
-			/>
-		</li>
-	</ul>
+		</div>
+		<div class="marquee-item">
+			<Image src={carevoLogo} alt="CarEvo" class="client-logo h-10 w-auto sm:h-12" />
+		</div>
+		<div class="marquee-item">
+			<Image src={mossawayLogo} alt="MossAway" class="client-logo h-12 w-auto sm:h-14" />
+		</div>
+		<div class="marquee-item">
+			<Image src={grannyGoGoLogo} alt="Granny Go Go" class="client-logo h-6 w-auto sm:h-7" />
+		</div>
+
+		<!-- Set B: visual duplicate for seamless loop, hidden from AT -->
+		<div class="marquee-item" aria-hidden="true">
+			<TelusLogo class="client-logo h-7 w-auto sm:h-8" role="presentation" />
+		</div>
+		<div class="marquee-item" aria-hidden="true">
+			<Image src={viuLogo} alt="" class="client-logo h-12 w-auto sm:h-14" loading="lazy" />
+		</div>
+		<div class="marquee-item" aria-hidden="true">
+			<Image src={carevoLogo} alt="" class="client-logo h-10 w-auto sm:h-12" loading="lazy" />
+		</div>
+		<div class="marquee-item" aria-hidden="true">
+			<Image src={mossawayLogo} alt="" class="client-logo h-12 w-auto sm:h-14" loading="lazy" />
+		</div>
+		<div class="marquee-item" aria-hidden="true">
+			<Image src={grannyGoGoLogo} alt="" class="client-logo h-6 w-auto sm:h-7" loading="lazy" />
+		</div>
+	</div>
 </div>
 
 <style>
+	.marquee {
+		overflow: hidden;
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 4rem,
+			black calc(100% - 4rem),
+			transparent
+		);
+		mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 4rem,
+			black calc(100% - 4rem),
+			transparent
+		);
+	}
+	.marquee-track {
+		display: flex;
+		align-items: center;
+		width: max-content;
+		gap: 3.5rem;
+		animation: marquee 45s linear infinite;
+		will-change: transform;
+	}
+	@media (min-width: 640px) {
+		.marquee-track {
+			gap: 5rem;
+		}
+	}
+	.marquee-item {
+		flex: 0 0 auto;
+	}
+	.marquee:hover .marquee-track,
+	.marquee:focus-within .marquee-track {
+		animation-play-state: paused;
+	}
+	@keyframes marquee {
+		from {
+			transform: translate3d(0, 0, 0);
+		}
+		to {
+			/* -50% lands the duplicate set exactly where the original started — seamless. */
+			transform: translate3d(-50%, 0, 0);
+		}
+	}
 	.client-logo {
 		filter: brightness(0) invert(1);
 		opacity: 0.7;
 	}
 	:global(html.light) .client-logo {
 		filter: brightness(0);
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.marquee {
+			overflow: visible;
+			-webkit-mask-image: none;
+			mask-image: none;
+			padding-inline: 1.5rem;
+		}
+		.marquee-track {
+			animation: none;
+			flex-wrap: wrap;
+			width: 100%;
+			gap: 2.5rem;
+		}
+		.marquee-item[aria-hidden='true'] {
+			display: none;
+		}
 	}
 </style>
