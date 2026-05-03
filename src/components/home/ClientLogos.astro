@@ -107,11 +107,12 @@ import viuLogo from '../../assets/clients/viu.png';
 			transform: translate3d(-50%, 0, 0);
 		}
 	}
-	.client-logo {
+	/* :global() escape so the filter reaches into <Image>/<TelusLogo> child components */
+	:global(.client-logo) {
 		filter: brightness(0) invert(1);
 		opacity: 0.7;
 	}
-	:global(html.light) .client-logo {
+	:global(html.light .client-logo) {
 		filter: brightness(0);
 	}
 	@media (prefers-reduced-motion: reduce) {

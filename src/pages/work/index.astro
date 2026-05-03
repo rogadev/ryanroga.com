@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import ClientLogos from '../../components/home/ClientLogos.astro';
 import { STUDIO_NAME } from '../../consts';
 import Base from '../../layouts/Base.astro';
 
@@ -28,7 +29,7 @@ const statusColor = {
 	<!-- Hero -->
 	<section class="border-b border-border">
 		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
-			<div class="grid gap-10 pt-20 pb-16 sm:pt-28 sm:pb-20 lg:grid-cols-12 lg:gap-16">
+			<div class="grid gap-10 pt-20 sm:pt-28 lg:grid-cols-12 lg:gap-16">
 				<div class="lg:col-span-8">
 					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Work</p>
 					<h1 class="mt-6 text-4xl font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl">
@@ -66,6 +67,9 @@ const statusColor = {
 					*/
 				}
 			</div>
+		</div>
+		<div class="mx-auto w-full max-w-page pt-12 sm:pt-16">
+			<ClientLogos />
 		</div>
 	</section>
 
