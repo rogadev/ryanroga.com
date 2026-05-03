@@ -13,7 +13,6 @@
 const SPEED = 30; // px/s
 const STATIC_QUERY = '(min-width: 1280px)';
 const SETTLE_MS = 150;
-const TOUCH_RESUME_MS = 600;
 
 export function setupMarquee(container: HTMLElement) {
 	if (container.dataset.marqueeReady) return;
@@ -32,10 +31,10 @@ export function setupMarquee(container: HTMLElement) {
 	let focused = false;
 	let dragging = false;
 	let touchActive = false;
+	let touchSettling = false;
 	let dragStartX = 0;
 	let dragStartScroll = 0;
 	let activePointer: number | null = null;
-	let touchResumeTimer = 0;
 	let scrollSettleTimer = 0;
 
 	// Track renders three identical copies side-by-side; `unit` is one copy.
@@ -58,7 +57,7 @@ export function setupMarquee(container: HTMLElement) {
 	}
 
 	function recenter() {
-		if (dragging) return;
+		if (dragging || touchActive) return;
 		const u = unit();
 		if (u <= 0) return;
 		if (container.scrollLeft < u || container.scrollLeft >= 2 * u) {
@@ -122,10 +121,7 @@ export function setupMarquee(container: HTMLElement) {
 			e.preventDefault();
 		} else {
 			touchActive = true;
-			if (touchResumeTimer) {
-				window.clearTimeout(touchResumeTimer);
-				touchResumeTimer = 0;
-			}
+			touchSettling = false;
 		}
 	});
 
@@ -147,11 +143,11 @@ export function setupMarquee(container: HTMLElement) {
 			} catch {}
 			activePointer = null;
 		} else {
-			touchResumeTimer = window.setTimeout(() => {
-				touchActive = false;
-				touchResumeTimer = 0;
-				recenter();
-			}, TOUCH_RESUME_MS);
+			// Don't resume auto-scroll on a fixed timer — that fights native
+			// momentum on a fast flick (programmatic scrollLeft kills it,
+			// looking like the marquee snapped). Wait for the scroll-settle
+			// handler below to confirm momentum has actually ended.
+			touchSettling = true;
 		}
 	}
 	container.addEventListener('pointerup', endPointer);
@@ -165,6 +161,10 @@ export function setupMarquee(container: HTMLElement) {
 			if (scrollSettleTimer) window.clearTimeout(scrollSettleTimer);
 			scrollSettleTimer = window.setTimeout(() => {
 				scrollSettleTimer = 0;
+				if (touchSettling) {
+					touchSettling = false;
+					touchActive = false;
+				}
 				recenter();
 			}, SETTLE_MS);
 		},
