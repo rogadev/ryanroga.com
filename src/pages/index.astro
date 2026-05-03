@@ -1,6 +1,7 @@
 ---
 import Approach from '../components/home/Approach.astro';
 import Capabilities from '../components/home/Capabilities.astro';
+import ClientLogos from '../components/home/ClientLogos.astro';
 import EndCTA from '../components/home/EndCTA.astro';
 import Hero from '../components/home/Hero.astro';
 import Industries from '../components/home/Industries.astro';
@@ -12,6 +13,11 @@ import Base from '../layouts/Base.astro';
 
 <Base title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<Hero />
+	<section aria-label="Past clients" class="border-t border-b border-border">
+		<div class="mx-auto w-full max-w-page py-6 sm:py-8">
+			<ClientLogos />
+		</div>
+	</section>
 	<Industries />
 	<Capabilities />
 	<SelectedWork />
