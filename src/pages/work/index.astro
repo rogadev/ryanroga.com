@@ -50,16 +50,14 @@ const statusColor = {
 							<dd class="mt-1 text-xl font-medium text-fg">{work.length}</dd>
 						</div>
 						<div class="bg-bg-soft px-4 py-4">
-							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Live</dt>
+							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Maintained</dt>
 							<dd class="mt-1 text-xl font-medium text-fg">
 								{work.filter((w) => w.data.status === 'live').length}
 							</dd>
 						</div>
 						<div class="bg-bg-soft px-4 py-4">
-							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Building</dt>
-							<dd class="mt-1 text-xl font-medium text-fg">
-								{work.filter((w) => w.data.status === 'in-development').length}
-							</dd>
+							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Clients</dt>
+							<dd class="mt-1 text-xl font-medium text-fg">7+</dd>
 						</div>
 					</dl>
 				</div>
