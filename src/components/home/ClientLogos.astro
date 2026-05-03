@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import TelusLogo from '../../assets/clients/telus.svg';
+import viuLogo from '../../assets/clients/viu.png';
+---
+
+<div
+	class="flex flex-col items-start gap-5 px-6 pb-12 sm:flex-row sm:items-center sm:gap-10 sm:px-8 sm:pb-16"
+>
+	<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Worked with</p>
+	<ul class="flex flex-wrap items-center gap-x-10 gap-y-5 sm:gap-x-14" role="list">
+		<li>
+			<TelusLogo class="client-logo h-6 w-auto sm:h-7" aria-label="TELUS" role="img" />
+		</li>
+		<li>
+			<Image
+				src={viuLogo}
+				alt="Vancouver Island University"
+				class="client-logo h-7 w-auto sm:h-8"
+				loading="lazy"
+			/>
+		</li>
+	</ul>
+</div>
+
+<style>
+	.client-logo {
+		filter: brightness(0) invert(1);
+		opacity: 0.7;
+	}
+	:global(html.light) .client-logo {
+		filter: brightness(0);
+	}
+</style>
