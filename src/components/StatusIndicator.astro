@@ -14,21 +14,11 @@ const color = {
 }[status];
 ---
 
-{
-	status === 'in-development' ? (
-		<span
-			class={`status-spinner ${className}`}
-			style={`color: ${color}`}
-			aria-hidden="true"
-		/>
-	) : (
-		<span
-			class={`status-dot ${className}`}
-			style={`background-color: ${color}`}
-			aria-hidden="true"
-		/>
-	)
-}
+<span
+	class={`status-dot ${status === 'in-development' ? 'status-dot--throb' : ''} ${className}`}
+	style={`background-color: ${color}`}
+	aria-hidden="true"
+/>
 
 <style>
 	.status-dot {
@@ -38,35 +28,26 @@ const color = {
 		border-radius: 9999px;
 	}
 
-	.status-spinner {
-		display: inline-block;
-		width: 0.5625rem;
-		height: 0.5625rem;
-		border-radius: 9999px;
-		border: 1.5px solid currentColor;
-		border-top-color: transparent;
-		animation: status-spin 0.9s linear infinite;
-		/* Slight vertical nudge so the slightly-larger spinner reads on
-		   the same baseline as the surrounding text. */
-		vertical-align: -1px;
+	.status-dot--throb {
+		animation: status-throb 2.4s ease-in-out infinite;
+		transform-origin: center;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.status-spinner {
+		.status-dot--throb {
 			animation: none;
-			/* Reduced-motion fallback: render as a solid dot rather than a
-			   frozen ring, since a frozen ring looks broken. */
-			border: 0;
-			background-color: currentColor;
-			width: 0.375rem;
-			height: 0.375rem;
-			vertical-align: baseline;
 		}
 	}
 
-	@keyframes status-spin {
-		to {
-			transform: rotate(360deg);
+	@keyframes status-throb {
+		0%,
+		100% {
+			opacity: 0.45;
+			transform: scale(0.92);
+		}
+		50% {
+			opacity: 1;
+			transform: scale(1.15);
 		}
 	}
 </style>
