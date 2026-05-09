@@ -2,45 +2,68 @@
 id: CC-006
 client: Roga Digital · CopyCleanse
 industry: Browser tool · AI text cleanup
-headline: Strips the invisible AI fingerprints — zero-width chars, smart quotes, tracking params — from any pasted text.
-outcome: Runs entirely in the browser. No signup, no upload, no storage — one paste, one click, clean text.
+headline: A free, browser-only tool that strips the invisible AI fingerprints — zero-width chars, smart quotes, em-dashes, tracking URLs — out of any pasted text.
+outcome: Paste, copy. The cleaned text is on your clipboard before you let go of Ctrl+V. No upload, no storage, no sign-up — the whole tool ships as static assets and runs in your tab.
 tags:
+  - SvelteKit
   - Browser-only
-  - Privacy
+  - Privacy-first
   - Unicode
 period: '2025'
 role: Designer & developer
 status: live
 featured: true
 order: 6
+liveUrl: https://copycleanse.com
 ---
 
-import ScreenshotPending from '../../components/ScreenshotPending.astro';
+import Screenshot from '../../components/Screenshot.astro';
+import hero from '../../assets/work/copycleanse/01-hero.png';
 
 ## Context
 
-LLM-generated text comes with a quiet trail. Zero-width spaces. Curly quotes where straight ones belong. Em-dashes that pattern-match as a "tell." Sometimes tracking parameters from a clipboard manager. None of it shows up visually — but it shows up to anything that looks closely.
+LLM-generated text comes with a quiet trail. Em-dashes where a writer would have used a comma. Curly quotes where an HTML form would have produced straight ones. Zero-width spaces and non-breaking spaces hidden between letters. Soft hyphens. Unicode ellipses where three periods would have done. Tracking URL parameters from the model's chat surface (`?utm_source=chatgpt`) glued onto the end of every link.
 
-CopyCleanse is a small, focused tool for stripping those fingerprints out of pasted text — fast, in the browser, with nothing leaving the machine.
+None of it shows up visually. All of it shows up to anything that looks closely — a recruiter, a teacher, a copy editor, a CMS that strips invisibles, a search engine that hashes the bytes. The fingerprint isn't the prose; it's the bytes between the prose.
 
-## How it works
+CopyCleanse is the smallest possible fix: a browser-only tool that takes pasted text and returns it without the fingerprints, with the result on your clipboard before you've moved your hand.
 
-Paste text. Click clean. Copy the result. That's it.
+<Screenshot src={hero} alt="CopyCleanse landing page on a dark theme. Headline: 'Clean AI text, auto-magically' with 'auto-magically' in purple. Subhead: 'Remove hidden characters, smart quotes, tracking URLs, and other telltale signs that expose AI-generated content. Paste below — cleaned text is auto-copied to your clipboard.' Trust pills above the headline ('100% free · No sign-up · Browser-only') and below ('No data stored', 'Works with ChatGPT, Claude, Gemini & more'). A large paste box prompts 'Paste your AI generated text...'." caption="copycleanse.com — paste, and the cleaned text is already on your clipboard." />
 
-<ScreenshotPending
-	caption="The whole interface — paste, clean, copy. Diff hidden by default; on demand if you want to see what changed."
-	aspect="16/9"
-/>
+## What it cleans
 
-Everything happens in the browser. No signup, no upload, no server-side storage of any kind. The entire app is shipped as static assets and runs in the user's tab.
+The rule list is the product. Everything CopyCleanse does in the current release:
 
-The cleaning rules cover:
+- **Hidden whitespace** — zero-width spaces (U+200B), zero-width joiners and non-joiners, non-breaking spaces, and other invisible separators that survive a copy-paste.
+- **Smart quotes and curly apostrophes** → straight `"` and `'`.
+- **Em-dashes and en-dashes** (`—`, `–`) → regular hyphens. The most notorious AI tell, and the one most people are pattern-matching against without realising it.
+- **Unicode ellipses** (`…`) → three plain periods.
+- **Soft hyphens** and other invisible formatting characters that mess with CMS imports and search.
+- **AI tracking URL parameters** — `utm_source=chatgpt`, `utm_source=claude`, and the rest of the family, stripped from any URLs in the pasted text.
 
-- Zero-width and other invisible Unicode characters.
-- Smart-quote and dash normalization (smart → straight, when that's what you want).
-- Common tracking parameters in pasted URLs.
-- A growing rule list driven by what's actually showing up in real-world LLM output.
+The rule list grows as new fingerprints surface in real-world LLM output.
 
-## More coming
+## Why browser-only
 
-The full case study with the rule architecture and how the tool keeps up with new fingerprints is being written. Stack and scope are accurate. For specifics, [book a call](/contact).
+The privacy claim isn't a tagline — it's the entire architecture.
+
+- **No server.** The whole app is shipped as static assets. There is no API, no upload, no telemetry attached to the text you paste.
+- **No storage.** Nothing is written to disk, nothing is logged, nothing is cached server-side.
+- **No sign-up.** There's no account because there's nothing to attach an account to.
+
+That's the point of a tool like this. The text someone is cleaning is often the text they care about most — a draft, a reply, a piece of writing they don't want sitting on a third party's logs. "Trust us" wouldn't be enough; "the bytes never leave your tab" is.
+
+## How it's built
+
+The tool is deliberately small.
+
+- **Framework** — SvelteKit 2 on Svelte 5 (runes mode), Tailwind v4 for the look. `@iconify/svelte` for icons.
+- **Build** — Vite, deployed on Vercel with `adapter-auto`. The output is fundamentally static — Vercel just serves the assets.
+- **No backend.** No database, no API routes that touch user content. The cleaning logic is a small TypeScript module that runs in the browser; the diff highlighter is the same.
+- **Analytics** — Vercel Analytics for page-level traffic only. No event-level tracking of what users paste, because there is nothing to track — the text never leaves the tab.
+- **Quality gates** — Vitest with `@testing-library/svelte` for unit and component, Playwright + `@axe-core/playwright` for end-to-end and accessibility, Lighthouse CI for performance. The accessibility and performance bars are part of the pipeline, not a launch-day check.
+- **Content** — a small blog (mdsvex) for posts about the AI-fingerprint problem and what the cleaner is doing under the hood.
+
+## Use it
+
+[copycleanse.com](https://copycleanse.com) — paste, copy, done. If you want to suggest a fingerprint the tool isn't catching yet, the rule list is open to additions.
