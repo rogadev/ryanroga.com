@@ -1,12 +1,14 @@
 ---
 id: EAEO-004
 client: Roga Digital · E&EO
-industry: Public site · Education
-headline: Free career-exploration platform connecting Canadian credentials to real employment outlooks.
-outcome: BC institutions and credentials live now; expanding nationwide by late 2026.
+industry: Public site · Education · Labour-market data
+headline: A free, bilingual platform that connects Canadian credentials to the careers and labour-market outlooks that actually follow them.
+outcome: BC institutions and programs live now, with a national rollout through late 2026. Built around the question prospective students actually ask — "what does this lead to?" — and answered with real Job Bank, NOC, and StatsCan data.
 tags:
   - SvelteKit
-  - StatsCan data
+  - Postgres
+  - Job Bank · NOC
+  - Bilingual EN/FR
   - Public site
 period: 2024 — Present
 role: Lead architect & full-stack developer
@@ -16,28 +18,93 @@ order: 4
 liveUrl: https://eaeo.ca
 ---
 
+import Screenshot from '../../components/Screenshot.astro';
+import homepage from '../../assets/work/eaeo/01-homepage.png';
+import selectRegion from '../../assets/work/eaeo/02-select-region.png';
+import searchOptions from '../../assets/work/eaeo/03-search-options.png';
+import searchPrograms from '../../assets/work/eaeo/04-search-programs.png';
+import searchCareers from '../../assets/work/eaeo/05-search-careers.png';
+
 ## Context
 
-E&EO ("Education & Employment Outlooks") connects Canadian post-secondary credentials — diplomas, certificates, degrees — to the labour-market outlooks that follow them. It's a free, public tool aimed at prospective students, career-changers, and the educators and counsellors who advise them.
+Picking a credential is a high-stakes decision made with surprisingly bad information. Program pages tell you what you'll *learn*. Job sites tell you what's *hiring today*. Government data tells you what the labour market *projects*. Almost nothing connects the three — and the people who need them connected most are eighteen-year-olds, mid-career changers, and the counsellors trying to help them.
 
-The premise is simple: if you're considering a credential, you should be able to see, in one place, what jobs it leads to, what those jobs typically pay, and what the regional outlook is.
+E&EO ("Education & Employment Outlooks") is a free, bilingual public platform built to answer the question those people actually ask: *what does this credential lead to, in the region I'd live in, against the labour market I'd be entering?*
 
-## Approach
+<Screenshot src={homepage} alt="E&EO homepage with the headline 'Make an educated decision about your future' and a subhead about exploring employment outlooks, discovering career paths, and connecting education to opportunity across Canada." caption="eaeo.ca — make an educated decision about your future." />
 
-The platform pulls structured data from Statistics Canada and the Government of Canada's Labour Market Information feeds, normalizes it against credential metadata from participating institutions, and surfaces it in a clean, search-friendly UI. It descends from earlier work on the [VIU Career Outlooks](https://career-outlooks.viu.ca) tool I built during my co-op, scaled to multiple institutions and provinces.
+## The brief
 
-![E&EO landing page — credential search and labour-market outlook for BC institutions.](/images/work/eaeo/hero.png)
+E&EO is a Roga Digital product. The brief I set for it:
 
-## What you actually see
+- **Free at the point of use.** No paywall, no sign-up gate to look up a credential. The audience includes people who can't afford to pay for career advice — that has to be a non-negotiable.
+- **Bilingual by default.** EN-CA and FR-CA as first-class experiences, not English with a translation overlay.
+- **Real public data, kept current.** Job Bank outlooks, the National Occupational Classification (NOC), Statistics Canada wage data, and curated institution/credential records — refreshed against federal release cadence, not scraped once and forgotten.
+- **Bidirectional search.** *I have a job in mind, what programs lead there?* and *I have a program in mind, where does it lead?* are the same question from opposite sides — both have to feel native.
+- **Regional, not national-by-default.** A "moderate" outlook in Vancouver and a "moderate" outlook in Prince George are different jobs. The platform is regional from the first interaction.
+- **Built to scale across provinces** without rewriting the data layer for each one.
 
-The interface is built around a simple question: _what does this credential lead to?_ You start with a program or NOC code and the page resolves into the jobs typically held, regional outlooks, and employment trends — the data prospective students and career counsellors actually want to compare across credentials.
+It descends from earlier work I did on the [VIU Career Outlooks](https://career-outlooks.viu.ca) tool during my co-op — same instinct, much narrower scope. E&EO is what that idea looks like when it's built for the country.
 
-![Career outlook detail — three-year regional projection rendered against credential metadata.](/images/work/eaeo/example.png)
+## How it works
+
+The product is built around a deliberate two-step flow: **pick the region, then ask the question.** Every screen after the homepage assumes you've chosen where you actually want to live and work.
+
+<Screenshot src={selectRegion} alt="E&EO region selector showing a map of Canada with tabs for All Canada, Province (map), Province (list), and Economic region. The current selection panel prompts the user to pick a region to continue." caption="Region first — All Canada, province (map or list), or economic region." />
+
+The map view uses real geographic boundaries (TopoJSON via d3-geo), not a stylized illustration, so users recognize the country they're standing in. A list view and an economic-region view exist for accessibility and for the cases where someone knows their LMI catchment by name.
+
+Once a region is locked, the product asks one of two questions:
+
+<Screenshot src={searchOptions} alt="E&EO search-options screen for British Columbia with two cards: 'Find by job title' (search a job and find programs that lead there) and 'Find programs' (search programs offered in British Columbia and see the careers they lead to)." caption="Two ways in — by job title, or by program. Same data, different starting point." />
+
+Both paths surface the same underlying graph: programs ↔ NOC occupations ↔ regional outlooks ↔ wage bands. The difference is just where the user enters.
+
+### Search by program
+
+Type a program name and the result is a list of credentials offered in that region — the institution, the campus, the credential type — paired with what each program *actually leads to* and how that career looks in the region.
+
+<Screenshot src={searchPrograms} alt="Program search results in British Columbia for the term 'nursing'. Each result shows the program name, institution and campus, the careers it leads to as tags, an outlook bar with a 'Moderate' label, and entry-level / typical / experienced hourly wages." caption="Program search — credential, institution, careers it leads to, regional outlook, and wage band." />
+
+Three numbers per career — entry-level, typical, experienced — because "median wage" alone is a lie of omission. The outlook bar uses the federal Job Bank rating (Limited / Moderate / Good) so users see the same signal the government is publishing, not a re-scored derivative.
+
+### Search by career
+
+Coming in from the other side — start with a job — and the platform inverts the same data: which programs in this region lead here, what's the regional outlook, what's the wage band, and what's the NOC code if you want to dig deeper into federal data yourself.
+
+<Screenshot src={searchCareers} alt="Career search results in British Columbia for the term 'nursing'. Each result shows the occupation title, NOC code, programs that lead there as tags, an outlook bar with a 'Good' rating, and entry-level / typical / experienced hourly wages." caption="Career search — same graph from the other direction. NOC code surfaced for users who want to verify against the source." />
+
+NOC codes aren't decoration — they're the citation. A high-school student doesn't need them, but a counsellor or a journalist does, and surfacing them keeps the platform honest about where its claims come from.
+
+## How it's built
+
+The interesting part of E&EO is not the front end. It's the data plumbing that lets a search return *real* answers instead of plausible-sounding ones.
+
+- **Front end** — SvelteKit (Svelte 5, runes), Tailwind v4, deployed on Vercel. The map is real geo data through d3-geo and TopoJSON, simplified at build time.
+- **i18n** — Paraglide JS, with EN-CA and FR-CA modeled at the message and route layer. There's a parity check in CI so a missing French string is a build failure, not a runtime fallback.
+- **Data layer** — Postgres (Neon, serverless) with Drizzle ORM. The schema models institutions, programs, credentials, NOC occupations, regions (province + economic region), outlooks, and wages as first-class entities — not denormalized blobs.
+- **The hard part: CIP–NOC concordance.** Programs are classified by CIP (Classification of Instructional Programs); jobs are classified by NOC. The federal concordance between them is *one-to-many in both directions* and is the actual product. Without it, "this credential leads to these careers" is wishful thinking. E&EO carries a maintained concordance and exposes it as the join that powers both search modes.
+- **Ingestion** — a set of typed import scripts pull the NOC structure, regions, Job Bank outlooks, institution and credential data, and a province-specific scrape pipeline (BC first). Each step is idempotent so a partial run doesn't poison the index.
+- **Search** — built and optimized offline against the database, served as a typed index so a query doesn't have to trigger a half-dozen joins on the request path.
+- **Observability** — Sentry for errors and performance, geoip for soft regional defaults so the first page already feels local.
+- **Quality gates** — Vitest for unit and integration, Playwright for E2E, an i18n parity check, and a custom test-pyramid preflight. If French strings drift or the test mix gets top-heavy, CI says so.
+
+The architecture is built for scaling province-by-province. Adding a new province is a new scrape adapter and a new region row, not a rewrite.
 
 ## Status
 
-BC institutions and credentials are live now. Expansion to the rest of Canada is rolling out through late 2026.
+- **Live**, with British Columbia institutions and programs available now.
+- **Bilingual** EN-CA / FR-CA from launch — not retrofitted later.
+- **Free**, with no account required to search.
+- **National rollout through late 2026**, province by province, on the same data model.
 
-## More coming
+## What's next
 
-A full case study with the data architecture, scaling considerations, and lessons from running a public-facing site against government data feeds is being written. In the meantime — headline, scope, and stack are accurate. For specifics, [book a call](/contact).
+The roadmap, in priority order:
+
+- **Provincial expansion.** Each province has its own scrape contract and its own quirks; the data model is ready, the ingestion work is per-province.
+- **Saved searches and shortlists for accounts.** The infrastructure for it is there; the value lands once a user has more than one province's data to compare across.
+- **Editorial layer** (the Blog / Regional sections in the nav) for the kind of context that data alone can't carry — what a "Moderate" outlook actually means, how to read NOC codes, what's changing in a given region.
+- **Counsellor-facing surfaces** for the people who use this professionally rather than personally.
+
+For specifics on the data architecture, the CIP–NOC concordance, the bilingual content layer, or what running a public-facing platform against federal data feeds actually looks like — [book a call](/contact).
