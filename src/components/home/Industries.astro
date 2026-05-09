@@ -22,14 +22,20 @@ const ANNOUNCED_COPY = 2;
 		COPIES.flatMap((copy) =>
 			items.map((industry, i) => {
 				const announced = copy === ANNOUNCED_COPY;
+				const isLastAnnounced = announced && i === items.length - 1;
 				return (
-					<li class="marquee-item industries-item" aria-hidden={announced ? undefined : 'true'}>
+					<li
+						class:list={[
+							'marquee-item',
+							'industries-item',
+							{ 'is-last-announced': isLastAnnounced },
+						]}
+						aria-hidden={announced ? undefined : 'true'}
+					>
 						<span>{industry}</span>
-						{i < items.length - 1 && (
-							<span aria-hidden="true" class="industry-sep">
-								·
-							</span>
-						)}
+						<span aria-hidden="true" class="industry-sep">
+							·
+						</span>
 					</li>
 				);
 			}),
@@ -99,6 +105,10 @@ const ANNOUNCED_COPY = 2;
 			flex-wrap: wrap;
 			row-gap: 0.5rem;
 		}
+		/* Static layout: no copy seam to bridge, so suppress the trailing dot. */
+		.industries-item.is-last-announced .industry-sep {
+			display: none;
+		}
 	}
 	@media (min-width: 1280px) {
 		.industries {
@@ -123,6 +133,9 @@ const ANNOUNCED_COPY = 2;
 			justify-content: center;
 			flex-wrap: wrap;
 			row-gap: 0.5rem;
+		}
+		.industries-item.is-last-announced .industry-sep {
+			display: none;
 		}
 	}
 </style>
