@@ -23,11 +23,15 @@ import agenticTools from '../../assets/work/telus-tc-tools/agentic-tools.png';
 
 ## Context
 
-TC Tools lives alongside [TechCentral](/work/telus-techcentral) as the surface where content creators and operations staff actually do their work — *before* an article goes live, and after, when something has drifted.
+TC Tools lives alongside [TechCentral](/work/telus-techcentral) as the surface where content creators and operations staff actually do their work — _before_ an article goes live, and after, when something has drifted.
 
 The premise: the people writing the procedures shouldn't need to file an engineering ticket every time they want to know whether their article will rank, whether their thumbnails are broken on prod, whether the French translation has lost its voice, or whether renaming a slug will quietly break a hundred internal links.
 
-<Screenshot src={dashboard} alt="TC Tools dashboard listing Creator Tools (Agentic Tools BETA, Search Rank, Image Generator, TC Link Generator, Image Tools, Reference Finder) and Debug Tools (Content Sync, Broken Thumbnails, Broken Link Scanner, Empty Audiences, Content Snapshot, API Diagnostics) inside the TechCentral admin shell." caption="TC Tools dashboard — Creator Tools and Debug Tools under one roof, inside TechCentral." />
+<Screenshot
+	src={dashboard}
+	alt="TC Tools dashboard listing Creator Tools (Agentic Tools BETA, Search Rank, Image Generator, TC Link Generator, Image Tools, Reference Finder) and Debug Tools (Content Sync, Broken Thumbnails, Broken Link Scanner, Empty Audiences, Content Snapshot, API Diagnostics) inside the TechCentral admin shell."
+	caption="TC Tools dashboard — Creator Tools and Debug Tools under one roof, inside TechCentral."
+/>
 
 ## The brief
 
@@ -44,15 +48,19 @@ The dashboard splits into two clean halves: **Creator Tools** for the work that 
 
 ### Creator Tools
 
-- **Search Rank** — paste a draft, pick a query, see how the article *would* rank against the live TechCentral search index. Catches "no one will find this" before it's a complaint from the field.
+- **Search Rank** — paste a draft, pick a query, see how the article _would_ rank against the live TechCentral search index. Catches "no one will find this" before it's a complaint from the field.
 - **Live Preview** — pull an article from the DEV dotCMS instance and render it in the same template TechCentral uses. The preview is the reality, not an approximation of it.
 - **Agentic Tools (BETA)** — the multi-mode AI content studio. Draft from a brief, run an article against the TechCentral rubric (voice, clarity, accessibility), or translate between English (Canada) and French (Canada) with purpose-built presets that respect TELUS terminology.
 - **Image Tools** — resize, convert (WebP / JPEG / PNG), and crop with smart focal-point selection. Sharp under the hood, optimized for dotCMS thumbnail conventions so editors don't end up uploading 12 MB hero images.
 - **Image Generator** — AI image generation through FuelIx, scoped to procedure-illustration prompts rather than a free-text playground. Output is more predictable, brand fit is enforced, and the cost surface is bounded. Currently in active development.
-- **TC Link Generator** — generates correctly-shaped TechCentral URLs from dotCMS content metadata (type, language, slug). Stops the *"why is this link broken on prod?"* class of bug before it ships.
+- **TC Link Generator** — generates correctly-shaped TechCentral URLs from dotCMS content metadata (type, language, slug). Stops the _"why is this link broken on prod?"_ class of bug before it ships.
 - **Reference Finder** — given an article, find every other piece of content that links to it. Run before renaming a slug or retiring a procedure, and the chain reaction stops being a surprise.
 
-<Screenshot src={agenticTools} alt="Agentic Tools view inside TC Tools — multi-mode AI content studio for drafting articles from briefs, analyzing copy against the TechCentral rubric, and translating between English and French (Canada) with purpose-built presets." caption="Agentic Tools (BETA) — drafting, rubric analysis, and EN ↔ FR translation in one studio." />
+<Screenshot
+	src={agenticTools}
+	alt="Agentic Tools view inside TC Tools — multi-mode AI content studio for drafting articles from briefs, analyzing copy against the TechCentral rubric, and translating between English and French (Canada) with purpose-built presets."
+	caption="Agentic Tools (BETA) — drafting, rubric analysis, and EN ↔ FR translation in one studio."
+/>
 
 ### Debug Tools
 
@@ -61,7 +69,7 @@ The dashboard splits into two clean halves: **Creator Tools** for the work that 
 - **Broken Link Scanner** — finds invalid internal links and outdated legacy URLs (old Google Sites, non-prod DotCMS URLs) before a technician hits them in the field.
 - **Empty Audiences** — flags articles that publish to an empty audience (no one will see them) — a common quiet failure of the personalization layer.
 - **Content Snapshot** — captures point-in-time snapshots of content state for debugging publishing issues after the fact.
-- **API Diagnostics** — internal probes for the underlying dotCMS / TechCentral APIs, so the first answer to *"is the integration broken?"* is data, not a guess.
+- **API Diagnostics** — internal probes for the underlying dotCMS / TechCentral APIs, so the first answer to _"is the integration broken?"_ is data, not a guess.
 
 ### System
 
@@ -73,7 +81,7 @@ The AI surfaces are intentionally narrow.
 
 - **One gateway, one provider boundary.** Every AI call goes through **FuelIx**, TELUS's internal AI service. The application doesn't talk to model vendors directly. That keeps secrets, audit, rate-limiting, and provider strategy in one place owned by the people whose job it is to own that.
 - **Templated, not free-form.** Image generation runs against a small, vetted set of prompt templates rather than a chat box; rubric analysis runs the same evaluation pipeline at draft time and at review time so the answer doesn't change between writers.
-- **Bilingual evaluation.** The rubric and the translation presets are built for EN-CA *and* FR-CA — the French translation gets reviewed against a French rubric, not an English one with a translated label.
+- **Bilingual evaluation.** The rubric and the translation presets are built for EN-CA _and_ FR-CA — the French translation gets reviewed against a French rubric, not an English one with a translated label.
 
 ## How it's built
 

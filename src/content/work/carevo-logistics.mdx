@@ -43,25 +43,37 @@ Carevo runs that operation across multiple lots in Eastern Canada. The brief was
 
 The app is a focused operations console — not a CRM, not a sales tool, not an inventory portal — and it stays focused on purpose.
 
-<Screenshot src={dashboard} alt="Carevo Logistics dashboard with a left sidebar listing Dashboard, Vehicles, Services, Tasks, Vendors, Lots, Deliveries, and Audit. The main view shows an Action Items section (currently clear) and an In Progress section grouped by vendor (NAB, CarRevive) with a vehicle service request beneath each." caption="Dashboard — outstanding action items and in-progress work, grouped by the vendor responsible." />
+<Screenshot
+	src={dashboard}
+	alt="Carevo Logistics dashboard with a left sidebar listing Dashboard, Vehicles, Services, Tasks, Vendors, Lots, Deliveries, and Audit. The main view shows an Action Items section (currently clear) and an In Progress section grouped by vendor (NAB, CarRevive) with a vehicle service request beneath each."
+	caption="Dashboard — outstanding action items and in-progress work, grouped by the vendor responsible."
+/>
 
-The dashboard is built around two questions: *what needs my attention?* and *what's already in flight, and with whom?* Service requests are grouped by vendor, so the next phone call (or the next non-call) is obvious from one screen.
+The dashboard is built around two questions: _what needs my attention?_ and _what's already in flight, and with whom?_ Service requests are grouped by vendor, so the next phone call (or the next non-call) is obvious from one screen.
 
 ### The vehicle ledger
 
 Every vehicle across every lot lives in a single searchable list — colour, year/make/model, lot, status. Status surfaces (Sold, Available, Delivered) read at a glance because the goal isn't to admire data, it's to find a specific car fast.
 
-<Screenshot src={vehicles} alt="Vehicles list with columns for ID, Color, Vehicle (year/make/model), Lot (Bedford Office or Main Office), and Status (Sold pills on some rows). A search bar, a 'Show delivered' toggle, and a 'New Vehicle' button sit above the list." caption="Vehicles — every car on every lot, searchable, filterable, with status surfaced in one column." />
+<Screenshot
+	src={vehicles}
+	alt="Vehicles list with columns for ID, Color, Vehicle (year/make/model), Lot (Bedford Office or Main Office), and Status (Sold pills on some rows). A search bar, a 'Show delivered' toggle, and a 'New Vehicle' button sit above the list."
+	caption="Vehicles — every car on every lot, searchable, filterable, with status surfaced in one column."
+/>
 
 ### The vehicle detail view
 
 Scanning a key tag — or tapping into a vehicle from the list — lands here. This is the screen that does the work.
 
-<Screenshot src={vehicleDetail} alt="Vehicle detail view for a 2025 MAZDA CX-5 (V5628). Status pills (Available / Sold / Delivered) and condition pills (Fuel / Battery / Tire / Engine / Dirty) sit at the top, followed by quick actions (Edit Details, Add Task, Add Note, Request Move, Request Service). Below: Vehicle Specs (VIN, Stock #, Trim, Color), Location & Mileage (Home Lot, Cleanliness rating 'Lightly Used 4/10', mileage), and a Notes section." caption="Vehicle detail — status, condition, location, and the actions someone standing next to the car actually needs." />
+<Screenshot
+	src={vehicleDetail}
+	alt="Vehicle detail view for a 2025 MAZDA CX-5 (V5628). Status pills (Available / Sold / Delivered) and condition pills (Fuel / Battery / Tire / Engine / Dirty) sit at the top, followed by quick actions (Edit Details, Add Task, Add Note, Request Move, Request Service). Below: Vehicle Specs (VIN, Stock #, Trim, Color), Location & Mileage (Home Lot, Cleanliness rating 'Lightly Used 4/10', mileage), and a Notes section."
+	caption="Vehicle detail — status, condition, location, and the actions someone standing next to the car actually needs."
+/>
 
 A few things earn their keep on this screen:
 
-- **Status and condition are separate.** *Sold* is a status; *Dirty* or *Low fuel* is a condition. Treating them as one field would conflate "what's happening to the car" with "what's wrong with it right now."
+- **Status and condition are separate.** _Sold_ is a status; _Dirty_ or _Low fuel_ is a condition. Treating them as one field would conflate "what's happening to the car" with "what's wrong with it right now."
 - **Cleanliness as a numeric rating.** Detail vendors care about the gap between current state and target state, not a yes/no flag.
 - **Quick actions are verbs, not menus.** Request Move, Request Service, Add Task, Add Note — the actions someone standing next to the vehicle would actually take, surfaced one tap from the scan.
 - **Tabs (Details / Services / Tasks / Logs / Tag).** The Logs tab is the per-vehicle audit trail; the Tag tab regenerates the QR if a key fob's tag is lost or replaced.
@@ -70,7 +82,11 @@ A few things earn their keep on this screen:
 
 A service request is a small workflow — created with instructions, assigned to a vendor, tracked through stages, and closed out when the vendor marks it complete.
 
-<Screenshot src={services} alt="Vehicle Services tab for the same 2025 MAZDA CX-5 showing a service request in Complete state with a stepped progress indicator. Service Instructions: 'MVI Needed'. Home Lot: Main Office. Vendor: CarRevive. Created May 4, 2026 by Colton; Last Updated May 8, 2026. A 'View Request' button at the bottom." caption="Service request — instructions, vendor, lot, timestamps, and the person who created it. Stepped progress indicator at the top." />
+<Screenshot
+	src={services}
+	alt="Vehicle Services tab for the same 2025 MAZDA CX-5 showing a service request in Complete state with a stepped progress indicator. Service Instructions: 'MVI Needed'. Home Lot: Main Office. Vendor: CarRevive. Created May 4, 2026 by Colton; Last Updated May 8, 2026. A 'View Request' button at the bottom."
+	caption="Service request — instructions, vendor, lot, timestamps, and the person who created it. Stepped progress indicator at the top."
+/>
 
 The vendor portal is the same application, scoped down. A vendor signs in and sees only the requests assigned to them, can update progress, and can close the request when the work is done. Logistics doesn't have to chase a status update; the vendor is the one with the wrench.
 
@@ -78,7 +94,11 @@ The vendor portal is the same application, scoped down. A vendor signs in and se
 
 When a vehicle sells, it gets delivered — and Carevo wanted both the operational view (which cars are queued for delivery) and the management view (how the lot's actually performing month over month).
 
-<Screenshot src={deliveries} alt="Deliveries view with a note that records older than 3 months are auto-removed every Sunday. A 3-Month Delivery Comparison shows May (current) at 137 deliveries, April at 0, and March at 3, with horizontal bars. Stat tiles below show Total (140), Monthly Average (47), Best Month (May 137). Below that, a 'Vehicles for Delivery' grid lists upcoming deliveries." caption="Deliveries — the operational queue and a rolling three-month performance view, with auto-cleanup of stale records." />
+<Screenshot
+	src={deliveries}
+	alt="Deliveries view with a note that records older than 3 months are auto-removed every Sunday. A 3-Month Delivery Comparison shows May (current) at 137 deliveries, April at 0, and March at 3, with horizontal bars. Stat tiles below show Total (140), Monthly Average (47), Best Month (May 137). Below that, a 'Vehicles for Delivery' grid lists upcoming deliveries."
+	caption="Deliveries — the operational queue and a rolling three-month performance view, with auto-cleanup of stale records."
+/>
 
 The auto-cleanup line at the top is doing real work: ops data ages out automatically so the view stays focused on the current quarter rather than slowly turning into a graveyard.
 
@@ -108,9 +128,9 @@ The screenshots in this case study are pulled from the live application — the 
 
 Carevo is the longest-running project in the studio's portfolio, and the one with the most context worth knowing.
 
-It went from blank repo to MVP in **four months**, with a couple more months of focused tweaking after that, and has been continuously maintained since. The first release was in 2023 — *before* the AI-coding revolution. There was no Claude Code, no Cursor, no agentic dev loop. It was built one line at a time, by hand, the way real-product software was always built.
+It went from blank repo to MVP in **four months**, with a couple more months of focused tweaking after that, and has been continuously maintained since. The first release was in 2023 — _before_ the AI-coding revolution. There was no Claude Code, no Cursor, no agentic dev loop. It was built one line at a time, by hand, the way real-product software was always built.
 
-That's worth knowing for two reasons. First, because the surface area you've just read about — multi-lot vehicle ledger, vendor portal, QR flow, services, deliveries, audit — is what a single developer can ship in four months when the brief is clean and the stack choices earn their keep. Second, because the parts that have aged well have aged well *because* they were thought about up-front. There was no AI to hand-wave a pattern into existence; every choice was made on purpose.
+That's worth knowing for two reasons. First, because the surface area you've just read about — multi-lot vehicle ledger, vendor portal, QR flow, services, deliveries, audit — is what a single developer can ship in four months when the brief is clean and the stack choices earn their keep. Second, because the parts that have aged well have aged well _because_ they were thought about up-front. There was no AI to hand-wave a pattern into existence; every choice was made on purpose.
 
 The same product today would be faster to build. It would not, on its own, be better.
 

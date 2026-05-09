@@ -35,7 +35,7 @@ The brief from TELUS was simple to state and demanding to execute:
 - **Role-aware access** with a clear permissions model — the right people see the right things, content authoring stays in the hands of the people who own the content.
 - **A foundation that could grow** into adjacent surfaces (training, certification, content tooling) without a rebuild.
 
-The success bar was not "ship a CMS." It was: *replace the patchwork outright, on day one, without giving anyone a reason to fall back to the old bookmarks.*
+The success bar was not "ship a CMS." It was: _replace the patchwork outright, on day one, without giving anyone a reason to fall back to the old bookmarks._
 
 ## Discovery
 
@@ -60,7 +60,11 @@ I led the architecture and delivery from blank repo to production. A few decisio
 - **Density without overwhelm.** Field staff use the platform on phones, in vehicles, between jobs. The interface is built for thumbs and dim screens, not for screenshots.
 - **Built to grow.** The architecture made room for the LMS and certification system that became a separate engagement — see [Summit](/work/telus-summit).
 
-<Screenshot src={dashboard} alt="TechCentral dashboard — bilingual operations and reference platform for TELUS field technicians, with role-aware navigation, search, and content surfaces." caption="TechCentral — the daily-driver dashboard for field technicians and contractors." />
+<Screenshot
+	src={dashboard}
+	alt="TechCentral dashboard — bilingual operations and reference platform for TELUS field technicians, with role-aware navigation, search, and content surfaces."
+	caption="TechCentral — the daily-driver dashboard for field technicians and contractors."
+/>
 
 ## How it's built
 
@@ -69,7 +73,7 @@ The technical surface, briefly:
 - **Front end** — Next.js 15 (App Router) on React 19, TypeScript end-to-end, TailwindCSS for layout. Server components where they earn it, client components where interaction demands it.
 - **Content** — dotCMS as the headless source of truth, with a typed content layer between the CMS and the application so a content-model change can't silently break a page.
 - **Persistence** — PostgreSQL via Prisma for the things that aren't content: user preferences, favourites, audit events, anything the application owns rather than the CMS.
-- **Auth and permissions** — iron-session for the cookie layer, a custom permissions endpoint as the source of truth for *who can see what*. Decisions are made server-side and surfaced as visibility rules in the UI.
+- **Auth and permissions** — iron-session for the cookie layer, a custom permissions endpoint as the source of truth for _who can see what_. Decisions are made server-side and surfaced as visibility rules in the UI.
 - **Search** — a tuned index built for the way technicians phrase questions, with bilingual handling at the query and result layers.
 - **Quality gates** — Playwright for end-to-end smoke and user-flow coverage, Vitest for unit and integration. Tests are scoped to what actually breaks; coverage is a side effect, not the goal.
 - **Deploy** — containerized, infrastructure managed in Terraform, deployed to TELUS-controlled cloud infrastructure.

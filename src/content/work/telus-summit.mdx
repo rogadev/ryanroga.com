@@ -25,7 +25,7 @@ Summit is the replacement: a single credentialing and exam platform serving both
 
 ## The brief
 
-The brief is the follow-on engagement to [TechCentral](/work/telus-techcentral). Where TechCentral solved *"where does the operational information live,"* Summit solves *"how do we know — and prove — what each technician is qualified to do."*
+The brief is the follow-on engagement to [TechCentral](/work/telus-techcentral). Where TechCentral solved _"where does the operational information live,"_ Summit solves _"how do we know — and prove — what each technician is qualified to do."_
 
 Five principles shape it:
 
@@ -40,11 +40,11 @@ Five principles shape it:
 The discovery phase ran across two stakeholder sessions and a written follow-up — ten topics that needed an explicit decision before the data model got locked in. A few of the answers shape the architecture more than the rest:
 
 - **Open standards: deferred.** The W3C Verifiable Credentials / Open Badges 3.0 standard is technically a good fit and would let Summit accept credentials issued by external programs. The decision for v1 was to keep credentials internal and revisit when there's a concrete reason to open the boundary. The data model is being designed so that decision can be reversed without a rebuild.
-- **Skills and competencies are a structured framework, not loose tags.** Skills (copper, fiber, HSIA, …) belong to one team; competencies *within* each skill (fiber splicing, fiber termination, fiber troubleshooting) belong to another. Summit treats both as first-class entities so questions, exams, and credentials can all reference them — and so a "targeted recertification exam covering one weak competency" is a real workflow, not a workaround.
+- **Skills and competencies are a structured framework, not loose tags.** Skills (copper, fiber, HSIA, …) belong to one team; competencies _within_ each skill (fiber splicing, fiber termination, fiber troubleshooting) belong to another. Summit treats both as first-class entities so questions, exams, and credentials can all reference them — and so a "targeted recertification exam covering one weak competency" is a real workflow, not a workaround.
 - **Expiry and recertification: light by default, with optional shorter targeted exams.** Most trades certifications don't expire today. Where they do (safety), the platform handles expiry natively. The more interesting capability — short, targeted exams used as a diagnostic before deeper coaching — was a stakeholder request and is in scope.
 - **Rich media in questions: essential.** Trades questions about a connector, a splice, or a wiring configuration aren't meaningful in text alone. Image support is in the question data model from day one; short-form video is supported but called out as effort-heavy and used selectively.
 - **Exam policies: standard controls, sensible defaults.** Attempt limits (typically two, with a process for a third), availability windows, randomized question and answer order by default. The defaults match the way the existing exams are actually run.
-- **Open-reference posture, configurable per exam.** Most exams allow access to TechCentral and other reference materials during the test, because the assessment is whether a technician can *find and apply* the right information — not whether they've memorized it. Administrators can tighten this per-exam where it matters.
+- **Open-reference posture, configurable per exam.** Most exams allow access to TechCentral and other reference materials during the test, because the assessment is whether a technician can _find and apply_ the right information — not whether they've memorized it. Administrators can tighten this per-exam where it matters.
 - **Reporting is a top-line requirement, not an afterthought.** Exam scores, attempt counts, per-question breakdowns, performance over time. Stakeholder asked for it explicitly; it lands as a v1 surface, not a Phase 2 retrofit.
 
 A few items — formal item analysis (question-quality metrics), credential stacking, full appeals/re-grade workflow — are in the data model from the start but are sequenced into later phases. The brief is intentionally phased so the most important workflow (one platform that runs exams cleanly and issues credentials cleanly) can land before the more elaborate capabilities layer on.
