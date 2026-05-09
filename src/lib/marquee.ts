@@ -13,7 +13,7 @@
  * CSS handles the layout swap.
  */
 const SPEED = 30; // px/s
-const STATIC_QUERY = '(min-width: 1280px)';
+const DEFAULT_STATIC_AT = '1280px';
 const SETTLE_MS = 150;
 
 export function setupMarquee(container: HTMLElement) {
@@ -27,7 +27,8 @@ export function setupMarquee(container: HTMLElement) {
 	const copyCount = Math.max(1, Number(container.dataset.marqueeCopies) || 3);
 	const anchorCopy = Math.floor(copyCount / 2);
 	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-	const staticMql = window.matchMedia(STATIC_QUERY);
+	const staticAt = container.dataset.marqueeStaticAt || DEFAULT_STATIC_AT;
+	const staticMql = window.matchMedia(`(min-width: ${staticAt})`);
 
 	let rafId = 0;
 	let lastTime = 0;
