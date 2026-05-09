@@ -3,7 +3,7 @@ id: TC-001
 client: TELUS · TechCentral
 industry: Telecommunications
 headline: Operations hub for 2,500+ field technicians and contractors across Western Canada.
-outcome: Replaced a fragmented intranet with a single, role-aware platform. Launched April 2026 — now serving 2,500+ active users with hundreds daily.
+outcome: Consolidated tooling into a single, role-aware platform. Launched April 2026 — now serving 2,500+ active users with hundreds daily.
 tags:
   - Next.js
   - Postgres
@@ -13,7 +13,7 @@ period: 2024 — Present
 role: Lead architect & full-stack developer
 status: live
 featured: true
-order: 1
+order: 3
 ---
 
 import ScreenshotPending from '../../components/ScreenshotPending.astro';
@@ -41,7 +41,7 @@ Design choices that earned their keep:
 - **Role-aware data, not role-aware apps.** One application; access is enforced at the data layer. New roles are configuration, not new code.
 - **Audit logging as a first-class citizen.** Sensitive actions emit structured events; reviewers have a real trail when one is needed.
 - **Density without overwhelm.** Field staff use the platform on phones, in vehicles, between jobs. The interface is built for thumbs and dim screens, not for screenshots.
-- **Built to grow.** The architecture made room for the LMS / certification system that became a separate engagement — see [Project Summit](/work/project-summit-telus).
+- **Built to grow.** The architecture made room for the LMS / certification system that became a separate engagement — see [Summit](/work/project-summit-telus).
 
 <ScreenshotPending caption="Technician home view — daily ops, references, and certifications in one place." />
 
@@ -61,6 +61,6 @@ The platform launched in April 2026 and replaced the previous patchwork outright
 
 ## What's next
 
-TechCentral is the foundation; the work continues. **Project Summit** — TELUS's full overhaul of training, mentorship, and certification — runs on top of this platform and is in active development for a 2027 launch. **TC Tools**, an AI-assisted toolkit for content creators inside TechCentral, is shipping in stages.
+TechCentral is the foundation; the work continues. **Summit** — TELUS's full overhaul of training, mentorship, and certification — runs on top of this platform and is in active development for a 2027 launch. **TC Tools**, an AI-assisted toolkit for content creators inside TechCentral, is shipping in stages.
 
 For details on the architecture, role model, or what running a production platform of this size actually looks like — [book a call](/contact).

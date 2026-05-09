@@ -20,6 +20,13 @@ interface Props {
 	role?: 'region' | 'group';
 	class?: string;
 	trackClass?: string;
+	/**
+	 * Min viewport width at which the marquee freezes into a static layout.
+	 * Below this, the marquee scrolls and drags. At/above this, the JS bails
+	 * and aria-hidden duplicate copies are display:none — the consumer owns
+	 * the static layout.
+	 */
+	staticAt?: string;
 }
 
 const {
@@ -31,6 +38,7 @@ const {
 	role,
 	class: rootClass,
 	trackClass,
+	staticAt = '1280px',
 } = Astro.props;
 ---
 
@@ -42,6 +50,7 @@ const {
 	data-marquee
 	data-marquee-direction={direction}
 	data-marquee-copies={copies}
+	data-marquee-static-at={staticAt}
 >
 	<Track
 		class:list={['marquee-track', trackClass]}

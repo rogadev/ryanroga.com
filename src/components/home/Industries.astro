@@ -16,19 +16,26 @@ const ANNOUNCED_COPY = 2;
 	trackTag="ul"
 	class="industries border-b border-border"
 	trackClass="industries-track"
+	staticAt="768px"
 >
 	{
 		COPIES.flatMap((copy) =>
 			items.map((industry, i) => {
 				const announced = copy === ANNOUNCED_COPY;
+				const isLastAnnounced = announced && i === items.length - 1;
 				return (
-					<li class="marquee-item industries-item" aria-hidden={announced ? undefined : 'true'}>
+					<li
+						class:list={[
+							'marquee-item',
+							'industries-item',
+							{ 'is-last-announced': isLastAnnounced },
+						]}
+						aria-hidden={announced ? undefined : 'true'}
+					>
 						<span>{industry}</span>
-						{i < items.length - 1 && (
-							<span aria-hidden="true" class="industry-sep">
-								·
-							</span>
-						)}
+						<span aria-hidden="true" class="industry-sep">
+							·
+						</span>
 					</li>
 				);
 			}),
@@ -75,26 +82,60 @@ const ANNOUNCED_COPY = 2;
 	.industry-sep {
 		color: var(--color-fg-subtle);
 	}
+	/* Static layout: at md+ all industries fit on one row, so we drop the
+	   marquee scroll/drag entirely, hide the duplicate copies, and lay the
+	   single announced copy out as an evenly-spaced row capped to a sensible
+	   reading width and centered on very wide viewports. */
+	@media (min-width: 768px) {
+		.industries {
+			overflow: visible;
+			cursor: auto;
+			-webkit-mask-image: none;
+			mask-image: none;
+			padding-inline: 1.5rem;
+		}
+		.industries .marquee-item[aria-hidden='true'] {
+			display: none;
+		}
+		.industries-track {
+			width: 100%;
+			max-width: 64rem;
+			margin-inline: auto;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			row-gap: 0.5rem;
+		}
+		/* Static layout: no copy seam to bridge, so suppress the trailing dot. */
+		.industries-item.is-last-announced .industry-sep {
+			display: none;
+		}
+	}
 	@media (min-width: 1280px) {
 		.industries {
 			padding-inline: 2rem;
 		}
-		.industries-track {
-			flex-wrap: wrap;
-			width: 100%;
-			justify-content: center;
-			row-gap: 0.375rem;
-		}
 	}
 	@media (prefers-reduced-motion: reduce) {
 		.industries {
+			overflow: visible;
+			cursor: auto;
+			-webkit-mask-image: none;
+			mask-image: none;
 			padding-inline: 1.5rem;
 		}
+		.industries .marquee-item[aria-hidden='true'] {
+			display: none;
+		}
 		.industries-track {
-			flex-wrap: wrap;
 			width: 100%;
+			max-width: 64rem;
+			margin-inline: auto;
 			justify-content: center;
-			row-gap: 0.375rem;
+			flex-wrap: wrap;
+			row-gap: 0.5rem;
+		}
+		.industries-item.is-last-announced .industry-sep {
+			display: none;
 		}
 	}
 </style>
