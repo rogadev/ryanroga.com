@@ -1,14 +1,15 @@
 ---
 id: S-001
 client: TELUS · Summit
-industry: Workforce learning
-headline: Learning platform for TELUS techs — training, mentorship, and credential certification.
-outcome: A unified LMS bringing training, mentorship, and certification onto one platform for the entire technician workforce. Launching 2027.
+industry: Workforce learning · Certification
+headline: A modern credentialing and exam platform for TELUS trades technicians and partner contractors — replacing two parallel in-house legacy systems.
+outcome: One platform for the whole field workforce. Question repository, parameter-driven exam assembly, flexible invigilation, and credentials exposed as structured data — replacing manual scheduling, copy-paste authoring, and out-of-band exam passwords. In active design.
 tags:
-  - SvelteKit
-  - LMS
   - Certification
-  - Mentorship
+  - Exam platform
+  - FuelIx (AI)
+  - Kong
+  - Workforce learning
 period: 2026 — Present
 role: Lead architect & full-stack developer
 status: in-development
@@ -18,20 +19,65 @@ order: 1
 
 ## Context
 
-Summit is the follow-on contract to [TechCentral](/work/telus-techcentral): a complete overhaul of how TELUS trains, mentors, and certifies its field-services technicians. Where TechCentral solved "where does information live," Summit solves "how do people grow inside this organization."
+TELUS field technicians and partner contractors qualify for, and maintain standing in, trades work — copper and fiber installations, troubleshooting, HSIA, and adjacent disciplines — through exam-based certification. Today that runs on two parallel in-house tools: one for partner contractors, one historically for the home team. Both are functionally similar, both are out of date, and both are heavy with manual effort that the people running them shouldn't still be doing in 2026.
 
-## What's being built
+Summit is the replacement: a single credentialing and exam platform serving both populations, designed around the assessment formats trades work actually needs and around credentials that other TELUS systems can consume.
 
-A learning platform with three intertwined surfaces:
+## The brief
 
-- **Training.** Structured paths for new hires, role transitions, and continuing education — modular, trackable, and tied into the same identity and role model as TechCentral.
-- **Mentorship.** Pairing senior technicians with newer ones in a way that's visible to both, scaffolded by the platform but driven by the people in it.
-- **Certification.** Credential issuance, expiry, and audit — what a technician is qualified to do, when it was verified, and what's coming up for renewal.
+The brief is the follow-on engagement to [TechCentral](/work/telus-techcentral). Where TechCentral solved *"where does the operational information live,"* Summit solves *"how do we know — and prove — what each technician is qualified to do."*
 
-## Status
+Five principles shape it:
 
-Active development. Launching 2027.
+- **One platform for the whole workforce.** Home-team and partner contractors are first-class users of the same system. No parallel tools.
+- **Remove the manual effort.** Today's workflow involves manual learner registration, case-sensitive exam passwords distributed out-of-band, and questions copy-pasted from spreadsheets one at a time. None of that survives.
+- **Richer assessment formats.** Single-select, multi-select with configurable partial credit, and long-form scenario answers. The current generation can't ask the most useful questions.
+- **AI as an option, never a requirement.** Optional AI-assisted question drafting, variant generation, long-form grading, and AI-use detection — all per-exam choices, with traditional authoring and human grading remaining the default supported path.
+- **Credentials as structured data.** Earned certifications are first-class records attached to the learner's identity, exposed through TELUS's Kong API gateway so future consumers (work assignment, dispatch, workforce management) can integrate without bespoke work inside Summit.
 
-## More coming
+## Discovery
 
-The full case study lands closer to launch. In the meantime — the headline, scope, status, and stack are accurate. For specifics on architecture, integrations, or how Summit and TechCentral share infrastructure, [book a call](/contact).
+The discovery phase ran across two stakeholder sessions and a written follow-up — ten topics that needed an explicit decision before the data model got locked in. A few of the answers shape the architecture more than the rest:
+
+- **Open standards: deferred.** The W3C Verifiable Credentials / Open Badges 3.0 standard is technically a good fit and would let Summit accept credentials issued by external programs. The decision for v1 was to keep credentials internal and revisit when there's a concrete reason to open the boundary. The data model is being designed so that decision can be reversed without a rebuild.
+- **Skills and competencies are a structured framework, not loose tags.** Skills (copper, fiber, HSIA, …) belong to one team; competencies *within* each skill (fiber splicing, fiber termination, fiber troubleshooting) belong to another. Summit treats both as first-class entities so questions, exams, and credentials can all reference them — and so a "targeted recertification exam covering one weak competency" is a real workflow, not a workaround.
+- **Expiry and recertification: light by default, with optional shorter targeted exams.** Most trades certifications don't expire today. Where they do (safety), the platform handles expiry natively. The more interesting capability — short, targeted exams used as a diagnostic before deeper coaching — was a stakeholder request and is in scope.
+- **Rich media in questions: essential.** Trades questions about a connector, a splice, or a wiring configuration aren't meaningful in text alone. Image support is in the question data model from day one; short-form video is supported but called out as effort-heavy and used selectively.
+- **Exam policies: standard controls, sensible defaults.** Attempt limits (typically two, with a process for a third), availability windows, randomized question and answer order by default. The defaults match the way the existing exams are actually run.
+- **Open-reference posture, configurable per exam.** Most exams allow access to TechCentral and other reference materials during the test, because the assessment is whether a technician can *find and apply* the right information — not whether they've memorized it. Administrators can tighten this per-exam where it matters.
+- **Reporting is a top-line requirement, not an afterthought.** Exam scores, attempt counts, per-question breakdowns, performance over time. Stakeholder asked for it explicitly; it lands as a v1 surface, not a Phase 2 retrofit.
+
+A few items — formal item analysis (question-quality metrics), credential stacking, full appeals/re-grade workflow — are in the data model from the start but are sequenced into later phases. The brief is intentionally phased so the most important workflow (one platform that runs exams cleanly and issues credentials cleanly) can land before the more elaborate capabilities layer on.
+
+## Approach
+
+The first release will land the spine: question repository with bulk import, parameter-driven exam assembly, flexible invigilation, automated objective grading with configurable result release, role-based admin, and credentials attached to identity. Optional AI features and the long-form grading pipeline are scoped for sequenced phases — partly to keep the first release small enough to ship on a useful timeline, partly because some downstream workflows (notably long-form human grading) need resourcing decisions on the TELUS side before the platform-side surfaces are worth lighting up.
+
+The design phase has been unusually collaborative. The product owner is actively bringing AI-generated design explorations into working sessions — sketching screens, layouts, and flows themselves and walking me through them, which means mockup review is a real two-way conversation rather than a one-way deliverable cycle. That's reshaping the artifact I'll bring back: less a finished design to react to, more a synthesis of what we've already converged on together.
+
+## How it'll be built
+
+Some technical decisions are already locked by the TELUS environment, ahead of the wider stack choice:
+
+- **AI services through FuelIx.** Every AI call — question drafting, variant generation, long-form grading, AI-use detection — routes through TELUS's internal AI gateway. Same pattern as [TC Tools](/work/telus-tc-tools); secrets, audit, and provider strategy stay with the people whose job it is to own them.
+- **Outbound APIs through Kong.** Credential and certification data is published through TELUS's Kong API gateway, in line with existing TELUS practice. That's how downstream consumers — work assignment, dispatch, workforce management — will get the data when they're ready to integrate.
+- **Application-level authorization.** General sign-in is solved at the TELUS layer. Summit's internal role hierarchy (learner, author, proctor, grader, administrator) is enforced inside the application, in middleware, against scoped permissions.
+- **Credentials as first-class records.** Attached to the learner's user identifier, structured rather than denormalized, designed so a future shift to Open Badges 3.0 / Verifiable Credentials is a schema extension and not a rewrite.
+- **Audit and security event logging as a first-class concern.** Authentication, permission changes, grade changes, exam configuration changes — every sensitive action is attributable and reviewable after the fact.
+
+Application stack and hosting are being finalized as part of the design phase.
+
+## Where things stand
+
+- **Discovery and requirements brief:** complete (April 2026), reviewed and refined with the stakeholder, with ten follow-up topics resolved in writing.
+- **Mockups:** in active development, jointly with the product owner.
+- **Build:** scoped as a phased delivery — the platform spine first, optional AI surfaces and long-form workflows sequenced behind it.
+- **Naming:** the product will not carry forward the legacy name; a new name is being agreed.
+
+## What's next
+
+- Mockup review session, with the requirements baseline updated against what we converge on.
+- Sign-off on the v1 scope and the phased roadmap.
+- Build kickoff against the locked baseline.
+
+For specifics on the credential data model, the FuelIx integration, the Kong-fronted API surface, or the phased roadmap — [book a call](/contact).
