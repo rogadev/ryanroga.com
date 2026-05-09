@@ -1,0 +1,56 @@
+---
+interface Props {
+	status: 'live' | 'in-development' | 'archived' | 'draft';
+	class?: string;
+}
+
+const { status, class: className = '' } = Astro.props;
+
+const color = {
+	live: 'var(--color-positive)',
+	'in-development': 'var(--color-warning)',
+	archived: 'var(--color-fg-subtle)',
+	draft: 'var(--color-fg-subtle)',
+}[status];
+---
+
+<span
+	class={`status-dot ${status === 'in-development' ? 'status-dot--throb' : ''} ${className}`}
+	style={`background-color: ${color}`}
+	aria-hidden="true"></span>
+
+<style>
+	.status-dot {
+		display: inline-block;
+		width: 0.375rem;
+		height: 0.375rem;
+		border-radius: 9999px;
+		/* Optical alignment: items-center centers on the line-box, but
+		   all-caps mono text sits visually higher than that. Nudge the
+		   dot up so it reads center-on-center with the text. */
+		margin-top: -2px;
+	}
+
+	.status-dot--throb {
+		animation: status-throb 2.4s ease-in-out infinite;
+		transform-origin: center;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.status-dot--throb {
+			animation: none;
+		}
+	}
+
+	@keyframes status-throb {
+		0%,
+		100% {
+			opacity: 0.45;
+			transform: scale(0.92);
+		}
+		50% {
+			opacity: 1;
+			transform: scale(1.15);
+		}
+	}
+</style>

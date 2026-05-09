@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import StatusIndicator from '../components/StatusIndicator.astro';
 import { STUDIO_NAME } from '../consts';
 import Base from './Base.astro';
 
@@ -15,13 +16,6 @@ const statusLabel = {
 	'in-development': 'In development',
 	archived: 'Archived',
 	draft: 'Draft',
-}[data.status];
-
-const statusColor = {
-	live: 'var(--color-positive)',
-	'in-development': 'var(--color-warning)',
-	archived: 'var(--color-fg-subtle)',
-	draft: 'var(--color-fg-subtle)',
 }[data.status];
 
 const title = `${data.client} · ${STUDIO_NAME}`;
@@ -63,10 +57,7 @@ const description = data.headline;
 							<span>{data.industry}</span>
 							<span class="text-border-strong">·</span>
 							<span class="inline-flex items-center gap-1.5">
-								<span
-									class="h-1.5 w-1.5 rounded-full"
-									style={`background-color: ${statusColor}`}
-									aria-hidden="true"></span>
+								<StatusIndicator status={data.status} />
 								{statusLabel}
 							</span>
 						</div>

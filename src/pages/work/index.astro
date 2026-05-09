@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import ClientLogos from '../../components/home/ClientLogos.astro';
+import StatusIndicator from '../../components/StatusIndicator.astro';
 import { STUDIO_NAME } from '../../consts';
 import Base from '../../layouts/Base.astro';
 
@@ -16,12 +17,6 @@ const statusLabel = {
 	'in-development': 'In development',
 	archived: 'Archived',
 	draft: 'Draft',
-};
-const statusColor = {
-	live: 'var(--color-positive)',
-	'in-development': 'var(--color-warning)',
-	archived: 'var(--color-fg-subtle)',
-	draft: 'var(--color-fg-subtle)',
 };
 ---
 
@@ -97,11 +92,7 @@ const statusColor = {
 											{w.data.industry}
 										</p>
 										<p class="mt-4 inline-flex items-center gap-1.5 font-mono text-2xs tracking-[0.16em] text-fg-muted uppercase">
-											<span
-												class="h-1.5 w-1.5 rounded-full"
-												style={`background-color: ${statusColor[w.data.status]}`}
-												aria-hidden="true"
-											/>
+											<StatusIndicator status={w.data.status} />
 											{statusLabel[w.data.status]}
 										</p>
 									</div>
@@ -110,6 +101,11 @@ const statusColor = {
 											{w.data.headline}
 										</h2>
 										<p class="mt-3 max-w-2xl text-fg-muted text-pretty">{w.data.outcome}</p>
+										{w.data.highlight && (
+											<p class="mt-3 max-w-2xl text-sm text-pretty text-fg-subtle italic">
+												{w.data.highlight}
+											</p>
+										)}
 										<ul class="mt-5 flex flex-wrap gap-1.5 font-mono text-2xs" role="list">
 											{w.data.tags.map((t) => (
 												<li class="rounded-sm border border-border px-2 py-0.5 text-fg-muted">

@@ -35,6 +35,7 @@ const work = defineCollection({
 			heroImage: z.optional(image()),
 			liveUrl: z.url().optional(),
 			repoUrl: z.url().optional(),
+			highlight: z.string().optional(),
 		}),
 });
 
