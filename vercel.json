@@ -19,6 +19,11 @@
 			"source": "/work/tc-tools",
 			"destination": "/work/telus-tc-tools",
 			"permanent": true
+		},
+		{
+			"source": "/work/lot-logistics-web-application",
+			"destination": "/work/carevo-logistics",
+			"permanent": true
 		}
 	]
 }
