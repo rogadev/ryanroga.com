@@ -99,14 +99,28 @@ const ANNOUNCED_COPY = 2;
 	html.light .client-logo {
 		filter: brightness(0);
 	}
+	/* Override Marquee primitive's xl static behavior — keep logos scrolling on desktop. */
 	@media (min-width: 1280px) {
 		.client-logos {
-			padding-inline: 1.5rem;
+			overflow-x: auto;
+			cursor: grab;
+			-webkit-mask-image: linear-gradient(
+				to right,
+				transparent,
+				black 4rem,
+				black calc(100% - 4rem),
+				transparent
+			);
+			mask-image: linear-gradient(
+				to right,
+				transparent,
+				black 4rem,
+				black calc(100% - 4rem),
+				transparent
+			);
 		}
-		.client-logos-track {
-			width: 100%;
-			justify-content: space-between;
-			gap: 2rem;
+		.client-logos .marquee-item[aria-hidden='true'] {
+			display: block;
 		}
 	}
 	@media (prefers-reduced-motion: reduce) {
