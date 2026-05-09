@@ -3,5 +3,22 @@
 	"framework": "astro",
 	"buildCommand": "pnpm build",
 	"outputDirectory": "dist",
-	"installCommand": "pnpm install --frozen-lockfile"
+	"installCommand": "pnpm install --frozen-lockfile",
+	"redirects": [
+		{
+			"source": "/work/techcentral-telus",
+			"destination": "/work/telus-techcentral",
+			"permanent": true
+		},
+		{
+			"source": "/work/project-summit-telus",
+			"destination": "/work/telus-summit",
+			"permanent": true
+		},
+		{
+			"source": "/work/tc-tools",
+			"destination": "/work/telus-tc-tools",
+			"permanent": true
+		}
+	]
 }
