@@ -16,7 +16,9 @@ featured: true
 order: 2
 ---
 
-import ScreenshotPending from '../../components/ScreenshotPending.astro';
+import Screenshot from '../../components/Screenshot.astro';
+import dashboard from '../../assets/work/tc-tools/dashboard.png';
+import agenticTools from '../../assets/work/tc-tools/agentic-tools.png';
 
 ## Context
 
@@ -31,13 +33,13 @@ The premise: the people writing the procedures shouldn't need to file an enginee
 - **Analytics** — which articles are being read, by whom, when, and how often. The unglamorous metrics that tell you whether the content actually helps the technicians using the platform.
 - **Debug** — internal-only views for diagnosing access issues, content state, and edge-case rendering without involving engineering for every ticket.
 
-<ScreenshotPending caption="AI image generation — procedure-illustration prompts and brand-consistent outputs." />
+<Screenshot src={dashboard} alt="TC Tools dashboard listing Creator Tools (Agentic Tools, Search Rank, Image Generator, TC Link Generator, Resize & Convert Images, Reference Finder) and Debug Tools inside the TechCentral admin shell." caption="TC Tools dashboard — the toolkit creators reach for inside TechCentral." />
 
 ## How the AI piece is built
 
 The AI surfaces are intentionally narrow. Image generation runs against a small, vetted set of prompt templates rather than a free-text playground — output is more predictable, brand fit is enforced, and the cost surface is bounded. Copy analysis uses a lightweight evaluation pipeline so the same checks run consistently between drafting and publishing. The whole AI layer is provider-agnostic by design — the underlying model is a configuration switch, not a rewrite.
 
-<ScreenshotPending caption="Article analytics — read counts, role breakdown, and which procedures are getting silently ignored." />
+<Screenshot src={agenticTools} alt="Agentic Tools view inside TC Tools — multi-mode AI content studio for drafting articles, analyzing copy against the TechCentral rubric, and translating between English and French (Canada)." caption="Agentic Tools — drafting, rubric analysis, and EN ↔ FR translation in one studio." />
 
 ## More coming
 
