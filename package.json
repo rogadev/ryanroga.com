@@ -1,7 +1,7 @@
 {
 	"name": "ryanroga-com",
 	"type": "module",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"private": true,
 	"packageManager": "pnpm@10.33.0",
 	"engines": {
