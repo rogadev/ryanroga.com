@@ -1,0 +1,72 @@
+---
+interface Props {
+	status: 'live' | 'in-development' | 'archived' | 'draft';
+	class?: string;
+}
+
+const { status, class: className = '' } = Astro.props;
+
+const color = {
+	live: 'var(--color-positive)',
+	'in-development': 'var(--color-warning)',
+	archived: 'var(--color-fg-subtle)',
+	draft: 'var(--color-fg-subtle)',
+}[status];
+---
+
+{
+	status === 'in-development' ? (
+		<span
+			class={`status-spinner ${className}`}
+			style={`color: ${color}`}
+			aria-hidden="true"
+		/>
+	) : (
+		<span
+			class={`status-dot ${className}`}
+			style={`background-color: ${color}`}
+			aria-hidden="true"
+		/>
+	)
+}
+
+<style>
+	.status-dot {
+		display: inline-block;
+		width: 0.375rem;
+		height: 0.375rem;
+		border-radius: 9999px;
+	}
+
+	.status-spinner {
+		display: inline-block;
+		width: 0.5625rem;
+		height: 0.5625rem;
+		border-radius: 9999px;
+		border: 1.5px solid currentColor;
+		border-top-color: transparent;
+		animation: status-spin 0.9s linear infinite;
+		/* Slight vertical nudge so the slightly-larger spinner reads on
+		   the same baseline as the surrounding text. */
+		vertical-align: -1px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.status-spinner {
+			animation: none;
+			/* Reduced-motion fallback: render as a solid dot rather than a
+			   frozen ring, since a frozen ring looks broken. */
+			border: 0;
+			background-color: currentColor;
+			width: 0.375rem;
+			height: 0.375rem;
+			vertical-align: baseline;
+		}
+	}
+
+	@keyframes status-spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+</style>
