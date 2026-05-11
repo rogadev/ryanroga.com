@@ -85,6 +85,10 @@ Every component and page must satisfy these three. They are hard requirements, n
 - Tailwind utilities preferred over custom CSS for layout, spacing, and typography. Reach for `@theme` tokens before raw values once the design system lands.
 - Design rules from the brief: one accent color, restrained palette (`docs/BRIEF.md` §3.3); no drop shadows — use 1px hairline borders for structure (§3.6); real product screenshots, never abstract illustrations (§3.5).
 
+## Pull requests
+
+- PR body uses a `## Summary` section with bullet points. No `## Test plan` section — drop it entirely.
+
 ## Copy & titles
 
 - **Never use the word "engineer" to describe Ryan or his work.** "Engineer" is a protected professional title in BC/Canada (Engineers and Geoscientists BC) — using it without a P.Eng. designation is a regulatory violation, not just a stylistic choice. This applies to job titles ("Software Engineer", "DevOps Engineer", etc.), prose ("built by one engineer"), and meta tags. Use **Developer**, **Technical Lead**, **Specialist**, or role-specific alternatives (e.g. "Integration Specialist" not "Integration Engineer"). Generic references to other companies' engineering practices in design docs are fine — the rule is about how Ryan presents himself.

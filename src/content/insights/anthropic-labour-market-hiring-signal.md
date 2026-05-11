@@ -8,8 +8,6 @@ readingTime: '5 min read'
 draft: false
 ---
 
-_By Ryan Roga_
-
 Anthropic published a paper in March that contains the most useful labour-market signal we have seen since GPT-4 shipped. It is not a forecast, and it is not a headcount-replacement number. It is the gap between two things most operators are conflating: how much knowledge work AI _can_ do, and how much it is actually doing right now. That gap, and the way it is closing for one specific group of workers, is what should change how SMBs think about hiring this year.
 
 ## The number that isn't in the unemployment data
