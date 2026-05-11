@@ -3,7 +3,7 @@ id: S-001
 client: TELUS · Summit
 industry: Workforce learning · Certification
 headline: A modern credentialing and exam platform for TELUS trades technicians and partner contractors — replacing two parallel in-house legacy systems.
-outcome: One platform for the whole field workforce. Question repository, parameter-driven exam assembly, flexible invigilation, and credentials exposed as structured data — replacing manual scheduling, copy-paste authoring, and out-of-band exam passwords. In active design.
+outcome: One platform for the whole field workforce. Question repository, parameter-driven exam assembly, flexible invigilation, and credentials exposed as structured data — replacing manual scheduling, copy-paste authoring, and out-of-band exam passwords.
 tags:
   - Certification
   - Exam platform
@@ -53,7 +53,7 @@ A few items — formal item analysis (question-quality metrics), credential stac
 
 The first release will land the spine: question repository with bulk import, parameter-driven exam assembly, flexible invigilation, automated objective grading with configurable result release, role-based admin, and credentials attached to identity. Optional AI features and the long-form grading pipeline are scoped for sequenced phases — partly to keep the first release small enough to ship on a useful timeline, partly because some downstream workflows (notably long-form human grading) need resourcing decisions on the TELUS side before the platform-side surfaces are worth lighting up.
 
-The design phase has been unusually collaborative. The product owner is actively bringing AI-generated design explorations into working sessions — sketching screens, layouts, and flows themselves and walking me through them, which means mockup review is a real two-way conversation rather than a one-way deliverable cycle. That's reshaping the artifact I'll bring back: less a finished design to react to, more a synthesis of what we've already converged on together.
+The design phase was unusually collaborative. The product owner brought AI-generated design explorations into working sessions — sketching screens, layouts, and flows themselves and walking me through them, which meant mockup review was a real two-way conversation rather than a one-way deliverable cycle. The design artifact that came out of it was less a finished spec to react to and more a synthesis of what we'd already converged on together.
 
 ## How it'll be built
 
@@ -65,19 +65,6 @@ Some technical decisions are already locked by the TELUS environment, ahead of t
 - **Credentials as first-class records.** Attached to the learner's user identifier, structured rather than denormalized, designed so a future shift to Open Badges 3.0 / Verifiable Credentials is a schema extension and not a rewrite.
 - **Audit and security event logging as a first-class concern.** Authentication, permission changes, grade changes, exam configuration changes — every sensitive action is attributable and reviewable after the fact.
 
-Application stack and hosting are being finalized as part of the design phase.
+Application stack and hosting were finalized during the design phase.
 
-## Where things stand
-
-- **Discovery and requirements brief:** complete (April 2026), reviewed and refined with the stakeholder, with ten follow-up topics resolved in writing.
-- **Mockups:** in active development, jointly with the product owner.
-- **Build:** scoped as a phased delivery — the platform spine first, optional AI surfaces and long-form workflows sequenced behind it.
-- **Naming:** the product will not carry forward the legacy name; a new name is being agreed.
-
-## What's next
-
-- Mockup review session, with the requirements baseline updated against what we converge on.
-- Sign-off on the v1 scope and the phased roadmap.
-- Build kickoff against the locked baseline.
-
-For specifics on the credential data model, the FuelIx integration, the Kong-fronted API surface, or the phased roadmap — [book a call](/contact).
+If your organization is solving a similar problem — credentialing at scale, exam workflows, or internal tools that legacy systems have outgrown — [book a call](/contact).
