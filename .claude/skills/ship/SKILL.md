@@ -42,13 +42,7 @@ If the change is non-trivial, include a body explaining the *why*, not the *what
 
 When changes span multiple concerns (e.g., a content rewrite plus a formatting fix), use the primary change as the type and mention the secondary in the body.
 
-### 3. Confirm with the user
-
-Present the draft commit message and ask the user to confirm or edit it. Use AskUserQuestion with the message as the recommended option and "Edit" as the alternative.
-
-Do not commit without confirmation.
-
-### 4. Stage, commit, and push
+### 3. Stage, commit, and push
 
 ```
 git add <specific files>
@@ -65,7 +59,7 @@ git pull --rebase
 git push
 ```
 
-### 5. Report
+### 4. Report
 
 Confirm success with a one-line summary: what was committed, to which branch, and that the push succeeded.
 
