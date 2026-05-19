@@ -44,7 +44,7 @@
 		"@astrojs/mdx": "^5.0.4",
 		"@astrojs/rss": "^4.0.18",
 		"@astrojs/sitemap": "^3.7.2",
-		"@astrojs/svelte": "^8.1.0",
+		"@astrojs/svelte": "^8.1.1",
 		"@fontsource-variable/geist": "^5.2.8",
 		"@fontsource-variable/geist-mono": "^5.2.7",
 		"@fontsource/geist-mono": "^5.2.7",
@@ -68,8 +68,8 @@
 		"oxlint": "^1.62.0",
 		"prettier": "^3.8.3",
 		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-svelte": "^3.5.1",
-		"svelte-eslint-parser": "^1.6.0",
+		"prettier-plugin-svelte": "^3.5.2",
+		"svelte-eslint-parser": "^1.6.1",
 		"typescript-eslint": "^8.59.1"
 	}
 }
