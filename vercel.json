@@ -3,7 +3,7 @@
 	"framework": "astro",
 	"buildCommand": "pnpm build",
 	"outputDirectory": "dist",
-	"installCommand": "corepack enable && corepack install && pnpm install --frozen-lockfile",
+	"installCommand": "pnpm install --frozen-lockfile",
 	"redirects": [
 		{
 			"source": "/work/techcentral-telus",
