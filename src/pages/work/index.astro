@@ -5,7 +5,8 @@ import StatusIndicator from '../../components/StatusIndicator.astro';
 import Base from '../../layouts/Base.astro';
 
 const title = 'Work · Roga Digital';
-const description = 'Selected case studies from Roga Digital — operations platforms, internal tools, public sites, and AI features built end-to-end for businesses.';
+const description =
+	'Selected case studies from Roga Digital — operations platforms, internal tools, public sites, and AI features built end-to-end for businesses.';
 
 const work = (await getCollection('work'))
 	.filter((entry) => entry.data.status !== 'draft')
