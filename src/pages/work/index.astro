@@ -2,11 +2,11 @@
 import { getCollection } from 'astro:content';
 import ClientLogos from '../../components/home/ClientLogos.astro';
 import StatusIndicator from '../../components/StatusIndicator.astro';
-import { STUDIO_NAME } from '../../consts';
 import Base from '../../layouts/Base.astro';
 
-const title = `Work · ${STUDIO_NAME}`;
-const description = `Selected case studies from ${STUDIO_NAME} — operations platforms, internal tools, public sites, and AI features built end-to-end for businesses.`;
+const title = 'Work · Roga Digital';
+const description =
+	'Selected case studies from Roga Digital — operations platforms, internal tools, public sites, and AI features built end-to-end for businesses.';
 
 const work = (await getCollection('work'))
 	.filter((entry) => entry.data.status !== 'draft')

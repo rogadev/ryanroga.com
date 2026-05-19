@@ -1,5 +1,4 @@
 ---
-import { STUDIO_NAME } from '../consts';
 import MobileNav from './MobileNav.svelte';
 import ThemeToggle from './ThemeToggle.svelte';
 
@@ -19,8 +18,8 @@ const path = Astro.url.pathname;
 	<div
 		class="mx-auto flex h-14 w-full max-w-page items-center justify-between gap-4 px-4 sm:gap-6 sm:px-8"
 	>
-		<a href="/" class="text-sm font-medium tracking-tight" aria-label={`${STUDIO_NAME} — home`}>
-			{STUDIO_NAME}
+		<a href="/" class="text-sm font-medium tracking-tight" aria-label="Roga Digital — home">
+			Roga Digital
 		</a>
 
 		<!-- Desktop nav -->

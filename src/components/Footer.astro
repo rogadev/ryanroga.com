@@ -1,5 +1,5 @@
 ---
-import { BOOKING_URL, SITE_LOCATION, SOCIAL, STUDIO_NAME } from '../consts';
+import { BOOKING_URL, SITE_LOCATION, SOCIAL } from '../consts';
 
 const today = new Date();
 
@@ -45,7 +45,7 @@ const cols = [
 						class="h-6 w-6 rounded-sm"
 						aria-hidden="true"
 					/>
-					{STUDIO_NAME}
+					Roga Digital
 				</a>
 				<p class="mt-4 max-w-sm text-sm text-fg-muted">
 					A studio building business software end-to-end — full-stack development, systems
@@ -89,7 +89,7 @@ const cols = [
 		<div
 			class="mt-16 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 font-mono text-2xs tracking-wide text-fg-subtle uppercase sm:flex-row"
 		>
-			<p>© {today.getFullYear()} {STUDIO_NAME} · {SITE_LOCATION}</p>
+			<p>© {today.getFullYear()} Roga Digital · {SITE_LOCATION}</p>
 			<p>
 				Built with Astro · Hosted on Vercel · <a
 					href="/insights/why-this-stack/"
