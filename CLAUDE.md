@@ -1,4 +1,5 @@
 # CLAUDE.md
+
 <!-- bd-doctor-divergence: ok -->
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -102,6 +103,7 @@ Every component and page must satisfy these three. They are hard requirements, n
 - `_references/techcentral-showcase/` — pre-existing reference content, untouched. Gitignored.
 
 <!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:7510c1e2 -->
+
 ## Beads Issue Tracker
 
 This project uses **bd (beads)** for issue tracking. Run `bd prime` to see full workflow context and commands.
@@ -143,6 +145,7 @@ bd close <id>         # Complete work
 7. **Hand off** - Provide context for next session
 
 **CRITICAL RULES:**
+
 - Work is NOT complete until `git push` succeeds
 - NEVER stop before pushing - that leaves work stranded locally
 - NEVER say "ready to push when you are" - YOU must push
