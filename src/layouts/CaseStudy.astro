@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import StatusIndicator from '../components/StatusIndicator.astro';
-import { STUDIO_NAME } from '../consts';
 import Base from './Base.astro';
 
 interface Props {
@@ -18,7 +17,7 @@ const statusLabel = {
 	draft: 'Draft',
 }[data.status];
 
-const title = `${data.client} · ${STUDIO_NAME}`;
+const title = `${data.client} · Roga Digital`;
 const description = data.headline;
 ---
 

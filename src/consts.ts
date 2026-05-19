@@ -2,7 +2,6 @@
  * Site-wide constants. Imported by layouts and head components.
  */
 
-export const STUDIO_NAME = 'Roga Digital';
 export const SITE_TITLE = 'Roga Digital · Software Studio';
 export const SITE_TAGLINE = 'Software, end-to-end.';
 export const SITE_DESCRIPTION =
