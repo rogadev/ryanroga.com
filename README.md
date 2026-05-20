@@ -119,7 +119,7 @@ Static output, deployed on Vercel from the `main` branch. Vercel auto-detects `d
 
 ## Issue tracking
 
-This project uses **[bd (beads)](https://github.com/steveyegge/beads)** for task tracking. Run `bd ready` for available work, `bd show <id>` for details. See [`CLAUDE.md`](CLAUDE.md) for the full workflow.
+This project uses **GitHub Issues** for work tracking and **Claude Code Tasks** for agent session coordination. See [`CLAUDE.md`](CLAUDE.md) for the full workflow.
 
 ## Contact
 

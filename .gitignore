@@ -28,7 +28,8 @@ tmp/
 # Legacy reference content (old SvelteKit site)
 _references
 
-# Beads / Dolt files (added by bd init)
+# Beads (archived — see docs/archive/beads/)
+.beads/
 .dolt/
 *.db
 .beads-credential-key

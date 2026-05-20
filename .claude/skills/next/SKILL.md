@@ -7,7 +7,7 @@ disable-model-invocation: true
 
 You are running a deterministic workflow: triage current work, choose the next issue, plan it carefully, then execute. Do not skip phases. Each phase has a checkpoint where you confirm with the user before continuing.
 
-The repo's source of truth for work items is **GitHub Issues** (per the official beads FAQ, beads and GitHub Issues are not designed to sync — beads is agent session memory, GH is the issue tracker). Use `gh` for everything issue-related. Use `bd memories <keyword>` and `bd remember` for cross-session notes only.
+The repo's source of truth for work items is **GitHub Issues**. Use `gh` for everything issue-related. Use Claude Code Tasks (`TaskCreate`, `TaskList`) for session-level tracking.
 
 Branch model for this repo: work commits land on `dev`. Merge to `main` via PR at logical boundaries.
 
@@ -35,7 +35,7 @@ Before picking anything new, prove that nothing is genuinely in flight.
      - Skip Phase 1 entirely; jump to Phase 2 with this issue.
      - Stop the user with: "Resuming #<n>. OK to plan the remaining work? [y/n]"
 
-   - **Stalled, not started** — labeled in-progress but no commits, no scratch in `tmp/`, no `bd memories`:
+   - **Stalled, not started** — labeled in-progress but no commits, no scratch in `tmp/`, no prior session context:
      - Remove `status: in-progress`. Note this to the user. Continue triage.
 
 3. **Epic completion check** — if any in-progress issue is labeled `epic`:
@@ -92,7 +92,7 @@ Now you have a chosen issue. Plan deeply. A weak plan produces weak code.
    - Any linked issues, parent epic, blocking issues — read all of them.
    - The files the body names. Glob/Grep the surrounding area to confirm the named paths still exist and the conventions the body cites are still current.
    - `CLAUDE.md`. Skim `docs/BRIEF.md` and `docs/PLAN.md` if the issue touches design, IA, or migration phases.
-   - `bd memories <issue-number>` and `bd memories <keyword>` for any prior session notes on this work.
+   - Check `TaskList` for any prior session context on this work.
 
 3. Write the plan to `tmp/next-<n>.md` (the directory is gitignored). Use this structure:
 
@@ -192,15 +192,10 @@ When the issue's acceptance criteria are all satisfied:
    gh issue close <n> --comment "Closed via dev branch — see commits <range>."
    ```
 4. If the issue is a child of an epic, re-check Phase 0's epic-completion logic — if it was the last open child, verify the epic and close it too.
-5. Persist any non-obvious learning for future sessions:
-   ```bash
-   bd remember "Insight worth carrying forward — be specific."
-   ```
-6. Delete the plan file: `rm tmp/next-<n>.md`. If `tmp/` is now empty, leave the directory.
-7. **Push** (mandatory per CLAUDE.md session-close protocol):
+5. Delete the plan file: `rm tmp/next-<n>.md`. If `tmp/` is now empty, leave the directory.
+6. **Push** (mandatory per CLAUDE.md session-close protocol):
    ```bash
    git pull --rebase
-   bd dolt push
    git push
    git status   # must say "up to date with origin/dev"
    ```
