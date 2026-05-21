@@ -50,12 +50,12 @@
 		"@fontsource/geist-mono": "^5.2.7",
 		"@fontsource/geist-sans": "^5.2.5",
 		"@shikijs/transformers": "^4.0.2",
-		"@tailwindcss/vite": "^4.2.4",
+		"@tailwindcss/vite": "^4.3.0",
 		"astro": "^6.2.2",
 		"satori": "^0.26.0",
 		"sharp": "^0.34.3",
 		"svelte": "^5.55.5",
-		"tailwindcss": "^4.2.4",
+		"tailwindcss": "^4.3.0",
 		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
