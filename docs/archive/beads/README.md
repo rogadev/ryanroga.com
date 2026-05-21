@@ -10,17 +10,17 @@ Migrated from Beads (`bd`) to Claude Code Tasks on **2026-05-20**.
 
 ## Closed issues
 
-| ID | Title | Close reason |
-|---|---|---|
+| ID       | Title                                                       | Close reason                                                              |
+| -------- | ----------------------------------------------------------- | ------------------------------------------------------------------------- |
 | roga-qet | Set up oxlint + ESLint + Prettier with Astro/Svelte plugins | Implemented oxlint + ESLint + Prettier with Astro/Svelte parser overrides |
-| roga-bky | Add /next slash-command skill and p0-p3 priority labels | Skill, /issue update, labels, and gitignore fix shipped in d88b4dc |
-| roga-6fh | Remove unused satori-html dependency | Closed |
-| roga-0u1 | Add 404 page and review Dependabot alerts | Closed |
+| roga-bky | Add /next slash-command skill and p0-p3 priority labels     | Skill, /issue update, labels, and gitignore fix shipped in d88b4dc        |
+| roga-6fh | Remove unused satori-html dependency                        | Closed                                                                    |
+| roga-0u1 | Add 404 page and review Dependabot alerts                   | Closed                                                                    |
 
 ## Migrated issues
 
-| ID | Title | Status | Migrated to |
-|---|---|---|---|
+| ID       | Title                                                               | Status      | Migrated to         |
+| -------- | ------------------------------------------------------------------- | ----------- | ------------------- |
 | roga-bgh | Replace Tailwind v4 arbitrary-value tokens with generated utilities | in_progress | Claude Code Task #1 |
 
 ## Raw data
