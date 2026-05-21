@@ -1,7 +1,5 @@
 # CLAUDE.md
 
-<!-- bd-doctor-divergence: ok -->
-
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project overview
@@ -102,38 +100,27 @@ Every component and page must satisfy these three. They are hard requirements, n
 - `_references/old-svelte-site/` — read-only archive of the previous SvelteKit build. Lift content; do not edit. Gitignored.
 - `_references/techcentral-showcase/` — pre-existing reference content, untouched. Gitignored.
 
-<!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:7510c1e2 -->
+## Task tracking
 
-## Beads Issue Tracker
+This repo uses **Claude Code Tasks** (native, built-in) for tracking work across sessions.
 
-This project uses **bd (beads)** for issue tracking. Run `bd prime` to see full workflow context and commands.
+- Shared task list ID for this repo: `ryanroga-com`
+  Set `CLAUDE_CODE_TASK_LIST_ID=ryanroga-com` in your shell before launching `claude`.
+- Use `TaskCreate` for any unit of work you expect to take more than one tool call or that you might not finish this session.
+- Use `addBlockedBy` / `addBlocks` to express dependencies. Check `TaskList` for ready work (pending, no open blockers) at the start of each session.
+- Mark tasks `in_progress` when you start, `completed` when done.
+- Press `Ctrl+T` to toggle the task panel.
+- Historical Beads data lives in `docs/archive/beads/`. Do not recreate the Beads workflow.
 
-### Quick Reference
-
-```bash
-bd ready              # Find available work
-bd show <id>          # View issue details
-bd update <id> --claim  # Claim work
-bd close <id>         # Complete work
-```
-
-### Rules
-
-- Use `bd` for ALL task tracking — do NOT use TodoWrite, TaskCreate, or markdown TODO lists
-- Run `bd prime` for detailed command reference and session close protocol
-- Use `bd remember` for persistent knowledge — do NOT use MEMORY.md files
-
-**Architecture in one line:** issues live in a local Dolt DB; sync uses `refs/dolt/data` on your git remote; `.beads/issues.jsonl` is a passive export. See https://github.com/gastownhall/beads/blob/main/docs/SYNC_CONCEPTS.md for details and anti-patterns.
-
-## Session Completion
+## Session completion
 
 **When ending a work session**, you MUST complete ALL steps below. Work is NOT complete until `git push` succeeds.
 
 **MANDATORY WORKFLOW:**
 
-1. **File issues for remaining work** - Create issues for anything that needs follow-up
+1. **File issues for remaining work** - Create tasks or GitHub issues for anything that needs follow-up
 2. **Run quality gates** (if code changed) - Tests, linters, builds
-3. **Update issue status** - Close finished work, update in-progress items
+3. **Update task status** - Close finished work, update in-progress items
 4. **PUSH TO REMOTE** - This is MANDATORY:
    ```bash
    git pull --rebase
@@ -150,4 +137,3 @@ bd close <id>         # Complete work
 - NEVER stop before pushing - that leaves work stranded locally
 - NEVER say "ready to push when you are" - YOU must push
 - If push fails, resolve and retry until it succeeds
-<!-- END BEADS INTEGRATION -->
