@@ -37,17 +37,17 @@ export const SCALE_HEADROOM = 1.1;
 
 /**
  * Ryan's personal agentic-coding ratings.
- * NOTE: releaseDate values are PLACEHOLDERS pending confirmation — correct before merge.
+ * releaseDate values are the models' official Anthropic announcement dates.
  */
 export const BENCHMARK_MODELS: ModelScore[] = [
 	{ provider: 'anthropic', label: 'Opus 4.5', score: 80, releaseDate: '2025-11-24' },
-	{ provider: 'anthropic', label: 'Opus 4.6', score: 85, releaseDate: '2026-01-28' },
-	{ provider: 'anthropic', label: 'Opus 4.7', score: 52, releaseDate: '2026-03-25' },
+	{ provider: 'anthropic', label: 'Opus 4.6', score: 85, releaseDate: '2026-02-05' },
+	{ provider: 'anthropic', label: 'Opus 4.7', score: 52, releaseDate: '2026-04-16' },
 	{
 		provider: 'anthropic',
 		label: 'Opus 4.8',
 		score: 91,
-		releaseDate: '2026-05-20',
+		releaseDate: '2026-05-28',
 		tentative: true,
 	},
 ];
