@@ -21,6 +21,10 @@
 		return scaleMax > 0 ? (score / scaleMax) * 100 : 0;
 	}
 
+	// Raised-cosine bump on τ∈[0,1]: zero value AND zero slope at both ends, peak 1 at
+	// τ=0.5. Used per excursion lobe so every junction (start, midpoint, end) is smooth.
+	const bump = (tau: number): number => (1 - Math.cos(2 * Math.PI * tau)) / 2;
+
 	function animatedScore(m: ModelScore): number {
 		return m.tentative ? (anim[m.label] ?? m.score) : m.score;
 	}
@@ -47,27 +51,48 @@
 			return;
 		}
 
-		// Each cycle: hold steady at the true score, then one smooth excursion that
-		// rises above the value, dips below it, and returns to base — then hold again.
+		// Each cycle: hold steady at the true score, then one excursion made of two
+		// back-to-back lobes (one up, one down) that returns to base — then hold again.
 		const STEADY = 3500; // steady-state hold (ms)
 		const ACTIVE = 2800; // duration of the up/down excursion (ms)
 		const CYCLE = STEADY + ACTIVE;
-		const AMPLITUDE = 7; // peak deviation, in schmeckles (windowed → ~5 effective)
+		const MIN_AMP = 2; // smallest lobe deviation, in schmeckles
+		const MAX_AMP = 5; // largest lobe deviation (the cap — never swings further)
 		const t0 = performance.now();
 		let raf = 0;
+
+		const randAmp = () => MIN_AMP + Math.random() * (MAX_AMP - MIN_AMP);
+
+		// Per-model excursion parameters, re-rolled at each cycle boundary so direction
+		// and the two lobe magnitudes vary every time. Kept outside `anim` (non-reactive).
+		const params: Record<string, { cycle: number; dir: number; a1: number; a2: number }> = {};
 
 		function frame(now: number) {
 			const next: Record<string, number> = {};
 			tentatives.forEach((m, i) => {
 				// Stagger phases so multiple tentatives don't move in lockstep.
-				const el = (now - t0 + i * 1200) % CYCLE;
+				const elapsed = now - t0 + i * 1200;
+				const cycle = Math.floor(elapsed / CYCLE);
+				const el = elapsed % CYCLE;
+
+				// Roll fresh randomness once per cycle: direction (up-first vs down-first)
+				// and an independent magnitude for each lobe.
+				if (params[m.label]?.cycle !== cycle) {
+					params[m.label] = {
+						cycle,
+						dir: Math.random() < 0.5 ? 1 : -1,
+						a1: randAmp(),
+						a2: randAmp(),
+					};
+				}
+
 				let score = m.score;
 				if (el >= STEADY) {
 					const t = (el - STEADY) / ACTIVE; // 0..1 across the excursion
-					// One full sine period (base → up → base → down → base) multiplied by a
-					// sin(πt) window. The window is 0 with zero slope at t=0 and t=1, so the
-					// excursion eases in and out of the steady hold — no hard landing.
-					score = m.score + AMPLITUDE * Math.sin(2 * Math.PI * t) * Math.sin(Math.PI * t);
+					const { dir, a1, a2 } = params[m.label];
+					// First lobe (t<0.5) goes dir; second lobe (t≥0.5) goes opposite.
+					const lobe = t < 0.5 ? a1 * bump(2 * t) : -a2 * bump(2 * t - 1);
+					score = m.score + dir * lobe;
 				}
 				next[m.label] = score;
 			});
