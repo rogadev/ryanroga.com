@@ -9,8 +9,8 @@
 ## 1. Purpose
 
 A hidden, shareable page where Ryan publishes his own hands-on ratings of coding
-models, measured in **schmeckles** — a deliberately opaque unit (a *Rick and Morty*
-reference). The absolute value is unknowable by design; the page is for *relative*
+models, measured in **schmeckles** — a deliberately opaque unit (a _Rick and Morty_
+reference). The absolute value is unknowable by design; the page is for _relative_
 comparison. Visitors who get the joke find it funny; everyone else finds the
 obscure unit funny and may go look it up. The lore stays vague on purpose.
 
@@ -51,21 +51,23 @@ A typed data module at `src/data/benchmarks.ts`, following the `consts.ts` idiom
 export type Provider = 'anthropic' | 'openai' | 'google';
 
 export interface ModelScore {
-  provider: Provider;
-  label: string;        // display name, e.g. "Opus 4.8"
-  score: number;        // schmeckles
-  releaseDate: string;  // ISO date, e.g. "2026-05-20" — powers the "Newest" sort
-  tentative?: boolean;  // score still forming; rendered with striped fill + marker
-  note?: string;        // optional rationale; surfaces in the Notes section
+	provider: Provider;
+	label: string; // display name, e.g. "Opus 4.8"
+	score: number; // schmeckles
+	releaseDate: string; // ISO date, e.g. "2026-05-20" — powers the "Newest" sort
+	tentative?: boolean; // score still forming; rendered with striped fill + marker
+	note?: string; // optional rationale; surfaces in the Notes section
 }
 
 export const PROVIDERS: Record<Provider, { label: string; available: boolean }> = {
-  anthropic: { label: 'Anthropic', available: true },
-  openai:    { label: 'OpenAI',    available: false },
-  google:    { label: 'Google',    available: false },
+	anthropic: { label: 'Anthropic', available: true },
+	openai: { label: 'OpenAI', available: false },
+	google: { label: 'Google', available: false },
 };
 
-export const BENCHMARK_MODELS: ModelScore[] = [ /* seeded below */ ];
+export const BENCHMARK_MODELS: ModelScore[] = [
+	/* seeded below */
+];
 ```
 
 A provider's `available: false` renders its filter chip disabled ("soon"). Flipping
@@ -76,17 +78,17 @@ it to `true` once data is added requires no component changes.
 Ryan's personal Opus agentic-coding benchmarks:
 
 | Model    | Schmeckles | Tentative |
-|----------|-----------:|-----------|
-| Opus 4.5 | 80         | no        |
-| Opus 4.6 | 85         | no        |
-| Opus 4.7 | 52         | no        |
-| Opus 4.8 | 91         | yes       |
+| -------- | ---------: | --------- |
+| Opus 4.5 |         80 | no        |
+| Opus 4.6 |         85 | no        |
+| Opus 4.7 |         52 | no        |
+| Opus 4.8 |         91 | yes       |
 
 **Release dates — placeholders pending Ryan's confirmation** (needed for "Newest"
 sort; correct before merge):
 
 | Model    | Placeholder release date |
-|----------|--------------------------|
+| -------- | ------------------------ |
 | Opus 4.5 | 2025-11-24               |
 | Opus 4.6 | 2026-01-28               |
 | Opus 4.7 | 2026-03-25               |
@@ -152,7 +154,7 @@ communicates the state visually.
 - Single horizontal axis with no fixed maximum; the axis trails off into "∞ ?".
 - Each model is a dot positioned by score; providers are distinguished by color
   once more than one is visible (within the single-accent constraint — use accent
-  + neutral tints, not a rainbow).
+  - neutral tints, not a rainbow).
 - Hollow dot = tentative.
 
 ### Empty / single states
@@ -176,7 +178,7 @@ communicates the state visually.
   - `◊` = schmeckles
   - striped / breathing bar = **tentative** (score still forming)
   - (when >1 provider is visible) the provider color key
-  The legend uses small mono text, muted color, hairline separation — not a heavy box.
+    The legend uses small mono text, muted color, hairline separation — not a heavy box.
 - **Footer microcopy:** "scores are subjective & reflect my own hands-on use."
 
 ## 7. Quality bars (hard requirements)

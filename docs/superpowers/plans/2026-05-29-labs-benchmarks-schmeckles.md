@@ -16,13 +16,13 @@
 
 ## File Structure
 
-| File | Responsibility |
-|------|----------------|
-| `src/data/benchmarks.ts` | **Create** — types (`Provider`, `ModelScore`, `ProviderMeta`), provider registry, seed data, `SCALE_HEADROOM` constant. Data only, no UI. |
-| `src/components/labs/BarsView.svelte` | **Create** — presentational ranked-bars view + tentative breathing/scramble animation. |
-| `src/components/labs/DotsView.svelte` | **Create** — presentational dot-plot view with open-ended axis. |
-| `src/components/labs/SchmeckleChart.svelte` | **Create** — the island: filter/sort/view state, controls, legend, accessible table, switches between the two views. |
-| `src/pages/labs/benchmarks.astro` | **Create** — page shell (hero copy, schmeckle gloss, Notes section, footer microcopy), mounts the island via `client:visible`. |
+| File                                        | Responsibility                                                                                                                            |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/data/benchmarks.ts`                    | **Create** — types (`Provider`, `ModelScore`, `ProviderMeta`), provider registry, seed data, `SCALE_HEADROOM` constant. Data only, no UI. |
+| `src/components/labs/BarsView.svelte`       | **Create** — presentational ranked-bars view + tentative breathing/scramble animation.                                                    |
+| `src/components/labs/DotsView.svelte`       | **Create** — presentational dot-plot view with open-ended axis.                                                                           |
+| `src/components/labs/SchmeckleChart.svelte` | **Create** — the island: filter/sort/view state, controls, legend, accessible table, switches between the two views.                      |
+| `src/pages/labs/benchmarks.astro`           | **Create** — page shell (hero copy, schmeckle gloss, Notes section, footer microcopy), mounts the island via `client:visible`.            |
 
 No changes to nav, layouts, or `global.css` are required. `Base.astro` already exposes a `noindex` prop.
 
@@ -31,6 +31,7 @@ No changes to nav, layouts, or `global.css` are required. `Base.astro` already e
 ## Task 1: Benchmark data module
 
 **Files:**
+
 - Create: `src/data/benchmarks.ts`
 
 - [ ] **Step 1: Write the data module**
@@ -81,7 +82,13 @@ export const BENCHMARK_MODELS: ModelScore[] = [
 	{ provider: 'anthropic', label: 'Opus 4.5', score: 80, releaseDate: '2025-11-24' },
 	{ provider: 'anthropic', label: 'Opus 4.6', score: 85, releaseDate: '2026-01-28' },
 	{ provider: 'anthropic', label: 'Opus 4.7', score: 52, releaseDate: '2026-03-25' },
-	{ provider: 'anthropic', label: 'Opus 4.8', score: 91, releaseDate: '2026-05-20', tentative: true },
+	{
+		provider: 'anthropic',
+		label: 'Opus 4.8',
+		score: 91,
+		releaseDate: '2026-05-20',
+		tentative: true,
+	},
 ];
 ```
 
@@ -107,6 +114,7 @@ git commit -m "feat(labs): add schmeckle benchmark data module"
 ## Task 2: BarsView component (ranked bars + tentative animation)
 
 **Files:**
+
 - Create: `src/components/labs/BarsView.svelte`
 
 This is presentational: it receives already-sorted models and the scale max, renders one bar per model, and animates tentative rows. It reads design tokens via global CSS custom properties (defined in `src/styles/global.css`), so no Tailwind classes are required here.
@@ -287,6 +295,7 @@ git commit -m "feat(labs): add ranked BarsView with tentative animation"
 ## Task 3: DotsView component (open-ended number line)
 
 **Files:**
+
 - Create: `src/components/labs/DotsView.svelte`
 
 - [ ] **Step 1: Write the component**
@@ -398,6 +407,7 @@ git commit -m "feat(labs): add open-ended DotsView number line"
 ## Task 4: SchmeckleChart island (state, controls, legend, a11y table)
 
 **Files:**
+
 - Create: `src/components/labs/SchmeckleChart.svelte`
 
 This is the hydrated island. It owns filter/sort/view state, renders the controls, the legend, a visually-hidden accessible table, and switches between `BarsView` and `DotsView`.
@@ -480,16 +490,36 @@ This is the hydrated island. It owns filter/sort/view state, renders the control
 		<div class="group" role="group" aria-label="Sort order">
 			<span class="glabel">Sort</span>
 			<div class="seg">
-				<button type="button" class:on={sort === 'score'} aria-pressed={sort === 'score'} onclick={() => (sort = 'score')}>Score</button>
-				<button type="button" class:on={sort === 'newest'} aria-pressed={sort === 'newest'} onclick={() => (sort = 'newest')}>Newest</button>
+				<button
+					type="button"
+					class:on={sort === 'score'}
+					aria-pressed={sort === 'score'}
+					onclick={() => (sort = 'score')}>Score</button
+				>
+				<button
+					type="button"
+					class:on={sort === 'newest'}
+					aria-pressed={sort === 'newest'}
+					onclick={() => (sort = 'newest')}>Newest</button
+				>
 			</div>
 		</div>
 
 		<div class="group" role="group" aria-label="Chart view">
 			<span class="glabel">View</span>
 			<div class="seg">
-				<button type="button" class:on={view === 'bars'} aria-pressed={view === 'bars'} onclick={() => (view = 'bars')}>Bars</button>
-				<button type="button" class:on={view === 'dots'} aria-pressed={view === 'dots'} onclick={() => (view = 'dots')}>Dots</button>
+				<button
+					type="button"
+					class:on={view === 'bars'}
+					aria-pressed={view === 'bars'}
+					onclick={() => (view = 'bars')}>Bars</button
+				>
+				<button
+					type="button"
+					class:on={view === 'dots'}
+					aria-pressed={view === 'dots'}
+					onclick={() => (view = 'dots')}>Dots</button
+				>
 			</div>
 		</div>
 	</div>
@@ -530,7 +560,10 @@ This is the hydrated island. It owns filter/sort/view state, renders the control
 		<span class="item"><span class="sw striped"></span> tentative — still forming an opinion</span>
 		{#if multiProvider}
 			{#each providerKeys.filter((p) => selected.has(p)) as p (p)}
-				<span class="item"><span class="sw" style="background: {PROVIDER_TINT[p]}"></span> {providers[p].label}</span>
+				<span class="item"
+					><span class="sw" style="background: {PROVIDER_TINT[p]}"></span>
+					{providers[p].label}</span
+				>
 			{/each}
 		{/if}
 	</div>
@@ -674,6 +707,7 @@ git commit -m "feat(labs): add SchmeckleChart island with controls, legend, a11y
 ## Task 5: The page
 
 **Files:**
+
 - Create: `src/pages/labs/benchmarks.astro`
 
 - [ ] **Step 1: Write the page**
@@ -696,7 +730,9 @@ const noted = BENCHMARK_MODELS.filter((m) => m.note);
 	<section class="border-b border-border">
 		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
 			<div class="pt-20 pb-16 sm:pt-28 sm:pb-20">
-				<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Labs · Benchmarks</p>
+				<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+					Labs · Benchmarks
+				</p>
 				<h1 class="mt-6 max-w-3xl text-4xl font-medium tracking-tight text-balance sm:text-5xl">
 					Agentic coding, scored in schmeckles
 				</h1>
@@ -754,6 +790,7 @@ Expected: PASS — no errors. (This now resolves the island import and props.)
 - [ ] **Step 3: Manual check in dev**
 
 Run: `pnpm dev`, open `http://localhost:4321/labs/benchmarks`. Verify:
+
 - Bars render sorted high→low; Opus 4.8 leads at ~91% width (headroom visible on the right).
 - Opus 4.8 bar breathes; its number scrambles then settles on 91, holds, repeats.
 - Toggling **Newest** reorders to 4.8, 4.7, 4.6, 4.5 (by release date).
