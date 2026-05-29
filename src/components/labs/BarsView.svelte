@@ -13,8 +13,6 @@
 
 	// Per-tentative-row animated state, keyed by model label.
 	let anim = $state<Record<string, { value: number; offset: number }>>({});
-	// Gate the initial grow transition.
-	let mounted = $state(false);
 
 	function baseWidth(score: number): number {
 		// Guard against a zero scaleMax (e.g. empty/all-zero data) — never emit NaN%.
@@ -26,14 +24,9 @@
 	}
 
 	function displayWidth(m: ModelScore): number {
-		if (!mounted) return 0;
 		const offset = m.tentative ? (anim[m.label]?.offset ?? 0) : 0;
 		return baseWidth(m.score) + offset;
 	}
-
-	$effect(() => {
-		mounted = true;
-	});
 
 	$effect(() => {
 		const tentatives = models.filter((m) => m.tentative);
@@ -134,7 +127,7 @@
 		background: var(--c);
 		will-change: width;
 	}
-	/* Settled bars grow on mount; tentative bars are driven frame-by-frame. */
+	/* Settled bars animate width changes (e.g. on re-sort); tentative bars are driven frame-by-frame. */
 	.fill:not(.tentative) {
 		transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 	}

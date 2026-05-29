@@ -3,6 +3,7 @@
 	import { SCALE_HEADROOM } from '../../data/benchmarks';
 	import BarsView from './BarsView.svelte';
 	import DotsView from './DotsView.svelte';
+	import { SvelteSet } from 'svelte/reactivity';
 
 	interface Props {
 		models: ModelScore[];
@@ -20,16 +21,14 @@
 		google: '#c0c4ff',
 	};
 
-	let selected = $state<Set<Provider>>(new Set(availableKeys));
+	const selected = new SvelteSet<Provider>(availableKeys);
 	let sort = $state<'score' | 'newest'>('score');
 	let view = $state<'bars' | 'dots'>('bars');
 
 	function toggleProvider(p: Provider) {
 		if (!providers[p].available) return;
-		const next = new Set(selected);
-		if (next.has(p)) next.delete(p);
-		else next.add(p);
-		selected = next;
+		if (selected.has(p)) selected.delete(p);
+		else selected.add(p);
 	}
 
 	const visible = $derived(
@@ -44,7 +43,7 @@
 		visible.length ? Math.max(...visible.map((m) => m.score)) * SCALE_HEADROOM : 1,
 	);
 
-	const multiProvider = $derived(new Set(visible.map((m) => m.provider)).size > 1);
+	const multiProvider = $derived(visible.some((m) => m.provider !== visible[0].provider));
 
 	function colorFor(p: Provider): string {
 		return multiProvider ? PROVIDER_TINT[p] : 'var(--color-accent)';
