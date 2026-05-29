@@ -52,7 +52,7 @@
 		const STEADY = 3500; // steady-state hold (ms)
 		const ACTIVE = 2800; // duration of the up/down excursion (ms)
 		const CYCLE = STEADY + ACTIVE;
-		const AMPLITUDE = 5; // peak deviation, in schmeckles
+		const AMPLITUDE = 7; // peak deviation, in schmeckles (windowed → ~5 effective)
 		const t0 = performance.now();
 		let raf = 0;
 
@@ -64,8 +64,10 @@
 				let score = m.score;
 				if (el >= STEADY) {
 					const t = (el - STEADY) / ACTIVE; // 0..1 across the excursion
-					// One full sine period: base → up → base → down → base.
-					score = m.score + AMPLITUDE * Math.sin(2 * Math.PI * t);
+					// One full sine period (base → up → base → down → base) multiplied by a
+					// sin(πt) window. The window is 0 with zero slope at t=0 and t=1, so the
+					// excursion eases in and out of the steady hold — no hard landing.
+					score = m.score + AMPLITUDE * Math.sin(2 * Math.PI * t) * Math.sin(Math.PI * t);
 				}
 				next[m.label] = score;
 			});
