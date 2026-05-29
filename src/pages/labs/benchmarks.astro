@@ -7,7 +7,23 @@ const title = 'Benchmarks · Roga Digital';
 const description =
 	"Ryan Roga's personal, hands-on ratings of AI coding models — scored in schmeckles.";
 
-const noted = BENCHMARK_MODELS.filter((m) => m.note);
+// The chart island only reads these fields, so pass just them — otherwise every note
+// body ships twice (once in the island's serialized hydration props, once in the
+// Notes section below).
+const chartModels = BENCHMARK_MODELS.map(({ provider, label, score, releaseDate, tentative }) => ({
+	provider,
+	label,
+	score,
+	releaseDate,
+	tentative,
+}));
+
+// Models that carry commentary, each with its notes sorted newest-first. Insertion
+// order in the data file doesn't matter — we sort by date here.
+const noted = BENCHMARK_MODELS.filter((m) => m.notes && m.notes.length > 0).map((m) => ({
+	label: m.label,
+	notes: m.notes!.toSorted((a, b) => b.date.localeCompare(a.date)),
+}));
 ---
 
 <Base {title} {description} noindex>
@@ -34,7 +50,7 @@ const noted = BENCHMARK_MODELS.filter((m) => m.note);
 
 	<!-- Chart island -->
 	<section class="mx-auto w-full max-w-page px-6 py-12 sm:px-8 sm:py-16">
-		<SchmeckleChart client:visible models={BENCHMARK_MODELS} providers={PROVIDERS} />
+		<SchmeckleChart client:visible models={chartModels} providers={PROVIDERS} />
 	</section>
 
 	<!-- Notes -->
@@ -49,11 +65,23 @@ const noted = BENCHMARK_MODELS.filter((m) => m.note);
 						Nothing to explain yet. When a score needs context, it lands here.
 					</p>
 				) : (
-					<dl class="mt-4 grid gap-4">
+					<dl class="mt-4 grid gap-8">
 						{noted.map((m) => (
-							<div class="grid gap-1">
+							<div class="grid gap-3">
 								<dt class="font-mono text-xs text-fg">{m.label}</dt>
-								<dd class="max-w-2xl text-sm text-fg-muted text-pretty">{m.note}</dd>
+								<dd class="grid gap-3">
+									{m.notes.map((n) => (
+										<div class="grid gap-1 sm:grid-cols-[6rem_1fr] sm:gap-4">
+											<time
+												datetime={n.date}
+												class="font-mono text-2xs text-fg-subtle tabular-nums"
+											>
+												{n.date}
+											</time>
+											<p class="max-w-2xl text-sm text-fg-muted text-pretty">{n.body}</p>
+										</div>
+									))}
+								</dd>
 							</div>
 						))}
 					</dl>

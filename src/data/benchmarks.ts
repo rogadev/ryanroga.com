@@ -5,6 +5,18 @@
 
 export type Provider = 'anthropic' | 'openai' | 'google';
 
+/**
+ * A single dated observation about a model. A model accumulates these over time;
+ * the Notes section renders them newest-first. Add via the writing-benchmark-notes
+ * skill rather than hand-editing, so the voice stays consistent.
+ */
+export interface ModelNote {
+	/** ISO date (YYYY-MM-DD) the note was written. Drives newest-first ordering. */
+	date: string;
+	/** The note itself — a concise, measured assessment. */
+	body: string;
+}
+
 export interface ModelScore {
 	/** Which vendor ships the model — drives the provider filter + colour key. */
 	provider: Provider;
@@ -16,8 +28,8 @@ export interface ModelScore {
 	releaseDate: string;
 	/** Score still forming — rendered with stripes + the tentative animation. */
 	tentative?: boolean;
-	/** Optional rationale; surfaces in the page's Notes section. */
-	note?: string;
+	/** Dated commentary; surfaces in the page's Notes section, newest-first. */
+	notes?: ModelNote[];
 }
 
 export interface ProviderMeta {
@@ -49,5 +61,11 @@ export const BENCHMARK_MODELS: ModelScore[] = [
 		score: 91,
 		releaseDate: '2026-05-28',
 		tentative: true,
+		notes: [
+			{
+				date: '2026-05-29',
+				body: 'Opus 4.8 pairs well with Claude Code’s new Dynamic Workflow: the harness lets it write a small orchestration script that fans subagents out in parallel, pipes results between stages, has some generate while others judge, then synthesizes. I’d been approximating this by hand with commands and skills, so spawning one from inside a skill is the part I value most. The one cost: “workflow” is now a loaded keyword, and I keep escaping a word I use all day.',
+			},
+		],
 	},
 ];
