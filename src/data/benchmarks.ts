@@ -22,7 +22,7 @@ export interface ModelScore {
 	provider: Provider;
 	/** Display name, e.g. "Opus 4.8". Must be unique across BENCHMARK_MODELS (used as render/animation key). */
 	label: string;
-	/** Score in schmeckles. Unit of indeterminate worth; compare relatively. */
+	/** Score in schmeckles — a made-up unit, scored on vibes. Compare relatively, not absolutely. */
 	score: number;
 	/** ISO date (YYYY-MM-DD). Powers the "Newest" sort. */
 	releaseDate: string;

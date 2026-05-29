@@ -39,10 +39,11 @@ const noted = BENCHMARK_MODELS.filter((m) => m.notes && m.notes.length > 0).map(
 				</h1>
 				<p class="mt-6 max-w-2xl text-lg text-fg-muted text-pretty">
 					My own hands-on ratings of AI coding models, measured in <abbr
-						title="A unit of value of indeterminate worth."
+						title="A made-up unit of value, scored on vibes."
 						class="cursor-help border-b border-dashed border-border-strong text-fg no-underline"
 						>schmeckles<span aria-hidden="true">&nbsp;◊</span></abbr
-					>. The absolute value is unknowable — read them side by side, not against a ceiling.
+					>. The schmeckle is a made-up unit — each score is my gut feel from daily use — so read
+					them side by side, not against a ceiling.
 				</p>
 			</div>
 		</div>
@@ -56,9 +57,7 @@ const noted = BENCHMARK_MODELS.filter((m) => m.notes && m.notes.length > 0).map(
 	<!-- Notes -->
 	<section class="border-t border-border">
 		<div class="mx-auto w-full max-w-page px-6 py-12 sm:px-8 sm:py-16">
-			<h2 class="text-lg font-medium tracking-tight text-fg">
-				Notes <span class="text-sm font-normal text-fg-subtle">(for those who really care)</span>
-			</h2>
+			<h2 class="text-lg font-medium tracking-tight text-fg">Notes</h2>
 			{
 				noted.length === 0 ? (
 					<p class="mt-3 max-w-2xl text-sm text-fg-muted text-pretty">
