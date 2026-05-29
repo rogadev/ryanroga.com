@@ -117,7 +117,11 @@
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius-sm);
 		overflow: hidden;
-		background: repeating-linear-gradient(45deg, #141417 0 6px, #0e0e10 6px 12px);
+		background: repeating-linear-gradient(
+			45deg,
+			color-mix(in oklab, var(--color-fg) 4%, var(--color-bg)) 0 6px,
+			color-mix(in oklab, var(--color-fg) 8%, var(--color-bg)) 6px 12px
+		);
 	}
 	.fill {
 		position: absolute;
@@ -145,7 +149,10 @@
 		font-family: var(--font-mono);
 		font-size: var(--text-xs);
 		font-weight: 600;
-		color: #fff;
+		/* White-on-accent meets contrast for the single (Anthropic) provider. NOTE:
+		   when multiple providers are enabled, colorFor() returns lighter tints — revisit
+		   this text colour for AA contrast before turning on OpenAI/Google. */
+		color: var(--color-accent-fg);
 	}
 	@media (prefers-reduced-motion: reduce) {
 		.fill:not(.tentative) {
