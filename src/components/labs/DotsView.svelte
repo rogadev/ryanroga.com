@@ -9,7 +9,8 @@
 	let { models, scaleMax, colorFor }: Props = $props();
 
 	function leftPct(score: number): number {
-		return (score / scaleMax) * 100;
+		// Guard against a zero scaleMax (e.g. empty/all-zero data) — never emit NaN%.
+		return scaleMax > 0 ? (score / scaleMax) * 100 : 0;
 	}
 </script>
 
