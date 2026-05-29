@@ -114,11 +114,38 @@ from the `.astro` page so all data stays out of the client bundle's source of tr
 ### Bars view (primary)
 
 - One ranked row per visible model: mono label + horizontal bar.
-- Bars scale relative to the **highest currently-visible score** (so the leader
-  fills the track; the open-ended right edge reinforces "unknown ceiling").
+- Bars scale relative to the **highest currently-visible score plus a 10% headroom
+  buffer** (`scaleMax = maxVisibleScore * 1.1`). The leader therefore fills ~91% of
+  the track, never the full width — there's always visible room to the right,
+  reinforcing both "unknown ceiling" and "room for improvement" (the real scale keeps
+  climbing past 100).
 - Track is a low-contrast hatched "unknown zone".
-- `tentative` models use a striped accent fill + a small "tentative" marker.
+- `tentative` models use a striped accent fill plus the **tentative animation**
+  (below). No inline "tentative" text label on the bar — the stripe + motion carry it
+  visually, and the legend explains it. (Screen readers still get it: the bar's
+  accessible label includes "tentative — score still forming"; see §7.)
 - Each bar shows its schmeckle value as mono text inside/after the fill.
+
+### Tentative animation
+
+Tentative scores are visibly "unsettled" to reinforce that the opinion is still forming:
+
+- **Breathing bar:** the bar's own width gently undulates in and out around its true
+  width (small amplitude, a couple percent), so the whole leading edge of the fill
+  drifts left/right — the bar itself looks unsettled. No separate cap, dot, or
+  floating element; the motion belongs to the bar.
+- **Number scramble → settle:** the schmeckle value rapidly cycles through nearby
+  numbers (jumping around), then decelerates and settles on the true value.
+- **Hold & repeat:** once settled, the value holds for a few seconds (≈ 3–4s), then
+  the cycle repeats — wave + scramble + settle.
+- The animation runs only for `tentative` models; settled scores are static.
+- Implemented in the island with `$state` + a `requestAnimationFrame`/timer loop,
+  cleaned up on unmount. The settle value is always the real `score`.
+
+**Reduced-motion:** under `prefers-reduced-motion: reduce`, the wave and scramble are
+disabled entirely — the bar renders static at its true width and the value shows the
+final number immediately (no jumping). The "tentative" marker/striping still
+communicates the state visually.
 
 ### Dots view (alternative)
 
@@ -143,8 +170,14 @@ from the `.astro` page so all data stays out of the client bundle's source of tr
   `note` of any model that has one, keyed to the model label. At launch no model has
   a note, so the section renders a single quiet placeholder line (it is always
   present, never omitted — keeps the layout stable as notes are added later).
-- **Footer microcopy:** "scores are subjective & reflect my own hands-on use ·
-  tentative = still forming an opinion".
+- **Legend:** a compact legend sits with the chart (just below the controls or
+  beneath the chart) so the visual encodings are self-explanatory now that the inline
+  tentative tag is gone. It covers:
+  - `◊` = schmeckles
+  - striped / breathing bar = **tentative** (score still forming)
+  - (when >1 provider is visible) the provider color key
+  The legend uses small mono text, muted color, hairline separation — not a heavy box.
+- **Footer microcopy:** "scores are subjective & reflect my own hands-on use."
 
 ## 7. Quality bars (hard requirements)
 
@@ -162,12 +195,15 @@ from the `.astro` page so all data stays out of the client bundle's source of tr
 
 - Toggles are real `<button>`s with `aria-pressed`; provider filter is a labeled
   group (`role="group"` + `aria-label`).
-- Every bar exposes its value as text — state is never color-only. Tentative state
-  is conveyed by the marker/text, not stripe color alone.
+- Every bar exposes its value as text — state is never color-only. Tentative state is
+  conveyed three ways beyond color: the diagonal **stripe pattern** (not hue), the
+  **legend**, and an **accessible label** on each tentative bar ("…tentative — score
+  still forming") so non-visual users get it without the inline tag.
 - Dots view provides an accessible fallback: each dot has an `aria-label`, and the
   underlying data is also available as a visually-hidden list (or a `<table>` the
   views render from) so screen-reader users get the full ranking.
-- `prefers-reduced-motion`: bar-grow / dot-move transitions reduce to none.
+- `prefers-reduced-motion`: bar-grow / dot-move transitions reduce to none, and the
+  tentative wave + number-scramble animation is disabled (static value, see §5).
 - One `<h1>`; skip-to-main link inherited from `Base`. `lang` on `<html>` (Base).
 - Focus rings visible on all controls (global `:focus-visible` ring applies).
 
