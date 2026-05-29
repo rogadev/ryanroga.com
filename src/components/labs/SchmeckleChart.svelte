@@ -35,7 +35,7 @@
 	const visible = $derived(
 		models
 			.filter((m) => selected.has(m.provider))
-			.sort((a, b) =>
+			.toSorted((a, b) =>
 				sort === 'score' ? b.score - a.score : b.releaseDate.localeCompare(a.releaseDate),
 			),
 	);
