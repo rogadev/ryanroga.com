@@ -50,7 +50,7 @@
 		// Each cycle: hold steady at the true score, then one smooth excursion that
 		// rises above the value, dips below it, and returns to base — then hold again.
 		const STEADY = 3500; // steady-state hold (ms)
-		const ACTIVE = 1800; // duration of the up/down excursion (ms)
+		const ACTIVE = 2800; // duration of the up/down excursion (ms)
 		const CYCLE = STEADY + ACTIVE;
 		const AMPLITUDE = 5; // peak deviation, in schmeckles
 		const t0 = performance.now();
