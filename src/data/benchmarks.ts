@@ -8,7 +8,7 @@ export type Provider = 'anthropic' | 'openai' | 'google';
 export interface ModelScore {
 	/** Which vendor ships the model — drives the provider filter + colour key. */
 	provider: Provider;
-	/** Display name, e.g. "Opus 4.8". */
+	/** Display name, e.g. "Opus 4.8". Must be unique across BENCHMARK_MODELS (used as render/animation key). */
 	label: string;
 	/** Score in schmeckles. Unit of indeterminate worth; compare relatively. */
 	score: number;
