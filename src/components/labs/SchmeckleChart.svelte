@@ -22,7 +22,7 @@
 	};
 
 	const selected = new SvelteSet<Provider>(availableKeys);
-	let sort = $state<'score' | 'newest'>('score');
+	let sort = $state<'score' | 'newest'>('newest');
 	let view = $state<'bars' | 'dots'>('bars');
 
 	function toggleProvider(p: Provider) {
@@ -74,15 +74,15 @@
 			<div class="seg">
 				<button
 					type="button"
-					class:on={sort === 'score'}
-					aria-pressed={sort === 'score'}
-					onclick={() => (sort = 'score')}>Score</button
-				>
-				<button
-					type="button"
 					class:on={sort === 'newest'}
 					aria-pressed={sort === 'newest'}
 					onclick={() => (sort = 'newest')}>Newest</button
+				>
+				<button
+					type="button"
+					class:on={sort === 'score'}
+					aria-pressed={sort === 'score'}
+					onclick={() => (sort = 'score')}>Score</button
 				>
 			</div>
 		</div>

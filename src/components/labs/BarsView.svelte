@@ -11,21 +11,26 @@
 	}
 	let { models, scaleMax, colorFor }: Props = $props();
 
-	// Per-tentative-row animated state, keyed by model label.
-	let anim = $state<Record<string, { value: number; offset: number }>>({});
+	// Per-tentative-row animated score, keyed by model label. Holds the currently
+	// displayed (possibly mid-excursion) score. Both the number and the bar width
+	// derive from it, so they always move in lockstep.
+	let anim = $state<Record<string, number>>({});
 
 	function baseWidth(score: number): number {
 		// Guard against a zero scaleMax (e.g. empty/all-zero data) — never emit NaN%.
 		return scaleMax > 0 ? (score / scaleMax) * 100 : 0;
 	}
 
+	function animatedScore(m: ModelScore): number {
+		return m.tentative ? (anim[m.label] ?? m.score) : m.score;
+	}
+
 	function displayValue(m: ModelScore): number {
-		return m.tentative ? (anim[m.label]?.value ?? m.score) : m.score;
+		return Math.round(animatedScore(m));
 	}
 
 	function displayWidth(m: ModelScore): number {
-		const offset = m.tentative ? (anim[m.label]?.offset ?? 0) : 0;
-		return baseWidth(m.score) + offset;
+		return baseWidth(animatedScore(m));
 	}
 
 	$effect(() => {
@@ -38,29 +43,31 @@
 		const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		if (reduce) {
 			// Settle immediately; no motion.
-			anim = Object.fromEntries(tentatives.map((m) => [m.label, { value: m.score, offset: 0 }]));
+			anim = Object.fromEntries(tentatives.map((m) => [m.label, m.score]));
 			return;
 		}
 
-		const SCRAMBLE = 1400;
-		const HOLD = 3500;
-		const CYCLE = SCRAMBLE + HOLD;
+		// Each cycle: hold steady at the true score, then one smooth excursion that
+		// rises above the value, dips below it, and returns to base — then hold again.
+		const STEADY = 3500; // steady-state hold (ms)
+		const ACTIVE = 1800; // duration of the up/down excursion (ms)
+		const CYCLE = STEADY + ACTIVE;
+		const AMPLITUDE = 5; // peak deviation, in schmeckles
 		const t0 = performance.now();
 		let raf = 0;
 
 		function frame(now: number) {
-			const next: Record<string, { value: number; offset: number }> = {};
+			const next: Record<string, number> = {};
 			tentatives.forEach((m, i) => {
 				// Stagger phases so multiple tentatives don't move in lockstep.
-				const el = (now - t0 + i * 800) % CYCLE;
-				const offset = Math.sin(el / 520) * 1.2; // gentle ±1.2% "breathing"
-				let value = m.score;
-				if (el < SCRAMBLE) {
-					const p = el / SCRAMBLE;
-					const spread = Math.round(16 * (1 - p));
-					value = spread === 0 ? m.score : m.score + Math.floor(Math.sin(el / 45) * spread);
+				const el = (now - t0 + i * 1200) % CYCLE;
+				let score = m.score;
+				if (el >= STEADY) {
+					const t = (el - STEADY) / ACTIVE; // 0..1 across the excursion
+					// One full sine period: base → up → base → down → base.
+					score = m.score + AMPLITUDE * Math.sin(2 * Math.PI * t);
 				}
-				next[m.label] = { value, offset };
+				next[m.label] = score;
 			});
 			anim = next;
 			raf = requestAnimationFrame(frame);
