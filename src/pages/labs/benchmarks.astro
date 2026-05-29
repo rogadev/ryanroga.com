@@ -1,0 +1,95 @@
+---
+import Base from '../../layouts/Base.astro';
+import SchmeckleChart from '../../components/labs/SchmeckleChart.svelte';
+import { BENCHMARK_MODELS, PROVIDERS } from '../../data/benchmarks';
+
+const title = 'Benchmarks · Roga Digital';
+const description =
+	"Ryan Roga's personal, hands-on ratings of AI coding models — scored in schmeckles.";
+
+// The chart island only reads these fields, so pass just them — otherwise every note
+// body ships twice (once in the island's serialized hydration props, once in the
+// Notes section below).
+const chartModels = BENCHMARK_MODELS.map(({ provider, label, score, releaseDate, tentative }) => ({
+	provider,
+	label,
+	score,
+	releaseDate,
+	tentative,
+}));
+
+// Models that carry commentary, each with its notes sorted newest-first. Insertion
+// order in the data file doesn't matter — we sort by date here.
+const noted = BENCHMARK_MODELS.filter((m) => m.notes && m.notes.length > 0).map((m) => ({
+	label: m.label,
+	notes: m.notes!.toSorted((a, b) => b.date.localeCompare(a.date)),
+}));
+---
+
+<Base {title} {description} noindex>
+	<!-- Hero -->
+	<section class="border-b border-border">
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<div class="pt-20 pb-16 sm:pt-28 sm:pb-20">
+				<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+					Labs · Benchmarks
+				</p>
+				<h1 class="mt-6 max-w-3xl text-4xl font-medium tracking-tight text-balance sm:text-5xl">
+					Agentic coding, scored in schmeckles
+				</h1>
+				<p class="mt-6 max-w-2xl text-lg text-fg-muted text-pretty">
+					My own hands-on ratings of AI coding models, measured in <abbr
+						title="A unit of value of indeterminate worth."
+						class="cursor-help border-b border-dashed border-border-strong text-fg no-underline"
+						>schmeckles<span aria-hidden="true">&nbsp;◊</span></abbr
+					>. The absolute value is unknowable — read them side by side, not against a ceiling.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Chart island -->
+	<section class="mx-auto w-full max-w-page px-6 py-12 sm:px-8 sm:py-16">
+		<SchmeckleChart client:visible models={chartModels} providers={PROVIDERS} />
+	</section>
+
+	<!-- Notes -->
+	<section class="border-t border-border">
+		<div class="mx-auto w-full max-w-page px-6 py-12 sm:px-8 sm:py-16">
+			<h2 class="text-lg font-medium tracking-tight text-fg">
+				Notes <span class="text-sm font-normal text-fg-subtle">(for those who really care)</span>
+			</h2>
+			{
+				noted.length === 0 ? (
+					<p class="mt-3 max-w-2xl text-sm text-fg-muted text-pretty">
+						Nothing to explain yet. When a score needs context, it lands here.
+					</p>
+				) : (
+					<dl class="mt-4 grid gap-8">
+						{noted.map((m) => (
+							<div class="grid gap-3">
+								<dt class="font-mono text-xs text-fg">{m.label}</dt>
+								<dd class="grid gap-3">
+									{m.notes.map((n) => (
+										<div class="grid gap-1 sm:grid-cols-[6rem_1fr] sm:gap-4">
+											<time
+												datetime={n.date}
+												class="font-mono text-2xs text-fg-subtle tabular-nums"
+											>
+												{n.date}
+											</time>
+											<p class="max-w-2xl text-sm text-fg-muted text-pretty">{n.body}</p>
+										</div>
+									))}
+								</dd>
+							</div>
+						))}
+					</dl>
+				)
+			}
+			<p class="mt-8 font-mono text-2xs text-fg-subtle">
+				◊ schmeckles · scores are subjective &amp; reflect my own hands-on use.
+			</p>
+		</div>
+	</section>
+</Base>

@@ -33,3 +33,4 @@ _references
 .dolt/
 *.db
 .beads-credential-key
+.superpowers/
