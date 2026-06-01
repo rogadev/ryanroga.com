@@ -18,12 +18,15 @@ const chartModels = BENCHMARK_MODELS.map(({ provider, label, score, releaseDate,
 	tentative,
 }));
 
-// Models that carry commentary, each with its notes sorted newest-first. Insertion
-// order in the data file doesn't matter — we sort by date here.
-const noted = BENCHMARK_MODELS.filter((m) => m.notes && m.notes.length > 0).map((m) => ({
-	label: m.label,
-	notes: m.notes!.toSorted((a, b) => b.date.localeCompare(a.date)),
-}));
+// Models that carry commentary. Models are ordered by release date (newest first),
+// mirroring the chart's default "Newest" sort; within each model, notes are sorted
+// newest-first. Insertion order in the data file doesn't matter — we sort here.
+const noted = BENCHMARK_MODELS.filter((m) => m.notes && m.notes.length > 0)
+	.toSorted((a, b) => b.releaseDate.localeCompare(a.releaseDate))
+	.map((m) => ({
+		label: m.label,
+		notes: m.notes!.toSorted((a, b) => b.date.localeCompare(a.date)),
+	}));
 ---
 
 <Base {title} {description} noindex>
