@@ -1,0 +1,27 @@
+# Normalize line endings across all machines.
+#
+# We standardize on LF everywhere: in the Git blob, in the working tree, and in
+# Prettier's output (its default). Pinning it here overrides each machine's
+# `core.autocrlf` setting, so a Windows checkout no longer rewrites files to CRLF
+# and then fights the formatter — which was the source of phantom diff churn.
+* text=auto eol=lf
+
+# Windows-native scripts genuinely need CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary assets — never touch line endings.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.avif binary
+*.ico  binary
+*.woff  binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.otf binary
+*.pdf binary
