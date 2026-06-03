@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 
 const title = 'Services · Roga Digital';
 const description =
-	'What Roga Digital actually does — product strategy, systems architecture, full-stack development, AI integration, and the ongoing maintenance of the software businesses depend on.';
+	'What Roga Digital actually does — forward deployed development embedded with your team, product strategy, systems architecture, full-stack development, AI integration, and the ongoing maintenance of the software businesses depend on.';
 
 interface Service {
 	id: string;
@@ -19,8 +19,27 @@ interface Service {
 
 const services: Service[] = [
 	{
-		id: 'product',
+		id: 'forward-deployed',
 		number: '01',
+		title: 'Forward deployed development',
+		lead: "The industry calls it forward deployed engineering — I do it as a developer who builds, not just advises. I embed with the team that lives the problem, learn the work by being in it, and design the fix alongside the people who'll use it — then build it front-to-back. Discovery happens inside your real operation instead of a spec written at a distance, which is why what ships actually fits how the work gets done.",
+		deliverables: [
+			'Real time embedded with the people who do the work — on the floor, not just a kickoff call.',
+			'A solution designed with your stakeholders in their actual workflow, not reverse-engineered from a requirements doc.',
+			'The whole build, front-to-back — one set of hands from first conversation to production and beyond.',
+			'Working software in front of real users early, then refined against how the job is genuinely done.',
+		],
+		whenYouReachFor: [
+			'The problem lives inside a specific team or department and nobody has fully written it down.',
+			"Past projects missed because whoever wrote the spec wasn't in the room where the work happens.",
+			'You want one person who understands the operation and ships the software — not a translation chain between them.',
+		],
+		stack: ['Embedded discovery', 'Co-design', 'End-to-end build', 'Upstream of the spec'],
+		example: { label: 'Carevo · Logistics', href: '/work/carevo-logistics' },
+	},
+	{
+		id: 'product',
+		number: '02',
 		title: 'Product strategy & management',
 		lead: "Most software fails before the first commit. Discovery, scope shaping, and roadmapping is where I figure out what to build — and, more importantly, what not to. I'll come in early, ask uncomfortable questions, and write the brief that we both work from.",
 		deliverables: [
@@ -39,7 +58,7 @@ const services: Service[] = [
 	},
 	{
 		id: 'architecture',
-		number: '02',
+		number: '03',
 		title: 'Systems architecture',
 		lead: 'Database design, API contracts, service boundaries, identity, role-based access control, audit logging. The decisions made in the first two weeks of a project are the ones you live with for years — they should be made deliberately, not by accident.',
 		deliverables: [
@@ -58,7 +77,7 @@ const services: Service[] = [
 	},
 	{
 		id: 'fullstack',
-		number: '03',
+		number: '04',
 		title: 'Full-stack web development',
 		lead: "Production web applications, end-to-end. Design through deploy. TypeScript by default, Svelte or Astro for the front, Node or Python for the back, Postgres for state. Choices made because they earn their keep — not because they're trending.",
 		deliverables: [
@@ -77,7 +96,7 @@ const services: Service[] = [
 	},
 	{
 		id: 'internal-tools',
-		number: '04',
+		number: '05',
 		title: 'Internal tools & dashboards',
 		lead: 'The interfaces your team uses every day — operations panels, reporting dashboards, queue managers, content tooling. Fast, dense, kind to power users. Built to save time, not to look impressive in a pitch deck.',
 		deliverables: [
@@ -96,7 +115,7 @@ const services: Service[] = [
 	},
 	{
 		id: 'ai',
-		number: '05',
+		number: '06',
 		title: 'AI integration & consulting',
 		lead: "LLM features, retrieval, agents, evaluation. I'll help you figure out what AI actually changes for your product, where it earns its place, and where it doesn't. No hype, no vendor lock-in by default, no AI features for the sake of having AI features.",
 		deliverables: [
@@ -115,7 +134,7 @@ const services: Service[] = [
 	},
 	{
 		id: 'integrations',
-		number: '06',
+		number: '07',
 		title: 'Integrations & workflow automation',
 		lead: 'Third-party APIs, ETL pipelines, webhooks, scheduled jobs, queues. The plumbing between systems that keeps a business running. Less glamorous than greenfield, often higher leverage.',
 		deliverables: [
@@ -133,7 +152,7 @@ const services: Service[] = [
 	},
 	{
 		id: 'maintenance',
-		number: '07',
+		number: '08',
 		title: 'Maintenance & ongoing partnership',
 		lead: "Long-term support of software you already own — yours or someone else's. Audits, gradual rebuilds, on-call for the things that matter. Many engagements start as a project and become this.",
 		deliverables: [
@@ -151,7 +170,7 @@ const services: Service[] = [
 	},
 	{
 		id: 'advisory',
-		number: '08',
+		number: '09',
 		title: 'Technical advisory',
 		lead: "Architecture reviews, code review, hire decisions, vendor evaluations, second opinions. A pair of senior eyes when the stakes are high — and you don't need a full engagement, you need a read.",
 		deliverables: [
