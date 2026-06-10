@@ -5,7 +5,7 @@ pubDate: 2026-06-10
 heroImage: '../../assets/insights/social-fibrosis.png'
 tags: ['social-media', 'tech-policy', 'opinion']
 readingTime: '8 min read'
-draft: true
+draft: false
 ---
 
 Fibrosis is the body's repair system turning against it. An organ takes damage faster than it can heal, and instead of regenerating working cells, the body lays down scar — collagen where functional tissue used to be. The organ keeps its shape. It looks intact on a scan. But scar tissue does not do the job of the tissue it replaced, and as it accumulates, the organ quietly stiffens until one day it fails. Hepatologists stage the progression F0 through F4. Stage 4 has a name most people recognize: cirrhosis.
