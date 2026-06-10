@@ -9,7 +9,7 @@ const work = (await getCollection('work'))
 
 <Section
 	id="work"
-	eyebrow="Selected work"
+	eyebrow="Our work"
 	heading="Software that's still running."
 	dek="Each project shipped end-to-end, maintained since, and still running in production today."
 >
@@ -26,30 +26,28 @@ const work = (await getCollection('work'))
 							class="flex h-full flex-col gap-6 p-6 sm:p-8"
 							aria-label={`${w.data.client} — ${w.data.headline}`}
 						>
-							<div class="flex items-center justify-between gap-4 font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
-								<span>
-									{w.data.id} · {w.data.industry}
-								</span>
-								<span class="text-fg-subtle transition-colors group-hover:text-fg">
-									<span class="hidden sm:inline">Read case study&nbsp;</span>→
-								</span>
+							<div class="space-y-1.5 font-mono text-2xs tracking-[0.18em] uppercase">
+								<p class="text-[var(--color-accent)]">{w.data.client}</p>
+								<p class="text-fg-subtle">{w.data.industry}</p>
 							</div>
 
 							<div>
-								<p class="text-2xs font-mono tracking-[0.16em] text-[var(--color-accent)] uppercase">
-									{w.data.client}
-								</p>
-								<h3 class="mt-3 text-2xl font-medium tracking-tight text-balance text-fg sm:text-3xl">
+								<h3 class="text-2xl font-medium tracking-tight text-balance text-fg sm:text-3xl">
 									{w.data.headline}
 								</h3>
 								<p class="mt-3 max-w-xl text-sm text-fg-muted">{w.data.outcome}</p>
 							</div>
 
-							<ul class="mt-auto flex flex-wrap gap-1.5 font-mono text-2xs" role="list">
-								{w.data.tags.map((t) => (
-									<li class="rounded-sm border border-border px-2 py-0.5 text-fg-muted">{t}</li>
-								))}
-							</ul>
+							<div class="mt-auto flex flex-col gap-5">
+								<ul class="flex flex-wrap gap-1.5 font-mono text-2xs" role="list">
+									{w.data.tags.map((t) => (
+										<li class="rounded-sm border border-border px-2 py-0.5 text-fg-muted">{t}</li>
+									))}
+								</ul>
+								<span class="inline-flex items-center gap-1.5 font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase transition-colors group-hover:text-fg">
+									Read case study →
+								</span>
+							</div>
 						</a>
 					</li>
 				))
