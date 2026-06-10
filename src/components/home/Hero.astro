@@ -1,5 +1,5 @@
 ---
-import { ROLES, SITE_LOCATION } from '../../consts';
+import { SITE_LOCATION } from '../../consts';
 ---
 
 <section class="relative overflow-hidden border-b border-border">
@@ -14,32 +14,21 @@ import { ROLES, SITE_LOCATION } from '../../consts';
 					></span>
 					<span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-positive"></span>
 				</span>
-				Available for new work · {SITE_LOCATION}
+				Taking on new projects · {SITE_LOCATION}
 			</p>
 
 			<h1
 				class="mt-10 max-w-4xl text-5xl font-medium tracking-tight text-balance sm:mt-12 sm:text-6xl lg:text-7xl"
 			>
-				Software,
-				<span class="text-fg-muted">end-to-end.</span>
+				The internal tools your business runs on —
+				<span class="text-fg-muted">built, shipped, and still running.</span>
 			</h1>
 
 			<p class="mt-8 max-w-2xl text-lg text-fg-muted text-pretty sm:text-xl">
 				<span class="text-fg">Roga Digital</span> is a software studio that designs, ships, and maintains
-				the tools businesses depend on. We build the internal tools, dashboards, integrations, and AI
-				features your team actually uses, and keep them running long after launch.
+				the tools businesses depend on — dashboards, integrations, AI features, and the internal apps
+				your team uses every day.
 			</p>
-
-			<!-- Roles row -->
-			<ul class="mt-10 flex flex-wrap gap-2 text-2xs" role="list" aria-label="Disciplines">
-				{
-					ROLES.map((role) => (
-						<li class="rounded-full border border-border bg-bg-soft px-3 py-1 font-mono tracking-[0.12em] text-fg-muted uppercase">
-							{role}
-						</li>
-					))
-				}
-			</ul>
 
 			<div class="mt-10 flex flex-wrap items-center gap-3">
 				<a
@@ -68,6 +57,11 @@ import { ROLES, SITE_LOCATION } from '../../consts';
 					See selected work
 				</a>
 			</div>
+
+			<p class="mt-10 max-w-2xl text-sm text-fg-muted text-pretty">
+				In production now: a TELUS platform serving 2,500+ field technicians, and client systems
+				running continuously since 2023.
+			</p>
 		</div>
 	</div>
 </section>

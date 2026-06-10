@@ -11,10 +11,10 @@ interface Capability {
 const capabilities: Capability[] = [
 	{
 		number: '01',
-		title: 'Product strategy & management',
+		title: 'Product strategy & advisory',
 		description:
-			'Discovery, scope shaping, prioritization, and roadmaps. I figure out what to build before we build it — and what not to.',
-		tags: ['Discovery', 'Scoping', 'Roadmaps', 'User research'],
+			'Discovery, scope shaping, roadmaps, architecture reviews, second opinions. We figure out what to build before we build it — and what not to.',
+		tags: ['Discovery', 'Scoping', 'Roadmaps', 'Code review'],
 	},
 	{
 		number: '02',
@@ -27,43 +27,29 @@ const capabilities: Capability[] = [
 		number: '03',
 		title: 'Full-stack web development',
 		description:
-			'Production web applications — front to back, design to deploy. TypeScript, Svelte/Astro, Node, Python where it earns it.',
-		tags: ['TypeScript', 'Svelte · Astro', 'Node · Python', 'Vercel · Railway'],
+			'Production web apps, internal tools, and dashboards — front to back, design to deploy. Fast, dense, and kind to power users.',
+		tags: ['TypeScript', 'Svelte · Astro', 'Node · Python', 'Operational UI'],
 	},
 	{
 		number: '04',
-		title: 'Internal tools & dashboards',
-		description:
-			'The interfaces your team uses every day — fast, dense, kind to power users. Built to actually save time, not just look the part.',
-		tags: ['Operational UI', 'Reporting', 'Workflow tooling'],
-	},
-	{
-		number: '05',
 		title: 'AI integration & consulting',
 		description:
 			"LLM features, retrieval, agents, and pragmatic automation. Honest assessment of what AI changes and what it doesn't.",
 		tags: ['LLMs', 'RAG', 'Agents', 'Eval'],
 	},
 	{
-		number: '06',
+		number: '05',
 		title: 'Integrations & workflow automation',
 		description:
 			'Third-party APIs, ETL pipelines, webhooks, scheduled jobs. The plumbing that keeps your business systems in sync.',
 		tags: ['REST · Webhooks', 'Stripe · QuickBooks', 'ETL', 'Background jobs'],
 	},
 	{
-		number: '07',
+		number: '06',
 		title: 'Maintenance & ongoing partnership',
 		description:
 			'Long-term support of software you already own. Audits, gradual rebuilds, on-call for the things that matter.',
 		tags: ['Audits', 'Rebuilds', 'On-call', 'Documentation'],
-	},
-	{
-		number: '08',
-		title: 'Technical advisory',
-		description:
-			'Architecture reviews, hire decisions, code review, second opinions. A pair of senior eyes when the stakes are high.',
-		tags: ['Code review', 'Architecture review', 'Hiring · Vendors'],
 	},
 ];
 ---
@@ -76,7 +62,7 @@ const capabilities: Capability[] = [
 >
 	<div class="mx-auto w-full max-w-page">
 		<ul
-			class="grid grid-cols-1 gap-px overflow-hidden border-y border-border bg-border sm:grid-cols-2 lg:grid-cols-4"
+			class="grid grid-cols-1 gap-px overflow-hidden border-y border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
 			role="list"
 		>
 			{
