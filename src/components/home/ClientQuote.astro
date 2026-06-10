@@ -1,0 +1,56 @@
+---
+/**
+ * Homepage social proof — a single named client quote.
+ *
+ * Wired but not live yet: waiting on a real, attributable quote from a TELUS
+ * contact (task #2). Never ship placeholder or invented testimonial copy.
+ *
+ * To launch:
+ *   1. Replace the placeholder text/name/role below with the real quote.
+ *   2. Drop the headshot in src/assets/quotes/ (square, ≥ 192px), then
+ *      uncomment the Image import and the <Image> block in the figcaption
+ *      and delete the initials fallback.
+ *   3. Uncomment the import + <ClientQuote /> in src/pages/index.astro.
+ */
+// import { Image } from 'astro:assets';
+// import portrait from '../../assets/quotes/firstname-lastname.jpg';
+
+const quote = {
+	text: 'PLACEHOLDER — one or two sentences in the client’s own words about working with Roga Digital. Specific beats glowing: what was broken, what shipped, what it’s like day to day.',
+	name: 'Firstname Lastname',
+	role: 'Title · TELUS',
+	initials: 'FL',
+};
+---
+
+<section class="border-b border-border bg-bg-soft">
+	<div class="mx-auto w-full max-w-page px-6 py-20 sm:px-8 sm:py-28">
+		<figure class="mx-auto max-w-3xl">
+			<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+				From the people who use it
+			</p>
+			<blockquote class="mt-6 text-2xl font-medium tracking-tight text-balance text-fg sm:text-3xl">
+				“{quote.text}”
+			</blockquote>
+			<figcaption class="mt-8 flex items-center gap-4">
+				{/* <Image
+					src={portrait}
+					alt=""
+					width={96}
+					height={96}
+					class="h-12 w-12 rounded-full border border-border object-cover"
+				/> */}
+				<span
+					class="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-bg font-mono text-2xs tracking-wide text-fg-subtle"
+					aria-hidden="true"
+				>
+					{quote.initials}
+				</span>
+				<span>
+					<span class="block text-sm font-medium text-fg">{quote.name}</span>
+					<span class="block text-sm text-fg-muted">{quote.role}</span>
+				</span>
+			</figcaption>
+		</figure>
+	</div>
+</section>
