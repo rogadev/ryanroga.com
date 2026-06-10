@@ -2,6 +2,7 @@
 title: "Social fibrosis: a diagnosis for what social media did to us"
 description: "Two decades of engagement advertising have replaced society's connective tissue with scar tissue. A diagnosis, the evidence, and the first real treatments."
 pubDate: 2026-06-10
+heroImage: '../../assets/insights/social-fibrosis.png'
 tags: ['social-media', 'tech-policy', 'opinion']
 readingTime: '8 min read'
 draft: true
