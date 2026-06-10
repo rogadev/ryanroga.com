@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 
 const title = 'Insights · Roga Digital';
 const description =
-	'Updates from Roga Digital — project write-ups, opinions on tooling, industry shifts, and what AI is changing about how business software gets built.';
+	'Writing from Roga Digital — opinions on tooling and technology, takes on where AI is headed, industry shifts, and notes from the work.';
 
 const posts = (await getCollection('insights', ({ data }) => !data.draft)).toSorted(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -38,12 +38,13 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', {
 				<div class="lg:col-span-8">
 					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Insights</p>
 					<h1 class="mt-6 text-4xl font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl">
-						Notes from
-						<span class="text-fg-muted">the work.</span>
+						Professional
+						<span class="text-fg-muted">notes, opinions, and forecasts.</span>
 					</h1>
 					<p class="mt-6 max-w-2xl text-lg text-fg-muted text-pretty sm:text-xl">
-						Project write-ups, opinions on tooling, industry shifts, and pragmatic takes on what AI
-						is changing about how business software gets built. Updates from Roga Digital, in full.
+						Opinions on tooling and technology, honest takes on where AI is actually headed, and
+						notes from the work itself — written for people who build and run software, not the hype
+						cycle. Everything from Roga Digital, in one place.
 					</p>
 				</div>
 				<div class="lg:col-span-4">
@@ -182,9 +183,8 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', {
 							The first post lands soon.
 						</h2>
 						<p class="mt-4 text-fg-muted text-pretty">
-							Roga Digital just relaunched. The writing follows. Expect project write-ups, opinions
-							on tooling, and pragmatic takes on what AI is changing about how business software
-							gets built.
+							Roga Digital just relaunched. The writing follows — opinions on tooling and
+							technology, takes on where AI is headed, and notes from the work itself.
 						</p>
 						<div class="mt-8">
 							<a
