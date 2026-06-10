@@ -93,10 +93,16 @@ export const BENCHMARK_MODELS: ModelScore[] = [
 	},
 	{
 		provider: 'anthropic',
-		label: 'Opus 4.8',
+		label: 'Fable 5',
 		score: 99,
-		releaseDate: '2026-05-28',
+		releaseDate: '2026-06-10',
 		tentative: true,
+	},
+	{
+		provider: 'anthropic',
+		label: 'Opus 4.8',
+		score: 98,
+		releaseDate: '2026-05-28',
 		notes: [
 			{
 				date: '2026-05-29',
