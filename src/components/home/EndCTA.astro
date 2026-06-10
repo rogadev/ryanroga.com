@@ -1,5 +1,5 @@
 ---
-
+import { BOOKING_URL } from '../../consts';
 ---
 
 <section class="border-t border-border bg-bg-soft">
@@ -10,17 +10,19 @@
 					Let's build something
 				</p>
 				<h2 class="mt-4 text-4xl font-medium tracking-tight text-balance sm:text-5xl">
-					Got a thing your team needs to be running on?
+					Got a tool your team needs that doesn't exist yet?
 				</h2>
 				<p class="mt-5 max-w-2xl text-lg text-fg-muted text-pretty">
 					Internal tool, dashboard, integration, AI feature — or you're not sure yet what shape the
-					answer takes. Either way, the first call is a free 30 minutes to figure out whether I'm
+					answer takes. Either way, the first call is a free 30 minutes to figure out whether we're
 					the right fit.
 				</p>
 			</div>
 			<div class="flex flex-wrap items-center gap-3 lg:col-span-4 lg:justify-end">
 				<a
-					href="/contact"
+					href={BOOKING_URL}
+					target="_blank"
+					rel="noopener noreferrer"
 					class="inline-flex items-center gap-2 rounded-md bg-fg px-5 py-3 text-sm font-medium text-bg transition-opacity hover:opacity-90"
 				>
 					Book a call
