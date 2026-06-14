@@ -1,0 +1,76 @@
+---
+import Base from '../../layouts/Base.astro';
+import { LAB_APPS } from '../../data/apps';
+
+const title = 'Apps · Labs · Roga Digital';
+const description =
+	'A running list of apps and tools Ryan Roga has shipped — browser utilities, internal platforms, and a few full products.';
+
+// Visible domain, derived from the canonical URL so the data file stays single-source.
+const domain = (url: string) => url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+---
+
+<Base {title} {description} noindex>
+	<!-- Hero -->
+	<section class="border-b border-border">
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<div class="pt-20 pb-16 sm:pt-28 sm:pb-20">
+				<a
+					href="/labs"
+					class="inline-flex items-center gap-1.5 font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase transition-colors hover:text-fg"
+				>
+					<span aria-hidden="true">←</span> Labs
+				</a>
+				<h1 class="mt-6 max-w-3xl text-4xl font-medium tracking-tight text-balance sm:text-5xl">
+					Things I’ve built
+				</h1>
+				<p class="mt-6 max-w-2xl text-lg text-fg-muted text-pretty">
+					Apps and tools I’ve shipped outside client work — most are free, browser-based, and store
+					nothing. A couple are full products. This list grows as I build.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- App grid -->
+	<section class="mx-auto w-full max-w-page px-6 py-12 sm:px-8 sm:py-16">
+		<ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+			{
+				LAB_APPS.map((app) => (
+					<li>
+						<a
+							href={app.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group flex h-full min-h-48 flex-col rounded-lg border border-border bg-bg-soft p-6 transition-colors hover:border-border-strong hover:bg-bg-elevated"
+						>
+							<div class="flex items-center justify-between gap-4">
+								{app.tag ? (
+									<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+										{app.tag}
+									</span>
+								) : (
+									<span />
+								)}
+								<span
+									class="text-fg-subtle transition-colors group-hover:text-fg"
+									aria-hidden="true"
+								>
+									↗
+								</span>
+							</div>
+							<h2 class="mt-4 text-xl font-medium tracking-tight text-fg">
+								{app.name}
+								<span class="sr-only"> (opens in a new tab)</span>
+							</h2>
+							<p class="mt-2 text-sm text-fg-muted text-pretty">{app.description}</p>
+							<span class="mt-auto truncate pt-4 font-mono text-2xs text-fg-subtle group-hover:text-fg-muted">
+								{domain(app.url)}
+							</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</Base>

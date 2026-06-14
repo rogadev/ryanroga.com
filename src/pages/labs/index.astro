@@ -1,0 +1,75 @@
+---
+import Base from '../../layouts/Base.astro';
+import { LAB_APPS } from '../../data/apps';
+
+const title = 'Labs · Roga Digital';
+const description =
+	"Experiments, tools, and apps Ryan Roga has built outside client work — plus hands-on ratings of AI coding models.";
+
+// Each section under /labs. Keep this list in sync as the section grows.
+const sections = [
+	{
+		href: '/labs/apps',
+		eyebrow: 'Apps',
+		title: 'Things I’ve built',
+		blurb: 'A running list of apps and tools I’ve shipped — most free, a couple full products.',
+		meta: `${LAB_APPS.length} live`,
+	},
+	{
+		href: '/labs/benchmarks',
+		eyebrow: 'Benchmarks',
+		title: 'Agentic coding, in schmeckles',
+		blurb: 'My own hands-on ratings of AI coding models, scored on daily use.',
+		meta: 'Updated often',
+	},
+];
+---
+
+<Base {title} {description} noindex>
+	<!-- Hero -->
+	<section class="border-b border-border">
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<div class="pt-20 pb-16 sm:pt-28 sm:pb-20">
+				<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Labs</p>
+				<h1 class="mt-6 max-w-3xl text-4xl font-medium tracking-tight text-balance sm:text-5xl">
+					Experiments, tools, and side builds
+				</h1>
+				<p class="mt-6 max-w-2xl text-lg text-fg-muted text-pretty">
+					The stuff I make outside client work — small browser utilities, a few full products, and
+					ongoing notes on the AI models I build with.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sections -->
+	<section class="mx-auto w-full max-w-page px-6 py-12 sm:px-8 sm:py-16">
+		<ul class="grid gap-4 sm:grid-cols-2">
+			{
+				sections.map((s) => (
+					<li>
+						<a
+							href={s.href}
+							class="group flex h-full min-h-44 flex-col rounded-lg border border-border bg-bg-soft p-6 transition-colors hover:border-border-strong hover:bg-bg-elevated"
+						>
+							<div class="flex items-center justify-between">
+								<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+									{s.eyebrow}
+								</span>
+								<span
+									class="text-fg-subtle transition-colors group-hover:text-fg"
+									aria-hidden="true"
+								>
+									→
+								</span>
+							</div>
+							<h2 class="mt-4 text-xl font-medium tracking-tight text-fg">{s.title}</h2>
+							<p class="mt-2 text-sm text-fg-muted text-pretty">{s.blurb}</p>
+							<span class="mt-auto pt-4 font-mono text-2xs text-fg-subtle">{s.meta}</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</Base>
