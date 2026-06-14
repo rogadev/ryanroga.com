@@ -10,13 +10,16 @@ const description =
 // The chart island only reads these fields, so pass just them — otherwise every note
 // body ships twice (once in the island's serialized hydration props, once in the
 // Notes section below).
-const chartModels = BENCHMARK_MODELS.map(({ provider, label, score, releaseDate, tentative }) => ({
-	provider,
-	label,
-	score,
-	releaseDate,
-	tentative,
-}));
+const chartModels = BENCHMARK_MODELS.map(
+	({ provider, label, score, releaseDate, tentative, suspended }) => ({
+		provider,
+		label,
+		score,
+		releaseDate,
+		tentative,
+		suspended,
+	}),
+);
 
 // Models that carry commentary. Models are ordered by release date (newest first),
 // mirroring the chart's default "Newest" sort; within each model, notes are sorted

@@ -20,10 +20,14 @@
 			<div
 				class="dot"
 				class:tent={m.tentative}
+				class:susp={m.suspended}
 				class:below={i % 2 === 1}
 				style="left: {leftPct(m.score)}%; --c: {colorFor(m.provider)};"
 			>
-				<span class="lbl">{m.label} <span class="v">{m.score}</span></span>
+				<span class="lbl"
+					>{m.label} <span class="v">{m.score}</span>{#if m.suspended}
+						<span class="tag">suspended</span>{/if}</span
+				>
 				<span class="pt"></span>
 			</div>
 		{/each}
@@ -67,6 +71,19 @@
 	}
 	.dot.tent .pt {
 		background: var(--color-bg);
+	}
+	/* Pulled from service: neutral point + ring, muted label — present, not reachable. */
+	.dot.susp .pt {
+		background: color-mix(in oklab, var(--color-fg) 22%, var(--color-bg));
+		box-shadow: 0 0 0 1px var(--color-border-strong);
+	}
+	.dot.susp .lbl {
+		color: var(--color-fg-muted);
+	}
+	.dot .tag {
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--color-fg-subtle);
 	}
 	.dot .lbl {
 		position: absolute;

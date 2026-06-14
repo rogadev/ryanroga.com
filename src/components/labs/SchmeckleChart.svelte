@@ -118,7 +118,13 @@
 					<td>{m.label}</td>
 					<td>{providers[m.provider].label}</td>
 					<td>{m.score}</td>
-					<td>{m.tentative ? 'Tentative — score still forming' : 'Settled'}</td>
+					<td>
+						{m.suspended
+							? 'Suspended — pulled from service'
+							: m.tentative
+								? 'Tentative — score still forming'
+								: 'Settled'}
+					</td>
 				</tr>
 			{/each}
 		</tbody>
@@ -140,6 +146,7 @@
 		<span class="item"><span class="dia">◊</span> = schmeckles</span>
 		<span class="item"><span class="sw solid"></span> settled score</span>
 		<span class="item"><span class="sw striped"></span> tentative — still forming an opinion</span>
+		<span class="item"><span class="sw suspended"></span> suspended — pulled from service</span>
 		{#if multiProvider}
 			{#each providerKeys.filter((p) => selected.has(p)) as p (p)}
 				<span class="item"
@@ -268,5 +275,9 @@
 			var(--color-accent) 0 5px,
 			color-mix(in oklab, var(--color-accent) 70%, #000) 5px 10px
 		);
+	}
+	.sw.suspended {
+		background: color-mix(in oklab, var(--color-fg) 22%, var(--color-bg));
+		border: 1px solid var(--color-border-strong);
 	}
 </style>
