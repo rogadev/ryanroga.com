@@ -107,11 +107,15 @@
 <div class="chart" aria-hidden="true">
 	{#each models as m (m.label)}
 		<div class="row">
-			<span class="label">{m.label}</span>
+			<div class="label">
+				<span class="name">{m.label}</span>
+				{#if m.suspended}<span class="tag">suspended</span>{/if}
+			</div>
 			<div class="track">
 				<div
 					class="fill"
 					class:tentative={m.tentative}
+					class:suspended={m.suspended}
 					style="width: {displayWidth(m)}%; --c: {colorFor(m.provider)};"
 				>
 					<span class="val">{displayValue(m)}&nbsp;◊</span>
@@ -134,9 +138,18 @@
 		gap: 0.875rem;
 	}
 	.label {
+		display: flex;
+		flex-direction: column;
+		gap: 0.1875rem;
 		font-family: var(--font-mono);
 		font-size: var(--text-xs);
 		color: var(--color-fg);
+	}
+	.label .tag {
+		font-size: var(--text-2xs);
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--color-fg-subtle);
 	}
 	.track {
 		position: relative;
@@ -171,6 +184,14 @@
 			var(--c) 0 9px,
 			color-mix(in oklab, var(--c) 70%, #000) 9px 18px
 		);
+	}
+	/* Pulled from service: the score stands, but the bar reads inert — a neutral
+	   fill instead of the accent, with the value in plain fg for contrast. */
+	.fill.suspended {
+		background: color-mix(in oklab, var(--color-fg) 22%, var(--color-bg));
+	}
+	.fill.suspended .val {
+		color: var(--color-fg);
 	}
 	.val {
 		font-family: var(--font-mono);

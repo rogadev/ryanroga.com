@@ -28,6 +28,12 @@ export interface ModelScore {
 	releaseDate: string;
 	/** Score still forming — rendered with stripes + the tentative animation. */
 	tentative?: boolean;
+	/**
+	 * Model has been pulled from service (e.g. a vendor or government takedown). The
+	 * score still stands as a record of how it performed, but the bar/dot renders
+	 * muted with a "suspended" tag — present on the board, no longer reachable.
+	 */
+	suspended?: boolean;
 	/** Dated commentary; surfaces in the page's Notes section, newest-first. */
 	notes?: ModelNote[];
 }
@@ -94,9 +100,15 @@ export const BENCHMARK_MODELS: ModelScore[] = [
 	{
 		provider: 'anthropic',
 		label: 'Fable 5',
-		score: 99,
+		score: 105,
 		releaseDate: '2026-06-10',
-		tentative: true,
+		suspended: true,
+		notes: [
+			{
+				date: '2026-06-13',
+				body: 'Fable 5 was the best model I’d used — it tops this board on quality alone — though it ran more cautious than 4.8, declining work I expected it to take on. Three days after launch the US government suspended it on national-security grounds: a policy and access-control call, not a verdict on the model as a coding tool. I’m recording the score as I found it, before access was pulled.',
+			},
+		],
 	},
 	{
 		provider: 'anthropic',
