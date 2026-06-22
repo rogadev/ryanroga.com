@@ -2,7 +2,7 @@ import tseslint from 'typescript-eslint';
 import astro from 'eslint-plugin-astro';
 import svelte from 'eslint-plugin-svelte';
 import svelteParser from 'svelte-eslint-parser';
-import astroParser from 'astro-eslint-parser';
+import * as astroParser from 'astro-eslint-parser';
 
 export default [
 	{
