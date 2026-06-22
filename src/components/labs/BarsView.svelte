@@ -108,7 +108,7 @@
 	{#each models as m (m.label)}
 		<div class="row">
 			<div class="label">
-				<span class="name">{m.label}</span>
+				<span class="name" class:susp={m.suspended}>{m.label}</span>
 				{#if m.suspended}<span class="tag">suspended</span>{/if}
 			</div>
 			<div class="track">
@@ -144,6 +144,11 @@
 		font-family: var(--font-mono);
 		font-size: var(--text-xs);
 		color: var(--color-fg);
+	}
+	.label .name.susp {
+		text-decoration: line-through;
+		text-decoration-thickness: 1px;
+		color: var(--color-fg-muted);
 	}
 	.label .tag {
 		font-size: var(--text-2xs);

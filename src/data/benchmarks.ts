@@ -108,6 +108,10 @@ export const BENCHMARK_MODELS: ModelScore[] = [
 				date: '2026-06-13',
 				body: 'Fable 5 was the best model I’d used — it tops this board on quality alone — though it ran more cautious than 4.8, declining work I expected it to take on. Three days after launch the US government suspended it on national-security grounds: a policy and access-control call, not a verdict on the model as a coding tool. I’m recording the score as I found it, before access was pulled.',
 			},
+			{
+				date: '2026-06-22',
+				body: 'Two weeks on, the suspension still reads to me as a policy and access call rather than a judgment on Fable 5 as a coding tool. Pulling a model three days after launch is the part that doesn’t sit right: anything this new ships with jailbreaks still waiting to be found, and the first few weeks in the open are exactly when a vendor finds and patches them. Fable 5 never got that window.',
+			},
 		],
 	},
 	{

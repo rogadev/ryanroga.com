@@ -24,6 +24,10 @@
 	const selected = new SvelteSet<Provider>(availableKeys);
 	let sort = $state<'score' | 'newest'>('newest');
 	let view = $state<'bars' | 'dots'>('bars');
+	// Suspended models stay on the board by default (the score is still a record),
+	// but they can be filtered out. The toggle only appears when there's one to hide.
+	let showSuspended = $state(true);
+	const hasSuspended = $derived(models.some((m) => m.suspended));
 
 	function toggleProvider(p: Provider) {
 		if (!providers[p].available) return;
@@ -33,7 +37,7 @@
 
 	const visible = $derived(
 		models
-			.filter((m) => selected.has(m.provider))
+			.filter((m) => selected.has(m.provider) && (showSuspended || !m.suspended))
 			.toSorted((a, b) =>
 				sort === 'score' ? b.score - a.score : b.releaseDate.localeCompare(a.releaseDate),
 			),
@@ -68,6 +72,21 @@
 				</button>
 			{/each}
 		</div>
+
+		{#if hasSuspended}
+			<div class="group" role="group" aria-label="Filter by status">
+				<span class="glabel">Status</span>
+				<button
+					type="button"
+					class="chip"
+					class:on={showSuspended}
+					aria-pressed={showSuspended}
+					onclick={() => (showSuspended = !showSuspended)}
+				>
+					Suspended
+				</button>
+			</div>
+		{/if}
 
 		<div class="group" role="group" aria-label="Sort order">
 			<span class="glabel">Sort</span>
