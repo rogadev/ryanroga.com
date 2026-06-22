@@ -11,7 +11,7 @@ const pages: Record<string, OgConfig> = {
 	about: {
 		eyebrow: 'About',
 		title: 'A studio for the software businesses run on.',
-		footnote: 'Run by Ryan Roga · BC, Canada',
+		footnote: 'Vancouver Island, BC, Canada',
 	},
 	contact: {
 		eyebrow: 'Contact',
@@ -20,7 +20,7 @@ const pages: Record<string, OgConfig> = {
 	},
 	services: {
 		eyebrow: 'Services',
-		title: 'What I work on, in detail.',
+		title: 'What we work on, in detail.',
 		footnote: 'Product · Architecture · Code · AI · Ops',
 	},
 	resume: {
