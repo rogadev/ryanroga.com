@@ -25,7 +25,7 @@
 				style="left: {leftPct(m.score)}%; --c: {colorFor(m.provider)};"
 			>
 				<span class="lbl"
-					>{m.label} <span class="v">{m.score}</span>{#if m.suspended}
+					><span class="nm">{m.label}</span> <span class="v">{m.score}</span>{#if m.suspended}
 						<span class="tag">suspended</span>{/if}</span
 				>
 				<span class="pt"></span>
@@ -79,6 +79,10 @@
 	}
 	.dot.susp .lbl {
 		color: var(--color-fg-muted);
+	}
+	.dot.susp .nm {
+		text-decoration: line-through;
+		text-decoration-thickness: 1px;
 	}
 	.dot .tag {
 		text-transform: uppercase;
