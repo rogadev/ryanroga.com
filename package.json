@@ -55,7 +55,7 @@
 		"@tailwindcss/vite": "^4.3.1",
 		"astro": "^6.4.6",
 		"satori": "^0.26.0",
-		"sharp": "^0.34.5",
+		"sharp": "^0.35.2",
 		"svelte": "^5.56.3",
 		"tailwindcss": "^4.3.1",
 		"typescript": "^6.0.3"
