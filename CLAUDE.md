@@ -4,19 +4,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-Personal portfolio / business website for Ryan Roga (roga.dev). The stack pivoted from SvelteKit to **Astro 7 + Svelte 5 islands** (originally Astro 6, upgraded to 7 / Vite 8 in June 2026) (`package.json` 2.0.0 marks the cutover). The previous SvelteKit build is preserved read-only at `_references/old-svelte-site/` for content lift only — never edit it. The redesign is mid-flight; design principles and the phased migration plan live in `docs/BRIEF.md` and `docs/PLAN.md`. Read both before substantive UI or content changes.
+Personal portfolio / business website for Ryan Roga (roga.dev). The stack pivoted from SvelteKit to **Astro 7 + Svelte 5 islands** (`package.json` 2.0.0 marks the May 2026 cutover; upgraded from Astro 6 to 7 / Vite 8 in June 2026). The previous SvelteKit build is preserved read-only at `_references/old-svelte-site/` for content lift only — never edit it. The redesign is mid-flight; design principles and the phased migration plan live in `docs/BRIEF.md` and `docs/PLAN.md`. Read both before substantive UI or content changes.
 
 Static-only output, deployed on Vercel.
 
 ## Commands
 
-- **Package manager**: pnpm (required), Node ≥ 22.12.
+- **Package manager**: pnpm, pinned to `pnpm@11.9.0` (with integrity hash) via the `packageManager` field; Node ≥ 24.
 - `pnpm dev` — Astro dev server at localhost:4321.
 - `pnpm build` — static build to `dist/`.
 - `pnpm preview` — preview the production build.
 - `pnpm check` — `astro check` (TypeScript + content schema validation).
+- `pnpm ready` — the pre-commit gate: format → lint (`oxlint` + `eslint`) → `astro check`. Run before committing.
 
-If `pnpm install` aborts with `ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`, prefix with `CI=true`. `sharp` and `esbuild` are allowlisted in `package.json` under `pnpm.onlyBuiltDependencies` so their post-install scripts run.
+**pnpm config lives in `pnpm-workspace.yaml`, not `package.json`.** pnpm 11 ignores the `package.json` `pnpm` field, so settings moved to `pnpm-workspace.yaml`: `allowBuilds` allowlists `sharp`/`esbuild` post-install scripts, and `overrides` pins transitive deps to patched versions for security advisories (`pnpm audit` must stay at 0). Editing overrides means editing that file, then `pnpm install`. If `pnpm install` aborts with `ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`, prefix with `CI=true`.
+
+## Deployment
+
+Static output on Vercel — Vercel serves `dist/` from its CDN; no adapter. **The Vercel project sets `ENABLE_EXPERIMENTAL_COREPACK=1`** (all environments) so the build provisions the pinned `pnpm@11.9.0` via Corepack and can parse `pnpm-workspace.yaml`. Without it, Vercel falls back to pnpm 9, which rejects the settings-only workspace file (`packages field missing or empty`) and the build fails. `vercel.json` therefore uses plain `pnpm install` / `pnpm build` (do **not** swap in `npx pnpm@…` — that loses Corepack's integrity check).
 
 ## Architecture
 
@@ -28,8 +33,8 @@ If `pnpm install` aborts with `ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`, pref
 
 ## Page composition
 
-- **Pages** — `src/pages/*.astro` with file-based routing (`index.astro`, `about.astro`, `blog/[...slug].astro`, `rss.xml.js`, etc.).
-- **Layouts** — `src/layouts/`, currently `BlogPost.astro`. A shared `Base.astro` will land in Phase 1.
+- **Pages** — `src/pages/*.astro` with file-based routing: `index`, `about`, `contact`, `services`, `resume`, `404`, `insights/[...slug]`, `work/[...slug]`, `labs/`, plus build-time endpoints `rss.xml.js` and `og/**/*.png.ts` (static OG images via Satori — they run at build, not as runtime APIs). `/blog` redirects to `/insights` (`astro.config.mjs`).
+- **Layouts** — `src/layouts/`: `Base.astro` (shared shell), `CaseStudy.astro` (work entries), `Insights.astro` (articles).
 - **Components** — `src/components/`. `.astro` for static, `.svelte` only when interactivity is real.
 - **Adding a Svelte island** — import the `.svelte` file inside an `.astro` page and add a client directive (`client:load`, `client:idle`, `client:visible`). Without a directive, Svelte renders as static HTML — fine if you don't need hydration.
 
