@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-Personal portfolio / business website for Ryan Roga (roga.dev). The stack pivoted from SvelteKit to **Astro 6 + Svelte 5 islands** in May 2026 (`package.json` 2.0.0 marks the cutover). The previous SvelteKit build is preserved read-only at `_references/old-svelte-site/` for content lift only — never edit it. The redesign is mid-flight; design principles and the phased migration plan live in `docs/BRIEF.md` and `docs/PLAN.md`. Read both before substantive UI or content changes.
+Personal portfolio / business website for Ryan Roga (roga.dev). The stack pivoted from SvelteKit to **Astro 7 + Svelte 5 islands** (originally Astro 6, upgraded to 7 / Vite 8 in June 2026) (`package.json` 2.0.0 marks the cutover). The previous SvelteKit build is preserved read-only at `_references/old-svelte-site/` for content lift only — never edit it. The redesign is mid-flight; design principles and the phased migration plan live in `docs/BRIEF.md` and `docs/PLAN.md`. Read both before substantive UI or content changes.
 
 Static-only output, deployed on Vercel.
 
@@ -20,7 +20,7 @@ If `pnpm install` aborts with `ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`, pref
 
 ## Architecture
 
-- **Framework** — Astro 6 (`astro.config.mjs`), static output, no SSR adapter. Vercel auto-detects `dist/`. If edge image optimization or ISR is ever needed, add `@astrojs/vercel`.
+- **Framework** — Astro 7 (`astro.config.mjs`), static output, no SSR adapter. Rust compiler + Vite 8/Rolldown + Sätteri markdown are all default-on; the project uses no custom remark/rehype, SSR, `astro:db`, or transitions internals, so those defaults apply cleanly. Vercel auto-detects `dist/`. If edge image optimization or ISR is ever needed, add `@astrojs/vercel`.
 - **Interactivity** — Svelte 5 islands via `@astrojs/svelte`. `svelte.config.js` uses `vitePreprocess`. Default to `.astro` components; reach for `.svelte` only when state, events, or browser APIs are actually required.
 - **Styling** — Tailwind CSS v4 via `@tailwindcss/vite`. **No `@astrojs/tailwind`, no `tailwind.config.js`, no PostCSS config** — design tokens live in `src/styles/global.css` using the v4 `@theme` directive. Stylesheet is imported once in `src/components/BaseHead.astro`.
 - **Content** — Astro content collections (`src/content.config.ts`). Prefer MDX for posts that embed components; plain `.md` is fine otherwise. Site-wide constants (title, tagline, description, social, contact, roles) live in `src/consts.ts` — import from there rather than hard-coding.
