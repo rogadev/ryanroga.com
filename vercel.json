@@ -1,9 +1,9 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
 	"framework": "astro",
-	"buildCommand": "npx --yes pnpm@11.9.0 run build",
+	"buildCommand": "pnpm build",
 	"outputDirectory": "dist",
-	"installCommand": "npx --yes pnpm@11.9.0 install --frozen-lockfile",
+	"installCommand": "pnpm install --frozen-lockfile",
 	"redirects": [
 		{
 			"source": "/work/techcentral-telus",
