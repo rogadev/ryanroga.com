@@ -65,9 +65,7 @@ export const PROVIDERS: Record<Provider, { label: string; available: boolean }> 
 	google: { label: 'Google', available: false },
 };
 
-export const BENCHMARK_MODELS: ModelScore[] = [
-	/* seeded below */
-];
+export const BENCHMARK_MODELS: ModelScore[] = [/* seeded below */];
 ```
 
 A provider's `available: false` renders its filter chip disabled ("soon"). Flipping
