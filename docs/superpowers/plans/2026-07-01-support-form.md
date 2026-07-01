@@ -170,9 +170,7 @@ export interface SupportSubmission {
 	token: string;
 }
 
-export type ValidationResult =
-	| { ok: true; data: SupportSubmission }
-	| { ok: false; error: string };
+export type ValidationResult = { ok: true; data: SupportSubmission } | { ok: false; error: string };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PRODUCT_SLUGS = new Set<string>(SUPPORT_PRODUCTS.map((p) => p.slug));
@@ -217,8 +215,7 @@ export function buildEmail(
 	data: SupportSubmission,
 	submittedAt: string,
 ): { subject: string; text: string } {
-	const label =
-		SUPPORT_PRODUCTS.find((p) => p.slug === data.product)?.label ?? data.product;
+	const label = SUPPORT_PRODUCTS.find((p) => p.slug === data.product)?.label ?? data.product;
 	return {
 		subject: `[Support] ${label}: ${data.name}`,
 		text: [
@@ -304,18 +301,15 @@ export async function POST(request: Request): Promise<Response> {
 	}
 
 	const remoteip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
-	const verifyRes = await fetch(
-		'https://challenges.cloudflare.com/turnstile/v0/siteverify',
-		{
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({
-				secret,
-				response: data.token,
-				...(remoteip ? { remoteip } : {}),
-			}),
-		},
-	);
+	const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({
+			secret,
+			response: data.token,
+			...(remoteip ? { remoteip } : {}),
+		}),
+	});
 	const verdict = (await verifyRes.json()) as { success?: boolean };
 	if (!verdict.success) {
 		return json(400, { error: 'Verification failed — please try again.' });
@@ -475,10 +469,7 @@ Structure order per CLAUDE.md: imports → state → derived → effects → fun
 </script>
 
 {#if status === 'success'}
-	<div
-		class="rounded-lg border border-border bg-bg-soft p-8 sm:p-10"
-		role="status"
-	>
+	<div class="rounded-lg border border-border bg-bg-soft p-8 sm:p-10" role="status">
 		<p class="font-mono text-2xs tracking-[0.18em] text-[var(--color-accent)] uppercase">
 			Message sent
 		</p>
@@ -540,9 +531,7 @@ Structure order per CLAUDE.md: imports → state → derived → effects → fun
 		</div>
 
 		<div class="flex flex-col gap-2">
-			<label for="support-message" class="text-sm font-medium text-fg">
-				How can I help?
-			</label>
+			<label for="support-message" class="text-sm font-medium text-fg"> How can I help? </label>
 			<textarea
 				id="support-message"
 				name="message"
@@ -550,8 +539,7 @@ Structure order per CLAUDE.md: imports → state → derived → effects → fun
 				maxlength="5000"
 				rows="6"
 				bind:value={message}
-				class="rounded-md border border-border bg-bg px-3 py-2.5 text-fg"
-			></textarea>
+				class="rounded-md border border-border bg-bg px-3 py-2.5 text-fg"></textarea>
 		</div>
 
 		<!-- Honeypot: real users never see or reach this field. -->
@@ -635,8 +623,8 @@ const description =
 					<span class="text-fg-muted">a product?</span>
 				</h1>
 				<p class="mt-6 max-w-2xl text-lg text-fg-muted text-pretty sm:text-xl">
-					Tell me what's going wrong — or what you'd like to see — and I'll get back to you
-					by email, usually within two business days.
+					Tell me what's going wrong — or what you'd like to see — and I'll get back to you by
+					email, usually within two business days.
 				</p>
 			</div>
 		</div>
@@ -648,8 +636,8 @@ const description =
 			<div class="mx-auto max-w-2xl">
 				<SupportForm client:load />
 				<p class="mt-6 text-sm text-fg-subtle text-pretty">
-					This form is protected by Cloudflare Turnstile. Your details are used only to
-					reply to your message — see the
+					This form is protected by Cloudflare Turnstile. Your details are used only to reply to
+					your message — see the
 					<a href="/privacy" class="underline-offset-4 hover:underline text-fg-muted">
 						privacy policy</a
 					>.

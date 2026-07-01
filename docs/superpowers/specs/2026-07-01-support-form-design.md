@@ -43,13 +43,13 @@ Email delivery is **Resend** (roga.dev verified as a sending domain).
 
 Svelte 5 runes mode. Fields:
 
-| Field | Type | Validation |
-| --- | --- | --- |
-| Name | text, required | 1–200 chars |
-| Email | email, required | valid email, ≤ 254 chars |
-| Product | select, required | one of the known slugs |
-| Message | textarea, required | 1–5000 chars |
-| Website (honeypot) | text, visually hidden | must be empty |
+| Field              | Type                  | Validation               |
+| ------------------ | --------------------- | ------------------------ |
+| Name               | text, required        | 1–200 chars              |
+| Email              | email, required       | valid email, ≤ 254 chars |
+| Product            | select, required      | one of the known slugs   |
+| Message            | textarea, required    | 1–5000 chars             |
+| Website (honeypot) | text, visually hidden | must be empty            |
 
 - Product options come from `SUPPORT_PRODUCTS` in `src/consts.ts`:
   CopyCleanse (`copycleanse`), EzEval (`ezeval`), Employment and Education
@@ -117,13 +117,13 @@ boilerplate. No use of the word "engineer".
 
 ## Error handling summary
 
-| Failure | User sees | Email sent? |
-| --- | --- | --- |
-| Client validation fails | Inline field errors | No |
-| Honeypot filled | Generic success | No |
-| Turnstile verify fails | "Verification failed, try again" + widget reset | No |
-| Resend API error | "Couldn't send — try again or book a call" | No |
-| Success | Inline confirmation | Yes |
+| Failure                 | User sees                                       | Email sent? |
+| ----------------------- | ----------------------------------------------- | ----------- |
+| Client validation fails | Inline field errors                             | No          |
+| Honeypot filled         | Generic success                                 | No          |
+| Turnstile verify fails  | "Verification failed, try again" + widget reset | No          |
+| Resend API error        | "Couldn't send — try again or book a call"      | No          |
+| Success                 | Inline confirmation                             | Yes         |
 
 ## Testing
 
