@@ -29,6 +29,9 @@
 			widgetId = window.turnstile?.render(container, {
 				sitekey: siteKey,
 				theme: 'auto',
+				// The normal widget is a fixed 300px wide and overflows narrow
+				// viewports once card + page padding are subtracted.
+				size: window.matchMedia('(max-width: 480px)').matches ? 'compact' : 'normal',
 				callback: (t) => (token = t),
 				'expired-callback': () => (token = ''),
 				'error-callback': () => (token = ''),
@@ -55,8 +58,13 @@
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ name, email, product, message, website, token }),
 			});
-			const body = (await res.json()) as { ok?: boolean; error?: string };
-			if (!res.ok) throw new Error(body.error ?? 'Something went wrong.');
+			let body: { ok?: boolean; error?: string } = {};
+			try {
+				body = (await res.json()) as { ok?: boolean; error?: string };
+			} catch {
+				// Non-JSON response (e.g. platform error page) — fall through to the generic message.
+			}
+			if (!res.ok) throw new Error(body.error ?? 'Something went wrong — please try again.');
 			status = 'success';
 		} catch (err) {
 			status = 'error';

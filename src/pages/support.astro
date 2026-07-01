@@ -1,0 +1,42 @@
+---
+import SupportForm from '../components/SupportForm.svelte';
+import Base from '../layouts/Base.astro';
+
+const title = 'Support · Roga Digital';
+const description =
+	'Get help with a Roga Digital product. Send a message through the support form and get a reply by email — usually within two business days.';
+---
+
+<Base title={title} description={description}>
+	<!-- Hero -->
+	<section class="border-b border-border">
+		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+			<div class="pt-20 pb-16 sm:pt-28 sm:pb-20">
+				<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Support</p>
+				<h1 class="mt-6 text-4xl font-medium tracking-tight text-balance sm:text-5xl">
+					Need a hand with <span class="text-fg-muted">a product?</span>
+				</h1>
+				<p class="mt-6 max-w-2xl text-lg text-fg-muted text-pretty sm:text-xl">
+					Tell me what's going wrong — or what you'd like to see — and I'll get back to you by
+					email, usually within two business days.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Form -->
+	<section>
+		<div class="mx-auto w-full max-w-page px-6 py-16 sm:px-8 sm:py-20">
+			<div class="mx-auto max-w-2xl">
+				<SupportForm client:load />
+				<p class="mt-6 text-sm text-fg-subtle text-pretty">
+					This form is protected by Cloudflare Turnstile. Your details are used only to reply to
+					your message — see the <a
+						href="/privacy"
+						class="text-fg-muted underline-offset-4 hover:underline">privacy policy</a
+					>.
+				</p>
+			</div>
+		</div>
+	</section>
+</Base>
