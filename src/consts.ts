@@ -20,6 +20,18 @@ export const SOCIAL = {
  * Industries / sectors with at least one shipped project of real scope.
  * Each entry must be backed by a delivered engagement, not a one-off favor.
  */
+/**
+ * Products listed in the /support form dropdown. `slug` doubles as the
+ * accepted value for the `?product=` query param on /support.
+ */
+export const SUPPORT_PRODUCTS = [
+	{ slug: 'copycleanse', label: 'CopyCleanse' },
+	{ slug: 'ezeval', label: 'EzEval' },
+	{ slug: 'outlooks', label: 'Employment and Education Outlooks' },
+	{ slug: 'carevo', label: 'Carevo Lot Logistics' },
+	{ slug: 'other', label: 'Other / general' },
+] as const;
+
 export const INDUSTRIES = [
 	'Telecom',
 	'Healthcare',
