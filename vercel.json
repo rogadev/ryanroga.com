@@ -4,6 +4,11 @@
 	"buildCommand": "pnpm build",
 	"outputDirectory": "dist",
 	"installCommand": "pnpm install --frozen-lockfile",
+	"build": {
+		"env": {
+			"ENABLE_EXPERIMENTAL_COREPACK": "1"
+		}
+	},
 	"redirects": [
 		{
 			"source": "/work/techcentral-telus",
