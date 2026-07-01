@@ -1,4 +1,4 @@
-import { buildEmail, validateSubmission } from './_lib/validation';
+import { buildEmail, validateSubmission } from './_lib/validation.js';
 
 // The ONLY place the destination address exists. Never move this to src/.
 const TO_ADDRESS = 'ryan@roga.dev';

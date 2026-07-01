@@ -1,4 +1,4 @@
-import { SUPPORT_PRODUCTS } from '../../src/consts';
+import { SUPPORT_PRODUCTS } from '../../src/consts.js';
 
 export interface SupportSubmission {
 	name: string;
