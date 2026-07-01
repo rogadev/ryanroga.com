@@ -15,6 +15,7 @@ Static-only output, deployed on Vercel.
 - `pnpm build` — static build to `dist/`.
 - `pnpm preview` — preview the production build.
 - `pnpm check` — `astro check` (TypeScript + content schema validation).
+- `pnpm test` — Vitest unit tests (support-form validation in `tests/`).
 - `pnpm ready` — the pre-commit gate: format → lint (`oxlint` + `eslint`) → `astro check`. Run before committing.
 
 **pnpm config lives in `pnpm-workspace.yaml`, not `package.json`.** pnpm 11 ignores the `package.json` `pnpm` field, so settings moved to `pnpm-workspace.yaml`: `allowBuilds` allowlists `sharp`/`esbuild` post-install scripts, and `overrides` pins transitive deps to patched versions for security advisories (`pnpm audit` must stay at 0). Editing overrides means editing that file, then `pnpm install`. If `pnpm install` aborts with `ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`, prefix with `CI=true`.
@@ -22,6 +23,8 @@ Static-only output, deployed on Vercel.
 ## Deployment
 
 Static output on Vercel — Vercel serves `dist/` from its CDN; no adapter. **The Vercel project sets `ENABLE_EXPERIMENTAL_COREPACK=1`** (all environments) so the build provisions the pinned `pnpm@11.9.0` via Corepack and can parse `pnpm-workspace.yaml`. Without it, Vercel falls back to pnpm 9, which rejects the settings-only workspace file (`packages field missing or empty`) and the build fails. `vercel.json` therefore uses plain `pnpm install` / `pnpm build` (do **not** swap in `npx pnpm@…` — that loses Corepack's integrity check).
+
+The `/support` contact form is the one server-side piece: a Vercel function at `api/support.ts` (root-level `api/` dir builds alongside the static output — no adapter) verifies Cloudflare Turnstile and sends email via Resend. It needs three Vercel env vars: `PUBLIC_TURNSTILE_SITE_KEY` (build-time, inlined into the Svelte island), `TURNSTILE_SECRET_KEY`, and `RESEND_API_KEY` (runtime). The recipient address lives **only** in `api/support.ts` — never put it anywhere under `src/`.
 
 ## Architecture
 
