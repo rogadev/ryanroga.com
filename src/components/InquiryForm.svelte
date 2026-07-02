@@ -1,6 +1,13 @@
 <script lang="ts">
 	import { SUPPORT_PRODUCTS } from '../consts';
 
+	interface Props {
+		endpoint: string;
+		showProduct?: boolean;
+	}
+
+	const { endpoint, showProduct = false }: Props = $props();
+
 	let name = $state('');
 	let email = $state('');
 	let product = $state('other');
@@ -16,6 +23,7 @@
 	const canSubmit = $derived(status !== 'submitting' && token !== '');
 
 	$effect(() => {
+		if (!showProduct) return;
 		const fromUrl = new URLSearchParams(window.location.search).get('product');
 		if (fromUrl && SUPPORT_PRODUCTS.some((p) => p.slug === fromUrl)) {
 			product = fromUrl;
@@ -53,10 +61,17 @@
 		status = 'submitting';
 		errorMessage = '';
 		try {
-			const res = await fetch('/api/support', {
+			const res = await fetch(endpoint, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ name, email, product, message, website, token }),
+				body: JSON.stringify({
+					name,
+					email,
+					message,
+					website,
+					token,
+					...(showProduct ? { product } : {}),
+				}),
 			});
 			let body: { ok?: boolean; error?: string } = {};
 			try {
@@ -123,20 +138,22 @@
 			</div>
 		</div>
 
-		<div class="flex flex-col gap-2">
-			<label for="support-product" class="text-sm font-medium text-fg">Product</label>
-			<select
-				id="support-product"
-				name="product"
-				required
-				bind:value={product}
-				class="min-h-11 rounded-md border border-border bg-bg px-3 text-fg"
-			>
-				{#each SUPPORT_PRODUCTS as p (p.slug)}
-					<option value={p.slug}>{p.label}</option>
-				{/each}
-			</select>
-		</div>
+		{#if showProduct}
+			<div class="flex flex-col gap-2">
+				<label for="support-product" class="text-sm font-medium text-fg">Product</label>
+				<select
+					id="support-product"
+					name="product"
+					required
+					bind:value={product}
+					class="min-h-11 rounded-md border border-border bg-bg px-3 text-fg"
+				>
+					{#each SUPPORT_PRODUCTS as p (p.slug)}
+						<option value={p.slug}>{p.label}</option>
+					{/each}
+				</select>
+			</div>
+		{/if}
 
 		<div class="flex flex-col gap-2">
 			<label for="support-message" class="text-sm font-medium text-fg">How can I help?</label>
