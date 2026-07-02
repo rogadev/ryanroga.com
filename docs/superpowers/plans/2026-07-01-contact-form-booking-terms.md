@@ -190,7 +190,9 @@ describe('validateContactSubmission', () => {
 	it('rejects malformed emails and over-length fields', () => {
 		expect(validateContactSubmission({ ...validContact, email: 'nope' }).ok).toBe(false);
 		expect(validateContactSubmission({ ...validContact, name: 'x'.repeat(201) }).ok).toBe(false);
-		expect(validateContactSubmission({ ...validContact, message: 'x'.repeat(5001) }).ok).toBe(false);
+		expect(validateContactSubmission({ ...validContact, message: 'x'.repeat(5001) }).ok).toBe(
+			false,
+		);
 	});
 
 	it('passes the honeypot value through', () => {
@@ -244,8 +246,7 @@ export type ContactSubmission = CommonFields;
 export type ValidationResult = { ok: true; data: SupportSubmission } | { ok: false; error: string };
 
 export type ContactValidationResult =
-	| { ok: true; data: ContactSubmission }
-	| { ok: false; error: string };
+	{ ok: true; data: ContactSubmission } | { ok: false; error: string };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PRODUCT_SLUGS = new Set<string>(SUPPORT_PRODUCTS.map((p) => p.slug));
@@ -550,9 +551,9 @@ import InquiryForm from '../components/InquiryForm.svelte';
 
 ```astro
 <p class="mt-2 border-t border-border pt-4 text-sm text-fg-subtle text-pretty">
-	Intro calls are free for prospective clients — people exploring whether to hire Roga
-	Digital. They are not for selling to me. Vendor and sales calls booked through this
-	calendar are billed at USD $120/hour (1-hour minimum) per the <a
+	Intro calls are free for prospective clients — people exploring whether to hire Roga Digital. They
+	are not for selling to me. Vendor and sales calls booked through this calendar are billed at USD
+	$120/hour (1-hour minimum) per the <a
 		href="/terms-of-service#consultation-bookings"
 		class="text-fg-muted underline-offset-4 hover:underline">booking terms</a
 	>.
@@ -564,15 +565,13 @@ import InquiryForm from '../components/InquiryForm.svelte';
 ```astro
 <!-- Direct message -->
 <div class="flex flex-col gap-6 bg-bg p-8 sm:p-10">
-	<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
-		Or send a message
-	</p>
+	<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Or send a message</p>
 	<h2 class="text-2xl font-medium tracking-tight text-balance text-fg sm:text-3xl">
 		Prefer writing first?
 	</h2>
 	<p class="text-fg-muted text-pretty">
-		Tell me about the project in your own words. Same promise as the call: a real reply
-		within 48 hours.
+		Tell me about the project in your own words. Same promise as the call: a real reply within 48
+		hours.
 	</p>
 	<InquiryForm endpoint="/api/contact" client:load />
 </div>
@@ -642,7 +641,7 @@ git commit -m "feat(contact): message form panel, qualifying notice, compact soc
 
 ```astro
 sections.map((s) => (
-	<section class="mt-12" id={'id' in s ? s.id : undefined}>
+<section class="mt-12" id={'id' in s ? s.id : undefined}></section>
 ```
 
 (If TypeScript complains about the union, type the array as

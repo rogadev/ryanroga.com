@@ -57,8 +57,8 @@ honeypot, status states, a11y) is shared. `/support` switches to
   > Intro calls are free for prospective clients — people exploring
   > whether to hire Roga Digital. They are not for selling to me. Vendor
   > and sales calls booked through this calendar are billed at USD
-  > $120/hour (1-hour minimum) per the booking terms. *(links to the ToS
-  > section)*
+  > $120/hour (1-hour minimum) per the booking terms. _(links to the ToS
+  > section)_
 
 ### 4. Terms of Service: "Consultation bookings" section
 
