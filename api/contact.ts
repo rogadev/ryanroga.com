@@ -1,6 +1,6 @@
 import { isEmailConfigured, sendEmail } from './_lib/email.js';
 import { isTurnstileConfigured, verifyTurnstile } from './_lib/turnstile.js';
-import { buildEmail, validateSubmission } from './_lib/validation.js';
+import { buildContactEmail, validateContactSubmission } from './_lib/validation.js';
 
 function json(status: number, body: Record<string, unknown>): Response {
 	return new Response(JSON.stringify(body), {
@@ -17,7 +17,7 @@ export async function POST(request: Request): Promise<Response> {
 		return json(400, { error: 'Invalid request body.' });
 	}
 
-	const result = validateSubmission(body);
+	const result = validateContactSubmission(body);
 	if (!result.ok) return json(400, { error: result.error });
 	const data = result.data;
 
@@ -25,7 +25,7 @@ export async function POST(request: Request): Promise<Response> {
 	if (data.website !== '') return json(200, { ok: true });
 
 	if (!isTurnstileConfigured() || !isEmailConfigured()) {
-		return json(500, { error: 'The support form is temporarily unavailable.' });
+		return json(500, { error: 'The contact form is temporarily unavailable.' });
 	}
 
 	const remoteip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
@@ -33,7 +33,7 @@ export async function POST(request: Request): Promise<Response> {
 		return json(400, { error: 'Verification failed — please try again.' });
 	}
 
-	const { subject, text } = buildEmail(data, new Date().toISOString());
+	const { subject, text } = buildContactEmail(data, new Date().toISOString());
 	if (!(await sendEmail({ subject, text, replyTo: data.email }))) {
 		return json(502, { error: "Couldn't send your message — please try again in a minute." });
 	}

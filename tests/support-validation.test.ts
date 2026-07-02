@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { buildEmail, validateSubmission } from '../api/_lib/validation';
+import {
+	buildContactEmail,
+	buildEmail,
+	validateContactSubmission,
+	validateSubmission,
+} from '../api/_lib/validation';
 
 const valid = {
 	name: 'Jane Doe',
@@ -73,6 +78,53 @@ describe('buildEmail', () => {
 		expect(text).toContain('jane@example.com');
 		expect(text).toContain('ezeval');
 		expect(text).toContain('The export button does nothing.');
+		expect(text).toContain('2026-07-01T00:00:00.000Z');
+	});
+});
+
+const validContact = {
+	name: 'Jane Doe',
+	email: 'jane@example.com',
+	message: 'I have a project involving inventory dashboards.',
+	website: '',
+	token: 'XXXX.turnstile-token',
+};
+
+describe('validateContactSubmission', () => {
+	it('accepts a valid submission without a product field', () => {
+		expect(validateContactSubmission(validContact).ok).toBe(true);
+	});
+
+	it('rejects missing or empty required fields', () => {
+		for (const field of ['name', 'email', 'message', 'token'] as const) {
+			expect(validateContactSubmission({ ...validContact, [field]: '' }).ok).toBe(false);
+			expect(validateContactSubmission({ ...validContact, [field]: undefined }).ok).toBe(false);
+		}
+	});
+
+	it('rejects malformed emails and over-length fields', () => {
+		expect(validateContactSubmission({ ...validContact, email: 'nope' }).ok).toBe(false);
+		expect(validateContactSubmission({ ...validContact, name: 'x'.repeat(201) }).ok).toBe(false);
+		expect(validateContactSubmission({ ...validContact, message: 'x'.repeat(5001) }).ok).toBe(
+			false,
+		);
+	});
+
+	it('passes the honeypot value through', () => {
+		const result = validateContactSubmission({ ...validContact, website: 'spam' });
+		expect(result.ok).toBe(true);
+		if (result.ok) expect(result.data.website).toBe('spam');
+	});
+});
+
+describe('buildContactEmail', () => {
+	it('builds a [Contact] subject and includes all fields', () => {
+		const result = validateContactSubmission(validContact);
+		if (!result.ok) throw new Error('expected valid');
+		const { subject, text } = buildContactEmail(result.data, '2026-07-01T00:00:00.000Z');
+		expect(subject).toBe('[Contact] Jane Doe');
+		expect(text).toContain('jane@example.com');
+		expect(text).toContain('inventory dashboards');
 		expect(text).toContain('2026-07-01T00:00:00.000Z');
 	});
 });

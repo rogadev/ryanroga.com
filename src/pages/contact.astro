@@ -1,4 +1,5 @@
 ---
+import InquiryForm from '../components/InquiryForm.svelte';
 import Section from '../components/Section.astro';
 import { BOOKING_URL, SITE_LOCATION, SOCIAL } from '../consts';
 import Base from '../layouts/Base.astro';
@@ -41,8 +42,7 @@ const helpful = [
 				<div class="lg:col-span-7">
 					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Contact</p>
 					<h1 class="mt-6 text-4xl font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl">
-						Let's talk about
-						<span class="text-fg-muted">your project.</span>
+						Let's talk about <span class="text-fg-muted">your project.</span>
 					</h1>
 					<p class="mt-6 max-w-2xl text-lg text-fg-muted text-pretty sm:text-xl">
 						Book a free 30 minutes. I ask about what's broken, what you've tried, and what success
@@ -76,7 +76,7 @@ const helpful = [
 	<section class="border-b border-border">
 		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
 			<div
-				class="grid gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-2 my-16"
+				class="mt-16 mb-8 grid gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-2"
 			>
 				<!-- Book a call -->
 				<div class="flex flex-col gap-6 bg-bg p-8 sm:p-10">
@@ -114,58 +114,64 @@ const helpful = [
 					<p class="font-mono text-2xs tracking-wide text-fg-subtle">
 						{BOOKING_URL.replace(/^https?:\/\//, '')}
 					</p>
+					<p class="mt-2 border-t border-border pt-4 text-sm text-fg-subtle text-pretty">
+						Intro calls are free for prospective clients — people exploring whether to hire Roga
+						Digital. They are not for selling to me. Vendor and sales calls booked through this
+						calendar are billed at USD $120/hour (1-hour minimum) per the <a
+							href="/terms-of-service#consultation-bookings"
+							class="text-fg-muted underline-offset-4 hover:underline">booking terms</a
+						>.
+					</p>
 				</div>
 
-				<!-- Other channels -->
+				<!-- Direct message -->
 				<div class="flex flex-col gap-6 bg-bg p-8 sm:p-10">
 					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
-						Or find me elsewhere
+						Or send a message
 					</p>
 					<h2 class="text-2xl font-medium tracking-tight text-balance text-fg sm:text-3xl">
-						LinkedIn, GitHub, the usual.
+						Prefer writing first?
 					</h2>
 					<p class="text-fg-muted text-pretty">
-						Not ready to book yet? LinkedIn is the fastest way to reach me for a quick message. Code
-						lives on GitHub.
+						Tell me about the project in your own words. Same promise as the call: a real reply
+						within 48 hours.
 					</p>
-					<ul class="space-y-3 text-sm" role="list">
-						<li>
-							<a
-								href={SOCIAL.linkedin}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="group inline-flex items-center gap-2"
-							>
-								<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
-									LinkedIn
-								</span>
-								<span class="text-fg underline-offset-4 group-hover:underline"> in/ryanroga </span>
-							</a>
-						</li>
-						<li>
-							<a
-								href={SOCIAL.github}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="group inline-flex items-center gap-2"
-							>
-								<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
-									GitHub
-								</span>
-								<span class="text-fg underline-offset-4 group-hover:underline"> @rogadev </span>
-							</a>
-						</li>
-						<li>
-							<div class="inline-flex items-center gap-2">
-								<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
-									Based
-								</span>
-								<span class="text-fg">{SITE_LOCATION}</span>
-							</div>
-						</li>
-					</ul>
+					<InquiryForm endpoint="/api/contact" client:load />
 				</div>
 			</div>
+
+			<ul class="mb-16 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm" role="list">
+				<li>
+					<a
+						href={SOCIAL.linkedin}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group inline-flex items-center gap-2"
+					>
+						<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+							LinkedIn
+						</span>
+						<span class="text-fg underline-offset-4 group-hover:underline">in/ryanroga</span>
+					</a>
+				</li>
+				<li>
+					<a
+						href={SOCIAL.github}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group inline-flex items-center gap-2"
+					>
+						<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+							GitHub
+						</span>
+						<span class="text-fg underline-offset-4 group-hover:underline">@rogadev</span>
+					</a>
+				</li>
+				<li class="inline-flex items-center gap-2">
+					<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Based</span>
+					<span class="text-fg">{SITE_LOCATION}</span>
+				</li>
+			</ul>
 		</div>
 	</section>
 

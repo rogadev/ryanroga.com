@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 const title = 'Terms of Service · Roga Digital';
 const description = 'The terms that govern use of this website and Roga Digital products.';
 
-const sections = [
+const sections: { h: string; body: string[]; id?: string }[] = [
 	{
 		h: 'Agreement',
 		body: [
@@ -18,9 +18,18 @@ const sections = [
 		],
 	},
 	{
+		h: 'Consultation bookings',
+		id: 'consultation-bookings',
+		body: [
+			"Free introductory calls are offered solely to prospective clients — individuals and businesses evaluating whether to engage Roga Digital's services. Booking a call constitutes acceptance of these terms.",
+			'The booking calendar may not be used to market, pitch, or sell products or services to Roga Digital. Calls booked for that purpose are billed as consulting at USD $120 per hour, with a one-hour minimum, and an invoice will be issued to the contact information provided at booking.',
+			'Invoices are payable within 30 days. Overdue balances accrue interest at 2% per month (26.82% per annum). Accounts more than six months past due may be referred to a collection agency, and collection costs may be added to the balance where permitted by law.',
+		],
+	},
+	{
 		h: 'Intellectual property',
 		body: [
-			'The content of this site — text, design, code samples, and imagery — belongs to Roga Digital unless otherwise noted. You may not reproduce it commercially without permission. Client work shown remains the property of the respective clients where their agreements say so.',
+			'The content of this site — text, design, code samples, and imagery — belongs to Roga Digital unless otherwise noted. You may not copy or reproduce it without prior written permission from Roga Digital. Client work shown remains the property of the respective clients where their agreements say so.',
 		],
 	},
 	{
@@ -64,7 +73,7 @@ const sections = [
 
 				{
 					sections.map((s) => (
-						<section class="mt-12">
+						<section class="mt-12" id={s.id}>
 							<h2 class="text-xl font-medium tracking-tight text-fg">{s.h}</h2>
 							{s.body.map((p) => (
 								<p class="mt-3 text-fg-muted text-pretty">{p}</p>
