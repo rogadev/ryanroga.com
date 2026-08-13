@@ -14,11 +14,14 @@
 	const providerKeys = Object.keys(providers) as Provider[];
 	const availableKeys = providerKeys.filter((p) => providers[p].available);
 
-	// Provider colour key — tints of the single accent hue (honours "one accent").
-	const PROVIDER_TINT: Record<Provider, string> = {
-		anthropic: 'var(--color-accent)',
-		openai: '#8b94ff',
-		google: '#c0c4ff',
+	// Provider colour key — each vendor's own brand hue, darkened until white bar text
+	// clears 4.5:1. Shipped brand values (Anthropic clay #d97757, OpenAI green #10a37f,
+	// Google blue #4285f4) all land near 3.1:1 against white, so they are used as the
+	// hue reference rather than the literal fill.
+	const PROVIDER_COLOR: Record<Provider, string> = {
+		anthropic: '#b4472b',
+		openai: '#0b7a5e',
+		google: '#1a65d8',
 	};
 
 	const selected = new SvelteSet<Provider>(availableKeys);
@@ -50,7 +53,7 @@
 	const multiProvider = $derived(visible.some((m) => m.provider !== visible[0].provider));
 
 	function colorFor(p: Provider): string {
-		return multiProvider ? PROVIDER_TINT[p] : 'var(--color-accent)';
+		return multiProvider ? PROVIDER_COLOR[p] : 'var(--color-accent)';
 	}
 </script>
 
@@ -169,7 +172,7 @@
 		{#if multiProvider}
 			{#each providerKeys.filter((p) => selected.has(p)) as p (p)}
 				<span class="item"
-					><span class="sw" style="background: {PROVIDER_TINT[p]}"></span>
+					><span class="sw" style="background: {PROVIDER_COLOR[p]}"></span>
 					{providers[p].label}</span
 				>
 			{/each}
