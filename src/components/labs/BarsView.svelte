@@ -202,9 +202,9 @@
 		font-family: var(--font-mono);
 		font-size: var(--text-xs);
 		font-weight: 600;
-		/* White-on-accent meets contrast for the single (Anthropic) provider. NOTE:
-		   when multiple providers are enabled, colorFor() returns lighter tints — revisit
-		   this text colour for AA contrast before turning on OpenAI/Google. */
+		/* White-on-fill clears 4.5:1 for the single-provider accent and for every
+		   multi-provider brand colour in SchmeckleChart's PROVIDER_COLOR, which are
+		   darkened specifically to hold this ratio. Re-check if those hues change. */
 		color: var(--color-accent-fg);
 	}
 	@media (prefers-reduced-motion: reduce) {
