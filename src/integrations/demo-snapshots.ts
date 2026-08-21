@@ -64,7 +64,7 @@ async function refreshSnapshots(logger: AstroIntegrationLogger): Promise<void> {
 			}
 
 			try {
-				 
+				// oxlint-disable-next-line no-await-in-loop -- capture pages one at a time to keep load on the live site gentle
 				const html = await archivePage(url, site.origin);
 				writeFileSync(file, html);
 				manifest[page.id] = { url, capturedAt: new Date().toISOString() };
@@ -119,7 +119,7 @@ async function replaceAsync(
 	const parts: string[] = [];
 	let last = 0;
 	for (const match of input.matchAll(pattern)) {
-		 
+		// oxlint-disable-next-line no-await-in-loop -- replacements must land in document order
 		parts.push(input.slice(last, match.index), await replacer(match));
 		last = match.index + match[0].length;
 	}
