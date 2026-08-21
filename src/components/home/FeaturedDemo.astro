@@ -1,0 +1,101 @@
+---
+import { demoPage, demoSite, demoUrl, snapshotPath } from '../../lib/demos';
+import DemoFrame from '../DemoFrame.astro';
+import Section from '../Section.astro';
+
+const site = demoSite('puntledge');
+const home = demoPage(site, 'puntledge-home');
+const report = demoPage(site, 'puntledge-report');
+---
+
+<Section
+	id="live-demo"
+	eyebrow="Our work · live"
+	heading="Don't take our word for it. Try one."
+	dek="Puntledge Tube Report tells Vancouver Island tubers whether the river is worth floating today — crowd reports, live river data, weather, and tides on one page. We designed it, built it, and run it. This is the real site, embedded below in demo mode."
+>
+	<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+		<div class="grid gap-12 lg:grid-cols-12">
+			<div class="lg:col-span-4">
+				<dl class="grid gap-px overflow-hidden rounded-lg border border-border bg-border">
+					<div class="bg-bg-soft px-4 py-4">
+						<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Product</dt>
+						<dd class="mt-1 text-sm text-fg">
+							Public, real-time river conditions for tubing the Puntledge
+						</dd>
+					</div>
+					<div class="bg-bg-soft px-4 py-4">
+						<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Data</dt>
+						<dd class="mt-1 text-sm text-fg">
+							River gauge, weather, tides & anonymous float reports
+						</dd>
+					</div>
+					<div class="bg-bg-soft px-4 py-4">
+						<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Stack</dt>
+						<dd class="mt-1 text-sm text-fg">SvelteKit · Cloudflare Workers · Neon Postgres</dd>
+					</div>
+					<div class="bg-bg-soft px-4 py-4">
+						<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Status</dt>
+						<dd class="mt-1 flex items-center gap-2 text-sm text-fg">
+							<span class="h-1.5 w-1.5 rounded-full bg-positive" aria-hidden="true"></span>
+							Live at puntledge.ca
+						</dd>
+					</div>
+				</dl>
+
+				<div class="mt-8 flex flex-col items-start gap-3">
+					<a
+						href="/work/puntledge/"
+						class="inline-flex min-h-11 items-center gap-2 font-mono text-xs tracking-[0.16em] text-fg uppercase underline-offset-4 hover:underline"
+					>
+						Read the case study →
+					</a>
+					<a
+						href="https://puntledge.ca"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex min-h-11 items-center gap-2 font-mono text-xs tracking-[0.16em] text-fg-muted uppercase transition-colors hover:text-fg"
+					>
+						Visit puntledge.ca ↗
+					</a>
+				</div>
+			</div>
+
+			<div class="lg:col-span-8">
+				<div class="relative md:pr-24 md:pb-12">
+					<DemoFrame
+						src={demoUrl(site, home)}
+						snapshot={snapshotPath(home)}
+						label={home.label}
+						title="Puntledge Tube Report — today's conditions (desktop demo)"
+						href="/work/puntledge/"
+						hrefLabel="Read the Puntledge Tube Report case study"
+					/>
+					<div class="absolute right-0 -bottom-2 hidden w-[11.5rem] md:block">
+						<DemoFrame
+							kind="phone"
+							src={demoUrl(site, report)}
+							snapshot={snapshotPath(report)}
+							title="Puntledge Tube Report — report your float (mobile demo)"
+							href="/work/puntledge/"
+							hrefLabel="Read the Puntledge Tube Report case study"
+						/>
+					</div>
+				</div>
+				<div class="mx-auto mt-8 w-full max-w-[16rem] md:hidden">
+					<DemoFrame
+						kind="phone"
+						src={demoUrl(site, report)}
+						snapshot={snapshotPath(report)}
+						title="Puntledge Tube Report — report your float (mobile demo)"
+						href="/work/puntledge/"
+						hrefLabel="Read the Puntledge Tube Report case study"
+					/>
+				</div>
+				<p class="mt-5 font-mono text-2xs tracking-[0.16em] text-fg-subtle uppercase">
+					Embedded live from puntledge.ca · demo mode — conditions shown are simulated
+				</p>
+			</div>
+		</div>
+	</div>
+</Section>

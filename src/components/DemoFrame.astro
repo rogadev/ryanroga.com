@@ -1,0 +1,187 @@
+---
+/**
+ * DemoFrame — a live site embedded in a desktop or phone device frame.
+ *
+ * The iframe renders at the device's native viewport size (so the embedded
+ * site lays out as real desktop or mobile) and is scaled to fit its container
+ * with a container-query trig expression — no JS needed for sizing, and the
+ * frame tracks the page layout responsively.
+ *
+ * With `href` set, the frame is a pure preview: a full-frame link covers the
+ * embed (clicks navigate, page scrolling never gets trapped inside it).
+ * Without `href`, the embed is directly interactive. When a `snapshot` path is
+ * given, a client-side reachability probe swaps the iframe to the local
+ * snapshot (captured by src/integrations/demo-snapshots.ts) if the live site
+ * is down.
+ */
+interface Props {
+	kind?: 'desktop' | 'phone';
+	/** URL of the live (embeddable) demo route. */
+	src: string;
+	/** Local fallback snapshot path, e.g. from snapshotPath() in src/lib/demos.ts. */
+	snapshot?: string;
+	/** Accessible iframe title. */
+	title: string;
+	/** Address shown in the browser-chrome bar (desktop frames only). */
+	label?: string;
+	/** When set, the whole frame links here instead of being interactive. */
+	href?: string;
+	/** Accessible name for the `href` link. Required when `href` is set. */
+	hrefLabel?: string;
+	/** Open the `href` link in a new tab. */
+	external?: boolean;
+	class?: string;
+}
+
+const {
+	kind = 'desktop',
+	src,
+	snapshot,
+	title,
+	label,
+	href,
+	hrefLabel,
+	external = false,
+	class: className = '',
+} = Astro.props;
+
+const native = kind === 'desktop' ? { w: 1280, h: 800 } : { w: 390, h: 780 };
+const chromeLabel = label ?? new URL(src).hostname;
+---
+
+<figure class:list={['demo-frame not-prose relative', className]} data-demo-frame>
+	<div
+		class:list={[
+			'overflow-hidden bg-bg-soft',
+			kind === 'desktop'
+				? 'rounded-lg border border-border'
+				: 'rounded-[1.625rem] border border-border-strong p-1.5',
+		]}
+	>
+		{
+			kind === 'desktop' && (
+				<div class="relative flex items-center gap-1.5 border-b border-border px-3 py-2">
+					<span class="h-2 w-2 rounded-full bg-border-strong" aria-hidden="true" />
+					<span class="h-2 w-2 rounded-full bg-border-strong" aria-hidden="true" />
+					<span class="h-2 w-2 rounded-full bg-border-strong" aria-hidden="true" />
+					<span
+						class="pointer-events-none absolute inset-x-0 mx-auto w-fit max-w-[60%] truncate rounded-sm border border-border bg-bg px-2.5 py-0.5 font-mono text-2xs text-fg-subtle"
+						aria-hidden="true"
+					>
+						{chromeLabel}
+					</span>
+					<span class="snapshot-badge ml-auto font-mono text-2xs tracking-[0.16em] text-warning uppercase">
+						Cached copy
+					</span>
+				</div>
+			)
+		}
+		<div
+			class:list={['demo-viewport relative', kind === 'phone' && 'rounded-[1.125rem]']}
+			style={`aspect-ratio: ${native.w} / ${native.h}; --demo-native-w: ${native.w}px; --demo-native-h: ${native.h}px;`}
+		>
+			<iframe
+				src={src}
+				title={title}
+				loading="lazy"
+				data-live-src={src}
+				data-snapshot-src={snapshot}
+				width={native.w}
+				height={native.h}
+				class:list={[!href && 'demo-interactive']}></iframe>
+			{
+				href && (
+					<a
+						href={href}
+						class="demo-overlay"
+						aria-label={hrefLabel ?? title}
+						target={external ? '_blank' : undefined}
+						rel={external ? 'noopener noreferrer' : undefined}
+					/>
+				)
+			}
+			{
+				kind === 'phone' && (
+					<span class="snapshot-badge absolute top-2 left-1/2 -translate-x-1/2 rounded-sm border border-border bg-bg px-2 py-0.5 font-mono text-2xs tracking-[0.16em] text-warning uppercase">
+						Cached copy
+					</span>
+				)
+			}
+		</div>
+	</div>
+</figure>
+
+<style>
+	.demo-viewport {
+		container-type: inline-size;
+		overflow: hidden;
+		background: var(--color-bg-elevated);
+	}
+
+	.demo-viewport iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: var(--demo-native-w);
+		height: var(--demo-native-h);
+		border: 0;
+		transform-origin: 0 0;
+		/* Scale = container width / native width. tan(atan2(a, b)) divides two
+		   lengths into a unitless ratio; --demo-scale is only set by the JS
+		   fallback for browsers without CSS trig support. */
+		transform: scale(var(--demo-scale, tan(atan2(100cqw, var(--demo-native-w)))));
+		pointer-events: none;
+	}
+
+	.demo-viewport iframe.demo-interactive {
+		pointer-events: auto;
+	}
+
+	.demo-overlay {
+		position: absolute;
+		inset: 0;
+	}
+
+	.snapshot-badge {
+		display: none;
+	}
+
+	.demo-frame.is-snapshot .snapshot-badge {
+		display: inline-flex;
+	}
+</style>
+
+<script>
+	// Reachability probe — one request per unique live URL. no-cors keeps the
+	// probe cross-origin-safe: it resolves (opaque) whenever the host answers
+	// and rejects on DNS/connection/timeout failures, which is the "site is
+	// down" case the snapshot exists for.
+	const probes = new Map<string, Promise<boolean>>();
+	const isUp = (url: string): Promise<boolean> => {
+		let probe = probes.get(url);
+		if (!probe) {
+			probe = fetch(url, {
+				method: 'HEAD',
+				mode: 'no-cors',
+				cache: 'no-store',
+				signal: AbortSignal.timeout(5000),
+			}).then(
+				() => true,
+				() => false,
+			);
+			probes.set(url, probe);
+		}
+		return probe;
+	};
+
+	for (const iframe of document.querySelectorAll<HTMLIFrameElement>('iframe[data-snapshot-src]')) {
+		const live = iframe.dataset.liveSrc;
+		const snapshot = iframe.dataset.snapshotSrc;
+		if (!live || !snapshot) continue;
+		void isUp(live).then((up) => {
+			if (up) return;
+			iframe.src = snapshot;
+			iframe.closest('[data-demo-frame]')?.classList.add('is-snapshot');
+		});
+	}
+</script>
