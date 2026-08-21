@@ -13,6 +13,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import demoSnapshots from './src/integrations/demo-snapshots';
 
 /**
  * Canonical URL path -> ISO timestamp, read from insight frontmatter.
@@ -62,6 +63,7 @@ export default defineConfig({
 			},
 		}),
 		svelte(),
+		demoSnapshots(),
 	],
 
 	// Canonical URLs carry a trailing slash (the sitemap and <link rel="canonical">

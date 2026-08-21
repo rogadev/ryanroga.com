@@ -10,3 +10,4 @@ _references/
 .cursor/
 tmp/
 pnpm-lock.yaml
+public/demos/
