@@ -7,12 +7,21 @@ const work = (await getCollection('work'))
 	.toSorted((a, b) => a.data.order - b.data.order);
 ---
 
-<Section
-	id="work"
-	eyebrow="Our work"
-	heading="Software that's still running."
-	dek="Each project shipped end-to-end, maintained since, and still running in production today."
->
+<Section id="work">
+	<div class="mx-auto w-full max-w-page px-6 sm:px-8">
+		<header class="mb-12 grid gap-6 sm:mb-16 lg:grid-cols-12 lg:items-end lg:gap-12">
+			<div class="lg:col-span-5">
+				<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Our work</p>
+				<h2 class="mt-4 text-3xl font-medium tracking-tight text-balance sm:text-4xl">
+					See our work.
+				</h2>
+			</div>
+			<p class="text-lg text-fg-muted text-balance lg:col-span-7 lg:text-xl">
+				The proof is in production. Every project here is a real system a business relies on —
+				designed, built, and shipped end-to-end, and maintained by us to this day.
+			</p>
+		</header>
+	</div>
 	<div class="mx-auto w-full max-w-page">
 		<ul
 			class="grid grid-cols-1 gap-px overflow-hidden border-y border-border bg-border lg:grid-cols-2"
