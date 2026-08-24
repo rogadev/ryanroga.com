@@ -9,8 +9,6 @@ export const SITE_DESCRIPTION =
 export const SITE_AUTHOR = 'Ryan Roga';
 export const SITE_LOCATION = 'Vancouver Island, BC, Canada';
 
-export const BOOKING_URL = 'https://cal.com/ryanroga';
-
 export const SOCIAL = {
 	github: 'https://github.com/rogadev',
 	linkedin: 'https://linkedin.com/in/ryanroga',

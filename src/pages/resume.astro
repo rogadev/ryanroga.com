@@ -1,6 +1,6 @@
 ---
 import Section from '../components/Section.astro';
-import { BOOKING_URL, SITE_LOCATION, SOCIAL } from '../consts';
+import { SITE_LOCATION, SOCIAL } from '../consts';
 import Base from '../layouts/Base.astro';
 import { personSchema } from '../lib/schema';
 
@@ -167,14 +167,7 @@ const education = {
 						<div>
 							<dt class="text-fg-subtle">Contact</dt>
 							<dd class="mt-0.5 break-all">
-								<a
-									class="text-fg hover:underline"
-									href={BOOKING_URL}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Book a call
-								</a>
+								<a class="text-fg hover:underline" href="/contact/">Get in touch</a>
 							</dd>
 						</div>
 						<div>
@@ -415,7 +408,7 @@ const education = {
 						href="/contact/"
 						class="inline-flex items-center gap-2 rounded-md bg-fg px-4 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-90"
 					>
-						Book a call
+						Get in touch
 					</a>
 				</div>
 			</div>
