@@ -1,217 +1,124 @@
 ---
 import InquiryForm from '../components/InquiryForm.svelte';
 import Section from '../components/Section.astro';
-import { BOOKING_URL, SITE_LOCATION, SOCIAL } from '../consts';
+import { SITE_LOCATION, SOCIAL } from '../consts';
 import Base from '../layouts/Base.astro';
 
 const title = 'Contact · Roga Digital';
 const description =
-	'Book a free 30-minute call with Roga Digital. No pitch, no pressure — just an honest read on whether the studio is the right fit for your project.';
+	'Tell Roga Digital about your project. Send a message and get a real reply — a written read on scope and a rough budget — within 48 hours.';
+
+const facts = [
+	{ k: 'Cost', v: 'Free, no pitch' },
+	{ k: 'Reply', v: '≤ 48 hours' },
+	{ k: 'You get', v: 'Scope + budget' },
+];
 
 const expect = [
 	{
 		n: '01',
-		h: "Tell me what you're working on.",
-		b: "Don't worry about polish — bullet points, a Loom, or a paragraph. The clearer the picture of what's broken or missing, the more useful the call.",
+		h: 'Send a message.',
+		b: "Bullet points, a Loom, or a paragraph — whatever's easiest. The clearer the picture of what's broken or missing, the more useful my reply.",
 	},
 	{
 		n: '02',
-		h: 'A free 30-minute call.',
-		b: "I ask about the problem, what you've tried, who's affected, and what success looks like. No deck, no pitch.",
+		h: 'I read it myself.',
+		b: 'No autoresponder, no sales sequence. Every message reaches me directly.',
 	},
 	{
 		n: '03',
-		h: 'A written summary in 48 hours.',
-		b: "If I think I can help, you get a written read of the scope, what I'd build first, what I'd defer, and a rough budget. If I'm not the right fit, I'll say so and try to point you somewhere useful.",
+		h: 'A written reply in 48 hours.',
+		b: "If I can help, you get a written read on scope, what I'd build first, what I'd defer, and a rough budget. If I'm not the right fit, I'll say so and try to point you somewhere useful.",
 	},
 ];
 
 const helpful = [
-	'A short description of the problem (no jargon required).',
+	'A short description of the problem — no jargon required.',
 	'How your team works around it today — the manual workaround.',
-	'What success looks like — saved hours, revenue, fewer mistakes.',
+	'What success looks like — saved hours, revenue, or fewer mistakes.',
 	'Constraints worth knowing: deadlines, existing systems, team size, budget range.',
 ];
 ---
 
 <Base title={title} description={description}>
-	<!-- Hero -->
+	<!-- Hero + message form -->
 	<section class="border-b border-border">
 		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
-			<div class="grid gap-12 pt-20 pb-16 sm:pt-28 sm:pb-20 lg:grid-cols-12 lg:gap-16">
-				<div class="lg:col-span-7">
+			<div class="grid items-start gap-x-16 gap-y-14 pt-20 pb-16 sm:pt-28 sm:pb-20 lg:grid-cols-12">
+				<!-- Left rail: intro + what to expect -->
+				<div class="lg:col-span-6">
 					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Contact</p>
 					<h1 class="mt-6 text-4xl font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl">
 						Let's talk about <span class="text-fg-muted">your project.</span>
 					</h1>
-					<p class="mt-6 max-w-2xl text-lg text-fg-muted text-pretty sm:text-xl">
-						Book a free 30 minutes. I ask about what's broken, what you've tried, and what success
-						looks like. If I can help, you'll have a written summary and rough scope inside 48
-						hours. If I can't, I'll say so.
+					<p class="mt-6 max-w-xl text-lg text-fg-muted text-pretty sm:text-xl">
+						Tell me what you're working on — what's broken, what you've tried, and what success
+						looks like. If I can help, you'll have a written read on scope and a rough budget within
+						48 hours. If I can't, I'll say so.
 					</p>
-				</div>
-				<div class="lg:col-span-5">
+
 					<dl
-						class="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3"
+						class="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3"
 					>
-						<div class="bg-bg-soft px-4 py-4">
-							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Format</dt>
-							<dd class="mt-1 text-sm text-fg">30-min call</dd>
-						</div>
-						<div class="bg-bg-soft px-4 py-4">
-							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Cost</dt>
-							<dd class="mt-1 text-sm text-fg">Free, no pitch</dd>
-						</div>
-						<div class="bg-bg-soft px-4 py-4">
-							<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">Reply</dt>
-							<dd class="mt-1 text-sm text-fg">≤ 48 hours</dd>
-						</div>
+						{
+							facts.map((f) => (
+								<div class="bg-bg-soft px-4 py-4">
+									<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">{f.k}</dt>
+									<dd class="mt-1 text-sm text-fg">{f.v}</dd>
+								</div>
+							))
+						}
 					</dl>
-				</div>
-			</div>
-		</div>
-	</section>
 
-	<!-- Two paths: Book vs Email -->
-	<section class="border-b border-border">
-		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
-			<div
-				class="mt-16 mb-8 grid gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-2"
-			>
-				<!-- Book a call -->
-				<div class="flex flex-col gap-6 bg-bg p-8 sm:p-10">
-					<p class="font-mono text-2xs tracking-[0.18em] text-[var(--color-accent)] uppercase">
-						Recommended
-					</p>
-					<h2 class="text-2xl font-medium tracking-tight text-balance text-fg sm:text-3xl">
-						Book a 30-minute call.
-					</h2>
-					<p class="text-fg-muted text-pretty">
-						Pick a time that works for you. The link goes to my calendar — pick any open slot, no
-						back-and-forth.
-					</p>
-					<a
-						href={BOOKING_URL}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="mt-2 inline-flex items-center justify-center gap-2 self-start rounded-md bg-fg px-5 py-3 text-sm font-medium text-bg transition-opacity hover:opacity-90"
-					>
-						Open my calendar
-						<svg
-							width="14"
-							height="14"
-							viewBox="0 0 16 16"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.5"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							aria-hidden="true"
-						>
-							<path d="M3 8h10M9 4l4 4-4 4"></path>
-						</svg>
-					</a>
-					<p class="font-mono text-2xs tracking-wide text-fg-subtle">
-						{BOOKING_URL.replace(/^https?:\/\//, '')}
-					</p>
-					<p class="mt-2 border-t border-border pt-4 text-sm text-fg-subtle text-pretty">
-						Intro calls are free for prospective clients — people exploring whether to hire Roga
-						Digital. They are not for selling to me. Vendor and sales calls booked through this
-						calendar are billed at USD $120/hour (1-hour minimum) per the <a
-							href="/terms-of-service/#consultation-bookings"
-							class="text-fg-muted underline-offset-4 hover:underline">booking terms</a
-						>.
-					</p>
+					<div class="mt-12 border-t border-border pt-8">
+						<h2 class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+							What to expect
+						</h2>
+						<ol class="mt-6 divide-y divide-border border-y border-border" role="list">
+							{
+								expect.map((p) => (
+									<li class="flex items-start gap-5 py-5">
+										<span class="mt-0.5 font-mono text-2xs tracking-[0.18em] text-[var(--color-accent)] uppercase">
+											{p.n}
+										</span>
+										<div>
+											<h3 class="text-base font-medium tracking-tight text-fg">{p.h}</h3>
+											<p class="mt-1 text-sm text-fg-muted text-pretty">{p.b}</p>
+										</div>
+									</li>
+								))
+							}
+						</ol>
+					</div>
 				</div>
 
-				<!-- Direct message -->
-				<div class="flex flex-col gap-6 bg-bg p-8 sm:p-10">
-					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
-						Or send a message
-					</p>
+				<!-- Right rail: the form (sticky on desktop) -->
+				<div class="lg:col-span-6 lg:col-start-7 lg:sticky lg:top-24">
 					<h2 class="text-2xl font-medium tracking-tight text-balance text-fg sm:text-3xl">
-						Prefer writing first?
+						Send a message.
 					</h2>
-					<p class="text-fg-muted text-pretty">
-						Tell me about the project in your own words. Same promise as the call: a real reply
+					<p class="mt-3 mb-8 text-fg-muted text-pretty">
+						Straight to my inbox — no forms routed to a sales team, no pitch in return. A real reply
 						within 48 hours.
 					</p>
 					<InquiryForm endpoint="/api/contact" client:load />
 				</div>
 			</div>
-
-			<ul class="mb-16 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm" role="list">
-				<li>
-					<a
-						href={SOCIAL.linkedin}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group inline-flex items-center gap-2"
-					>
-						<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
-							LinkedIn
-						</span>
-						<span class="text-fg underline-offset-4 group-hover:underline">in/ryanroga</span>
-					</a>
-				</li>
-				<li>
-					<a
-						href={SOCIAL.github}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group inline-flex items-center gap-2"
-					>
-						<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
-							GitHub
-						</span>
-						<span class="text-fg underline-offset-4 group-hover:underline">@rogadev</span>
-					</a>
-				</li>
-				<li class="inline-flex items-center gap-2">
-					<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Based</span>
-					<span class="text-fg">{SITE_LOCATION}</span>
-				</li>
-			</ul>
 		</div>
 	</section>
 
-	<!-- What to expect -->
+	<!-- What's helpful to include -->
 	<Section
-		eyebrow="What to expect"
-		heading="How a typical engagement starts."
-		dek="Three short steps from first message to a real read on whether we should work together."
-	>
-		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
-			<ol
-				class="grid gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-3"
-			>
-				{
-					expect.map((p) => (
-						<li class="flex flex-col gap-3 bg-bg p-8">
-							<span class="font-mono text-2xs tracking-[0.18em] text-[var(--color-accent)] uppercase">
-								{p.n}
-							</span>
-							<h3 class="text-xl font-medium tracking-tight text-balance text-fg">{p.h}</h3>
-							<p class="text-sm text-fg-muted text-pretty">{p.b}</p>
-						</li>
-					))
-				}
-			</ol>
-		</div>
-	</Section>
-
-	<!-- What's helpful for the first call -->
-	<Section
-		eyebrow="Before the call"
-		heading="What's helpful to bring."
-		dek="None of this is required — but if you have it handy, the call goes further."
+		eyebrow="Before you write"
+		heading="What's helpful to include."
+		dek="None of it is required — but if you have it handy, my first reply goes a lot further."
 	>
 		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
 			<ul class="divide-y divide-border border-y border-border" role="list">
 				{
 					helpful.map((item, i) => (
 						<li class="flex items-start gap-6 py-5">
-							<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase pt-0.5">
+							<span class="pt-0.5 font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
 								{String(i + 1).padStart(2, '0')}
 							</span>
 							<span class="text-fg text-pretty">{item}</span>
@@ -222,24 +129,58 @@ const helpful = [
 		</div>
 	</Section>
 
-	<!-- End note -->
+	<!-- Elsewhere / end note -->
 	<section class="border-t border-border bg-bg-soft">
 		<div class="mx-auto w-full max-w-page px-6 py-16 sm:px-8 sm:py-20">
-			<div class="grid gap-6 lg:grid-cols-12 lg:items-center">
-				<p class="text-fg-muted text-pretty lg:col-span-8">
-					Not ready to talk yet? That's fine. The
-					<a href="/work/" class="text-fg underline-offset-4 hover:underline">selected work</a>
-					and <a href="/insights/" class="text-fg underline-offset-4 hover:underline">writing</a>
-					give the clearest picture of how Roga Digital approaches a project.
-				</p>
+			<div class="grid gap-10 lg:grid-cols-12 lg:items-center">
+				<div class="lg:col-span-8">
+					<ul class="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm" role="list">
+						<li>
+							<a
+								href={SOCIAL.linkedin}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="group inline-flex items-center gap-2"
+							>
+								<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+									LinkedIn
+								</span>
+								<span class="text-fg underline-offset-4 group-hover:underline">in/ryanroga</span>
+							</a>
+						</li>
+						<li>
+							<a
+								href={SOCIAL.github}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="group inline-flex items-center gap-2"
+							>
+								<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+									GitHub
+								</span>
+								<span class="text-fg underline-offset-4 group-hover:underline">@rogadev</span>
+							</a>
+						</li>
+						<li class="inline-flex items-center gap-2">
+							<span class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase"
+								>Based</span
+							>
+							<span class="text-fg">{SITE_LOCATION}</span>
+						</li>
+					</ul>
+					<p class="mt-6 max-w-2xl text-fg-muted text-pretty">
+						Not ready to reach out yet? That's fine. The
+						<a href="/work/" class="text-fg underline-offset-4 hover:underline">selected work</a>
+						and <a href="/insights/" class="text-fg underline-offset-4 hover:underline">writing</a>
+						give the clearest picture of how Roga Digital approaches a project.
+					</p>
+				</div>
 				<div class="flex flex-wrap items-center gap-3 lg:col-span-4 lg:justify-end">
 					<a
-						href={BOOKING_URL}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-flex items-center gap-2 rounded-md bg-fg px-4 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-90"
+						href="/work/"
+						class="inline-flex items-center gap-2 rounded-md border border-border-strong px-4 py-2.5 text-sm font-medium text-fg transition-colors hover:border-fg-subtle"
 					>
-						Book a call
+						View the work
 					</a>
 				</div>
 			</div>

@@ -110,7 +110,7 @@
 					onclick={close}
 					class="flex items-center justify-center rounded-md bg-[var(--color-fg)] px-4 py-3 text-sm font-medium text-[var(--color-bg)] transition-opacity hover:opacity-90"
 				>
-					Book a call
+					Get in touch
 				</a>
 			</li>
 		</ul>
