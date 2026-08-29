@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE_AUTHOR, SITE_TITLE } from '../consts';
+import { deriveOgPath } from '../lib/og-path';
 
 interface Props {
 	title: string;
@@ -31,39 +32,10 @@ const {
 
 const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
-/**
- * Pick the right OG endpoint for this route.
- * Endpoints emit static PNGs at build time:
- *   /og/default.png                   — home + any unmatched route
- *   /og/[page].png                    — about, contact, services, resume, work, insights
- *   /og/work/[slug].png               — individual case study
- *   /og/insights/[slug].png           — individual insights post
- */
-const STATIC_PAGE_OGS = new Set([
-	'about',
-	'contact',
-	'services',
-	'resume',
-	'work',
-	'insights',
-	'media',
-]);
-
-function deriveOgPath(pathname: string): string {
-	const trimmed = pathname.replace(/\/$/, '');
-
-	const insightsMatch = trimmed.match(/^\/insights\/(.+)$/);
-	if (insightsMatch) return `/og/insights/${insightsMatch[1]}.png`;
-
-	const workMatch = trimmed.match(/^\/work\/(.+)$/);
-	if (workMatch) return `/og/work/${workMatch[1]}.png`;
-
-	const segment = trimmed.replace(/^\//, '');
-	if (STATIC_PAGE_OGS.has(segment)) return `/og/${segment}.png`;
-
-	return '/og/default.png';
-}
-
+// OG endpoint selection (deriveOgPath) and the page-OG copy it depends on
+// (STATIC_PAGE_OGS) live in `src/lib/og-path.ts` / `src/lib/og-pages.ts` —
+// a single source shared with the `/og/[page].png` endpoint, so the two
+// can't disagree. See tests/og-coverage.test.ts.
 const ogImageUrl = new URL(ogPath ?? deriveOgPath(Astro.url.pathname), Astro.site);
 ---
 
