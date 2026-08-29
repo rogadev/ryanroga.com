@@ -8,12 +8,6 @@ const title = 'Contact · Roga Digital';
 const description =
 	'Tell Roga Digital about your project. Send a message and get a real reply — a written read on scope and a rough budget — within 48 hours.';
 
-const facts = [
-	{ k: 'Cost', v: 'Free, no pitch' },
-	{ k: 'Reply', v: '≤ 48 hours' },
-	{ k: 'You get', v: 'Scope + budget' },
-];
-
 const expect = [
 	{
 		n: '01',
@@ -44,64 +38,56 @@ const helpful = [
 	<!-- Hero + message form -->
 	<section class="border-b border-border">
 		<div class="mx-auto w-full max-w-page px-6 sm:px-8">
-			<div class="grid items-start gap-x-16 gap-y-14 pt-20 pb-16 sm:pt-28 sm:pb-20 lg:grid-cols-12">
-				<!-- Left rail: intro + what to expect -->
-				<div class="lg:col-span-6">
-					<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Contact</p>
-					<h1 class="mt-6 text-4xl font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl">
-						Let's talk about <span class="text-fg-muted">your project.</span>
-					</h1>
-					<p class="mt-6 max-w-xl text-lg text-fg-muted text-pretty sm:text-xl">
-						Tell me what you're working on — what's broken, what you've tried, and what success
-						looks like. If I can help, you'll have a written read on scope and a rough budget within
-						48 hours. If I can't, I'll say so.
-					</p>
+			<div class="pt-20 pb-16 sm:pt-28 sm:pb-20">
+				<!-- Full-width header -->
+				<p class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">Contact</p>
+				<h1 class="mt-6 text-4xl font-medium tracking-tight text-balance sm:text-5xl lg:text-6xl">
+					Let&rsquo;s talk about <span class="text-fg-muted">your project.</span>
+				</h1>
 
-					<dl
-						class="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3"
-					>
-						{
-							facts.map((f) => (
-								<div class="bg-bg-soft px-4 py-4">
-									<dt class="font-mono text-2xs tracking-wider text-fg-subtle uppercase">{f.k}</dt>
-									<dd class="mt-1 text-sm text-fg">{f.v}</dd>
-								</div>
-							))
-						}
-					</dl>
+				<!-- Two columns: intro + what to expect (left), message form (right) -->
+				<div class="mt-12 grid items-start gap-x-16 gap-y-14 sm:mt-14 lg:grid-cols-12">
+					<!-- Left column: intro + what to expect -->
+					<div class="lg:col-span-6">
+						<p class="max-w-xl text-lg text-fg-muted text-pretty sm:text-xl">
+							Tell me what you&rsquo;re working on &mdash; what&rsquo;s broken, what you&rsquo;ve
+							tried, and what success looks like. If I can help, you&rsquo;ll have a written read on
+							scope and a rough budget within 48 hours. If I can&rsquo;t, I&rsquo;ll say so.
+						</p>
 
-					<div class="mt-12 border-t border-border pt-8">
-						<h2 class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
-							What to expect
-						</h2>
-						<ol class="mt-6 divide-y divide-border border-y border-border" role="list">
-							{
-								expect.map((p) => (
-									<li class="flex items-start gap-5 py-5">
-										<span class="mt-0.5 font-mono text-2xs tracking-[0.18em] text-[var(--color-accent)] uppercase">
-											{p.n}
-										</span>
-										<div>
-											<h3 class="text-base font-medium tracking-tight text-fg">{p.h}</h3>
-											<p class="mt-1 text-sm text-fg-muted text-pretty">{p.b}</p>
-										</div>
-									</li>
-								))
-							}
-						</ol>
+						<div class="mt-10 border-t border-border pt-8">
+							<h2 class="font-mono text-2xs tracking-[0.18em] text-fg-subtle uppercase">
+								What to expect
+							</h2>
+							<ol class="mt-6 divide-y divide-border border-y border-border" role="list">
+								{
+									expect.map((p) => (
+										<li class="flex items-start gap-5 py-5">
+											<span class="mt-0.5 font-mono text-2xs tracking-[0.18em] text-[var(--color-accent)] uppercase">
+												{p.n}
+											</span>
+											<div>
+												<h3 class="text-base font-medium tracking-tight text-fg">{p.h}</h3>
+												<p class="mt-1 text-sm text-fg-muted text-pretty">{p.b}</p>
+											</div>
+										</li>
+									))
+								}
+							</ol>
+						</div>
 					</div>
-				</div>
 
-				<!-- Right rail: the form (sticky on desktop) -->
-				<div class="lg:col-span-6 lg:col-start-7 lg:sticky lg:top-24">
-					<h2 class="text-2xl font-medium tracking-tight text-balance text-fg sm:text-3xl">
-						Send a message.
-					</h2>
-					<p class="mt-3 mb-8 text-fg-muted text-pretty">
-						Straight to my inbox — no forms routed to a sales team, no pitch in return. A real reply
-						within 48 hours.
-					</p>
-					<InquiryForm endpoint="/api/contact" client:load />
+					<!-- Right column: the message form -->
+					<div class="lg:col-span-6 lg:col-start-7">
+						<h2 class="text-2xl font-medium tracking-tight text-balance text-fg sm:text-3xl">
+							Send a message.
+						</h2>
+						<p class="mt-3 mb-8 text-fg-muted text-pretty">
+							Straight to my inbox &mdash; no forms routed to a sales team, no pitch in return. A
+							real reply within 48 hours.
+						</p>
+						<InquiryForm endpoint="/api/contact" client:load />
+					</div>
 				</div>
 			</div>
 		</div>
